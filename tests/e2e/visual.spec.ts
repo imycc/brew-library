@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+test('capture selected editorial design and responsive detail surfaces',async({page})=>{
+ await mkdir('outputs/qa',{recursive:true});
+ await page.setViewportSize({width:1487,height:1090});
+ await page.goto('/pour-over-coffee/zh-Hant/?ids=kasuya-46');
+ await page.evaluate(()=>document.fonts.ready);
+ await expect(page.locator('.featured img')).toBeVisible();
+ await page.screenshot({path:'outputs/qa/home-desktop.png'});
+ await page.goto('/pour-over-coffee/zh-Hant/recipes/kasuya-46/?ids=kasuya-46');
+ await page.evaluate(()=>document.fonts.ready);
+ await page.screenshot({path:'outputs/qa/detail-desktop.png',fullPage:true});
+ await page.setViewportSize({width:1487,height:1058});
+ await page.goto('/pour-over-coffee/zh-Hant/compare/?ids=kasuya-46,hoffmann-one-cup');
+ await expect(page.locator('.comparison-table')).toBeVisible();
+ await page.screenshot({path:'outputs/qa/compare-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('/pour-over-coffee/zh-Hant/?ids=kasuya-46');
+ await page.screenshot({path:'outputs/qa/home-mobile.png',fullPage:true});
+});

@@ -1,0 +1,2 @@
+import {defineConfig,devices} from '@playwright/test';
+export default defineConfig({testDir:'tests/e2e',fullyParallel:false,workers:1,retries:process.env.CI?1:0,use:{baseURL:process.env.SITE_URL||'http://127.0.0.1:4173',trace:'retain-on-failure'},projects:[{name:'chromium',use:{...devices['Desktop Chrome'],channel:process.env.PLAYWRIGHT_CHANNEL}}],webServer:process.env.SITE_URL?undefined:{command:'node scripts/serve.mjs',url:'http://127.0.0.1:4173/pour-over-coffee/',reuseExistingServer:!process.env.CI}});
