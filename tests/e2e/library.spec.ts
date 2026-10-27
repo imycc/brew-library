@@ -11,6 +11,7 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await expect(page.getByTestId('pour-timeline')).toBeVisible();
  await expect(page.getByTestId('pour-timeline')).toContainText('2:10');
  await expect(page.getByTestId('pour-timeline')).toContainText('2:40');
+ await expect(page.locator('.detail-sidebar')).toContainText('水質');
  await expect(page.locator('.step-list li')).toHaveCount(6);
  expect(errors).toEqual([]);
 });

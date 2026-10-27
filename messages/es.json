@@ -132,5 +132,6 @@
       "notes": "El resumen indica 45–60 segundos de preinfusión y el detalle reanuda a 45–50. Se conserva la diferencia. No se indican cantidades ni tiempos posteriores exactos.",
       "finish": "El tiempo total objetivo es un intervalo; termina el drenaje según la fuente."
     }
-  }
+  },
+  "waterQuality": "Perfil del agua"
 }
