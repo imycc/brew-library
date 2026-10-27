@@ -132,5 +132,6 @@
       "notes": "Le résumé indique une préinfusion de 45–60 secondes, le détail reprend à 45–50. Cette différence est conservée. Les versements suivants ne sont pas chiffrés précisément.",
       "finish": "La durée cible est une plage ; terminez l’écoulement selon la source."
     }
-  }
+  },
+  "waterQuality": "Profil de l’eau"
 }

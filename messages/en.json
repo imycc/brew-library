@@ -132,5 +132,6 @@
       "notes": "The source outline gives a 45–60 second bloom, while its detailed technique resumes at 45–50 seconds. Both are retained here. Pulse amounts and exact later times are not specified.",
       "finish": "The target total brew time is a range. Finish draining within that range as described by the source."
     }
-  }
+  },
+  "waterQuality": "Water profile"
 }
