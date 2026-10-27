@@ -14,11 +14,15 @@ export async function validate(){
  for(const r of recipes){
    assert(r.duration[1]>=r.duration[0],r.id);
    const measured=r.steps.filter(s=>s.amount!==null);
-   if(r.copy!=='rao'){
-     let cumulative=0;
-     for(const s of measured){cumulative+=s.amount!;assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);}
-     assert.equal(cumulative,r.water.amount,`${r.id} water total`);
+   assert(new Set(measured.map(s=>s.unit||r.water.unit)).size<=1,`${r.id} cannot sum mixed step units`);
+   let cumulative:number|null=0;
+   for(const s of r.steps){
+     if(!['pour','bloom','pulses'].includes(s.action))continue;
+     if(s.amount!==null&&cumulative!==null){cumulative+=s.amount;if(s.cumulative!==null)assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);}
+     else cumulative=s.cumulative;
    }
+   // Only compare totals when mass/volume units actually match. Never convert g to mL.
+   if(cumulative!==null&&measured.every(s=>(s.unit||r.water.unit)===r.water.unit))assert.equal(cumulative,r.water.amount,`${r.id} water total`);
    for(const s of r.steps){if(s.end!==undefined&&s.at!==null)assert(s.end>=s.at,`${r.id} time range`);}
  }
  for(const locale of locales){
@@ -34,6 +38,7 @@ export async function validate(){
    for(const r of recipes){
      for(const key of ['title','summary','version','grind','equipment','notes','finish'])assert(flat[`recipes.${r.copy}.${key}`],`${locale}/${r.id}/${key}`);
      for(const s of r.steps){assert(flat[`step.${s.action}`]);if(s.action!=='finish')assert(flat[`instruction.${s.action}`]);}
+     for(const key of [...r.preparation,r.beanNote,r.waterNote,r.filterNote,...r.steps.map(s=>s.instruction)].filter((key):key is string=>!!key))assert(flat[key],`${locale}/${r.id}/${key}`);
    }
  }
  console.log(`Validated ${recipes.length} source-backed recipes and ${Object.keys(base).length} messages × ${locales.length} locales.`);

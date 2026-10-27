@@ -131,7 +131,74 @@
       "equipment": "NextLevel Pulsar",
       "notes": "O resumo indica pré-infusão de 45–60 segundos e o detalhe retoma em 45–50. Mantemos a diferença. As doses e tempos seguintes não são especificados.",
       "finish": "O tempo total é uma faixa; finalize o escoamento conforme a fonte."
+    },
+    "licata": {
+      "title": "V60 com despejo contínuo",
+      "summary": "Começo vigoroso, despejo central lento e adição final turbulenta.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Média-fina; escala EK padrão 7,5",
+      "equipment": "HARIO V60 · Cerâmica",
+      "notes": "Usa Gesha natural de torra clara da Colombia La Palma y El Tucan. O acumulado intermediário de 250 mL é calculado subtraindo os 50 mL finais do total. Os tempos intermediários não são informados.",
+      "finish": "Finalize o preparo em 2:30.",
+      "bloom": "Molhe o café e faça a pré-infusão por 30 segundos.",
+      "continuous": "Comece com despejo rápido e vigoroso; depois despeje lentamente no centro até acumular 250 mL.",
+      "finalPour": "Adicione rapidamente os últimos 50 mL para criar turbulência.",
+      "beans": "Gesha natural de torra clara da Colombia La Palma y El Tucan",
+      "water": "125 TDS; unidades e base de medição não informadas."
+    },
+    "wong": {
+      "title": "Switch: infusão e drenagem",
+      "summary": "Comece com a válvula aberta, faça a infusão e depois drene.",
+      "version": "HARIO USA · Partners Coffee",
+      "grind": "Média-fina",
+      "equipment": "HARIO Switch",
+      "notes": "A fonte indica apenas água quente, sem temperatura ou composição. A segunda adição de 110 g é calculada subtraindo os 30 g da pré-infusão do acumulado de 140 g.",
+      "finish": "Em 4:00, feche a válvula e retire o coador.",
+      "start": "Comece com a válvula aberta.",
+      "close": "Feche a válvula em 1:15.",
+      "drain": "Abra em 2:30 e deixe drenar."
+    },
+    "boen": {
+      "title": "Switch com duas infusões",
+      "summary": "Duas infusões com válvula fechada combinadas à percolação.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Média-fina",
+      "equipment": "HARIO Switch 02",
+      "notes": "Receita do World Brewers Cup 2021 publicada pela HARIO. O resumo indica 240 mL, mas as etapas usam g. A diferença é preservada sem equiparar as unidades.",
+      "finish": "Deixe drenar após abrir; busque um tempo total de 3:00–3:15.",
+      "start": "Comece com a válvula fechada.",
+      "open": "Abra em 0:40 e comece imediatamente o próximo despejo.",
+      "centre": "Despeje a quantidade indicada no centro.",
+      "close": "Feche a válvula novamente em 1:30.",
+      "circle": "Adicione a quantidade indicada em círculos.",
+      "drain": "Abra em 2:10 e deixe drenar.",
+      "beans": "Geisha natural da Hacienda La Esmeralda"
+    },
+    "hoang": {
+      "title": "W60 com filtro duplo",
+      "summary": "Malha plana e filtro de papel com três adições de água.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Média-grossa",
+      "equipment": "HARIO W60",
+      "notes": "Receita do World Brewers Cup 2021 publicada pela HARIO. O total aparece como 200 g e as etapas em mL. Ambos são preservados sem presumir equivalência.",
+      "finish": "Retire o W60 em 3:15.",
+      "water": "65 ppm; composição e base de medição não informadas.",
+      "filters": "Malha plana e filtro de papel W60 usados juntos.",
+      "prep": "A autora recomenda peneirar os finos antes do preparo."
+    },
+    "rojewska": {
+      "title": "V60 rápido em duas fases",
+      "summary": "Despejo circular suave seguido de despejo central rápido.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Média",
+      "equipment": "HARIO V60 · Metal",
+      "notes": "O tempo de 1:00 é o fim do despejo; a meta total é 2:15. A água da pré-infusão e a temperatura não são especificadas. Os 150 mL são acumulados, não uma adição após a pré-infusão.",
+      "finish": "Pare de despejar por volta de 1:00 e deixe drenar; meta total de 2:15.",
+      "bloom": "Faça a pré-infusão por 15 segundos; a quantidade de água não é informada.",
+      "circle": "Despeje suavemente em círculos até acumular 150 mL, incluindo a pré-infusão.",
+      "centre": "Adicione os 100 mL restantes rapidamente no centro, mantendo o nível; pare por volta de 1:00."
     }
   },
-  "waterQuality": "Perfil da água"
+  "waterQuality": "Perfil da água",
+  "competition": "Receita de competição publicada"
 }

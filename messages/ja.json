@@ -131,7 +131,74 @@
       "equipment": "NextLevel Pulsar",
       "notes": "概要は蒸らし45–60秒、詳細手順は45–50秒で再開と記載しています。両方を保持し、その後の各注湯量や時刻は未記載です。",
       "finish": "目標時間は範囲です。出典の説明に沿って抽出を終えます。"
+    },
+    "licata": {
+      "title": "V60 連続注湯",
+      "summary": "強めの注湯からゆっくりした中央注湯へ移り、最後に攪拌を強めます。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "中細挽き；標準 EK 目盛り 7.5",
+      "equipment": "HARIO V60 · 陶器",
+      "notes": "浅煎りの Colombia La Palma y El Tucan ナチュラル Gesha を使用。途中の累計 250 mL は総量から最後の 50 mL を引いた計算値です。途中の各段階の時刻は未記載です。",
+      "finish": "2:30 に抽出を終えます。",
+      "bloom": "粉全体を濡らし、30 秒蒸らします。",
+      "continuous": "最初は強く速く注ぎ、次にゆっくり中央へ注いで累計 250 mL にします。",
+      "finalPour": "最後の 50 mL は速く注いで攪拌します。",
+      "beans": "浅煎り Colombia La Palma y El Tucan ナチュラル Gesha",
+      "water": "125 TDS；単位と測定基準は未記載です。"
+    },
+    "wong": {
+      "title": "Switch 浸漬と排出",
+      "summary": "開弁抽出から閉弁浸漬へ移り、最後に排出します。",
+      "version": "HARIO USA · Partners Coffee",
+      "grind": "中細挽き",
+      "equipment": "HARIO Switch",
+      "notes": "原典は温水とのみ記載し、温度や水質は未指定です。2 回目の 110 g は累計 140 g から蒸らしの 30 g を引いた値です。",
+      "finish": "4:00 に弁を閉じてドリッパーを外します。",
+      "start": "弁を開けて始めます。",
+      "close": "1:15 に弁を閉じます。",
+      "drain": "2:30 に開弁し、排出します。"
+    },
+    "boen": {
+      "title": "Switch 二段浸漬",
+      "summary": "二度の閉弁浸漬と開弁透過抽出を組み合わせます。",
+      "version": "World Brewers Cup · 2021",
+      "grind": "中細挽き",
+      "equipment": "HARIO Switch 02",
+      "notes": "HARIO 掲載の 2021 世界ブリュワーズカップレシピ。概要は 240 mL、手順は g 表記です。単位を等価とせず、その違いを残しています。",
+      "finish": "開弁後に排出し、合計 3:00–3:15 を目安にします。",
+      "start": "弁を閉じて始めます。",
+      "open": "0:40 に開弁し、すぐ次の注湯を始めます。",
+      "centre": "指定量を中央に注ぎます。",
+      "close": "1:30 に再び弁を閉じます。",
+      "circle": "指定量を円を描いて注ぎます。",
+      "drain": "2:10 に開弁し、排出します。",
+      "beans": "Hacienda La Esmeralda のナチュラル Geisha"
+    },
+    "hoang": {
+      "title": "W60 二重フィルター",
+      "summary": "平底メッシュとペーパーフィルターを使う三段注湯。",
+      "version": "World Brewers Cup · 2021",
+      "grind": "中粗挽き",
+      "equipment": "HARIO W60",
+      "notes": "HARIO 掲載の 2021 世界ブリュワーズカップレシピ。総量は 200 g、手順は mL 表記です。両者を換算せずに保持しています。",
+      "finish": "3:15 に W60 を外します。",
+      "water": "65 ppm；成分と測定基準は未記載です。",
+      "filters": "W60 の平底メッシュとペーパーを併用します。",
+      "prep": "著者は抽出前に微粉をふるい落とすことを勧めています。"
+    },
+    "rojewska": {
+      "title": "V60 素早い二段注湯",
+      "summary": "円を描く穏やかな注湯から速い中央注湯へ。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "中挽き",
+      "equipment": "HARIO V60 · 金属",
+      "notes": "原典の 1:00 は注湯終了時刻で、総抽出時間の目安は 2:15。蒸らしの水量と温度は未記載です。150 mL は蒸らし後の追加量ではなく累計です。",
+      "finish": "約 1:00 に注湯を止めて排出し、合計 2:15 を目安にします。",
+      "bloom": "15 秒間蒸らします。水量は原典に未記載です。",
+      "circle": "蒸らしの水を含めて累計 150 mL まで穏やかに円を描いて注ぎます。",
+      "centre": "残りの 100 mL を中央へ速く注ぎ、水位を維持して約 1:00 に止めます。"
     }
   },
-  "waterQuality": "水質"
+  "waterQuality": "水質",
+  "competition": "公開された大会レシピ"
 }

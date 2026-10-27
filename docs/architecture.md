@@ -11,6 +11,7 @@ The homepage is an editorial discovery surface. Full brewing instructions and ti
 - `content/recipes.json`: version 1 canonical recipe records. Validated by Zod in `src/lib/recipes.ts`.
 - `messages/{locale}.json`: full UI and recipe text in nine locales. Message keys, parameters, required recipe content and step instruction coverage are checked before publishing.
 - Numeric quantities, original units, exact/ranged times, author identity and source provenance live in canonical data; copy is localized separately.
+- Steps may override the recipe’s water unit, and may provide their own translated instruction. Mixed g/mL source statements remain visibly distinct. Temperature distinguishes boiling water from an unspecified temperature; daily teaching and competition recipes have separate context labels.
 - Null means unspecified, not zero. Scott Rao's total water is marked as derived from source ratio. Source dates remain explicit ISO dates rather than approximate relative dates.
 
 ## State and future integrations
@@ -30,3 +31,5 @@ Original AI-generated photography is stored in `assets/originals/`. The asset sc
 CI pins the official Ubuntu 24.04 hosted runner and tests with its preinstalled Chrome (`PLAYWRIGHT_CHANNEL=chrome`). The same Playwright suite runs without repeatedly downloading system fonts from the slow Ubuntu mirror. The website supplies explicit CJK serif/sans web fonts; ordinary system-font fallbacks remain available.
 
 Deployment rollback: revert the offending main commit in a PR and rerun the same verified publishing workflow. Do not rewrite repository history to roll back.
+
+The header language control is a disclosure of ordinary language links, not an ARIA application menu. Enter/Space opens it, Tab follows links, Escape closes and returns focus; outside click and focus leaving the control also close it. Language links preserve the localized path and query state.

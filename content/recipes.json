@@ -179,7 +179,8 @@
       "waterConditions": "soft",
       "beanConditions": "light",
       "filterConditions": "unknown",
-      "context": "daily"
+      "context": "daily",
+      "temperatureMode": "boiling"
     },
     {
       "id": "rao-pulsar",
@@ -258,6 +259,377 @@
       "waterConditions": "rao",
       "beanConditions": "unknown",
       "filterConditions": "pulsar",
+      "context": "daily",
+      "temperatureMode": "boiling"
+    },
+    {
+      "id": "licata-v60",
+      "copy": "licata",
+      "author": "Pete Licata",
+      "authorId": "licata",
+      "brewer": "HARIO V60 · Ceramic",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 18,
+      "water": {
+        "amount": 300,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": 94,
+      "temperatureMode": "unknown",
+      "duration": [
+        150,
+        150
+      ],
+      "source": {
+        "label": "HARIO Europe",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50,
+          "instruction": "recipes.licata.bloom"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": null,
+          "cumulative": 250,
+          "instruction": "recipes.licata.continuous"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 50,
+          "cumulative": 300,
+          "instruction": "recipes.licata.finalPour"
+        },
+        {
+          "action": "finish",
+          "at": 150,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "beanNote": "recipes.licata.beans",
+      "waterNote": "recipes.licata.water"
+    },
+    {
+      "id": "wong-switch",
+      "copy": "wong",
+      "author": "Cary Wong · Partners Coffee",
+      "authorId": "wong",
+      "brewer": "HARIO Switch",
+      "brewerId": "switch",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 240,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        240,
+        240
+      ],
+      "source": {
+        "label": "HARIO USA · Partners Coffee",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-switch-recipe-with-partners-coffee",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "open",
+          "at": 0,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.wong.start"
+        },
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 30,
+          "cumulative": 30,
+          "end": 10
+        },
+        {
+          "action": "pour",
+          "at": 40,
+          "amount": 110,
+          "cumulative": 140,
+          "end": 55
+        },
+        {
+          "action": "close",
+          "at": 75,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.wong.close"
+        },
+        {
+          "action": "pour",
+          "at": 75,
+          "amount": 100,
+          "cumulative": 240
+        },
+        {
+          "action": "open",
+          "at": 150,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.wong.drain"
+        },
+        {
+          "action": "finish",
+          "at": 240,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily"
+    },
+    {
+      "id": "boen-switch",
+      "copy": "boen",
+      "author": "Ole Kristian Bøen",
+      "authorId": "boen",
+      "brewer": "HARIO Switch 02",
+      "brewerId": "switch",
+      "kind": "hot",
+      "dose": 16.5,
+      "water": {
+        "amount": 240,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": 96,
+      "temperatureMode": "unknown",
+      "duration": [
+        180,
+        195
+      ],
+      "source": {
+        "label": "HARIO Europe",
+        "url": "https://www.hario-europe.com/blogs/hario-community/ole-kristian-boens-switch-recipe",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "close",
+          "at": 0,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.boen.start"
+        },
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50,
+          "unit": "g"
+        },
+        {
+          "action": "open",
+          "at": 40,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.boen.open"
+        },
+        {
+          "action": "pour",
+          "at": 40,
+          "amount": 100,
+          "cumulative": 150,
+          "unit": "g",
+          "instruction": "recipes.boen.centre"
+        },
+        {
+          "action": "close",
+          "at": 90,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.boen.close"
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 90,
+          "cumulative": 240,
+          "unit": "g",
+          "instruction": "recipes.boen.circle"
+        },
+        {
+          "action": "open",
+          "at": 130,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.boen.drain"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "beanNote": "recipes.boen.beans"
+    },
+    {
+      "id": "hoang-w60",
+      "copy": "hoang",
+      "author": "Ngoc Hoang",
+      "authorId": "hoang",
+      "brewer": "HARIO W60",
+      "brewerId": "w60",
+      "kind": "hot",
+      "dose": 12,
+      "water": {
+        "amount": 200,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": 98,
+      "temperatureMode": "unknown",
+      "duration": [
+        195,
+        195
+      ],
+      "source": {
+        "label": "HARIO Europe",
+        "url": "https://www.hario-europe.com/blogs/hario-community/ngoc-hoangs-w60-dripper-recipe",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50,
+          "unit": "mL"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 100,
+          "cumulative": 150,
+          "end": 60,
+          "unit": "mL"
+        },
+        {
+          "action": "pour",
+          "at": 120,
+          "amount": 50,
+          "cumulative": 200,
+          "unit": "mL"
+        },
+        {
+          "action": "finish",
+          "at": 195,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [
+        "recipes.hoang.prep"
+      ],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "waterNote": "recipes.hoang.water",
+      "filterNote": "recipes.hoang.filters"
+    },
+    {
+      "id": "rojewska-v60",
+      "copy": "rojewska",
+      "author": "Agnieszka Rojewska",
+      "authorId": "rojewska",
+      "brewer": "HARIO V60 · Metal",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 250,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        135,
+        135
+      ],
+      "source": {
+        "label": "HARIO Europe",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-agnieszka-rojewska",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": null,
+          "cumulative": null,
+          "end": 15,
+          "instruction": "recipes.rojewska.bloom"
+        },
+        {
+          "action": "pour",
+          "at": 15,
+          "amount": null,
+          "cumulative": 150,
+          "instruction": "recipes.rojewska.circle"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 100,
+          "cumulative": 250,
+          "end": 60,
+          "instruction": "recipes.rojewska.centre"
+        },
+        {
+          "action": "finish",
+          "at": 135,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
       "context": "daily"
     }
   ]

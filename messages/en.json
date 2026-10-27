@@ -131,7 +131,74 @@
       "equipment": "NextLevel Pulsar",
       "notes": "The source outline gives a 45–60 second bloom, while its detailed technique resumes at 45–50 seconds. Both are retained here. Pulse amounts and exact later times are not specified.",
       "finish": "The target total brew time is a range. Finish draining within that range as described by the source."
+    },
+    "licata": {
+      "title": "Continuous-pour V60",
+      "summary": "A forceful start, a slower centre pour, and a turbulent final addition.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Medium-fine; standard EK dial 7.5",
+      "equipment": "HARIO V60 · Ceramic",
+      "notes": "Uses light-roasted Colombia La Palma y El Tucan natural Gesha. The intermediate 250 mL total is calculated by subtracting the final 50 mL from the total. Intermediate phase times are unspecified.",
+      "finish": "Finish the brew at 2:30.",
+      "bloom": "Wet the grounds and bloom for 30 seconds.",
+      "continuous": "Start with a fast, forceful pour, then slow to a centre pour until the cumulative target of 250 mL.",
+      "finalPour": "Add the final 50 mL quickly to create turbulence.",
+      "beans": "Light-roasted Colombia La Palma y El Tucan natural Gesha",
+      "water": "125 TDS; units and reporting basis are unspecified."
+    },
+    "wong": {
+      "title": "Switch steep and release",
+      "summary": "Begin with open-valve percolation, then steep and release.",
+      "version": "HARIO USA · Partners Coffee",
+      "grind": "Medium-fine",
+      "equipment": "HARIO Switch",
+      "notes": "The source says hot water without a temperature or composition. The second addition of 110 g is calculated from the 140 g total minus the 30 g bloom.",
+      "finish": "At 4:00, close the valve and remove the dripper.",
+      "start": "Begin with the valve open.",
+      "close": "Close the valve at 1:15.",
+      "drain": "Open at 2:30 and let drain."
+    },
+    "boen": {
+      "title": "Two-stage Switch immersion",
+      "summary": "Two closed-valve steeps combined with open-valve percolation.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Medium-fine",
+      "equipment": "HARIO Switch 02",
+      "notes": "HARIO’s published 2021 World Brewers Cup recipe. The overview specifies 240 mL, while the steps use g. This discrepancy is preserved without equating the units.",
+      "finish": "Drain after opening the valve; target a total of 3:00–3:15.",
+      "start": "Begin with the valve closed.",
+      "open": "Open at 0:40 and immediately start the next pour.",
+      "centre": "Pour the stated amount into the centre.",
+      "close": "Close the valve again at 1:30.",
+      "circle": "Add the stated amount in a circular pattern.",
+      "drain": "Open at 2:10 and let drain.",
+      "beans": "Natural Geisha from Hacienda La Esmeralda"
+    },
+    "hoang": {
+      "title": "Dual-filter W60",
+      "summary": "A flat mesh bed and paper filter with three water additions.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Medium-coarse",
+      "equipment": "HARIO W60",
+      "notes": "HARIO’s published 2021 World Brewers Cup recipe. The overview gives 200 g, but the steps use mL. Both are preserved without assuming equivalence.",
+      "finish": "Remove the W60 at 3:15.",
+      "water": "65 ppm; composition and reporting basis are unspecified.",
+      "filters": "W60 flat mesh and paper filter used together.",
+      "prep": "The author recommends sifting out fines before brewing."
+    },
+    "rojewska": {
+      "title": "Fast two-stage V60",
+      "summary": "Gentle circular pouring followed by a fast centre pour.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Medium",
+      "equipment": "HARIO V60 · Metal",
+      "notes": "The listed 1:00 is the end of pouring; the total target is 2:15. Bloom amount and temperature are unspecified. The 150 mL is a cumulative target, not a post-bloom addition.",
+      "finish": "Stop pouring around 1:00 and let drain; target a total of 2:15.",
+      "bloom": "Pre-infuse for 15 seconds; the water amount is unspecified.",
+      "circle": "Pour gently in circles to a cumulative 150 mL, including the pre-infusion water.",
+      "centre": "Add the remaining 100 mL quickly in the centre, maintaining the water level; stop around 1:00."
     }
   },
-  "waterQuality": "Water profile"
+  "waterQuality": "Water profile",
+  "competition": "Published competition recipe"
 }

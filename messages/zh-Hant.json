@@ -131,7 +131,74 @@
       "equipment": "NextLevel Pulsar",
       "notes": "來源摘要寫悶蒸 45–60 秒，詳細操作則在 45–50 秒繼續；本頁保留這個差異。後續每段水量與確切時間未提供。",
       "finish": "目標總沖煮時間是一個範圍，按來源描述完成流乾。"
+    },
+    "licata": {
+      "title": "V60 連續注水法",
+      "summary": "由較強注水轉為慢速中心注水，最後加強擾流。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "中細；標準 EK 刻度 7.5",
+      "equipment": "HARIO V60 · 陶瓷",
+      "notes": "原版使用淺焙 Colombia La Palma y El Tucan 日曬 Gesha。中段累計 250 mL 由總量扣除最後 50 mL 計算；來源未提供中段各階段時間。",
+      "finish": "在 2:30 完成沖煮。",
+      "bloom": "浸濕咖啡粉並悶蒸 30 秒。",
+      "continuous": "先快速強力注水，再改慢速中心注水，直到累計 250 mL。",
+      "finalPour": "最後 50 mL 快速注入，產生擾流。",
+      "beans": "淺焙 Colombia La Palma y El Tucan 日曬 Gesha",
+      "water": "125 TDS；來源未註明單位及量測基準。"
+    },
+    "wong": {
+      "title": "Switch 浸泡與釋放",
+      "summary": "先開閥沖煮，再關閥浸泡，最後開閥流乾。",
+      "version": "HARIO USA · Partners Coffee",
+      "grind": "中細",
+      "equipment": "HARIO Switch",
+      "notes": "來源只寫熱水，沒有指定溫度或水質。第二段新增 110 g 由累計 140 g 減去悶蒸 30 g 計算。",
+      "finish": "於 4:00 關閥並移走濾杯。",
+      "start": "開始時保持閥門開啟。",
+      "close": "在 1:15 關閉閥門。",
+      "drain": "在 2:30 開閥，讓咖啡流乾。"
+    },
+    "boen": {
+      "title": "Switch 雙段浸泡",
+      "summary": "以兩次關閥浸泡結合開閥滲濾。",
+      "version": "World Brewers Cup · 2021",
+      "grind": "中細",
+      "equipment": "HARIO Switch 02",
+      "notes": "HARIO 刊載的 2021 世界沖煮賽配方。總量欄寫 240 mL，步驟則使用 g；保留這項單位差異，不作等量換算。",
+      "finish": "開閥後流乾，目標總時間為 3:00–3:15。",
+      "start": "開始時關閉閥門。",
+      "open": "在 0:40 開閥並立即開始下一段注水。",
+      "centre": "向中心注入該段水量。",
+      "close": "在 1:30 再次關閉閥門。",
+      "circle": "以繞圈方式注入該段水量。",
+      "drain": "在 2:10 開閥並流乾。",
+      "beans": "Hacienda La Esmeralda 日曬 Geisha"
+    },
+    "hoang": {
+      "title": "W60 雙層過濾法",
+      "summary": "以平底網篩與濾紙配合三段注水。",
+      "version": "World Brewers Cup · 2021",
+      "grind": "中粗",
+      "equipment": "HARIO W60",
+      "notes": "HARIO 刊載的 2021 世界沖煮賽配方。總水量寫 200 g，步驟寫 mL；按來源保留，並不假設兩種單位等量。",
+      "finish": "在 3:15 移走 W60。",
+      "water": "65 ppm；來源未交代成分及量測基準。",
+      "filters": "W60 平底網篩與濾紙並用。",
+      "prep": "作者建議先用篩粉器去除細粉。"
+    },
+    "rojewska": {
+      "title": "V60 快速雙段注水",
+      "summary": "先繞圈注水，再以快速中心注水完成。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "中等",
+      "equipment": "HARIO V60 · 金屬",
+      "notes": "來源的 1:00 是停止注水時間；總沖煮目標為 2:15。悶蒸水量及水溫未提供，不能把累計 150 mL 當作悶蒸後新增量。",
+      "finish": "約 1:00 停止注水，讓咖啡流乾；總時間目標為 2:15。",
+      "bloom": "先預浸 15 秒；來源沒有提供這段水量。",
+      "circle": "柔和繞圈連續注水，至累計 150 mL；這包含預浸水量。",
+      "centre": "餘下 100 mL 快速中心注水，維持水位，約 1:00 停止。"
     }
   },
-  "waterQuality": "水質"
+  "waterQuality": "水質",
+  "competition": "比賽原版配方"
 }

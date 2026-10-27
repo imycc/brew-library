@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {useLocale,useTranslations} from 'next-intl';
-import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
-import {createContext,useContext,useEffect,useState,useCallback,type ReactNode} from 'react';
+import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
+import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode} from 'react';
 import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,time,duration,type Recipe} from '@/lib/recipes';
 import {locales,localeNames,type Locale} from '@/i18n/locales';
 
@@ -46,23 +46,34 @@ export function Photo({name,className='',priority=false}:{name:string;className?
     <img src={`${BASE}/images/${name}-1280.webp`} alt="" width={1280} height={960} loading={priority?'eager':'lazy'} fetchPriority={priority?'high':'auto'}/>
   </picture>;
 }
+function LanguageSwitcher(){
+  const t=useTranslations();const locale=useLocale() as Locale;const {params}=useLibrary();
+  const [open,setOpen]=useState(false);const root=useRef<HTMLDivElement>(null);const trigger=useRef<HTMLButtonElement>(null);
+  const pathname=usePathname();const rest=pathname.replace(/^\/[^/]+/,'');
+  useEffect(()=>{
+    if(!open)return;
+    const dismiss=(event:PointerEvent)=>{if(!root.current?.contains(event.target as Node))setOpen(false);};
+    document.addEventListener('pointerdown',dismiss);
+    return()=>document.removeEventListener('pointerdown',dismiss);
+  },[open]);
+  return <div className="language-control" ref={root} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget))setOpen(false);}} onKeyDown={event=>{if(event.key==='Escape'){setOpen(false);trigger.current?.focus();}}}>
+    <button ref={trigger} className="language-trigger" aria-label={t('language')} aria-expanded={open} aria-controls="language-options" onClick={()=>setOpen(!open)}><Globe size={16} weight="light"/><span>{localeNames[locale]}</span><CaretDown size={11} className={open?'is-open':''}/></button>
+    {open?<nav id="language-options" className="language-options" aria-label={t('language')}>{locales.map(l=><Link key={l} href={`/${l}${rest}${params.size?`?${params}`:''}`} hrefLang={l} lang={l} aria-current={l===locale?'true':undefined} onClick={()=>setOpen(false)}><span>{localeNames[l]}</span>{l===locale?<Check size={14}/>:null}</Link>)}</nav>:null}
+  </div>;
+}
 export function Header(){
   const t=useTranslations();const locale=useLocale() as Locale;const href=useHref();const [open,setOpen]=useState(false);const pathname=usePathname();
-  const {params}=useLibrary();
   return <><a className="skip-link" href="#main">{t('skip')}</a><header className="site-header">
     <Link className="wordmark" href={`/${locale}/`}>{t('brand')}<span>{t('tagline')}</span></Link>
     <nav className={open?'main-nav open':'main-nav'} aria-label={t('menu')}>
       {[['recipesNav',''],['authorsNav','authors/'],['compareNav','compare/'],['sourcesNav','sources/']].map(([label,path])=>{const current=path?pathname.includes(`/${path.replace(/\/$/,'')}`):!['/authors','/compare','/sources'].some(s=>pathname.includes(s));return <Link key={label} href={href(path)} aria-current={current?'page':undefined} onClick={()=>setOpen(false)}>{t(label)}</Link>;})}
     </nav>
-    <label className="language-control"><Globe size={17}/><span className="sr-only">{t('language')}</span><select aria-label={t('language')} value={locale} onChange={e=>{
-      const pathname=window.location.pathname.slice(BASE.length);const rest=pathname.replace(/^\/[^/]+/,'');
-      window.location.assign(`${BASE}/${e.target.value}${rest}${params.size?`?${params}`:''}`);
-    }}>{locales.map(l=><option key={l} value={l}>{localeNames[l]}</option>)}</select></label>
+    <LanguageSwitcher/>
     <button className="icon-button mobile-menu" aria-label={open?t('close'):t('menu')} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X size={22}/>:<MenuIcon size={22}/>}</button>
   </header></>;
 }
 export function Footer(){const t=useTranslations();const href=useHref();return <footer className="site-footer"><div><strong>{t('brand')}</strong><span>{t('independent')}</span></div><div><Link href={href('sources/')}>{t('sourcesNav')}</Link><a href="https://github.com/imycc/pour-over-coffee" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14}/></a></div></footer>;}
-function temperature(r:Recipe,t:ReturnType<typeof useTranslations>){return r.temperature?`${r.temperature}°C`:t('boiling');}
+function temperature(r:Recipe,t:ReturnType<typeof useTranslations>){return r.temperature?`${r.temperature}°C`:t(r.temperatureMode==='boiling'?'boiling':'unknown');}
 function Parameters({recipe:r,compact=false}:{recipe:Recipe;compact?:boolean}){
   const t=useTranslations();const values=[{key:'dose',value:`${r.dose} g`,Icon:CoffeeBean},{key:'water',value:`${r.water.amount} ${r.water.unit}`,Icon:Drop},{key:'temperature',value:temperature(r,t),Icon:Thermometer},{key:'brewTime',value:duration(r),Icon:Clock}];
   return <dl className={compact?'parameters compact':'parameters'}>{values.map(({key,value,Icon})=><div key={key}><dt>{compact?<Icon size={21}/>:t(key)}</dt><dd title={value}>{value}</dd></div>)}</dl>;
@@ -87,7 +98,7 @@ export function Home(){
   return <main id="main">
     <section className="hero"><div className="hero-art"/><div className="hero-content"><p className="hero-kicker">COFFEE EDITORIAL <span/></p><h1><span>{t('hero1')}</span><span>{t('hero2')}</span></h1><p className="hero-subtitle">{t('heroSubtitle')}</p>
       <div className="hero-search"><label className="search-field"><MagnifyingGlass size={24}/><span className="sr-only">{t('search')}</span><input type="search" placeholder={t('search')} value={filters.q} onChange={e=>setParams({q:e.target.value})}/></label>
-        <label className="brewer-select"><Funnel size={20}/><span className="sr-only">{t('chooseBrewer')}</span><select aria-label={t('chooseBrewer')} value={filters.brewer} onChange={e=>setParams({brewer:e.target.value})}><option value="">{t('chooseBrewer')}</option><option value="v60">HARIO V60</option><option value="pulsar">NextLevel Pulsar</option></select></label>
+        <label className="brewer-select"><Funnel size={20}/><span className="sr-only">{t('chooseBrewer')}</span><select aria-label={t('chooseBrewer')} value={filters.brewer} onChange={e=>setParams({brewer:e.target.value})}><option value="">{t('chooseBrewer')}</option>{[...new Map(recipes.map(r=>[r.brewerId,r.brewer.split(' · ')[0]])).entries()].map(([id,label])=><option key={id} value={id}>{label}</option>)}</select></label>
       </div></div>
     </section>
     <section className="recipe-section" id="recipes"><div className="section-heading"><h2>{t('sectionTitle')}</h2><span className="heading-rule"/><p>{t('sectionIntro')}</p></div>
@@ -106,15 +117,15 @@ export function ComparisonTray(){const t=useTranslations();const {ids,toggle,not
 }
 export function RecipeDetail({id}:{id:string}){
  const t=useTranslations();const href=useHref();const r=recipes.find(r=>r.id===id)!;
- const pours=r.steps.filter(s=>s.amount!==null);
+ const pours=r.steps.filter(s=>['pour','bloom','pulses'].includes(s.action));
  return <main id="main" className="page detail-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link>
-   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t('daily')}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong></div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><Photo name={r.image} className="detail-photo" priority/></section>
+   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong></div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><Photo name={r.image} className="detail-photo" priority/></section>
    <div className="detail-body"><div>
      {r.preparation.length?<section className="preparation"><h2>{t('preparation')}</h2>{r.preparation.map(key=><p key={key}>{t(key)}</p>)}</section>:null}
-     <section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t('stepAmount')}</p></div><ol className="pour-timeline">{pours.map((s,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{s.at===null?t('sequence'):time(s.at)}</strong><span>{s.amount} {r.water.unit}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>
-     <section className="steps-section"><h2>{t('steps')}</h2><ol className="step-list">{r.steps.map((s,i)=><li key={i}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}</span></div><div className="step-meta">{s.amount!==null?<span>+{s.amount} {r.water.unit}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {s.cumulative} {r.water.unit}</span>:null}</div><p>{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(`instruction.${s.action}`)}</p></div></li>)}</ol></section>
+     <section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t('stepAmount')}</p></div><ol className="pour-timeline">{pours.map((s,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{s.at===null?t('sequence'):time(s.at)}</strong><span>{s.amount===null?'—':`${s.amount} ${s.unit||r.water.unit}`}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>
+     <section className="steps-section"><h2>{t('steps')}</h2><ol className="step-list">{r.steps.map((s,i)=><li key={i}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}</span></div><div className="step-meta">{s.amount!==null?<span>+{s.amount} {s.unit||r.water.unit}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {s.cumulative} {s.unit||r.water.unit}</span>:null}</div><p>{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(s.instruction||`instruction.${s.action}`)}</p></div></li>)}</ol></section>
      <section className="recipe-notes"><h2>{t('notes')}</h2><p>{t(`recipes.${r.copy}.notes`)}</p>{r.water.derived?<p>{t('derived')} {r.dose} × 17 = {r.water.amount} g.</p>:null}</section>
-   </div><aside className="detail-sidebar"><h2>{t('equipment')}</h2><p>{t(`recipes.${r.copy}.equipment`)}</p><h2>{t('conditions')}</h2><dl className="facts"><div><dt>{t('beans')}</dt><dd>{t(r.beanConditions==='light'?'light':'unknown')}</dd></div><div><dt>{t('waterQuality')}</dt><dd>{t(r.waterConditions==='unknown'?'unknown':r.waterConditions==='soft'?'soft':'raoWater')}</dd></div><div><dt>{t('filterPaper')}</dt><dd>{r.filterConditions==='pulsar'?'NextLevel Pulsar':t('unknown')}</dd></div></dl><h2>{t('sourcesNav')}</h2><dl className="facts"><div><dt>{t('version')}</dt><dd>{t(`recipes.${r.copy}.version`)}</dd></div><div><dt>{t('published')}</dt><dd>{r.source.published||t('unknown')}</dd></div><div><dt>{t('checked')}</dt><dd>{r.source.checked}</dd></div></dl><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={16}/></a>{r.source.video?<a className="source-link" href={r.source.video} target="_blank" rel="noreferrer">{t('video')}<ArrowUpRight size={16}/></a>:null}</aside></div>
+   </div><aside className="detail-sidebar"><h2>{t('equipment')}</h2><p>{t(`recipes.${r.copy}.equipment`)}</p><h2>{t('conditions')}</h2><dl className="facts"><div><dt>{t('beans')}</dt><dd>{t(r.beanNote||(r.beanConditions==='light'?'light':'unknown'))}</dd></div><div><dt>{t('waterQuality')}</dt><dd>{t(r.waterNote||(r.waterConditions==='unknown'?'unknown':r.waterConditions==='soft'?'soft':'raoWater'))}</dd></div><div><dt>{t('filterPaper')}</dt><dd>{r.filterNote?t(r.filterNote):r.filterConditions==='pulsar'?'NextLevel Pulsar':t('unknown')}</dd></div></dl><h2>{t('sourcesNav')}</h2><dl className="facts"><div><dt>{t('version')}</dt><dd>{t(`recipes.${r.copy}.version`)}</dd></div><div><dt>{t('published')}</dt><dd>{r.source.published||t('unknown')}</dd></div><div><dt>{t('checked')}</dt><dd>{r.source.checked}</dd></div></dl><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={16}/></a>{r.source.video?<a className="source-link" href={r.source.video} target="_blank" rel="noreferrer">{t('video')}<ArrowUpRight size={16}/></a>:null}</aside></div>
  </main>;
 }
 export function ComparePage(){

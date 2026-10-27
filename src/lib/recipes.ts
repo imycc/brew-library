@@ -6,19 +6,22 @@ const stepSchema = z.object({
   at: z.number().nonnegative().nullable(),
   end: z.number().nonnegative().optional(),
   amount: z.number().positive().nullable(),
-  cumulative: z.number().positive().nullable()
+  cumulative: z.number().positive().nullable(),
+  unit: z.enum(['g','mL']).optional(),
+  instruction: z.string().optional()
 });
 export const recipeSchema = z.object({
   id:z.string().regex(/^[a-z0-9-]+$/), copy:z.string().regex(/^[a-z0-9-]+$/),
   author:z.string(), authorId:z.string(), brewer:z.string(), brewerId:z.string(),
   kind:z.enum(['hot','iced']), dose:z.number().positive(),
   water:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), derived:z.boolean().default(false)}),
-  temperature:z.number().positive().nullable(), duration:z.tuple([z.number().positive(),z.number().positive()]),
+  temperature:z.number().positive().nullable(), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]),
   source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), published:z.string().nullable(), checked:z.iso.date()}),
   image:z.enum(['coffee-bloom','brewer-still']),
   steps:z.array(stepSchema).min(1), preparation:z.array(z.string()),
   waterConditions:z.enum(['unknown','soft','rao']), beanConditions:z.enum(['unknown','light']),
-  filterConditions:z.enum(['unknown','pulsar']), context:z.literal('daily')
+  filterConditions:z.enum(['unknown','pulsar']), context:z.enum(['daily','competition']),
+  beanNote:z.string().optional(), waterNote:z.string().optional(), filterNote:z.string().optional()
 });
 export type Recipe = z.infer<typeof recipeSchema>;
 export const recipes: Recipe[] = z.object({schemaVersion:z.literal(1),recipes:z.array(recipeSchema)}).parse(rawRecipes).recipes;
