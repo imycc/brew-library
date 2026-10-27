@@ -21,7 +21,7 @@
 
 ## Required fidelity surfaces
 
-- **Typography:** Noto Serif TC/JP/KR and Libre Baskerville provide the editorial display hierarchy, with DM Sans and platform CJK sans for UI. Names and titles wrap rather than being clipped. Body text remains readable on mobile; long locale labels were tested. Native-language editorial review remains separate from technical translation coverage.
+- **Typography:** Noto Serif TC/JP/KR and Libre Baskerville provide the editorial display hierarchy, with DM Sans and explicit Noto Sans TC/JP/KR web fonts for UI. Names and titles wrap rather than being clipped. Body text remains readable on mobile; long locale labels were tested. Native-language editorial review remains separate from technical translation coverage.
 - **Spacing/layout:** Original split photographic homepage, spacious title/search, featured recipe plus two smaller summaries, fine rules and compact comparison tray are retained. Full instructions/timeline are absent from the homepage and present on details only. Extra filter controls, verified-source metadata and an additional comparison ratio/version row intentionally add content beyond the mock.
 - **Colors/tokens:** Warm ivory paper, dark ink, warm grey secondary text, thin sand rules and caramel action buttons. Clear focus outlines and a high-contrast language control are deliberate accessibility improvements.
 - **Images/assets:** Independently generated hero, mobile hero, coffee-bloom and brewer-still photography; responsive AVIF/WebP output. Phosphor supplies interface icons. No UI screenshot is used as the app, and no product illustration is substituted with CSS drawings. Photos are editorial illustrations, identified as AI-generated on the sources page.

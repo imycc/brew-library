@@ -13,3 +13,5 @@
 @media(max-width:760px){.hero-art{background-image:url('/pour-over-coffee/images/editorial-hero-mobile-960.webp');background-image:image-set(url('/pour-over-coffee/images/editorial-hero-mobile-960.avif') type('image/avif'),url('/pour-over-coffee/images/editorial-hero-mobile-960.webp') type('image/webp'));background-size:cover;background-position:center top}}
 @media(min-width:761px){.recipe-card:not(.featured) h3{font-size:17px;line-height:1.55}.card-author{font-size:inherit}}
 @media(min-width:761px) and (max-width:1000px){.main-nav{display:none}.mobile-menu{display:inline-flex}.wordmark{margin-right:auto}.main-nav.open{display:flex;position:absolute;top:76px;right:4.3%;left:4.3%;padding:18px 23px;background:var(--paper);border:1px solid var(--line);box-shadow:0 8px 20px #30221514;gap:8px;flex-direction:column}.main-nav a{min-height:44px}}
+:root{--sans:'DM Sans','Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif}
+:lang(ja){--sans:'DM Sans','Noto Sans JP',sans-serif}:lang(ko){--sans:'DM Sans','Noto Sans KR',sans-serif}

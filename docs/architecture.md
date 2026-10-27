@@ -27,4 +27,6 @@ Original AI-generated photography is stored in `assets/originals/`. The asset sc
 
 `npm run validate`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`. Build verifies every exported localized page has the correct HTML language and canonical URL. GitHub Actions repeats checks and browser journeys before publishing main through Pages.
 
+CI pins the official Ubuntu 24.04 hosted runner and tests with its preinstalled Chrome (`PLAYWRIGHT_CHANNEL=chrome`). The same Playwright suite runs without repeatedly downloading system fonts from the slow Ubuntu mirror. The website supplies explicit CJK serif/sans web fonts; ordinary system-font fallbacks remain available.
+
 Deployment rollback: revert the offending main commit in a PR and rerun the same verified publishing workflow. Do not rewrite repository history to roll back.
