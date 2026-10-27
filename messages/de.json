@@ -131,7 +131,74 @@
       "equipment": "NextLevel Pulsar",
       "notes": "Die Übersicht nennt 45–60 Sekunden Vorbrühen, die Anleitung setzt bei 45–50 fort. Diese Abweichung bleibt erhalten. Spätere Einzelmengen und Zeiten fehlen.",
       "finish": "Die Zielzeit ist ein Bereich. Gemäß der Quelle abtropfen lassen."
+    },
+    "licata": {
+      "title": "V60 mit kontinuierlichem Aufguss",
+      "summary": "Kräftiger Beginn, langsamer Mittelguss und turbulenter Schluss.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Mittelfein; Standard-EK-Skala 7,5",
+      "equipment": "HARIO V60 · Keramik",
+      "notes": "Verwendet hell gerösteten Natural Gesha von Colombia La Palma y El Tucan. Der Zwischenstand von 250 mL ergibt sich aus Gesamtmenge minus den letzten 50 mL. Zwischenzeiten fehlen in der Quelle.",
+      "finish": "Den Brühvorgang bei 2:30 beenden.",
+      "bloom": "Das Kaffeemehl benetzen und 30 Sekunden vorquellen lassen.",
+      "continuous": "Kräftig und schnell beginnen, dann langsam mittig bis zum Gesamtstand von 250 mL gießen.",
+      "finalPour": "Die letzten 50 mL schnell und turbulent aufgießen.",
+      "beans": "Hell gerösteter Natural Gesha von Colombia La Palma y El Tucan",
+      "water": "125 TDS; Einheiten und Messbasis fehlen."
+    },
+    "wong": {
+      "title": "Switch: ziehen und ablaufen",
+      "summary": "Mit offenem Ventil beginnen, dann ziehen und ablaufen lassen.",
+      "version": "HARIO USA · Partners Coffee",
+      "grind": "Mittelfein",
+      "equipment": "HARIO Switch",
+      "notes": "Die Quelle nennt heißes Wasser ohne Temperatur oder Zusammensetzung. Der zweite Aufguss von 110 g ergibt sich aus 140 g Gesamtstand minus 30 g Vorquellung.",
+      "finish": "Bei 4:00 das Ventil schließen und den Filter abnehmen.",
+      "start": "Mit offenem Ventil beginnen.",
+      "close": "Das Ventil bei 1:15 schließen.",
+      "drain": "Bei 2:30 öffnen und ablaufen lassen."
+    },
+    "boen": {
+      "title": "Switch mit zwei Ziehphasen",
+      "summary": "Zwei Ziehphasen bei geschlossenem Ventil mit Perkolation verbinden.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Mittelfein",
+      "equipment": "HARIO Switch 02",
+      "notes": "Von HARIO veröffentlichtes Rezept des World Brewers Cup 2021. Die Übersicht nennt 240 mL, die Schritte verwenden g. Die Abweichung bleibt ohne Gleichsetzung der Einheiten erhalten.",
+      "finish": "Nach dem Öffnen ablaufen lassen; insgesamt 3:00–3:15 anstreben.",
+      "start": "Mit geschlossenem Ventil beginnen.",
+      "open": "Bei 0:40 öffnen und sofort den nächsten Aufguss beginnen.",
+      "centre": "Die angegebene Menge mittig aufgießen.",
+      "close": "Das Ventil bei 1:30 erneut schließen.",
+      "circle": "Die angegebene Menge kreisförmig aufgießen.",
+      "drain": "Bei 2:10 öffnen und ablaufen lassen.",
+      "beans": "Natural Geisha von Hacienda La Esmeralda"
+    },
+    "hoang": {
+      "title": "W60 mit Doppelfilter",
+      "summary": "Flaches Sieb und Papierfilter mit drei Wasserzugaben.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Mittelgrob",
+      "equipment": "HARIO W60",
+      "notes": "Von HARIO veröffentlichtes Rezept des World Brewers Cup 2021. Gesamtmenge: 200 g; Schritte: mL. Beide Angaben bleiben ohne angenommene Gleichwertigkeit erhalten.",
+      "finish": "Den W60 bei 3:15 abnehmen.",
+      "water": "65 ppm; Zusammensetzung und Messbasis fehlen.",
+      "filters": "Flaches W60-Sieb und Papierfilter gemeinsam verwenden.",
+      "prep": "Die Autorin empfiehlt, vor dem Brühen Feinpartikel auszusieben."
+    },
+    "rojewska": {
+      "title": "Schneller V60 in zwei Phasen",
+      "summary": "Sanfter Kreisguss, danach ein schneller Mittelguss.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Mittel",
+      "equipment": "HARIO V60 · Metall",
+      "notes": "1:00 bezeichnet das Ende des Aufgießens; die Gesamtzeit soll 2:15 betragen. Vorquellmenge und Temperatur fehlen. 150 mL sind der Gesamtstand, keine zusätzliche Menge nach dem Vorquellen.",
+      "finish": "Etwa bei 1:00 aufhören aufzugießen und ablaufen lassen; Ziel insgesamt 2:15.",
+      "bloom": "15 Sekunden vorquellen; die Wassermenge ist nicht angegeben.",
+      "circle": "Sanft kreisförmig bis insgesamt 150 mL einschließlich Vorquellwasser gießen.",
+      "centre": "Die restlichen 100 mL schnell mittig gießen und den Wasserstand halten; etwa bei 1:00 aufhören."
     }
   },
-  "waterQuality": "Wasserprofil"
+  "waterQuality": "Wasserprofil",
+  "competition": "Veröffentlichtes Wettbewerbsrezept"
 }

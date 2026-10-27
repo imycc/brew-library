@@ -15,3 +15,13 @@
 @media(min-width:761px) and (max-width:1000px){.main-nav{display:none}.mobile-menu{display:inline-flex}.wordmark{margin-right:auto}.main-nav.open{display:flex;position:absolute;top:76px;right:4.3%;left:4.3%;padding:18px 23px;background:var(--paper);border:1px solid var(--line);box-shadow:0 8px 20px #30221514;gap:8px;flex-direction:column}.main-nav a{min-height:44px}}
 :root{--sans:'DM Sans','Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif}
 :lang(ja){--sans:'DM Sans','Noto Sans JP',sans-serif}:lang(ko){--sans:'DM Sans','Noto Sans KR',sans-serif}
+/* A quiet editorial language button, with an explicit list of language links. */
+.language-control{position:relative;padding:0;background:transparent;border-radius:0;flex-shrink:0}
+.language-trigger{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 2px;font-size:12px;line-height:1.3;border-bottom:1px solid #78634859;transition:border-color .18s,color .18s}
+.language-trigger:hover,.language-trigger[aria-expanded='true']{color:var(--accent);border-color:currentColor}
+.language-trigger svg{flex-shrink:0}.language-trigger .is-open{transform:rotate(180deg)}
+.language-options{position:absolute;z-index:20;top:calc(100% + 9px);right:0;width:218px;padding:8px;background:#fcfaf7;border:1px solid #d9cdbf;box-shadow:0 12px 30px #30221518;max-height:calc(100dvh - 100px);overflow-y:auto}
+.language-options a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:40px;padding:8px 12px;font-size:13px;line-height:1.4;border-radius:1px}
+.language-options a:hover,.language-options a:focus-visible{background:#efe7dc}
+.language-options a[aria-current='true']{color:var(--accent);font-weight:600;background:#f3ece3}
+@media(max-width:760px){.language-trigger{gap:5px;font-size:11px;max-width:150px}.language-trigger>svg:first-child{display:none}.language-options{right:0;width:205px}}

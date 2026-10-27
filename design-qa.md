@@ -52,3 +52,10 @@
 - [x] Resolve actionable P0/P1/P2 findings before release.
 
 final result: passed
+
+## 2026-10-28: source expansion and language control
+
+- Replaced the header’s white native-select box with a quiet text disclosure and a nine-language link list. Confirmed the reported 846×853 viewport and 320/390 px widths; screenshots in `docs/qa/language-{closed,open}.webp`.
+- Confirmed keyboard opening, Escape focus return, outside click, and retained recipe/filter/comparison query state when switching languages.
+- Expanded the library from three to eight official-source records; updated browser coverage for every new recipe in all nine locales, real fourth-recipe comparison rejection, Switch filtering, unknown temperatures and retained g/mL discrepancies.
+- A stale local export initially omitted the new brewer options. Rebuilt with the data-driven option list; the focused filter/comparison and source-instruction journeys passed. The PR pipeline rebuilds and reruns the full suite.

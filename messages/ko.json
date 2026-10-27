@@ -131,7 +131,74 @@
       "equipment": "NextLevel Pulsar",
       "notes": "출처 개요는 블루밍 45–60초, 상세 절차는 45–50초에 재개합니다. 차이를 유지하며 이후 개별 물량과 정확한 시각은 미기재입니다.",
       "finish": "목표 총 추출 시간은 범위입니다. 출처 설명에 따라 마무리합니다."
+    },
+    "licata": {
+      "title": "V60 연속 주입",
+      "summary": "강한 주입에서 느린 중앙 주입으로 바꾼 뒤 마지막에 교반을 높입니다.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "중간보다 곱게; 표준 EK 눈금 7.5",
+      "equipment": "HARIO V60 · 세라믹",
+      "notes": "라이트 로스트 Colombia La Palma y El Tucan 내추럴 Gesha를 사용합니다. 중간 누적 250 mL는 총량에서 마지막 50 mL를 뺀 계산값입니다. 중간 단계별 시각은 미기재입니다.",
+      "finish": "2:30에 추출을 마칩니다.",
+      "bloom": "커피를 적시고 30초간 뜸을 들입니다.",
+      "continuous": "처음에는 빠르고 강하게, 이후에는 중앙에 천천히 부어 누적 250 mL에 도달합니다.",
+      "finalPour": "마지막 50 mL는 빠르게 부어 교반합니다.",
+      "beans": "라이트 로스트 Colombia La Palma y El Tucan 내추럴 Gesha",
+      "water": "125 TDS; 단위와 측정 기준은 미기재입니다."
+    },
+    "wong": {
+      "title": "Switch 침지 후 배출",
+      "summary": "밸브를 열어 추출한 뒤 닫아 침지하고 다시 배출합니다.",
+      "version": "HARIO USA · Partners Coffee",
+      "grind": "중간보다 곱게",
+      "equipment": "HARIO Switch",
+      "notes": "출처에는 뜨거운 물로만 표기되어 온도와 수질은 미지정입니다. 두 번째 110 g은 누적 140 g에서 뜸들이기 30 g을 뺀 값입니다.",
+      "finish": "4:00에 밸브를 닫고 드리퍼를 치웁니다.",
+      "start": "밸브를 연 상태로 시작합니다.",
+      "close": "1:15에 밸브를 닫습니다.",
+      "drain": "2:30에 밸브를 열고 배출합니다."
+    },
+    "boen": {
+      "title": "Switch 두 단계 침지",
+      "summary": "밸브를 닫은 두 차례 침지와 열린 상태의 투과 추출을 결합합니다.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "중간보다 곱게",
+      "equipment": "HARIO Switch 02",
+      "notes": "HARIO가 공개한 2021 월드 브루어스 컵 레시피입니다. 개요는 240 mL, 단계는 g으로 표기되어 있습니다. 단위가 같다고 가정하지 않고 차이를 보존합니다.",
+      "finish": "밸브를 연 뒤 배출하며 총 3:00–3:15를 목표로 합니다.",
+      "start": "밸브를 닫은 상태로 시작합니다.",
+      "open": "0:40에 밸브를 열고 즉시 다음 주입을 시작합니다.",
+      "centre": "표시된 양을 중앙에 붓습니다.",
+      "close": "1:30에 밸브를 다시 닫습니다.",
+      "circle": "표시된 양을 원을 그리며 붓습니다.",
+      "drain": "2:10에 밸브를 열고 배출합니다.",
+      "beans": "Hacienda La Esmeralda 내추럴 Geisha"
+    },
+    "hoang": {
+      "title": "W60 이중 필터",
+      "summary": "평평한 메시와 종이 필터를 쓰는 세 차례 주입입니다.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "중간보다 굵게",
+      "equipment": "HARIO W60",
+      "notes": "HARIO가 공개한 2021 월드 브루어스 컵 레시피입니다. 총량은 200 g, 단계는 mL로 표기되어 있습니다. 두 단위를 동일시하지 않고 보존합니다.",
+      "finish": "3:15에 W60을 치웁니다.",
+      "water": "65 ppm; 성분과 측정 기준은 미기재입니다.",
+      "filters": "W60 평평한 메시와 종이 필터를 함께 사용합니다.",
+      "prep": "저자는 추출 전에 체로 미분을 제거할 것을 권합니다."
+    },
+    "rojewska": {
+      "title": "V60 빠른 두 단계 주입",
+      "summary": "부드러운 원형 주입 후 빠른 중앙 주입으로 마칩니다.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "중간",
+      "equipment": "HARIO V60 · 금속",
+      "notes": "출처의 1:00은 주입 종료 시각이며 총 추출 목표는 2:15입니다. 뜸들이기 물양과 온도는 미기재입니다. 150 mL는 추가량이 아닌 누적 목표입니다.",
+      "finish": "약 1:00에 주입을 멈추고 배출하며 총 2:15를 목표로 합니다.",
+      "bloom": "15초간 사전 침지합니다. 물양은 출처에 없습니다.",
+      "circle": "사전 침지 물을 포함하여 누적 150 mL까지 부드럽게 원형 주입합니다.",
+      "centre": "남은 100 mL를 중앙에 빠르게 부어 수위를 유지하며 약 1:00에 멈춥니다."
     }
   },
-  "waterQuality": "물 특성"
+  "waterQuality": "물 특성",
+  "competition": "공개된 대회 레시피"
 }

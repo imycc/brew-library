@@ -131,7 +131,74 @@
       "equipment": "NextLevel Pulsar",
       "notes": "El resumen indica 45–60 segundos de preinfusión y el detalle reanuda a 45–50. Se conserva la diferencia. No se indican cantidades ni tiempos posteriores exactos.",
       "finish": "El tiempo total objetivo es un intervalo; termina el drenaje según la fuente."
+    },
+    "licata": {
+      "title": "V60 con vertido continuo",
+      "summary": "Inicio enérgico, vertido central lento y una última adición con turbulencia.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Medio-fino; dial EK estándar 7,5",
+      "equipment": "HARIO V60 · Cerámica",
+      "notes": "Utiliza Gesha natural de Colombia La Palma y El Tucan, de tueste claro. Los 250 mL intermedios se calculan restando los 50 mL finales al total. No se indican los tiempos intermedios.",
+      "finish": "Termina la preparación a los 2:30.",
+      "bloom": "Humedece el café y deja preinfusionar 30 segundos.",
+      "continuous": "Empieza con un vertido rápido y enérgico; luego vierte despacio al centro hasta acumular 250 mL.",
+      "finalPour": "Vierte rápidamente los últimos 50 mL para crear turbulencia.",
+      "beans": "Gesha natural de tueste claro de Colombia La Palma y El Tucan",
+      "water": "125 TDS; no se indican unidades ni base de medición."
+    },
+    "wong": {
+      "title": "Switch: inmersión y drenaje",
+      "summary": "Empieza con la válvula abierta, pasa a inmersión y termina drenando.",
+      "version": "HARIO USA · Partners Coffee",
+      "grind": "Medio-fino",
+      "equipment": "HARIO Switch",
+      "notes": "La fuente solo indica agua caliente, sin temperatura ni composición. La segunda adición de 110 g se calcula restando la preinfusión de 30 g al acumulado de 140 g.",
+      "finish": "A los 4:00, cierra la válvula y retira el dripper.",
+      "start": "Empieza con la válvula abierta.",
+      "close": "Cierra la válvula a 1:15.",
+      "drain": "Abre a 2:30 y deja drenar."
+    },
+    "boen": {
+      "title": "Switch con doble inmersión",
+      "summary": "Dos inmersiones con válvula cerrada combinadas con percolación.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Medio-fino",
+      "equipment": "HARIO Switch 02",
+      "notes": "Receta del World Brewers Cup 2021 publicada por HARIO. El resumen indica 240 mL, pero los pasos usan g. Se conserva la diferencia sin igualar las unidades.",
+      "finish": "Deja drenar tras abrir; objetivo total de 3:00–3:15.",
+      "start": "Empieza con la válvula cerrada.",
+      "open": "Abre a 0:40 y empieza inmediatamente el siguiente vertido.",
+      "centre": "Vierte la cantidad indicada en el centro.",
+      "close": "Vuelve a cerrar la válvula a 1:30.",
+      "circle": "Añade la cantidad indicada en círculos.",
+      "drain": "Abre a 2:10 y deja drenar.",
+      "beans": "Geisha natural de Hacienda La Esmeralda"
+    },
+    "hoang": {
+      "title": "W60 con doble filtro",
+      "summary": "Malla plana y filtro de papel con tres adiciones de agua.",
+      "version": "World Brewers Cup · 2021",
+      "grind": "Medio-grueso",
+      "equipment": "HARIO W60",
+      "notes": "Receta del World Brewers Cup 2021 publicada por HARIO. El total figura como 200 g y los pasos en mL. Se conservan ambos sin asumir equivalencia.",
+      "finish": "Retira el W60 a los 3:15.",
+      "water": "65 ppm; composición y base de medición no especificadas.",
+      "filters": "Malla plana y filtro de papel W60 juntos.",
+      "prep": "La autora recomienda tamizar los finos antes de preparar."
+    },
+    "rojewska": {
+      "title": "V60 rápido en dos fases",
+      "summary": "Vertido circular suave seguido de un vertido central rápido.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Medio",
+      "equipment": "HARIO V60 · Metal",
+      "notes": "El 1:00 indicado corresponde al fin del vertido; el objetivo total es 2:15. No se especifican el agua de preinfusión ni la temperatura. Los 150 mL son acumulados, no una adición posterior.",
+      "finish": "Deja de verter hacia 1:00 y permite el drenaje; objetivo total de 2:15.",
+      "bloom": "Preinfusiona 15 segundos; no se indica la cantidad de agua.",
+      "circle": "Vierte suavemente en círculos hasta acumular 150 mL, incluida la preinfusión.",
+      "centre": "Añade los 100 mL restantes rápidamente al centro, manteniendo el nivel; termina hacia 1:00."
     }
   },
-  "waterQuality": "Perfil del agua"
+  "waterQuality": "Perfil del agua",
+  "competition": "Receta de competición publicada"
 }
