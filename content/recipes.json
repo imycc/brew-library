@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "recipes": [
+    {
+      "id": "kasuya-46",
+      "copy": "kasuya",
+      "author": "Tetsu Kasuya",
+      "authorId": "kasuya",
+      "brewer": "HARIO V60 · Ceramic",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 20,
+      "water": {
+        "amount": 300,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": 92,
+      "duration": [
+        210,
+        210
+      ],
+      "source": {
+        "label": "HARIO Europe",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya",
+        "published": null,
+        "checked": "2026-10-27"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50
+        },
+        {
+          "action": "pour",
+          "at": 45,
+          "amount": 70,
+          "cumulative": 120
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 60,
+          "cumulative": 180
+        },
+        {
+          "action": "pour",
+          "at": 130,
+          "amount": 60,
+          "cumulative": 240
+        },
+        {
+          "action": "pour",
+          "at": 160,
+          "amount": 60,
+          "cumulative": 300
+        },
+        {
+          "action": "finish",
+          "at": 210,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily"
+    },
+    {
+      "id": "hoffmann-one-cup",
+      "copy": "hoffmann",
+      "author": "James Hoffmann",
+      "authorId": "hoffmann",
+      "brewer": "HARIO V60 01",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 250,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": null,
+      "duration": [
+        180,
+        180
+      ],
+      "source": {
+        "label": "HARIO USA · James Hoffmann",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-1-cup-v60-technique",
+        "video": "https://www.youtube.com/watch?v=1oB1oDrDkHM&t=43s",
+        "published": "2022-11-22",
+        "checked": "2026-10-27"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50
+        },
+        {
+          "action": "swirl",
+          "at": 10,
+          "end": 15,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "pour",
+          "at": 45,
+          "end": 60,
+          "amount": 50,
+          "cumulative": 100
+        },
+        {
+          "action": "pause",
+          "at": 60,
+          "end": 70,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "pour",
+          "at": 70,
+          "end": 80,
+          "amount": 50,
+          "cumulative": 150
+        },
+        {
+          "action": "pause",
+          "at": 80,
+          "end": 90,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "end": 100,
+          "amount": 50,
+          "cumulative": 200
+        },
+        {
+          "action": "pause",
+          "at": 100,
+          "end": 110,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "pour",
+          "at": 110,
+          "end": 120,
+          "amount": 50,
+          "cumulative": 250
+        },
+        {
+          "action": "swirl",
+          "at": 120,
+          "end": 125,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "finish",
+          "at": 180,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "soft",
+      "beanConditions": "light",
+      "filterConditions": "unknown",
+      "context": "daily"
+    },
+    {
+      "id": "rao-pulsar",
+      "copy": "rao",
+      "author": "Scott Rao",
+      "authorId": "rao",
+      "brewer": "NextLevel Pulsar",
+      "brewerId": "pulsar",
+      "kind": "hot",
+      "dose": 25,
+      "water": {
+        "amount": 425,
+        "unit": "g",
+        "derived": true
+      },
+      "temperature": null,
+      "duration": [
+        210,
+        270
+      ],
+      "source": {
+        "label": "Scott Rao",
+        "url": "https://www.scottrao.com/blog/pulsar-recipe",
+        "published": "2023-09-14",
+        "checked": "2026-10-27"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 75,
+          "cumulative": 75
+        },
+        {
+          "action": "close",
+          "at": 0,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "topup",
+          "at": 45,
+          "end": 50,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "open",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "pulses",
+          "at": null,
+          "amount": null,
+          "cumulative": 425
+        },
+        {
+          "action": "swirl",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [
+        "raoPrep"
+      ],
+      "waterConditions": "rao",
+      "beanConditions": "unknown",
+      "filterConditions": "pulsar",
+      "context": "daily"
+    }
+  ]
+}
