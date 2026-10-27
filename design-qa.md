@@ -9,7 +9,7 @@
 - Implementations: `docs/qa/home-implementation.webp`, `detail-implementation.webp`, `compare-implementation.webp`, `mobile-implementation.webp`.
 - Full-view paired comparisons: `docs/qa/home-comparison.webp`, `detail-comparison.webp`, `compare-comparison.webp`. Source is on the left, implementation on the right. Each is proportionally normalized to 1000 pixels wide; no pixel-equality claim is made for the different-aspect detail reference.
 - Focused hero comparison: `docs/qa/hero-focused.webp`. Source above, implementation below, both 1487 × 515 pixels.
-- Browser capture viewport: 1487 × 1090 CSS pixels for homepage/detail, 1487 × 1058 for comparison, 390 × 844 for mobile. Device scale factor 1. Detail/mobile captures include the full scrollable page. Detail implementation is 1487 × 2012 pixels; mobile implementation is 390 × 2532 pixels.
+- Browser capture viewport: 1487 × 1090 CSS pixels for homepage/detail, 1487 × 1058 for comparison, 390 × 844 for mobile. Device scale factor 1. Detail/mobile captures include the full scrollable page. Detail implementation is 1487 × 2012 pixels; mobile implementation is 390 × 2458 pixels.
 - Homepage state: Traditional Chinese, one selected recipe (`ids=kasuya-46`). Comparison state: Kasuya plus Hoffmann. Detail state: Kasuya original HARIO teaching version.
 
 ## Findings and correction history
