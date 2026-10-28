@@ -37,7 +37,13 @@ Published 2023-09-14. Coffee dose is 25 g and mass ratio is 17:1 water:coffee. T
 - Preserve units, ranges, conditional instructions and missing information.
 - Localized strings never override canonical recipe numbers.
 - Nine-language translations are independently prepared and terminology-checked; native-speaker review is a future editorial improvement, not a claimed acceptance result.
-- Images are independently generated editorial illustrations, not product-accuracy evidence or author-supplied photography.
+- The shared homepage hero uses an independent editorial illustration; it is not product-accuracy evidence or author-supplied photography. Product and recipe images shown on detail/card surfaces follow the official-source policy below.
+
+## Editorial copy and official images — checked 2026-10-28
+
+Recipe and equipment introductions, strengths and considerations are maintained in `content/editorial.json` as an editorial layer over the source-backed facts. They are intentionally short and descriptive rather than rankings or personalized recommendations. Each record is limited to three strengths and three considerations; a missing product-specific image is left blank rather than replaced with an invented or unrelated packshot.
+
+When an official source page exposes a stable HTTPS image, the website displays it with a visible source label and a link to the page. Some recipe pages and champion collections publish article or collection imagery rather than a dedicated product/recipe photograph; those records retain the exact source label. April product routes and KINGrinder K6 were not assigned images during this check because a usable official image could not be verified. The UI shows a localized fallback for those records.
 
 ## Expansion — checked 2026-10-28 (Asia/Hong_Kong)
 

@@ -6,6 +6,8 @@ import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
 import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode} from 'react';
 import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,filterKeys,time,duration,type Recipe} from '@/lib/recipes';
+import {recipeEditorial} from '@/lib/editorial';
+import {OfficialSourceImage} from '@/components/source-image';
 import {locales,localeNames,type Locale} from '@/i18n/locales';
 
 type UrlContextType={params:URLSearchParams;setParams:(changes:Record<string,string|null>)=>void;ids:string[];toggle:(id:string)=>void;notice:string};
@@ -120,9 +122,14 @@ export function ComparisonTray(){const t=useTranslations();const {ids,toggle,not
 }
 export function RecipeDetail({id}:{id:string}){
  const t=useTranslations();const href=useHref();const r=recipes.find(r=>r.id===id)!;
+ const editorial=recipeEditorial[r.id];
  const pours=r.steps.filter(s=>['pour','bloom','pulses'].includes(s.action));
  return <main id="main" className="page detail-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link>
-   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong></div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t('filterPaper')}</span><strong>{paperDetails(r,t)}</strong></div></div></section>
+   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><OfficialSourceImage image={editorial.sourceImage} name={t(`recipes.${r.copy}.title`)} kind="recipe" className="recipe-detail-image"/><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong></div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t('filterPaper')}</span><strong>{paperDetails(r,t)}</strong></div></div></section>
+   <section className="recipe-editorial" data-recipe-editorial>
+     <div className="recipe-editorial-intro"><p className="eyebrow">EDITORIAL NOTES</p><h2>{t('recipeOverview')}</h2><p>{t(`recipes.${r.copy}.overview`)}</p><div className="best-for"><span>{t('bestFor')}</span><strong>{t(`recipes.${r.copy}.bestFor`)}</strong></div></div>
+     <div className="editorial-tradeoffs"><div><h3><span aria-hidden="true">＋</span>{t('strengths')}</h3><ul>{editorial.strengths.map(key=><li key={key}>{t(`editorialStrengths.${key}`)}</li>)}</ul></div><div><h3><span aria-hidden="true">−</span>{t('considerations')}</h3><ul>{editorial.considerations.map(key=><li key={key}>{t(`editorialConsiderations.${key}`)}</li>)}</ul></div></div>
+   </section>
    <div className="detail-body"><div>
      {r.preparation.length?<section className="preparation"><h2>{t('preparation')}</h2>{r.preparation.map(key=><p key={key}>{t(key)}</p>)}</section>:null}
      <section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t('stepAmount')}</p></div><ol className="pour-timeline">{pours.map((s,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{s.at===null?t('sequence'):time(s.at)}</strong><span>{s.amount===null?'—':`${s.amount} ${s.unit||r.water.unit}`}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>
