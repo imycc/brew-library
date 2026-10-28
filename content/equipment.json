@@ -182,6 +182,62 @@
       "checked": "2026-10-28"
     },
     {
+      "id": "hario-v60-mugen-02",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "V60 MUGEN One Pour Dripper 02",
+      "status": "current",
+      "aliases": ["HARIO MUGEN", "V60 Mugen 02", "VDMU-02-CW"],
+      "details": [
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "materials", "value": "ceramic;polypropylene"},
+        {"key": "dimensions", "value": "W142 × D116 × H84", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 02 filters"},
+        {"key": "mode", "value": "One-pour cone; restricted flow"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["lamill-mugen"],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-one-pour-dripper-mugen"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-neo-02",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "V60 Dripper NEO 02",
+      "status": "current",
+      "aliases": ["HARIO V60 NEO", "V60 NEO 02", "VDN-02-AB"],
+      "details": [
+        {"key": "capacity", "value": "1–4", "unit": "cups"},
+        {"key": "materials", "value": "tritan"},
+        {"key": "dimensions", "value": "W128 × D128 × H103", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 02 filters"},
+        {"key": "mode", "value": "High-bypass ribbed cone"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-dripper-neo"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-suiren-02",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "V60 \"Suiren\" Coffee Dripper 02",
+      "status": "current",
+      "aliases": ["HARIO Suiren", "V60 Suiren 02", "VDSU-02-TB"],
+      "details": [
+        {"key": "capacity", "value": "1–4", "unit": "cups"},
+        {"key": "materials", "value": "tritan;polypropylene"},
+        {"key": "dimensions", "value": "W130 × D125 × H108", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 02 filters"},
+        {"key": "mode", "value": "Open-frame spiral ribs"},
+        {"key": "madeIn", "value": "China"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-suiren-coffee-dripper-02"}],
+      "checked": "2026-10-28"
+    },
+    {
       "id": "hario-v60-buono-1-2l",
       "category": "kettle",
       "brand": "HARIO",
@@ -318,6 +374,80 @@
       "checked": "2026-10-28"
     },
     {
+      "id": "hario-v60-buono-copper-0-9l",
+      "category": "kettle",
+      "brand": "HARIO",
+      "name": "V60 \"Buono\" Copper Drip Kettle 0.9L",
+      "status": "current",
+      "aliases": ["HARIO VKBN-90CP", "V60 Buono Copper 0.9L"],
+      "details": [
+        {"key": "capacity", "value": "700", "unit": "mL"},
+        {"key": "materials", "value": "copper;brass;natural-wood;silicone"},
+        {"key": "dimensions", "value": "W290 × D126 × H145", "unit": "mm"},
+        {"key": "compatibility", "value": "Gas, electric or halogen; not induction"},
+        {"key": "mode", "value": "Stovetop gooseneck; 0.9 L nominal; do not use on high heat"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-buono-drip-kettle-copper"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-fit-1-2l",
+      "category": "kettle",
+      "brand": "HARIO",
+      "name": "V60 \"Fit\" Drip Kettle 1.2L",
+      "status": "current",
+      "aliases": ["HARIO VKF-120-HSV", "V60 Fit 1.2L"],
+      "details": [
+        {"key": "capacity", "value": "800", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;phenol-resin"},
+        {"key": "dimensions", "value": "W263 × D144 × H150", "unit": "mm"},
+        {"key": "compatibility", "value": "Induction, gas, solid element, radiant, halogen and coil cooktops"},
+        {"key": "mode", "value": "Stovetop gooseneck; 1.2 L nominal"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-fit-drip-kettle"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-mini-drip-kettle-500",
+      "category": "kettle",
+      "brand": "HARIO",
+      "name": "Mini Drip Kettle 500 ml",
+      "status": "current",
+      "aliases": ["HARIO MDK-500-MB", "Kasuya Mini Drip Kettle 500"],
+      "details": [
+        {"key": "capacity", "value": "500", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;acrylic-resin"},
+        {"key": "dimensions", "value": "W196 × D100 × H110", "unit": "mm"},
+        {"key": "compatibility", "value": "Not for induction, open flame, microwave or oven"},
+        {"key": "mode", "value": "Stovetop gooseneck; no lid"},
+        {"key": "madeIn", "value": "China"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/drip-kettle-kasuya-model"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "fellow-stagg-stovetop-1l",
+      "category": "kettle",
+      "brand": "Fellow",
+      "name": "Stagg Pour-Over Kettle 1L",
+      "status": "current",
+      "aliases": ["Fellow Stagg Stovetop", "Stagg Stovetop Kettle"],
+      "details": [
+        {"key": "capacity", "value": "1000", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel"},
+        {"key": "compatibility", "value": "Gas and electric ranges"},
+        {"key": "mode", "value": "Stovetop gooseneck; built-in thermometer; counterbalanced handle"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/stagg"}],
+      "checked": "2026-10-28"
+    },
+    {
       "id": "comandante-c40-mk4",
       "category": "grinder",
       "brand": "COMANDANTE",
@@ -417,7 +547,7 @@
         {"key": "packs", "value": "100", "unit": "sheets"},
         {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
       ],
-      "recipeIds": ["kasuya-46", "hoffmann-one-cup", "licata-v60", "grill-v60", "mallouhi-v60", "rojewska-v60"],
+      "recipeIds": ["kasuya-46", "hoffmann-one-cup", "licata-v60", "grill-v60", "mallouhi-v60", "rojewska-v60", "lamill-mugen"],
       "sources": [{"label": "HARIO Europe", "url": "https://www.hario-europe.com/products/v60-filter-paper-02-size-box-100-pcs"}],
       "checked": "2026-10-28"
     },

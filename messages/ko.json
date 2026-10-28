@@ -432,6 +432,16 @@
       "notes": "출처는 혐기성 처리 커피에 이 레시피를 권장합니다. 물 온도는 제시되지 않았습니다.",
       "finish": "전체 추출 시간 3:00–3:15를 목표로 합니다.",
       "bean": "출처는 혐기성 처리 커피를 권장합니다."
+    },
+    "lamill": {
+      "title": "LAMILL V60 Mugen",
+      "summary": "16.5g 원두에 225g 물을 한 번에 붓고 3:00–3:30에 배출하는 Mugen 레시피입니다.",
+      "version": "LAMILL Coffee · 2023",
+      "grind": "중간",
+      "equipment": "HARIO V60 MUGEN 02",
+      "notes": "출처에는 블루밍이나 물 온도가 없으며, 0:40에 끝나는 연속 원형 푸어를 요구합니다.",
+      "finish": "3:00–3:30을 목표로 배출합니다.",
+      "prepare": "필터를 적신 뒤 16.5g 원두를 넣고 중앙에 작은 홈을 만듭니다."
     }
   },
   "waterQuality": "물 특성",
@@ -454,6 +464,9 @@
     "aluminum": "알루미늄",
     "natural-or-oxygen-bleached-paper": "천연지 또는 산소 표백지",
     "natural-wood": "천연 목재",
-    "phenol-resin": "페놀 수지"
+    "phenol-resin": "페놀 수지",
+    "copper": "구리",
+    "brass": "황동",
+    "acrylic-resin": "아크릴 수지"
   }
 }

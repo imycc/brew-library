@@ -432,6 +432,16 @@
       "notes": "出典は嫌気性発酵処理の豆にこのレシピを勧めています。湯温は示されていません。",
       "finish": "全体の抽出時間は3:00〜3:15を目安にします。",
       "bean": "出典は嫌気性発酵処理の豆を推奨しています。"
+    },
+    "lamill": {
+      "title": "LAMILL V60 Mugen",
+      "summary": "16.5gの粉に225gのお湯を一度で注ぎ、3:00〜3:30で落とすMugenレシピです。",
+      "version": "LAMILL Coffee · 2023",
+      "grind": "中挽き",
+      "equipment": "HARIO V60 MUGEN 02",
+      "notes": "出典には蒸らしも湯温の指定もなく、0:40に終わる連続した円形注湯を求めています。",
+      "finish": "3:00〜3:30を目安に落とし切ります。",
+      "prepare": "濾紙を湯で濡らし、16.5gの粉を入れて中央にくぼみを作ります。"
     }
   },
   "waterQuality": "水質",
@@ -454,6 +464,9 @@
     "aluminum": "アルミニウム",
     "natural-or-oxygen-bleached-paper": "天然紙または酸素漂白紙",
     "natural-wood": "天然木",
-    "phenol-resin": "フェノール樹脂"
+    "phenol-resin": "フェノール樹脂",
+    "copper": "銅",
+    "brass": "真鍮",
+    "acrylic-resin": "アクリル樹脂"
   }
 }

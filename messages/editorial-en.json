@@ -28,7 +28,8 @@
     "rincon": {"overview":"A natural Geisha competition brew that changes water temperature across the pours. It is highly source-specific and illustrates how a recipe can respond to one coffee and water profile.","bestFor":"Studying temperature changes for a specific natural coffee"},
     "gil": {"overview":"A four-pour ORIGAMI method tied to a K-Ultra setting and Sibarist paper. It provides a concise timing structure for comparison, while equipment and bean-specific details remain limited.","bestFor":"A structured four-pour comparison"},
     "hoffmann-ultimate": {"overview":"A full 500 mL V60 recipe built around a 60 g bloom and two staged pours. The final stir and gentle swirl level the bed before drawdown; the source uses hotter water for lighter roasts.","bestFor":"A larger V60 brew with a clear timed structure"},
-    "camber": {"overview":"A 20 g V60 recipe shared by Camber Coffee at SCA 2023, with a 60 g bloom and pours to 200 g and 345 g. The source highlights anaerobic coffees and a 3:00–3:15 finish.","bestFor":"Brewing anaerobic coffees with a simple V60 sequence"}
+    "camber": {"overview":"A 20 g V60 recipe shared by Camber Coffee at SCA 2023, with a 60 g bloom and pours to 200 g and 345 g. The source highlights anaerobic coffees and a 3:00–3:15 finish.","bestFor":"Brewing anaerobic coffees with a simple V60 sequence"},
+    "lamill": {"overview":"A one-pour Mugen recipe with no bloom, built around a single continuous pour and a long drawdown. It is a simple starting point for the restricted-flow dripper.","bestFor":"A no-fuss one-pour Mugen routine"}
   },
   "equipmentRoles": {
     "conicalControl":"A conical brewer that gives the user direct control over flow, pour pattern and water level.",
@@ -47,7 +48,8 @@
     "paperFilter":"A matching paper filter that shapes flow, filtration and cleanup; it is a consumable part of the brew system.",
     "unresolved":"The source names this item only generically, so model-specific claims are intentionally withheld.",
     "electricGooseneck":"An electric gooseneck kettle with set-temperature control for repeatable brew water.",
-    "stovetopGooseneck":"A stovetop gooseneck kettle with a narrow spout for manual pour control; water temperature is managed separately."
+    "stovetopGooseneck":"A stovetop gooseneck kettle with a narrow spout for manual pour control; water temperature is managed separately.",
+    "openFrame":"A frame-style cone with exposed spiral ribs, leaving paper and coffee to shape the flow."
   },
   "equipmentExperienceTitle":"Cup profile from hands-on use",
   "equipmentExperienceNote":"Tags summarize public hands-on reviews and community reports; they are not blind-test rankings and still depend on coffee, water and technique.",

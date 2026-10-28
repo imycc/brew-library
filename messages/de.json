@@ -432,6 +432,16 @@
       "notes": "Die Quelle empfiehlt dieses Rezept für anaerob verarbeitete Kaffees. Die Wassertemperatur wird nicht genannt.",
       "finish": "Eine Gesamtbrühzeit von 3:00–3:15 anstreben.",
       "bean": "Die Quelle empfiehlt anaerob verarbeitete Kaffees."
+    },
+    "lamill": {
+      "title": "LAMILL V60 Mugen",
+      "summary": "Ein Mugen-Rezept mit 16,5 g Kaffee, 225 g Wasser und einem einzigen Aufguss; Durchlauf 3:00–3:30.",
+      "version": "LAMILL Coffee · 2023",
+      "grind": "Mittel",
+      "equipment": "HARIO V60 MUGEN 02",
+      "notes": "Die Quelle nennt weder Blooming noch Temperatur; sie verlangt einen durchgehenden kreisförmigen Aufguss, der um 0:40 endet.",
+      "finish": "Den Kaffee ablaufen lassen und 3:00–3:30 anstreben.",
+      "prepare": "Filter vorwässern, 16,5 g Kaffee einfüllen und in der Mitte eine kleine Mulde formen."
     }
   },
   "waterQuality": "Wasserprofil",
@@ -454,6 +464,9 @@
     "aluminum": "Aluminium",
     "natural-or-oxygen-bleached-paper": "Naturpapier oder sauerstoffgebleichtes Papier",
     "natural-wood": "Naturholz",
-    "phenol-resin": "Phenolharz"
+    "phenol-resin": "Phenolharz",
+    "copper": "Kupfer",
+    "brass": "Messing",
+    "acrylic-resin": "Acrylharz"
   }
 }

@@ -14,7 +14,7 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await page.goto(`${base}/zh-Hant/`);
  await expect(page.locator('h1')).toContainText('每一杯');
  await expect(page.getByTestId('pour-timeline')).toHaveCount(0);
- await expect(page.locator('[data-recipe]')).toHaveCount(18);
+ await expect(page.locator('[data-recipe]')).toHaveCount(19);
  await page.locator('[data-recipe="kasuya-46"] .card-actions a').click();
  await expect(page.getByTestId('pour-timeline')).toBeVisible();
  await expect(page.getByTestId('pour-timeline')).toContainText('2:10');
@@ -31,7 +31,7 @@ test('filters, empty result, reset and shared comparison work',async({page})=>{
  await page.goto(`${base}/en/`);
  await page.getByRole('searchbox').fill('Hoffmann');await expect(page.locator('[data-recipe]')).toHaveCount(2);
  await page.getByLabel('Choose a brewer').selectOption('pulsar');await expect(page.locator('[data-recipe]')).toHaveCount(0);
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(18);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(19);
  for(const id of ['kasuya-46','hoffmann-one-cup','rao-pulsar'])await page.locator(`[data-recipe="${id}"] button`).click();
  await page.locator('[data-recipe="licata-v60"] button').click();
  await expect(page.getByRole('status').filter({hasText:'You can compare up to three recipes.'})).toHaveCount(1);
@@ -56,20 +56,22 @@ for(const locale of locales)test(`static ${locale} pages render complete locale 
 });
 test('equipment catalogue filters official records and links source-backed recipes',async({page})=>{
  await page.goto(`${base}/zh-Hant/equipment/`);
- await expect(page.locator('[data-equipment]')).toHaveCount(48);
+ await expect(page.locator('[data-equipment]')).toHaveCount(55);
  await expect(page.locator('[data-equipment="origami-air-s"]')).toContainText('64');
  await expect(page.locator('[data-equipment="origami-air-s"] .equipment-experience')).toContainText('杯感與實際使用回饋');
  await expect(page.locator('[data-equipment="origami-air-s"] .experience-tags')).toContainText('酸質與清晰度較突出');
  await expect(page.locator('[data-equipment="origami-air-s"] .equipment-card-image[data-source-image="official"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="ek-unspecified"]')).toContainText('型號待確認');
  await expect(page.locator('[data-equipment="ek-unspecified"] .equipment-card-image')).toHaveCount(0);
+ await expect(page.locator('[data-equipment="hario-v60-mugen-02"]')).toContainText('V60 MUGEN');
+ await expect(page.locator('[data-equipment="hario-v60-mugen-02"] a[href*="lamill-mugen"]')).toHaveCount(1);
  await expect(page.locator('.equipment-grid')).toHaveCSS('column-width','300px');
  await page.getByLabel('搜尋品牌、型號或相容性').fill('ZP6');
  await expect(page.locator('[data-equipment]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"]')).toContainText('90 clicks per rotation');
  await page.getByLabel('搜尋品牌、型號或相容性').fill('');
  await page.getByRole('button',{name:/手沖壺/}).click();
- await expect(page.locator('[data-equipment]')).toHaveCount(7);
+ await expect(page.locator('[data-equipment]')).toHaveCount(11);
  await expect(page.locator('[data-equipment="fellow-stagg-ekg-pro"]')).toContainText('40–100');
  await page.getByRole('button',{name:/磨豆器/}).click();
  await expect(page.locator('[data-equipment]')).toHaveCount(9);
@@ -146,7 +148,7 @@ test('Origami conditions combine, survive language switching and reset completel
  await page.locator('.language-trigger').click();await page.locator('.language-options a[lang="de"]').click();
  await expect(page).toHaveURL(/grinder=zp6-special/);await expect(page.getByLabel('Filterpapier',{exact:true})).toHaveValue('sibarist-conic');
  await page.getByRole('button',{name:'Filter zurücksetzen',exact:true}).click();
- await expect(page.locator('[data-recipe]')).toHaveCount(18);
+ await expect(page.locator('[data-recipe]')).toHaveCount(19);
  expect(new URL(page.url()).search).toBe('');
 });
 

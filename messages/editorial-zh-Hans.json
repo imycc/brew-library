@@ -28,7 +28,8 @@
     "rincon": {"overview":"以日晒 Geisha 为核心的比赛配方，各阶段使用不同水温。它高度针对特定咖啡豆和水源，展示配方如何回应单一咖啡条件。","bestFor":"研究特定日晒豆的分段温控"},
     "gil": {"overview":"四段注水的 ORIGAMI 方法，配合 K-Ultra 设定和 Sibarist 滤纸。时间结构简明，适合比较；器材与咖啡豆细节相对有限。","bestFor":"比较清楚的四段注水结构"},
     "hoffmann-ultimate": {"overview":"以 60 g 闷蒸和两段注水完成 500 mL 的 V60 配方。最后搅拌并轻轻旋转，让粉床在排水前更平整；来源对浅烘焙使用更热的水。","bestFor":"时间结构清晰、份量较大的 V60 冲煮"},
-    "camber": {"overview":"Camber Coffee 在 SCA 2023 分享的 20 g V60 配方：60 g 闷蒸后注水至 200 g，最后到 345 g。来源强调适合厌氧处理咖啡，并在 3:00–3:15 完成。","bestFor":"用简单 V60 流程冲煮厌氧处理咖啡"}
+    "camber": {"overview":"Camber Coffee 在 SCA 2023 分享的 20 g V60 配方：60 g 闷蒸后注水至 200 g，最后到 345 g。来源强调适合厌氧处理咖啡，并在 3:00–3:15 完成。","bestFor":"用简单 V60 流程冲煮厌氧处理咖啡"},
+    "lamill": {"overview":"不闷蒸、以一次连续注水和较长滴滤时间构成的 Mugen 配方，适合作为限流滤杯的简单起点。","bestFor":"省事的一次注水 Mugen 流程"}
   },
   "equipmentRoles": {
     "conicalControl":"圆锥形滤杯让使用者直接控制流速、注水路径和水位。",
@@ -47,7 +48,8 @@
     "paperFilter":"与指定器材配合、影响流速、过滤和清洁的消耗式滤纸。",
     "unresolved":"来源只提供泛称，无法确认具体型号，因此不加入型号层面的判断。",
     "electricGooseneck":"可设定温度、便于重复准备冲煮用水的电热鹅颈手冲壶。",
-    "stovetopGooseneck":"以细壶嘴控制手动注水的直火鹅颈手冲壶；水温需另行管理。"
+    "stovetopGooseneck":"以细壶嘴控制手动注水的直火鹅颈手冲壶；水温需另行管理。",
+    "openFrame":"外露螺旋肋条的车架式锥形滤杯，由滤纸与咖啡粉决定流速。"
   },
   "equipmentExperienceTitle":"杯感与实际使用回馈",
   "equipmentExperienceNote":"标签综合公开实测与社群回馈；不是盲测排名，仍会受咖啡豆、水质和手法影响。",

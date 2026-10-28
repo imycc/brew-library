@@ -28,7 +28,8 @@
     "rincon": {"overview":"Préparation de compétition pour un Geisha nature, avec une température qui change au fil des versements. Très spécifique à sa source, elle montre comment une recette répond à un café et une eau donnés.","bestFor":"Étudier les variations thermiques d’un café nature précis"},
     "gil": {"overview":"Méthode ORIGAMI à quatre versements liée à un réglage K-Ultra et au papier Sibarist. Sa structure temporelle concise facilite la comparaison, avec peu de détails sur le café.","bestFor":"Comparer une structure claire en quatre versements"},
     "hoffmann-ultimate": {"overview":"Une recette V60 complète de 500 ml avec 60 g de bloom et deux versements par étapes. L’agitation finale et le léger tournoiement nivellent le lit avant l’écoulement ; la source utilise une eau plus chaude pour les torréfactions claires.","bestFor":"Une préparation V60 plus grande avec une structure temporelle claire"},
-    "camber": {"overview":"Une recette V60 de 20 g partagée par Camber Coffee à la SCA 2023, avec 60 g de bloom et des versements jusqu’à 200 g puis 345 g. La source met en avant les cafés anaérobies et une fin entre 3:00 et 3:15.","bestFor":"Préparer des cafés anaérobies avec une séquence V60 simple"}
+    "camber": {"overview":"Une recette V60 de 20 g partagée par Camber Coffee à la SCA 2023, avec 60 g de bloom et des versements jusqu’à 200 g puis 345 g. La source met en avant les cafés anaérobies et une fin entre 3:00 et 3:15.","bestFor":"Préparer des cafés anaérobies avec une séquence V60 simple"},
+    "lamill": {"overview":"Une recette Mugen sans bloom, construite autour d’un seul versement continu et d’un long écoulement. Un point de départ simple pour ce dripper à débit restreint.","bestFor":"Une routine Mugen simple en un seul versement"}
   },
   "equipmentRoles": {
     "conicalControl":"Dripper conique offrant un contrôle direct du débit, du tracé de versement et du niveau d’eau.",
@@ -47,7 +48,8 @@
     "paperFilter":"Papier dédié qui façonne débit, filtration et nettoyage ; il s’agit d’un consommable.",
     "unresolved":"La source ne donne qu’un nom générique ; aucune affirmation propre au modèle n’est faite.",
     "electricGooseneck":"Bouilloire électrique à col de cygne avec température réglable pour une eau de préparation reproductible.",
-    "stovetopGooseneck":"Bouilloire à col de cygne pour plaque avec bec fin pour contrôler le versement ; la température de l’eau se gère séparément."
+    "stovetopGooseneck":"Bouilloire à col de cygne pour plaque avec bec fin pour contrôler le versement ; la température de l’eau se gère séparément.",
+    "openFrame":"Un cône à structure ouverte aux nervures spirales exposées ; le papier et le café déterminent le débit."
   },
   "equipmentExperienceTitle":"Profil en tasse et expérience réelle",
   "equipmentExperienceNote":"Ces tags résument des tests pratiques et des retours de communauté. Ce n’est pas un classement en test à l’aveugle : le café, l’eau et la technique comptent.",

@@ -432,6 +432,16 @@
       "notes": "A fonte recomenda esta receita para cafés de processamento anaeróbico. A temperatura da água não é informada.",
       "finish": "Busque um tempo total de preparo de 3:00–3:15.",
       "bean": "A fonte recomenda cafés de processamento anaeróbico."
+    },
+    "lamill": {
+      "title": "LAMILL V60 Mugen",
+      "summary": "Uma receita Mugen de 16,5 g com um único despejo de 225 g e drenagem de 3:00–3:30.",
+      "version": "LAMILL Coffee · 2023",
+      "grind": "Média",
+      "equipment": "HARIO V60 MUGEN 02",
+      "notes": "A fonte não indica bloom nem temperatura; pede um despejo circular contínuo que termine em 0:40.",
+      "finish": "Deixe drenar buscando 3:00–3:30.",
+      "prepare": "Molhe o filtro, adicione 16,5 g de café e faça uma pequena depressão no centro."
     }
   },
   "waterQuality": "Perfil da água",
@@ -454,6 +464,9 @@
     "aluminum": "Alumínio",
     "natural-or-oxygen-bleached-paper": "Papel natural ou branqueado com oxigénio",
     "natural-wood": "Madeira natural",
-    "phenol-resin": "Resina fenólica"
+    "phenol-resin": "Resina fenólica",
+    "copper": "Cobre",
+    "brass": "Latão",
+    "acrylic-resin": "Resina acrílica"
   }
 }
