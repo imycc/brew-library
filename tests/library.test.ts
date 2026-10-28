@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {filterRecipes,parseSelection,toggleSelection,recipes,time} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
+import {equipmentEditorial,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
 test('source and translation validation',async()=>{await validate();});
 test('original HARIO times and units remain distinct',()=>{
@@ -63,4 +64,14 @@ test('equipment catalogue is source-backed, searchable and keeps unresolved mode
  assert.equal(equipment.find(item=>item.id==='kalita-wave-185-stainless')?.category,'dripper');
  assert.equal(equipment.find(item=>item.id==='fellow-ode-gen-2')?.category,'grinder');
  assert.equal(equipment.find(item=>item.id==='cafec-deep27-filter')?.category,'filter');
+});
+test('editorial overlay covers every recipe and equipment record',()=>{
+ assert.deepEqual(Object.keys(recipeEditorial).sort(),recipes.map(recipe=>recipe.id).sort());
+ assert.deepEqual(Object.keys(equipmentEditorial).sort(),equipment.map(item=>item.id).sort());
+ for(const editorial of Object.values(recipeEditorial).concat(Object.values(equipmentEditorial))){
+  assert(editorial.strengths.length>=1&&editorial.strengths.length<=3);
+  assert(editorial.considerations.length>=1&&editorial.considerations.length<=3);
+ }
+ assert(recipeEditorial['kasuya-46'].sourceImage?.url.startsWith('https://'));
+ assert.equal(equipmentEditorial['ek-unspecified'].sourceImage,undefined);
 });

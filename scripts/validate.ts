@@ -3,12 +3,14 @@ import assert from 'node:assert/strict';
 import {locales} from '../src/i18n/locales';
 import {recipes} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
+import {equipmentEditorial,equipmentEditorialRoles,editorialTraitKeys,recipeEditorial} from '../src/lib/editorial';
+import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
 import {createTranslator} from 'next-intl';
 export function flatten(obj:Record<string,unknown>,prefix=''):Record<string,string>{
  return Object.fromEntries(Object.entries(obj).flatMap(([key,value])=>typeof value==='string'?[[`${prefix}${key}`,value]]:Object.entries(flatten(value as Record<string,unknown>,`${prefix}${key}.`))));
 }
 export async function validate(){
- const english=JSON.parse(await readFile('messages/en.json','utf8'));
+ const english=mergeMessages(JSON.parse(await readFile('messages/en.json','utf8')) as Messages,JSON.parse(await readFile('messages/editorial-en.json','utf8')) as Messages);
  const base=flatten(english);
  const placeholders=(text:string)=>[...text.matchAll(/\{([a-zA-Z][a-zA-Z0-9_]*)\}/g)].map(m=>m[1]).sort();
  assert.equal(new Set(recipes.map(r=>r.id)).size,recipes.length,'Duplicate recipe id');
@@ -17,8 +19,14 @@ export async function validate(){
  for(const item of equipment){
    for(const recipeId of item.recipeIds)assert(recipeIds.has(recipeId),`${item.id} references unknown recipe ${recipeId}`);
    assert(item.sources.length>0,`${item.id} needs a source`);
+   const editorial=equipmentEditorial[item.id];
+   assert(editorial,`${item.id} needs editorial copy`);
+   if(editorial.sourceImage)assert(item.sources.some(source=>source.url===editorial.sourceImage?.sourceUrl),`${item.id} image needs an official listed source`);
  }
  for(const r of recipes){
+   const editorial=recipeEditorial[r.id];
+   assert(editorial,`${r.id} needs editorial copy`);
+   if(editorial.sourceImage)assert(editorial.sourceImage.sourceUrl===r.source.url,`${r.id} image source mismatch`);
    if(r.duration)assert(r.duration[1]>=r.duration[0],r.id);
    const measured=r.steps.filter(s=>s.amount!==null);
    assert(new Set(measured.map(s=>s.unit||r.water.unit)).size<=1,`${r.id} cannot sum mixed step units`);
@@ -33,17 +41,21 @@ export async function validate(){
    for(const s of r.steps){if(s.end!==undefined&&s.at!==null)assert(s.end>=s.at,`${r.id} time range`);}
  }
  for(const locale of locales){
-   const messages=JSON.parse(await readFile(`messages/${locale}.json`,'utf8'));
+   const messages=mergeMessages(JSON.parse(await readFile(`messages/${locale}.json`,'utf8')) as Messages,JSON.parse(await readFile(`messages/editorial-${locale}.json`,'utf8')) as Messages);
    const flat=flatten(messages);
    assert.deepEqual(Object.keys(flat).sort(),Object.keys(base).sort(),`${locale} missing/extra translations`);
-   const t=createTranslator({locale,messages,onError(error){throw error;}});
+   // The message catalogue is intentionally checked by dynamic keys. Cast the
+   // translator at this boundary so next-intl's generated key union does not
+   // turn a runtime catalogue audit into an excessively deep type instantiation.
+   const t=createTranslator({locale,messages:messages as Record<string, unknown>,onError(error){throw error;}}) as unknown as (key:string,values?:Record<string,unknown>)=>string;
    for(const [key,value]of Object.entries(flat)){
      assert(value.trim(),`${locale}/${key} empty`);
      assert.deepEqual(placeholders(value),placeholders(base[key]),`${locale}/${key} placeholders`);
-     t(key,{count:3});
+     const values=Object.fromEntries(placeholders(value).map(name=>[name,name==='count'?3:'example']));
+     t(key,values);
    }
    for(const r of recipes){
-     for(const key of ['title','summary','version','grind','equipment','notes','finish'])assert(flat[`recipes.${r.copy}.${key}`],`${locale}/${r.id}/${key}`);
+     for(const key of ['title','summary','version','grind','equipment','notes','finish','overview','bestFor'])assert(flat[`recipes.${r.copy}.${key}`],`${locale}/${r.id}/${key}`);
      for(const s of r.steps){assert(flat[`step.${s.action}`]);if(s.action!=='finish')assert(flat[`instruction.${s.action}`]);}
      for(const key of [...r.preparation,r.beanNote,r.waterNote,r.filterNote,...r.steps.map(s=>s.instruction)].filter((key):key is string=>!!key))assert(flat[key],`${locale}/${r.id}/${key}`);
    }
@@ -52,8 +64,20 @@ export async function validate(){
      assert(flat[`equipmentCategories.${item.category}`],`${locale}/equipment category ${item.category}`);
      assert(flat[`equipmentStatus.${item.status}`]||item.status==='current',`${locale}/equipment status ${item.status}`);
      for(const detail of item.details){assert(flat[`equipmentSpecs.${detail.key}`],`${locale}/equipment spec ${detail.key}`);if(detail.unit)assert(flat[`equipmentUnits.${detail.unit}`],`${locale}/equipment unit ${detail.unit}`);}
+     if(detailMaterialKeys(item.details))for(const material of detailMaterialKeys(item.details)!)assert(flat[`equipmentMaterials.${material}`],`${locale}/equipment material ${material}`);
+     const editorial=equipmentEditorial[item.id];
+     assert(flat[`equipmentRoles.${editorial.role}`],`${locale}/equipment role ${editorial.role}`);
+     for(const trait of editorial.strengths)assert(flat[`editorialStrengths.${trait}`],`${locale}/strength ${trait}`);
+     for(const trait of editorial.considerations)assert(flat[`editorialConsiderations.${trait}`],`${locale}/consideration ${trait}`);
    }
+   for(const key of ['recipeOverview','bestFor','strengths','considerations','equipmentEditorialNote','sourceImageUnavailable','sourceImageAlt','sourceImageRecipe','sourceImageEquipment','sourceImageCredit','sourceImageView'])assert(flat[key],`${locale}/${key}`);
  }
+ assert(equipmentEditorialRoles.length>0&&editorialTraitKeys.strengths.length>0&&editorialTraitKeys.considerations.length>0,'Editorial vocabulary must not be empty');
  console.log(`Validated ${recipes.length} source-backed recipes, ${equipment.length} equipment records and ${Object.keys(base).length} messages × ${locales.length} locales.`);
 }
 if(process.argv[1]?.endsWith('validate.ts'))await validate();
+
+function detailMaterialKeys(details:{key:string;value:string}[]){
+  const material=details.find(detail=>detail.key==='materials')?.value;
+  return material?.split(';').map(value=>value.trim())||null;
+}
