@@ -26,7 +26,9 @@
     "kobayashi": {"overview":"Receita ORIGAMI de competição com peneiramento, posicionamento do filtro e despejo final mais frio. Precisão e temperatura são os pontos fortes; o preparo extra faz parte do método.","bestFor":"Preparo avançado de ORIGAMI e controle térmico"},
     "selorio": {"overview":"Receita ORIGAMI de quatro despejos cronometrados, com moedor e papel CAFEC indicados. É útil para se aproximar de uma montagem de competição documentada porque ritmo e equipamento são explícitos.","bestFor":"Recriar uma combinação documentada de moedor e papel"},
     "rincon": {"overview":"Preparo de competição para um Geisha natural que muda a temperatura entre despejos. É muito específico da fonte e mostra como uma receita responde a um café e uma água concretos.","bestFor":"Estudar mudanças de temperatura para um natural específico"},
-    "gil": {"overview":"Método ORIGAMI de quatro despejos ligado ao ajuste K-Ultra e ao papel Sibarist. A estrutura temporal concisa facilita comparações, com menos detalhes sobre café e equipamento.","bestFor":"Comparar uma estrutura clara de quatro despejos"}
+    "gil": {"overview":"Método ORIGAMI de quatro despejos ligado ao ajuste K-Ultra e ao papel Sibarist. A estrutura temporal concisa facilita comparações, com menos detalhes sobre café e equipamento.","bestFor":"Comparar uma estrutura clara de quatro despejos"},
+    "hoffmann-ultimate": {"overview":"Uma receita V60 completa de 500 ml com 60 g de bloom e dois despejos em etapas. A agitação final e o swirl suave nivelam o leito antes da drenagem; a fonte usa água mais quente para torras claras.","bestFor":"Uma preparação V60 maior com estrutura de tempo clara"},
+    "camber": {"overview":"Uma receita V60 de 20 g compartilhada pela Camber Coffee na SCA 2023, com 60 g de bloom e despejos até 200 g e 345 g. A fonte destaca cafés anaeróbicos e término em 3:00–3:15.","bestFor":"Preparar cafés anaeróbicos com uma sequência V60 simples"}
   },
   "equipmentRoles": {
     "conicalControl":"Dripper cônico que dá ao usuário controle direto de fluxo, trajeto do despejo e nível de água.",
@@ -43,7 +45,9 @@
     "filterElectric":"Moedor elétrico para café filtrado, focado em ajustes repetíveis.",
     "largeFlatElectric":"Moedor elétrico de mós planas maiores e moagem controlada.",
     "paperFilter":"Filtro de papel específico que influencia fluxo, filtragem e limpeza; é um consumível.",
-    "unresolved":"A fonte fornece apenas um nome genérico; afirmações específicas de modelo são evitadas."
+    "unresolved":"A fonte fornece apenas um nome genérico; afirmações específicas de modelo são evitadas.",
+    "electricGooseneck":"Chaleira elétrica de pescoço de ganso com temperatura ajustável para água de preparo repetível.",
+    "stovetopGooseneck":"Chaleira de pescoço de ganso para fogão, com bico estreito para controlar o despejo; a temperatura da água é gerenciada à parte."
   },
   "equipmentExperienceTitle":"Perfil na xícara e experiência real",
   "equipmentExperienceNote":"Estas tags resumem testes práticos e relatos da comunidade. Não são um ranking de teste cego e dependem do café, da água e da técnica.",
@@ -91,6 +95,7 @@
     "beanSpecific":"A fonte foi desenvolvida para um café específico e pode exigir ajustes.",
     "consumable":"O filtro precisa ser trocado regularmente e exige suprimento contínuo.",
     "filterMatching":"O fluxo pode mudar com outro papel ou formato de filtro.",
-    "slowDrawdown":"A combinação registrada pode gerar drenagem ou contato mais longos."
+    "slowDrawdown":"A combinação registrada pode gerar drenagem ou contato mais longos.",
+    "heatSourceDependent":"É preciso uma boca de fogão ou outra fonte de calor antes do preparo."
   }
 }

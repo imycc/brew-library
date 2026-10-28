@@ -18,7 +18,7 @@
   },
   "equipmentNav": "장비",
   "equipmentTitle": "브루잉 장비 데이터베이스",
-  "equipmentIntro": "핸드드립 드리퍼, 그라인더, 필터의 공식 사양과 호환성, 관련 레시피를 정리했습니다.",
+  "equipmentIntro": "핸드드립 드리퍼, 케틀, 그라인더, 필터의 공식 사양과 호환성, 관련 레시피를 정리했습니다.",
   "equipmentItems": "개 장비",
   "equipmentSearch": "브랜드, 모델 또는 호환성 검색",
   "equipmentCategory": "장비 분류",
@@ -30,7 +30,8 @@
   "equipmentCategories": {
     "dripper": "드리퍼",
     "grinder": "그라인더",
-    "filter": "필터"
+    "filter": "필터",
+    "kettle": "케틀"
   },
   "equipmentStatus": {
     "legacy": "구형 / 단종",
@@ -51,7 +52,10 @@
     "groundsCapacity": "분쇄 커피 용량",
     "format": "형태",
     "packs": "포장",
-    "technology": "기술"
+    "technology": "기술",
+    "power": "소비전력",
+    "voltage": "전압",
+    "temperatureRange": "온도 범위"
   },
   "equipmentUnits": {
     "cups": "잔",
@@ -62,7 +66,10 @@
     "lb": "lb",
     "µm": "µm",
     "sheets": "장",
-    "oz": "oz"
+    "oz": "oz",
+    "W": "W",
+    "V": "V",
+    "°C": "°C"
   },
   "brand": "핸드드립 레시피",
   "tagline": "커피 에디토리얼",
@@ -405,6 +412,26 @@
       "close": "0:45에 밸브를 닫고 침지합니다.",
       "secondPour": "나머지 절반을 넣고 침지합니다.",
       "drain": "2:00에 열어 배출합니다."
+    },
+    "hoffmann-ultimate": {
+      "title": "V60 얼티밋 테크닉",
+      "summary": "30g 원두, 60g 블루밍, 500g까지의 단계별 푸어와 마지막 저어주기로 구성된 V60 레시피입니다.",
+      "version": "Ultimate V60 · HARIO USA 에디션",
+      "grind": "중간-가늘게",
+      "equipment": "HARIO V60",
+      "notes": "출처는 특히 라이트 로스트에 가능한 한 뜨거운 물을 권장합니다. 종료 시간은 목표치이며 배출은 필터와 온도에 따라 달라집니다.",
+      "finish": "약 3:30에 마무리되는 것을 목표로 배출합니다.",
+      "stir": "시계 방향으로 한 번, 반시계 방향으로 한 번 저은 뒤 베드를 살짝 배출시키고 부드럽게 스월합니다."
+    },
+    "camber": {
+      "title": "Camber Coffee V60",
+      "summary": "20g 원두, 60g 블루밍, 345g까지 두 번의 푸어로 구성된 혐기성 커피용 V60 레시피입니다.",
+      "version": "SCA 2023 · Camber Coffee",
+      "grind": "중간-가늘게",
+      "equipment": "HARIO V60",
+      "notes": "출처는 혐기성 처리 커피에 이 레시피를 권장합니다. 물 온도는 제시되지 않았습니다.",
+      "finish": "전체 추출 시간 3:00–3:15를 목표로 합니다.",
+      "bean": "출처는 혐기성 처리 커피를 권장합니다."
     }
   },
   "waterQuality": "물 특성",
@@ -425,6 +452,8 @@
     "glass": "유리",
     "plastic": "플라스틱",
     "aluminum": "알루미늄",
-    "natural-or-oxygen-bleached-paper": "천연지 또는 산소 표백지"
+    "natural-or-oxygen-bleached-paper": "천연지 또는 산소 표백지",
+    "natural-wood": "천연 목재",
+    "phenol-resin": "페놀 수지"
   }
 }

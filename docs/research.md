@@ -1,6 +1,6 @@
 # Source research and version decisions
 
-Checked on 2026-10-27 (Asia/Hong_Kong), with expansions checked on 2026-10-28. The initial release began with three recipes; the current catalogue contains sixteen. Missing source parameters remain explicit.
+Checked on 2026-10-27 (Asia/Hong_Kong), with expansions checked on 2026-10-28. The initial release began with three recipes; the current catalogue contains eighteen. Missing source parameters remain explicit.
 
 ## Published recipes
 
@@ -104,9 +104,20 @@ Duration may now be unknown, displayed with the localized missing-source label. 
 
 April’s Origami video could not be fetched during this pass and remains pending.
 
+## V60 expansion — checked 2026-10-28
+
+Two additional recipes were read on HARIO USA’s official recipe blog, bringing the catalogue to eighteen:
+
+| Record | Primary source | Decisions |
+| --- | --- | --- |
+| James Hoffmann — Ultimate V60 | [HARIO USA](https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-uitimate-v60-technique) | 30 g; 500 mL; medium-fine. The overview keeps mL while the measured additions stay in g: 60 g bloom, 240 g to a 300 g cumulative target, then 200 g to 500 g. The source says “the hotter, the better”, so the record uses boiling mode rather than inventing a number. A final stir and gentle swirl precede drawdown; 3:30 is a target, not a guaranteed finish. Viewing the HARIO transcription as the canonical page is intentional; its publication date is 2026-06-16. |
+| Gloria Baldwin / Camber Coffee — V60 | [HARIO USA](https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-recipe-with-camber-coffee) | 20 g; 345 g; medium-fine. 60 g bloom from 0:00–0:30; pour to 200 g from 0:30–0:45; final pour at 1:00 to 345 g. Total brew time 3:00–3:15. Temperature is not supplied and stays unknown. The source recommends anaerobic coffees, which is recorded as the coffee process rather than generalized to all beans. |
+
+The Camber record uses the article’s official image. The Hoffmann article image is a very slow official PNG, so that record deliberately keeps the neutral fallback instead of shipping an unreliable hotlink. Both records keep `recipeIds` absent from specific V60 equipment records because the source says only “V60”, not a size or material. The following official pages were inspected but not added: Tim Wendelboe’s article currently has an image-only body; Tetsu Kasuya’s Mugen and James Hoffmann’s Switch × Sibarist pages list dose, water and time without a full pour sequence. Those gaps are not filled from third-party adaptations.
+
 ## Equipment catalogue — checked 2026-10-28
 
-The expanded equipment catalogue contains 41 records: 19 drippers, 9 grinders and 13 filters. Product names, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently. Canonical material IDs are translated in all nine locales; brand and model names remain recognizable originals.
+The expanded equipment catalogue contains 48 records: 19 drippers, 7 kettles, 9 grinders and 13 filters. Product names, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently. Canonical material IDs are translated in all nine locales; brand and model names remain recognizable originals.
 
 Primary source groups:
 
@@ -125,6 +136,21 @@ Primary source groups:
 - [Fellow Stagg [X]/[XF]](https://fellowproducts.com/products/staggdripper/?tag=wbifl-20), [Stagg filters](https://fellowproducts.com/collections/complete-your-coffee-corner/products/stagg-paper-filters), and [Ode Gen 2](https://fellowproducts.com/collections/grind-brew/products/ode-brew-grinder-gen-2?variant=40978992529508)
 - [Timemore Sculptor series](https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series) and [series FAQ](https://www.timemore.com/pages/sculptor-related-faq)
 - [KINGrinder K6](https://www.kingrinder.com/store/products/k6)
+- [HARIO V60 Buono 1.2L](https://www.hario-usa.com/products/v60-buono-drip-kettle), [V60 Buono Electric](https://www.hario-usa.com/products/v60-buono-electric-drip-kettle) and [V60 Drip Kettle Wood 1.2L](https://www.hario-usa.com/products/v60-drip-kettle-wood)
+- [Fellow Stagg EKG Pro](https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle)
+- [TIMEMORE Fish Smart 600 ml](https://www.timemore.com/products/timemore-fish-smart-electric-coffee-kettle-600ml)
+- [Kalita Wave Stainless Steel Kettle 1L](https://kalitausa.com/products/kalita-wave-stainless-steel-kettle-1l) and [Wave Narrow 700 ml](https://kalitausa.com/products/kalita-wave-narrow-stainless-steel-kettle-0-7l)
+
+### Kettle records — checked 2026-10-28
+
+Seven kettle records were added without recipe links, because none of the existing recipe sources names a specific kettle model. Official pages supply the stored capacity, material, dimension and electrical values:
+
+- The HARIO Buono 1.2L and Wood 1.2L pages both list an 800 mL practical capacity; the 1.2 L figure is retained as the nominal model name rather than silently replacing it.
+- The HARIO electric record is the US model (`EVKB-80U-HSV`): 120 V, 60 Hz and 1000 W. These regional electrical values are not generalized to other markets.
+- Fellow’s 0.9 L / 1000–1200 W / 40–100 °C values describe the US Stagg EKG Pro listing; the stored 1,400 g weight explicitly includes the base.
+- The TIMEMORE home edition lists 600 mL capacity but a 560 mL maximum fill level; both are shown rather than rounded to one number.
+- Kalita’s 1 L and 700 mL stovetop kettles are explicitly marked as unsuitable for induction or gas stoves. The 700 mL page supplies the 330 g body weight; the 1 L page does not supply a body weight, so none is stored.
+- Stovetop records state that heat comes from a separate source; they do not claim temperature control. Electric records state the official power and, where supplied, temperature range.
 
 Editorial boundaries:
 

@@ -26,7 +26,9 @@
     "kobayashi": {"overview":"Receta ORIGAMI de competición con tamizado, colocación del filtro y un vertido final más frío. Su fuerza está en la precisión y la temperatura; la preparación extra forma parte del método.","bestFor":"Preparación avanzada de ORIGAMI y control térmico"},
     "selorio": {"overview":"Receta ORIGAMI de cuatro adiciones cronometradas con molinillo y papel CAFEC especificados. Es útil para acercarse a un montaje de competición documentado porque ritmo y equipo son explícitos.","bestFor":"Recrear una combinación documentada de molinillo y papel"},
     "rincon": {"overview":"Preparación de competición para un Geisha natural que cambia la temperatura entre vertidos. Es muy específica de la fuente y muestra cómo una receta responde a un café y un agua concretos.","bestFor":"Estudiar cambios térmicos para un café natural concreto"},
-    "gil": {"overview":"Método ORIGAMI de cuatro vertidos vinculado a un ajuste de K-Ultra y papel Sibarist. Ofrece una estructura temporal concisa para comparar, con menos detalle sobre café y equipo.","bestFor":"Comparar una estructura clara de cuatro vertidos"}
+    "gil": {"overview":"Método ORIGAMI de cuatro vertidos vinculado a un ajuste de K-Ultra y papel Sibarist. Ofrece una estructura temporal concisa para comparar, con menos detalle sobre café y equipo.","bestFor":"Comparar una estructura clara de cuatro vertidos"},
+    "hoffmann-ultimate": {"overview":"Una receta V60 completa de 500 ml con 60 g de bloom y dos vertidos por etapas. La agitación final y el giro suave nivelan el lecho antes del drenaje; la fuente usa agua más caliente para tuestes claros.","bestFor":"Una preparación V60 más grande con una estructura temporal clara"},
+    "camber": {"overview":"Una receta V60 de 20 g compartida por Camber Coffee en SCA 2023, con 60 g de bloom y vertidos hasta 200 g y 345 g. La fuente destaca cafés anaeróbicos y un final de 3:00–3:15.","bestFor":"Preparar cafés anaeróbicos con una secuencia V60 sencilla"}
   },
   "equipmentRoles": {
     "conicalControl":"Dripper cónico que da al usuario control directo sobre flujo, trazado del vertido y nivel de agua.",
@@ -43,7 +45,9 @@
     "filterElectric":"Molinillo eléctrico para café filtrado centrado en ajustes repetibles.",
     "largeFlatElectric":"Molinillo eléctrico de muelas planas grandes y molienda controlada.",
     "paperFilter":"Filtro de papel específico que condiciona flujo, filtración y limpieza; es consumible.",
-    "unresolved":"La fuente solo ofrece un nombre genérico, por lo que se evitan afirmaciones específicas de modelo."
+    "unresolved":"La fuente solo ofrece un nombre genérico, por lo que se evitan afirmaciones específicas de modelo.",
+    "electricGooseneck":"Hervidor eléctrico de cuello de cisne con control de temperatura para un agua de preparación repetible.",
+    "stovetopGooseneck":"Hervidor de cuello de cisne para cocina con pico estrecho para controlar el vertido; la temperatura del agua se gestiona por separado."
   },
   "equipmentExperienceTitle":"Perfil en taza y experiencia real",
   "equipmentExperienceNote":"Estas etiquetas resumen reseñas prácticas y experiencias de la comunidad. No son un ranking de pruebas ciegas y dependen del café, el agua y la técnica.",
@@ -91,6 +95,7 @@
     "beanSpecific":"La fuente se desarrolló para un café concreto y puede necesitar ajustes.",
     "consumable":"El filtro debe sustituirse periódicamente, lo que exige suministro continuo.",
     "filterMatching":"El flujo puede cambiar al usar otro papel o formato.",
-    "slowDrawdown":"La combinación registrada puede producir un drenaje o contacto más largo."
+    "slowDrawdown":"La combinación registrada puede producir un drenaje o contacto más largo.",
+    "heatSourceDependent":"Requiere una cocina o una fuente de calor aparte antes de preparar el café."
   }
 }

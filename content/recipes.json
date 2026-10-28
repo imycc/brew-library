@@ -1270,6 +1270,74 @@
           "cumulative": null
         }
       ]
+    },
+    {
+      "id": "hoffmann-ultimate-v60",
+      "copy": "hoffmann-ultimate",
+      "author": "James Hoffmann",
+      "authorId": "hoffmann",
+      "brewer": "HARIO V60",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 30,
+      "water": {"amount": 500, "unit": "mL", "derived": false},
+      "temperature": null,
+      "temperatureMode": "boiling",
+      "duration": [210, 210],
+      "source": {
+        "label": "HARIO USA · James Hoffmann",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-uitimate-v60-technique",
+        "published": "2026-06-16",
+        "checked": "2026-10-28"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {"action": "bloom", "at": 0, "amount": 60, "cumulative": 60, "unit": "g"},
+        {"action": "swirl", "at": 0, "end": 45, "amount": null, "cumulative": null},
+        {"action": "pour", "at": 45, "end": 75, "amount": 240, "cumulative": 300, "unit": "g"},
+        {"action": "pour", "at": 75, "end": 105, "amount": 200, "cumulative": 500, "unit": "g"},
+        {"action": "swirl", "at": 105, "end": 110, "amount": null, "cumulative": null, "instruction": "recipes.hoffmann-ultimate.stir"},
+        {"action": "finish", "at": 210, "amount": null, "cumulative": null}
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "light",
+      "filterConditions": "unknown",
+      "context": "daily"
+    },
+    {
+      "id": "camber-v60",
+      "copy": "camber",
+      "author": "Gloria Baldwin · Camber Coffee",
+      "authorId": "baldwin",
+      "brewer": "HARIO V60",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 20,
+      "water": {"amount": 345, "unit": "g", "derived": false},
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [180, 195],
+      "source": {
+        "label": "HARIO USA · Camber Coffee",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-recipe-with-camber-coffee",
+        "published": "2023-08-15",
+        "checked": "2026-10-28"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {"action": "bloom", "at": 0, "end": 30, "amount": 60, "cumulative": 60},
+        {"action": "pour", "at": 30, "end": 45, "amount": 140, "cumulative": 200},
+        {"action": "pour", "at": 60, "amount": 145, "cumulative": 345},
+        {"action": "finish", "at": 180, "amount": null, "cumulative": null}
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "beanNote": "recipes.camber.bean",
+      "coffee": {"process": "anaerobic"}
     }
   ]
 }

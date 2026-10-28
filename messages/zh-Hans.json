@@ -18,7 +18,7 @@
   },
   "equipmentNav": "器材",
   "equipmentTitle": "冲煮器材数据库",
-  "equipmentIntro": "按品牌官方资料整理手冲滤杯、磨豆器与滤纸的规格、兼容性和相关配方。",
+  "equipmentIntro": "按品牌官方资料整理手冲滤杯、手冲壶、磨豆器与滤纸的规格、兼容性和相关配方。",
   "equipmentItems": "件器材",
   "equipmentSearch": "搜索品牌、型号或兼容性",
   "equipmentCategory": "器材类别",
@@ -30,7 +30,8 @@
   "equipmentCategories": {
     "dripper": "滤杯",
     "grinder": "磨豆器",
-    "filter": "滤纸"
+    "filter": "滤纸",
+    "kettle": "手冲壶"
   },
   "equipmentStatus": {
     "legacy": "旧款／停产",
@@ -51,7 +52,10 @@
     "groundsCapacity": "粉仓容量",
     "format": "形状",
     "packs": "包装",
-    "technology": "技术"
+    "technology": "技术",
+    "power": "功率",
+    "voltage": "电压",
+    "temperatureRange": "温度范围"
   },
   "equipmentUnits": {
     "cups": "杯",
@@ -62,7 +66,10 @@
     "lb": "lb",
     "µm": "µm",
     "sheets": "张",
-    "oz": "盎司"
+    "oz": "盎司",
+    "W": "W",
+    "V": "V",
+    "°C": "°C"
   },
   "brand": "手冲配方库",
   "tagline": "咖啡编辑志",
@@ -405,6 +412,26 @@
       "close": "在 0:45 关阀浸泡。",
       "secondPour": "加入剩余一半的水，然后浸泡。",
       "drain": "在 2:00 开阀放流。"
+    },
+    "hoffmann-ultimate": {
+      "title": "终极 V60 手法",
+      "summary": "30 g 咖啡粉、60 g 闷蒸、分段注水至 500 g，最后搅拌的 V60 配方。",
+      "version": "Ultimate V60 · HARIO USA 版",
+      "grind": "中细研磨",
+      "equipment": "HARIO V60",
+      "notes": "来源建议使用尽可能热的水，尤其是浅烘焙。完成时间只是目标；流速会随滤纸和温度变化。",
+      "finish": "让咖啡滴滤完成，目标约 3:30。",
+      "stir": "顺时针搅拌一次、逆时针搅拌一次，稍等粉床排液，再轻轻旋转。"
+    },
+    "camber": {
+      "title": "Camber Coffee V60",
+      "summary": "20 g 咖啡粉、60 g 闷蒸、两次注水至 345 g，适合厌氧处理咖啡的 V60 配方。",
+      "version": "SCA 2023 · Camber Coffee",
+      "grind": "中细研磨",
+      "equipment": "HARIO V60",
+      "notes": "来源建议将此配方用于厌氧处理咖啡；未提供水温。",
+      "finish": "总冲煮时间以 3:00–3:15 为目标。",
+      "bean": "来源建议使用厌氧处理咖啡。"
     }
   },
   "waterQuality": "水质",
@@ -425,6 +452,8 @@
     "glass": "玻璃",
     "plastic": "塑料",
     "aluminum": "铝合金",
-    "natural-or-oxygen-bleached-paper": "天然纸或氧漂白纸"
+    "natural-or-oxygen-bleached-paper": "天然纸或氧漂白纸",
+    "natural-wood": "天然木材",
+    "phenol-resin": "酚醛树脂"
   }
 }

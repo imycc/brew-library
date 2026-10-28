@@ -18,7 +18,7 @@
   },
   "equipmentNav": "器具",
   "equipmentTitle": "抽出器具データベース",
-  "equipmentIntro": "ハンドドリップ用のドリッパー、グラインダー、フィルターの公式仕様、互換性、関連レシピを整理しています。",
+  "equipmentIntro": "ハンドドリップ用のドリッパー、ケトル、グラインダー、フィルターの公式仕様、互換性、関連レシピを整理しています。",
   "equipmentItems": "件",
   "equipmentSearch": "ブランド、型番、互換性を検索",
   "equipmentCategory": "器具カテゴリー",
@@ -30,7 +30,8 @@
   "equipmentCategories": {
     "dripper": "ドリッパー",
     "grinder": "グラインダー",
-    "filter": "フィルター"
+    "filter": "フィルター",
+    "kettle": "ケトル"
   },
   "equipmentStatus": {
     "legacy": "旧モデル／製造終了",
@@ -51,7 +52,10 @@
     "groundsCapacity": "粉容量",
     "format": "形状",
     "packs": "入数",
-    "technology": "技術"
+    "technology": "技術",
+    "power": "消費電力",
+    "voltage": "電圧",
+    "temperatureRange": "温度範囲"
   },
   "equipmentUnits": {
     "cups": "杯",
@@ -62,7 +66,10 @@
     "lb": "lb",
     "µm": "µm",
     "sheets": "枚",
-    "oz": "オンス"
+    "oz": "オンス",
+    "W": "W",
+    "V": "V",
+    "°C": "°C"
   },
   "brand": "ハンドドリップ図鑑",
   "tagline": "コーヒーの手帖",
@@ -405,6 +412,26 @@
       "close": "0:45 にバルブを閉じて浸漬します。",
       "secondPour": "残り半分を加えて浸漬します。",
       "drain": "2:00 に開いて排出します。"
+    },
+    "hoffmann-ultimate": {
+      "title": "V60の究極の抽出法",
+      "summary": "30gの粉、60gの蒸らし、500gまでの段階的な注湯、最後の撹拌で構成するV60レシピです。",
+      "version": "Ultimate V60 · HARIO USA版",
+      "grind": "中細挽き",
+      "equipment": "HARIO V60",
+      "notes": "出典は、特に浅煎りではできるだけ熱い湯を推奨しています。終了時刻は目安で、落ち方は濾紙や温度で変わります。",
+      "finish": "3:30前後の完了を目安に落とし切ります。",
+      "stir": "時計回りに1回、反時計回りに1回撹拌し、粉層を少し落としてからやさしくスワールします。"
+    },
+    "camber": {
+      "title": "Camber CoffeeのV60",
+      "summary": "20gの粉、60gの蒸らし、345gまでの2回の注湯で構成する、嫌気性発酵豆向けのV60レシピです。",
+      "version": "SCA 2023 · Camber Coffee",
+      "grind": "中細挽き",
+      "equipment": "HARIO V60",
+      "notes": "出典は嫌気性発酵処理の豆にこのレシピを勧めています。湯温は示されていません。",
+      "finish": "全体の抽出時間は3:00〜3:15を目安にします。",
+      "bean": "出典は嫌気性発酵処理の豆を推奨しています。"
     }
   },
   "waterQuality": "水質",
@@ -425,6 +452,8 @@
     "glass": "ガラス",
     "plastic": "プラスチック",
     "aluminum": "アルミニウム",
-    "natural-or-oxygen-bleached-paper": "天然紙または酸素漂白紙"
+    "natural-or-oxygen-bleached-paper": "天然紙または酸素漂白紙",
+    "natural-wood": "天然木",
+    "phenol-resin": "フェノール樹脂"
   }
 }

@@ -26,7 +26,9 @@
     "kobayashi": {"overview":"Ein ORIGAMI-Wettbewerbsrezept mit Sieben, Filterpositionierung und kühlerem letzten Aufguss. Präzision und Temperaturkontrolle sind die Stärken; die Zusatzvorbereitung gehört zur Methode.","bestFor":"Fortgeschrittene ORIGAMI-Vorbereitung und Temperaturkontrolle"},
     "selorio": {"overview":"Ein zeitlich getaktetes ORIGAMI-Rezept mit vier Zugaben, festgelegter Mühle und CAFEC-Papier. Es eignet sich, um eine dokumentierte Wettbewerbsanordnung eng nachzuvollziehen.","bestFor":"Eine dokumentierte Mühlen- und Filterkombination nachbauen"},
     "rincon": {"overview":"Ein Wettbewerbsrezept für einen natural Geisha mit wechselnden Wassertemperaturen. Es ist stark quellenspezifisch und zeigt, wie ein Rezept auf einen bestimmten Kaffee und ein Wasser reagiert.","bestFor":"Temperaturwechsel für einen bestimmten Natural untersuchen"},
-    "gil": {"overview":"Eine ORIGAMI-Methode mit vier Zugaben, K-Ultra-Einstellung und Sibarist-Papier. Die knappe Zeitstruktur erleichtert Vergleiche, lässt aber weniger kaffeespezifische Details.","bestFor":"Eine klare Vier-Zugaben-Struktur vergleichen"}
+    "gil": {"overview":"Eine ORIGAMI-Methode mit vier Zugaben, K-Ultra-Einstellung und Sibarist-Papier. Die knappe Zeitstruktur erleichtert Vergleiche, lässt aber weniger kaffeespezifische Details.","bestFor":"Eine klare Vier-Zugaben-Struktur vergleichen"},
+    "hoffmann-ultimate": {"overview":"Ein volles V60-Rezept für 500 ml mit 60 g Blooming und zwei Aufgussetappen. Das abschließende Rühren und sanfte Schwenken ebnen das Kaffeebett vor dem Durchlauf; die Quelle verwendet heißeres Wasser für hellere Röstungen.","bestFor":"Eine größere V60-Menge mit klarer Zeitstruktur"},
+    "camber": {"overview":"Ein V60-Rezept mit 20 g, das Camber Coffee auf der SCA 2023 geteilt hat: 60 g Blooming und Aufgüsse bis 200 g und 345 g. Die Quelle hebt anaerobe Kaffees und ein Ende bei 3:00–3:15 hervor.","bestFor":"Anaerobe Kaffees mit einer einfachen V60-Folge brühen"}
   },
   "equipmentRoles": {
     "conicalControl":"Ein konischer Dripper, der direkte Kontrolle über Durchfluss, Aufgussweg und Wasserstand ermöglicht.",
@@ -43,7 +45,9 @@
     "filterElectric":"Eine elektrische Mühle für Filterkaffee mit wiederholbaren Einstellungen.",
     "largeFlatElectric":"Eine elektrische Mühle mit großen Scheibenmahlwerken und kontrollierter Einstellung.",
     "paperFilter":"Ein passender Papierfilter, der Durchfluss, Filtration und Reinigung bestimmt; er ist ein Verbrauchsmaterial.",
-    "unresolved":"Die Quelle nennt nur einen allgemeinen Namen; modellspezifische Aussagen werden daher bewusst vermieden."
+    "unresolved":"Die Quelle nennt nur einen allgemeinen Namen; modellspezifische Aussagen werden daher bewusst vermieden.",
+    "electricGooseneck":"Ein elektrischer Kessel mit Schwanenhals und Temperaturwahl für wiederholbares Brühwasser.",
+    "stovetopGooseneck":"Ein Kessel mit Schwanenhals für den Herd und schmalem Ausguss zur manuellen Kontrolle des Aufgusses; die Wassertemperatur wird separat geregelt."
   },
   "equipmentExperienceTitle":"Tassenprofil und Praxiserfahrung",
   "equipmentExperienceNote":"Diese Tags fassen öffentliche Praxistests und Community-Berichte zusammen. Sie sind keine Blindverkostungsrangliste und hängen von Kaffee, Wasser und Technik ab.",
@@ -91,6 +95,7 @@
     "beanSpecific":"Die Quelle wurde für einen bestimmten Kaffee entwickelt und kann Anpassung benötigen.",
     "consumable":"Der Filter muss regelmäßig ersetzt werden und erfordert laufenden Nachschub.",
     "filterMatching":"Ein anderes Papier oder Format kann den Durchfluss verändern.",
-    "slowDrawdown":"Die erfasste Kombination kann einen längeren Ablauf oder Kontakt erzeugen."
+    "slowDrawdown":"Die erfasste Kombination kann einen längeren Ablauf oder Kontakt erzeugen.",
+    "heatSourceDependent":"Vor dem Brühen wird ein Herd oder eine separate Wärmequelle benötigt."
   }
 }

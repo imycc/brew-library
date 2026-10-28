@@ -182,6 +182,142 @@
       "checked": "2026-10-28"
     },
     {
+      "id": "hario-v60-buono-1-2l",
+      "category": "kettle",
+      "brand": "HARIO",
+      "name": "V60 \"Buono\" Drip Kettle 1.2L",
+      "status": "current",
+      "aliases": ["HARIO VKB-120HSV", "V60 Buono 1.2L"],
+      "details": [
+        {"key": "capacity", "value": "800", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;phenol-resin"},
+        {"key": "dimensions", "value": "W274 × D144 × H147", "unit": "mm"},
+        {"key": "compatibility", "value": "Stovetop use"},
+        {"key": "mode", "value": "Stovetop gooseneck; 1.2 L nominal"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-buono-drip-kettle"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-buono-electric",
+      "category": "kettle",
+      "brand": "HARIO",
+      "name": "V60 \"Buono\" Electric Drip Kettle",
+      "status": "current",
+      "aliases": ["HARIO EVKB-80U-HSV", "V60 Buono Electric"],
+      "details": [
+        {"key": "capacity", "value": "800", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;polypropylene"},
+        {"key": "dimensions", "value": "W295 × D156 × H175", "unit": "mm"},
+        {"key": "power", "value": "1000", "unit": "W"},
+        {"key": "voltage", "value": "120", "unit": "V"},
+        {"key": "mode", "value": "Electric; 60 Hz; cordless; auto-off; 150–800 mL range"},
+        {"key": "madeIn", "value": "China"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-buono-electric-drip-kettle"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-drip-kettle-wood",
+      "category": "kettle",
+      "brand": "HARIO",
+      "name": "V60 Drip Kettle Wood 1.2L",
+      "status": "current",
+      "aliases": ["HARIO VKW-120-HSV", "V60 Wood Kettle"],
+      "details": [
+        {"key": "capacity", "value": "800", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;natural-wood"},
+        {"key": "dimensions", "value": "W310 × D144 × H160", "unit": "mm"},
+        {"key": "compatibility", "value": "Gas, electric and induction stovetops"},
+        {"key": "mode", "value": "Stovetop gooseneck; 1.2 L nominal"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-drip-kettle-wood"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "fellow-stagg-ekg-pro",
+      "category": "kettle",
+      "brand": "Fellow",
+      "name": "Stagg EKG Pro Electric Kettle",
+      "status": "current",
+      "aliases": ["Fellow Stagg EKG Pro", "Stagg EKG Pro"],
+      "details": [
+        {"key": "capacity", "value": "900", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;plastic"},
+        {"key": "dimensions", "value": "282 × 172 × 196", "unit": "mm"},
+        {"key": "weight", "value": "1400 (with base)"},
+        {"key": "power", "value": "1000–1200", "unit": "W"},
+        {"key": "voltage", "value": "110–120", "unit": "V"},
+        {"key": "temperatureRange", "value": "40–100", "unit": "°C"},
+        {"key": "mode", "value": "Electric; adjustable hold 15–60 min"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "timemore-fish-smart",
+      "category": "kettle",
+      "brand": "TIMEMORE",
+      "name": "Fish Smart Electric Coffee Kettle 600 ml",
+      "status": "current",
+      "aliases": ["TIMEMORE Fish Smart", "Fish Smart 600"],
+      "details": [
+        {"key": "capacity", "value": "600", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel"},
+        {"key": "power", "value": "1000", "unit": "W"},
+        {"key": "temperatureRange", "value": "40–100", "unit": "°C"},
+        {"key": "mode", "value": "Electric; home edition; 560 mL max fill; ±1 °C hold"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "TIMEMORE", "url": "https://www.timemore.com/products/timemore-fish-smart-electric-coffee-kettle-600ml"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "kalita-wave-kettle-1l",
+      "category": "kettle",
+      "brand": "Kalita",
+      "name": "Wave Stainless Steel Kettle 1L",
+      "status": "current",
+      "aliases": ["Kalita Wave Kettle 1L", "Wave Kettle 1L"],
+      "details": [
+        {"key": "capacity", "value": "1000", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;natural-wood"},
+        {"key": "dimensions", "value": "Base Ø123", "unit": "mm"},
+        {"key": "compatibility", "value": "Not for induction or gas stoves"},
+        {"key": "mode", "value": "Stovetop gooseneck"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-stainless-steel-kettle-1l"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "kalita-wave-narrow-700",
+      "category": "kettle",
+      "brand": "Kalita",
+      "name": "Wave Narrow Stainless Steel Kettle 700 ml",
+      "status": "current",
+      "aliases": ["Kalita Wave Narrow 700", "Wave Narrow Kettle 700ml"],
+      "details": [
+        {"key": "capacity", "value": "700", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;natural-wood"},
+        {"key": "dimensions", "value": "195 × 97 × 160", "unit": "mm"},
+        {"key": "weight", "value": "330", "unit": "g"},
+        {"key": "compatibility", "value": "Not for induction or gas stoves"},
+        {"key": "mode", "value": "Stovetop gooseneck"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-narrow-stainless-steel-kettle-0-7l"}],
+      "checked": "2026-10-28"
+    },
+    {
       "id": "comandante-c40-mk4",
       "category": "grinder",
       "brand": "COMANDANTE",
