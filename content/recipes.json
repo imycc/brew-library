@@ -1338,6 +1338,36 @@
       "context": "daily",
       "beanNote": "recipes.camber.bean",
       "coffee": {"process": "anaerobic"}
+    },
+    {
+      "id": "lamill-mugen",
+      "copy": "lamill",
+      "author": "Wyatt Smeaton · LAMILL Coffee",
+      "authorId": "smeaton",
+      "brewer": "HARIO V60 MUGEN 02",
+      "brewerId": "mugen",
+      "kind": "hot",
+      "dose": 16.5,
+      "water": {"amount": 225, "unit": "g", "derived": false},
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [180, 195],
+      "source": {
+        "label": "HARIO USA · LAMILL Coffee",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-mugen-recipe-with-lamill-coffee",
+        "published": "2023-05-11",
+        "checked": "2026-10-28"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {"action": "pour", "at": 0, "end": 40, "amount": 225, "cumulative": 225},
+        {"action": "finish", "at": 180, "amount": null, "cumulative": null}
+      ],
+      "preparation": ["recipes.lamill.prepare"],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily"
     }
   ]
 }

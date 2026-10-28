@@ -432,6 +432,16 @@
       "notes": "来源建议将此配方用于厌氧处理咖啡；未提供水温。",
       "finish": "总冲煮时间以 3:00–3:15 为目标。",
       "bean": "来源建议使用厌氧处理咖啡。"
+    },
+    "lamill": {
+      "title": "LAMILL V60 Mugen",
+      "summary": "16.5 g 咖啡粉、一次注入 225 g 水，目标 3:00–3:30 滴完的 Mugen 配方。",
+      "version": "LAMILL Coffee · 2023",
+      "grind": "中研磨",
+      "equipment": "HARIO V60 MUGEN 02",
+      "notes": "来源没有提供闷蒸或水温；要求以连续同心圆注水，并在 0:40 结束。",
+      "finish": "让粉床滴滤完成，目标 3:00–3:30。",
+      "prepare": "先润湿滤纸，加入 16.5 g 咖啡粉，并在中央挖出小凹槽。"
     }
   },
   "waterQuality": "水质",
@@ -454,6 +464,9 @@
     "aluminum": "铝合金",
     "natural-or-oxygen-bleached-paper": "天然纸或氧漂白纸",
     "natural-wood": "天然木材",
-    "phenol-resin": "酚醛树脂"
+    "phenol-resin": "酚醛树脂",
+    "copper": "铜",
+    "brass": "黄铜",
+    "acrylic-resin": "丙烯酸树脂"
   }
 }

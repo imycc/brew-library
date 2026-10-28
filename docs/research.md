@@ -1,6 +1,6 @@
 # Source research and version decisions
 
-Checked on 2026-10-27 (Asia/Hong_Kong), with expansions checked on 2026-10-28. The initial release began with three recipes; the current catalogue contains eighteen. Missing source parameters remain explicit.
+Checked on 2026-10-27 (Asia/Hong_Kong), with expansions checked on 2026-10-28. The initial release began with three recipes; the current catalogue contains nineteen. Missing source parameters remain explicit.
 
 ## Published recipes
 
@@ -106,18 +106,19 @@ April’s Origami video could not be fetched during this pass and remains pendin
 
 ## V60 expansion — checked 2026-10-28
 
-Two additional recipes were read on HARIO USA’s official recipe blog, bringing the catalogue to eighteen:
+Three additional recipes were read on HARIO USA’s official recipe blog, bringing the catalogue to nineteen:
 
 | Record | Primary source | Decisions |
 | --- | --- | --- |
 | James Hoffmann — Ultimate V60 | [HARIO USA](https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-uitimate-v60-technique) | 30 g; 500 mL; medium-fine. The overview keeps mL while the measured additions stay in g: 60 g bloom, 240 g to a 300 g cumulative target, then 200 g to 500 g. The source says “the hotter, the better”, so the record uses boiling mode rather than inventing a number. A final stir and gentle swirl precede drawdown; 3:30 is a target, not a guaranteed finish. Viewing the HARIO transcription as the canonical page is intentional; its publication date is 2026-06-16. |
 | Gloria Baldwin / Camber Coffee — V60 | [HARIO USA](https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-recipe-with-camber-coffee) | 20 g; 345 g; medium-fine. 60 g bloom from 0:00–0:30; pour to 200 g from 0:30–0:45; final pour at 1:00 to 345 g. Total brew time 3:00–3:15. Temperature is not supplied and stays unknown. The source recommends anaerobic coffees, which is recorded as the coffee process rather than generalized to all beans. |
+| Wyatt Smeaton / LAMILL Coffee — Mugen | [HARIO USA](https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-mugen-recipe-with-lamill-coffee) | 16.5 g; 225 g; medium grind. No bloom and no temperature are supplied. One continuous concentric pour finishes at 0:40, followed by a 3:00–3:30 drawdown. The preparation instruction to pre-wet the filter and form a centre crater is retained as a separate preparation step. |
 
-The Camber record uses the article’s official image. The Hoffmann article image is a very slow official PNG, so that record deliberately keeps the neutral fallback instead of shipping an unreliable hotlink. Both records keep `recipeIds` absent from specific V60 equipment records because the source says only “V60”, not a size or material. The following official pages were inspected but not added: Tim Wendelboe’s article currently has an image-only body; Tetsu Kasuya’s Mugen and James Hoffmann’s Switch × Sibarist pages list dose, water and time without a full pour sequence. Those gaps are not filled from third-party adaptations.
+The Camber record uses the article’s official image. The Hoffmann article image is a very slow official PNG, so that record deliberately keeps the neutral fallback instead of shipping an unreliable hotlink. Hoffmann and Camber keep `recipeIds` absent from specific V60 equipment records because the source says only “V60”, not a size or material. The LAMILL recipe is linked to the Mugen 02 record because its source names that brewer explicitly. The following official pages were inspected but not added: Tim Wendelboe’s article currently has an image-only body; Tetsu Kasuya’s Mugen and James Hoffmann’s Switch × Sibarist pages list dose, water and time without a full pour sequence. Alternative Brewing’s NEO and Suiren articles also have image-only bodies. Those gaps are not filled from third-party adaptations.
 
 ## Equipment catalogue — checked 2026-10-28
 
-The expanded equipment catalogue contains 48 records: 19 drippers, 7 kettles, 9 grinders and 13 filters. Product names, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently. Canonical material IDs are translated in all nine locales; brand and model names remain recognizable originals.
+The expanded equipment catalogue contains 55 records: 22 drippers, 11 kettles, 9 grinders and 13 filters. Product names, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently. Canonical material IDs are translated in all nine locales; brand and model names remain recognizable originals.
 
 Primary source groups:
 
@@ -140,6 +141,9 @@ Primary source groups:
 - [Fellow Stagg EKG Pro](https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle)
 - [TIMEMORE Fish Smart 600 ml](https://www.timemore.com/products/timemore-fish-smart-electric-coffee-kettle-600ml)
 - [Kalita Wave Stainless Steel Kettle 1L](https://kalitausa.com/products/kalita-wave-stainless-steel-kettle-1l) and [Wave Narrow 700 ml](https://kalitausa.com/products/kalita-wave-narrow-stainless-steel-kettle-0-7l)
+- [HARIO V60 Buono Copper 0.9L](https://www.hario-usa.com/products/v60-buono-drip-kettle-copper), [V60 Fit 1.2L](https://www.hario-usa.com/products/v60-fit-drip-kettle) and [Mini Drip Kettle](https://www.hario-usa.com/products/drip-kettle-kasuya-model)
+- [HARIO V60 MUGEN One Pour Dripper 02](https://www.hario-usa.com/products/v60-one-pour-dripper-mugen), [V60 Dripper NEO](https://www.hario-usa.com/products/v60-dripper-neo) and [V60 Suiren 02](https://www.hario-usa.com/products/v60-suiren-coffee-dripper-02)
+- [Fellow Stagg Pour-Over Kettle](https://fellowproducts.com/products/stagg)
 
 ### Kettle records — checked 2026-10-28
 
@@ -151,6 +155,17 @@ Seven kettle records were added without recipe links, because none of the existi
 - The TIMEMORE home edition lists 600 mL capacity but a 560 mL maximum fill level; both are shown rather than rounded to one number.
 - Kalita’s 1 L and 700 mL stovetop kettles are explicitly marked as unsuitable for induction or gas stoves. The 700 mL page supplies the 330 g body weight; the 1 L page does not supply a body weight, so none is stored.
 - Stovetop records state that heat comes from a separate source; they do not claim temperature control. Electric records state the official power and, where supplied, temperature range.
+
+### Second equipment expansion — checked 2026-10-28
+
+Seven records were added: four stovetop kettles and three V60-family drippers. The Mugen record is linked to the LAMILL recipe; NEO and Suiren remain unlinked because their official recipe articles are image-only.
+
+- The Buono Copper page lists 700 mL practical capacity and explicitly excludes induction; its materials are stored as copper, brass, natural wood and silicone from the body, handle, lid knob and handle cover.
+- The V60 Fit page lists 800 mL practical capacity and compatibility with induction, gas, solid-element, radiant, halogen and coil cooktops.
+- The Mini Drip Kettle page lists 500 mL practical capacity, no lid, and exclusions for induction, open flame, microwave and oven.
+- Fellow’s Stagg stovetop page supplies a 1.0 L boiling capacity, stainless-steel body, gas/electric compatibility, a built-in thermometer and a counterbalanced handle; no dimensions or weight are stated, so none are stored.
+- Mugen is stored as the ceramic 02 model with V60 02 filter compatibility. NEO and Suiren are stored as 02-size PCT/Tritan drippers. No size/material claims are transferred between variants.
+- The Mugen editorial image is omitted because the official product page exposes only the transparent-black variant; using it for the ceramic record would misrepresent the material. NEO and Suiren use their official 02-size product images.
 
 Editorial boundaries:
 

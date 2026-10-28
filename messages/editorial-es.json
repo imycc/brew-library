@@ -28,7 +28,8 @@
     "rincon": {"overview":"Preparación de competición para un Geisha natural que cambia la temperatura entre vertidos. Es muy específica de la fuente y muestra cómo una receta responde a un café y un agua concretos.","bestFor":"Estudiar cambios térmicos para un café natural concreto"},
     "gil": {"overview":"Método ORIGAMI de cuatro vertidos vinculado a un ajuste de K-Ultra y papel Sibarist. Ofrece una estructura temporal concisa para comparar, con menos detalle sobre café y equipo.","bestFor":"Comparar una estructura clara de cuatro vertidos"},
     "hoffmann-ultimate": {"overview":"Una receta V60 completa de 500 ml con 60 g de bloom y dos vertidos por etapas. La agitación final y el giro suave nivelan el lecho antes del drenaje; la fuente usa agua más caliente para tuestes claros.","bestFor":"Una preparación V60 más grande con una estructura temporal clara"},
-    "camber": {"overview":"Una receta V60 de 20 g compartida por Camber Coffee en SCA 2023, con 60 g de bloom y vertidos hasta 200 g y 345 g. La fuente destaca cafés anaeróbicos y un final de 3:00–3:15.","bestFor":"Preparar cafés anaeróbicos con una secuencia V60 sencilla"}
+    "camber": {"overview":"Una receta V60 de 20 g compartida por Camber Coffee en SCA 2023, con 60 g de bloom y vertidos hasta 200 g y 345 g. La fuente destaca cafés anaeróbicos y un final de 3:00–3:15.","bestFor":"Preparar cafés anaeróbicos con una secuencia V60 sencilla"},
+    "lamill": {"overview":"Una receta Mugen sin bloom, basada en un solo vertido continuo y un drenaje largo. Es un punto de partida sencillo para el dripper de flujo restringido.","bestFor":"Una rutina Mugen sencilla de un solo vertido"}
   },
   "equipmentRoles": {
     "conicalControl":"Dripper cónico que da al usuario control directo sobre flujo, trazado del vertido y nivel de agua.",
@@ -47,7 +48,8 @@
     "paperFilter":"Filtro de papel específico que condiciona flujo, filtración y limpieza; es consumible.",
     "unresolved":"La fuente solo ofrece un nombre genérico, por lo que se evitan afirmaciones específicas de modelo.",
     "electricGooseneck":"Hervidor eléctrico de cuello de cisne con control de temperatura para un agua de preparación repetible.",
-    "stovetopGooseneck":"Hervidor de cuello de cisne para cocina con pico estrecho para controlar el vertido; la temperatura del agua se gestiona por separado."
+    "stovetopGooseneck":"Hervidor de cuello de cisne para cocina con pico estrecho para controlar el vertido; la temperatura del agua se gestiona por separado.",
+    "openFrame":"Un cono de estructura abierta con costillas en espiral expuestas; el papel y el café definen el flujo."
   },
   "equipmentExperienceTitle":"Perfil en taza y experiencia real",
   "equipmentExperienceNote":"Estas etiquetas resumen reseñas prácticas y experiencias de la comunidad. No son un ranking de pruebas ciegas y dependen del café, el agua y la técnica.",

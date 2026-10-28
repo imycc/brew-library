@@ -432,6 +432,16 @@
       "notes": "The source recommends this recipe for anaerobic processed coffees. Water temperature is not stated.",
       "finish": "Aim for a total brew time of 3:00–3:15.",
       "bean": "The source recommends anaerobic processed coffees."
+    },
+    "lamill": {
+      "title": "LAMILL V60 Mugen",
+      "summary": "A 16.5 g one-pour Mugen recipe with 225 g water and a 3:00–3:30 drawdown.",
+      "version": "LAMILL Coffee · 2023",
+      "grind": "Medium",
+      "equipment": "HARIO V60 MUGEN 02",
+      "notes": "The source uses no bloom or temperature specification; it asks for one continuous concentric pour finishing at 0:40.",
+      "finish": "Allow the bed to draw down, aiming for 3:00–3:30.",
+      "prepare": "Pre-wet the filter, add 16.5 g of coffee and make a small crater in the centre."
     }
   },
   "waterQuality": "Water profile",
@@ -454,6 +464,9 @@
     "aluminum": "Aluminum",
     "natural-or-oxygen-bleached-paper": "Natural or oxygen-bleached paper",
     "natural-wood": "Natural wood",
-    "phenol-resin": "Phenol resin"
+    "phenol-resin": "Phenol resin",
+    "copper": "Copper",
+    "brass": "Brass",
+    "acrylic-resin": "Acrylic resin"
   }
 }

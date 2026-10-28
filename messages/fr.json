@@ -432,6 +432,16 @@
       "notes": "La source recommande cette recette pour les cafés à traitement anaérobie. La température de l’eau n’est pas indiquée.",
       "finish": "Viser un temps total de préparation de 3:00–3:15.",
       "bean": "La source recommande les cafés à traitement anaérobie."
+    },
+    "lamill": {
+      "title": "LAMILL V60 Mugen",
+      "summary": "Une recette Mugen de 16,5 g avec un seul versement de 225 g et un écoulement de 3:00–3:30.",
+      "version": "LAMILL Coffee · 2023",
+      "grind": "Moyenne",
+      "equipment": "HARIO V60 MUGEN 02",
+      "notes": "La source ne précise ni bloom ni température ; elle demande un versement circulaire continu se terminant à 0:40.",
+      "finish": "Laisser s’écouler en visant 3:00–3:30.",
+      "prepare": "Rincer le filtre, ajouter 16,5 g de café et former une petite dépression au centre."
     }
   },
   "waterQuality": "Profil de l’eau",
@@ -454,6 +464,9 @@
     "aluminum": "Aluminium",
     "natural-or-oxygen-bleached-paper": "Papier naturel ou blanchi à l’oxygène",
     "natural-wood": "Bois naturel",
-    "phenol-resin": "Résine phénolique"
+    "phenol-resin": "Résine phénolique",
+    "copper": "Cuivre",
+    "brass": "Laiton",
+    "acrylic-resin": "Résine acrylique"
   }
 }
