@@ -197,7 +197,10 @@
       "bloom": "Preinfusiona 15 segundos; no se indica la cantidad de agua.",
       "circle": "Vierte suavemente en círculos hasta acumular 150 mL, incluida la preinfusión.",
       "centre": "Añade los 100 mL restantes rápidamente al centro, manteniendo el nivel; termina hacia 1:00."
-    }
+    },
+    "grill": {"title":"V60 matutino de Martha Grill","summary":"V60 de 30 g, con 30 segundos de bloom, dos vertidos y final a los tres minutos.","version":"HARIOLOGY · HARIO Europe","grind":"No indicado por la fuente","equipment":"HARIO V60 · plástico","notes":"La receta usa 30 g, 500 mL a 92 °C y café Ézio Sartori de Brasil. La fuente no indica la molienda.","finish":"Termina la extracción antes de 3:00.","beans":"Ézio Sartori, Espírito Santo, Brasil; tostado por Coffee Lab"},
+    "mallouhi": {"title":"V60 de Ibrahim Al Mallouhi","summary":"V60 1:15 con bloom circular de 40 mL y un vertido lento del agua restante.","version":"HARIOLOGY · HARIO Europe","grind":"Medio","equipment":"HARIO V60","notes":"La fuente indica 20 g, 300 mL y un objetivo de 2:10, pero no la temperatura.","finish":"Busca un tiempo total de 2:10.","prep":"Humedece el filtro, desecha el agua y añade el café.","water":"La fuente dice agua caliente, sin indicar temperatura."},
+    "chronicler": {"title":"Receta Switch de Coffee Chronicler","summary":"Dos vertidos: la mitad con la válvula abierta, la otra mitad en inmersión y después drenaje.","version":"The Coffee Chronicler · 2023","grind":"No indicado por la fuente","equipment":"HARIO Switch 02","notes":"La versión estándar usa 20 g y 320 g: vierte la mitad abierto, cierra a 0:45, añade el resto y abre a 2:00. Temperatura y molienda no indicadas.","finish":"Deja drenar; el tiempo total publicado es 2:45–3:15.","open":"Empieza con la válvula abierta.","firstPour":"Vierte la primera mitad con la válvula abierta.","close":"Cierra a 0:45 para la inmersión.","secondPour":"Añade la mitad restante y deja infusionar.","drain":"Abre a 2:00 y deja drenar."}
   },
   "waterQuality": "Perfil del agua",
   "competition": "Receta de competición publicada"

@@ -18,7 +18,7 @@ export async function validate(){
    let cumulative:number|null=0;
    for(const s of r.steps){
      if(!['pour','bloom','pulses'].includes(s.action))continue;
-     if(s.amount!==null&&cumulative!==null){cumulative+=s.amount;if(s.cumulative!==null)assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);}
+     if(s.amount!==null&&cumulative!==null){cumulative+=s.amount;if(s.cumulative!==null)assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);else cumulative=null;}
      else cumulative=s.cumulative;
    }
    // Only compare totals when mass/volume units actually match. Never convert g to mL.

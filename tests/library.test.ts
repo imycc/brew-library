@@ -27,7 +27,7 @@ test('shared selections are validated, deduplicated and bounded',()=>{
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,8);
+ assert.equal(recipes.length,11);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -38,5 +38,8 @@ test('expanded original recipes preserve unknown temperatures and mixed source u
  assert.equal(find('hoang-w60').steps[0].unit,'mL');
  assert.equal(find('rojewska-v60').steps[0].amount,null);
  assert.equal(find('rojewska-v60').duration[0],135);
- assert.equal(filterRecipes(recipes,{brewer:'switch'},r=>r.author).length,2);
+ assert.equal(filterRecipes(recipes,{brewer:'switch'},r=>r.author).length,3);
+ assert.equal(find('grill-v60').temperature,92);
+ assert.equal(find('mallouhi-v60').temperatureMode,'unknown');
+ assert.equal(find('chronicler-switch').duration[0],165);
 });

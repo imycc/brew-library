@@ -197,7 +197,10 @@
       "bloom": "15초간 사전 침지합니다. 물양은 출처에 없습니다.",
       "circle": "사전 침지 물을 포함하여 누적 150 mL까지 부드럽게 원형 주입합니다.",
       "centre": "남은 100 mL를 중앙에 빠르게 부어 수위를 유지하며 약 1:00에 멈춥니다."
-    }
+    },
+    "grill": {"title":"마사 그릴의 모닝 V60","summary":"30초 블룸과 두 번의 푸어로 3분에 마치는 30 g V60 레시피입니다.","version":"HARIOLOGY · HARIO Europe","grind":"출처에 없음","equipment":"HARIO V60 · 플라스틱","notes":"30 g 커피, 92°C 물 500 mL, 브라질 Ézio Sartori를 사용합니다. 분쇄도는 원문에 없습니다.","finish":"3:00까지 추출을 마칩니다.","beans":"브라질 Espírito Santo Ézio Sartori, Coffee Lab 로스팅"},
+    "mallouhi": {"title":"이브라힘 알 말루히의 V60","summary":"40 mL를 원형으로 블룸한 뒤 남은 물을 천천히 붓는 1:15 V60입니다.","version":"HARIOLOGY · HARIO Europe","grind":"중간 분쇄","equipment":"HARIO V60","notes":"20 g, 물 300 mL, 목표 2:10입니다. 물 온도는 출처에 없습니다.","finish":"총 추출 2:10을 목표로 합니다.","prep":"필터를 적셔 헹굼물을 버린 뒤 커피를 넣습니다.","water":"출처는 뜨거운 물이라고만 하며 온도는 제시하지 않습니다."},
+    "chronicler": {"title":"Coffee Chronicler Switch 레시피","summary":"물을 절반씩 나누어 열린 상태로 붓고, 침지한 뒤 배출합니다.","version":"The Coffee Chronicler · 2023","grind":"출처에 없음","equipment":"HARIO Switch 02","notes":"표준 버전은 커피 20 g, 물 320 g입니다. 열린 밸브로 절반을 붓고 0:45에 닫은 뒤 나머지를 넣고 2:00에 엽니다. 온도와 분쇄도는 없습니다.","finish":"배출합니다. 총 시간은 2:45–3:15 범위입니다.","open":"Switch 밸브를 열고 시작합니다.","firstPour":"밸브를 연 채 물의 절반을 붓습니다.","close":"0:45에 밸브를 닫고 침지합니다.","secondPour":"나머지 절반을 넣고 침지합니다.","drain":"2:00에 열어 배출합니다."}
   },
   "waterQuality": "물 특성",
   "competition": "공개된 대회 레시피"

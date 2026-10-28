@@ -631,6 +631,210 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily"
+    },
+    {
+      "id": "grill-v60",
+      "copy": "grill",
+      "author": "Martha Grill",
+      "authorId": "grill",
+      "brewer": "HARIO V60 · Plastic",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 30,
+      "water": {
+        "amount": 500,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": 92,
+      "temperatureMode": "unknown",
+      "duration": [
+        180,
+        180
+      ],
+      "source": {
+        "label": "HARIO Europe",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-martha-grill",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "unit": "g"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 190,
+          "cumulative": 250,
+          "unit": "g"
+        },
+        {
+          "action": "swirl",
+          "at": 30,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 250,
+          "cumulative": 500,
+          "unit": "g"
+        },
+        {
+          "action": "swirl",
+          "at": 90,
+          "amount": null,
+          "cumulative": null
+        },
+        {
+          "action": "finish",
+          "at": 180,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "light",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "beanNote": "recipes.grill.beans"
+    },
+    {
+      "id": "mallouhi-v60",
+      "copy": "mallouhi",
+      "author": "Ibrahim H. Al Mallouhi",
+      "authorId": "mallouhi",
+      "brewer": "HARIO V60",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 20,
+      "water": {
+        "amount": 300,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        130,
+        130
+      ],
+      "source": {
+        "label": "HARIO Europe",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-ibrahim-h-al-mallouhi",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 40,
+          "cumulative": null,
+          "unit": "mL"
+        },
+        {
+          "action": "finish",
+          "at": 130,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [
+        "recipes.mallouhi.prep"
+      ],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "waterNote": "recipes.mallouhi.water"
+    },
+    {
+      "id": "chronicler-switch",
+      "copy": "chronicler",
+      "author": "Asser Christensen",
+      "authorId": "chronicler",
+      "brewer": "HARIO Switch 02",
+      "brewerId": "switch",
+      "kind": "hot",
+      "dose": 20,
+      "water": {
+        "amount": 320,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        165,
+        195
+      ],
+      "source": {
+        "label": "The Coffee Chronicler",
+        "url": "https://coffeechronicler.com/hario-switch/",
+        "published": "2023-02-26",
+        "checked": "2026-10-28"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "open",
+          "at": 0,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.chronicler.open"
+        },
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 160,
+          "cumulative": 160,
+          "unit": "g",
+          "instruction": "recipes.chronicler.firstPour"
+        },
+        {
+          "action": "close",
+          "at": 45,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.chronicler.close"
+        },
+        {
+          "action": "pour",
+          "at": 45,
+          "amount": 160,
+          "cumulative": 320,
+          "unit": "g",
+          "instruction": "recipes.chronicler.secondPour"
+        },
+        {
+          "action": "open",
+          "at": 120,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.chronicler.drain"
+        },
+        {
+          "action": "finish",
+          "at": 165,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily"
     }
   ]
 }

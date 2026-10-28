@@ -197,7 +197,10 @@
       "bloom": "Préinfuser 15 secondes ; quantité d’eau non précisée.",
       "circle": "Verser doucement en cercles jusqu’à un cumul de 150 mL, eau de préinfusion comprise.",
       "centre": "Verser rapidement les 100 mL restants au centre en maintenant le niveau ; arrêter vers 1:00."
-    }
+    },
+    "grill": {"title":"V60 du matin de Martha Grill","summary":"Un V60 de 30 g : bloom de 30 secondes, deux versements et fin à trois minutes.","version":"HARIOLOGY · HARIO Europe","grind":"Non indiqué par la source","equipment":"HARIO V60 · plastique","notes":"La recette publiée utilise 30 g, 500 mL à 92 °C et un café Ézio Sartori du Brésil. La mouture n’est pas précisée.","finish":"Terminer l’extraction avant 3:00.","beans":"Ézio Sartori, Espírito Santo, Brésil ; torréfié par Coffee Lab"},
+    "mallouhi": {"title":"V60 d’Ibrahim Al Mallouhi","summary":"Un V60 1:15 avec un bloom circulaire de 40 mL puis un versement lent.","version":"HARIOLOGY · HARIO Europe","grind":"Moyenne","equipment":"HARIO V60","notes":"La source indique 20 g, 300 mL et un objectif de 2:10, sans température de l’eau.","finish":"Viser un temps total de 2:10.","prep":"Rincer le filtre, jeter l’eau puis ajouter le café.","water":"La source dit eau chaude sans préciser la température."},
+    "chronicler": {"title":"Recette Switch de Coffee Chronicler","summary":"Deux versements : la moitié ouvert, l’autre en immersion, puis égouttage.","version":"The Coffee Chronicler · 2023","grind":"Non indiqué par la source","equipment":"HARIO Switch 02","notes":"La version standard utilise 20 g et 320 g : verser la moitié ouvert, fermer à 0:45, ajouter le reste puis ouvrir à 2:00. Température et mouture non précisées.","finish":"Laisser s’égoutter ; la durée publiée est de 2:45–3:15.","open":"Commencer avec la valve ouverte.","firstPour":"Verser la première moitié valve ouverte.","close":"Fermer à 0:45 pour l’immersion.","secondPour":"Ajouter la moitié restante puis laisser infuser.","drain":"Ouvrir à 2:00 et laisser s’égoutter."}
   },
   "waterQuality": "Profil de l’eau",
   "competition": "Recette de compétition publiée"

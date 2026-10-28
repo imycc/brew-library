@@ -197,7 +197,10 @@
       "bloom": "15 秒間蒸らします。水量は原典に未記載です。",
       "circle": "蒸らしの水を含めて累計 150 mL まで穏やかに円を描いて注ぎます。",
       "centre": "残りの 100 mL を中央へ速く注ぎ、水位を維持して約 1:00 に止めます。"
-    }
+    },
+    "grill": {"title":"マーサ・グリルの朝の V60","summary":"30 g の V60。30 秒の蒸らしと二段注湯で 3 分に仕上げます。","version":"HARIOLOGY · HARIO Europe","grind":"原典に記載なし","equipment":"HARIO V60 · 樹脂","notes":"30 g、92°C の 500 mL、ブラジルの Ézio Sartori を使う原典です。挽き目は記載されていません。","finish":"3:00 までに抽出を終えます。","beans":"ブラジル Espírito Santo の Ézio Sartori（Coffee Lab 焙煎）"},
+    "mallouhi": {"title":"イブラヒム・アル・マルーフィの V60","summary":"1:15 の V60。40 mL を円を描いて蒸らし、残りをゆっくり注ぎます。","version":"HARIOLOGY · HARIO Europe","grind":"中挽き","equipment":"HARIO V60","notes":"20 g、300 mL、目標 2:10。湯温は原典に記載されていません。","finish":"合計 2:10 を目標にします。","prep":"フィルターを湯通しして湯を捨ててから粉を入れます。","water":"原典は熱湯とだけ記載し、温度を示していません。"},
+    "chronicler": {"title":"Coffee Chronicler Switch レシピ","summary":"半量を開放状態で注ぎ、残りを浸漬してから排出する二段注湯。","version":"The Coffee Chronicler · 2023","grind":"原典に記載なし","equipment":"HARIO Switch 02","notes":"標準版は 20 g と 320 g。開放状態で半量、0:45 に閉じて残りを加え、2:00 に開きます。湯温と挽き目は未記載です。","finish":"排出させます。合計時間は 2:45–3:15 の範囲です。","open":"Switch のバルブを開けて始めます。","firstPour":"バルブを開けたまま水の半量を注ぎます。","close":"0:45 にバルブを閉じて浸漬します。","secondPour":"残り半分を加えて浸漬します。","drain":"2:00 に開いて排出します。"}
   },
   "waterQuality": "水質",
   "competition": "公開された大会レシピ"

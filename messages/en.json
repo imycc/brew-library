@@ -197,7 +197,10 @@
       "bloom": "Pre-infuse for 15 seconds; the water amount is unspecified.",
       "circle": "Pour gently in circles to a cumulative 150 mL, including the pre-infusion water.",
       "centre": "Add the remaining 100 mL quickly in the centre, maintaining the water level; stop around 1:00."
-    }
+    },
+    "grill": {"title":"Martha Grill’s morning V60","summary":"A 30 g V60 with a 30-second bloom, two pours and a finish at three minutes.","version":"HARIOLOGY · HARIO Europe","grind":"Not provided by the source","equipment":"HARIO V60 · plastic","notes":"The published recipe uses 30 g coffee and 500 mL at 92°C. Its instructions use g for the pour targets, so those units are preserved separately. The article names Ézio Sartori coffee from Brazil but does not name a grind setting.","finish":"Finish the extraction by 3:00.","beans":"Ézio Sartori, Espírito Santo, Brazil; roasted by Coffee Lab"},
+    "mallouhi": {"title":"Ibrahim Al Mallouhi’s V60","summary":"A 1:15 V60 with a 40 mL circular bloom and a slow remaining pour.","version":"HARIOLOGY · HARIO Europe","grind":"Medium","equipment":"HARIO V60","notes":"The source states 20 g coffee, 300 mL water and a 2:10 target, but does not specify water temperature.","finish":"Target a total brew time of 2:10.","prep":"Pre-wet the filter and discard the rinse water before adding coffee.","water":"The source says hot water but does not provide a temperature."},
+    "chronicler": {"title":"Coffee Chronicler Switch recipe","summary":"A two-pour Switch recipe: half the water open, half steeped, then released.","version":"The Coffee Chronicler · 2023","grind":"Not provided by the source","equipment":"HARIO Switch 02","notes":"The article’s standard version uses 20 g coffee and 320 g water: pour half with the valve open, close at 0:45, add the remaining half, then open at 2:00. Temperature and grind are not specified.","finish":"Let the brew drain; the article gives a 2:45–3:15 total range.","open":"Start with the Switch valve open.","firstPour":"Pour the first half of the water while the valve is open.","close":"Close the valve at 0:45 for the steep.","secondPour":"Add the remaining half of the water, then steep.","drain":"Open at 2:00 and let the brew drain."}
   },
   "waterQuality": "Water profile",
   "competition": "Published competition recipe"

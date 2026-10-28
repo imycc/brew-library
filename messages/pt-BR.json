@@ -197,7 +197,10 @@
       "bloom": "Faça a pré-infusão por 15 segundos; a quantidade de água não é informada.",
       "circle": "Despeje suavemente em círculos até acumular 150 mL, incluindo a pré-infusão.",
       "centre": "Adicione os 100 mL restantes rapidamente no centro, mantendo o nível; pare por volta de 1:00."
-    }
+    },
+    "grill": {"title":"V60 matinal de Martha Grill","summary":"V60 de 30 g, com bloom de 30 segundos, duas adições e final em três minutos.","version":"HARIOLOGY · HARIO Europe","grind":"Não informado pela fonte","equipment":"HARIO V60 · plástico","notes":"A receita publicada usa 30 g, 500 mL a 92 °C e café Ézio Sartori do Brasil. A moagem não é informada.","finish":"Finalize a extração até 3:00.","beans":"Ézio Sartori, Espírito Santo, Brasil; torrado pela Coffee Lab"},
+    "mallouhi": {"title":"V60 de Ibrahim Al Mallouhi","summary":"V60 1:15 com bloom circular de 40 mL e uma adição lenta do restante da água.","version":"HARIOLOGY · HARIO Europe","grind":"Média","equipment":"HARIO V60","notes":"A fonte informa 20 g, 300 mL e meta de 2:10, mas não informa a temperatura da água.","finish":"Busque um tempo total de 2:10.","prep":"Umedeça o filtro, descarte a água e adicione o café.","water":"A fonte diz água quente, sem informar a temperatura."},
+    "chronicler": {"title":"Receita Switch do Coffee Chronicler","summary":"Duas adições: metade com a válvula aberta, metade em infusão e depois drenagem.","version":"The Coffee Chronicler · 2023","grind":"Não informado pela fonte","equipment":"HARIO Switch 02","notes":"A versão padrão usa 20 g e 320 g: adicione metade aberto, feche em 0:45, adicione o restante e abra em 2:00. Temperatura e moagem não são informadas.","finish":"Deixe drenar; o tempo total publicado é 2:45–3:15.","open":"Comece com a válvula aberta.","firstPour":"Adicione a primeira metade com a válvula aberta.","close":"Feche em 0:45 para a infusão.","secondPour":"Adicione a metade restante e deixe em infusão.","drain":"Abra em 2:00 e deixe drenar."}
   },
   "waterQuality": "Perfil da água",
   "competition": "Receita de competição publicada"
