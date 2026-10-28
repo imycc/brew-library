@@ -5,8 +5,17 @@
   "paper": "フィルター",
   "process": "精製方法",
   "roast": "焙煎度",
-  "processes": {"washed":"ウォッシュド","natural":"ナチュラル","honey":"ハニー","anaerobic":"アナエロビック"},
-  "roasts": {"light":"浅煎り","medium":"中煎り","dark":"深煎り"},
+  "processes": {
+    "washed": "ウォッシュド",
+    "natural": "ナチュラル",
+    "honey": "ハニー",
+    "anaerobic": "アナエロビック"
+  },
+  "roasts": {
+    "light": "浅煎り",
+    "medium": "中煎り",
+    "dark": "深煎り"
+  },
   "equipmentNav": "器具",
   "equipmentTitle": "抽出器具データベース",
   "equipmentIntro": "ハンドドリップ用のドリッパー、グラインダー、フィルターの公式仕様、互換性、関連レシピを整理しています。",
@@ -18,10 +27,43 @@
   "equipmentRelated": "関連するオリジナルレシピ",
   "equipmentChecked": "公式情報の確認",
   "equipmentEmpty": "条件に合う器具がありません。",
-  "equipmentCategories": {"dripper":"ドリッパー","grinder":"グラインダー","filter":"フィルター"},
-  "equipmentStatus": {"legacy":"旧モデル／製造終了","unresolved":"型番未確認"},
-  "equipmentSpecs": {"capacity":"容量","materials":"素材","dimensions":"寸法","weight":"重量","compatibility":"互換性","mode":"方式","madeIn":"製造国","model":"型番","burr":"刃","adjustment":"調整","precision":"1目盛り","groundsCapacity":"粉容量","format":"形状","packs":"入数","technology":"技術"},
-  "equipmentUnits": {"cups":"杯","mL":"mL","mm":"mm","g":"g","in":"インチ","lb":"lb","µm":"µm","sheets":"枚"},
+  "equipmentCategories": {
+    "dripper": "ドリッパー",
+    "grinder": "グラインダー",
+    "filter": "フィルター"
+  },
+  "equipmentStatus": {
+    "legacy": "旧モデル／製造終了",
+    "unresolved": "型番未確認"
+  },
+  "equipmentSpecs": {
+    "capacity": "容量",
+    "materials": "素材",
+    "dimensions": "寸法",
+    "weight": "重量",
+    "compatibility": "互換性",
+    "mode": "方式",
+    "madeIn": "製造国",
+    "model": "型番",
+    "burr": "刃",
+    "adjustment": "調整",
+    "precision": "1目盛り",
+    "groundsCapacity": "粉容量",
+    "format": "形状",
+    "packs": "入数",
+    "technology": "技術"
+  },
+  "equipmentUnits": {
+    "cups": "杯",
+    "mL": "mL",
+    "mm": "mm",
+    "g": "g",
+    "in": "インチ",
+    "lb": "lb",
+    "µm": "µm",
+    "sheets": "枚",
+    "oz": "オンス"
+  },
   "brand": "ハンドドリップ図鑑",
   "tagline": "コーヒーの手帖",
   "recipesNav": "レシピ",
@@ -128,11 +170,64 @@
     "level": "抽出前に粉を平らにします。"
   },
   "recipes": {
-    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Wave と C40 MK4 の四段注湯。","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"水 320 g、出来上がり約 265 g。総時間は未記載。","finish":"落ち切る直前に外します。約 265 g、固定時間は未記載。","prep":"冷水で濾紙を濡らす。28 g を 25 クリックで挽き、Saza M で微粉を除き薄皮を吹き飛ばし、21 g を使用。","vertical":"縦方向の攪拌を生む注湯。","lateral":"横方向の攪拌を生む注湯。","centre":"中央へ注ぎます。","water":"大会提供の Tajima 天然水。"},
-    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave と Red Clix、最後は低温で注湯。","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"2024 年 3 位。予選 Red Clix 56 クリック、決勝 55。最後は約 75°C。","finish":"2:30 に外しスプーンで丁寧に混ぜます。","prep":"Red Clix 55 クリックで挽き微粉を除いて 15 g に。濾紙を濡らし針で溝に沿わせ、器を温め針で粉床を整えます。","first":"全体へ優しく均一に注ぎます。","second":"ゆっくり攪拌しながら注ぎます。","last":"湯を約 75°C に下げ、細くゆっくり中央へ注ぎます。","water":"Tajima 天然水。硬度 70 mg/L、測定基準は未記載。"},
-    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"ZP6 Special と CAFEC の四段注湯。","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"概要は 240 mL、手順は g。第 3 段は 1:00–1:00 とあり、開始のみ保持。","finish":"2:25 まで排出。","third":"第 3 段は 1:00 開始。終了時刻は原典が不明確。"},
-    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"ナチュラル Geisha と Sibarist、湯温を段階変更。","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"各時刻、初期湯温、焙煎度と総時間は未記載。以後の湯温は段階別に表示。","finish":"排出。総時間は未記載。","spiral":"螺旋状に注ぎます。","water":"原典表記 Pure Colombian Water。ミネラルは未記載。"},
-    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"K-Ultra と Sibarist の四段注湯。","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"2024 年オランダ優勝版。Sibarist 型、豆、焙煎度は未記載。約 7 g/s を推奨。","finish":"排出し約 3:00 を目安に。"},
+    "kodama": {
+      "title": "Hiroyuki Kodama · ORIGAMI Air",
+      "summary": "Wave と C40 MK4 の四段注湯。",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "25 (Comandante C40 MK4)",
+      "equipment": "ORIGAMI Dripper Air S",
+      "notes": "水 320 g、出来上がり約 265 g。総時間は未記載。",
+      "finish": "落ち切る直前に外します。約 265 g、固定時間は未記載。",
+      "prep": "冷水で濾紙を濡らす。28 g を 25 クリックで挽き、Saza M で微粉を除き薄皮を吹き飛ばし、21 g を使用。",
+      "vertical": "縦方向の攪拌を生む注湯。",
+      "lateral": "横方向の攪拌を生む注湯。",
+      "centre": "中央へ注ぎます。",
+      "water": "大会提供の Tajima 天然水。"
+    },
+    "kobayashi": {
+      "title": "Tsuyoshi Kobayashi · ORIGAMI S",
+      "summary": "Wave と Red Clix、最後は低温で注湯。",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "55 (C40 MK3 + RED CLICKS)",
+      "equipment": "ORIGAMI Dripper S",
+      "notes": "2024 年 3 位。予選 Red Clix 56 クリック、決勝 55。最後は約 75°C。",
+      "finish": "2:30 に外しスプーンで丁寧に混ぜます。",
+      "prep": "Red Clix 55 クリックで挽き微粉を除いて 15 g に。濾紙を濡らし針で溝に沿わせ、器を温め針で粉床を整えます。",
+      "first": "全体へ優しく均一に注ぎます。",
+      "second": "ゆっくり攪拌しながら注ぎます。",
+      "last": "湯を約 75°C に下げ、細くゆっくり中央へ注ぎます。",
+      "water": "Tajima 天然水。硬度 70 mg/L、測定基準は未記載。"
+    },
+    "selorio": {
+      "title": "Lui Selorio · ORIGAMI Air",
+      "summary": "ZP6 Special と CAFEC の四段注湯。",
+      "version": "Philippine Brewers Cup · 2023",
+      "grind": "4.1 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI Air",
+      "notes": "概要は 240 mL、手順は g。第 3 段は 1:00–1:00 とあり、開始のみ保持。",
+      "finish": "2:25 まで排出。",
+      "third": "第 3 段は 1:00 開始。終了時刻は原典が不明確。"
+    },
+    "rincon": {
+      "title": "Janer Joseph Perez Rincon · ORIGAMI",
+      "summary": "ナチュラル Geisha と Sibarist、湯温を段階変更。",
+      "version": "Colombian Brewers Cup · 2023",
+      "grind": "5.6 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI",
+      "notes": "各時刻、初期湯温、焙煎度と総時間は未記載。以後の湯温は段階別に表示。",
+      "finish": "排出。総時間は未記載。",
+      "spiral": "螺旋状に注ぎます。",
+      "water": "原典表記 Pure Colombian Water。ミネラルは未記載。"
+    },
+    "gil": {
+      "title": "Milo Gil · ORIGAMI Air",
+      "summary": "K-Ultra と Sibarist の四段注湯。",
+      "version": "Dutch Brewers Championship · 2024",
+      "grind": "7.5 (1Zpresso K-Ultra)",
+      "equipment": "ORIGAMI Air",
+      "notes": "2024 年オランダ優勝版。Sibarist 型、豆、焙煎度は未記載。約 7 g/s を推奨。",
+      "finish": "排出し約 3:00 を目安に。"
+    },
     "kasuya": {
       "title": "粕谷哲の4:6メソッド",
       "summary": "5回の注湯で淹れる、HARIO公開の粕谷哲4:6メソッド。",
@@ -226,10 +321,60 @@
       "circle": "蒸らしの水を含めて累計 150 mL まで穏やかに円を描いて注ぎます。",
       "centre": "残りの 100 mL を中央へ速く注ぎ、水位を維持して約 1:00 に止めます。"
     },
-    "grill": {"title":"マーサ・グリルの朝の V60","summary":"30 g の V60。30 秒の蒸らしと二段注湯で 3 分に仕上げます。","version":"HARIOLOGY · HARIO Europe","grind":"原典に記載なし","equipment":"HARIO V60 · 樹脂","notes":"30 g、92°C の 500 mL、ブラジルの Ézio Sartori を使う原典です。挽き目は記載されていません。","finish":"3:00 までに抽出を終えます。","beans":"ブラジル Espírito Santo の Ézio Sartori（Coffee Lab 焙煎）"},
-    "mallouhi": {"title":"イブラヒム・アル・マルーフィの V60","summary":"1:15 の V60。40 mL を円を描いて蒸らし、残りをゆっくり注ぎます。","version":"HARIOLOGY · HARIO Europe","grind":"中挽き","equipment":"HARIO V60","notes":"20 g、300 mL、目標 2:10。湯温は原典に記載されていません。","finish":"合計 2:10 を目標にします。","prep":"フィルターを湯通しして湯を捨ててから粉を入れます。","water":"原典は熱湯とだけ記載し、温度を示していません。"},
-    "chronicler": {"title":"Coffee Chronicler Switch レシピ","summary":"半量を開放状態で注ぎ、残りを浸漬してから排出する二段注湯。","version":"The Coffee Chronicler · 2023","grind":"原典に記載なし","equipment":"HARIO Switch 02","notes":"標準版は 20 g と 320 g。開放状態で半量、0:45 に閉じて残りを加え、2:00 に開きます。湯温と挽き目は未記載です。","finish":"排出させます。合計時間は 2:45–3:15 の範囲です。","open":"Switch のバルブを開けて始めます。","firstPour":"バルブを開けたまま水の半量を注ぎます。","close":"0:45 にバルブを閉じて浸漬します。","secondPour":"残り半分を加えて浸漬します。","drain":"2:00 に開いて排出します。"}
+    "grill": {
+      "title": "マーサ・グリルの朝の V60",
+      "summary": "30 g の V60。30 秒の蒸らしと二段注湯で 3 分に仕上げます。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "原典に記載なし",
+      "equipment": "HARIO V60 · 樹脂",
+      "notes": "30 g、92°C の 500 mL、ブラジルの Ézio Sartori を使う原典です。挽き目は記載されていません。",
+      "finish": "3:00 までに抽出を終えます。",
+      "beans": "ブラジル Espírito Santo の Ézio Sartori（Coffee Lab 焙煎）"
+    },
+    "mallouhi": {
+      "title": "イブラヒム・アル・マルーフィの V60",
+      "summary": "1:15 の V60。40 mL を円を描いて蒸らし、残りをゆっくり注ぎます。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "中挽き",
+      "equipment": "HARIO V60",
+      "notes": "20 g、300 mL、目標 2:10。湯温は原典に記載されていません。",
+      "finish": "合計 2:10 を目標にします。",
+      "prep": "フィルターを湯通しして湯を捨ててから粉を入れます。",
+      "water": "原典は熱湯とだけ記載し、温度を示していません。"
+    },
+    "chronicler": {
+      "title": "Coffee Chronicler Switch レシピ",
+      "summary": "半量を開放状態で注ぎ、残りを浸漬してから排出する二段注湯。",
+      "version": "The Coffee Chronicler · 2023",
+      "grind": "原典に記載なし",
+      "equipment": "HARIO Switch 02",
+      "notes": "標準版は 20 g と 320 g。開放状態で半量、0:45 に閉じて残りを加え、2:00 に開きます。湯温と挽き目は未記載です。",
+      "finish": "排出させます。合計時間は 2:45–3:15 の範囲です。",
+      "open": "Switch のバルブを開けて始めます。",
+      "firstPour": "バルブを開けたまま水の半量を注ぎます。",
+      "close": "0:45 にバルブを閉じて浸漬します。",
+      "secondPour": "残り半分を加えて浸漬します。",
+      "drain": "2:00 に開いて排出します。"
+    }
   },
   "waterQuality": "水質",
-  "competition": "公開された大会レシピ"
+  "competition": "公開された大会レシピ",
+  "equipmentMaterials": {
+    "porcelain": "磁器",
+    "ceramic": "セラミック",
+    "as-resin": "AS樹脂",
+    "acrylonitrile-styrene-resin": "アクリロニトリル・スチレン樹脂",
+    "stainless-steel": "ステンレス鋼",
+    "silicone": "シリコーン",
+    "polypropylene": "ポリプロピレン",
+    "polyester-resin": "ポリエステル樹脂",
+    "borosilicate-glass": "ホウケイ酸ガラス",
+    "rubber-wood": "ラバーウッド",
+    "full-grain-leather": "フルグレインレザー",
+    "tritan": "Tritan",
+    "glass": "ガラス",
+    "plastic": "プラスチック",
+    "aluminum": "アルミニウム",
+    "natural-or-oxygen-bleached-paper": "天然紙または酸素漂白紙"
+  }
 }
