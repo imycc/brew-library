@@ -47,7 +47,7 @@ test('invalid comparison links are understandable and recoverable',async({page})
 for(const locale of locales)test(`static ${locale} pages render complete locale content`,async({page})=>{
  test.setTimeout(90_000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- for(const suffix of ['','equipment/','authors/','sources/',...recipes.map(r=>`recipes/${r.id}/`)]){
+ for(const suffix of ['','equipment/','authors/','sources/','about/','terms/','privacy/',...recipes.map(r=>`recipes/${r.id}/`)]){
    const response=await page.goto(`${base}/${locale}/${suffix}`,{waitUntil:'domcontentloaded'});expect(response?.status()).toBe(200);await expect(page.locator('html')).toHaveAttribute('lang',locale);await expect(page.locator('h1')).not.toBeEmpty();
  }
  expect(errors).toEqual([]);
