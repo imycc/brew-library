@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {locales} from '../src/i18n/locales';
 import {recipes} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
-import {equipmentEditorial,equipmentEditorialRoles,editorialTraitKeys,recipeEditorial} from '../src/lib/editorial';
+import {equipmentEditorial,equipmentEditorialRoles,editorialTraitKeys,equipmentExperience,equipmentExperienceTags,recipeEditorial} from '../src/lib/editorial';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
 import {createTranslator} from 'next-intl';
 export function flatten(obj:Record<string,unknown>,prefix=''):Record<string,string>{
@@ -16,6 +16,11 @@ export async function validate(){
  assert.equal(new Set(recipes.map(r=>r.id)).size,recipes.length,'Duplicate recipe id');
  assert.equal(new Set(equipment.map(item=>item.id)).size,equipment.length,'Duplicate equipment id');
  const recipeIds=new Set(recipes.map(r=>r.id));
+ const equipmentIds=new Set(equipment.map(item=>item.id));
+ for(const [id,experience] of Object.entries(equipmentExperience)){
+   assert(equipmentIds.has(id),`${id} experience references unknown equipment`);
+   assert(experience.sources.length>0,`${id} experience needs a source`);
+ }
  for(const item of equipment){
    for(const recipeId of item.recipeIds)assert(recipeIds.has(recipeId),`${item.id} references unknown recipe ${recipeId}`);
    assert(item.sources.length>0,`${item.id} needs a source`);
@@ -69,10 +74,13 @@ export async function validate(){
      assert(flat[`equipmentRoles.${editorial.role}`],`${locale}/equipment role ${editorial.role}`);
      for(const trait of editorial.strengths)assert(flat[`editorialStrengths.${trait}`],`${locale}/strength ${trait}`);
      for(const trait of editorial.considerations)assert(flat[`editorialConsiderations.${trait}`],`${locale}/consideration ${trait}`);
+     const experience=equipmentExperience[item.id];
+     if(experience)for(const tag of experience.tags)assert(flat[`equipmentExperienceTags.${tag}`],`${locale}/experience tag ${tag}`);
    }
-   for(const key of ['recipeOverview','bestFor','strengths','considerations','equipmentEditorialNote','sourceImageUnavailable','sourceImageAlt','sourceImageRecipe','sourceImageEquipment','sourceImageCredit','sourceImageView'])assert(flat[key],`${locale}/${key}`);
+   for(const key of ['recipeOverview','bestFor','strengths','considerations','equipmentEditorialNote','sourceImageUnavailable','sourceImageAlt','sourceImageRecipe','sourceImageEquipment','sourceImageCredit','sourceImageView','equipmentExperienceTitle','equipmentExperienceNote','equipmentExperienceSources','equipmentExperienceUnavailable'])assert(flat[key],`${locale}/${key}`);
+   for(const tag of equipmentExperienceTags)assert(flat[`equipmentExperienceTags.${tag}`],`${locale}/experience tag ${tag}`);
  }
- assert(equipmentEditorialRoles.length>0&&editorialTraitKeys.strengths.length>0&&editorialTraitKeys.considerations.length>0,'Editorial vocabulary must not be empty');
+ assert(equipmentEditorialRoles.length>0&&editorialTraitKeys.strengths.length>0&&editorialTraitKeys.considerations.length>0&&equipmentExperienceTags.length>0,'Editorial vocabulary must not be empty');
  console.log(`Validated ${recipes.length} source-backed recipes, ${equipment.length} equipment records and ${Object.keys(base).length} messages × ${locales.length} locales.`);
 }
 if(process.argv[1]?.endsWith('validate.ts'))await validate();

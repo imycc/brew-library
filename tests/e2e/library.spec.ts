@@ -56,7 +56,8 @@ test('equipment catalogue filters official records and links source-backed recip
  await page.goto(`${base}/zh-Hant/equipment/`);
  await expect(page.locator('[data-equipment]')).toHaveCount(41);
  await expect(page.locator('[data-equipment="origami-air-s"]')).toContainText('64');
- await expect(page.locator('[data-equipment="origami-air-s"] .equipment-editorial')).toContainText('優點');
+ await expect(page.locator('[data-equipment="origami-air-s"] .equipment-experience')).toContainText('杯感與實際使用回饋');
+ await expect(page.locator('[data-equipment="origami-air-s"] .experience-tags')).toContainText('酸質與清晰度較突出');
  await expect(page.locator('[data-equipment="origami-air-s"] .equipment-card-image[data-source-image="official"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="ek-unspecified"]')).toContainText('型號待確認');
  await expect(page.locator('[data-equipment="ek-unspecified"] .equipment-card-image[data-source-image="fallback"]')).toHaveCount(1);

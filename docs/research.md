@@ -45,6 +45,21 @@ Recipe and equipment introductions, strengths and considerations are maintained 
 
 When an official source page exposes a stable HTTPS image, the website displays it with a visible source label and a link to the page. Some recipe pages and champion collections publish article or collection imagery rather than a dedicated product/recipe photograph; those records retain the exact source label. April product routes and KINGrinder K6 were not assigned images during this check because a usable official image could not be verified. The UI shows a localized fallback for those records.
 
+## Equipment experience evidence — checked 2026-10-28
+
+The first editorial pass used broad labels such as “repeatable” and “flow control”. Those labels were removed from the equipment card surface because they did not help a reader choose by taste or workflow. The replacement layer uses specific tags only where a public hands-on source gives a useful contrast:
+
+- [Brew Methods — ORIGAMI Air vs ceramic](https://brewmethods.com.au/blogs/product-feature/origami-dripper-air-vs-ceramic) reports a lighter, sharper, more tea-like Air profile versus richer body and sweetness from ceramic.
+- [TidyJapan — Switch vs V60](https://tidyjapan.com/hario-switch-vs-v60-02/) and [Japanese Coffee Gear’s Switch review](https://japanesecoffeegear.com/gear/hario-switch-review-immersion-plus-pour-over) describe the practical contrast between repeatable immersion roundness and cleaner percolation.
+- [r/pourover Pulsar experience](https://www.reddit.com/r/pourover/comments/1ahcryu/so_i_got_my_pulsar/) and [a Pulsar/natural-coffee comparison](https://www.reddit.com/r/pourover/comments/17t6zq6/pulsar_and_natural_processed_coffee/) record the no-bypass brewer’s sweetness/body trade-off, larger-dose preference and learning curve.
+- [r/pourover ZP6 experience](https://www.reddit.com/r/pourover/comments/1qw7r29/zp6_great_purchase/) and [the ZP6 trade-off discussion](https://www.reddit.com/r/pourover/comments/1xgg6tj/underwhelming_experience_with_zp6/) show both sides of the high-separation, light-body profile; the site does not call it universally better.
+- [r/pourover K-Ultra note](https://www.reddit.com/r/pourover/comments/1wxhhda/kultra_update_v60/) describes a clearer cup while retaining more body and sweetness than the author’s previous grinder.
+- [r/pourover Abaca filter reports](https://www.reddit.com/r/pourover/comments/1q8cfho/my_preferred_filters/) and [a Hario-to-Abaca comparison](https://www.reddit.com/r/pourover/comments/1szdajz/switched_to_abaca_filters_from_hario/) repeatedly mention faster, less-stalling flow, while other users report little taste difference; the site records the flow observation, not a superiority claim.
+- [r/pourover Sibarist first-use report](https://www.reddit.com/r/pourover/comments/1jmfu2l/first_cup_with_sibarist_fast_filters/) records unusually fast flow and the need to change the recipe rather than treating it as a drop-in paper swap.
+- [r/pourover Wave vs V60](https://www.reddit.com/r/pourover/comments/1ch3au3/should_i_move_from_kalita_wave_155_to_v60/) and [Wave 185 drawdown discussion](https://www.reddit.com/r/pourover/comments/1rmes7p/draw_down_time_800_with_kalita_wave_185_filters/) support the rounder/body-oriented and agitation-sensitive tags, while also showing that stalling depends on recipe and paper.
+
+The source list is stored per item in `content/equipment-experience.json`. An item without sufficiently specific experience evidence deliberately shows no experience tags.
+
 ## Expansion — checked 2026-10-28 (Asia/Hong_Kong)
 
 This expansion brought the library to eleven records. These eight additions were read directly on HARIO’s official publishing sites or the creator’s own publishing page. All added source pages were accessible during this check. Publication dates absent from the articles remain unknown.

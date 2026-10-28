@@ -45,6 +45,11 @@
     "paperFilter":"流速、ろ過、後片付けを決める消耗式のペーパーフィルターです。",
     "unresolved":"出典が一般的な名称しか示していないため、型番固有の評価は行いません。"
   },
+  "equipmentExperienceTitle":"カップの傾向と実使用の声",
+  "equipmentExperienceNote":"公開レビューとコミュニティの報告をまとめたタグです。ブラインドテストの順位ではなく、豆・水・技術で変わります。",
+  "equipmentExperienceSources":"体験ソース",
+  "equipmentExperienceUnavailable":"具体的に引用できる公開体験情報をまだ確認できません。",
+  "equipmentExperienceTags":{"brightClarity":"酸味と透明感が出やすい","techniqueSensitive":"注ぎ方の違いが味に出やすい","paperCleanCup":"ペーパーで後味がきれい","immersionBody":"浸漬で丸みとボディが出る","balancedCup":"透明感とボディのバランスがよい","forgivingTechnique":"注ぎのずれに比較的寛容","valveLearning":"バルブ操作に慣れが必要","lowBypass":"低バイパスで質感が変わる","roundSweetness":"丸い甘さと口当たり","largeDoseFit":"大きめの粉量に向く","grindDialIn":"挽き目の調整が重要","lightBody":"軽くティーライクなボディ","highAcidity":"酸味が前に出やすい","lightRoastFit":"明るい浅煎りに向く傾向","fastFlow":"流れが速く接触時間が短くなりやすい","thermalStability":"素材が抽出温度を保ちやすい","fullerBody":"厚みがあり風味がまとまりやすい","blendedProfile":"風味が分離より一体的に感じられる","manualEffort":"手挽きの作業が必要","flavorSeparation":"風味の分離が高い","electricConsistency":"電動で同じ量を繰り返しやすい","seasoningTime":"刃の慣らし中に味が変わることがある","filterOnly":"フィルター向けでエスプレッソ用ではない","chocolateBody":"カカオ系と厚い甘さに寄ることがある","wideDialRange":"有効な目盛りが広く基準作りが必要","flowVariation":"紙のロットで流速が変わることがある","stallRisk":"微粉や攪拌で詰まりやすい","paperTasteVariation":"紙のロットで紙味や流速が変わる","filterDependent":"紙を替えると結果が大きく変わる","veryFastFlow":"非常に速く細挽きや制御が必要","fineGrindNeeded":"速い流れを活かすには細挽きが必要","lessStalling":"微粉の多い豆でも詰まりが少ないという声","brightAcidity":"明るい酸味を引き出しやすい","delicateBody":"とてもきれいで繊細なボディ","slowFlow":"遅い流れで接触時間が長い"},
   "editorialStrengths": {
     "clearTimeline":"工程と時間が明確で追いやすい。",
     "repeatable":"記録された構成で反復練習しやすい。",

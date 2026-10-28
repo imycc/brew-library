@@ -5,7 +5,7 @@ import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,CoffeeBean,MagnifyingGlass} from '@phosphor-icons/react';
 import {useState} from 'react';
 import {equipment,equipmentCategories,filterEquipment,type EquipmentCategory} from '@/lib/equipment';
-import {equipmentEditorial} from '@/lib/editorial';
+import {equipmentEditorial,equipmentExperience} from '@/lib/editorial';
 import {recipes} from '@/lib/recipes';
 import {OfficialSourceImage} from '@/components/source-image';
 
@@ -13,6 +13,7 @@ function EquipmentCard({item}:{item:(typeof equipment)[number]}){
   const t=useTranslations();
   const locale=useLocale();
   const editorial=equipmentEditorial[item.id];
+  const experience=equipmentExperience[item.id];
   const related=item.recipeIds.flatMap(id=>recipes.find(recipe=>recipe.id===id)||[]);
   const formatDetail=(detail:(typeof item.details)[number])=>{
     if(detail.key!=='materials') return detail.value;
@@ -27,11 +28,13 @@ function EquipmentCard({item}:{item:(typeof equipment)[number]}){
     <header><div><span>{t(`equipmentCategories.${item.category}`)}</span><strong>{item.brand}</strong></div>{item.status!=='current'?<span className={`equipment-status ${item.status}`}>{t(`equipmentStatus.${item.status}`)}</span>:null}</header>
     <h2>{item.name}</h2>
     <div className="equipment-editorial">
-      <p>{t(`equipmentRoles.${editorial.role}`)}</p>
-      <div className="equipment-tradeoffs">
-        <div><h3><span aria-hidden="true">＋</span>{t('strengths')}</h3><ul>{editorial.strengths.map(key=><li key={key}>{t(`editorialStrengths.${key}`)}</li>)}</ul></div>
-        <div><h3><span aria-hidden="true">−</span>{t('considerations')}</h3><ul>{editorial.considerations.map(key=><li key={key}>{t(`editorialConsiderations.${key}`)}</li>)}</ul></div>
-      </div>
+      <p className="equipment-role">{t(`equipmentRoles.${editorial.role}`)}</p>
+      {experience?<section className="equipment-experience" aria-label={t('equipmentExperienceTitle')}>
+        <h3>{t('equipmentExperienceTitle')}</h3>
+        <p className="equipment-experience-note">{t('equipmentExperienceNote')}</p>
+        <ul className="experience-tags">{experience.tags.map(key=><li key={key}>{t(`equipmentExperienceTags.${key}`)}</li>)}</ul>
+        <div className="experience-sources"><span>{t('equipmentExperienceSources')}</span>{experience.sources.map(source=><a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label}<ArrowUpRight size={13}/></a>)}</div>
+      </section>:<p className="experience-unavailable">{t('equipmentExperienceUnavailable')}</p>}
     </div>
     <dl className="equipment-details">{item.details.map(detail=><div key={`${detail.key}-${detail.value}`}><dt>{t(`equipmentSpecs.${detail.key}`)}</dt><dd>{formatDetail(detail)}{detail.unit?<span>{t(`equipmentUnits.${detail.unit}`)}</span>:null}</dd></div>)}</dl>
     {related.length?<div className="equipment-recipes"><h3>{t('equipmentRelated')}</h3>{related.map(recipe=><Link key={recipe.id} href={`/${locale}/recipes/${recipe.id}/`}>{t(`recipes.${recipe.copy}.title`)}<ArrowRight size={14}/></Link>)}</div>:null}

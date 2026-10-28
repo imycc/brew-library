@@ -45,6 +45,11 @@
     "paperFilter":"与指定器材配合、影响流速、过滤和清洁的消耗式滤纸。",
     "unresolved":"来源只提供泛称，无法确认具体型号，因此不加入型号层面的判断。"
   },
+  "equipmentExperienceTitle":"杯感与实际使用回馈",
+  "equipmentExperienceNote":"标签综合公开实测与社群回馈；不是盲测排名，仍会受咖啡豆、水质和手法影响。",
+  "equipmentExperienceSources":"体验来源",
+  "equipmentExperienceUnavailable":"暂未找到足够具体、可引用的公开体验资料。",
+  "equipmentExperienceTags":{"brightClarity":"酸质与清晰度较突出","techniqueSensitive":"注水手法会明显反映在杯中","paperCleanCup":"纸滤带来较干净的收结","immersionBody":"浸泡令口感更圆润有厚度","balancedCup":"清晰度与口感相对平衡","forgivingTechnique":"注水有偏差时较宽容","valveLearning":"阀门时机需要练习","lowBypass":"低旁路会改变口感质地","roundSweetness":"甜感与口感较圆润","largeDoseFit":"较适合较大粉量","grindDialIn":"需要仔细调整研磨度","lightBody":"口感较轻，偏茶感","highAcidity":"酸质可能变得突出","lightRoastFit":"通常适合清爽浅烘豆","fastFlow":"流速较快，可能缩短接触时间","thermalStability":"材质有助保持冲煮热力","fullerBody":"口感较厚，风味更融合","blendedProfile":"风味较融合而非逐项分离","manualEffort":"手动研磨是流程的一部分","flavorSeparation":"风味之间的分离度较高","electricConsistency":"电动流程较容易重复出粉","seasoningTime":"刀盘养成期间杯感可能改变","filterOnly":"定位是滤泡咖啡而非浓缩","chocolateBody":"可能偏可可与较厚甜感","wideDialRange":"可用刻度范围广，需要建立自己的基准","flowVariation":"不同批次滤纸流速可能有差异","stallRisk":"细粉或扰流可能令滤纸停滞","paperTasteVariation":"纸味与流速可能因批次而变","filterDependent":"换滤纸会明显改变结果","veryFastFlow":"流速很快，需要更细或更受控的配方","fineGrindNeeded":"通常要磨得更细才用尽可用流速","lessStalling":"用于细粉较多的豆时，用户较少遇到停滞","brightAcidity":"较容易带出明亮酸质","delicateBody":"口感很干净而纤细","slowFlow":"较慢流速带来较长接触时间"},
   "editorialStrengths": {
     "clearTimeline":"步骤与时间清楚，容易跟随。",
     "repeatable":"已记录的结构方便重复练习。",

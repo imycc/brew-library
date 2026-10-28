@@ -15,6 +15,7 @@ Optional source conditions are structured as `grinder` (identity and literal set
 - `content/recipes.json`: version 1 canonical recipe records. Validated by Zod in `src/lib/recipes.ts`.
 - `content/equipment.json`: version 1 source-backed catalogue for drippers, grinders and filters. Validated by Zod in `src/lib/equipment.ts`; explicit recipe IDs connect equipment to the current recipe catalogue. Unresolved model records remain visible and are labelled rather than guessed. Material values use canonical IDs and render through nine-language `equipmentMaterials` translations.
 - `content/editorial.json`: source-independent editorial overlay for every recipe and equipment record. It stores concise overview metadata (recipe best-for, equipment role), up to three strengths, up to three considerations, and optional official image metadata. Canonical quantities and source links remain in the recipe/equipment files; this overlay must not change them.
+- `content/equipment-experience.json`: optional equipment-specific cup-profile tags and public hands-on/community sources. An item can omit this layer when there is not enough specific evidence; the UI then says so instead of repeating generic pros and cons.
 - `messages/{locale}.json`: full UI and recipe text in nine locales. Message keys, parameters, required recipe content and step instruction coverage are checked before publishing.
 - `messages/editorial-{locale}.json`: nine-language editorial copy and translated equipment-material/trait vocabulary. `src/i18n/request.ts` deep-merges this overlay at build time so the UI can use the same message contract as the core catalogue.
 - Numeric quantities, original units, exact/ranged times, author identity and source provenance live in canonical data; copy is localized separately.
@@ -30,6 +31,8 @@ Data access, filtering, selection and UI are separate. A future CMS or API can r
 ## Photography
 
 The homepage keeps its editorial hero photography, but recipe cards and comparison headers remain text/data-first. Recipe details and equipment cards may show a credited image from the record's official source page. Images are hotlinked only when the source page exposes a usable HTTPS image URL; the credit links back to that page. Missing metadata or a failed image request renders a localized neutral fallback and never blocks the page. Collection or brand imagery is labelled with its actual source and is not presented as unique product evidence. Design references are kept in the local ignored `outputs/design-concepts/` directory.
+
+Equipment experience tags are deliberately separate from manufacturer specifications. They summarize recurring observations from named hands-on reviews or public community reports (for example, clarity/body differences between ORIGAMI Air and ceramic, or ZP6 clarity versus body trade-offs). They are not ratings, universal claims or recommendations; coffee, water, paper and technique can reverse the result.
 
 ## Verification and delivery
 
