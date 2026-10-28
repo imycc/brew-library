@@ -1,4 +1,12 @@
 {
+  "conditionFilters": "Ausrüstung und Kaffee",
+  "conditionHint": "Bedingungen der Originalquelle. Fehlende Angaben gelten nicht als Treffer. Die Filter sagen kein optimales Rezept voraus.",
+  "grinder": "Mühle",
+  "paper": "Filterpapier",
+  "process": "Aufbereitung",
+  "roast": "Röstung",
+  "processes": {"washed":"Gewaschen","natural":"Natural","honey":"Honey","anaerobic":"Anaerob"},
+  "roasts": {"light":"Hell","medium":"Mittel","dark":"Dunkel"},
   "brand": "Filterkaffee-Bibliothek",
   "tagline": "Das Kaffeejournal",
   "recipesNav": "Rezepte",
@@ -105,6 +113,11 @@
     "level": "Das Kaffeebett vor dem Brühen ebnen."
   },
   "recipes": {
+    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Vier Aufgüsse mit Wave und C40 MK4.","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"320 g Wasser, etwa 265 g Getränk. Gesamtzeit nicht angegeben.","finish":"Vor dem letzten Tropfen abnehmen; etwa 265 g. Keine feste Zeit.","prep":"Kalt spülen. 28 g bei 25 Klicks mahlen, mit Saza M sieben und Häutchen wegblasen; 21 g verwenden.","vertical":"Mit vertikaler Verwirbelung gießen.","lateral":"Mit seitlicher Verwirbelung gießen.","centre":"Mittig gießen.","water":"Tajima-Naturwasser vom Wettbewerb."},
+    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave und Red Clix mit kühlerem Schlussaufguss.","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"Dritter Platz 2024. Red Clix: Vorrunde 56 Klicks, Finale 55; zuletzt etwa 75°C.","finish":"Bei 2:30 abnehmen und mit einem Löffel mischen.","prep":"Bei 55 Red-Clix-Klicks mahlen und auf 15 g sieben. Papier spülen, mit Nadel in Rillen legen, Gefäß vorwärmen und Bett ebnen.","first":"Sanft über das gesamte Bett gießen.","second":"Langsam mit Verwirbelung gießen.","last":"Auf etwa 75°C senken und dünn und langsam mittig gießen.","water":"Tajima-Wasser; Härte 70 mg/L, Bezugsbasis unbekannt."},
+    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"Vier Aufgüsse mit ZP6 Special und CAFEC.","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"Übersicht 240 mL, Schritte g. Drittes Intervall 1:00–1:00; nur Beginn übernommen.","finish":"Bis 2:25 ablaufen lassen.","third":"Dritten Aufguss bei 1:00 beginnen; Ende unklar."},
+    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"Natural Geisha und Sibarist mit Temperaturwechsel.","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"Zeiten, Anfangstemperatur, Röstung und Gesamtzeit fehlen. Spätere Temperaturen je Schritt.","finish":"Ablaufen lassen; Zeit unbekannt.","spiral":"Spiralförmig aufgießen.","water":"Quelle: Pure Colombian Water; Mineralien unbekannt."},
+    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"Vier Aufgüsse mit K-Ultra und Sibarist.","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"Niederländischer Meister 2024. Sibarist-Modell, Bohnen und Röstung fehlen. Etwa 7 g/s empfohlen.","finish":"Ablaufen lassen; ungefähr 3:00 anstreben."},
     "kasuya": {
       "title": "Kasuyas 4:6-Methode",
       "summary": "Fünf zeitlich definierte Aufgüsse in der von HARIO veröffentlichten Fassung.",

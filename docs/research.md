@@ -1,6 +1,6 @@
 # Source research and version decisions
 
-Checked on 2026-10-27 (Asia/Hong_Kong), with the catalogue expansion rechecked on 2026-10-28 (Asia/Hong_Kong). The initial release began with three complete, directly verified recipes; it now contains eleven. Twelve is a ceiling, not a reason to publish incomplete research.
+Checked on 2026-10-27 (Asia/Hong_Kong), with expansions checked on 2026-10-28. The initial release began with three recipes; the current catalogue contains sixteen. Missing source parameters remain explicit.
 
 ## Published recipes
 
@@ -41,7 +41,7 @@ Published 2023-09-14. Coffee dose is 25 g and mass ratio is 17:1 water:coffee. T
 
 ## Expansion — checked 2026-10-28 (Asia/Hong_Kong)
 
-The library now contains eleven records. These eight additions were read directly on HARIO’s official publishing sites or the creator’s own publishing page; search-result snippets and community adaptations are not the verification source. All newly added source pages were accessible during this check. Publication dates absent from the articles remain unknown.
+This expansion brought the library to eleven records. These eight additions were read directly on HARIO’s official publishing sites or the creator’s own publishing page. All added source pages were accessible during this check. Publication dates absent from the articles remain unknown.
 
 | Record | Official publication | Canonical facts and editorial decisions |
 | --- | --- | --- |
@@ -62,3 +62,23 @@ The library now contains eleven records. These eight additions were read directl
 - Competition context, original bean/water/filter conditions and recipe-specific valve/pouring instructions are localized in all nine languages.
 - April’s legacy source is still unavailable (404 checked again). Francesco Sanapo’s official HARIO UK article explicitly says dose/time “pending”; it stays unpublished rather than being filled from third-party recipes.
 - HARIO USA’s Matt Winton Drip Assist page currently publishes 20 g, 300 mL and an approximate 3:30 beside a video, but not a text step sequence, temperature or grind. It remains a research item rather than a reconstructed recipe.
+
+## ORIGAMI and source conditions — checked 2026-10-28
+
+Five records added, bringing the catalogue to sixteen:
+
+| Record | Primary source | Decisions |
+| --- | --- | --- |
+| Hiroyuki Kodama | [ORIGAMI CUP 2024 Toki report](https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report) | Air S; Wave; C40 MK4 25 clicks. Prepare 28 g, remove fines/chaff and dose 21 g. 94°C; 320 g water versus about 265 g beverage yield. Total drawdown unknown. |
+| Tsuyoshi Kobayashi | [Same official report](https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report) | Porcelain S; Wave 1–2 cups; C40 MK3 RED CLICKS 55 (first round: 56). Sift to 15 g. 240 g; third pour 1:30–2:00 at about 75°C after 92°C earlier pours; remove at 2:30. |
+| Lui Selorio | [1Zpresso champion collection](https://1zpresso.coffee/recipe/) | Air; CAFEC Origami Filter; ZP6 Special 4.1. 16 g; overview 240 mL, steps g. 91°C; finish 2:25. Third interval is printed 1:00–1:00: retain start only and disclose ambiguity. Bean/roast unspecified. |
+| Janer Joseph Perez Rincon | [Same official collection](https://1zpresso.coffee/recipe/) | Acrylic ORIGAMI; Sibarist Conic; ZP6 Special 5.6. 15 g natural Geisha from San Pedro, Milton Monrroy; 260 g water. First temperature unknown, second 92°C, third/fourth 86°C. Subsequent times and total duration unknown. |
+| Milo Gil — 2024 | [Same official collection](https://1zpresso.coffee/recipe/) | K-Ultra 7.5; Air; Sibarist model unspecified. 15 g / 250 g, 92°C; 40/60/75/75 g at 0:00/0:45/1:30/2:15; about 3:00. Separate from the page’s 2025 ZP6 version. |
+
+The ORIGAMI event specifies light-roasted washed Kenyan coffee from NOG COFFEE ROASTERS and Tajima natural water for both Kodama and Kobayashi. Kobayashi reports 70 mg/L hardness without a reporting basis. Competition years are not page publication dates.
+
+Structured source conditions cover grinder identity/literal dial notation, paper identity/shape and coffee name/origin/variety/process/roast. The recipe source supports these fields; unknown fields do not satisfy a selected condition. A source saying only “Sibarist” is not tagged Conic or FAST. RED CLICKS is a separate grinder configuration. No cross-grinder conversion is implied. Existing Licata, Bøen and Pulsar conditions are backfilled from their verified records.
+
+Duration may now be unknown, displayed with the localized missing-source label. Steps may have separate temperatures. Al Mallouhi now includes the remaining 260 mL after its 35-second bloom (300 minus 40), restoring the full sequence. Validation continues checking known additions; null cumulative values are not a waiver.
+
+April’s Origami video could not be fetched during this pass and remains pending. Standalone equipment catalogues and universal grinder conversions are outside this expansion.

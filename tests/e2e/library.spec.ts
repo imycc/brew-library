@@ -1,12 +1,18 @@
 import {test,expect} from '@playwright/test';
 import {locales} from '../../src/i18n/locales';
+import {readFileSync} from 'node:fs';
+const {recipes}=JSON.parse(readFileSync('content/recipes.json','utf8')) as {recipes:{id:string}[]};
 const base='/pour-over-coffee';
+test.beforeEach(async({page})=>{
+ await page.route('https://gc.zgo.at/**',route=>route.abort());
+ await page.route('https://*.goatcounter.com/**',route=>route.abort());
+});
 test('homepage is editorial; complete instructions are on the detail page',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(`${base}/zh-Hant/`);
  await expect(page.locator('h1')).toContainText('每一杯');
  await expect(page.getByTestId('pour-timeline')).toHaveCount(0);
- await expect(page.locator('[data-recipe]')).toHaveCount(11);
+ await expect(page.locator('[data-recipe]')).toHaveCount(16);
  await page.locator('[data-recipe="kasuya-46"] .card-actions a').click();
  await expect(page.getByTestId('pour-timeline')).toBeVisible();
  await expect(page.getByTestId('pour-timeline')).toContainText('2:10');
@@ -19,7 +25,7 @@ test('filters, empty result, reset and shared comparison work',async({page})=>{
  await page.goto(`${base}/en/`);
  await page.getByRole('searchbox').fill('Hoffmann');await expect(page.locator('[data-recipe]')).toHaveCount(1);
  await page.getByLabel('Choose a brewer').selectOption('pulsar');await expect(page.locator('[data-recipe]')).toHaveCount(0);
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(11);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(16);
  for(const id of ['kasuya-46','hoffmann-one-cup','rao-pulsar'])await page.locator(`[data-recipe="${id}"] button`).click();
  await page.locator('[data-recipe="licata-v60"] button').click();
  await expect(page.getByRole('status').filter({hasText:'You can compare up to three recipes.'})).toHaveCount(1);
@@ -35,9 +41,10 @@ test('invalid comparison links are understandable and recoverable',async({page})
  await page.goto(`${base}/en/compare/?ids=missing`);await expect(page.getByRole('status').filter({hasText:'Some recipes'})).toBeVisible();await expect(page.locator('.empty-state')).toContainText('Choose recipes');
 });
 for(const locale of locales)test(`static ${locale} pages render complete locale content`,async({page})=>{
+ test.setTimeout(90_000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- for(const suffix of ['','authors/','sources/','recipes/hoffmann-one-cup/','recipes/rao-pulsar/','recipes/licata-v60/','recipes/wong-switch/','recipes/boen-switch/','recipes/hoang-w60/','recipes/rojewska-v60/','recipes/grill-v60/','recipes/mallouhi-v60/','recipes/chronicler-switch/']){
-   const response=await page.goto(`${base}/${locale}/${suffix}`);expect(response?.status()).toBe(200);await expect(page.locator('html')).toHaveAttribute('lang',locale);await expect(page.locator('h1')).not.toBeEmpty();
+ for(const suffix of ['','authors/','sources/',...recipes.map(r=>`recipes/${r.id}/`)]){
+   const response=await page.goto(`${base}/${locale}/${suffix}`,{waitUntil:'domcontentloaded'});expect(response?.status()).toBe(200);await expect(page.locator('html')).toHaveAttribute('lang',locale);await expect(page.locator('h1')).not.toBeEmpty();
  }
  expect(errors).toEqual([]);
 });
@@ -88,4 +95,41 @@ test('expanded catalogue and source-specific instructions remain usable',async({
  await expect(page.locator('.parameters')).toContainText('92°C');
  await page.goto(`${base}/zh-Hant/recipes/chronicler-switch/`);
  await expect(page.locator('.detail-intro')).toContainText('Coffee Chronicler');
+});
+
+test('Origami conditions combine, survive language switching and reset completely',async({page})=>{
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(`${base}/zh-Hant/`);
+ await expect(page.locator('.site-footer')).not.toContainText('imycc');
+ await page.getByLabel('選擇濾杯').selectOption('origami');
+ await expect(page.locator('[data-recipe]')).toHaveCount(5);
+ await page.locator('.condition-filters summary').click();
+ await page.getByLabel('磨豆器',{exact:true}).selectOption('zp6-special');
+ await page.getByLabel('濾紙',{exact:true}).selectOption('sibarist-conic');
+ await page.getByLabel('處理法',{exact:true}).selectOption('natural');
+ await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await expect(page.locator('[data-recipe]')).toHaveAttribute('data-recipe','rincon-origami');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+ await page.locator('.condition-filters').screenshot({path:'outputs/qa/origami-conditions-mobile.png'});
+ await page.reload();await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await page.locator('.language-trigger').click();await page.locator('.language-options a[lang="de"]').click();
+ await expect(page).toHaveURL(/grinder=zp6-special/);await expect(page.getByLabel('Filterpapier',{exact:true})).toHaveValue('sibarist-conic');
+ await page.getByRole('button',{name:'Filter zurücksetzen',exact:true}).click();
+ await expect(page.locator('[data-recipe]')).toHaveCount(16);
+ expect(new URL(page.url()).search).toBe('');
+});
+
+test('original grinder notation, per-pour temperatures and missing times remain visible',async({page})=>{
+ await page.goto(`${base}/zh-Hant/recipes/kobayashi-origami/`);
+ await expect(page.locator('.detail-sidebar')).toContainText('RED CLICKS');
+ await expect(page.locator('.detail-sidebar')).toContainText('Wave');
+ await expect(page.locator('.step-list')).toContainText('75°C');
+ await page.goto(`${base}/zh-Hant/recipes/rincon-origami/`);
+ await expect(page.locator('.parameters')).toContainText('來源未提供');
+ await expect(page.locator('.step-list')).toContainText('92°C');
+ await expect(page.locator('.step-list')).toContainText('86°C');
+ await expect(page.locator('.detail-sidebar')).toContainText('日曬');
+ await page.goto(`${base}/zh-Hant/compare/?ids=kobayashi-origami,rincon-origami,gil-origami-2024`);
+ await expect(page.locator('.comparison-table')).toContainText('1Zpresso K-Ultra');
+ await expect(page.locator('.comparison-table')).toContainText('Sibarist Conic');
 });

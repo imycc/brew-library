@@ -1,4 +1,12 @@
 {
+  "conditionFilters": "器材與豆子條件",
+  "conditionHint": "按原版來源的條件篩選；未提供資料的配方不會符合該項。結果不代表最適合你的豆子。",
+  "grinder": "磨豆器",
+  "paper": "濾紙",
+  "process": "處理法",
+  "roast": "烘焙度",
+  "processes": {"washed":"水洗","natural":"日曬","honey":"蜜處理","anaerobic":"厭氧"},
+  "roasts": {"light":"淺焙","medium":"中焙","dark":"深焙"},
   "brand": "手沖配方庫",
   "tagline": "咖啡編輯誌",
   "recipesNav": "配方",
@@ -105,6 +113,11 @@
     "level": "沖煮前整平咖啡粉。"
   },
   "recipes": {
+    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Wave 濾紙與 C40 MK4 的四段注水。","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"注水 320 g，成品約 265 g；總流乾時間未提供。","finish":"完全流乾前移走濾杯，成品約 265 g；來源沒有固定時間。","prep":"冷水沖濕濾紙。28 g 豆以 25 格研磨，用 Saza M 去除細粉並吹走銀皮，取處理後的 21 g。","vertical":"注水製造垂直攪動。","lateral":"注水製造橫向攪動。","centre":"中心注水。","water":"賽事提供的 Tajima 天然水。"},
+    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave 濾紙配 Red Clix，最後一段降溫。","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"2024 季軍。初賽 Red Clix 56 格，決賽 55 格；最後一段約 75°C。","finish":"2:30 移走濾杯，再用匙羹輕輕拌勻。","prep":"Red Clix 55 格研磨，篩粉後保留 15 g。沖濕濾紙並用針貼合凹槽，預熱杯子，再用針整平粉床。","first":"輕柔均勻注遍粉床。","second":"慢慢注水並產生攪動。","last":"把壺內水溫降至約 75°C，以很幼、很慢的水柱中心注水。","water":"Tajima 天然水；硬度 70 mg/L，量測基準未提供。"},
+    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"ZP6 Special 與 CAFEC 濾紙的四段定時注水。","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"總覽列 240 mL，步驟用 g。第三段原文為 1:00–1:00，因此只保留起始時間。","finish":"放流至 2:25。","third":"第三段 1:00 開始，原文結束時間有疑義。"},
+    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"日曬 Geisha 配 Sibarist，分段使用不同水溫。","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"各段時間、首段水溫、烘焙度與總時間未提供；其餘水溫按各段標示。","finish":"讓咖啡流乾；來源未提供總時間。","spiral":"螺旋注水。","water":"原文稱為 Pure Colombian Water；礦物成分未提供。"},
+    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"K-Ultra 與 Sibarist 濾紙的四段注水。","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"2024 荷蘭冠軍版。Sibarist 型號、豆子與烘焙度未提供；建議約 7 g/s 注水。","finish":"讓咖啡流乾，目標約 3:00。"},
     "kasuya": {
       "title": "粕谷哲 4:6 沖煮法",
       "summary": "五段注水，節奏清晰。HARIO 公開的粕谷哲 4:6 教學版本。",
