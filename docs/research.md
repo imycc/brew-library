@@ -81,4 +81,26 @@ Structured source conditions cover grinder identity/literal dial notation, paper
 
 Duration may now be unknown, displayed with the localized missing-source label. Steps may have separate temperatures. Al Mallouhi now includes the remaining 260 mL after its 35-second bloom (300 minus 40), restoring the full sequence. Validation continues checking known additions; null cumulative values are not a waiver.
 
-April’s Origami video could not be fetched during this pass and remains pending. Standalone equipment catalogues and universal grinder conversions are outside this expansion.
+April’s Origami video could not be fetched during this pass and remains pending.
+
+## Equipment catalogue — checked 2026-10-28
+
+The first equipment catalogue contains 21 records covering the brewers, grinders and filters used by current recipes. Product names, dimensions, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently.
+
+Primary source groups:
+
+- [HARIO USA V60 and W60 product pages](https://www.hario-usa.com/collections/drippers)
+- [HARIO Europe Switch 02](https://www.hario-europe.com/products/v60-ceramic-immersion-dripper-switch-02-size)
+- [NextLevel Pulsar](https://nextlevelbrewer.com/shop/nextlevel-pulsar-brewer/)
+- [ORIGAMI Dripper Air S](https://origami-kai.com/en/products/origami_dripperair_s), [Dripper S](https://origami-kai.com/en/products/origami_dripper_s) and [Wave filters](https://origami-kai.com/en/products/paper-filter-wave)
+- [COMANDANTE C40 MK4](https://comandantegrinder.com/products/c40-mk4-nitro-blade-american-cherry), [C40 model history](https://comandantegrinder.com/pages/about) and [Red Clix RX35](https://comandantegrinder.com/products/red-clix-drivetrain-set)
+- [1Zpresso ZP6 Special](https://1zpresso.coffee/product/zp6-special/) and [K-Ultra](https://1zpresso.coffee/product/kultra/)
+- [SIBARIST CONE](https://sibarist.coffee/products/cone)
+
+Editorial boundaries:
+
+- A recipe source that says only `EK` is stored as `EK — model unconfirmed`; it is not relabelled EK43.
+- A recipe source that says only `Sibarist` is stored as model unconfirmed; it is not assigned a CONE, FLAT or filter-paper grade.
+- The generic ORIGAMI recipes without a confirmed size/material link to a family record with the exact limitation stated.
+- The Red Clix record applies only to the C40 MK3 configuration used by the recipe; click values are not converted to other grinders.
+- Recipe links are explicit IDs rather than fuzzy brand matching, so a V60 Ceramic product cannot silently inherit a V60 Plastic or Metal recipe.
