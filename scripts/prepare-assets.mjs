@@ -16,4 +16,10 @@ for(const name of ['editorial-hero','editorial-hero-mobile','coffee-bloom','brew
  try{await unlink(`public/images/${name}.png`);}catch(error){if(error.code!=='ENOENT')throw error;}
 }
 await sharp(`${originals}/coffee-bloom.png`).resize(48,48).png().toFile('public/icon.png');
-console.log('Prepared responsive WebP/AVIF photography and icon.');
+for(const size of [180,192,512]){
+  await sharp(`${originals}/coffee-bloom.png`).resize(size,size,{fit:'cover'}).png().toFile(`public/icon-${size}.png`);
+}
+for(const [name,source] of [['og-default','editorial-hero'],['og-coffee-bloom','coffee-bloom'],['og-brewer-still','brewer-still']]){
+  await sharp(`${originals}/${source}.png`).resize(1200,630,{fit:'cover'}).jpeg({quality:84}).toFile(`public/images/${name}-1200x630.jpg`);
+}
+console.log('Prepared responsive WebP/AVIF photography, icons and Open Graph images.');
