@@ -59,3 +59,10 @@ final result: passed
 - Confirmed keyboard opening, Escape focus return, outside click, and retained recipe/filter/comparison query state when switching languages.
 - Expanded the library from three to eight official-source records; updated browser coverage for every new recipe in all nine locales, real fourth-recipe comparison rejection, Switch filtering, unknown temperatures and retained g/mL discrepancies.
 - A stale local export initially omitted the new brewer options. Rebuilt with the data-driven option list; the focused filter/comparison and source-instruction journeys passed. The PR pipeline rebuilds and reruns the full suite.
+
+## 2026-10-28: adaptive equipment layout
+
+- Replaced the fixed, equal-row equipment grid with native CSS columns at a 300 px preferred card width. The layout resolves to four columns at the 1487 px desktop viewport, scales through intermediate widths, and collapses to one column on a 390 px mobile viewport.
+- Equipment cards keep their natural content height and cannot split across columns. Cards without verified official artwork now omit the cover region entirely; failed external image requests use the same behavior. Recipe detail fallbacks are unchanged.
+- Browser coverage now asserts the 300 px column contract, the one-column mobile result and the absence of an image element for `ek-unspecified`. Desktop and mobile full-page captures were visually inspected in `outputs/qa/equipment-{desktop,mobile}.png`.
+- Local verification: typecheck, data validation, 11 unit tests and production static export passed. The full 23-test browser run had 20 passes and 2 environment-dependent skips; one pre-existing tablet navigation test hit a 30-second external-resource load timeout and passed immediately when rerun alone.

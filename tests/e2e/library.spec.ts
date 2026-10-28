@@ -60,7 +60,8 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="origami-air-s"] .experience-tags')).toContainText('酸質與清晰度較突出');
  await expect(page.locator('[data-equipment="origami-air-s"] .equipment-card-image[data-source-image="official"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="ek-unspecified"]')).toContainText('型號待確認');
- await expect(page.locator('[data-equipment="ek-unspecified"] .equipment-card-image[data-source-image="fallback"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="ek-unspecified"] .equipment-card-image')).toHaveCount(0);
+ await expect(page.locator('.equipment-grid')).toHaveCSS('column-width','300px');
  await page.getByLabel('搜尋品牌、型號或相容性').fill('ZP6');
  await expect(page.locator('[data-equipment]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"]')).toContainText('90 clicks per rotation');
@@ -70,6 +71,7 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"] footer a[href="https://1zpresso.coffee/product/zp6-special/"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"] a[href*="rincon-origami"]')).toHaveCount(1);
  await page.setViewportSize({width:390,height:844});
+ expect(await page.locator('.equipment-card').evaluateAll(cards=>new Set(cards.map(card=>Math.round(card.getBoundingClientRect().x))).size)).toBe(1);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
 });
 test('mobile and long-language layouts keep controls inside viewport',async({page})=>{
