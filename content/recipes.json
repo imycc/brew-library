@@ -260,7 +260,12 @@
       "beanConditions": "unknown",
       "filterConditions": "pulsar",
       "context": "daily",
-      "temperatureMode": "boiling"
+      "temperatureMode": "boiling",
+      "paper": {
+        "id": "pulsar",
+        "name": "NextLevel Pulsar",
+        "shape": "flat"
+      }
     },
     {
       "id": "licata-v60",
@@ -324,7 +329,19 @@
       "filterConditions": "unknown",
       "context": "daily",
       "beanNote": "recipes.licata.beans",
-      "waterNote": "recipes.licata.water"
+      "waterNote": "recipes.licata.water",
+      "grinder": {
+        "id": "ek-unspecified",
+        "name": "EK",
+        "setting": "7.5 (standard dial)"
+      },
+      "coffee": {
+        "name": "La Palma y El Tucan",
+        "origin": "Colombia",
+        "variety": "Gesha",
+        "process": "natural",
+        "roast": "light"
+      }
     },
     {
       "id": "wong-switch",
@@ -499,7 +516,12 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "competition",
-      "beanNote": "recipes.boen.beans"
+      "beanNote": "recipes.boen.beans",
+      "coffee": {
+        "name": "Hacienda La Esmeralda",
+        "variety": "Geisha",
+        "process": "natural"
+      }
     },
     {
       "id": "hoang-w60",
@@ -702,7 +724,7 @@
       ],
       "preparation": [],
       "waterConditions": "unknown",
-      "beanConditions": "light",
+      "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily",
       "beanNote": "recipes.grill.beans"
@@ -739,8 +761,14 @@
           "action": "bloom",
           "at": 0,
           "amount": 40,
-          "cumulative": null,
+          "cumulative": 40,
           "unit": "mL"
+        },
+        {
+          "action": "pour",
+          "at": 35,
+          "amount": 260,
+          "cumulative": 300
         },
         {
           "action": "finish",
@@ -835,6 +863,413 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily"
+    },
+    {
+      "kind": "hot",
+      "temperatureMode": "unknown",
+      "image": "coffee-bloom",
+      "preparation": [
+        "recipes.kodama.prep"
+      ],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "authorId": "kodama",
+      "id": "kodama-origami",
+      "copy": "kodama",
+      "author": "Hiroyuki Kodama",
+      "brewer": "ORIGAMI Dripper Air S",
+      "brewerId": "origami",
+      "dose": 21,
+      "water": {
+        "amount": 320,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": 94,
+      "duration": null,
+      "source": {
+        "label": "ORIGAMI",
+        "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "grinder": {
+        "id": "c40-mk4",
+        "name": "Comandante C40 MK4",
+        "setting": "25 clicks"
+      },
+      "paper": {
+        "id": "origami-wave",
+        "name": "ORIGAMI Paper Filter Wave",
+        "shape": "wave"
+      },
+      "coffee": {
+        "name": "NOG COFFEE ROASTERS",
+        "origin": "Kenya",
+        "process": "washed",
+        "roast": "light"
+      },
+      "waterNote": "recipes.kodama.water",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "instruction": "recipes.kodama.vertical"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 100,
+          "cumulative": 160,
+          "instruction": "recipes.kodama.vertical"
+        },
+        {
+          "action": "pour",
+          "at": 60,
+          "amount": 100,
+          "cumulative": 260,
+          "instruction": "recipes.kodama.lateral"
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 60,
+          "cumulative": 320,
+          "instruction": "recipes.kodama.centre"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ]
+    },
+    {
+      "kind": "hot",
+      "temperatureMode": "unknown",
+      "image": "coffee-bloom",
+      "preparation": [
+        "recipes.kobayashi.prep"
+      ],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "authorId": "kobayashi",
+      "id": "kobayashi-origami",
+      "copy": "kobayashi",
+      "author": "Tsuyoshi Kobayashi",
+      "brewer": "ORIGAMI Dripper S · Porcelain",
+      "brewerId": "origami",
+      "dose": 15,
+      "water": {
+        "amount": 240,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": 92,
+      "duration": [
+        150,
+        150
+      ],
+      "source": {
+        "label": "ORIGAMI",
+        "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "grinder": {
+        "id": "c40-mk3-redclix",
+        "name": "Comandante C40 MK3 + RED CLICKS",
+        "setting": "55 clicks"
+      },
+      "paper": {
+        "id": "origami-wave-1-2",
+        "name": "ORIGAMI Paper Filter Wave 1–2 cups",
+        "shape": "wave"
+      },
+      "coffee": {
+        "name": "NOG COFFEE ROASTERS",
+        "origin": "Kenya",
+        "process": "washed",
+        "roast": "light"
+      },
+      "waterNote": "recipes.kobayashi.water",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "instruction": "recipes.kobayashi.first"
+        },
+        {
+          "action": "pour",
+          "at": 40,
+          "amount": 90,
+          "cumulative": 150,
+          "instruction": "recipes.kobayashi.second"
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 90,
+          "cumulative": 240,
+          "end": 120,
+          "temperature": 75,
+          "instruction": "recipes.kobayashi.last"
+        },
+        {
+          "action": "finish",
+          "at": 150,
+          "amount": null,
+          "cumulative": null
+        }
+      ]
+    },
+    {
+      "kind": "hot",
+      "temperatureMode": "unknown",
+      "image": "coffee-bloom",
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "authorId": "selorio",
+      "id": "selorio-origami",
+      "copy": "selorio",
+      "author": "Lui Selorio",
+      "brewer": "ORIGAMI Air",
+      "brewerId": "origami",
+      "dose": 16,
+      "water": {
+        "amount": 240,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": 91,
+      "duration": [
+        145,
+        145
+      ],
+      "source": {
+        "label": "1Zpresso",
+        "url": "https://1zpresso.coffee/recipe/",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "grinder": {
+        "id": "zp6-special",
+        "name": "1Zpresso ZP6 Special",
+        "setting": "4.1"
+      },
+      "paper": {
+        "id": "cafec-origami",
+        "name": "CAFEC Origami Filter"
+      },
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50,
+          "end": 10,
+          "unit": "g"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 70,
+          "cumulative": 120,
+          "end": 40,
+          "unit": "g"
+        },
+        {
+          "action": "pour",
+          "at": 60,
+          "amount": 60,
+          "cumulative": 180,
+          "unit": "g",
+          "instruction": "recipes.selorio.third"
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 60,
+          "cumulative": 240,
+          "end": 100,
+          "unit": "g"
+        },
+        {
+          "action": "finish",
+          "at": 145,
+          "amount": null,
+          "cumulative": null
+        }
+      ]
+    },
+    {
+      "kind": "hot",
+      "temperatureMode": "unknown",
+      "image": "coffee-bloom",
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "authorId": "rincon",
+      "id": "rincon-origami",
+      "copy": "rincon",
+      "author": "Janer Joseph Perez Rincon",
+      "brewer": "ORIGAMI · Acrylic",
+      "brewerId": "origami",
+      "dose": 15,
+      "water": {
+        "amount": 260,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": null,
+      "duration": null,
+      "source": {
+        "label": "1Zpresso",
+        "url": "https://1zpresso.coffee/recipe/",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "grinder": {
+        "id": "zp6-special",
+        "name": "1Zpresso ZP6 Special",
+        "setting": "5.6"
+      },
+      "paper": {
+        "id": "sibarist-conic",
+        "name": "Sibarist Conic",
+        "shape": "cone"
+      },
+      "coffee": {
+        "name": "San Pedro · Milton Monrroy",
+        "variety": "Geisha",
+        "process": "natural"
+      },
+      "waterNote": "recipes.rincon.water",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 70,
+          "cumulative": 120,
+          "temperature": 92
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 70,
+          "cumulative": 190,
+          "temperature": 86,
+          "instruction": "recipes.rincon.spiral"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 70,
+          "cumulative": 260,
+          "temperature": 86,
+          "instruction": "recipes.rincon.spiral"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ]
+    },
+    {
+      "kind": "hot",
+      "temperatureMode": "unknown",
+      "image": "coffee-bloom",
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "authorId": "gil",
+      "id": "gil-origami-2024",
+      "copy": "gil",
+      "author": "Milo Gil",
+      "brewer": "ORIGAMI Air",
+      "brewerId": "origami",
+      "dose": 15,
+      "water": {
+        "amount": 250,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": 92,
+      "duration": [
+        180,
+        180
+      ],
+      "source": {
+        "label": "1Zpresso",
+        "url": "https://1zpresso.coffee/recipe/",
+        "published": null,
+        "checked": "2026-10-28"
+      },
+      "grinder": {
+        "id": "k-ultra",
+        "name": "1Zpresso K-Ultra",
+        "setting": "7.5"
+      },
+      "paper": {
+        "id": "sibarist-unspecified",
+        "name": "Sibarist"
+      },
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 40,
+          "cumulative": 40
+        },
+        {
+          "action": "pour",
+          "at": 45,
+          "amount": 60,
+          "cumulative": 100
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 75,
+          "cumulative": 175
+        },
+        {
+          "action": "pour",
+          "at": 135,
+          "amount": 75,
+          "cumulative": 250
+        },
+        {
+          "action": "finish",
+          "at": 180,
+          "amount": null,
+          "cumulative": null
+        }
+      ]
     }
   ]
 }

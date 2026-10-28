@@ -12,13 +12,13 @@ export async function validate(){
  const placeholders=(text:string)=>[...text.matchAll(/\{([a-zA-Z][a-zA-Z0-9_]*)\}/g)].map(m=>m[1]).sort();
  assert.equal(new Set(recipes.map(r=>r.id)).size,recipes.length,'Duplicate recipe id');
  for(const r of recipes){
-   assert(r.duration[1]>=r.duration[0],r.id);
+   if(r.duration)assert(r.duration[1]>=r.duration[0],r.id);
    const measured=r.steps.filter(s=>s.amount!==null);
    assert(new Set(measured.map(s=>s.unit||r.water.unit)).size<=1,`${r.id} cannot sum mixed step units`);
    let cumulative:number|null=0;
    for(const s of r.steps){
      if(!['pour','bloom','pulses'].includes(s.action))continue;
-     if(s.amount!==null&&cumulative!==null){cumulative+=s.amount;if(s.cumulative!==null)assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);else cumulative=null;}
+     if(s.amount!==null&&cumulative!==null){cumulative+=s.amount;if(s.cumulative!==null)assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);}
      else cumulative=s.cumulative;
    }
    // Only compare totals when mass/volume units actually match. Never convert g to mL.

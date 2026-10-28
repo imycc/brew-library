@@ -1,4 +1,12 @@
 {
+  "conditionFilters": "器具と豆の条件",
+  "conditionHint": "原典の条件で絞り込みます。未記載の条件は一致しません。最適なレシピを予測する機能ではありません。",
+  "grinder": "グラインダー",
+  "paper": "フィルター",
+  "process": "精製方法",
+  "roast": "焙煎度",
+  "processes": {"washed":"ウォッシュド","natural":"ナチュラル","honey":"ハニー","anaerobic":"アナエロビック"},
+  "roasts": {"light":"浅煎り","medium":"中煎り","dark":"深煎り"},
   "brand": "ハンドドリップ図鑑",
   "tagline": "コーヒーの手帖",
   "recipesNav": "レシピ",
@@ -105,6 +113,11 @@
     "level": "抽出前に粉を平らにします。"
   },
   "recipes": {
+    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Wave と C40 MK4 の四段注湯。","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"水 320 g、出来上がり約 265 g。総時間は未記載。","finish":"落ち切る直前に外します。約 265 g、固定時間は未記載。","prep":"冷水で濾紙を濡らす。28 g を 25 クリックで挽き、Saza M で微粉を除き薄皮を吹き飛ばし、21 g を使用。","vertical":"縦方向の攪拌を生む注湯。","lateral":"横方向の攪拌を生む注湯。","centre":"中央へ注ぎます。","water":"大会提供の Tajima 天然水。"},
+    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave と Red Clix、最後は低温で注湯。","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"2024 年 3 位。予選 Red Clix 56 クリック、決勝 55。最後は約 75°C。","finish":"2:30 に外しスプーンで丁寧に混ぜます。","prep":"Red Clix 55 クリックで挽き微粉を除いて 15 g に。濾紙を濡らし針で溝に沿わせ、器を温め針で粉床を整えます。","first":"全体へ優しく均一に注ぎます。","second":"ゆっくり攪拌しながら注ぎます。","last":"湯を約 75°C に下げ、細くゆっくり中央へ注ぎます。","water":"Tajima 天然水。硬度 70 mg/L、測定基準は未記載。"},
+    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"ZP6 Special と CAFEC の四段注湯。","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"概要は 240 mL、手順は g。第 3 段は 1:00–1:00 とあり、開始のみ保持。","finish":"2:25 まで排出。","third":"第 3 段は 1:00 開始。終了時刻は原典が不明確。"},
+    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"ナチュラル Geisha と Sibarist、湯温を段階変更。","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"各時刻、初期湯温、焙煎度と総時間は未記載。以後の湯温は段階別に表示。","finish":"排出。総時間は未記載。","spiral":"螺旋状に注ぎます。","water":"原典表記 Pure Colombian Water。ミネラルは未記載。"},
+    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"K-Ultra と Sibarist の四段注湯。","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"2024 年オランダ優勝版。Sibarist 型、豆、焙煎度は未記載。約 7 g/s を推奨。","finish":"排出し約 3:00 を目安に。"},
     "kasuya": {
       "title": "粕谷哲の4:6メソッド",
       "summary": "5回の注湯で淹れる、HARIO公開の粕谷哲4:6メソッド。",

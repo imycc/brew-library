@@ -18,6 +18,8 @@
 
 配方資料位於 [`content/recipes.json`](content/recipes.json)，翻譯位於 [`messages/`](messages/)。整理準則及核對筆記見 [來源紀錄](docs/research.md)。
 
+現可按濾杯、原版磨豆器、濾紙、處理法及烘焙度篩選；[訪客統計](docs/analytics.md)由 GoatCounter 提供。
+
 ## 本機開發
 
 使用 Node.js 24：

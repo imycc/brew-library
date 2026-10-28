@@ -8,6 +8,10 @@ The homepage is an editorial discovery surface. Full brewing instructions and ti
 
 ## Data interfaces
 
+Optional source conditions are structured as `grinder` (identity and literal setting), `paper` (identity and optional shape), and `coffee` (name, origin, variety, processing, roast). The recipe’s `source` supports these fields. AND filters use the shareable query keys `grinder`, `paper`, `process`, `roast`; missing conditions do not match. Model names and source dial notation remain unchanged across locales; no setting conversion is performed.
+
+`duration: null` means the source does not specify total brew time and displays the localized unknown label. Steps can carry their own `temperature`. See [analytics.md](analytics.md) for the optional GoatCounter integration.
+
 - `content/recipes.json`: version 1 canonical recipe records. Validated by Zod in `src/lib/recipes.ts`.
 - `messages/{locale}.json`: full UI and recipe text in nine locales. Message keys, parameters, required recipe content and step instruction coverage are checked before publishing.
 - Numeric quantities, original units, exact/ranged times, author identity and source provenance live in canonical data; copy is localized separately.

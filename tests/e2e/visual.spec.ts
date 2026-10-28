@@ -5,8 +5,8 @@ test('capture selected editorial design and responsive detail surfaces',async({p
  await page.setViewportSize({width:1487,height:1090});
  await page.goto('/pour-over-coffee/zh-Hant/?ids=kasuya-46');
  await page.evaluate(()=>document.fonts.ready);
- await expect(page.locator('.featured img')).toBeVisible();
- await page.locator('.recipe-grid img').evaluateAll(imgs=>Promise.all(imgs.slice(0,3).map(img=>(img as HTMLImageElement).decode())));
+ await expect(page.locator('.featured .recipe-cover-main img')).toBeVisible();
+ await page.locator('.recipe-grid img').evaluateAll(imgs=>Promise.all(imgs.filter(img=>(img as HTMLImageElement).getBoundingClientRect().width>0).slice(0,3).map(img=>{const image=img as HTMLImageElement;return image.complete?Promise.resolve():image.decode();})));
  await page.screenshot({path:'outputs/qa/home-desktop.png'});
  await page.goto('/pour-over-coffee/zh-Hant/recipes/kasuya-46/?ids=kasuya-46');
  await page.evaluate(()=>document.fonts.ready);

@@ -1,4 +1,12 @@
 {
+  "conditionFilters": "장비와 원두 조건",
+  "conditionHint": "원문의 조건으로 필터링합니다. 미제공 정보는 일치하지 않습니다. 최적의 레시피를 예측하지 않습니다.",
+  "grinder": "그라인더",
+  "paper": "필터",
+  "process": "가공법",
+  "roast": "로스팅",
+  "processes": {"washed":"워시드","natural":"내추럴","honey":"허니","anaerobic":"무산소"},
+  "roasts": {"light":"라이트","medium":"미디엄","dark":"다크"},
   "brand": "핸드드립 레시피",
   "tagline": "커피 에디토리얼",
   "recipesNav": "레시피",
@@ -105,6 +113,11 @@
     "level": "추출 전에 커피층을 평평하게 만듭니다."
   },
   "recipes": {
+    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Wave와 C40 MK4 네 번 푸어.","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"물 320 g, 음료 약 265 g. 총 시간 미제공.","finish":"끝나기 직전에 제거. 음료 약 265 g, 고정 시간 미제공.","prep":"찬물로 필터를 적십니다. 28 g을 25 클릭으로 갈고 Saza M으로 미분과 블로워로 껍질을 제거한 뒤 21 g 사용.","vertical":"수직 교반을 만들며 붓습니다.","lateral":"수평 교반을 만들며 붓습니다.","centre":"중앙에 붓습니다.","water":"대회 제공 Tajima 천연수."},
+    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave와 Red Clix, 마지막은 저온 푸어.","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"2024 3위. 예선 Red Clix 56 클릭, 결승 55. 마지막 약 75°C.","finish":"2:30에 제거하고 스푼으로 부드럽게 섞습니다.","prep":"Red Clix 55 클릭으로 갈아 미분 제거 후 15 g. 필터를 적셔 핀으로 홈에 맞추고 컵 예열 후 커피층을 고릅니다.","first":"전체에 부드럽고 고르게 붓습니다.","second":"천천히 교반하며 붓습니다.","last":"물을 약 75°C로 낮추고 가늘고 느리게 중앙에 붓습니다.","water":"Tajima 천연수. 경도 70 mg/L, 측정 기준 미제공."},
+    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"ZP6 Special과 CAFEC 네 번 푸어.","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"개요 240 mL, 단계 g. 세 번째 구간은 1:00–1:00이므로 시작만 표시.","finish":"2:25까지 배출.","third":"세 번째는 1:00 시작. 원문의 종료 시간은 불명확."},
+    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"내추럴 Geisha와 Sibarist, 단계별 온도 변경.","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"각 시간, 첫 온도, 로스팅과 총 시간 미제공. 이후 온도는 단계별 표시.","finish":"배출. 총 시간 미제공.","spiral":"나선형으로 붓습니다.","water":"원문 Pure Colombian Water. 미네랄 조성 미제공."},
+    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"K-Ultra와 Sibarist 네 번 푸어.","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"2024 네덜란드 우승 버전. Sibarist 모델, 원두와 로스팅 미제공. 약 7 g/s 권장.","finish":"배출하며 약 3:00 목표."},
     "kasuya": {
       "title": "가스야 4:6 메서드",
       "summary": "다섯 번의 푸어링으로 구성된 HARIO 공개 가스야 4:6 레시피입니다.",
