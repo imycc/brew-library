@@ -66,3 +66,10 @@ final result: passed
 - Equipment cards keep their natural content height and cannot split across columns. Cards without verified official artwork now omit the cover region entirely; failed external image requests use the same behavior. Recipe detail fallbacks are unchanged.
 - Browser coverage now asserts the 300 px column contract, the one-column mobile result and the absence of an image element for `ek-unspecified`. Desktop and mobile full-page captures were visually inspected in `outputs/qa/equipment-{desktop,mobile}.png`.
 - Local verification: typecheck, data validation, 11 unit tests and production static export passed. The full 23-test browser run had 20 passes and 2 environment-dependent skips; one pre-existing tablet navigation test hit a 30-second external-resource load timeout and passed immediately when rerun alone.
+
+## 2026-10-28: homepage recipe index redesign
+
+- Replaced the mixed 2fr/1fr/1fr text grid and full-width twin buttons with one full-width lead record (title, summary, 2×2 spec table, source) followed by a compact index grid. Each card now carries a single quiet detail link and a compact compare toggle.
+- Card titles drop the repeated `Author · ` prefix already shown in the record meta. Spec values are an icon-labelled inline line; long localized values move as whole items to a second line instead of truncating.
+- Grid breakpoints: four columns ≥1400 px, three at 1040–1399, two at 761–1039, one at ≤760. Probe of 320/390/768/900/1150/1487/1920 px in zh-Hant, en, de, fr and ja reported no page or element overflow.
+- Evidence: `outputs/qa/home-recipes-desktop.png`, `outputs/qa/home-recipes-mobile.png`. The static build and 16 data tests passed; the full browser run had 20 passes and 2 environment skips, with one recipe-page external-image load timing out at 30 s and passing immediately on rerun.

@@ -28,6 +28,14 @@ Search (`q`), brewer, author, style, dose and selected recipe IDs (`ids`) live i
 
 Data access, filtering, selection and UI are separate. A future CMS or API can replace the data loader while preserving recipe IDs and component contracts. Server features require a host with server support; GitHub Pages remains a static host.
 
+## Search and AI discovery
+
+Every localized page emits JSON-LD in addition to canonical and hreflang metadata. The layout supplies `Organization` and `WebSite`; collection pages add `CollectionPage` and `ItemList`; recipe pages add `Recipe`, `FAQPage` and `BreadcrumbList`; equipment records are represented as `Product` items with official specs and source links. Recipe pages also show a localized answer-first summary, a visible FAQ and related recipes so the same facts are available as text, not only as markup.
+
+`pageMetadata` supplies per-page descriptions, Open Graph locales, a 1200×630 image, article timestamps for recipes and `max-image-preview:large`. `scripts/postbuild.ts` writes a sitemap with hreflang alternates and `lastmod`, an explicit AI-crawler policy in `robots.txt`, and `llms.txt`, then parses every exported page to verify its JSON-LD and discovery files.
+
+Fonts are requested per locale: Latin locales load only DM Sans and Libre Baskerville, while CJK locales additionally load the matching Noto sans/serif pair. The homepage preloads its responsive hero image.
+
 ## Photography
 
 The homepage keeps its editorial hero photography, but recipe cards and comparison headers remain text/data-first. Recipe details and equipment cards may show a credited image from the record's official source page. Images are hotlinked only when the source page exposes a usable HTTPS image URL; the credit links back to that page. Recipe details keep a localized neutral fallback, while equipment cards omit the image area entirely when metadata is missing or a request fails, so the content starts immediately without an empty cover. Collection or brand imagery is labelled with its actual source and is not presented as unique product evidence. The equipment index uses a native CSS-column masonry layout that adapts its column count to available width and allows cards to keep their natural content height. Design references are kept in the local ignored `outputs/design-concepts/` directory.
@@ -36,7 +44,7 @@ Equipment experience tags are deliberately separate from manufacturer specificat
 
 ## Verification and delivery
 
-`npm run validate`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`. Build verifies every exported localized page has the correct HTML language and canonical URL. GitHub Actions repeats checks and browser journeys before publishing main through Pages.
+`npm run validate`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`. Build verifies every exported localized page has the correct HTML language and canonical URL, valid JSON-LD, metadata, sitemap alternates, AI crawler policy and `llms.txt`. GitHub Actions repeats checks and browser journeys before publishing main through Pages.
 
 CI pins the official Ubuntu 24.04 hosted runner and tests with its preinstalled Chrome (`PLAYWRIGHT_CHANNEL=chrome`). The same Playwright suite runs without repeatedly downloading system fonts from the slow Ubuntu mirror. The website supplies explicit CJK serif/sans web fonts; ordinary system-font fallbacks remain available.
 

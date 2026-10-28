@@ -23,7 +23,7 @@ function EquipmentCard({item}:{item:(typeof equipment)[number]}){
       return t.has(key)?t(key):material;
     }).join(' · ');
   };
-  return <article className="equipment-card" data-equipment={item.id}>
+  return <article className="equipment-card" data-equipment={item.id} id={item.id}>
     <OfficialSourceImage image={editorial.sourceImage} name={`${item.brand} ${item.name}`} kind="equipment" className="equipment-card-image" showFallback={false}/>
     <header><div><span>{t(`equipmentCategories.${item.category}`)}</span><strong>{item.brand}</strong></div>{item.status!=='current'?<span className={`equipment-status ${item.status}`}>{t(`equipmentStatus.${item.status}`)}</span>:null}</header>
     <h2>{item.name}</h2>
