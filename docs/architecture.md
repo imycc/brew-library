@@ -26,7 +26,7 @@ Data access, filtering, selection and UI are separate. A future CMS or API can r
 
 ## Photography
 
-Original AI-generated photography is stored in `assets/originals/`. The asset script generates responsive WebP/AVIF files during builds. Design references are kept in the local ignored `outputs/design-concepts/` directory. Generated image provenance and the final design decision are recorded there.
+The homepage keeps its editorial hero photography, but recipe cards, recipe details and comparison headers are intentionally text/data-first with no generated cover images. Asset preparation only handles the shared hero and supporting editorial photography. Design references are kept in the local ignored `outputs/design-concepts/` directory.
 
 ## Verification and delivery
 
