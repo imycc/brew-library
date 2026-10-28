@@ -5,8 +5,17 @@
   "paper": "Filterpapier",
   "process": "Aufbereitung",
   "roast": "Röstung",
-  "processes": {"washed":"Gewaschen","natural":"Natural","honey":"Honey","anaerobic":"Anaerob"},
-  "roasts": {"light":"Hell","medium":"Mittel","dark":"Dunkel"},
+  "processes": {
+    "washed": "Gewaschen",
+    "natural": "Natural",
+    "honey": "Honey",
+    "anaerobic": "Anaerob"
+  },
+  "roasts": {
+    "light": "Hell",
+    "medium": "Mittel",
+    "dark": "Dunkel"
+  },
   "equipmentNav": "Ausrüstung",
   "equipmentTitle": "Ausrüstungsdatenbank",
   "equipmentIntro": "Offizielle Angaben, Kompatibilität und passende Rezepte für Filterdripper, Mühlen und Filterpapiere.",
@@ -18,10 +27,43 @@
   "equipmentRelated": "Passende Originalrezepte",
   "equipmentChecked": "Offizielle Angaben geprüft",
   "equipmentEmpty": "Keine Ausrüstung entspricht diesen Filtern.",
-  "equipmentCategories": {"dripper":"Dripper","grinder":"Mühlen","filter":"Filter"},
-  "equipmentStatus": {"legacy":"Altmodell / eingestellt","unresolved":"Modell unbestätigt"},
-  "equipmentSpecs": {"capacity":"Kapazität","materials":"Materialien","dimensions":"Abmessungen","weight":"Gewicht","compatibility":"Kompatibilität","mode":"Modus","madeIn":"Hergestellt in","model":"Modell","burr":"Mahlwerk","adjustment":"Einstellung","precision":"Schrittpräzision","groundsCapacity":"Kaffeemehlkapazität","format":"Form","packs":"Packung","technology":"Technologie"},
-  "equipmentUnits": {"cups":"Tassen","mL":"mL","mm":"mm","g":"g","in":"Zoll","lb":"lb","µm":"µm","sheets":"Blatt"},
+  "equipmentCategories": {
+    "dripper": "Dripper",
+    "grinder": "Mühlen",
+    "filter": "Filter"
+  },
+  "equipmentStatus": {
+    "legacy": "Altmodell / eingestellt",
+    "unresolved": "Modell unbestätigt"
+  },
+  "equipmentSpecs": {
+    "capacity": "Kapazität",
+    "materials": "Materialien",
+    "dimensions": "Abmessungen",
+    "weight": "Gewicht",
+    "compatibility": "Kompatibilität",
+    "mode": "Modus",
+    "madeIn": "Hergestellt in",
+    "model": "Modell",
+    "burr": "Mahlwerk",
+    "adjustment": "Einstellung",
+    "precision": "Schrittpräzision",
+    "groundsCapacity": "Kaffeemehlkapazität",
+    "format": "Form",
+    "packs": "Packung",
+    "technology": "Technologie"
+  },
+  "equipmentUnits": {
+    "cups": "Tassen",
+    "mL": "mL",
+    "mm": "mm",
+    "g": "g",
+    "in": "Zoll",
+    "lb": "lb",
+    "µm": "µm",
+    "sheets": "Blatt",
+    "oz": "oz"
+  },
   "brand": "Filterkaffee-Bibliothek",
   "tagline": "Das Kaffeejournal",
   "recipesNav": "Rezepte",
@@ -128,11 +170,64 @@
     "level": "Das Kaffeebett vor dem Brühen ebnen."
   },
   "recipes": {
-    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Vier Aufgüsse mit Wave und C40 MK4.","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"320 g Wasser, etwa 265 g Getränk. Gesamtzeit nicht angegeben.","finish":"Vor dem letzten Tropfen abnehmen; etwa 265 g. Keine feste Zeit.","prep":"Kalt spülen. 28 g bei 25 Klicks mahlen, mit Saza M sieben und Häutchen wegblasen; 21 g verwenden.","vertical":"Mit vertikaler Verwirbelung gießen.","lateral":"Mit seitlicher Verwirbelung gießen.","centre":"Mittig gießen.","water":"Tajima-Naturwasser vom Wettbewerb."},
-    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave und Red Clix mit kühlerem Schlussaufguss.","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"Dritter Platz 2024. Red Clix: Vorrunde 56 Klicks, Finale 55; zuletzt etwa 75°C.","finish":"Bei 2:30 abnehmen und mit einem Löffel mischen.","prep":"Bei 55 Red-Clix-Klicks mahlen und auf 15 g sieben. Papier spülen, mit Nadel in Rillen legen, Gefäß vorwärmen und Bett ebnen.","first":"Sanft über das gesamte Bett gießen.","second":"Langsam mit Verwirbelung gießen.","last":"Auf etwa 75°C senken und dünn und langsam mittig gießen.","water":"Tajima-Wasser; Härte 70 mg/L, Bezugsbasis unbekannt."},
-    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"Vier Aufgüsse mit ZP6 Special und CAFEC.","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"Übersicht 240 mL, Schritte g. Drittes Intervall 1:00–1:00; nur Beginn übernommen.","finish":"Bis 2:25 ablaufen lassen.","third":"Dritten Aufguss bei 1:00 beginnen; Ende unklar."},
-    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"Natural Geisha und Sibarist mit Temperaturwechsel.","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"Zeiten, Anfangstemperatur, Röstung und Gesamtzeit fehlen. Spätere Temperaturen je Schritt.","finish":"Ablaufen lassen; Zeit unbekannt.","spiral":"Spiralförmig aufgießen.","water":"Quelle: Pure Colombian Water; Mineralien unbekannt."},
-    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"Vier Aufgüsse mit K-Ultra und Sibarist.","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"Niederländischer Meister 2024. Sibarist-Modell, Bohnen und Röstung fehlen. Etwa 7 g/s empfohlen.","finish":"Ablaufen lassen; ungefähr 3:00 anstreben."},
+    "kodama": {
+      "title": "Hiroyuki Kodama · ORIGAMI Air",
+      "summary": "Vier Aufgüsse mit Wave und C40 MK4.",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "25 (Comandante C40 MK4)",
+      "equipment": "ORIGAMI Dripper Air S",
+      "notes": "320 g Wasser, etwa 265 g Getränk. Gesamtzeit nicht angegeben.",
+      "finish": "Vor dem letzten Tropfen abnehmen; etwa 265 g. Keine feste Zeit.",
+      "prep": "Kalt spülen. 28 g bei 25 Klicks mahlen, mit Saza M sieben und Häutchen wegblasen; 21 g verwenden.",
+      "vertical": "Mit vertikaler Verwirbelung gießen.",
+      "lateral": "Mit seitlicher Verwirbelung gießen.",
+      "centre": "Mittig gießen.",
+      "water": "Tajima-Naturwasser vom Wettbewerb."
+    },
+    "kobayashi": {
+      "title": "Tsuyoshi Kobayashi · ORIGAMI S",
+      "summary": "Wave und Red Clix mit kühlerem Schlussaufguss.",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "55 (C40 MK3 + RED CLICKS)",
+      "equipment": "ORIGAMI Dripper S",
+      "notes": "Dritter Platz 2024. Red Clix: Vorrunde 56 Klicks, Finale 55; zuletzt etwa 75°C.",
+      "finish": "Bei 2:30 abnehmen und mit einem Löffel mischen.",
+      "prep": "Bei 55 Red-Clix-Klicks mahlen und auf 15 g sieben. Papier spülen, mit Nadel in Rillen legen, Gefäß vorwärmen und Bett ebnen.",
+      "first": "Sanft über das gesamte Bett gießen.",
+      "second": "Langsam mit Verwirbelung gießen.",
+      "last": "Auf etwa 75°C senken und dünn und langsam mittig gießen.",
+      "water": "Tajima-Wasser; Härte 70 mg/L, Bezugsbasis unbekannt."
+    },
+    "selorio": {
+      "title": "Lui Selorio · ORIGAMI Air",
+      "summary": "Vier Aufgüsse mit ZP6 Special und CAFEC.",
+      "version": "Philippine Brewers Cup · 2023",
+      "grind": "4.1 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI Air",
+      "notes": "Übersicht 240 mL, Schritte g. Drittes Intervall 1:00–1:00; nur Beginn übernommen.",
+      "finish": "Bis 2:25 ablaufen lassen.",
+      "third": "Dritten Aufguss bei 1:00 beginnen; Ende unklar."
+    },
+    "rincon": {
+      "title": "Janer Joseph Perez Rincon · ORIGAMI",
+      "summary": "Natural Geisha und Sibarist mit Temperaturwechsel.",
+      "version": "Colombian Brewers Cup · 2023",
+      "grind": "5.6 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI",
+      "notes": "Zeiten, Anfangstemperatur, Röstung und Gesamtzeit fehlen. Spätere Temperaturen je Schritt.",
+      "finish": "Ablaufen lassen; Zeit unbekannt.",
+      "spiral": "Spiralförmig aufgießen.",
+      "water": "Quelle: Pure Colombian Water; Mineralien unbekannt."
+    },
+    "gil": {
+      "title": "Milo Gil · ORIGAMI Air",
+      "summary": "Vier Aufgüsse mit K-Ultra und Sibarist.",
+      "version": "Dutch Brewers Championship · 2024",
+      "grind": "7.5 (1Zpresso K-Ultra)",
+      "equipment": "ORIGAMI Air",
+      "notes": "Niederländischer Meister 2024. Sibarist-Modell, Bohnen und Röstung fehlen. Etwa 7 g/s empfohlen.",
+      "finish": "Ablaufen lassen; ungefähr 3:00 anstreben."
+    },
     "kasuya": {
       "title": "Kasuyas 4:6-Methode",
       "summary": "Fünf zeitlich definierte Aufgüsse in der von HARIO veröffentlichten Fassung.",
@@ -226,10 +321,60 @@
       "circle": "Sanft kreisförmig bis insgesamt 150 mL einschließlich Vorquellwasser gießen.",
       "centre": "Die restlichen 100 mL schnell mittig gießen und den Wasserstand halten; etwa bei 1:00 aufhören."
     },
-    "grill": {"title":"Martha Grills V60 am Morgen","summary":"30 g V60 mit 30 Sekunden Bloom, zwei Aufgüssen und Abschluss nach drei Minuten.","version":"HARIOLOGY · HARIO Europe","grind":"In der Quelle nicht angegeben","equipment":"HARIO V60 · Kunststoff","notes":"Das veröffentlichte Rezept nutzt 30 g, 500 mL bei 92 °C und Ézio Sartori aus Brasilien. Der Mahlgrad fehlt in der Quelle.","finish":"Die Extraktion bis 3:00 beenden.","beans":"Ézio Sartori, Espírito Santo, Brasilien; geröstet von Coffee Lab"},
-    "mallouhi": {"title":"Ibrahim Al Mallouhis V60","summary":"V60 im Verhältnis 1:15 mit einem kreisförmigen 40-mL-Bloom und langsamem Restaufguss.","version":"HARIOLOGY · HARIO Europe","grind":"Mittel","equipment":"HARIO V60","notes":"Die Quelle nennt 20 g, 300 mL und 2:10 Zielzeit, aber keine Wassertemperatur.","finish":"Eine Gesamtzeit von 2:10 anstreben.","prep":"Filter anfeuchten, Spülwasser wegschütten und Kaffee einfüllen.","water":"Die Quelle nennt heißes Wasser, aber keine Temperatur."},
-    "chronicler": {"title":"Coffee-Chronicler-Switch-Rezept","summary":"Zwei Aufgüsse: die Hälfte offen, die andere Hälfte in der Immersion, danach ablaufen lassen.","version":"The Coffee Chronicler · 2023","grind":"In der Quelle nicht angegeben","equipment":"HARIO Switch 02","notes":"Die Standardversion nutzt 20 g und 320 g: die Hälfte offen aufgießen, bei 0:45 schließen, den Rest zugeben und bei 2:00 öffnen. Temperatur und Mahlgrad fehlen.","finish":"Ablaufen lassen; die veröffentlichte Gesamtzeit beträgt 2:45–3:15.","open":"Mit geöffnetem Switch-Ventil beginnen.","firstPour":"Die erste Hälfte bei geöffnetem Ventil aufgießen.","close":"Bei 0:45 zum Ziehen schließen.","secondPour":"Die zweite Hälfte zugeben und ziehen lassen.","drain":"Bei 2:00 öffnen und ablaufen lassen."}
+    "grill": {
+      "title": "Martha Grills V60 am Morgen",
+      "summary": "30 g V60 mit 30 Sekunden Bloom, zwei Aufgüssen und Abschluss nach drei Minuten.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "In der Quelle nicht angegeben",
+      "equipment": "HARIO V60 · Kunststoff",
+      "notes": "Das veröffentlichte Rezept nutzt 30 g, 500 mL bei 92 °C und Ézio Sartori aus Brasilien. Der Mahlgrad fehlt in der Quelle.",
+      "finish": "Die Extraktion bis 3:00 beenden.",
+      "beans": "Ézio Sartori, Espírito Santo, Brasilien; geröstet von Coffee Lab"
+    },
+    "mallouhi": {
+      "title": "Ibrahim Al Mallouhis V60",
+      "summary": "V60 im Verhältnis 1:15 mit einem kreisförmigen 40-mL-Bloom und langsamem Restaufguss.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Mittel",
+      "equipment": "HARIO V60",
+      "notes": "Die Quelle nennt 20 g, 300 mL und 2:10 Zielzeit, aber keine Wassertemperatur.",
+      "finish": "Eine Gesamtzeit von 2:10 anstreben.",
+      "prep": "Filter anfeuchten, Spülwasser wegschütten und Kaffee einfüllen.",
+      "water": "Die Quelle nennt heißes Wasser, aber keine Temperatur."
+    },
+    "chronicler": {
+      "title": "Coffee-Chronicler-Switch-Rezept",
+      "summary": "Zwei Aufgüsse: die Hälfte offen, die andere Hälfte in der Immersion, danach ablaufen lassen.",
+      "version": "The Coffee Chronicler · 2023",
+      "grind": "In der Quelle nicht angegeben",
+      "equipment": "HARIO Switch 02",
+      "notes": "Die Standardversion nutzt 20 g und 320 g: die Hälfte offen aufgießen, bei 0:45 schließen, den Rest zugeben und bei 2:00 öffnen. Temperatur und Mahlgrad fehlen.",
+      "finish": "Ablaufen lassen; die veröffentlichte Gesamtzeit beträgt 2:45–3:15.",
+      "open": "Mit geöffnetem Switch-Ventil beginnen.",
+      "firstPour": "Die erste Hälfte bei geöffnetem Ventil aufgießen.",
+      "close": "Bei 0:45 zum Ziehen schließen.",
+      "secondPour": "Die zweite Hälfte zugeben und ziehen lassen.",
+      "drain": "Bei 2:00 öffnen und ablaufen lassen."
+    }
   },
   "waterQuality": "Wasserprofil",
-  "competition": "Veröffentlichtes Wettbewerbsrezept"
+  "competition": "Veröffentlichtes Wettbewerbsrezept",
+  "equipmentMaterials": {
+    "porcelain": "Porzellan",
+    "ceramic": "Keramik",
+    "as-resin": "AS-Kunststoff",
+    "acrylonitrile-styrene-resin": "Acrylnitril-Styrol-Kunststoff",
+    "stainless-steel": "Edelstahl",
+    "silicone": "Silikon",
+    "polypropylene": "Polypropylen",
+    "polyester-resin": "Polyesterharz",
+    "borosilicate-glass": "Borosilikatglas",
+    "rubber-wood": "Gummibaumholz",
+    "full-grain-leather": "Vollnarbenleder",
+    "tritan": "Tritan",
+    "glass": "Glas",
+    "plastic": "Kunststoff",
+    "aluminum": "Aluminium",
+    "natural-or-oxygen-bleached-paper": "Naturpapier oder sauerstoffgebleichtes Papier"
+  }
 }

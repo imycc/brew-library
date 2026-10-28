@@ -13,7 +13,7 @@ Optional source conditions are structured as `grinder` (identity and literal set
 `duration: null` means the source does not specify total brew time and displays the localized unknown label. Steps can carry their own `temperature`. See [analytics.md](analytics.md) for the optional GoatCounter integration.
 
 - `content/recipes.json`: version 1 canonical recipe records. Validated by Zod in `src/lib/recipes.ts`.
-- `content/equipment.json`: version 1 source-backed catalogue for drippers, grinders and filters. Validated by Zod in `src/lib/equipment.ts`; explicit recipe IDs connect equipment to the current recipe catalogue. Unresolved model records remain visible and are labelled rather than guessed.
+- `content/equipment.json`: version 1 source-backed catalogue for drippers, grinders and filters. Validated by Zod in `src/lib/equipment.ts`; explicit recipe IDs connect equipment to the current recipe catalogue. Unresolved model records remain visible and are labelled rather than guessed. Material values use canonical IDs and render through nine-language `equipmentMaterials` translations.
 - `messages/{locale}.json`: full UI and recipe text in nine locales. Message keys, parameters, required recipe content and step instruction coverage are checked before publishing.
 - Numeric quantities, original units, exact/ranged times, author identity and source provenance live in canonical data; copy is localized separately.
 - Steps may override the recipe’s water unit, and may provide their own translated instruction. Mixed g/mL source statements remain visibly distinct. Temperature distinguishes boiling water from an unspecified temperature; daily teaching and competition recipes have separate context labels.

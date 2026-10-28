@@ -5,8 +5,17 @@
   "paper": "Filter paper",
   "process": "Processing",
   "roast": "Roast",
-  "processes": {"washed":"Washed","natural":"Natural","honey":"Honey","anaerobic":"Anaerobic"},
-  "roasts": {"light":"Light","medium":"Medium","dark":"Dark"},
+  "processes": {
+    "washed": "Washed",
+    "natural": "Natural",
+    "honey": "Honey",
+    "anaerobic": "Anaerobic"
+  },
+  "roasts": {
+    "light": "Light",
+    "medium": "Medium",
+    "dark": "Dark"
+  },
   "equipmentNav": "Equipment",
   "equipmentTitle": "Brewing equipment index",
   "equipmentIntro": "Source-backed specifications, compatibility notes and related recipes for pour-over drippers, grinders and filters.",
@@ -18,10 +27,43 @@
   "equipmentRelated": "Related original recipes",
   "equipmentChecked": "Official data checked",
   "equipmentEmpty": "No equipment matches these filters.",
-  "equipmentCategories": {"dripper":"Drippers","grinder":"Grinders","filter":"Filters"},
-  "equipmentStatus": {"legacy":"Legacy / discontinued","unresolved":"Model unconfirmed"},
-  "equipmentSpecs": {"capacity":"Capacity","materials":"Materials","dimensions":"Dimensions","weight":"Weight","compatibility":"Compatibility","mode":"Mode","madeIn":"Made in","model":"Model","burr":"Burr","adjustment":"Adjustment","precision":"Step precision","groundsCapacity":"Grounds capacity","format":"Format","packs":"Pack","technology":"Technology"},
-  "equipmentUnits": {"cups":"cups","mL":"mL","mm":"mm","g":"g","in":"in","lb":"lb","µm":"µm","sheets":"sheets"},
+  "equipmentCategories": {
+    "dripper": "Drippers",
+    "grinder": "Grinders",
+    "filter": "Filters"
+  },
+  "equipmentStatus": {
+    "legacy": "Legacy / discontinued",
+    "unresolved": "Model unconfirmed"
+  },
+  "equipmentSpecs": {
+    "capacity": "Capacity",
+    "materials": "Materials",
+    "dimensions": "Dimensions",
+    "weight": "Weight",
+    "compatibility": "Compatibility",
+    "mode": "Mode",
+    "madeIn": "Made in",
+    "model": "Model",
+    "burr": "Burr",
+    "adjustment": "Adjustment",
+    "precision": "Step precision",
+    "groundsCapacity": "Grounds capacity",
+    "format": "Format",
+    "packs": "Pack",
+    "technology": "Technology"
+  },
+  "equipmentUnits": {
+    "cups": "cups",
+    "mL": "mL",
+    "mm": "mm",
+    "g": "g",
+    "in": "in",
+    "lb": "lb",
+    "µm": "µm",
+    "sheets": "sheets",
+    "oz": "oz"
+  },
   "brand": "Pour-over Library",
   "tagline": "Coffee editorial",
   "recipesNav": "Recipes",
@@ -128,11 +170,64 @@
     "level": "Level the coffee bed before brewing."
   },
   "recipes": {
-    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Four pours with Wave paper and C40 MK4.","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"320 g water; approximately 265 g beverage. Total time is unspecified.","finish":"Remove just before dripping stops; about 265 g beverage. No fixed time.","prep":"Rinse with cold water. Grind 28 g at 25 clicks, remove fines using Saza M and blow off chaff. Use 21 g of prepared grounds.","vertical":"Pour with vertical agitation.","lateral":"Pour with lateral agitation.","centre":"Pour into the centre.","water":"Tajima natural water supplied at the event."},
-    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave paper, Red Clix and a cooler final pour.","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"2024 third place. First round: 56 Red Clix clicks; final: 55. Last pour: approximately 75°C.","finish":"Remove at 2:30 and mix gently with a spoon.","prep":"Grind at 55 Red Clix clicks and sift to obtain 15 g. Rinse and fit the paper into the grooves with a pin, preheat the bowl and level the bed with a pin.","first":"Pour gently and evenly over the bed.","second":"Pour slowly with agitation.","last":"Lower kettle water to approximately 75°C; use a thin, slow centre pour.","water":"Tajima natural water. Reported hardness: 70 mg/L; reporting basis unspecified."},
-    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"Four timed pours with ZP6 Special and CAFEC paper.","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"Overview: 240 mL; steps: g. Third interval says 1:00–1:00, so only the start time is retained.","finish":"Let drain until 2:25.","third":"Start at 1:00; the third interval end is unclear in the source."},
-    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"Natural Geisha with Sibarist and varying water temperatures.","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"Exact pour times, first temperature, roast and total time are unspecified. Later temperatures are shown per step.","finish":"Let drain; total time unspecified.","spiral":"Pour in a spiral.","water":"Source: Pure Colombian Water; mineral composition unspecified."},
-    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"Four pours with K-Ultra and Sibarist.","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"2024 Dutch champion version. Sibarist model, beans and roast are unspecified. The source suggests about 7 g/s.","finish":"Let drain; target approximately 3:00."},
+    "kodama": {
+      "title": "Hiroyuki Kodama · ORIGAMI Air",
+      "summary": "Four pours with Wave paper and C40 MK4.",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "25 (Comandante C40 MK4)",
+      "equipment": "ORIGAMI Dripper Air S",
+      "notes": "320 g water; approximately 265 g beverage. Total time is unspecified.",
+      "finish": "Remove just before dripping stops; about 265 g beverage. No fixed time.",
+      "prep": "Rinse with cold water. Grind 28 g at 25 clicks, remove fines using Saza M and blow off chaff. Use 21 g of prepared grounds.",
+      "vertical": "Pour with vertical agitation.",
+      "lateral": "Pour with lateral agitation.",
+      "centre": "Pour into the centre.",
+      "water": "Tajima natural water supplied at the event."
+    },
+    "kobayashi": {
+      "title": "Tsuyoshi Kobayashi · ORIGAMI S",
+      "summary": "Wave paper, Red Clix and a cooler final pour.",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "55 (C40 MK3 + RED CLICKS)",
+      "equipment": "ORIGAMI Dripper S",
+      "notes": "2024 third place. First round: 56 Red Clix clicks; final: 55. Last pour: approximately 75°C.",
+      "finish": "Remove at 2:30 and mix gently with a spoon.",
+      "prep": "Grind at 55 Red Clix clicks and sift to obtain 15 g. Rinse and fit the paper into the grooves with a pin, preheat the bowl and level the bed with a pin.",
+      "first": "Pour gently and evenly over the bed.",
+      "second": "Pour slowly with agitation.",
+      "last": "Lower kettle water to approximately 75°C; use a thin, slow centre pour.",
+      "water": "Tajima natural water. Reported hardness: 70 mg/L; reporting basis unspecified."
+    },
+    "selorio": {
+      "title": "Lui Selorio · ORIGAMI Air",
+      "summary": "Four timed pours with ZP6 Special and CAFEC paper.",
+      "version": "Philippine Brewers Cup · 2023",
+      "grind": "4.1 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI Air",
+      "notes": "Overview: 240 mL; steps: g. Third interval says 1:00–1:00, so only the start time is retained.",
+      "finish": "Let drain until 2:25.",
+      "third": "Start at 1:00; the third interval end is unclear in the source."
+    },
+    "rincon": {
+      "title": "Janer Joseph Perez Rincon · ORIGAMI",
+      "summary": "Natural Geisha with Sibarist and varying water temperatures.",
+      "version": "Colombian Brewers Cup · 2023",
+      "grind": "5.6 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI",
+      "notes": "Exact pour times, first temperature, roast and total time are unspecified. Later temperatures are shown per step.",
+      "finish": "Let drain; total time unspecified.",
+      "spiral": "Pour in a spiral.",
+      "water": "Source: Pure Colombian Water; mineral composition unspecified."
+    },
+    "gil": {
+      "title": "Milo Gil · ORIGAMI Air",
+      "summary": "Four pours with K-Ultra and Sibarist.",
+      "version": "Dutch Brewers Championship · 2024",
+      "grind": "7.5 (1Zpresso K-Ultra)",
+      "equipment": "ORIGAMI Air",
+      "notes": "2024 Dutch champion version. Sibarist model, beans and roast are unspecified. The source suggests about 7 g/s.",
+      "finish": "Let drain; target approximately 3:00."
+    },
     "kasuya": {
       "title": "Kasuya’s 4:6 method",
       "summary": "Five pours, clearly timed. The HARIO-published version of Tetsu Kasuya’s 4:6 method.",
@@ -226,10 +321,60 @@
       "circle": "Pour gently in circles to a cumulative 150 mL, including the pre-infusion water.",
       "centre": "Add the remaining 100 mL quickly in the centre, maintaining the water level; stop around 1:00."
     },
-    "grill": {"title":"Martha Grill’s morning V60","summary":"A 30 g V60 with a 30-second bloom, two pours and a finish at three minutes.","version":"HARIOLOGY · HARIO Europe","grind":"Not provided by the source","equipment":"HARIO V60 · plastic","notes":"The published recipe uses 30 g coffee and 500 mL at 92°C. Its instructions use g for the pour targets, so those units are preserved separately. The article names Ézio Sartori coffee from Brazil but does not name a grind setting.","finish":"Finish the extraction by 3:00.","beans":"Ézio Sartori, Espírito Santo, Brazil; roasted by Coffee Lab"},
-    "mallouhi": {"title":"Ibrahim Al Mallouhi’s V60","summary":"A 1:15 V60 with a 40 mL circular bloom and a slow remaining pour.","version":"HARIOLOGY · HARIO Europe","grind":"Medium","equipment":"HARIO V60","notes":"The source states 20 g coffee, 300 mL water and a 2:10 target, but does not specify water temperature.","finish":"Target a total brew time of 2:10.","prep":"Pre-wet the filter and discard the rinse water before adding coffee.","water":"The source says hot water but does not provide a temperature."},
-    "chronicler": {"title":"Coffee Chronicler Switch recipe","summary":"A two-pour Switch recipe: half the water open, half steeped, then released.","version":"The Coffee Chronicler · 2023","grind":"Not provided by the source","equipment":"HARIO Switch 02","notes":"The article’s standard version uses 20 g coffee and 320 g water: pour half with the valve open, close at 0:45, add the remaining half, then open at 2:00. Temperature and grind are not specified.","finish":"Let the brew drain; the article gives a 2:45–3:15 total range.","open":"Start with the Switch valve open.","firstPour":"Pour the first half of the water while the valve is open.","close":"Close the valve at 0:45 for the steep.","secondPour":"Add the remaining half of the water, then steep.","drain":"Open at 2:00 and let the brew drain."}
+    "grill": {
+      "title": "Martha Grill’s morning V60",
+      "summary": "A 30 g V60 with a 30-second bloom, two pours and a finish at three minutes.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Not provided by the source",
+      "equipment": "HARIO V60 · plastic",
+      "notes": "The published recipe uses 30 g coffee and 500 mL at 92°C. Its instructions use g for the pour targets, so those units are preserved separately. The article names Ézio Sartori coffee from Brazil but does not name a grind setting.",
+      "finish": "Finish the extraction by 3:00.",
+      "beans": "Ézio Sartori, Espírito Santo, Brazil; roasted by Coffee Lab"
+    },
+    "mallouhi": {
+      "title": "Ibrahim Al Mallouhi’s V60",
+      "summary": "A 1:15 V60 with a 40 mL circular bloom and a slow remaining pour.",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "Medium",
+      "equipment": "HARIO V60",
+      "notes": "The source states 20 g coffee, 300 mL water and a 2:10 target, but does not specify water temperature.",
+      "finish": "Target a total brew time of 2:10.",
+      "prep": "Pre-wet the filter and discard the rinse water before adding coffee.",
+      "water": "The source says hot water but does not provide a temperature."
+    },
+    "chronicler": {
+      "title": "Coffee Chronicler Switch recipe",
+      "summary": "A two-pour Switch recipe: half the water open, half steeped, then released.",
+      "version": "The Coffee Chronicler · 2023",
+      "grind": "Not provided by the source",
+      "equipment": "HARIO Switch 02",
+      "notes": "The article’s standard version uses 20 g coffee and 320 g water: pour half with the valve open, close at 0:45, add the remaining half, then open at 2:00. Temperature and grind are not specified.",
+      "finish": "Let the brew drain; the article gives a 2:45–3:15 total range.",
+      "open": "Start with the Switch valve open.",
+      "firstPour": "Pour the first half of the water while the valve is open.",
+      "close": "Close the valve at 0:45 for the steep.",
+      "secondPour": "Add the remaining half of the water, then steep.",
+      "drain": "Open at 2:00 and let the brew drain."
+    }
   },
   "waterQuality": "Water profile",
-  "competition": "Published competition recipe"
+  "competition": "Published competition recipe",
+  "equipmentMaterials": {
+    "porcelain": "Porcelain",
+    "ceramic": "Ceramic",
+    "as-resin": "AS resin",
+    "acrylonitrile-styrene-resin": "Acrylonitrile-styrene resin",
+    "stainless-steel": "Stainless steel",
+    "silicone": "Silicone",
+    "polypropylene": "Polypropylene",
+    "polyester-resin": "Polyester resin",
+    "borosilicate-glass": "Borosilicate glass",
+    "rubber-wood": "Rubber wood",
+    "full-grain-leather": "Full-grain leather",
+    "tritan": "Tritan",
+    "glass": "Glass",
+    "plastic": "Plastic",
+    "aluminum": "Aluminum",
+    "natural-or-oxygen-bleached-paper": "Natural or oxygen-bleached paper"
+  }
 }

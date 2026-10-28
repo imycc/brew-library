@@ -10,7 +10,7 @@
       "aliases": ["HARIO V60 01", "HARIO V60 · Ceramic"],
       "details": [
         {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "Porcelain"},
+        {"key": "materials", "value": "porcelain"},
         {"key": "dimensions", "value": "W119 × D100 × H82", "unit": "mm"},
         {"key": "compatibility", "value": "V60 01 filters"},
         {"key": "madeIn", "value": "Japan"}
@@ -28,7 +28,7 @@
       "aliases": ["HARIO V60 02", "HARIO V60 · Ceramic"],
       "details": [
         {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "Porcelain"},
+        {"key": "materials", "value": "porcelain"},
         {"key": "dimensions", "value": "W140 × D120 × H102", "unit": "mm"},
         {"key": "compatibility", "value": "V60 02 filters"},
         {"key": "madeIn", "value": "Japan"}
@@ -46,7 +46,7 @@
       "aliases": ["HARIO V60 · Plastic", "V60 plastic"],
       "details": [
         {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "Acrylonitrile-styrene resin"},
+        {"key": "materials", "value": "acrylonitrile-styrene-resin"},
         {"key": "dimensions", "value": "W137 × D116 × H102", "unit": "mm"},
         {"key": "compatibility", "value": "V60 02 filters"},
         {"key": "madeIn", "value": "Japan"}
@@ -64,7 +64,7 @@
       "aliases": ["HARIO V60 · Metal"],
       "details": [
         {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "Stainless steel; silicone holder"},
+        {"key": "materials", "value": "stainless-steel;silicone"},
         {"key": "dimensions", "value": "W145 × D120 × H90", "unit": "mm"},
         {"key": "compatibility", "value": "V60 02 filters"},
         {"key": "madeIn", "value": "Japan"}
@@ -82,7 +82,7 @@
       "aliases": ["HARIO Switch", "HARIO Switch 02"],
       "details": [
         {"key": "capacity", "value": "200", "unit": "mL"},
-        {"key": "materials", "value": "Ceramic; silicone"},
+        {"key": "materials", "value": "ceramic;silicone"},
         {"key": "dimensions", "value": "W118 × L115 × H133; Ø115", "unit": "mm"},
         {"key": "compatibility", "value": "V60 02 filters"},
         {"key": "mode", "value": "Immersion / percolation"}
@@ -100,7 +100,7 @@
       "aliases": ["W60", "PDC-02-W"],
       "details": [
         {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "Ceramic; polypropylene; polyester resin"},
+        {"key": "materials", "value": "ceramic;polypropylene;polyester-resin"},
         {"key": "dimensions", "value": "W160 × D127 × H109", "unit": "mm"},
         {"key": "compatibility", "value": "Mesh and/or paper filter"},
         {"key": "madeIn", "value": "Japan"}
@@ -137,7 +137,7 @@
       "aliases": ["ORIGAMI Air", "ORIGAMI Dripper Air S"],
       "details": [
         {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "AS resin"},
+        {"key": "materials", "value": "as-resin"},
         {"key": "dimensions", "value": "Ø118 × H70; bottom hole Ø25", "unit": "mm"},
         {"key": "weight", "value": "64", "unit": "g"},
         {"key": "compatibility", "value": "Cone or Wave filters"},
@@ -156,7 +156,7 @@
       "aliases": ["ORIGAMI Dripper S", "ORIGAMI S"],
       "details": [
         {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "Porcelain"},
+        {"key": "materials", "value": "porcelain"},
         {"key": "dimensions", "value": "Ø115 × H70; bottom hole Ø25", "unit": "mm"},
         {"key": "weight", "value": "135", "unit": "g"},
         {"key": "compatibility", "value": "Cone or Wave filters"},
@@ -279,7 +279,7 @@
         {"key": "format", "value": "Cone"},
         {"key": "compatibility", "value": "V60 02 dripper"},
         {"key": "packs", "value": "100", "unit": "sheets"},
-        {"key": "materials", "value": "Natural or oxygen-bleached paper"}
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
       ],
       "recipeIds": ["kasuya-46", "hoffmann-one-cup", "licata-v60", "grill-v60", "mallouhi-v60", "rojewska-v60"],
       "sources": [{"label": "HARIO Europe", "url": "https://www.hario-europe.com/products/v60-filter-paper-02-size-box-100-pcs"}],
@@ -363,6 +363,359 @@
       ],
       "recipeIds": ["gil-origami-2024"],
       "sources": [{"label": "1Zpresso recipe", "url": "https://1zpresso.coffee/recipe/"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "kalita-wave-155-stainless",
+      "category": "dripper",
+      "brand": "Kalita",
+      "name": "Wave 155 Stainless Steel Dripper",
+      "status": "current",
+      "aliases": ["Kalita Wave 155", "Wave 155 stainless"],
+      "details": [
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "materials", "value": "stainless-steel"},
+        {"key": "compatibility", "value": "Kalita Wave 155 filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-155-stainless-steel-coffee-dripper"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "kalita-wave-185-stainless",
+      "category": "dripper",
+      "brand": "Kalita",
+      "name": "Wave 185 Stainless Steel Dripper",
+      "status": "current",
+      "aliases": ["Kalita Wave 185", "Wave 185 stainless"],
+      "details": [
+        {"key": "capacity", "value": "2–4", "unit": "cups"},
+        {"key": "materials", "value": "stainless-steel"},
+        {"key": "compatibility", "value": "Kalita Wave 185 filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-185-stainless-steel-coffee-dripper"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "chemex-classic-6-cup",
+      "category": "dripper",
+      "brand": "CHEMEX",
+      "name": "Classic 6-Cup Coffeemaker",
+      "status": "current",
+      "aliases": ["CHEMEX 6 cup", "Classic CHEMEX"],
+      "details": [
+        {"key": "capacity", "value": "30", "unit": "oz"},
+        {"key": "materials", "value": "borosilicate-glass;rubber-wood;full-grain-leather"},
+        {"key": "compatibility", "value": "CHEMEX Bonded filters"},
+        {"key": "madeIn", "value": "USA"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "CHEMEX", "url": "https://chemexcoffeemaker.com/collections/classic-series-nav/products/six-cup-classic-chemex"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "cafec-flower-deep27",
+      "category": "dripper",
+      "brand": "CAFEC",
+      "name": "Flower Dripper DEEP27",
+      "status": "current",
+      "aliases": ["CAFEC DEEP27", "Flower DEEP27"],
+      "details": [
+        {"key": "capacity", "value": "1", "unit": "cups"},
+        {"key": "materials", "value": "tritan"},
+        {"key": "compatibility", "value": "CAFEC Abaca+ DEEP27 filters"},
+        {"key": "mode", "value": "27° steep cone"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "CAFEC", "url": "https://www.cafec-jp.com/products/deep27/"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "april-glass-brewer",
+      "category": "dripper",
+      "brand": "April",
+      "name": "Glass Brewer",
+      "status": "current",
+      "aliases": ["April Glass Brewer", "April flatbed glass"],
+      "details": [
+        {"key": "capacity", "value": "400", "unit": "mL"},
+        {"key": "materials", "value": "glass;plastic"},
+        {"key": "compatibility", "value": "April Paper Filter Small"},
+        {"key": "mode", "value": "Flatbed"},
+        {"key": "madeIn", "value": "Indonesia"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "April Coffee Roasters", "url": "https://www.aprilcoffeeroasters.com/products/april-glass-dripper"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "april-ceramic-brewer",
+      "category": "dripper",
+      "brand": "April",
+      "name": "Ceramic Brewer",
+      "status": "current",
+      "aliases": ["April Ceramic Brewer", "April porcelain brewer"],
+      "details": [
+        {"key": "capacity", "value": "200", "unit": "mL"},
+        {"key": "materials", "value": "ceramic"},
+        {"key": "compatibility", "value": "April Paper Filter Small"},
+        {"key": "mode", "value": "Flatbed"},
+        {"key": "madeIn", "value": "China"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "April Coffee Roasters", "url": "https://www.aprilcoffeeroasters.com/products/april-ceramic-brewer"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "orea-v4",
+      "category": "dripper",
+      "brand": "OREA",
+      "name": "Brewer V4",
+      "status": "current",
+      "aliases": ["OREA V4", "OREA Brewer V4"],
+      "details": [
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "materials", "value": "polypropylene"},
+        {"key": "compatibility", "value": "Flat, Wave or SIBARIST FAST filters"},
+        {"key": "mode", "value": "Modular four-bottom system"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "OREA V4 guides", "url": "https://www.orea.uk/guides-v4"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "fellow-stagg-x",
+      "category": "dripper",
+      "brand": "Fellow",
+      "name": "Stagg [X] Dripper",
+      "status": "current",
+      "aliases": ["Fellow Stagg X", "Stagg X"],
+      "details": [
+        {"key": "capacity", "value": "300", "unit": "mL"},
+        {"key": "materials", "value": "stainless-steel;silicone"},
+        {"key": "compatibility", "value": "Stagg X paper filters"},
+        {"key": "mode", "value": "Flat-bottom; vacuum insulated"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/staggdripper/?tag=wbifl-20"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "fellow-stagg-xf",
+      "category": "dripper",
+      "brand": "Fellow",
+      "name": "Stagg [XF] Dripper",
+      "status": "current",
+      "aliases": ["Fellow Stagg XF", "Stagg XF"],
+      "details": [
+        {"key": "capacity", "value": "20", "unit": "oz"},
+        {"key": "materials", "value": "stainless-steel;silicone;borosilicate-glass"},
+        {"key": "compatibility", "value": "Stagg XF paper filters"},
+        {"key": "mode", "value": "Flat-bottom; vacuum insulated"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/stagg-xf-pour-over-set?_pos=4&_sid=76549a8ab&_ss=r"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "fellow-ode-gen-2",
+      "category": "grinder",
+      "brand": "Fellow",
+      "name": "Ode Brew Grinder Gen 2",
+      "status": "current",
+      "aliases": ["Fellow Ode Gen 2", "Ode Brew Grinder"],
+      "details": [
+        {"key": "burr", "value": "64 mm stainless steel flat burrs"},
+        {"key": "adjustment", "value": "11 settings; 31 steps"},
+        {"key": "groundsCapacity", "value": "100", "unit": "g"},
+        {"key": "materials", "value": "aluminum;plastic;stainless-steel"},
+        {"key": "dimensions", "value": "239 × 105 × 248.3", "unit": "mm"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/collections/grind-brew/products/ode-brew-grinder-gen-2?variant=40978992529508"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "timemore-sculptor-078",
+      "category": "grinder",
+      "brand": "Timemore",
+      "name": "Sculptor 078",
+      "status": "current",
+      "aliases": ["Timemore Sculptor 078", "Sculptor 078 brew"],
+      "details": [
+        {"key": "burr", "value": "78 mm flat burrs"},
+        {"key": "adjustment", "value": "Stepped"},
+        {"key": "groundsCapacity", "value": "30", "unit": "g"},
+        {"key": "materials", "value": "aluminum"},
+        {"key": "mode", "value": "Variable RPM; pour-over"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Timemore", "url": "https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "timemore-sculptor-064",
+      "category": "grinder",
+      "brand": "Timemore",
+      "name": "Sculptor 064",
+      "status": "current",
+      "aliases": ["Timemore Sculptor 064", "Sculptor 064 brew"],
+      "details": [
+        {"key": "burr", "value": "64 mm flat burrs"},
+        {"key": "adjustment", "value": "Stepped"},
+        {"key": "groundsCapacity", "value": "30", "unit": "g"},
+        {"key": "materials", "value": "aluminum"},
+        {"key": "mode", "value": "Variable RPM; pour-over"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Timemore", "url": "https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "kingrinder-k6",
+      "category": "grinder",
+      "brand": "KINGrinder",
+      "name": "K6",
+      "status": "current",
+      "aliases": ["KINGrinder K6", "K6 manual grinder"],
+      "details": [
+        {"key": "burr", "value": "Stainless steel conical burrs"},
+        {"key": "adjustment", "value": "16 µm per click; external"},
+        {"key": "groundsCapacity", "value": "25–30", "unit": "g"},
+        {"key": "materials", "value": "aluminum;stainless-steel"},
+        {"key": "mode", "value": "Manual; portable"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "KINGrinder", "url": "https://www.kingrinder.com/store/products/k6"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "kalita-wave-155-filter",
+      "category": "filter",
+      "brand": "Kalita",
+      "name": "Wave 155 Paper Filters",
+      "status": "current",
+      "aliases": ["Kalita Wave 155 filters", "Wave 155 100ct"],
+      "details": [
+        {"key": "format", "value": "Wave"},
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "compatibility", "value": "Kalita Wave 155 dripper"},
+        {"key": "packs", "value": "100", "unit": "sheets"},
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-155-filter-100ct"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "kalita-wave-185-filter",
+      "category": "filter",
+      "brand": "Kalita",
+      "name": "Wave 185 Paper Filters",
+      "status": "current",
+      "aliases": ["Kalita Wave 185 filters", "Wave 185 100ct"],
+      "details": [
+        {"key": "format", "value": "Wave"},
+        {"key": "capacity", "value": "2–4", "unit": "cups"},
+        {"key": "compatibility", "value": "Kalita Wave 185 dripper"},
+        {"key": "packs", "value": "100", "unit": "sheets"},
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-185-paper-filter-100ct"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "chemex-bonded-6-cup-filter",
+      "category": "filter",
+      "brand": "CHEMEX",
+      "name": "Bonded Filters 6-Cup and Larger",
+      "status": "current",
+      "aliases": ["CHEMEX Bonded filters", "FS-100", "FC-100", "FP-1"],
+      "details": [
+        {"key": "format", "value": "Square or circle"},
+        {"key": "capacity", "value": "6+", "unit": "cups"},
+        {"key": "compatibility", "value": "CHEMEX 6-cup and larger"},
+        {"key": "packs", "value": "100", "unit": "sheets"},
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "CHEMEX", "url": "https://chemexcoffeemaker.com/pages/filter-series-support-page"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "cafec-deep27-filter",
+      "category": "filter",
+      "brand": "CAFEC",
+      "name": "Abaca+ DEEP27 Paper Filters",
+      "status": "current",
+      "aliases": ["CAFEC DEEP27 filter", "Abaca+ DEEP27"],
+      "details": [
+        {"key": "format", "value": "Cone"},
+        {"key": "capacity", "value": "1", "unit": "cups"},
+        {"key": "compatibility", "value": "CAFEC Flower Dripper DEEP27"},
+        {"key": "packs", "value": "40 or 100", "unit": "sheets"},
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "CAFEC", "url": "https://www.cafec-jp.com/products/filterpaper/"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "cafec-abaca-cone-filter",
+      "category": "filter",
+      "brand": "CAFEC",
+      "name": "Abaca+ Cone Paper Filter",
+      "status": "current",
+      "aliases": ["CAFEC Abaca+", "Abaca cone filter"],
+      "details": [
+        {"key": "format", "value": "Cone"},
+        {"key": "capacity", "value": "1 or 2–4", "unit": "cups"},
+        {"key": "compatibility", "value": "Cone drippers"},
+        {"key": "packs", "value": "40 or 100", "unit": "sheets"},
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"},
+        {"key": "technology", "value": "Abaca fiber; double-sided crepe"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "CAFEC", "url": "https://www.cafec-jp.com/products/filterpaper/index.html"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "fellow-stagg-paper-filter",
+      "category": "filter",
+      "brand": "Fellow",
+      "name": "Stagg Paper Filters",
+      "status": "current",
+      "aliases": ["Stagg X filter", "Stagg XF filter"],
+      "details": [
+        {"key": "format", "value": "Flat-bottom"},
+        {"key": "compatibility", "value": "Stagg [X] or [XF] dripper"},
+        {"key": "packs", "value": "45", "unit": "sheets"},
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/collections/complete-your-coffee-corner/products/stagg-paper-filters"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "orea-type-c-filter",
+      "category": "filter",
+      "brand": "OREA",
+      "name": "Type C Flat Paper Filters",
+      "status": "current",
+      "aliases": ["OREA Type C", "OREA flat filter"],
+      "details": [
+        {"key": "format", "value": "Flat"},
+        {"key": "compatibility", "value": "OREA V3 / V4 and compatible wave brewers"},
+        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"},
+        {"key": "technology", "value": "Flat-bed paper"}
+      ],
+      "recipeIds": [],
+      "sources": [{"label": "OREA filters", "url": "https://www.orea.uk/filters"}],
       "checked": "2026-10-28"
     }
   ]

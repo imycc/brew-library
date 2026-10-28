@@ -85,7 +85,7 @@ April’s Origami video could not be fetched during this pass and remains pendin
 
 ## Equipment catalogue — checked 2026-10-28
 
-The first equipment catalogue contains 21 records covering the brewers, grinders and filters used by current recipes. Product names, dimensions, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently.
+The expanded equipment catalogue contains 41 records: 19 drippers, 9 grinders and 13 filters. Product names, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently. Canonical material IDs are translated in all nine locales; brand and model names remain recognizable originals.
 
 Primary source groups:
 
@@ -96,6 +96,14 @@ Primary source groups:
 - [COMANDANTE C40 MK4](https://comandantegrinder.com/products/c40-mk4-nitro-blade-american-cherry), [C40 model history](https://comandantegrinder.com/pages/about) and [Red Clix RX35](https://comandantegrinder.com/products/red-clix-drivetrain-set)
 - [1Zpresso ZP6 Special](https://1zpresso.coffee/product/zp6-special/) and [K-Ultra](https://1zpresso.coffee/product/kultra/)
 - [SIBARIST CONE](https://sibarist.coffee/products/cone)
+- [Kalita Wave 155 and 185 drippers](https://kalitausa.com/collections/waves-series), [155 filters](https://kalitausa.com/products/kalita-wave-155-filter-100ct) and [185 filters](https://kalitausa.com/products/kalita-wave-185-paper-filter-100ct)
+- [CHEMEX Classic 6-Cup](https://chemexcoffeemaker.com/collections/classic-series-nav/products/six-cup-classic-chemex) and [Bonded filter support](https://chemexcoffeemaker.com/pages/filter-series-support-page)
+- [CAFEC DEEP27](https://www.cafec-jp.com/products/deep27/) and [filter paper catalogue](https://www.cafec-jp.com/products/filterpaper/)
+- [April brewers](https://www.aprilcoffeeroasters.com/pages/equipment) and [Glass Brewer](https://www.aprilcoffeeroasters.com/products/april-glass-dripper)
+- [OREA V4 guides](https://www.orea.uk/guides-v4) and [filter compatibility](https://www.orea.uk/filters)
+- [Fellow Stagg [X]/[XF]](https://fellowproducts.com/products/staggdripper/?tag=wbifl-20), [Stagg filters](https://fellowproducts.com/collections/complete-your-coffee-corner/products/stagg-paper-filters), and [Ode Gen 2](https://fellowproducts.com/collections/grind-brew/products/ode-brew-grinder-gen-2?variant=40978992529508)
+- [Timemore Sculptor series](https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series) and [series FAQ](https://www.timemore.com/pages/sculptor-related-faq)
+- [KINGrinder K6](https://www.kingrinder.com/store/products/k6)
 
 Editorial boundaries:
 
@@ -104,3 +112,4 @@ Editorial boundaries:
 - The generic ORIGAMI recipes without a confirmed size/material link to a family record with the exact limitation stated.
 - The Red Clix record applies only to the C40 MK3 configuration used by the recipe; click values are not converted to other grinders.
 - Recipe links are explicit IDs rather than fuzzy brand matching, so a V60 Ceramic product cannot silently inherit a V60 Plastic or Metal recipe.
+- New equipment without a verified recipe link keeps `recipeIds: []`; appearing in the catalogue does not imply that a recipe has been tested on that exact model.

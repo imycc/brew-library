@@ -5,8 +5,17 @@
   "paper": "滤纸",
   "process": "处理法",
   "roast": "烘焙度",
-  "processes": {"washed":"水洗","natural":"日晒","honey":"蜜处理","anaerobic":"厌氧"},
-  "roasts": {"light":"浅焙","medium":"中焙","dark":"深焙"},
+  "processes": {
+    "washed": "水洗",
+    "natural": "日晒",
+    "honey": "蜜处理",
+    "anaerobic": "厌氧"
+  },
+  "roasts": {
+    "light": "浅焙",
+    "medium": "中焙",
+    "dark": "深焙"
+  },
   "equipmentNav": "器材",
   "equipmentTitle": "冲煮器材数据库",
   "equipmentIntro": "按品牌官方资料整理手冲滤杯、磨豆器与滤纸的规格、兼容性和相关配方。",
@@ -18,10 +27,43 @@
   "equipmentRelated": "相关原版配方",
   "equipmentChecked": "官方资料核对",
   "equipmentEmpty": "没有符合条件的器材。",
-  "equipmentCategories": {"dripper":"滤杯","grinder":"磨豆器","filter":"滤纸"},
-  "equipmentStatus": {"legacy":"旧款／停产","unresolved":"型号待确认"},
-  "equipmentSpecs": {"capacity":"容量","materials":"材质","dimensions":"尺寸","weight":"重量","compatibility":"兼容性","mode":"操作方式","madeIn":"制造地","model":"型号","burr":"磨盘","adjustment":"调节","precision":"每格精度","groundsCapacity":"粉仓容量","format":"形状","packs":"包装","technology":"技术"},
-  "equipmentUnits": {"cups":"杯","mL":"mL","mm":"mm","g":"g","in":"英寸","lb":"lb","µm":"µm","sheets":"张"},
+  "equipmentCategories": {
+    "dripper": "滤杯",
+    "grinder": "磨豆器",
+    "filter": "滤纸"
+  },
+  "equipmentStatus": {
+    "legacy": "旧款／停产",
+    "unresolved": "型号待确认"
+  },
+  "equipmentSpecs": {
+    "capacity": "容量",
+    "materials": "材质",
+    "dimensions": "尺寸",
+    "weight": "重量",
+    "compatibility": "兼容性",
+    "mode": "操作方式",
+    "madeIn": "制造地",
+    "model": "型号",
+    "burr": "磨盘",
+    "adjustment": "调节",
+    "precision": "每格精度",
+    "groundsCapacity": "粉仓容量",
+    "format": "形状",
+    "packs": "包装",
+    "technology": "技术"
+  },
+  "equipmentUnits": {
+    "cups": "杯",
+    "mL": "mL",
+    "mm": "mm",
+    "g": "g",
+    "in": "英寸",
+    "lb": "lb",
+    "µm": "µm",
+    "sheets": "张",
+    "oz": "盎司"
+  },
   "brand": "手冲配方库",
   "tagline": "咖啡编辑志",
   "recipesNav": "配方",
@@ -128,11 +170,64 @@
     "level": "冲煮前整平咖啡粉。"
   },
   "recipes": {
-    "kodama": {"title":"Hiroyuki Kodama · ORIGAMI Air","summary":"Wave 滤纸与 C40 MK4 的四段注水。","version":"ORIGAMI CUP · 2024","grind":"25 (Comandante C40 MK4)","equipment":"ORIGAMI Dripper Air S","notes":"注水 320 g，成品约 265 g；总时间未提供。","finish":"完全沥干前移走滤杯，成品约 265 g；无固定时间。","prep":"冷水润湿滤纸。28 g 豆用 25 格研磨，以 Saza M 除细粉并吹走银皮，取 21 g。","vertical":"注水制造垂直搅动。","lateral":"注水制造横向搅动。","centre":"中心注水。","water":"赛事提供的 Tajima 天然水。"},
-    "kobayashi": {"title":"Tsuyoshi Kobayashi · ORIGAMI S","summary":"Wave 配 Red Clix，最后一段降温。","version":"ORIGAMI CUP · 2024","grind":"55 (C40 MK3 + RED CLICKS)","equipment":"ORIGAMI Dripper S","notes":"2024 季军。初赛 Red Clix 56 格，决赛 55 格；最后约 75°C。","finish":"2:30 移走滤杯，用勺轻轻拌匀。","prep":"Red Clix 55 格研磨，筛粉后取 15 g。润湿滤纸并用针贴合凹槽，预热杯子，用针整平粉床。","first":"轻柔均匀注遍粉床。","second":"慢慢注水并产生搅动。","last":"壶内降至约 75°C，以细慢水柱中心注水。","water":"Tajima 天然水；硬度 70 mg/L，测量基准未提供。"},
-    "selorio": {"title":"Lui Selorio · ORIGAMI Air","summary":"ZP6 Special 与 CAFEC 的四段定时注水。","version":"Philippine Brewers Cup · 2023","grind":"4.1 (1Zpresso ZP6 Special)","equipment":"ORIGAMI Air","notes":"总览 240 mL，步骤 g。第三段原文 1:00–1:00，只保留起始时间。","finish":"放流至 2:25。","third":"第三段 1:00 开始，结束时间有疑义。"},
-    "rincon": {"title":"Janer Joseph Perez Rincon · ORIGAMI","summary":"日晒 Geisha 配 Sibarist，分段改变水温。","version":"Colombian Brewers Cup · 2023","grind":"5.6 (1Zpresso ZP6 Special)","equipment":"ORIGAMI","notes":"各段时间、首段水温、烘焙度及总时间未提供；其余水温分段标示。","finish":"沥干；总时间未提供。","spiral":"螺旋注水。","water":"原文 Pure Colombian Water；矿物成分未提供。"},
-    "gil": {"title":"Milo Gil · ORIGAMI Air","summary":"K-Ultra 与 Sibarist 的四段注水。","version":"Dutch Brewers Championship · 2024","grind":"7.5 (1Zpresso K-Ultra)","equipment":"ORIGAMI Air","notes":"2024 荷兰冠军版。Sibarist 型号、豆子与烘焙度未提供；约 7 g/s 注水。","finish":"沥干，目标约 3:00。"},
+    "kodama": {
+      "title": "Hiroyuki Kodama · ORIGAMI Air",
+      "summary": "Wave 滤纸与 C40 MK4 的四段注水。",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "25 (Comandante C40 MK4)",
+      "equipment": "ORIGAMI Dripper Air S",
+      "notes": "注水 320 g，成品约 265 g；总时间未提供。",
+      "finish": "完全沥干前移走滤杯，成品约 265 g；无固定时间。",
+      "prep": "冷水润湿滤纸。28 g 豆用 25 格研磨，以 Saza M 除细粉并吹走银皮，取 21 g。",
+      "vertical": "注水制造垂直搅动。",
+      "lateral": "注水制造横向搅动。",
+      "centre": "中心注水。",
+      "water": "赛事提供的 Tajima 天然水。"
+    },
+    "kobayashi": {
+      "title": "Tsuyoshi Kobayashi · ORIGAMI S",
+      "summary": "Wave 配 Red Clix，最后一段降温。",
+      "version": "ORIGAMI CUP · 2024",
+      "grind": "55 (C40 MK3 + RED CLICKS)",
+      "equipment": "ORIGAMI Dripper S",
+      "notes": "2024 季军。初赛 Red Clix 56 格，决赛 55 格；最后约 75°C。",
+      "finish": "2:30 移走滤杯，用勺轻轻拌匀。",
+      "prep": "Red Clix 55 格研磨，筛粉后取 15 g。润湿滤纸并用针贴合凹槽，预热杯子，用针整平粉床。",
+      "first": "轻柔均匀注遍粉床。",
+      "second": "慢慢注水并产生搅动。",
+      "last": "壶内降至约 75°C，以细慢水柱中心注水。",
+      "water": "Tajima 天然水；硬度 70 mg/L，测量基准未提供。"
+    },
+    "selorio": {
+      "title": "Lui Selorio · ORIGAMI Air",
+      "summary": "ZP6 Special 与 CAFEC 的四段定时注水。",
+      "version": "Philippine Brewers Cup · 2023",
+      "grind": "4.1 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI Air",
+      "notes": "总览 240 mL，步骤 g。第三段原文 1:00–1:00，只保留起始时间。",
+      "finish": "放流至 2:25。",
+      "third": "第三段 1:00 开始，结束时间有疑义。"
+    },
+    "rincon": {
+      "title": "Janer Joseph Perez Rincon · ORIGAMI",
+      "summary": "日晒 Geisha 配 Sibarist，分段改变水温。",
+      "version": "Colombian Brewers Cup · 2023",
+      "grind": "5.6 (1Zpresso ZP6 Special)",
+      "equipment": "ORIGAMI",
+      "notes": "各段时间、首段水温、烘焙度及总时间未提供；其余水温分段标示。",
+      "finish": "沥干；总时间未提供。",
+      "spiral": "螺旋注水。",
+      "water": "原文 Pure Colombian Water；矿物成分未提供。"
+    },
+    "gil": {
+      "title": "Milo Gil · ORIGAMI Air",
+      "summary": "K-Ultra 与 Sibarist 的四段注水。",
+      "version": "Dutch Brewers Championship · 2024",
+      "grind": "7.5 (1Zpresso K-Ultra)",
+      "equipment": "ORIGAMI Air",
+      "notes": "2024 荷兰冠军版。Sibarist 型号、豆子与烘焙度未提供；约 7 g/s 注水。",
+      "finish": "沥干，目标约 3:00。"
+    },
     "kasuya": {
       "title": "粕谷哲 4:6 冲煮法",
       "summary": "五段注水，节奏清晰。HARIO 公开的粕谷哲 4:6 教学版本。",
@@ -226,10 +321,60 @@
       "circle": "柔和绕圈连续注水，至累计 150 mL；这包含预浸水量。",
       "centre": "余下 100 mL 快速中心注水，维持水位，约 1:00 停止。"
     },
-    "grill": {"title":"Martha Grill 日常 V60","summary":"30 g V60 配方：30 秒闷蒸、两段注水，三分钟完成。","version":"HARIOLOGY · HARIO Europe","grind":"来源未提供","equipment":"HARIO V60 · 塑料","notes":"原文使用 30 g 咖啡、92°C 的 500 mL 水，以及巴西 Ézio Sartori 咖啡；文章没有列出研磨度。","finish":"在 3:00 前完成萃取。","beans":"巴西 Espírito Santo 的 Ézio Sartori；Coffee Lab 烘焙"},
-    "mallouhi": {"title":"Ibrahim Al Mallouhi V60","summary":"1:15 比例的 V60：40 mL 绕圈闷蒸，再慢慢加入剩余的水。","version":"HARIOLOGY · HARIO Europe","grind":"中度研磨","equipment":"HARIO V60","notes":"来源列出 20 g 咖啡、300 mL 水及 2:10 目标，但没有提供水温。","finish":"目标总冲煮时间为 2:10。","prep":"先润湿滤纸并倒掉滤纸水，再加入咖啡粉。","water":"原文只说热水，没有提供水温。"},
-    "chronicler": {"title":"Coffee Chronicler Switch 配方","summary":"两段注水的 Switch 配方：先开阀注入一半，再浸泡另一半后放流。","version":"The Coffee Chronicler · 2023","grind":"来源未提供","equipment":"HARIO Switch 02","notes":"文章的标准版本使用 20 g 咖啡及 320 g 水：开阀注入一半，0:45 关阀，再加入另一半，2:00 开阀。水温及研磨度未有说明。","finish":"放流完成；文章给出的总时间范围为 2:45–3:15。","open":"开始时保持 Switch 阀门开启。","firstPour":"保持开阀，注入一半的水。","close":"在 0:45 关阀浸泡。","secondPour":"加入剩余一半的水，然后浸泡。","drain":"在 2:00 开阀放流。"}
+    "grill": {
+      "title": "Martha Grill 日常 V60",
+      "summary": "30 g V60 配方：30 秒闷蒸、两段注水，三分钟完成。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "来源未提供",
+      "equipment": "HARIO V60 · 塑料",
+      "notes": "原文使用 30 g 咖啡、92°C 的 500 mL 水，以及巴西 Ézio Sartori 咖啡；文章没有列出研磨度。",
+      "finish": "在 3:00 前完成萃取。",
+      "beans": "巴西 Espírito Santo 的 Ézio Sartori；Coffee Lab 烘焙"
+    },
+    "mallouhi": {
+      "title": "Ibrahim Al Mallouhi V60",
+      "summary": "1:15 比例的 V60：40 mL 绕圈闷蒸，再慢慢加入剩余的水。",
+      "version": "HARIOLOGY · HARIO Europe",
+      "grind": "中度研磨",
+      "equipment": "HARIO V60",
+      "notes": "来源列出 20 g 咖啡、300 mL 水及 2:10 目标，但没有提供水温。",
+      "finish": "目标总冲煮时间为 2:10。",
+      "prep": "先润湿滤纸并倒掉滤纸水，再加入咖啡粉。",
+      "water": "原文只说热水，没有提供水温。"
+    },
+    "chronicler": {
+      "title": "Coffee Chronicler Switch 配方",
+      "summary": "两段注水的 Switch 配方：先开阀注入一半，再浸泡另一半后放流。",
+      "version": "The Coffee Chronicler · 2023",
+      "grind": "来源未提供",
+      "equipment": "HARIO Switch 02",
+      "notes": "文章的标准版本使用 20 g 咖啡及 320 g 水：开阀注入一半，0:45 关阀，再加入另一半，2:00 开阀。水温及研磨度未有说明。",
+      "finish": "放流完成；文章给出的总时间范围为 2:45–3:15。",
+      "open": "开始时保持 Switch 阀门开启。",
+      "firstPour": "保持开阀，注入一半的水。",
+      "close": "在 0:45 关阀浸泡。",
+      "secondPour": "加入剩余一半的水，然后浸泡。",
+      "drain": "在 2:00 开阀放流。"
+    }
   },
   "waterQuality": "水质",
-  "competition": "比赛原版配方"
+  "competition": "比赛原版配方",
+  "equipmentMaterials": {
+    "porcelain": "瓷器",
+    "ceramic": "陶瓷",
+    "as-resin": "AS 树脂",
+    "acrylonitrile-styrene-resin": "丙烯腈－苯乙烯树脂",
+    "stainless-steel": "不锈钢",
+    "silicone": "硅胶",
+    "polypropylene": "聚丙烯",
+    "polyester-resin": "聚酯树脂",
+    "borosilicate-glass": "硼硅玻璃",
+    "rubber-wood": "橡胶木",
+    "full-grain-leather": "全粒面皮革",
+    "tritan": "Tritan",
+    "glass": "玻璃",
+    "plastic": "塑料",
+    "aluminum": "铝合金",
+    "natural-or-oxygen-bleached-paper": "天然纸或氧漂白纸"
+  }
 }

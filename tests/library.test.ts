@@ -54,10 +54,13 @@ test('equipment and coffee filters match recorded source conditions together',()
  assert.equal(recipes.find(r=>r.id==='kobayashi-origami')?.steps[2].temperature,75);
 });
 test('equipment catalogue is source-backed, searchable and keeps unresolved models explicit',()=>{
- assert.equal(equipment.length,21);
+ assert.equal(equipment.length,41);
  assert.deepEqual(filterEquipment(equipment,'ZP6','all').map(item=>item.id),['1zpresso-zp6-special']);
  assert.deepEqual(filterEquipment(equipment,'Sibarist','filter').map(item=>item.id),['sibarist-cone','sibarist-unspecified']);
- assert.equal(filterEquipment(equipment,'','dripper').length,10);
+ assert.equal(filterEquipment(equipment,'','dripper').length,19);
  assert.equal(equipment.find(item=>item.id==='ek-unspecified')?.status,'unresolved');
  assert.equal(equipment.find(item=>item.id==='origami-air-s')?.details.find(detail=>detail.key==='weight')?.value,'64');
+ assert.equal(equipment.find(item=>item.id==='kalita-wave-185-stainless')?.category,'dripper');
+ assert.equal(equipment.find(item=>item.id==='fellow-ode-gen-2')?.category,'grinder');
+ assert.equal(equipment.find(item=>item.id==='cafec-deep27-filter')?.category,'filter');
 });

@@ -5,7 +5,7 @@ const detailKeySchema=z.enum([
   'capacity','materials','dimensions','weight','compatibility','mode','madeIn','model',
   'burr','adjustment','precision','groundsCapacity','format','packs','technology'
 ]);
-const unitSchema=z.enum(['cups','mL','mm','g','in','lb','µm','sheets']);
+const unitSchema=z.enum(['cups','mL','mm','g','in','lb','oz','µm','sheets']);
 
 export const equipmentSchema=z.object({
   id:z.string().regex(/^[a-z0-9-]+$/),
