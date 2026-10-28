@@ -6,6 +6,8 @@
 
 ☕ **[瀏覽配方庫](https://imycc.github.io/pour-over-coffee/zh-Hant/)**
 
+🔧 **[瀏覽器材資料庫](https://imycc.github.io/pour-over-coffee/zh-Hant/equipment/)**：按濾杯、磨豆器及濾紙搜尋官方規格、相容性與相關配方。
+
 ## 一起補充資料
 
 歡迎咖啡愛好者一起加入，毋須懂寫程式！你可以：
@@ -16,7 +18,7 @@
 
 請開 [Issue](https://github.com/imycc/pour-over-coffee/issues/new) 提供資料，或直接提交 Pull Request。新增配方請附作者、器材、原始連結及可核實的參數／步驟；不同版本分開整理，未知條件明確標示。請用自己的文字摘要，避免整篇轉載。
 
-配方資料位於 [`content/recipes.json`](content/recipes.json)，翻譯位於 [`messages/`](messages/)。整理準則及核對筆記見 [來源紀錄](docs/research.md)。
+配方資料位於 [`content/recipes.json`](content/recipes.json)，器材資料位於 [`content/equipment.json`](content/equipment.json)，翻譯位於 [`messages/`](messages/)。整理準則及核對筆記見 [來源紀錄](docs/research.md)。
 
 現可按濾杯、原版磨豆器、濾紙、處理法及烘焙度篩選；[訪客統計](docs/analytics.md)由 GoatCounter 提供。
 

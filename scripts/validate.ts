@@ -2,6 +2,7 @@ import {readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {locales} from '../src/i18n/locales';
 import {recipes} from '../src/lib/recipes';
+import {equipment} from '../src/lib/equipment';
 import {createTranslator} from 'next-intl';
 export function flatten(obj:Record<string,unknown>,prefix=''):Record<string,string>{
  return Object.fromEntries(Object.entries(obj).flatMap(([key,value])=>typeof value==='string'?[[`${prefix}${key}`,value]]:Object.entries(flatten(value as Record<string,unknown>,`${prefix}${key}.`))));
@@ -11,6 +12,12 @@ export async function validate(){
  const base=flatten(english);
  const placeholders=(text:string)=>[...text.matchAll(/\{([a-zA-Z][a-zA-Z0-9_]*)\}/g)].map(m=>m[1]).sort();
  assert.equal(new Set(recipes.map(r=>r.id)).size,recipes.length,'Duplicate recipe id');
+ assert.equal(new Set(equipment.map(item=>item.id)).size,equipment.length,'Duplicate equipment id');
+ const recipeIds=new Set(recipes.map(r=>r.id));
+ for(const item of equipment){
+   for(const recipeId of item.recipeIds)assert(recipeIds.has(recipeId),`${item.id} references unknown recipe ${recipeId}`);
+   assert(item.sources.length>0,`${item.id} needs a source`);
+ }
  for(const r of recipes){
    if(r.duration)assert(r.duration[1]>=r.duration[0],r.id);
    const measured=r.steps.filter(s=>s.amount!==null);
@@ -40,7 +47,13 @@ export async function validate(){
      for(const s of r.steps){assert(flat[`step.${s.action}`]);if(s.action!=='finish')assert(flat[`instruction.${s.action}`]);}
      for(const key of [...r.preparation,r.beanNote,r.waterNote,r.filterNote,...r.steps.map(s=>s.instruction)].filter((key):key is string=>!!key))assert(flat[key],`${locale}/${r.id}/${key}`);
    }
+   for(const key of ['equipmentNav','equipmentTitle','equipmentIntro','equipmentItems','equipmentSearch','equipmentCategory','equipmentResults','equipmentNote','equipmentRelated','equipmentChecked','equipmentEmpty'])assert(flat[`${key}`],`${locale}/${key}`);
+   for(const item of equipment){
+     assert(flat[`equipmentCategories.${item.category}`],`${locale}/equipment category ${item.category}`);
+     assert(flat[`equipmentStatus.${item.status}`]||item.status==='current',`${locale}/equipment status ${item.status}`);
+     for(const detail of item.details){assert(flat[`equipmentSpecs.${detail.key}`],`${locale}/equipment spec ${detail.key}`);if(detail.unit)assert(flat[`equipmentUnits.${detail.unit}`],`${locale}/equipment unit ${detail.unit}`);}
+   }
  }
- console.log(`Validated ${recipes.length} source-backed recipes and ${Object.keys(base).length} messages × ${locales.length} locales.`);
+ console.log(`Validated ${recipes.length} source-backed recipes, ${equipment.length} equipment records and ${Object.keys(base).length} messages × ${locales.length} locales.`);
 }
 if(process.argv[1]?.endsWith('validate.ts'))await validate();

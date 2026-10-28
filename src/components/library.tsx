@@ -59,7 +59,7 @@ export function Header(){
   return <><a className="skip-link" href="#main">{t('skip')}</a><header className="site-header">
     <Link className="wordmark" href={`/${locale}/`}>{t('brand')}<span>{t('tagline')}</span></Link>
     <nav className={open?'main-nav open':'main-nav'} aria-label={t('menu')}>
-      {[['recipesNav',''],['authorsNav','authors/'],['compareNav','compare/'],['sourcesNav','sources/']].map(([label,path])=>{const current=path?pathname.includes(`/${path.replace(/\/$/,'')}`):!['/authors','/compare','/sources'].some(s=>pathname.includes(s));return <Link key={label} href={href(path)} aria-current={current?'page':undefined} onClick={()=>setOpen(false)}>{t(label)}</Link>;})}
+      {[['recipesNav',''],['equipmentNav','equipment/'],['authorsNav','authors/'],['compareNav','compare/'],['sourcesNav','sources/']].map(([label,path])=>{const current=path?pathname.includes(`/${path.replace(/\/$/,'')}`):!['/equipment','/authors','/compare','/sources'].some(s=>pathname.includes(s));return <Link key={label} href={href(path)} aria-current={current?'page':undefined} onClick={()=>setOpen(false)}>{t(label)}</Link>;})}
     </nav>
     <LanguageSwitcher/>
     <button className="icon-button mobile-menu" aria-label={open?t('close'):t('menu')} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X size={22}/>:<MenuIcon size={22}/>}</button>

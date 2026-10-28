@@ -17,6 +17,12 @@ test('capture selected editorial design and responsive detail surfaces',async({p
  await page.setViewportSize({width:390,height:844});
  await page.goto('/pour-over-coffee/zh-Hant/?ids=kasuya-46');
  await page.screenshot({path:'outputs/qa/home-mobile.png',fullPage:true});
+ await page.setViewportSize({width:1487,height:1100});
+ await page.goto('/pour-over-coffee/zh-Hant/equipment/');
+ await page.screenshot({path:'outputs/qa/equipment-desktop.png',fullPage:true});
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('/pour-over-coffee/zh-Hant/equipment/');
+ await page.screenshot({path:'outputs/qa/equipment-mobile.png',fullPage:true});
 });
 
 test('capture refined language control at the reported viewport',async({page})=>{

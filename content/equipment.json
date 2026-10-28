@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "equipment": [
+    {
+      "id": "hario-v60-ceramic-01",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "V60 Ceramic Dripper 01",
+      "status": "current",
+      "aliases": ["HARIO V60 01", "HARIO V60 · Ceramic"],
+      "details": [
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "materials", "value": "Porcelain"},
+        {"key": "dimensions", "value": "W119 × D100 × H82", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 01 filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["hoffmann-one-cup"],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-ceramic-coffee-dripper-01"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-ceramic-02",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "V60 Ceramic Dripper 02",
+      "status": "current",
+      "aliases": ["HARIO V60 02", "HARIO V60 · Ceramic"],
+      "details": [
+        {"key": "capacity", "value": "1–4", "unit": "cups"},
+        {"key": "materials", "value": "Porcelain"},
+        {"key": "dimensions", "value": "W140 × D120 × H102", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 02 filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["kasuya-46", "licata-v60", "mallouhi-v60"],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-ceramic-coffee-dripper-02-classic"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-plastic-02",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "V60 Plastic Dripper 02",
+      "status": "current",
+      "aliases": ["HARIO V60 · Plastic", "V60 plastic"],
+      "details": [
+        {"key": "capacity", "value": "1–4", "unit": "cups"},
+        {"key": "materials", "value": "Acrylonitrile-styrene resin"},
+        {"key": "dimensions", "value": "W137 × D116 × H102", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 02 filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["grill-v60"],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-plastic-coffee-dripper-02"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-metal-02",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "Outdoor V60 Metal Dripper 02",
+      "status": "current",
+      "aliases": ["HARIO V60 · Metal"],
+      "details": [
+        {"key": "capacity", "value": "1–4", "unit": "cups"},
+        {"key": "materials", "value": "Stainless steel; silicone holder"},
+        {"key": "dimensions", "value": "W145 × D120 × H90", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 02 filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["rojewska-v60"],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/outdoor-v60-metal-dripper-02"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-switch-02",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "V60 Immersion Dripper Switch 02",
+      "status": "current",
+      "aliases": ["HARIO Switch", "HARIO Switch 02"],
+      "details": [
+        {"key": "capacity", "value": "200", "unit": "mL"},
+        {"key": "materials", "value": "Ceramic; silicone"},
+        {"key": "dimensions", "value": "W118 × L115 × H133; Ø115", "unit": "mm"},
+        {"key": "compatibility", "value": "V60 02 filters"},
+        {"key": "mode", "value": "Immersion / percolation"}
+      ],
+      "recipeIds": ["wong-switch", "boen-switch", "chronicler-switch"],
+      "sources": [{"label": "HARIO Europe", "url": "https://www.hario-europe.com/products/v60-ceramic-immersion-dripper-switch-02-size"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-w60",
+      "category": "dripper",
+      "brand": "HARIO",
+      "name": "W60 Dripper",
+      "status": "current",
+      "aliases": ["W60", "PDC-02-W"],
+      "details": [
+        {"key": "capacity", "value": "1–4", "unit": "cups"},
+        {"key": "materials", "value": "Ceramic; polypropylene; polyester resin"},
+        {"key": "dimensions", "value": "W160 × D127 × H109", "unit": "mm"},
+        {"key": "compatibility", "value": "Mesh and/or paper filter"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["hoang-w60"],
+      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/w60-dripper"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "nextlevel-pulsar",
+      "category": "dripper",
+      "brand": "NextLevel",
+      "name": "Pulsar Brewer",
+      "status": "current",
+      "aliases": ["NextLevel Pulsar", "PULSAR"],
+      "details": [
+        {"key": "capacity", "value": "380", "unit": "mL"},
+        {"key": "dimensions", "value": "6 × 4 × 4", "unit": "in"},
+        {"key": "weight", "value": "0.62", "unit": "lb"},
+        {"key": "compatibility", "value": "Pulsar paper or stainless filter discs"},
+        {"key": "mode", "value": "No-bypass / steep and release"},
+        {"key": "madeIn", "value": "USA"}
+      ],
+      "recipeIds": ["rao-pulsar"],
+      "sources": [{"label": "NextLevel Brewer", "url": "https://nextlevelbrewer.com/shop/nextlevel-pulsar-brewer/"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "origami-air-s",
+      "category": "dripper",
+      "brand": "ORIGAMI",
+      "name": "Dripper Air S",
+      "status": "current",
+      "aliases": ["ORIGAMI Air", "ORIGAMI Dripper Air S"],
+      "details": [
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "materials", "value": "AS resin"},
+        {"key": "dimensions", "value": "Ø118 × H70; bottom hole Ø25", "unit": "mm"},
+        {"key": "weight", "value": "64", "unit": "g"},
+        {"key": "compatibility", "value": "Cone or Wave filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["kodama-origami", "gil-origami-2024"],
+      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/origami_dripperair_s"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "origami-s",
+      "category": "dripper",
+      "brand": "ORIGAMI",
+      "name": "Dripper S",
+      "status": "current",
+      "aliases": ["ORIGAMI Dripper S", "ORIGAMI S"],
+      "details": [
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "materials", "value": "Porcelain"},
+        {"key": "dimensions", "value": "Ø115 × H70; bottom hole Ø25", "unit": "mm"},
+        {"key": "weight", "value": "135", "unit": "g"},
+        {"key": "compatibility", "value": "Cone or Wave filters"},
+        {"key": "madeIn", "value": "Japan"}
+      ],
+      "recipeIds": ["kobayashi-origami"],
+      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/origami_dripper_s"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "origami-unspecified",
+      "category": "dripper",
+      "brand": "ORIGAMI",
+      "name": "ORIGAMI Dripper",
+      "status": "unresolved",
+      "aliases": ["ORIGAMI", "ORIGAMI Air"],
+      "details": [
+        {"key": "model", "value": "Model and size not specified in recipe sources"},
+        {"key": "compatibility", "value": "Cone or Wave filters"}
+      ],
+      "recipeIds": ["selorio-origami", "rincon-origami"],
+      "sources": [{"label": "ORIGAMI collection", "url": "https://origami-kai.com/en/collections/dripper_"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "comandante-c40-mk4",
+      "category": "grinder",
+      "brand": "COMANDANTE",
+      "name": "C40 MK4 Nitro Blade",
+      "status": "current",
+      "aliases": ["Comandante C40 MK4", "C40 MK4"],
+      "details": [
+        {"key": "burr", "value": "Nitro Blade stainless steel"},
+        {"key": "groundsCapacity", "value": "40", "unit": "g"},
+        {"key": "madeIn", "value": "Germany"}
+      ],
+      "recipeIds": ["kodama-origami"],
+      "sources": [{"label": "COMANDANTE", "url": "https://comandantegrinder.com/products/c40-mk4-nitro-blade-american-cherry"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "comandante-c40-mk3-redclix",
+      "category": "grinder",
+      "brand": "COMANDANTE",
+      "name": "C40 MK3 + Red Clix",
+      "status": "legacy",
+      "aliases": ["Comandante C40 MK3", "C40 MK3 + RED CLICKS"],
+      "details": [
+        {"key": "burr", "value": "Nitro Blade"},
+        {"key": "adjustment", "value": "Red Clix RX35 expanded click range"},
+        {"key": "model", "value": "C40 MK3; produced until summer 2021"}
+      ],
+      "recipeIds": ["kobayashi-origami"],
+      "sources": [
+        {"label": "COMANDANTE history", "url": "https://comandantegrinder.com/pages/about"},
+        {"label": "COMANDANTE Red Clix", "url": "https://comandantegrinder.com/products/red-clix-drivetrain-set"}
+      ],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "1zpresso-zp6-special",
+      "category": "grinder",
+      "brand": "1Zpresso",
+      "name": "ZP6 Special",
+      "status": "current",
+      "aliases": ["1Zpresso ZP6 Special", "ZP6"],
+      "details": [
+        {"key": "burr", "value": "48 mm hexagonal stainless steel"},
+        {"key": "adjustment", "value": "90 clicks per rotation"},
+        {"key": "precision", "value": "22", "unit": "µm"},
+        {"key": "groundsCapacity", "value": "30–35", "unit": "g"},
+        {"key": "weight", "value": "700", "unit": "g"},
+        {"key": "dimensions", "value": "195 × 195 × 60", "unit": "mm"}
+      ],
+      "recipeIds": ["selorio-origami", "rincon-origami"],
+      "sources": [{"label": "1Zpresso", "url": "https://1zpresso.coffee/product/zp6-special/"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "1zpresso-k-ultra",
+      "category": "grinder",
+      "brand": "1Zpresso",
+      "name": "K-Ultra",
+      "status": "current",
+      "aliases": ["1Zpresso K-Ultra", "K Ultra"],
+      "details": [
+        {"key": "burr", "value": "Heptagonal conical K Burr"},
+        {"key": "adjustment", "value": "More than 100 clicks"},
+        {"key": "precision", "value": "20", "unit": "µm"},
+        {"key": "groundsCapacity", "value": "35–40", "unit": "g"},
+        {"key": "weight", "value": "700", "unit": "g"},
+        {"key": "dimensions", "value": "195 × 185 × 60", "unit": "mm"}
+      ],
+      "recipeIds": ["gil-origami-2024"],
+      "sources": [{"label": "1Zpresso", "url": "https://1zpresso.coffee/product/kultra/"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "ek-unspecified",
+      "category": "grinder",
+      "brand": "EK",
+      "name": "EK",
+      "status": "unresolved",
+      "aliases": ["EK", "EK grinder"],
+      "details": [
+        {"key": "model", "value": "Recipe source states only EK; exact model is not confirmed"}
+      ],
+      "recipeIds": ["licata-v60"],
+      "sources": [{"label": "HARIO Europe recipe", "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "hario-v60-02-filter",
+      "category": "filter",
+      "brand": "HARIO",
+      "name": "V60 Paper Filter 02",
+      "status": "current",
+      "aliases": ["V60 filter 02", "VCF-02-100W"],
+      "details": [
+        {"key": "format", "value": "Cone"},
+        {"key": "compatibility", "value": "V60 02 dripper"},
+        {"key": "packs", "value": "100", "unit": "sheets"},
+        {"key": "materials", "value": "Natural or oxygen-bleached paper"}
+      ],
+      "recipeIds": ["kasuya-46", "hoffmann-one-cup", "licata-v60", "grill-v60", "mallouhi-v60", "rojewska-v60"],
+      "sources": [{"label": "HARIO Europe", "url": "https://www.hario-europe.com/products/v60-filter-paper-02-size-box-100-pcs"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "pulsar-paper-filter",
+      "category": "filter",
+      "brand": "NextLevel",
+      "name": "Pulsar Paper Filters",
+      "status": "current",
+      "aliases": ["NextLevel Pulsar filter", "Pulsar paper"],
+      "details": [
+        {"key": "compatibility", "value": "NextLevel Pulsar Brewer"},
+        {"key": "packs", "value": "100", "unit": "sheets"},
+        {"key": "format", "value": "Circular"}
+      ],
+      "recipeIds": ["rao-pulsar"],
+      "sources": [{"label": "NextLevel Brewer", "url": "https://nextlevelbrewer.com/shop/pulsar-filters/"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "origami-wave-filter",
+      "category": "filter",
+      "brand": "ORIGAMI",
+      "name": "Paper Filter Wave",
+      "status": "current",
+      "aliases": ["ORIGAMI Paper Filter Wave", "ORIGAMI Wave"],
+      "details": [
+        {"key": "format", "value": "Wave"},
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "compatibility", "value": "ORIGAMI Dripper"},
+        {"key": "packs", "value": "50", "unit": "sheets"}
+      ],
+      "recipeIds": ["kodama-origami", "kobayashi-origami"],
+      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/paper-filter-wave"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "cafec-origami-filter",
+      "category": "filter",
+      "brand": "CAFEC / ORIGAMI",
+      "name": "ORIGAMI Paper Filter Cone",
+      "status": "current",
+      "aliases": ["CAFEC Origami Filter", "ORIGAMI cone filter"],
+      "details": [
+        {"key": "format", "value": "Cone"},
+        {"key": "capacity", "value": "1–2", "unit": "cups"},
+        {"key": "compatibility", "value": "ORIGAMI Dripper"},
+        {"key": "packs", "value": "100", "unit": "sheets"}
+      ],
+      "recipeIds": ["selorio-origami"],
+      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/origami_paper_filter"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "sibarist-cone",
+      "category": "filter",
+      "brand": "SIBARIST",
+      "name": "CONE Specialty Coffee Filter",
+      "status": "current",
+      "aliases": ["Sibarist Conic", "Sibarist CONE"],
+      "details": [
+        {"key": "format", "value": "Cone"},
+        {"key": "compatibility", "value": "V60 and compatible conical drippers"},
+        {"key": "technology", "value": "FAST or B3 filter technology"}
+      ],
+      "recipeIds": ["rincon-origami"],
+      "sources": [{"label": "SIBARIST", "url": "https://sibarist.coffee/products/cone"}],
+      "checked": "2026-10-28"
+    },
+    {
+      "id": "sibarist-unspecified",
+      "category": "filter",
+      "brand": "SIBARIST",
+      "name": "SIBARIST Filter",
+      "status": "unresolved",
+      "aliases": ["Sibarist"],
+      "details": [
+        {"key": "model", "value": "Filter model and size not specified in recipe source"}
+      ],
+      "recipeIds": ["gil-origami-2024"],
+      "sources": [{"label": "1Zpresso recipe", "url": "https://1zpresso.coffee/recipe/"}],
+      "checked": "2026-10-28"
+    }
+  ]
+}

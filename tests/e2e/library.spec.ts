@@ -43,10 +43,26 @@ test('invalid comparison links are understandable and recoverable',async({page})
 for(const locale of locales)test(`static ${locale} pages render complete locale content`,async({page})=>{
  test.setTimeout(90_000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- for(const suffix of ['','authors/','sources/',...recipes.map(r=>`recipes/${r.id}/`)]){
+ for(const suffix of ['','equipment/','authors/','sources/',...recipes.map(r=>`recipes/${r.id}/`)]){
    const response=await page.goto(`${base}/${locale}/${suffix}`,{waitUntil:'domcontentloaded'});expect(response?.status()).toBe(200);await expect(page.locator('html')).toHaveAttribute('lang',locale);await expect(page.locator('h1')).not.toBeEmpty();
  }
  expect(errors).toEqual([]);
+});
+test('equipment catalogue filters official records and links source-backed recipes',async({page})=>{
+ await page.goto(`${base}/zh-Hant/equipment/`);
+ await expect(page.locator('[data-equipment]')).toHaveCount(21);
+ await expect(page.locator('[data-equipment="origami-air-s"]')).toContainText('64');
+ await expect(page.locator('[data-equipment="ek-unspecified"]')).toContainText('型號待確認');
+ await page.getByLabel('搜尋品牌、型號或相容性').fill('ZP6');
+ await expect(page.locator('[data-equipment]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="1zpresso-zp6-special"]')).toContainText('90 clicks per rotation');
+ await page.getByLabel('搜尋品牌、型號或相容性').fill('');
+ await page.getByRole('button',{name:/磨豆器/}).click();
+ await expect(page.locator('[data-equipment]')).toHaveCount(5);
+ await expect(page.locator('a[href="https://1zpresso.coffee/product/zp6-special/"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="1zpresso-zp6-special"] a[href*="rincon-origami"]')).toHaveCount(1);
+ await page.setViewportSize({width:390,height:844});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
 });
 test('mobile and long-language layouts keep controls inside viewport',async({page})=>{
  await page.setViewportSize({width:390,height:844});
