@@ -5,7 +5,7 @@ import path from 'node:path';
 const originals='assets/originals';
 await mkdir(originals,{recursive:true});
 await mkdir('public/images',{recursive:true});
-for(const name of ['editorial-hero','editorial-hero-mobile','coffee-bloom','brewer-still','cover-origami','cover-v60','cover-flatbed']){
+for(const name of ['editorial-hero','editorial-hero-mobile','coffee-bloom','brewer-still']){
  const original=path.join(originals,`${name}.png`);
   try{await access(original);}catch{await copyFile(`public/images/${name}.png`,original);}
  const sizes=name==='editorial-hero'?[960,1920]:name==='editorial-hero-mobile'?[480,960]:[640,1280];

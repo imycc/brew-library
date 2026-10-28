@@ -39,32 +39,6 @@ function useHref(){const locale=useLocale();const {params}=useLibrary();return (
   const query=new URLSearchParams(params);if(extra)for(const [k,v]of Object.entries(extra))query.set(k,v);
   return `/${locale}/${suffix}${query.size?`?${query}`:''}`;
 };}
-export function Photo({name,className='',priority=false}:{name:string;className?:string;priority?:boolean}){
-  return <picture className={className}>
-    <source type="image/avif" srcSet={`${BASE}/images/${name}-640.avif 640w, ${BASE}/images/${name}-1280.avif 1280w`} sizes="(max-width:700px) 100vw, 45vw"/>
-    <source type="image/webp" srcSet={`${BASE}/images/${name}-640.webp 640w, ${BASE}/images/${name}-1280.webp 1280w`} sizes="(max-width:700px) 100vw, 45vw"/>
-    <img src={`${BASE}/images/${name}-1280.webp`} alt="" width={1280} height={960} loading={priority?'eager':'lazy'} fetchPriority={priority?'high':'auto'}/>
-  </picture>;
-}
-function coverName(r:Recipe){
-  if(r.brewerId==='origami')return 'cover-origami';
-  if(r.brewerId==='pulsar'||r.paper?.shape==='flat'||r.paper?.id==='sibarist-unspecified')return 'cover-flatbed';
-  return 'cover-v60';
-}
-function coverBeanLabel(r:Recipe,t:ReturnType<typeof useTranslations>){
-  const process=r.coffee?.process?t(`processes.${r.coffee.process}`):null;
-  const roast=r.coffee?.roast?t(`roasts.${r.coffee.roast}`):null;
-  return [r.coffee?.origin,r.coffee?.variety,process,roast].filter(Boolean).join(' · ')||t(r.beanNote||(r.beanConditions==='light'?'light':'unknown'));
-}
-export function RecipeCover({recipe:r,className='',priority=false,compact=false}:{recipe:Recipe;className?:string;priority?:boolean;compact?:boolean}){
-  const t=useTranslations();
-  return <div className={`recipe-cover${compact?' recipe-cover-compact':''}${className?` ${className}`:''}`} data-cover={coverName(r)}>
-    <div className="recipe-cover-media recipe-cover-main"><Photo name={coverName(r)} priority={priority}/></div><div className="recipe-cover-media recipe-cover-detail"><Photo name={r.image}/></div>
-    <div className="recipe-cover-fact"><span>{t('equipment')}</span><strong>{r.brewer.split(' · ')[0]}</strong><small>{r.grinder?.name||t('unknown')}</small></div>
-    <div className="recipe-cover-fact recipe-cover-beans"><span>{t('beans')}</span><strong>{coverBeanLabel(r,t)}</strong><small>{paperDetails(r,t)}</small></div>
-    <div className="recipe-cover-title"><span>{r.author}</span><strong>{t(`recipes.${r.copy}.title`)}</strong><small>{r.dose} g · {r.water.amount} {r.water.unit} · {temperature(r,t)}</small></div>
-  </div>;
-}
 function LanguageSwitcher(){
   const t=useTranslations();const locale=useLocale() as Locale;const {params}=useLibrary();
   const [open,setOpen]=useState(false);const root=useRef<HTMLDivElement>(null);const trigger=useRef<HTMLButtonElement>(null);
@@ -101,10 +75,10 @@ function Parameters({recipe:r,compact=false}:{recipe:Recipe;compact?:boolean}){
   return <dl className={compact?'parameters compact':'parameters'}>{values.map(({key,value,Icon})=><div key={key}><dt>{compact?<Icon size={21}/>:t(key)}</dt><dd title={value}>{value}</dd></div>)}</dl>;
 }
 export function CompareButton({recipe:r}:{recipe:Recipe}){const {ids,toggle}=useLibrary();const t=useTranslations();const selected=ids.includes(r.id);return <button className={`button button-secondary${selected?' is-selected':''}`} onClick={()=>toggle(r.id)} aria-pressed={selected} aria-label={`${selected?t('remove'):t('add')} · ${t(`recipes.${r.copy}.title`)}`}>{selected?<Check size={16}/>:null}{selected?t('remove'):t('add')}{selected?null:<Plus size={15}/>}</button>;}
-function RecipeCard({recipe:r,featured=false}:{recipe:Recipe;featured?:boolean}){
+function RecipeCard({recipe:r,featured=false,index=0}:{recipe:Recipe;featured?:boolean;index?:number}){
   const t=useTranslations();const href=useHref();
   return <article className={featured?'recipe-card featured':'recipe-card'} data-recipe={r.id}>
-    <Link href={href(`recipes/${r.id}/`)} className="card-photo" aria-label={`${t('view')} · ${t(`recipes.${r.copy}.title`)}`}><RecipeCover recipe={r} priority={featured}/></Link>
+    <div className="recipe-card-top"><span className="recipe-index">{String(index+1).padStart(2,'0')}</span><span>{r.brewer.split(' · ')[0]}</span><span>{r.author}</span></div>
     <div className="card-copy">{featured?<p className="eyebrow">{r.author} <span>· {r.source.label}</span></p>:null}<h3><Link href={href(`recipes/${r.id}/`)}>{!featured?<span className="card-author">{r.author} · </span>:null}{t(`recipes.${r.copy}.title`)}</Link></h3><p className="card-summary">{t(`recipes.${r.copy}.summary`)}</p>
       {featured?<Parameters recipe={r} compact/>:null}
       <div className="card-actions"><Link className={featured?'button button-primary':'button button-outline'} href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={16}/></Link><CompareButton recipe={r}/></div>
@@ -137,18 +111,18 @@ export function Home(){
           return <label key={key}><span>{t(key)}</span><select aria-label={t(key)} value={filters[key]} onChange={e=>setParams({[key]:e.target.value})}><option value="">{t('all')}</option>{options.map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>;
         })}
       </div></details>
-      {filtered.length?<div className="recipe-grid">{filtered.map((r,i)=><RecipeCard key={r.id} recipe={r} featured={i===0}/>)}</div>:<div className="empty-state"><CoffeeBean size={34}/><p>{t('noResults')}</p><button className="button button-outline" onClick={reset}>{t('reset')}</button></div>}
+      {filtered.length?<div className="recipe-grid">{filtered.map((r,i)=><RecipeCard key={r.id} recipe={r} index={recipes.indexOf(r)} featured={i===0}/>)}</div>:<div className="empty-state"><CoffeeBean size={34}/><p>{t('noResults')}</p><button className="button button-outline" onClick={reset}>{t('reset')}</button></div>}
     </section>
   </main>;
 }
 export function ComparisonTray(){const t=useTranslations();const {ids,toggle,notice}=useLibrary();const href=useHref();const pathname=usePathname();if(!ids.length||pathname.includes('/compare')||pathname.includes('/recipes/'))return null;
- return <aside className="compare-tray" aria-label={t('compareNav')}><strong>{t('selected',{count:ids.length})}</strong><div className="tray-items">{ids.map(id=>{const r=recipes.find(r=>r.id===id)!;return <div className="tray-item" key={id}><Photo name={r.image}/><span>{t(`recipes.${r.copy}.title`)}</span><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(id)}><X size={16}/></button></div>;})}</div><Link className="button button-primary" href={href('compare/')}>{t('compareAction')}<ArrowRight size={17}/></Link>{notice?<p role="alert">{notice}</p>:null}</aside>;
+ return <aside className="compare-tray" aria-label={t('compareNav')}><strong>{t('selected',{count:ids.length})}</strong><div className="tray-items">{ids.map(id=>{const r=recipes.find(r=>r.id===id)!;return <div className="tray-item" key={id}><span className="tray-index">{String(recipes.indexOf(r)+1).padStart(2,'0')}</span><span>{t(`recipes.${r.copy}.title`)}</span><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(id)}><X size={16}/></button></div>;})}</div><Link className="button button-primary" href={href('compare/')}>{t('compareAction')}<ArrowRight size={17}/></Link>{notice?<p role="alert">{notice}</p>:null}</aside>;
 }
 export function RecipeDetail({id}:{id:string}){
  const t=useTranslations();const href=useHref();const r=recipes.find(r=>r.id===id)!;
  const pours=r.steps.filter(s=>['pour','bloom','pulses'].includes(s.action));
  return <main id="main" className="page detail-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link>
-   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong></div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><RecipeCover recipe={r} className="detail-photo" priority/></section>
+   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong></div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t('filterPaper')}</span><strong>{paperDetails(r,t)}</strong></div></div></section>
    <div className="detail-body"><div>
      {r.preparation.length?<section className="preparation"><h2>{t('preparation')}</h2>{r.preparation.map(key=><p key={key}>{t(key)}</p>)}</section>:null}
      <section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t('stepAmount')}</p></div><ol className="pour-timeline">{pours.map((s,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{s.at===null?t('sequence'):time(s.at)}</strong><span>{s.amount===null?'—':`${s.amount} ${s.unit||r.water.unit}`}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>
@@ -164,7 +138,7 @@ export function ComparePage(){
  return <main id="main" className="page compare-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link><div className="page-title-row"><div><h1>{t('compareTitle')}</h1><p className="page-subtitle">{t('compareSubtitle')}</p></div>{ids.length?<button className="button button-primary" onClick={async()=>{try{await navigator.clipboard.writeText(window.location.href);setShared(true);}catch{setManual(window.location.href);}}}>{shared?<Check size={18}/>:<ShareNetwork size={18}/>} {t(shared?'copied':'share')}</button>:null}</div>
  {parseSelection(params.get('ids')).invalid?<p role="status" className="notice">{t('invalidSelection')}</p>:null}
  {manual?<label className="copy-fallback">{t('copyError')}<input readOnly value={manual} onFocus={e=>e.target.select()}/></label>:null}
- {!selected.length?<div className="empty-state"><CoffeeBean size={36}/><p>{t('compareEmpty')}</p><Link className="button button-primary" href={href()}>{t('back')}<ArrowRight size={16}/></Link></div>:<><div className="comparison-scroll" tabIndex={0} aria-label={t('compareTitle')}><table className="comparison-table"><thead><tr><td/><>{selected.map(r=><th scope="col" key={r.id}><div className="comparison-image"><RecipeCover recipe={r} compact/><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button></div><h2>{t(`recipes.${r.copy}.title`)}</h2><span>{r.author}</span></th>)}{selected.length<3?<th scope="col" className="empty-comparison"><Link href={href()}><Plus size={30}/>{t('addSlot')}</Link></th>:null}</></tr></thead><tbody>{rows.map(([label,getValue])=><tr key={label}><th scope="row">{t(label)}</th>{selected.map(r=><td key={r.id}>{getValue(r)}</td>)}{selected.length<3?<td>—</td>:null}</tr>)}<tr><th scope="row">{t('source')}</th>{selected.map(r=><td key={r.id}><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a></td>)}{selected.length<3?<td>—</td>:null}</tr><tr><th scope="row">{t('recipesNav')}</th>{selected.map(r=><td key={r.id}><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></td>)}{selected.length<3?<td>—</td>:null}</tr></tbody></table></div><p className="comparison-note">{t('compareNote')}</p>{selected.some(r=>r.water.derived)?<p className="comparison-note">* {t('derived')}</p>:null}<button className="text-button" onClick={()=>setParams({ids:null})}>{t('clearAll')}</button></>}
+ {!selected.length?<div className="empty-state"><CoffeeBean size={36}/><p>{t('compareEmpty')}</p><Link className="button button-primary" href={href()}>{t('back')}<ArrowRight size={16}/></Link></div>:<><div className="comparison-scroll" tabIndex={0} aria-label={t('compareTitle')}><table className="comparison-table"><thead><tr><td/><>{selected.map(r=><th scope="col" key={r.id}><div className="comparison-identity"><span className="comparison-index">{String(recipes.indexOf(r)+1).padStart(2,'0')}</span><strong>{r.brewer.split(' · ')[0]}</strong><small>{grinderDetails(r,t)}</small></div><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button><h2>{t(`recipes.${r.copy}.title`)}</h2><span>{r.author}</span></th>)}{selected.length<3?<th scope="col" className="empty-comparison"><Link href={href()}><Plus size={30}/>{t('addSlot')}</Link></th>:null}</></tr></thead><tbody>{rows.map(([label,getValue])=><tr key={label}><th scope="row">{t(label)}</th>{selected.map(r=><td key={r.id}>{getValue(r)}</td>)}{selected.length<3?<td>—</td>:null}</tr>)}<tr><th scope="row">{t('source')}</th>{selected.map(r=><td key={r.id}><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a></td>)}{selected.length<3?<td>—</td>:null}</tr><tr><th scope="row">{t('recipesNav')}</th>{selected.map(r=><td key={r.id}><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></td>)}{selected.length<3?<td>—</td>:null}</tr></tbody></table></div><p className="comparison-note">{t('compareNote')}</p>{selected.some(r=>r.water.derived)?<p className="comparison-note">* {t('derived')}</p>:null}<button className="text-button" onClick={()=>setParams({ids:null})}>{t('clearAll')}</button></>}
  </main>;
 }
 export function AuthorsPage(){const t=useTranslations();const href=useHref();return <main id="main" className="page"><p className="eyebrow">COFFEE EDITORIAL</p><h1>{t('authorsTitle')}</h1><p className="page-subtitle">{t('authorsIntro')}</p><div className="author-list">{recipes.map((r,i)=><article key={r.authorId}><span className="author-index">{String(i+1).padStart(2,'0')}</span><div><h2>{r.author}</h2><p>{t(`recipes.${r.copy}.summary`)}</p></div><Link className="button button-outline" href={href('',{author:r.authorId})}>{t('recipesNav')}<ArrowRight size={17}/></Link></article>)}</div></main>;}
