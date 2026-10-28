@@ -18,7 +18,7 @@
   },
   "equipmentNav": "Ausrüstung",
   "equipmentTitle": "Ausrüstungsdatenbank",
-  "equipmentIntro": "Offizielle Angaben, Kompatibilität und passende Rezepte für Filterdripper, Mühlen und Filterpapiere.",
+  "equipmentIntro": "Offizielle Angaben, Kompatibilität und passende Rezepte für Filterdripper, Kessel, Mühlen und Filterpapiere.",
   "equipmentItems": "Einträge",
   "equipmentSearch": "Marke, Modell oder Kompatibilität suchen",
   "equipmentCategory": "Ausrüstungskategorie",
@@ -30,7 +30,8 @@
   "equipmentCategories": {
     "dripper": "Dripper",
     "grinder": "Mühlen",
-    "filter": "Filter"
+    "filter": "Filter",
+    "kettle": "Kessel"
   },
   "equipmentStatus": {
     "legacy": "Altmodell / eingestellt",
@@ -51,7 +52,10 @@
     "groundsCapacity": "Kaffeemehlkapazität",
     "format": "Form",
     "packs": "Packung",
-    "technology": "Technologie"
+    "technology": "Technologie",
+    "power": "Leistung",
+    "voltage": "Spannung",
+    "temperatureRange": "Temperaturbereich"
   },
   "equipmentUnits": {
     "cups": "Tassen",
@@ -62,7 +66,10 @@
     "lb": "lb",
     "µm": "µm",
     "sheets": "Blatt",
-    "oz": "oz"
+    "oz": "oz",
+    "W": "W",
+    "V": "V",
+    "°C": "°C"
   },
   "brand": "Filterkaffee-Bibliothek",
   "tagline": "Das Kaffeejournal",
@@ -405,6 +412,26 @@
       "close": "Bei 0:45 zum Ziehen schließen.",
       "secondPour": "Die zweite Hälfte zugeben und ziehen lassen.",
       "drain": "Bei 2:00 öffnen und ablaufen lassen."
+    },
+    "hoffmann-ultimate": {
+      "title": "Die ultimative V60-Technik",
+      "summary": "Ein V60-Rezept mit 30 g Kaffee, 60 g Blooming, zwei Etappen bis 500 g und einem abschließenden Rühren.",
+      "version": "Ultimate V60 · HARIO-USA-Ausgabe",
+      "grind": "Mittel-fein",
+      "equipment": "HARIO V60",
+      "notes": "Die Quelle empfiehlt möglichst heißes Wasser, besonders bei helleren Röstungen. Die Endzeit ist ein Ziel; der Durchlauf hängt von Papier und Temperatur ab.",
+      "finish": "Den Kaffee ablaufen lassen und dabei etwa 3:30 anstreben.",
+      "stir": "Einmal im und einmal gegen den Uhrzeigersinn rühren, kurz abtropfen lassen und dann sanft schwenken."
+    },
+    "camber": {
+      "title": "Camber Coffee V60",
+      "summary": "Ein V60-Rezept mit 20 g Kaffee, 60 g Blooming und zwei Aufgüssen bis 345 g, geteilt für anaerob verarbeitete Kaffees.",
+      "version": "SCA 2023 · Camber Coffee",
+      "grind": "Mittel-fein",
+      "equipment": "HARIO V60",
+      "notes": "Die Quelle empfiehlt dieses Rezept für anaerob verarbeitete Kaffees. Die Wassertemperatur wird nicht genannt.",
+      "finish": "Eine Gesamtbrühzeit von 3:00–3:15 anstreben.",
+      "bean": "Die Quelle empfiehlt anaerob verarbeitete Kaffees."
     }
   },
   "waterQuality": "Wasserprofil",
@@ -425,6 +452,8 @@
     "glass": "Glas",
     "plastic": "Kunststoff",
     "aluminum": "Aluminium",
-    "natural-or-oxygen-bleached-paper": "Naturpapier oder sauerstoffgebleichtes Papier"
+    "natural-or-oxygen-bleached-paper": "Naturpapier oder sauerstoffgebleichtes Papier",
+    "natural-wood": "Naturholz",
+    "phenol-resin": "Phenolharz"
   }
 }

@@ -26,7 +26,9 @@
     "kobayashi": {"overview":"A competition ORIGAMI recipe that includes sifting, filter placement and a cooler final pour. Its strengths are precision and temperature control; the extra preparation is part of the method.","bestFor":"Advanced ORIGAMI preparation and temperature control"},
     "selorio": {"overview":"A timed four-pour ORIGAMI recipe with a specified grinder and CAFEC paper. It is useful when matching a documented competition setup closely because its pace and equipment are explicit.","bestFor":"Recreating a documented grinder and paper combination"},
     "rincon": {"overview":"A natural Geisha competition brew that changes water temperature across the pours. It is highly source-specific and illustrates how a recipe can respond to one coffee and water profile.","bestFor":"Studying temperature changes for a specific natural coffee"},
-    "gil": {"overview":"A four-pour ORIGAMI method tied to a K-Ultra setting and Sibarist paper. It provides a concise timing structure for comparison, while equipment and bean-specific details remain limited.","bestFor":"A structured four-pour comparison"}
+    "gil": {"overview":"A four-pour ORIGAMI method tied to a K-Ultra setting and Sibarist paper. It provides a concise timing structure for comparison, while equipment and bean-specific details remain limited.","bestFor":"A structured four-pour comparison"},
+    "hoffmann-ultimate": {"overview":"A full 500 mL V60 recipe built around a 60 g bloom and two staged pours. The final stir and gentle swirl level the bed before drawdown; the source uses hotter water for lighter roasts.","bestFor":"A larger V60 brew with a clear timed structure"},
+    "camber": {"overview":"A 20 g V60 recipe shared by Camber Coffee at SCA 2023, with a 60 g bloom and pours to 200 g and 345 g. The source highlights anaerobic coffees and a 3:00–3:15 finish.","bestFor":"Brewing anaerobic coffees with a simple V60 sequence"}
   },
   "equipmentRoles": {
     "conicalControl":"A conical brewer that gives the user direct control over flow, pour pattern and water level.",
@@ -43,7 +45,9 @@
     "filterElectric":"An electric grinder designed for filter coffee and repeatable grind settings.",
     "largeFlatElectric":"An electric flat-burr grinder built around a larger burr set and controlled grinding.",
     "paperFilter":"A matching paper filter that shapes flow, filtration and cleanup; it is a consumable part of the brew system.",
-    "unresolved":"The source names this item only generically, so model-specific claims are intentionally withheld."
+    "unresolved":"The source names this item only generically, so model-specific claims are intentionally withheld.",
+    "electricGooseneck":"An electric gooseneck kettle with set-temperature control for repeatable brew water.",
+    "stovetopGooseneck":"A stovetop gooseneck kettle with a narrow spout for manual pour control; water temperature is managed separately."
   },
   "equipmentExperienceTitle":"Cup profile from hands-on use",
   "equipmentExperienceNote":"Tags summarize public hands-on reviews and community reports; they are not blind-test rankings and still depend on coffee, water and technique.",
@@ -127,6 +131,7 @@
     "beanSpecific":"The source was developed around a particular coffee and may need adjustment.",
     "consumable":"The filter must be replaced regularly, creating an ongoing supply need.",
     "filterMatching":"Flow can change when a different paper or filter format is used.",
-    "slowDrawdown":"The recorded setup can produce a longer drawdown or contact time."
+    "slowDrawdown":"The recorded setup can produce a longer drawdown or contact time.",
+    "heatSourceDependent":"It needs a separate stovetop or heat source before brewing."
   }
 }

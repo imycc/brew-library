@@ -18,7 +18,7 @@
   },
   "equipmentNav": "Equipo",
   "equipmentTitle": "Base de datos de equipo",
-  "equipmentIntro": "Especificaciones oficiales, compatibilidad y recetas relacionadas para drippers, molinos y filtros de café de filtro.",
+  "equipmentIntro": "Especificaciones oficiales, compatibilidad y recetas relacionadas para drippers, hervidores, molinos y filtros de café de filtro.",
   "equipmentItems": "equipos",
   "equipmentSearch": "Buscar marca, modelo o compatibilidad",
   "equipmentCategory": "Categoría de equipo",
@@ -30,7 +30,8 @@
   "equipmentCategories": {
     "dripper": "Drippers",
     "grinder": "Molinos",
-    "filter": "Filtros"
+    "filter": "Filtros",
+    "kettle": "Hervidores"
   },
   "equipmentStatus": {
     "legacy": "Modelo antiguo / descatalogado",
@@ -51,7 +52,10 @@
     "groundsCapacity": "Capacidad de café molido",
     "format": "Formato",
     "packs": "Paquete",
-    "technology": "Tecnología"
+    "technology": "Tecnología",
+    "power": "Potencia",
+    "voltage": "Voltaje",
+    "temperatureRange": "Rango de temperatura"
   },
   "equipmentUnits": {
     "cups": "tazas",
@@ -62,7 +66,10 @@
     "lb": "lb",
     "µm": "µm",
     "sheets": "hojas",
-    "oz": "oz"
+    "oz": "oz",
+    "W": "W",
+    "V": "V",
+    "°C": "°C"
   },
   "brand": "Biblioteca de café",
   "tagline": "Diario de café",
@@ -405,6 +412,26 @@
       "close": "Cierra a 0:45 para la inmersión.",
       "secondPour": "Añade la mitad restante y deja infusionar.",
       "drain": "Abre a 2:00 y deja drenar."
+    },
+    "hoffmann-ultimate": {
+      "title": "La técnica definitiva para V60",
+      "summary": "Una receta V60 de 30 g con 60 g de bloom, vertidos por etapas hasta 500 g y una agitación final.",
+      "version": "Ultimate V60 · edición HARIO USA",
+      "grind": "Media-fina",
+      "equipment": "HARIO V60",
+      "notes": "La fuente recomienda agua lo más caliente posible, sobre todo con tuestes claros. El tiempo final es un objetivo; el drenaje varía según el papel y la temperatura.",
+      "finish": "Deja drenar la preparación buscando terminar alrededor de 3:30.",
+      "stir": "Remueve una vez en sentido horario y otra en sentido antihorario, deja drenar un poco el lecho y luego gira suavemente."
+    },
+    "camber": {
+      "title": "Camber Coffee V60",
+      "summary": "Una receta V60 de 20 g con 60 g de bloom y dos vertidos hasta 345 g, compartida para cafés anaeróbicos.",
+      "version": "SCA 2023 · Camber Coffee",
+      "grind": "Media-fina",
+      "equipment": "HARIO V60",
+      "notes": "La fuente recomienda esta receta para cafés con proceso anaeróbico. No indica la temperatura del agua.",
+      "finish": "Busca un tiempo total de preparación de 3:00–3:15.",
+      "bean": "La fuente recomienda cafés con proceso anaeróbico."
     }
   },
   "waterQuality": "Perfil del agua",
@@ -425,6 +452,8 @@
     "glass": "Vidrio",
     "plastic": "Plástico",
     "aluminum": "Aluminio",
-    "natural-or-oxygen-bleached-paper": "Papel natural o blanqueado con oxígeno"
+    "natural-or-oxygen-bleached-paper": "Papel natural o blanqueado con oxígeno",
+    "natural-wood": "Madera natural",
+    "phenol-resin": "Resina fenólica"
   }
 }

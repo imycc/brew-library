@@ -26,7 +26,9 @@
     "kobayashi": {"overview":"比賽用 ORIGAMI 配方，包含篩粉、濾紙定位及最後降溫注水。優點在精準與溫控；額外準備本身就是方法的一部分。","bestFor":"進階 ORIGAMI 準備與溫控"},
     "selorio": {"overview":"四段計時的 ORIGAMI 配方，清楚指定磨豆器與 CAFEC 濾紙。若想貼近重現一套有記錄的比賽設定，步驟節奏和器材都十分明確。","bestFor":"重現明確記錄的磨豆器與濾紙組合"},
     "rincon": {"overview":"以日曬 Geisha 為中心的比賽配方，各段使用不同水溫。它高度針對特定豆子和水源，示範配方如何回應單一咖啡條件。","bestFor":"研究特定日曬豆的分段溫控"},
-    "gil": {"overview":"四段注水的 ORIGAMI 方法，配合 K-Ultra 設定與 Sibarist 濾紙。時間結構簡明，適合比較；器材與豆子細節則相對有限。","bestFor":"比較清楚的四段注水結構"}
+    "gil": {"overview":"四段注水的 ORIGAMI 方法，配合 K-Ultra 設定與 Sibarist 濾紙。時間結構簡明，適合比較；器材與豆子細節則相對有限。","bestFor":"比較清楚的四段注水結構"},
+    "hoffmann-ultimate": {"overview":"以 60 g 悶蒸和兩段注水完成 500 mL 的 V60 配方。最後攪拌並輕輕旋轉，讓粉床在排水前更平整；來源對淺烘焙使用更熱的水。","bestFor":"時間結構清晰、份量較大的 V60 沖煮"},
+    "camber": {"overview":"Camber Coffee 在 SCA 2023 分享的 20 g V60 配方：60 g 悶蒸後注水至 200 g，最後到 345 g。來源強調適合厭氧處理咖啡，並在 3:00–3:15 完成。","bestFor":"用簡單 V60 流程沖煮厭氧處理咖啡"}
   },
   "equipmentRoles": {
     "conicalControl":"圓錐形濾杯讓使用者直接控制流速、注水路徑和水位。",
@@ -43,7 +45,9 @@
     "filterElectric":"以手沖及濾泡咖啡為重心、追求重複設定表現的電動磨豆器。",
     "largeFlatElectric":"採較大平磨盤及可控研磨設定的電動磨豆器。",
     "paperFilter":"與指定器材配合、影響流速、過濾和清潔的消耗式濾紙。",
-    "unresolved":"來源只提供泛稱，未能確認具體型號，因此不加入型號層面的判斷。"
+    "unresolved":"來源只提供泛稱，未能確認具體型號，因此不加入型號層面的判斷。",
+    "electricGooseneck":"可設定溫度、便於重複準備沖煮用水的電熱鵝頸手沖壺。",
+    "stovetopGooseneck":"以細壺嘴控制手動注水的直火鵝頸手沖壺；水溫需另行管理。"
   },
   "equipmentExperienceTitle":"杯感與實際使用回饋",
   "equipmentExperienceNote":"標籤綜合公開實測與社群回饋；不是盲測排名，仍會受豆、水質和手法影響。",
@@ -93,6 +97,7 @@
     "beanSpecific":"配方圍繞特定咖啡豆設計，換豆時可能需要調整。",
     "consumable":"濾紙需定期更換，屬持續供應開支。",
     "filterMatching":"改用其他濾紙或形狀時，流速可能改變。",
-    "slowDrawdown":"已記錄的組合可能帶來較長流乾或接觸時間。"
+    "slowDrawdown":"已記錄的組合可能帶來較長流乾或接觸時間。",
+    "heatSourceDependent":"沖煮前需要另外使用爐具或熱源。"
   }
 }

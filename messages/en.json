@@ -18,7 +18,7 @@
   },
   "equipmentNav": "Equipment",
   "equipmentTitle": "Brewing equipment index",
-  "equipmentIntro": "Source-backed specifications, compatibility notes and related recipes for pour-over drippers, grinders and filters.",
+  "equipmentIntro": "Source-backed specifications, compatibility notes and related recipes for pour-over drippers, kettles, grinders and filters.",
   "equipmentItems": "items",
   "equipmentSearch": "Search brand, model or compatibility",
   "equipmentCategory": "Equipment category",
@@ -30,7 +30,8 @@
   "equipmentCategories": {
     "dripper": "Drippers",
     "grinder": "Grinders",
-    "filter": "Filters"
+    "filter": "Filters",
+    "kettle": "Kettles"
   },
   "equipmentStatus": {
     "legacy": "Legacy / discontinued",
@@ -51,7 +52,10 @@
     "groundsCapacity": "Grounds capacity",
     "format": "Format",
     "packs": "Pack",
-    "technology": "Technology"
+    "technology": "Technology",
+    "power": "Power",
+    "voltage": "Voltage",
+    "temperatureRange": "Temperature range"
   },
   "equipmentUnits": {
     "cups": "cups",
@@ -62,7 +66,10 @@
     "lb": "lb",
     "µm": "µm",
     "sheets": "sheets",
-    "oz": "oz"
+    "oz": "oz",
+    "W": "W",
+    "V": "V",
+    "°C": "°C"
   },
   "brand": "Pour-over Library",
   "tagline": "Coffee editorial",
@@ -405,6 +412,26 @@
       "close": "Close the valve at 0:45 for the steep.",
       "secondPour": "Add the remaining half of the water, then steep.",
       "drain": "Open at 2:00 and let the brew drain."
+    },
+    "hoffmann-ultimate": {
+      "title": "The ultimate V60 technique",
+      "summary": "A 30 g V60 recipe with a 60 g bloom, staged pours to 500 g and a final stir.",
+      "version": "Ultimate V60 · HARIO USA edition",
+      "grind": "Medium-fine",
+      "equipment": "HARIO V60",
+      "notes": "The source recommends water as hot as possible, especially for lighter roasts. The finish time is a target; drawdown varies with paper and temperature.",
+      "finish": "Let the brew draw down, aiming to finish around 3:30.",
+      "stir": "Stir once clockwise and once anticlockwise, let the bed drain slightly, then swirl gently."
+    },
+    "camber": {
+      "title": "Camber Coffee V60",
+      "summary": "A 20 g V60 recipe with a 60 g bloom and two pours to 345 g, shared for anaerobic coffees.",
+      "version": "SCA 2023 · Camber Coffee",
+      "grind": "Medium-fine",
+      "equipment": "HARIO V60",
+      "notes": "The source recommends this recipe for anaerobic processed coffees. Water temperature is not stated.",
+      "finish": "Aim for a total brew time of 3:00–3:15.",
+      "bean": "The source recommends anaerobic processed coffees."
     }
   },
   "waterQuality": "Water profile",
@@ -425,6 +452,8 @@
     "glass": "Glass",
     "plastic": "Plastic",
     "aluminum": "Aluminum",
-    "natural-or-oxygen-bleached-paper": "Natural or oxygen-bleached paper"
+    "natural-or-oxygen-bleached-paper": "Natural or oxygen-bleached paper",
+    "natural-wood": "Natural wood",
+    "phenol-resin": "Phenol resin"
   }
 }

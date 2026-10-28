@@ -26,7 +26,9 @@
     "kobayashi": {"overview":"Recette ORIGAMI de compétition incluant tamisage, placement du filtre et versement final plus froid. Sa force réside dans la précision et la température ; la préparation supplémentaire fait partie de la méthode.","bestFor":"Préparation ORIGAMI avancée et contrôle thermique"},
     "selorio": {"overview":"Recette ORIGAMI à quatre versements chronométrés, avec moulin et papier CAFEC précisés. Utile pour approcher un montage de compétition documenté, car rythme et matériel sont explicites.","bestFor":"Reproduire un couple moulin et papier documenté"},
     "rincon": {"overview":"Préparation de compétition pour un Geisha nature, avec une température qui change au fil des versements. Très spécifique à sa source, elle montre comment une recette répond à un café et une eau donnés.","bestFor":"Étudier les variations thermiques d’un café nature précis"},
-    "gil": {"overview":"Méthode ORIGAMI à quatre versements liée à un réglage K-Ultra et au papier Sibarist. Sa structure temporelle concise facilite la comparaison, avec peu de détails sur le café.","bestFor":"Comparer une structure claire en quatre versements"}
+    "gil": {"overview":"Méthode ORIGAMI à quatre versements liée à un réglage K-Ultra et au papier Sibarist. Sa structure temporelle concise facilite la comparaison, avec peu de détails sur le café.","bestFor":"Comparer une structure claire en quatre versements"},
+    "hoffmann-ultimate": {"overview":"Une recette V60 complète de 500 ml avec 60 g de bloom et deux versements par étapes. L’agitation finale et le léger tournoiement nivellent le lit avant l’écoulement ; la source utilise une eau plus chaude pour les torréfactions claires.","bestFor":"Une préparation V60 plus grande avec une structure temporelle claire"},
+    "camber": {"overview":"Une recette V60 de 20 g partagée par Camber Coffee à la SCA 2023, avec 60 g de bloom et des versements jusqu’à 200 g puis 345 g. La source met en avant les cafés anaérobies et une fin entre 3:00 et 3:15.","bestFor":"Préparer des cafés anaérobies avec une séquence V60 simple"}
   },
   "equipmentRoles": {
     "conicalControl":"Dripper conique offrant un contrôle direct du débit, du tracé de versement et du niveau d’eau.",
@@ -43,7 +45,9 @@
     "filterElectric":"Moulin électrique pour café filtre, axé sur des réglages reproductibles.",
     "largeFlatElectric":"Moulin électrique à grandes meules plates et mouture contrôlée.",
     "paperFilter":"Papier dédié qui façonne débit, filtration et nettoyage ; il s’agit d’un consommable.",
-    "unresolved":"La source ne donne qu’un nom générique ; aucune affirmation propre au modèle n’est faite."
+    "unresolved":"La source ne donne qu’un nom générique ; aucune affirmation propre au modèle n’est faite.",
+    "electricGooseneck":"Bouilloire électrique à col de cygne avec température réglable pour une eau de préparation reproductible.",
+    "stovetopGooseneck":"Bouilloire à col de cygne pour plaque avec bec fin pour contrôler le versement ; la température de l’eau se gère séparément."
   },
   "equipmentExperienceTitle":"Profil en tasse et expérience réelle",
   "equipmentExperienceNote":"Ces tags résument des tests pratiques et des retours de communauté. Ce n’est pas un classement en test à l’aveugle : le café, l’eau et la technique comptent.",
@@ -91,6 +95,7 @@
     "beanSpecific":"La source a été développée autour d’un café précis et peut nécessiter des ajustements.",
     "consumable":"Le filtre doit être remplacé régulièrement, avec un approvisionnement continu.",
     "filterMatching":"Le débit peut changer avec un autre papier ou format.",
-    "slowDrawdown":"La combinaison documentée peut produire un écoulement ou un contact plus long."
+    "slowDrawdown":"La combinaison documentée peut produire un écoulement ou un contact plus long.",
+    "heatSourceDependent":"Une plaque ou une source de chaleur séparée est nécessaire avant la préparation."
   }
 }

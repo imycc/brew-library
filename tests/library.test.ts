@@ -29,7 +29,7 @@ test('shared selections are validated, deduplicated and bounded',()=>{
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,16);
+ assert.equal(recipes.length,18);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -45,6 +45,21 @@ test('expanded original recipes preserve unknown temperatures and mixed source u
  assert.equal(find('mallouhi-v60').temperatureMode,'unknown');
  assert.equal(find('chronicler-switch').duration?.[0],165);
 });
+test('added official V60 recipes keep source volumes, units and coffee conditions',()=>{
+ const find=(id:string)=>recipes.find(r=>r.id===id)!;
+ const ultimate=find('hoffmann-ultimate-v60');
+ assert.equal(ultimate.water.amount,500);
+ assert.equal(ultimate.water.unit,'mL');
+ assert.equal(ultimate.temperatureMode,'boiling');
+ assert.equal(ultimate.steps.filter(step=>step.amount!==null).reduce((sum,step)=>sum+(step.amount||0),0),500);
+ assert.equal(ultimate.steps[4].instruction,'recipes.hoffmann-ultimate.stir');
+ const camber=find('camber-v60');
+ assert.equal(camber.water.amount,345);
+ assert.equal(camber.water.unit,'g');
+ assert.equal(camber.coffee?.process,'anaerobic');
+ assert.deepEqual(camber.duration,[180,195]);
+ assert.deepEqual(filterRecipes(recipes,{q:'Camber'},r=>r.author).map(r=>r.id),['camber-v60']);
+});
 test('equipment and coffee filters match recorded source conditions together',()=>{
  const find=(filters:Parameters<typeof filterRecipes>[1])=>filterRecipes(recipes,filters,r=>r.author).map(r=>r.id);
  assert.deepEqual(find({brewer:'origami',grinder:'zp6-special',paper:'sibarist-conic',process:'natural'}),['rincon-origami']);
@@ -55,15 +70,19 @@ test('equipment and coffee filters match recorded source conditions together',()
  assert.equal(recipes.find(r=>r.id==='kobayashi-origami')?.steps[2].temperature,75);
 });
 test('equipment catalogue is source-backed, searchable and keeps unresolved models explicit',()=>{
- assert.equal(equipment.length,41);
+ assert.equal(equipment.length,48);
  assert.deepEqual(filterEquipment(equipment,'ZP6','all').map(item=>item.id),['1zpresso-zp6-special']);
  assert.deepEqual(filterEquipment(equipment,'Sibarist','filter').map(item=>item.id),['sibarist-cone','sibarist-unspecified']);
  assert.equal(filterEquipment(equipment,'','dripper').length,19);
+ assert.equal(filterEquipment(equipment,'','kettle').length,7);
+ assert.deepEqual(filterEquipment(equipment,'Buono','kettle').map(item=>item.id),['hario-v60-buono-1-2l','hario-v60-buono-electric']);
  assert.equal(equipment.find(item=>item.id==='ek-unspecified')?.status,'unresolved');
  assert.equal(equipment.find(item=>item.id==='origami-air-s')?.details.find(detail=>detail.key==='weight')?.value,'64');
  assert.equal(equipment.find(item=>item.id==='kalita-wave-185-stainless')?.category,'dripper');
  assert.equal(equipment.find(item=>item.id==='fellow-ode-gen-2')?.category,'grinder');
  assert.equal(equipment.find(item=>item.id==='cafec-deep27-filter')?.category,'filter');
+ assert.equal(equipment.find(item=>item.id==='fellow-stagg-ekg-pro')?.details.find(detail=>detail.key==='temperatureRange')?.value,'40–100');
+ assert.equal(equipment.find(item=>item.id==='kalita-wave-kettle-1l')?.category,'kettle');
 });
 test('editorial overlay covers every recipe and equipment record',()=>{
  assert.deepEqual(Object.keys(recipeEditorial).sort(),recipes.map(recipe=>recipe.id).sort());

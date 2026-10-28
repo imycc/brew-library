@@ -6,7 +6,7 @@
 
 ☕ **[瀏覽配方庫](https://imycc.github.io/pour-over-coffee/zh-Hant/)**
 
-🔧 **[瀏覽器材資料庫](https://imycc.github.io/pour-over-coffee/zh-Hant/equipment/)**：按濾杯、磨豆器及濾紙搜尋官方規格、相容性與相關配方。
+🔧 **[瀏覽器材資料庫](https://imycc.github.io/pour-over-coffee/zh-Hant/equipment/)**：按濾杯、手沖壺、磨豆器及濾紙搜尋官方規格、相容性與相關配方。
 
 ## 一起補充資料
 
