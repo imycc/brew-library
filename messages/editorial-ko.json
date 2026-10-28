@@ -45,6 +45,11 @@
     "paperFilter":"흐름, 여과, 정리를 좌우하며 정기적으로 교체하는 종이 필터입니다.",
     "unresolved":"출처가 일반 명칭만 제공해 모델 고유의 판단은 의도적으로 보류합니다."
   },
+  "equipmentExperienceTitle":"컵의 경향과 실제 사용 경험",
+  "equipmentExperienceNote":"공개 리뷰와 커뮤니티 경험을 요약한 태그입니다. 블라인드 테스트 순위가 아니며 원두·물·기술에 따라 달라집니다.",
+  "equipmentExperienceSources":"경험 출처",
+  "equipmentExperienceUnavailable":"구체적으로 인용할 공개 경험 자료를 아직 확인하지 못했습니다.",
+  "equipmentExperienceTags":{"brightClarity":"산미와 선명도가 두드러짐","techniqueSensitive":"푸어 방식이 컵에 잘 드러남","paperCleanCup":"종이 필터로 깔끔한 피니시","immersionBody":"침출로 둥근 질감과 바디","balancedCup":"선명도와 바디의 균형","forgivingTechnique":"푸어 편차에 비교적 관대함","valveLearning":"밸브 조작에 익숙해져야 함","lowBypass":"낮은 바이패스가 질감을 바꿈","roundSweetness":"둥근 단맛과 질감","largeDoseFit":"많은 원두량에 적합","grindDialIn":"분쇄도 조절이 중요함","lightBody":"가볍고 차 같은 바디","highAcidity":"산미가 앞에 나올 수 있음","lightRoastFit":"밝은 라이트 로스트에 잘 맞음","fastFlow":"빠른 흐름으로 접촉 시간이 짧아질 수 있음","thermalStability":"소재가 추출 열을 유지함","fullerBody":"더 두껍고 풍미가 어우러짐","blendedProfile":"풍미가 분리보다 어우러져 느껴짐","manualEffort":"손으로 분쇄해야 함","flavorSeparation":"풍미 분리도가 높음","electricConsistency":"전동으로 반복 추출이 쉬움","seasoningTime":"버가 길들여지는 동안 맛이 달라질 수 있음","filterOnly":"필터 커피용이며 에스프레소용은 아님","chocolateBody":"코코아와 진한 단맛으로 기울 수 있음","wideDialRange":"유효 범위가 넓어 기준점이 필요함","flowVariation":"필터 로트에 따라 흐름이 달라질 수 있음","stallRisk":"미분이나 교반으로 막힐 수 있음","paperTasteVariation":"필터 로트에 따라 종이 맛과 흐름이 달라짐","filterDependent":"종이를 바꾸면 결과가 크게 달라짐","veryFastFlow":"매우 빨라 더 고운 분쇄와 제어가 필요함","fineGrindNeeded":"빠른 흐름을 쓰려면 더 곱게 갈아야 함","lessStalling":"미분이 많은 원두에서도 덜 막힌다는 경험","brightAcidity":"밝은 산미를 쉽게 끌어냄","delicateBody":"깨끗하고 섬세한 바디","slowFlow":"느린 흐름으로 접촉 시간이 김"},
   "editorialStrengths": {
     "clearTimeline":"단계와 시간이 명확해 따라가기 쉽습니다.",
     "repeatable":"기록된 구조로 반복 연습하기 좋습니다.",

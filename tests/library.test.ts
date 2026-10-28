@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {filterRecipes,parseSelection,toggleSelection,recipes,time} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
-import {equipmentEditorial,recipeEditorial} from '../src/lib/editorial';
+import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
 test('source and translation validation',async()=>{await validate();});
 test('original HARIO times and units remain distinct',()=>{
@@ -74,4 +74,11 @@ test('editorial overlay covers every recipe and equipment record',()=>{
  }
  assert(recipeEditorial['kasuya-46'].sourceImage?.url.startsWith('https://'));
  assert.equal(equipmentEditorial['ek-unspecified'].sourceImage,undefined);
+});
+test('equipment experience stays specific and source-backed',()=>{
+ assert(equipmentExperience['origami-air-s'].tags.includes('brightClarity'));
+ assert(equipmentExperience['origami-s'].tags.includes('fullerBody'));
+ assert(equipmentExperience['1zpresso-zp6-special'].tags.includes('flavorSeparation'));
+ assert(equipmentExperience['1zpresso-zp6-special'].sources.every(source=>source.url.startsWith('https://')));
+ assert.equal(equipmentExperience['timemore-sculptor-064'],undefined);
 });
