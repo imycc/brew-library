@@ -197,7 +197,10 @@
       "bloom": "先预浸 15 秒；来源没有提供这段水量。",
       "circle": "柔和绕圈连续注水，至累计 150 mL；这包含预浸水量。",
       "centre": "余下 100 mL 快速中心注水，维持水位，约 1:00 停止。"
-    }
+    },
+    "grill": {"title":"Martha Grill 日常 V60","summary":"30 g V60 配方：30 秒闷蒸、两段注水，三分钟完成。","version":"HARIOLOGY · HARIO Europe","grind":"来源未提供","equipment":"HARIO V60 · 塑料","notes":"原文使用 30 g 咖啡、92°C 的 500 mL 水，以及巴西 Ézio Sartori 咖啡；文章没有列出研磨度。","finish":"在 3:00 前完成萃取。","beans":"巴西 Espírito Santo 的 Ézio Sartori；Coffee Lab 烘焙"},
+    "mallouhi": {"title":"Ibrahim Al Mallouhi V60","summary":"1:15 比例的 V60：40 mL 绕圈闷蒸，再慢慢加入剩余的水。","version":"HARIOLOGY · HARIO Europe","grind":"中度研磨","equipment":"HARIO V60","notes":"来源列出 20 g 咖啡、300 mL 水及 2:10 目标，但没有提供水温。","finish":"目标总冲煮时间为 2:10。","prep":"先润湿滤纸并倒掉滤纸水，再加入咖啡粉。","water":"原文只说热水，没有提供水温。"},
+    "chronicler": {"title":"Coffee Chronicler Switch 配方","summary":"两段注水的 Switch 配方：先开阀注入一半，再浸泡另一半后放流。","version":"The Coffee Chronicler · 2023","grind":"来源未提供","equipment":"HARIO Switch 02","notes":"文章的标准版本使用 20 g 咖啡及 320 g 水：开阀注入一半，0:45 关阀，再加入另一半，2:00 开阀。水温及研磨度未有说明。","finish":"放流完成；文章给出的总时间范围为 2:45–3:15。","open":"开始时保持 Switch 阀门开启。","firstPour":"保持开阀，注入一半的水。","close":"在 0:45 关阀浸泡。","secondPour":"加入剩余一半的水，然后浸泡。","drain":"在 2:00 开阀放流。"}
   },
   "waterQuality": "水质",
   "competition": "比赛原版配方"

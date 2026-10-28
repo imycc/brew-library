@@ -1,6 +1,6 @@
 # Source research and version decisions
 
-Checked on 2026-10-27 (Asia/Hong_Kong). Three complete, directly verified recipes form the first release. Twelve is a ceiling, not a reason to publish incomplete research.
+Checked on 2026-10-27 (Asia/Hong_Kong), with the catalogue expansion rechecked on 2026-10-28 (Asia/Hong_Kong). The initial release began with three complete, directly verified recipes; it now contains eleven. Twelve is a ceiling, not a reason to publish incomplete research.
 
 ## Published recipes
 
@@ -41,7 +41,7 @@ Published 2023-09-14. Coffee dose is 25 g and mass ratio is 17:1 water:coffee. T
 
 ## Expansion — checked 2026-10-28 (Asia/Hong_Kong)
 
-The library now contains eight records. These five additions were read directly on HARIO’s official publishing sites; search-result snippets and community adaptations are not the verification source. All five source pages were accessible during this check. Publication dates absent from the articles remain unknown.
+The library now contains eleven records. These eight additions were read directly on HARIO’s official publishing sites or the creator’s own publishing page; search-result snippets and community adaptations are not the verification source. All newly added source pages were accessible during this check. Publication dates absent from the articles remain unknown.
 
 | Record | Official publication | Canonical facts and editorial decisions |
 | --- | --- | --- |
@@ -50,6 +50,9 @@ The library now contains eight records. These five additions were read directly 
 | Ole Kristian Bøen — Switch 02 | [HARIO Europe](https://www.hario-europe.com/blogs/hario-community/ole-kristian-boens-switch-recipe) | Published 2021 World Brewers Cup recipe; 16.5 g medium-fine; 96°C; 3:00–3:15; natural Hacienda La Esmeralda Geisha. Overview uses 240 mL, steps use g: preserve both with per-step units and a visible discrepancy note. Closed-valve bloom 50 g, open at 0:40 and add 100 g centrally; close at 1:30 and add 90 g circularly; open at 2:10. Do not silently rewrite the overview to 240 g. |
 | Ngoc Hoang — W60 | [HARIO Europe](https://www.hario-europe.com/blogs/hario-community/ngoc-hoangs-w60-dripper-recipe) | Published 2021 World Brewers Cup recipe; 12 g medium-coarse; 98°C; 65 ppm without composition/basis; 3:15. Both mesh and paper filters; recommendation to sift fines. Overview uses 200 g, instructions 50/100/50 mL: preserve the inconsistency. Bloom for 30 seconds, add 100 mL over the following 30 seconds, last 50 mL at 2:00, remove at 3:15. |
 | Agnieszka Rojewska — metal V60 | [HARIO Europe](https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-agnieszka-rojewska) | 15 g; 250 mL; medium grind; no temperature or bloom amount given. Preserve 15-second pre-infusion without supplying a quantity. Circle pour to cumulative 150 mL, then remaining 100 mL fast in the centre. The headline “1:00” is resolved by the detailed text as end-of-pouring; total target is 2:15. Unknown extra amount to reach 150 mL is never displayed as +150 mL. |
+| Martha Grill — morning V60 | [HARIO Europe](https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-martha-grill) | Plastic V60; 30 g; 500 mL at 92°C; 3:00. The article’s instructions use 60 g and 250 g targets, then the remaining water; those step units remain g instead of being silently converted to the overview’s mL. Stir three times after the second and final pours. It names Ézio Sartori from Espírito Santo, Brazil, roasted by Coffee Lab; grind setting is not supplied. |
+| Ibrahim H. Al Mallouhi — V60 | [HARIO Europe](https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-ibrahim-h-al-mallouhi) | 20 g medium grind; 300 mL; 1:15 ratio; 2:10 target. Pre-wet and discard the filter water, pour 40 mL in circular motions, bloom for 35 seconds, then slowly pour the remaining water. Temperature is not supplied; the timeline therefore keeps the remaining amount unknown rather than inventing an intermediate pour. |
+| Asser Christensen — Switch standard recipe | [The Coffee Chronicler](https://coffeechronicler.com/hario-switch/) | Creator’s standard Switch version: 20 g coffee and 320 g water; pour 160 g with the valve open, close at 0:45, add the remaining 160 g, open at 2:00, and drain in 2:45–3:15. Temperature and grind are not supplied. The page also describes a flexible 15–26 g framework; this record keeps only the clearly labelled standard version. |
 
 ### Data and translation changes
 
@@ -58,3 +61,4 @@ The library now contains eight records. These five additions were read directly 
 - Temperature has an explicit boiling/unknown mode. New sources that merely say hot water or give no temperature display unknown rather than boiling.
 - Competition context, original bean/water/filter conditions and recipe-specific valve/pouring instructions are localized in all nine languages.
 - April’s legacy source is still unavailable (404 checked again). Francesco Sanapo’s official HARIO UK article explicitly says dose/time “pending”; it stays unpublished rather than being filled from third-party recipes.
+- HARIO USA’s Matt Winton Drip Assist page currently publishes 20 g, 300 mL and an approximate 3:30 beside a video, but not a text step sequence, temperature or grind. It remains a research item rather than a reconstructed recipe.

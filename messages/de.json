@@ -197,7 +197,10 @@
       "bloom": "15 Sekunden vorquellen; die Wassermenge ist nicht angegeben.",
       "circle": "Sanft kreisförmig bis insgesamt 150 mL einschließlich Vorquellwasser gießen.",
       "centre": "Die restlichen 100 mL schnell mittig gießen und den Wasserstand halten; etwa bei 1:00 aufhören."
-    }
+    },
+    "grill": {"title":"Martha Grills V60 am Morgen","summary":"30 g V60 mit 30 Sekunden Bloom, zwei Aufgüssen und Abschluss nach drei Minuten.","version":"HARIOLOGY · HARIO Europe","grind":"In der Quelle nicht angegeben","equipment":"HARIO V60 · Kunststoff","notes":"Das veröffentlichte Rezept nutzt 30 g, 500 mL bei 92 °C und Ézio Sartori aus Brasilien. Der Mahlgrad fehlt in der Quelle.","finish":"Die Extraktion bis 3:00 beenden.","beans":"Ézio Sartori, Espírito Santo, Brasilien; geröstet von Coffee Lab"},
+    "mallouhi": {"title":"Ibrahim Al Mallouhis V60","summary":"V60 im Verhältnis 1:15 mit einem kreisförmigen 40-mL-Bloom und langsamem Restaufguss.","version":"HARIOLOGY · HARIO Europe","grind":"Mittel","equipment":"HARIO V60","notes":"Die Quelle nennt 20 g, 300 mL und 2:10 Zielzeit, aber keine Wassertemperatur.","finish":"Eine Gesamtzeit von 2:10 anstreben.","prep":"Filter anfeuchten, Spülwasser wegschütten und Kaffee einfüllen.","water":"Die Quelle nennt heißes Wasser, aber keine Temperatur."},
+    "chronicler": {"title":"Coffee-Chronicler-Switch-Rezept","summary":"Zwei Aufgüsse: die Hälfte offen, die andere Hälfte in der Immersion, danach ablaufen lassen.","version":"The Coffee Chronicler · 2023","grind":"In der Quelle nicht angegeben","equipment":"HARIO Switch 02","notes":"Die Standardversion nutzt 20 g und 320 g: die Hälfte offen aufgießen, bei 0:45 schließen, den Rest zugeben und bei 2:00 öffnen. Temperatur und Mahlgrad fehlen.","finish":"Ablaufen lassen; die veröffentlichte Gesamtzeit beträgt 2:45–3:15.","open":"Mit geöffnetem Switch-Ventil beginnen.","firstPour":"Die erste Hälfte bei geöffnetem Ventil aufgießen.","close":"Bei 0:45 zum Ziehen schließen.","secondPour":"Die zweite Hälfte zugeben und ziehen lassen.","drain":"Bei 2:00 öffnen und ablaufen lassen."}
   },
   "waterQuality": "Wasserprofil",
   "competition": "Veröffentlichtes Wettbewerbsrezept"
