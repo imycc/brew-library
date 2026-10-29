@@ -33,6 +33,61 @@ export const BASE = '/pour-over-coffee';
 export const SITE = 'https://imycc.github.io';
 export function time(seconds:number):string {return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;}
 export function duration(recipe:Recipe):string {return !recipe.duration?'—':recipe.duration[0]===recipe.duration[1]? time(recipe.duration[0]) : `${time(recipe.duration[0])}–${time(recipe.duration[1])}`;}
+export function ratio(recipe:Recipe, locale:string):string {
+  return recipe.water.unit==='g'?`1 : ${new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
+}
+
+const ADDITIONS=new Set(['pour','bloom','pulses','topup']);
+function additions(recipe:Recipe) {return recipe.steps.filter(s=>ADDITIONS.has(s.action)&&s.amount!==null);}
+export function additionUnit(recipe:Recipe):string|null {
+  const measured=additions(recipe);
+  if(!measured.length)return null;
+  const units=new Set(measured.map(s=>s.unit||recipe.water.unit));
+  return units.size===1?[...units][0]:null;
+}
+// Only when every published addition is quantified in the water's own unit can a
+// percentage be read as a share of the recipe rather than a share of a partial list.
+export function accountedAdditions(recipe:Recipe):{amount:number;unit:string}|null {
+  const unit=additionUnit(recipe);
+  if(!unit||unit!==recipe.water.unit)return null;
+  const amount=additions(recipe).reduce((sum,s)=>sum+(s.amount as number),0);
+  return amount===recipe.water.amount?{amount,unit}:null;
+}
+export function bloomShare(recipe:Recipe):number|null {
+  const total=accountedAdditions(recipe);
+  const bloom=recipe.steps.find(s=>s.action==='bloom'&&s.amount!==null);
+  return bloom&&total?(bloom.amount as number)/total.amount:null;
+}
+export type PourPhase={endsAt:number;kind:'end'|'start';drawdown:number|null};
+export function pourPhase(recipe:Recipe):PourPhase|null {
+  // Every pouring step counts here, quantified or not: an untimed later burst means the
+  // source never published when pouring finished.
+  const stages=recipe.steps.filter(s=>ADDITIONS.has(s.action));
+  if(!stages.length||stages.some(s=>s.at===null))return null;
+  const measured=stages.filter(s=>s.amount!==null);
+  if(!measured.length)return null;
+  const starts=stages.map(s=>s.at as number);
+  const ends=stages.map(s=>s.end).filter((end):end is number=>end!==undefined&&end!==null);
+  const lastStart=Math.max(...starts);
+  const lastEnd=Math.max(...ends);
+  const hasEnd=ends.length&&lastEnd>=lastStart;
+  const endsAt=hasEnd?lastEnd:lastStart;
+  const finish=recipe.duration?recipe.duration[0]:null;
+  return {endsAt,kind:hasEnd?'end':'start',drawdown:finish!==null&&finish>=endsAt?finish-endsAt:null};
+}
+export function sourceFacts(recipe:Recipe):{provided:boolean;key:string;label:string}[] {
+  const measured=additions(recipe);
+  return [
+    {key:'temperature',label:'temperature',provided:recipe.temperature!==null||recipe.temperatureMode==='boiling'},
+    {key:'brewTime',label:'brewTime',provided:recipe.duration!==null},
+    {key:'grinder',label:'grinder',provided:!!recipe.grinder?.setting},
+    {key:'paper',label:'filterPaper',provided:!!recipe.paper||recipe.filterConditions!=='unknown'},
+    {key:'beans',label:'beans',provided:!!recipe.coffee||!!recipe.beanNote},
+    {key:'waterChemistry',label:'waterQuality',provided:recipe.waterConditions!=='unknown'||!!recipe.waterNote},
+    {key:'allAdditions',label:'allAdditions',provided:measured.length>0&&measured.every(s=>s.at!==null)},
+    {key:'totalWater',label:'totalWaterPublished',provided:!!accountedAdditions(recipe)}
+  ];
+}
 export function parseSelection(raw:string|null, list:Recipe[]=recipes) {
   const requested=(raw||'').split(',').filter(Boolean);
   const valid=new Set(list.map(r=>r.id));

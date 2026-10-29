@@ -5,7 +5,7 @@ import {usePathname} from 'next/navigation';
 import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
 import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode} from 'react';
-import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,filterKeys,time,duration,type Recipe} from '@/lib/recipes';
+import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,filterKeys,time,duration,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,type Recipe} from '@/lib/recipes';
 import {recipeEditorial} from '@/lib/editorial';
 import {recipeFaq} from '@/lib/faq';
 import {OfficialSourceImage} from '@/components/source-image';
@@ -133,20 +133,38 @@ export function ComparisonTray(){const t=useTranslations();const {ids,toggle,not
  return <aside className="compare-tray" aria-label={t('compareNav')}><strong>{t('selected',{count:ids.length})}</strong><div className="tray-items">{ids.map(id=>{const r=recipes.find(r=>r.id===id)!;return <div className="tray-item" key={id}><span className="tray-index">{String(recipes.indexOf(r)+1).padStart(2,'0')}</span><span>{t(`recipes.${r.copy}.title`)}</span><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(id)}><X size={16}/></button></div>;})}</div><Link className="button button-primary" href={href('compare/')}>{t('compareAction')}<ArrowRight size={17}/></Link>{notice?<p role="alert">{notice}</p>:null}</aside>;
 }
 export function RecipeDetail({id}:{id:string}){
- const t=useTranslations();const href=useHref();const r=recipes.find(r=>r.id===id)!;
+ const t=useTranslations();const locale=useLocale();const href=useHref();const r=recipes.find(r=>r.id===id)!;
  const editorial=recipeEditorial[r.id];
  const faq=recipeFaq(r,t);
  const related=recipes.filter(item=>item.id!==r.id&&(item.brewerId===r.brewerId||item.authorId===r.authorId)).slice(0,3);
  const pours=r.steps.filter(s=>['pour','bloom','pulses'].includes(s.action));
+ const percent=new Intl.NumberFormat(locale,{style:'percent',maximumFractionDigits:1});
+ const additionTotal=accountedAdditions(r);
+ const phase=pourPhase(r);
+ const missing=sourceFacts(r).filter(fact=>!fact.provided);
+ const provided=sourceFacts(r).length-missing.length;
  return <main id="main" className="page detail-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link>
    <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><p className="quick-answer">{t('quickAnswer',{dose:r.dose,water:r.water.amount,unit:r.water.unit,temperature:temperature(r,t),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown')})}</p><OfficialSourceImage image={editorial.sourceImage} name={t(`recipes.${r.copy}.title`)} kind="recipe" className="recipe-detail-image"/><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong></div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t('filterPaper')}</span><strong>{paperDetails(r,t)}</strong></div></div></section>
    <section className="recipe-editorial" data-recipe-editorial>
      <div className="recipe-editorial-intro"><p className="eyebrow">EDITORIAL NOTES</p><h2>{t('recipeOverview')}</h2><p>{t(`recipes.${r.copy}.overview`)}</p><div className="best-for"><span>{t('bestFor')}</span><strong>{t(`recipes.${r.copy}.bestFor`)}</strong></div></div>
      <div className="editorial-tradeoffs"><div><h3><span aria-hidden="true">＋</span>{t('strengths')}</h3><ul>{editorial.strengths.map(key=><li key={key}>{t(`editorialStrengths.${key}`)}</li>)}</ul></div><div><h3><span aria-hidden="true">−</span>{t('considerations')}</h3><ul>{editorial.considerations.map(key=><li key={key}>{t(`editorialConsiderations.${key}`)}</li>)}</ul></div></div>
    </section>
+   <section className="derived-panel" data-derived-panel>
+     <div className="derived-head"><h2>{t('derivedTitle')}</h2><p>{t('derivedNote')}</p></div>
+     <dl className="derived-grid">
+       <div><dt>{t('ratio')}</dt><dd>{ratio(r,locale)}</dd></div>
+       <div><dt>{t('bloomShare')}</dt><dd>{bloomShare(r)===null?t('unknown'):percent.format(bloomShare(r)!)}</dd></div>
+       <div><dt>{t(phase&&phase.kind==='start'?'lastPourStarts':'pourEnds')}</dt><dd>{phase?time(phase.endsAt):t('unknown')}</dd></div>
+       <div><dt>{t(phase&&phase.kind==='start'?'afterLastPourStart':'drawdown')}</dt><dd>{phase&&phase.drawdown!==null?time(phase.drawdown):t('unknown')}</dd></div>
+     </dl>
+     <div className="derived-facts">
+       <p className="facts-score"><span>{t('sourceFacts')}</span><strong>{provided} / {sourceFacts(r).length}</strong></p>
+       {missing.length?<p className="facts-missing">{t('missingFacts')} {missing.map(fact=>t(fact.label)).join(' · ')}.</p>:<p className="facts-missing">{t('missingNone')}</p>}
+     </div>
+   </section>
    <div className="detail-body"><div>
      {r.preparation.length?<section className="preparation"><h2>{t('preparation')}</h2>{r.preparation.map(key=><p key={key}>{t(key)}</p>)}</section>:null}
-     <section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t('stepAmount')}</p></div><ol className="pour-timeline">{pours.map((s,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{s.at===null?t('sequence'):time(s.at)}</strong><span>{s.amount===null?'—':`${s.amount} ${s.unit||r.water.unit}`}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>
+     <section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t('stepAmount')}</p></div><ol className="pour-timeline">{pours.map((s,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{s.at===null?t('sequence'):time(s.at)}</strong><span>{s.amount===null?'—':`${s.amount} ${s.unit||r.water.unit}`}{s.amount!==null&&additionTotal?<em className="timeline-share"> {percent.format(s.amount/additionTotal.amount)}</em>:null}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>
      <section className="steps-section"><h2>{t('steps')}</h2><ol className="step-list">{r.steps.map((s,i)=><li key={i}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}</span></div><div className="step-meta">{s.temperature?<span>{t('temperature')} {s.temperature}°C</span>:null}{s.amount!==null?<span>+{s.amount} {s.unit||r.water.unit}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {s.cumulative} {s.unit||r.water.unit}</span>:null}</div><p>{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(s.instruction||`instruction.${s.action}`)}</p></div></li>)}</ol></section>
      <section className="recipe-notes"><h2>{t('notes')}</h2><p>{t(`recipes.${r.copy}.notes`)}</p>{r.water.derived?<p>{t('derived')} {r.dose} × 17 = {r.water.amount} g.</p>:null}</section>
      <section className="recipe-faq"><h2>{t('faqTitle')}</h2>{faq.map(item=><article key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}</section>
@@ -157,7 +175,7 @@ export function RecipeDetail({id}:{id:string}){
 export function ComparePage(){
  const t=useTranslations();const locale=useLocale();const {params,ids,toggle,setParams}=useLibrary();const href=useHref();const [shared,setShared]=useState(false);const [manual,setManual]=useState('');
  const selected=ids.map(id=>recipes.find(r=>r.id===id)!);
- const rows:[string,(r:Recipe)=>string][]=[['equipment',r=>t(`recipes.${r.copy}.equipment`)],['dose',r=>`${r.dose} g`],['water',r=>`${r.water.amount} ${r.water.unit}${r.water.derived?' *':''}`],['temperature',r=>temperature(r,t)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>r.water.unit==='g'?`1 : ${new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(r.water.amount/r.dose)}`:`${r.dose} g : ${r.water.amount} mL`],['version',r=>t(`recipes.${r.copy}.version`)]];
+ const rows:[string,(r:Recipe)=>string][]=[['equipment',r=>t(`recipes.${r.copy}.equipment`)],['dose',r=>`${r.dose} g`],['water',r=>`${r.water.amount} ${r.water.unit}${r.water.derived?' *':''}`],['temperature',r=>temperature(r,t)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
  return <main id="main" className="page compare-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link><div className="page-title-row"><div><h1>{t('compareTitle')}</h1><p className="page-subtitle">{t('compareSubtitle')}</p></div>{ids.length?<button className="button button-primary" onClick={async()=>{try{await navigator.clipboard.writeText(window.location.href);setShared(true);}catch{setManual(window.location.href);}}}>{shared?<Check size={18}/>:<ShareNetwork size={18}/>} {t(shared?'copied':'share')}</button>:null}</div>
  {parseSelection(params.get('ids')).invalid?<p role="status" className="notice">{t('invalidSelection')}</p>:null}
  {manual?<label className="copy-fallback">{t('copyError')}<input readOnly value={manual} onFocus={e=>e.target.select()}/></label>:null}
