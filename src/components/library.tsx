@@ -5,7 +5,7 @@ import {usePathname} from 'next/navigation';
 import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
 import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode} from 'react';
-import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,filterKeys,time,duration,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,type Recipe} from '@/lib/recipes';
+import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,filterKeys,time,duration,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,iceAmountText,type Recipe} from '@/lib/recipes';
 import {recipeEditorial} from '@/lib/editorial';
 import {recipeFaq} from '@/lib/faq';
 import {OfficialSourceImage} from '@/components/source-image';
@@ -91,7 +91,7 @@ function waterDetails(r:Recipe,t:ReturnType<typeof useTranslations>){
   return [stated,...parts].join(' · ');
 }
 function bedPrepText(r:Recipe,t:ReturnType<typeof useTranslations>){return (r.bedPrep||[]).map(key=>t(`bedPrepLabels.${key}`));}
-function iceAmount(r:Recipe){return r.ice?`${r.ice.approximate?'~':''}${r.ice.amount}${r.ice.amountMax!==undefined?`–${r.ice.amountMax}`:''} ${r.ice.unit}`:'';}
+function iceAmount(r:Recipe){return iceAmountText(r);}
 function iceText(r:Recipe,t:ReturnType<typeof useTranslations>){return r.ice?`${iceAmount(r)} · ${t(`icePlacements.${r.ice.placement}`)}`:t('unknown');}
 function Parameters({recipe:r,compact=false}:{recipe:Recipe;compact?:boolean}){
   const t=useTranslations();const values=[{key:'dose',value:`${r.dose} g`,Icon:CoffeeBean},{key:'water',value:`${r.water.amount} ${r.water.unit}`,Icon:Drop},...r.ice?[{key:'ice',value:iceAmount(r),Icon:Drop}]:[],{key:'temperature',value:temperature(r,t),Icon:Thermometer},{key:'brewTime',value:r.duration?duration(r):t('unknown'),Icon:Clock}];

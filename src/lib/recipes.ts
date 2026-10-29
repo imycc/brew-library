@@ -53,6 +53,11 @@ export const BASE = '/pour-over-coffee';
 export const SITE = 'https://imycc.github.io';
 export function time(seconds:number):string {return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;}
 export function duration(recipe:Recipe):string {return !recipe.duration?'—':recipe.duration[0]===recipe.duration[1]? time(recipe.duration[0]) : `${time(recipe.duration[0])}–${time(recipe.duration[1])}`;}
+export function iceAmountText(recipe:Recipe):string {
+  if(!recipe.ice)return '';
+  const{amount,amountMax,approximate,unit}=recipe.ice;
+  return `${approximate?'~':''}${amount}${amountMax!==undefined?`–${amountMax}`:''} ${unit}`;
+}
 export function totalLiquid(recipe:Recipe):{amount:number;unit:string;derived:boolean}|null {
   if(!recipe.ice)return {amount:recipe.water.amount,unit:recipe.water.unit,derived:recipe.water.derived};
   // Ice is never converted into water: a mismatched pair simply has no total.
