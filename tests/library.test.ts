@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {filterRecipes,parseSelection,toggleSelection,recipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts} from '../src/lib/recipes';
+import {filterRecipes,parseSelection,toggleSelection,recipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
@@ -15,7 +15,7 @@ test('Pulsar amount is transparently derived without invented later pour times',
 test('filters combine and support empty results',()=>{
  assert.equal(filterRecipes(recipes,{q:'JAMES',brewer:'v60',dose:'15'},r=>r.author).length,1);
  assert.equal(filterRecipes(recipes,{author:'hoffmann',brewer:'pulsar'},r=>r.author).length,0);
- assert.equal(filterRecipes(recipes,{kind:'iced'},r=>r.author).length,0);
+ assert.equal(filterRecipes(recipes,{kind:'iced'},r=>r.author).length,1);
 });
 test('shared selections are validated, deduplicated and bounded',()=>{
  const raw='missing,kasuya-46,kasuya-46,hoffmann-one-cup,rao-pulsar';
@@ -29,7 +29,7 @@ test('shared selections are validated, deduplicated and bounded',()=>{
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,28);
+ assert.equal(recipes.length,29);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -187,4 +187,30 @@ test('new gear is linked to the recipes that named it',()=>{
  assert.deepEqual(byId('sibarist-flat').recipeIds,['vuolo-mk']);
  assert.equal(byId('1zpresso-k-pro').status,'legacy');
  assert.equal(byId('mk-dripper').status,'unresolved');
+});
+
+test('iced recipes count ice in the total liquid but never in the poured water',()=>{
+ const hot=recipes.find(recipe=>recipe.id==='hoffmann-one-cup')!;
+ const iced={...hot,kind:'iced' as const,ice:{amount:100,unit:'g' as const,placement:'server' as const}};
+ assert.deepEqual(totalLiquid(iced),{amount:350,unit:'g',derived:true});
+ assert.equal(ratio(iced,'en'),'1 : 23.33');
+ assert.deepEqual(accountedAdditions(iced),{amount:250,unit:'g'});
+ assert.deepEqual(totalLiquid(hot),{amount:250,unit:'g',derived:false});
+ const mixed={...iced,water:{...iced.water,unit:'mL' as const}};
+ assert.equal(totalLiquid(mixed),null);
+ assert.equal(ratio(mixed,'en'),'15 g : 250 mL');
+});
+
+test('the iced record keeps ice out of the poured-water maths',()=>{
+ const iced=recipes.find(recipe=>recipe.kind==='iced')!;
+ assert.equal(iced.id,'kurasu-flash-brew');
+ assert.deepEqual(iced.ice,{amount:65,amountMax:70,approximate:true,unit:'g',placement:'server'});
+ assert.deepEqual(totalLiquid(iced),{amount:215,unit:'g',derived:true});
+ assert.deepEqual(accountedAdditions(iced),{amount:150,unit:'g'});
+ assert.equal(iced.temperature,null);
+ assert.equal(iced.brewerId,'unspecified');
+ assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:30});
+ assert.equal(ratio(iced,'en'),'1 : 14.33');
+ assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,1);
+ assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,28);
 });

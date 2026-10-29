@@ -2417,6 +2417,84 @@
         "name": "1Zpresso ZP6 Special",
         "setting": "6.7"
       }
+    },
+    {
+      "id": "kurasu-flash-brew",
+      "copy": "kurasu",
+      "author": "Kurasu Kyoto",
+      "authorId": "kurasu",
+      "brewer": "Dripper not stated",
+      "brewerId": "unspecified",
+      "kind": "iced",
+      "dose": 15,
+      "water": {
+        "amount": 150,
+        "unit": "g",
+        "derived": false
+      },
+      "ice": {
+        "amount": 65,
+        "amountMax": 70,
+        "approximate": true,
+        "unit": "g",
+        "placement": "server"
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        100,
+        105
+      ],
+      "source": {
+        "label": "Kurasu Kyoto",
+        "url": "https://kurasu.kyoto/blogs/kurasu-journal/flash-brew-iced-coffee-kenya-kangocho-aa-brazil-joao-hamilton",
+        "published": null,
+        "checked": "2026-10-29",
+        "archive": "https://web.archive.org/web/20261029140940/https://kurasu.kyoto/blogs/kurasu-journal/flash-brew-iced-coffee-kenya-kangocho-aa-brazil-joao-hamilton"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 40,
+          "cumulative": 40,
+          "instruction": "recipes.kurasu.s00"
+        },
+        {
+          "action": "pour",
+          "at": 40,
+          "amount": 60,
+          "cumulative": 100,
+          "derived": true,
+          "instruction": "recipes.kurasu.s01"
+        },
+        {
+          "action": "pour",
+          "at": 70,
+          "amount": 50,
+          "cumulative": 150,
+          "derived": true,
+          "instruction": "recipes.kurasu.s02"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [
+        "recipes.kurasu.prepare"
+      ],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "coffee": {
+        "name": "Kenya Kangocho AA + Brazil João Hamilton",
+        "roast": "light"
+      }
     }
   ]
 }

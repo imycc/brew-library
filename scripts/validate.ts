@@ -34,6 +34,13 @@ export async function validate(){
    if(editorial.sourceImage)assert(editorial.sourceImage.sourceUrl===r.source.url,`${r.id} image source mismatch`);
    if(r.duration&&r.removalAt!==undefined)assert(r.removalAt<=r.duration[1]+120,`${r.id} removal far past the stated finish`);
    if(r.doseGround!==undefined)assert(r.doseGround>=r.dose,`${r.id} cannot dose more than it ground`);
+   if(r.kind==='iced')assert(r.ice,`${r.id} is iced but states no ice`);
+   if(r.kind==='hot')assert(!r.ice,`${r.id} is hot but states ice`);
+   if(r.ice){
+     assert(r.ice.unit===r.water.unit,`${r.id} ice and water must share a unit`);
+     assert(r.ice.placement,`${r.id} ice needs a placement`);
+     if(r.ice.amountMax!==undefined)assert(r.ice.amountMax>r.ice.amount,`${r.id} ice range must run upward`);
+   }
    if(r.valve)assert(r.steps.some(s=>['open','close'].includes(s.action)),`${r.id} states a valve but has no valve step`);
    if(r.water.hardness!==undefined)assert(r.water.hardnessUnit,`${r.id} hardness needs its published unit`);
    if(r.water.alkalinity!==undefined)assert(r.water.alkalinityUnit,`${r.id} alkalinity needs its published unit`);

@@ -26,6 +26,7 @@ export const recipeSchema = z.object({
   kind:z.enum(['hot','iced']), dose:z.number().positive(),
   water:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), derived:z.boolean().default(false),
     tds:z.number().positive().optional(), ppm:z.number().positive().optional(), hardness:z.number().positive().optional(), hardnessUnit:z.enum(['ppm','mg/L']).optional(), alkalinity:z.number().positive().optional(), alkalinityUnit:z.enum(['ppm','mg/L']).optional()}),
+  ice:z.object({amount:z.number().positive(), amountMax:z.number().positive().optional(), approximate:z.boolean().optional(), unit:z.enum(['g','mL']), placement:z.enum(['server','brewer','glass'])}).optional(),
   temperature:z.number().positive().nullable(), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]).nullable(),
   removalAt:z.number().nonnegative().optional(),
   yield:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), basis:z.enum(['observed','target'])}).optional(),
@@ -52,8 +53,17 @@ export const BASE = '/pour-over-coffee';
 export const SITE = 'https://imycc.github.io';
 export function time(seconds:number):string {return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;}
 export function duration(recipe:Recipe):string {return !recipe.duration?'—':recipe.duration[0]===recipe.duration[1]? time(recipe.duration[0]) : `${time(recipe.duration[0])}–${time(recipe.duration[1])}`;}
+export function totalLiquid(recipe:Recipe):{amount:number;unit:string;derived:boolean}|null {
+  if(!recipe.ice)return {amount:recipe.water.amount,unit:recipe.water.unit,derived:recipe.water.derived};
+  // Ice is never converted into water: a mismatched pair simply has no total.
+  if(recipe.ice.unit!==recipe.water.unit)return null;
+  return {amount:recipe.water.amount+recipe.ice.amount,unit:recipe.water.unit,derived:true};
+}
 export function ratio(recipe:Recipe, locale:string):string {
-  return recipe.water.unit==='g'?`1 : ${new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
+  const total=totalLiquid(recipe);
+  // Cannot pair the two units: show the water ratio alone rather than inventing a total.
+  if(!total)return recipe.water.unit==='g'?`1 : ${new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
+  return total.unit==='g'?`1 : ${new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(total.amount/recipe.dose)}`:`${recipe.dose} g : ${total.amount} mL`;
 }
 
 const ADDITIONS=new Set(['pour','bloom','pulses','topup']);
