@@ -7,16 +7,45 @@
       "brand": "HARIO",
       "name": "V60 Ceramic Dripper 01",
       "status": "current",
-      "aliases": ["HARIO V60 01", "HARIO V60 · Ceramic"],
-      "details": [
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "porcelain"},
-        {"key": "dimensions", "value": "W119 × D100 × H82", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 01 filters", "valueKey": "v60_01Filters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "HARIO V60 01",
+        "HARIO V60 · Ceramic"
       ],
-      "recipeIds": ["hoffmann-one-cup"],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-ceramic-coffee-dripper-01"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "porcelain"
+        },
+        {
+          "key": "dimensions",
+          "value": "W119 × D100 × H82",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 01 filters",
+          "valueKey": "v60_01Filters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "hoffmann-one-cup"
+      ],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-ceramic-coffee-dripper-01"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -25,16 +54,47 @@
       "brand": "HARIO",
       "name": "V60 Ceramic Dripper 02",
       "status": "current",
-      "aliases": ["HARIO V60 02", "HARIO V60 · Ceramic"],
-      "details": [
-        {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "porcelain"},
-        {"key": "dimensions", "value": "W140 × D120 × H102", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 02 filters", "valueKey": "v60_02Filters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "HARIO V60 02",
+        "HARIO V60 · Ceramic"
       ],
-      "recipeIds": ["kasuya-46", "licata-v60", "mallouhi-v60"],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-ceramic-coffee-dripper-02-classic"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–4",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "porcelain"
+        },
+        {
+          "key": "dimensions",
+          "value": "W140 × D120 × H102",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 filters",
+          "valueKey": "v60_02Filters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "kasuya-46",
+        "licata-v60",
+        "mallouhi-v60"
+      ],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-ceramic-coffee-dripper-02-classic"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -43,16 +103,45 @@
       "brand": "HARIO",
       "name": "V60 Plastic Dripper 02",
       "status": "current",
-      "aliases": ["HARIO V60 · Plastic", "V60 plastic"],
-      "details": [
-        {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "acrylonitrile-styrene-resin"},
-        {"key": "dimensions", "value": "W137 × D116 × H102", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 02 filters", "valueKey": "v60_02Filters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "HARIO V60 · Plastic",
+        "V60 plastic"
       ],
-      "recipeIds": ["grill-v60"],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-plastic-coffee-dripper-02"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–4",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "acrylonitrile-styrene-resin"
+        },
+        {
+          "key": "dimensions",
+          "value": "W137 × D116 × H102",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 filters",
+          "valueKey": "v60_02Filters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "grill-v60"
+      ],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-plastic-coffee-dripper-02"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -61,16 +150,44 @@
       "brand": "HARIO",
       "name": "Outdoor V60 Metal Dripper 02",
       "status": "current",
-      "aliases": ["HARIO V60 · Metal"],
-      "details": [
-        {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "stainless-steel;silicone"},
-        {"key": "dimensions", "value": "W145 × D120 × H90", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 02 filters", "valueKey": "v60_02Filters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "HARIO V60 · Metal"
       ],
-      "recipeIds": ["rojewska-v60"],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/outdoor-v60-metal-dripper-02"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–4",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;silicone"
+        },
+        {
+          "key": "dimensions",
+          "value": "W145 × D120 × H90",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 filters",
+          "valueKey": "v60_02Filters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "rojewska-v60"
+      ],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/outdoor-v60-metal-dripper-02"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -79,16 +196,47 @@
       "brand": "HARIO",
       "name": "V60 Immersion Dripper Switch 02",
       "status": "current",
-      "aliases": ["HARIO Switch", "HARIO Switch 02"],
-      "details": [
-        {"key": "capacity", "value": "200", "unit": "mL"},
-        {"key": "materials", "value": "ceramic;silicone"},
-        {"key": "dimensions", "value": "W118 × L115 × H133; Ø115", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 02 filters", "valueKey": "v60_02Filters"},
-        {"key": "mode", "value": "Immersion / percolation", "valueKey": "immersionPercolation"}
+      "aliases": [
+        "HARIO Switch",
+        "HARIO Switch 02"
       ],
-      "recipeIds": ["wong-switch", "boen-switch", "chronicler-switch"],
-      "sources": [{"label": "HARIO Europe", "url": "https://www.hario-europe.com/products/v60-ceramic-immersion-dripper-switch-02-size"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "200",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "ceramic;silicone"
+        },
+        {
+          "key": "dimensions",
+          "value": "W118 × L115 × H133; Ø115",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 filters",
+          "valueKey": "v60_02Filters"
+        },
+        {
+          "key": "mode",
+          "value": "Immersion / percolation",
+          "valueKey": "immersionPercolation"
+        }
+      ],
+      "recipeIds": [
+        "wong-switch",
+        "boen-switch",
+        "chronicler-switch"
+      ],
+      "sources": [
+        {
+          "label": "HARIO Europe",
+          "url": "https://www.hario-europe.com/products/v60-ceramic-immersion-dripper-switch-02-size"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -97,16 +245,45 @@
       "brand": "HARIO",
       "name": "W60 Dripper",
       "status": "current",
-      "aliases": ["W60", "PDC-02-W"],
-      "details": [
-        {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "ceramic;polypropylene;polyester-resin"},
-        {"key": "dimensions", "value": "W160 × D127 × H109", "unit": "mm"},
-        {"key": "compatibility", "value": "Mesh and/or paper filter", "valueKey": "meshAndOrPaperFilter"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "W60",
+        "PDC-02-W"
       ],
-      "recipeIds": ["hoang-w60"],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/w60-dripper"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–4",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "ceramic;polypropylene;polyester-resin"
+        },
+        {
+          "key": "dimensions",
+          "value": "W160 × D127 × H109",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "Mesh and/or paper filter",
+          "valueKey": "meshAndOrPaperFilter"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "hoang-w60"
+      ],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/w60-dripper"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -115,17 +292,51 @@
       "brand": "NextLevel",
       "name": "Pulsar Brewer",
       "status": "current",
-      "aliases": ["NextLevel Pulsar", "PULSAR"],
-      "details": [
-        {"key": "capacity", "value": "380", "unit": "mL"},
-        {"key": "dimensions", "value": "6 × 4 × 4", "unit": "in"},
-        {"key": "weight", "value": "0.62", "unit": "lb"},
-        {"key": "compatibility", "value": "Pulsar paper or stainless filter discs", "valueKey": "pulsarPaperOrStainlessDiscs"},
-        {"key": "mode", "value": "No-bypass / steep and release", "valueKey": "noBypassSteepRelease"},
-        {"key": "madeIn", "value": "USA", "valueKey": "madeInUsa"}
+      "aliases": [
+        "NextLevel Pulsar",
+        "PULSAR"
       ],
-      "recipeIds": ["rao-pulsar"],
-      "sources": [{"label": "NextLevel Brewer", "url": "https://nextlevelbrewer.com/shop/nextlevel-pulsar-brewer/"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "380",
+          "unit": "mL"
+        },
+        {
+          "key": "dimensions",
+          "value": "6 × 4 × 4",
+          "unit": "in"
+        },
+        {
+          "key": "weight",
+          "value": "0.62",
+          "unit": "lb"
+        },
+        {
+          "key": "compatibility",
+          "value": "Pulsar paper or stainless filter discs",
+          "valueKey": "pulsarPaperOrStainlessDiscs"
+        },
+        {
+          "key": "mode",
+          "value": "No-bypass / steep and release",
+          "valueKey": "noBypassSteepRelease"
+        },
+        {
+          "key": "madeIn",
+          "value": "USA",
+          "valueKey": "madeInUsa"
+        }
+      ],
+      "recipeIds": [
+        "rao-pulsar"
+      ],
+      "sources": [
+        {
+          "label": "NextLevel Brewer",
+          "url": "https://nextlevelbrewer.com/shop/nextlevel-pulsar-brewer/"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -134,17 +345,53 @@
       "brand": "ORIGAMI",
       "name": "Dripper Air S",
       "status": "current",
-      "aliases": ["ORIGAMI Air", "ORIGAMI Dripper Air S"],
-      "details": [
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "as-resin"},
-        {"key": "dimensions", "value": "Ø118 × H70; bottom hole Ø25", "unit": "mm", "valueKey": "dim118H70Hole25"},
-        {"key": "weight", "value": "64", "unit": "g"},
-        {"key": "compatibility", "value": "Cone or Wave filters", "valueKey": "coneOrWaveFilters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "ORIGAMI Air",
+        "ORIGAMI Dripper Air S"
       ],
-      "recipeIds": ["kodama-origami", "gil-origami-2024"],
-      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/origami_dripperair_s"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "as-resin"
+        },
+        {
+          "key": "dimensions",
+          "value": "Ø118 × H70; bottom hole Ø25",
+          "unit": "mm",
+          "valueKey": "dim118H70Hole25"
+        },
+        {
+          "key": "weight",
+          "value": "64",
+          "unit": "g"
+        },
+        {
+          "key": "compatibility",
+          "value": "Cone or Wave filters",
+          "valueKey": "coneOrWaveFilters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "kodama-origami",
+        "gil-origami-2024",
+        "ohno-origami"
+      ],
+      "sources": [
+        {
+          "label": "ORIGAMI",
+          "url": "https://origami-kai.com/en/products/origami_dripperair_s"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -153,17 +400,51 @@
       "brand": "ORIGAMI",
       "name": "Dripper S",
       "status": "current",
-      "aliases": ["ORIGAMI Dripper S", "ORIGAMI S"],
-      "details": [
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "porcelain"},
-        {"key": "dimensions", "value": "Ø115 × H70; bottom hole Ø25", "unit": "mm", "valueKey": "dim115H70Hole25"},
-        {"key": "weight", "value": "135", "unit": "g"},
-        {"key": "compatibility", "value": "Cone or Wave filters", "valueKey": "coneOrWaveFilters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "ORIGAMI Dripper S",
+        "ORIGAMI S"
       ],
-      "recipeIds": ["kobayashi-origami"],
-      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/origami_dripper_s"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "porcelain"
+        },
+        {
+          "key": "dimensions",
+          "value": "Ø115 × H70; bottom hole Ø25",
+          "unit": "mm",
+          "valueKey": "dim115H70Hole25"
+        },
+        {
+          "key": "weight",
+          "value": "135",
+          "unit": "g"
+        },
+        {
+          "key": "compatibility",
+          "value": "Cone or Wave filters",
+          "valueKey": "coneOrWaveFilters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "kobayashi-origami"
+      ],
+      "sources": [
+        {
+          "label": "ORIGAMI",
+          "url": "https://origami-kai.com/en/products/origami_dripper_s"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -172,13 +453,32 @@
       "brand": "ORIGAMI",
       "name": "ORIGAMI Dripper",
       "status": "unresolved",
-      "aliases": ["ORIGAMI", "ORIGAMI Air"],
-      "details": [
-        {"key": "model", "value": "Model and size not specified in recipe sources", "valueKey": "modelAndSizeUnspecified"},
-        {"key": "compatibility", "value": "Cone or Wave filters", "valueKey": "coneOrWaveFilters"}
+      "aliases": [
+        "ORIGAMI",
+        "ORIGAMI Air"
       ],
-      "recipeIds": ["selorio-origami", "rincon-origami"],
-      "sources": [{"label": "ORIGAMI collection", "url": "https://origami-kai.com/en/collections/dripper_"}],
+      "details": [
+        {
+          "key": "model",
+          "value": "Model and size not specified in recipe sources",
+          "valueKey": "modelAndSizeUnspecified"
+        },
+        {
+          "key": "compatibility",
+          "value": "Cone or Wave filters",
+          "valueKey": "coneOrWaveFilters"
+        }
+      ],
+      "recipeIds": [
+        "selorio-origami",
+        "rincon-origami"
+      ],
+      "sources": [
+        {
+          "label": "ORIGAMI collection",
+          "url": "https://origami-kai.com/en/collections/dripper_"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -187,17 +487,51 @@
       "brand": "HARIO",
       "name": "V60 MUGEN One Pour Dripper 02",
       "status": "current",
-      "aliases": ["HARIO MUGEN", "V60 Mugen 02", "VDMU-02-CW"],
-      "details": [
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "ceramic;polypropylene"},
-        {"key": "dimensions", "value": "W142 × D116 × H84", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 02 filters", "valueKey": "v60_02Filters"},
-        {"key": "mode", "value": "One-pour cone; restricted flow", "valueKey": "onePourRestrictedFlow"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+      "aliases": [
+        "HARIO MUGEN",
+        "V60 Mugen 02",
+        "VDMU-02-CW"
       ],
-      "recipeIds": ["lamill-mugen"],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-one-pour-dripper-mugen"}],
+      "details": [
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "ceramic;polypropylene"
+        },
+        {
+          "key": "dimensions",
+          "value": "W142 × D116 × H84",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 filters",
+          "valueKey": "v60_02Filters"
+        },
+        {
+          "key": "mode",
+          "value": "One-pour cone; restricted flow",
+          "valueKey": "onePourRestrictedFlow"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
+      ],
+      "recipeIds": [
+        "lamill-mugen"
+      ],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-one-pour-dripper-mugen"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -206,16 +540,44 @@
       "brand": "HARIO",
       "name": "V60 Dripper NEO 02",
       "status": "current",
-      "aliases": ["HARIO V60 NEO", "V60 NEO 02", "VDN-02-AB"],
+      "aliases": [
+        "HARIO V60 NEO",
+        "V60 NEO 02",
+        "VDN-02-AB"
+      ],
       "details": [
-        {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "tritan"},
-        {"key": "dimensions", "value": "W128 × D128 × H103", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 02 filters", "valueKey": "v60_02Filters"},
-        {"key": "mode", "value": "High-bypass ribbed cone", "valueKey": "highBypassRibbedCone"}
+        {
+          "key": "capacity",
+          "value": "1–4",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "tritan"
+        },
+        {
+          "key": "dimensions",
+          "value": "W128 × D128 × H103",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 filters",
+          "valueKey": "v60_02Filters"
+        },
+        {
+          "key": "mode",
+          "value": "High-bypass ribbed cone",
+          "valueKey": "highBypassRibbedCone"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-dripper-neo"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-dripper-neo"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -224,17 +586,49 @@
       "brand": "HARIO",
       "name": "V60 \"Suiren\" Coffee Dripper 02",
       "status": "current",
-      "aliases": ["HARIO Suiren", "V60 Suiren 02", "VDSU-02-TB"],
+      "aliases": [
+        "HARIO Suiren",
+        "V60 Suiren 02",
+        "VDSU-02-TB"
+      ],
       "details": [
-        {"key": "capacity", "value": "1–4", "unit": "cups"},
-        {"key": "materials", "value": "tritan;polypropylene"},
-        {"key": "dimensions", "value": "W130 × D125 × H108", "unit": "mm"},
-        {"key": "compatibility", "value": "V60 02 filters", "valueKey": "v60_02Filters"},
-        {"key": "mode", "value": "Open-frame spiral ribs", "valueKey": "openFrameSpiralRibs"},
-        {"key": "madeIn", "value": "China", "valueKey": "madeInChina"}
+        {
+          "key": "capacity",
+          "value": "1–4",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "tritan;polypropylene"
+        },
+        {
+          "key": "dimensions",
+          "value": "W130 × D125 × H108",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 filters",
+          "valueKey": "v60_02Filters"
+        },
+        {
+          "key": "mode",
+          "value": "Open-frame spiral ribs",
+          "valueKey": "openFrameSpiralRibs"
+        },
+        {
+          "key": "madeIn",
+          "value": "China",
+          "valueKey": "madeInChina"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-suiren-coffee-dripper-02"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-suiren-coffee-dripper-02"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -243,17 +637,48 @@
       "brand": "HARIO",
       "name": "V60 \"Buono\" Drip Kettle 1.2L",
       "status": "current",
-      "aliases": ["HARIO VKB-120HSV", "V60 Buono 1.2L"],
+      "aliases": [
+        "HARIO VKB-120HSV",
+        "V60 Buono 1.2L"
+      ],
       "details": [
-        {"key": "capacity", "value": "800", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;phenol-resin"},
-        {"key": "dimensions", "value": "W274 × D144 × H147", "unit": "mm"},
-        {"key": "compatibility", "value": "Stovetop use", "valueKey": "stovetopUse"},
-        {"key": "mode", "value": "Stovetop gooseneck; 1.2 L nominal", "valueKey": "stovetopGooseneck12"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "800",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;phenol-resin"
+        },
+        {
+          "key": "dimensions",
+          "value": "W274 × D144 × H147",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "Stovetop use",
+          "valueKey": "stovetopUse"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck; 1.2 L nominal",
+          "valueKey": "stovetopGooseneck12"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-buono-drip-kettle"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-buono-drip-kettle"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -262,18 +687,53 @@
       "brand": "HARIO",
       "name": "V60 \"Buono\" Electric Drip Kettle",
       "status": "current",
-      "aliases": ["HARIO EVKB-80U-HSV", "V60 Buono Electric"],
+      "aliases": [
+        "HARIO EVKB-80U-HSV",
+        "V60 Buono Electric"
+      ],
       "details": [
-        {"key": "capacity", "value": "800", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;polypropylene"},
-        {"key": "dimensions", "value": "W295 × D156 × H175", "unit": "mm"},
-        {"key": "power", "value": "1000", "unit": "W"},
-        {"key": "voltage", "value": "120", "unit": "V"},
-        {"key": "mode", "value": "Electric; 60 Hz; cordless; auto-off; 150–800 mL range", "valueKey": "electric60HzCordlessAutoOff150800"},
-        {"key": "madeIn", "value": "China", "valueKey": "madeInChina"}
+        {
+          "key": "capacity",
+          "value": "800",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;polypropylene"
+        },
+        {
+          "key": "dimensions",
+          "value": "W295 × D156 × H175",
+          "unit": "mm"
+        },
+        {
+          "key": "power",
+          "value": "1000",
+          "unit": "W"
+        },
+        {
+          "key": "voltage",
+          "value": "120",
+          "unit": "V"
+        },
+        {
+          "key": "mode",
+          "value": "Electric; 60 Hz; cordless; auto-off; 150–800 mL range",
+          "valueKey": "electric60HzCordlessAutoOff150800"
+        },
+        {
+          "key": "madeIn",
+          "value": "China",
+          "valueKey": "madeInChina"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-buono-electric-drip-kettle"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-buono-electric-drip-kettle"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -282,17 +742,48 @@
       "brand": "HARIO",
       "name": "V60 Drip Kettle Wood 1.2L",
       "status": "current",
-      "aliases": ["HARIO VKW-120-HSV", "V60 Wood Kettle"],
+      "aliases": [
+        "HARIO VKW-120-HSV",
+        "V60 Wood Kettle"
+      ],
       "details": [
-        {"key": "capacity", "value": "800", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;natural-wood"},
-        {"key": "dimensions", "value": "W310 × D144 × H160", "unit": "mm"},
-        {"key": "compatibility", "value": "Gas, electric and induction stovetops", "valueKey": "gasElectricInductionStovetops"},
-        {"key": "mode", "value": "Stovetop gooseneck; 1.2 L nominal", "valueKey": "stovetopGooseneck12"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "800",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;natural-wood"
+        },
+        {
+          "key": "dimensions",
+          "value": "W310 × D144 × H160",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "Gas, electric and induction stovetops",
+          "valueKey": "gasElectricInductionStovetops"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck; 1.2 L nominal",
+          "valueKey": "stovetopGooseneck12"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-drip-kettle-wood"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-drip-kettle-wood"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -301,19 +792,58 @@
       "brand": "Fellow",
       "name": "Stagg EKG Pro Electric Kettle",
       "status": "current",
-      "aliases": ["Fellow Stagg EKG Pro", "Stagg EKG Pro"],
+      "aliases": [
+        "Fellow Stagg EKG Pro",
+        "Stagg EKG Pro"
+      ],
       "details": [
-        {"key": "capacity", "value": "900", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;plastic"},
-        {"key": "dimensions", "value": "282 × 172 × 196", "unit": "mm"},
-        {"key": "weight", "value": "1400 (with base)", "valueKey": "weight1400WithBase"},
-        {"key": "power", "value": "1000–1200", "unit": "W"},
-        {"key": "voltage", "value": "110–120", "unit": "V"},
-        {"key": "temperatureRange", "value": "40–100", "unit": "°C"},
-        {"key": "mode", "value": "Electric; adjustable hold 15–60 min", "valueKey": "electricAdjustableHold1560"}
+        {
+          "key": "capacity",
+          "value": "900",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;plastic"
+        },
+        {
+          "key": "dimensions",
+          "value": "282 × 172 × 196",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "value": "1400 (with base)",
+          "valueKey": "weight1400WithBase"
+        },
+        {
+          "key": "power",
+          "value": "1000–1200",
+          "unit": "W"
+        },
+        {
+          "key": "voltage",
+          "value": "110–120",
+          "unit": "V"
+        },
+        {
+          "key": "temperatureRange",
+          "value": "40–100",
+          "unit": "°C"
+        },
+        {
+          "key": "mode",
+          "value": "Electric; adjustable hold 15–60 min",
+          "valueKey": "electricAdjustableHold1560"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle"}],
+      "sources": [
+        {
+          "label": "Fellow",
+          "url": "https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -322,16 +852,43 @@
       "brand": "TIMEMORE",
       "name": "Fish Smart Electric Coffee Kettle 600 ml",
       "status": "current",
-      "aliases": ["TIMEMORE Fish Smart", "Fish Smart 600"],
+      "aliases": [
+        "TIMEMORE Fish Smart",
+        "Fish Smart 600"
+      ],
       "details": [
-        {"key": "capacity", "value": "600", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel"},
-        {"key": "power", "value": "1000", "unit": "W"},
-        {"key": "temperatureRange", "value": "40–100", "unit": "°C"},
-        {"key": "mode", "value": "Electric; home edition; 560 mL max fill; ±1 °C hold", "valueKey": "electricHome560MaxHold"}
+        {
+          "key": "capacity",
+          "value": "600",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel"
+        },
+        {
+          "key": "power",
+          "value": "1000",
+          "unit": "W"
+        },
+        {
+          "key": "temperatureRange",
+          "value": "40–100",
+          "unit": "°C"
+        },
+        {
+          "key": "mode",
+          "value": "Electric; home edition; 560 mL max fill; ±1 °C hold",
+          "valueKey": "electricHome560MaxHold"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "TIMEMORE", "url": "https://www.timemore.com/products/timemore-fish-smart-electric-coffee-kettle-600ml"}],
+      "sources": [
+        {
+          "label": "TIMEMORE",
+          "url": "https://www.timemore.com/products/timemore-fish-smart-electric-coffee-kettle-600ml"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -340,17 +897,49 @@
       "brand": "Kalita",
       "name": "Wave Stainless Steel Kettle 1L",
       "status": "current",
-      "aliases": ["Kalita Wave Kettle 1L", "Wave Kettle 1L"],
+      "aliases": [
+        "Kalita Wave Kettle 1L",
+        "Wave Kettle 1L"
+      ],
       "details": [
-        {"key": "capacity", "value": "1000", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;natural-wood"},
-        {"key": "dimensions", "value": "Base Ø123", "unit": "mm", "valueKey": "dimBase123"},
-        {"key": "compatibility", "value": "Not for induction or gas stoves", "valueKey": "notInductionGasStoves"},
-        {"key": "mode", "value": "Stovetop gooseneck", "valueKey": "stovetopGooseneck"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "1000",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;natural-wood"
+        },
+        {
+          "key": "dimensions",
+          "value": "Base Ø123",
+          "unit": "mm",
+          "valueKey": "dimBase123"
+        },
+        {
+          "key": "compatibility",
+          "value": "Not for induction or gas stoves",
+          "valueKey": "notInductionGasStoves"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck",
+          "valueKey": "stovetopGooseneck"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-stainless-steel-kettle-1l"}],
+      "sources": [
+        {
+          "label": "Kalita USA",
+          "url": "https://kalitausa.com/products/kalita-wave-stainless-steel-kettle-1l"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -359,18 +948,53 @@
       "brand": "Kalita",
       "name": "Wave Narrow Stainless Steel Kettle 700 ml",
       "status": "current",
-      "aliases": ["Kalita Wave Narrow 700", "Wave Narrow Kettle 700ml"],
+      "aliases": [
+        "Kalita Wave Narrow 700",
+        "Wave Narrow Kettle 700ml"
+      ],
       "details": [
-        {"key": "capacity", "value": "700", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;natural-wood"},
-        {"key": "dimensions", "value": "195 × 97 × 160", "unit": "mm"},
-        {"key": "weight", "value": "330", "unit": "g"},
-        {"key": "compatibility", "value": "Not for induction or gas stoves", "valueKey": "notInductionGasStoves"},
-        {"key": "mode", "value": "Stovetop gooseneck", "valueKey": "stovetopGooseneck"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "700",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;natural-wood"
+        },
+        {
+          "key": "dimensions",
+          "value": "195 × 97 × 160",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "value": "330",
+          "unit": "g"
+        },
+        {
+          "key": "compatibility",
+          "value": "Not for induction or gas stoves",
+          "valueKey": "notInductionGasStoves"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck",
+          "valueKey": "stovetopGooseneck"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-narrow-stainless-steel-kettle-0-7l"}],
+      "sources": [
+        {
+          "label": "Kalita USA",
+          "url": "https://kalitausa.com/products/kalita-wave-narrow-stainless-steel-kettle-0-7l"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -379,17 +1003,48 @@
       "brand": "HARIO",
       "name": "V60 \"Buono\" Copper Drip Kettle 0.9L",
       "status": "current",
-      "aliases": ["HARIO VKBN-90CP", "V60 Buono Copper 0.9L"],
+      "aliases": [
+        "HARIO VKBN-90CP",
+        "V60 Buono Copper 0.9L"
+      ],
       "details": [
-        {"key": "capacity", "value": "700", "unit": "mL"},
-        {"key": "materials", "value": "copper;brass;natural-wood;silicone"},
-        {"key": "dimensions", "value": "W290 × D126 × H145", "unit": "mm"},
-        {"key": "compatibility", "value": "Gas, electric or halogen; not induction", "valueKey": "gasElectricHalogenNotInduction"},
-        {"key": "mode", "value": "Stovetop gooseneck; 0.9 L nominal; do not use on high heat", "valueKey": "stovetopGooseneck09HighHeat"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "700",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "copper;brass;natural-wood;silicone"
+        },
+        {
+          "key": "dimensions",
+          "value": "W290 × D126 × H145",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "Gas, electric or halogen; not induction",
+          "valueKey": "gasElectricHalogenNotInduction"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck; 0.9 L nominal; do not use on high heat",
+          "valueKey": "stovetopGooseneck09HighHeat"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-buono-drip-kettle-copper"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-buono-drip-kettle-copper"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -398,17 +1053,48 @@
       "brand": "HARIO",
       "name": "V60 \"Fit\" Drip Kettle 1.2L",
       "status": "current",
-      "aliases": ["HARIO VKF-120-HSV", "V60 Fit 1.2L"],
+      "aliases": [
+        "HARIO VKF-120-HSV",
+        "V60 Fit 1.2L"
+      ],
       "details": [
-        {"key": "capacity", "value": "800", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;phenol-resin"},
-        {"key": "dimensions", "value": "W263 × D144 × H150", "unit": "mm"},
-        {"key": "compatibility", "value": "Induction, gas, solid element, radiant, halogen and coil cooktops", "valueKey": "inductionGasSolidElementRadiantHalogenCoil"},
-        {"key": "mode", "value": "Stovetop gooseneck; 1.2 L nominal", "valueKey": "stovetopGooseneck12"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "800",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;phenol-resin"
+        },
+        {
+          "key": "dimensions",
+          "value": "W263 × D144 × H150",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "Induction, gas, solid element, radiant, halogen and coil cooktops",
+          "valueKey": "inductionGasSolidElementRadiantHalogenCoil"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck; 1.2 L nominal",
+          "valueKey": "stovetopGooseneck12"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/v60-fit-drip-kettle"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/v60-fit-drip-kettle"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -417,17 +1103,48 @@
       "brand": "HARIO",
       "name": "Mini Drip Kettle 500 ml",
       "status": "current",
-      "aliases": ["HARIO MDK-500-MB", "Kasuya Mini Drip Kettle 500"],
+      "aliases": [
+        "HARIO MDK-500-MB",
+        "Kasuya Mini Drip Kettle 500"
+      ],
       "details": [
-        {"key": "capacity", "value": "500", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;acrylic-resin"},
-        {"key": "dimensions", "value": "W196 × D100 × H110", "unit": "mm"},
-        {"key": "compatibility", "value": "Not for induction, open flame, microwave or oven", "valueKey": "notInductionOpenFlameMicrowaveOven"},
-        {"key": "mode", "value": "Stovetop gooseneck; no lid", "valueKey": "stovetopNoLid"},
-        {"key": "madeIn", "value": "China", "valueKey": "madeInChina"}
+        {
+          "key": "capacity",
+          "value": "500",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;acrylic-resin"
+        },
+        {
+          "key": "dimensions",
+          "value": "W196 × D100 × H110",
+          "unit": "mm"
+        },
+        {
+          "key": "compatibility",
+          "value": "Not for induction, open flame, microwave or oven",
+          "valueKey": "notInductionOpenFlameMicrowaveOven"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck; no lid",
+          "valueKey": "stovetopNoLid"
+        },
+        {
+          "key": "madeIn",
+          "value": "China",
+          "valueKey": "madeInChina"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "HARIO USA", "url": "https://www.hario-usa.com/products/drip-kettle-kasuya-model"}],
+      "sources": [
+        {
+          "label": "HARIO USA",
+          "url": "https://www.hario-usa.com/products/drip-kettle-kasuya-model"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -436,15 +1153,38 @@
       "brand": "Fellow",
       "name": "Stagg Pour-Over Kettle 1L",
       "status": "current",
-      "aliases": ["Fellow Stagg Stovetop", "Stagg Stovetop Kettle"],
+      "aliases": [
+        "Fellow Stagg Stovetop",
+        "Stagg Stovetop Kettle"
+      ],
       "details": [
-        {"key": "capacity", "value": "1000", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel"},
-        {"key": "compatibility", "value": "Gas and electric ranges", "valueKey": "gasAndElectricRanges"},
-        {"key": "mode", "value": "Stovetop gooseneck; built-in thermometer; counterbalanced handle", "valueKey": "stovetopThermometerCounterbalanced"}
+        {
+          "key": "capacity",
+          "value": "1000",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel"
+        },
+        {
+          "key": "compatibility",
+          "value": "Gas and electric ranges",
+          "valueKey": "gasAndElectricRanges"
+        },
+        {
+          "key": "mode",
+          "value": "Stovetop gooseneck; built-in thermometer; counterbalanced handle",
+          "valueKey": "stovetopThermometerCounterbalanced"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/stagg"}],
+      "sources": [
+        {
+          "label": "Fellow",
+          "url": "https://fellowproducts.com/products/stagg"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -453,14 +1193,37 @@
       "brand": "COMANDANTE",
       "name": "C40 MK4 Nitro Blade",
       "status": "current",
-      "aliases": ["Comandante C40 MK4", "C40 MK4"],
-      "details": [
-        {"key": "burr", "value": "Nitro Blade stainless steel", "valueKey": "burrNitroBladeStainless"},
-        {"key": "groundsCapacity", "value": "40", "unit": "g"},
-        {"key": "madeIn", "value": "Germany", "valueKey": "madeInGermany"}
+      "aliases": [
+        "Comandante C40 MK4",
+        "C40 MK4"
       ],
-      "recipeIds": ["kodama-origami"],
-      "sources": [{"label": "COMANDANTE", "url": "https://comandantegrinder.com/products/c40-mk4-nitro-blade-american-cherry"}],
+      "details": [
+        {
+          "key": "burr",
+          "value": "Nitro Blade stainless steel",
+          "valueKey": "burrNitroBladeStainless"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "40",
+          "unit": "g"
+        },
+        {
+          "key": "madeIn",
+          "value": "Germany",
+          "valueKey": "madeInGermany"
+        }
+      ],
+      "recipeIds": [
+        "kodama-origami",
+        "ohno-origami"
+      ],
+      "sources": [
+        {
+          "label": "COMANDANTE",
+          "url": "https://comandantegrinder.com/products/c40-mk4-nitro-blade-american-cherry"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -469,14 +1232,40 @@
       "brand": "COMANDANTE",
       "name": "C40 MK3 + Red Clix",
       "status": "legacy",
-      "aliases": ["Comandante C40 MK3", "C40 MK3 + RED CLICKS"],
-      "details": [
-        {"key": "burr", "value": "Nitro Blade", "valueKey": "burrNitroBlade"},
-        {"key": "adjustment", "value": "Red Clix RX35 expanded click range", "valueKey": "adjustRedClix"},
-        {"key": "model", "value": "C40 MK3; produced until summer 2021", "valueKey": "modelC40Mk3Until2021"}
+      "aliases": [
+        "Comandante C40 MK3",
+        "C40 MK3 + RED CLICKS"
       ],
-      "recipeIds": ["kobayashi-origami"],
-      "sources": [{"label": "COMANDANTE history", "url": "https://comandantegrinder.com/pages/about"},{"label": "COMANDANTE Red Clix", "url": "https://comandantegrinder.com/products/red-clix-drivetrain-set"}],
+      "details": [
+        {
+          "key": "burr",
+          "value": "Nitro Blade",
+          "valueKey": "burrNitroBlade"
+        },
+        {
+          "key": "adjustment",
+          "value": "Red Clix RX35 expanded click range",
+          "valueKey": "adjustRedClix"
+        },
+        {
+          "key": "model",
+          "value": "C40 MK3; produced until summer 2021",
+          "valueKey": "modelC40Mk3Until2021"
+        }
+      ],
+      "recipeIds": [
+        "kobayashi-origami"
+      ],
+      "sources": [
+        {
+          "label": "COMANDANTE history",
+          "url": "https://comandantegrinder.com/pages/about"
+        },
+        {
+          "label": "COMANDANTE Red Clix",
+          "url": "https://comandantegrinder.com/products/red-clix-drivetrain-set"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -485,17 +1274,54 @@
       "brand": "1Zpresso",
       "name": "ZP6 Special",
       "status": "current",
-      "aliases": ["1Zpresso ZP6 Special", "ZP6"],
-      "details": [
-        {"key": "burr", "value": "48 mm hexagonal stainless steel", "valueKey": "burr48HexStainless"},
-        {"key": "adjustment", "value": "90 clicks per rotation", "valueKey": "adjust90Clicks"},
-        {"key": "precision", "value": "22", "unit": "µm"},
-        {"key": "groundsCapacity", "value": "30–35", "unit": "g"},
-        {"key": "weight", "value": "700", "unit": "g"},
-        {"key": "dimensions", "value": "195 × 195 × 60", "unit": "mm"}
+      "aliases": [
+        "1Zpresso ZP6 Special",
+        "ZP6"
       ],
-      "recipeIds": ["selorio-origami", "rincon-origami"],
-      "sources": [{"label": "1Zpresso", "url": "https://1zpresso.coffee/product/zp6-special/"}],
+      "details": [
+        {
+          "key": "burr",
+          "value": "48 mm hexagonal stainless steel",
+          "valueKey": "burr48HexStainless"
+        },
+        {
+          "key": "adjustment",
+          "value": "90 clicks per rotation",
+          "valueKey": "adjust90Clicks"
+        },
+        {
+          "key": "precision",
+          "value": "22",
+          "unit": "µm"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "30–35",
+          "unit": "g"
+        },
+        {
+          "key": "weight",
+          "value": "700",
+          "unit": "g"
+        },
+        {
+          "key": "dimensions",
+          "value": "195 × 195 × 60",
+          "unit": "mm"
+        }
+      ],
+      "recipeIds": [
+        "selorio-origami",
+        "rincon-origami",
+        "medina-wbrc",
+        "gil-zp6-2025"
+      ],
+      "sources": [
+        {
+          "label": "1Zpresso",
+          "url": "https://1zpresso.coffee/product/zp6-special/"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -504,17 +1330,55 @@
       "brand": "1Zpresso",
       "name": "K-Ultra",
       "status": "current",
-      "aliases": ["1Zpresso K-Ultra", "K Ultra"],
-      "details": [
-        {"key": "burr", "value": "Heptagonal conical K Burr", "valueKey": "burrHeptagonalK"},
-        {"key": "adjustment", "value": "More than 100 clicks", "valueKey": "adjustMoreThan100Clicks"},
-        {"key": "precision", "value": "20", "unit": "µm"},
-        {"key": "groundsCapacity", "value": "35–40", "unit": "g"},
-        {"key": "weight", "value": "700", "unit": "g"},
-        {"key": "dimensions", "value": "195 × 185 × 60", "unit": "mm"}
+      "aliases": [
+        "1Zpresso K-Ultra",
+        "K Ultra"
       ],
-      "recipeIds": ["gil-origami-2024"],
-      "sources": [{"label": "1Zpresso", "url": "https://1zpresso.coffee/product/kultra/"}],
+      "details": [
+        {
+          "key": "burr",
+          "value": "Heptagonal conical K Burr",
+          "valueKey": "burrHeptagonalK"
+        },
+        {
+          "key": "adjustment",
+          "value": "More than 100 clicks",
+          "valueKey": "adjustMoreThan100Clicks"
+        },
+        {
+          "key": "precision",
+          "value": "20",
+          "unit": "µm"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "35–40",
+          "unit": "g"
+        },
+        {
+          "key": "weight",
+          "value": "700",
+          "unit": "g"
+        },
+        {
+          "key": "dimensions",
+          "value": "195 × 185 × 60",
+          "unit": "mm"
+        }
+      ],
+      "recipeIds": [
+        "gil-origami-2024",
+        "maisonnette-graycano",
+        "torres-wbrc",
+        "pinnola-graycano",
+        "kaygusuz-graycano"
+      ],
+      "sources": [
+        {
+          "label": "1Zpresso",
+          "url": "https://1zpresso.coffee/product/kultra/"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -523,12 +1387,26 @@
       "brand": "EK",
       "name": "EK",
       "status": "unresolved",
-      "aliases": ["EK", "EK grinder"],
-      "details": [
-        {"key": "model", "value": "Recipe source states only EK; exact model is not confirmed", "valueKey": "modelEkUnconfirmed"}
+      "aliases": [
+        "EK",
+        "EK grinder"
       ],
-      "recipeIds": ["licata-v60"],
-      "sources": [{"label": "HARIO Europe recipe", "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata"}],
+      "details": [
+        {
+          "key": "model",
+          "value": "Recipe source states only EK; exact model is not confirmed",
+          "valueKey": "modelEkUnconfirmed"
+        }
+      ],
+      "recipeIds": [
+        "licata-v60"
+      ],
+      "sources": [
+        {
+          "label": "HARIO Europe recipe",
+          "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -537,15 +1415,46 @@
       "brand": "HARIO",
       "name": "V60 Paper Filter 02",
       "status": "current",
-      "aliases": ["V60 filter 02", "VCF-02-100W"],
-      "details": [
-        {"key": "format", "value": "Cone", "valueKey": "formatCone"},
-        {"key": "compatibility", "value": "V60 02 dripper", "valueKey": "v60_02Dripper"},
-        {"key": "packs", "value": "100", "unit": "sheets"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+      "aliases": [
+        "V60 filter 02",
+        "VCF-02-100W"
       ],
-      "recipeIds": ["kasuya-46", "hoffmann-one-cup", "licata-v60", "grill-v60", "mallouhi-v60", "rojewska-v60", "lamill-mugen"],
-      "sources": [{"label": "HARIO Europe", "url": "https://www.hario-europe.com/products/v60-filter-paper-02-size-box-100-pcs"}],
+      "details": [
+        {
+          "key": "format",
+          "value": "Cone",
+          "valueKey": "formatCone"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 02 dripper",
+          "valueKey": "v60_02Dripper"
+        },
+        {
+          "key": "packs",
+          "value": "100",
+          "unit": "sheets"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        }
+      ],
+      "recipeIds": [
+        "kasuya-46",
+        "hoffmann-one-cup",
+        "licata-v60",
+        "grill-v60",
+        "mallouhi-v60",
+        "rojewska-v60",
+        "lamill-mugen"
+      ],
+      "sources": [
+        {
+          "label": "HARIO Europe",
+          "url": "https://www.hario-europe.com/products/v60-filter-paper-02-size-box-100-pcs"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -554,14 +1463,36 @@
       "brand": "NextLevel",
       "name": "Pulsar Paper Filters",
       "status": "current",
-      "aliases": ["NextLevel Pulsar filter", "Pulsar paper"],
-      "details": [
-        {"key": "compatibility", "value": "NextLevel Pulsar Brewer", "valueKey": "nextlevelPulsarBrewer"},
-        {"key": "packs", "value": "100", "unit": "sheets"},
-        {"key": "format", "value": "Circular", "valueKey": "formatCircular"}
+      "aliases": [
+        "NextLevel Pulsar filter",
+        "Pulsar paper"
       ],
-      "recipeIds": ["rao-pulsar"],
-      "sources": [{"label": "NextLevel Brewer", "url": "https://nextlevelbrewer.com/shop/pulsar-filters/"}],
+      "details": [
+        {
+          "key": "compatibility",
+          "value": "NextLevel Pulsar Brewer",
+          "valueKey": "nextlevelPulsarBrewer"
+        },
+        {
+          "key": "packs",
+          "value": "100",
+          "unit": "sheets"
+        },
+        {
+          "key": "format",
+          "value": "Circular",
+          "valueKey": "formatCircular"
+        }
+      ],
+      "recipeIds": [
+        "rao-pulsar"
+      ],
+      "sources": [
+        {
+          "label": "NextLevel Brewer",
+          "url": "https://nextlevelbrewer.com/shop/pulsar-filters/"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -570,15 +1501,43 @@
       "brand": "ORIGAMI",
       "name": "Paper Filter Wave",
       "status": "current",
-      "aliases": ["ORIGAMI Paper Filter Wave", "ORIGAMI Wave"],
-      "details": [
-        {"key": "format", "value": "Wave", "valueKey": "formatWave"},
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "compatibility", "value": "ORIGAMI Dripper", "valueKey": "origamiDripper"},
-        {"key": "packs", "value": "50", "unit": "sheets"}
+      "aliases": [
+        "ORIGAMI Paper Filter Wave",
+        "ORIGAMI Wave"
       ],
-      "recipeIds": ["kodama-origami", "kobayashi-origami"],
-      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/paper-filter-wave"}],
+      "details": [
+        {
+          "key": "format",
+          "value": "Wave",
+          "valueKey": "formatWave"
+        },
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "compatibility",
+          "value": "ORIGAMI Dripper",
+          "valueKey": "origamiDripper"
+        },
+        {
+          "key": "packs",
+          "value": "50",
+          "unit": "sheets"
+        }
+      ],
+      "recipeIds": [
+        "kodama-origami",
+        "kobayashi-origami",
+        "ohno-origami"
+      ],
+      "sources": [
+        {
+          "label": "ORIGAMI",
+          "url": "https://origami-kai.com/en/products/paper-filter-wave"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -587,15 +1546,41 @@
       "brand": "CAFEC / ORIGAMI",
       "name": "ORIGAMI Paper Filter Cone",
       "status": "current",
-      "aliases": ["CAFEC Origami Filter", "ORIGAMI cone filter"],
-      "details": [
-        {"key": "format", "value": "Cone", "valueKey": "formatCone"},
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "compatibility", "value": "ORIGAMI Dripper", "valueKey": "origamiDripper"},
-        {"key": "packs", "value": "100", "unit": "sheets"}
+      "aliases": [
+        "CAFEC Origami Filter",
+        "ORIGAMI cone filter"
       ],
-      "recipeIds": ["selorio-origami"],
-      "sources": [{"label": "ORIGAMI", "url": "https://origami-kai.com/en/products/origami_paper_filter"}],
+      "details": [
+        {
+          "key": "format",
+          "value": "Cone",
+          "valueKey": "formatCone"
+        },
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "compatibility",
+          "value": "ORIGAMI Dripper",
+          "valueKey": "origamiDripper"
+        },
+        {
+          "key": "packs",
+          "value": "100",
+          "unit": "sheets"
+        }
+      ],
+      "recipeIds": [
+        "selorio-origami"
+      ],
+      "sources": [
+        {
+          "label": "ORIGAMI",
+          "url": "https://origami-kai.com/en/products/origami_paper_filter"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -604,14 +1589,36 @@
       "brand": "SIBARIST",
       "name": "CONE Specialty Coffee Filter",
       "status": "current",
-      "aliases": ["Sibarist Conic", "Sibarist CONE"],
-      "details": [
-        {"key": "format", "value": "Cone", "valueKey": "formatCone"},
-        {"key": "compatibility", "value": "V60 and compatible conical drippers", "valueKey": "v60CompatibleConicalDrippers"},
-        {"key": "technology", "value": "FAST or B3 filter technology", "valueKey": "fastOrB3"}
+      "aliases": [
+        "Sibarist Conic",
+        "Sibarist CONE"
       ],
-      "recipeIds": ["rincon-origami"],
-      "sources": [{"label": "SIBARIST", "url": "https://sibarist.coffee/products/cone"}],
+      "details": [
+        {
+          "key": "format",
+          "value": "Cone",
+          "valueKey": "formatCone"
+        },
+        {
+          "key": "compatibility",
+          "value": "V60 and compatible conical drippers",
+          "valueKey": "v60CompatibleConicalDrippers"
+        },
+        {
+          "key": "technology",
+          "value": "FAST or B3 filter technology",
+          "valueKey": "fastOrB3"
+        }
+      ],
+      "recipeIds": [
+        "rincon-origami"
+      ],
+      "sources": [
+        {
+          "label": "SIBARIST",
+          "url": "https://sibarist.coffee/products/cone"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -620,12 +1627,27 @@
       "brand": "SIBARIST",
       "name": "SIBARIST Filter",
       "status": "unresolved",
-      "aliases": ["Sibarist"],
-      "details": [
-        {"key": "model", "value": "Filter model and size not specified in recipe source", "valueKey": "modelFilterUnspecified"}
+      "aliases": [
+        "Sibarist"
       ],
-      "recipeIds": ["gil-origami-2024"],
-      "sources": [{"label": "1Zpresso recipe", "url": "https://1zpresso.coffee/recipe/"}],
+      "details": [
+        {
+          "key": "model",
+          "value": "Filter model and size not specified in recipe source",
+          "valueKey": "modelFilterUnspecified"
+        }
+      ],
+      "recipeIds": [
+        "gil-origami-2024",
+        "pinnola-graycano",
+        "kaygusuz-graycano"
+      ],
+      "sources": [
+        {
+          "label": "1Zpresso recipe",
+          "url": "https://1zpresso.coffee/recipe/"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -634,15 +1656,38 @@
       "brand": "Kalita",
       "name": "Wave 155 Stainless Steel Dripper",
       "status": "current",
-      "aliases": ["Kalita Wave 155", "Wave 155 stainless"],
+      "aliases": [
+        "Kalita Wave 155",
+        "Wave 155 stainless"
+      ],
       "details": [
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "stainless-steel"},
-        {"key": "compatibility", "value": "Kalita Wave 155 filters", "valueKey": "kalitaWave155Filters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel"
+        },
+        {
+          "key": "compatibility",
+          "value": "Kalita Wave 155 filters",
+          "valueKey": "kalitaWave155Filters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-155-stainless-steel-coffee-dripper"}],
+      "sources": [
+        {
+          "label": "Kalita USA",
+          "url": "https://kalitausa.com/products/kalita-wave-155-stainless-steel-coffee-dripper"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -651,15 +1696,38 @@
       "brand": "Kalita",
       "name": "Wave 185 Stainless Steel Dripper",
       "status": "current",
-      "aliases": ["Kalita Wave 185", "Wave 185 stainless"],
+      "aliases": [
+        "Kalita Wave 185",
+        "Wave 185 stainless"
+      ],
       "details": [
-        {"key": "capacity", "value": "2–4", "unit": "cups"},
-        {"key": "materials", "value": "stainless-steel"},
-        {"key": "compatibility", "value": "Kalita Wave 185 filters", "valueKey": "kalitaWave185Filters"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "2–4",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel"
+        },
+        {
+          "key": "compatibility",
+          "value": "Kalita Wave 185 filters",
+          "valueKey": "kalitaWave185Filters"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-185-stainless-steel-coffee-dripper"}],
+      "sources": [
+        {
+          "label": "Kalita USA",
+          "url": "https://kalitausa.com/products/kalita-wave-185-stainless-steel-coffee-dripper"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -668,15 +1736,38 @@
       "brand": "CHEMEX",
       "name": "Classic 6-Cup Coffeemaker",
       "status": "current",
-      "aliases": ["CHEMEX 6 cup", "Classic CHEMEX"],
+      "aliases": [
+        "CHEMEX 6 cup",
+        "Classic CHEMEX"
+      ],
       "details": [
-        {"key": "capacity", "value": "30", "unit": "oz"},
-        {"key": "materials", "value": "borosilicate-glass;rubber-wood;full-grain-leather"},
-        {"key": "compatibility", "value": "CHEMEX Bonded filters", "valueKey": "chemexBondedFilters"},
-        {"key": "madeIn", "value": "USA", "valueKey": "madeInUsa"}
+        {
+          "key": "capacity",
+          "value": "30",
+          "unit": "oz"
+        },
+        {
+          "key": "materials",
+          "value": "borosilicate-glass;rubber-wood;full-grain-leather"
+        },
+        {
+          "key": "compatibility",
+          "value": "CHEMEX Bonded filters",
+          "valueKey": "chemexBondedFilters"
+        },
+        {
+          "key": "madeIn",
+          "value": "USA",
+          "valueKey": "madeInUsa"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "CHEMEX", "url": "https://chemexcoffeemaker.com/collections/classic-series-nav/products/six-cup-classic-chemex"}],
+      "sources": [
+        {
+          "label": "CHEMEX",
+          "url": "https://chemexcoffeemaker.com/collections/classic-series-nav/products/six-cup-classic-chemex"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -685,16 +1776,43 @@
       "brand": "CAFEC",
       "name": "Flower Dripper DEEP27",
       "status": "current",
-      "aliases": ["CAFEC DEEP27", "Flower DEEP27"],
+      "aliases": [
+        "CAFEC DEEP27",
+        "Flower DEEP27"
+      ],
       "details": [
-        {"key": "capacity", "value": "1", "unit": "cups"},
-        {"key": "materials", "value": "tritan"},
-        {"key": "compatibility", "value": "CAFEC Abaca+ DEEP27 filters", "valueKey": "cafecAbacaDeep27Filters"},
-        {"key": "mode", "value": "27° steep cone", "valueKey": "steep27Cone"},
-        {"key": "madeIn", "value": "Japan", "valueKey": "madeInJapan"}
+        {
+          "key": "capacity",
+          "value": "1",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "tritan"
+        },
+        {
+          "key": "compatibility",
+          "value": "CAFEC Abaca+ DEEP27 filters",
+          "valueKey": "cafecAbacaDeep27Filters"
+        },
+        {
+          "key": "mode",
+          "value": "27° steep cone",
+          "valueKey": "steep27Cone"
+        },
+        {
+          "key": "madeIn",
+          "value": "Japan",
+          "valueKey": "madeInJapan"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "CAFEC", "url": "https://www.cafec-jp.com/products/deep27/"}],
+      "sources": [
+        {
+          "label": "CAFEC",
+          "url": "https://www.cafec-jp.com/products/deep27/"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -703,16 +1821,43 @@
       "brand": "April",
       "name": "Glass Brewer",
       "status": "current",
-      "aliases": ["April Glass Brewer", "April flatbed glass"],
+      "aliases": [
+        "April Glass Brewer",
+        "April flatbed glass"
+      ],
       "details": [
-        {"key": "capacity", "value": "400", "unit": "mL"},
-        {"key": "materials", "value": "glass;plastic"},
-        {"key": "compatibility", "value": "April Paper Filter Small", "valueKey": "aprilPaperFilterSmall"},
-        {"key": "mode", "value": "Flatbed", "valueKey": "flatbedMode"},
-        {"key": "madeIn", "value": "Indonesia", "valueKey": "madeInIndonesia"}
+        {
+          "key": "capacity",
+          "value": "400",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "glass;plastic"
+        },
+        {
+          "key": "compatibility",
+          "value": "April Paper Filter Small",
+          "valueKey": "aprilPaperFilterSmall"
+        },
+        {
+          "key": "mode",
+          "value": "Flatbed",
+          "valueKey": "flatbedMode"
+        },
+        {
+          "key": "madeIn",
+          "value": "Indonesia",
+          "valueKey": "madeInIndonesia"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "April Coffee Roasters", "url": "https://www.aprilcoffeeroasters.com/collections/equipment"}],
+      "sources": [
+        {
+          "label": "April Coffee Roasters",
+          "url": "https://www.aprilcoffeeroasters.com/collections/equipment"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -721,16 +1866,43 @@
       "brand": "April",
       "name": "Ceramic Brewer",
       "status": "current",
-      "aliases": ["April Ceramic Brewer", "April porcelain brewer"],
+      "aliases": [
+        "April Ceramic Brewer",
+        "April porcelain brewer"
+      ],
       "details": [
-        {"key": "capacity", "value": "200", "unit": "mL"},
-        {"key": "materials", "value": "ceramic"},
-        {"key": "compatibility", "value": "April Paper Filter Small", "valueKey": "aprilPaperFilterSmall"},
-        {"key": "mode", "value": "Flatbed", "valueKey": "flatbedMode"},
-        {"key": "madeIn", "value": "China", "valueKey": "madeInChina"}
+        {
+          "key": "capacity",
+          "value": "200",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "ceramic"
+        },
+        {
+          "key": "compatibility",
+          "value": "April Paper Filter Small",
+          "valueKey": "aprilPaperFilterSmall"
+        },
+        {
+          "key": "mode",
+          "value": "Flatbed",
+          "valueKey": "flatbedMode"
+        },
+        {
+          "key": "madeIn",
+          "value": "China",
+          "valueKey": "madeInChina"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "April Coffee Roasters", "url": "https://www.aprilcoffeeroasters.com/collections/equipment"}],
+      "sources": [
+        {
+          "label": "April Coffee Roasters",
+          "url": "https://www.aprilcoffeeroasters.com/collections/equipment"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -739,15 +1911,38 @@
       "brand": "OREA",
       "name": "Brewer V4",
       "status": "current",
-      "aliases": ["OREA V4", "OREA Brewer V4"],
+      "aliases": [
+        "OREA V4",
+        "OREA Brewer V4"
+      ],
       "details": [
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "materials", "value": "polypropylene"},
-        {"key": "compatibility", "value": "Flat, Wave or SIBARIST FAST filters", "valueKey": "flatWaveSibaristFastFilters"},
-        {"key": "mode", "value": "Modular four-bottom system", "valueKey": "modularFourBottom"}
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "materials",
+          "value": "polypropylene"
+        },
+        {
+          "key": "compatibility",
+          "value": "Flat, Wave or SIBARIST FAST filters",
+          "valueKey": "flatWaveSibaristFastFilters"
+        },
+        {
+          "key": "mode",
+          "value": "Modular four-bottom system",
+          "valueKey": "modularFourBottom"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "OREA V4 guides", "url": "https://www.orea.uk/guides-v4"}],
+      "sources": [
+        {
+          "label": "OREA V4 guides",
+          "url": "https://www.orea.uk/guides-v4"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -756,15 +1951,38 @@
       "brand": "Fellow",
       "name": "Stagg [X] Dripper",
       "status": "current",
-      "aliases": ["Fellow Stagg X", "Stagg X"],
+      "aliases": [
+        "Fellow Stagg X",
+        "Stagg X"
+      ],
       "details": [
-        {"key": "capacity", "value": "300", "unit": "mL"},
-        {"key": "materials", "value": "stainless-steel;silicone"},
-        {"key": "compatibility", "value": "Stagg X paper filters", "valueKey": "staggXPaperFilters"},
-        {"key": "mode", "value": "Flat-bottom; vacuum insulated", "valueKey": "flatBottomVacuumInsulated"}
+        {
+          "key": "capacity",
+          "value": "300",
+          "unit": "mL"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;silicone"
+        },
+        {
+          "key": "compatibility",
+          "value": "Stagg X paper filters",
+          "valueKey": "staggXPaperFilters"
+        },
+        {
+          "key": "mode",
+          "value": "Flat-bottom; vacuum insulated",
+          "valueKey": "flatBottomVacuumInsulated"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/staggdripper/?tag=wbifl-20"}],
+      "sources": [
+        {
+          "label": "Fellow",
+          "url": "https://fellowproducts.com/products/staggdripper/?tag=wbifl-20"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -773,15 +1991,38 @@
       "brand": "Fellow",
       "name": "Stagg [XF] Dripper",
       "status": "current",
-      "aliases": ["Fellow Stagg XF", "Stagg XF"],
+      "aliases": [
+        "Fellow Stagg XF",
+        "Stagg XF"
+      ],
       "details": [
-        {"key": "capacity", "value": "20", "unit": "oz"},
-        {"key": "materials", "value": "stainless-steel;silicone;borosilicate-glass"},
-        {"key": "compatibility", "value": "Stagg XF paper filters", "valueKey": "staggXfPaperFilters"},
-        {"key": "mode", "value": "Flat-bottom; vacuum insulated", "valueKey": "flatBottomVacuumInsulated"}
+        {
+          "key": "capacity",
+          "value": "20",
+          "unit": "oz"
+        },
+        {
+          "key": "materials",
+          "value": "stainless-steel;silicone;borosilicate-glass"
+        },
+        {
+          "key": "compatibility",
+          "value": "Stagg XF paper filters",
+          "valueKey": "staggXfPaperFilters"
+        },
+        {
+          "key": "mode",
+          "value": "Flat-bottom; vacuum insulated",
+          "valueKey": "flatBottomVacuumInsulated"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/products/stagg-xf-pour-over-set?_pos=4&_sid=76549a8ab&_ss=r"}],
+      "sources": [
+        {
+          "label": "Fellow",
+          "url": "https://fellowproducts.com/products/stagg-xf-pour-over-set?_pos=4&_sid=76549a8ab&_ss=r"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -790,16 +2031,43 @@
       "brand": "Fellow",
       "name": "Ode Brew Grinder Gen 2",
       "status": "current",
-      "aliases": ["Fellow Ode Gen 2", "Ode Brew Grinder"],
+      "aliases": [
+        "Fellow Ode Gen 2",
+        "Ode Brew Grinder"
+      ],
       "details": [
-        {"key": "burr", "value": "64 mm stainless steel flat burrs", "valueKey": "burr64StainlessFlat"},
-        {"key": "adjustment", "value": "11 settings; 31 steps", "valueKey": "adjust11Settings31Steps"},
-        {"key": "groundsCapacity", "value": "100", "unit": "g"},
-        {"key": "materials", "value": "aluminum;plastic;stainless-steel"},
-        {"key": "dimensions", "value": "239 × 105 × 248.3", "unit": "mm"}
+        {
+          "key": "burr",
+          "value": "64 mm stainless steel flat burrs",
+          "valueKey": "burr64StainlessFlat"
+        },
+        {
+          "key": "adjustment",
+          "value": "11 settings; 31 steps",
+          "valueKey": "adjust11Settings31Steps"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "100",
+          "unit": "g"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum;plastic;stainless-steel"
+        },
+        {
+          "key": "dimensions",
+          "value": "239 × 105 × 248.3",
+          "unit": "mm"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/collections/grind-brew/products/ode-brew-grinder-gen-2?variant=40978992529508"}],
+      "sources": [
+        {
+          "label": "Fellow",
+          "url": "https://fellowproducts.com/collections/grind-brew/products/ode-brew-grinder-gen-2?variant=40978992529508"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -808,16 +2076,43 @@
       "brand": "Timemore",
       "name": "Sculptor 078",
       "status": "current",
-      "aliases": ["Timemore Sculptor 078", "Sculptor 078 brew"],
+      "aliases": [
+        "Timemore Sculptor 078",
+        "Sculptor 078 brew"
+      ],
       "details": [
-        {"key": "burr", "value": "78 mm flat burrs", "valueKey": "burr78Flat"},
-        {"key": "adjustment", "value": "Stepped", "valueKey": "adjustStepped"},
-        {"key": "groundsCapacity", "value": "30", "unit": "g"},
-        {"key": "materials", "value": "aluminum"},
-        {"key": "mode", "value": "Variable RPM; pour-over", "valueKey": "variableRpmPourOver"}
+        {
+          "key": "burr",
+          "value": "78 mm flat burrs",
+          "valueKey": "burr78Flat"
+        },
+        {
+          "key": "adjustment",
+          "value": "Stepped",
+          "valueKey": "adjustStepped"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "30",
+          "unit": "g"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum"
+        },
+        {
+          "key": "mode",
+          "value": "Variable RPM; pour-over",
+          "valueKey": "variableRpmPourOver"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Timemore", "url": "https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series"}],
+      "sources": [
+        {
+          "label": "Timemore",
+          "url": "https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -826,16 +2121,43 @@
       "brand": "Timemore",
       "name": "Sculptor 064",
       "status": "current",
-      "aliases": ["Timemore Sculptor 064", "Sculptor 064 brew"],
+      "aliases": [
+        "Timemore Sculptor 064",
+        "Sculptor 064 brew"
+      ],
       "details": [
-        {"key": "burr", "value": "64 mm flat burrs", "valueKey": "burr64Flat"},
-        {"key": "adjustment", "value": "Stepped", "valueKey": "adjustStepped"},
-        {"key": "groundsCapacity", "value": "30", "unit": "g"},
-        {"key": "materials", "value": "aluminum"},
-        {"key": "mode", "value": "Variable RPM; pour-over", "valueKey": "variableRpmPourOver"}
+        {
+          "key": "burr",
+          "value": "64 mm flat burrs",
+          "valueKey": "burr64Flat"
+        },
+        {
+          "key": "adjustment",
+          "value": "Stepped",
+          "valueKey": "adjustStepped"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "30",
+          "unit": "g"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum"
+        },
+        {
+          "key": "mode",
+          "value": "Variable RPM; pour-over",
+          "valueKey": "variableRpmPourOver"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Timemore", "url": "https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series"}],
+      "sources": [
+        {
+          "label": "Timemore",
+          "url": "https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -844,16 +2166,43 @@
       "brand": "KINGrinder",
       "name": "K6",
       "status": "current",
-      "aliases": ["KINGrinder K6", "K6 manual grinder"],
+      "aliases": [
+        "KINGrinder K6",
+        "K6 manual grinder"
+      ],
       "details": [
-        {"key": "burr", "value": "Stainless steel conical burrs", "valueKey": "burrStainlessConical"},
-        {"key": "adjustment", "value": "16 µm per click; external", "valueKey": "adjust16MicronExternal"},
-        {"key": "groundsCapacity", "value": "25–30", "unit": "g"},
-        {"key": "materials", "value": "aluminum;stainless-steel"},
-        {"key": "mode", "value": "Manual; portable", "valueKey": "manualPortable"}
+        {
+          "key": "burr",
+          "value": "Stainless steel conical burrs",
+          "valueKey": "burrStainlessConical"
+        },
+        {
+          "key": "adjustment",
+          "value": "16 µm per click; external",
+          "valueKey": "adjust16MicronExternal"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "25–30",
+          "unit": "g"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum;stainless-steel"
+        },
+        {
+          "key": "mode",
+          "value": "Manual; portable",
+          "valueKey": "manualPortable"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "KINGrinder", "url": "https://www.kingrinder.com/store/products/k6"}],
+      "sources": [
+        {
+          "label": "KINGrinder",
+          "url": "https://www.kingrinder.com/store/products/k6"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -862,16 +2211,43 @@
       "brand": "Kalita",
       "name": "Wave 155 Paper Filters",
       "status": "current",
-      "aliases": ["Kalita Wave 155 filters", "Wave 155 100ct"],
+      "aliases": [
+        "Kalita Wave 155 filters",
+        "Wave 155 100ct"
+      ],
       "details": [
-        {"key": "format", "value": "Wave", "valueKey": "formatWave"},
-        {"key": "capacity", "value": "1–2", "unit": "cups"},
-        {"key": "compatibility", "value": "Kalita Wave 155 dripper", "valueKey": "kalitaWave155Dripper"},
-        {"key": "packs", "value": "100", "unit": "sheets"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+        {
+          "key": "format",
+          "value": "Wave",
+          "valueKey": "formatWave"
+        },
+        {
+          "key": "capacity",
+          "value": "1–2",
+          "unit": "cups"
+        },
+        {
+          "key": "compatibility",
+          "value": "Kalita Wave 155 dripper",
+          "valueKey": "kalitaWave155Dripper"
+        },
+        {
+          "key": "packs",
+          "value": "100",
+          "unit": "sheets"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-155-filter-100ct"}],
+      "sources": [
+        {
+          "label": "Kalita USA",
+          "url": "https://kalitausa.com/products/kalita-wave-155-filter-100ct"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -880,16 +2256,43 @@
       "brand": "Kalita",
       "name": "Wave 185 Paper Filters",
       "status": "current",
-      "aliases": ["Kalita Wave 185 filters", "Wave 185 100ct"],
+      "aliases": [
+        "Kalita Wave 185 filters",
+        "Wave 185 100ct"
+      ],
       "details": [
-        {"key": "format", "value": "Wave", "valueKey": "formatWave"},
-        {"key": "capacity", "value": "2–4", "unit": "cups"},
-        {"key": "compatibility", "value": "Kalita Wave 185 dripper", "valueKey": "kalitaWave185Dripper"},
-        {"key": "packs", "value": "100", "unit": "sheets"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+        {
+          "key": "format",
+          "value": "Wave",
+          "valueKey": "formatWave"
+        },
+        {
+          "key": "capacity",
+          "value": "2–4",
+          "unit": "cups"
+        },
+        {
+          "key": "compatibility",
+          "value": "Kalita Wave 185 dripper",
+          "valueKey": "kalitaWave185Dripper"
+        },
+        {
+          "key": "packs",
+          "value": "100",
+          "unit": "sheets"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Kalita USA", "url": "https://kalitausa.com/products/kalita-wave-185-paper-filter-100ct"}],
+      "sources": [
+        {
+          "label": "Kalita USA",
+          "url": "https://kalitausa.com/products/kalita-wave-185-paper-filter-100ct"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -898,16 +2301,45 @@
       "brand": "CHEMEX",
       "name": "Bonded Filters 6-Cup and Larger",
       "status": "current",
-      "aliases": ["CHEMEX Bonded filters", "FS-100", "FC-100", "FP-1"],
+      "aliases": [
+        "CHEMEX Bonded filters",
+        "FS-100",
+        "FC-100",
+        "FP-1"
+      ],
       "details": [
-        {"key": "format", "value": "Square or circle", "valueKey": "formatSquareOrCircle"},
-        {"key": "capacity", "value": "6+", "unit": "cups"},
-        {"key": "compatibility", "value": "CHEMEX 6-cup and larger", "valueKey": "chemex6CupAndLarger"},
-        {"key": "packs", "value": "100", "unit": "sheets"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+        {
+          "key": "format",
+          "value": "Square or circle",
+          "valueKey": "formatSquareOrCircle"
+        },
+        {
+          "key": "capacity",
+          "value": "6+",
+          "unit": "cups"
+        },
+        {
+          "key": "compatibility",
+          "value": "CHEMEX 6-cup and larger",
+          "valueKey": "chemex6CupAndLarger"
+        },
+        {
+          "key": "packs",
+          "value": "100",
+          "unit": "sheets"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "CHEMEX", "url": "https://chemexcoffeemaker.com/pages/filter-series-support-page"}],
+      "sources": [
+        {
+          "label": "CHEMEX",
+          "url": "https://chemexcoffeemaker.com/pages/filter-series-support-page"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -916,16 +2348,43 @@
       "brand": "CAFEC",
       "name": "Abaca+ DEEP27 Paper Filters",
       "status": "current",
-      "aliases": ["CAFEC DEEP27 filter", "Abaca+ DEEP27"],
+      "aliases": [
+        "CAFEC DEEP27 filter",
+        "Abaca+ DEEP27"
+      ],
       "details": [
-        {"key": "format", "value": "Cone", "valueKey": "formatCone"},
-        {"key": "capacity", "value": "1", "unit": "cups"},
-        {"key": "compatibility", "value": "CAFEC Flower Dripper DEEP27", "valueKey": "cafecFlowerDeep27"},
-        {"key": "packs", "value": "40 or 100", "unit": "sheets"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+        {
+          "key": "format",
+          "value": "Cone",
+          "valueKey": "formatCone"
+        },
+        {
+          "key": "capacity",
+          "value": "1",
+          "unit": "cups"
+        },
+        {
+          "key": "compatibility",
+          "value": "CAFEC Flower Dripper DEEP27",
+          "valueKey": "cafecFlowerDeep27"
+        },
+        {
+          "key": "packs",
+          "value": "40 or 100",
+          "unit": "sheets"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "CAFEC", "url": "https://www.cafec-jp.com/products/filterpaper/"}],
+      "sources": [
+        {
+          "label": "CAFEC",
+          "url": "https://www.cafec-jp.com/products/filterpaper/"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -934,17 +2393,48 @@
       "brand": "CAFEC",
       "name": "Abaca+ Cone Paper Filter",
       "status": "current",
-      "aliases": ["CAFEC Abaca+", "Abaca cone filter"],
+      "aliases": [
+        "CAFEC Abaca+",
+        "Abaca cone filter"
+      ],
       "details": [
-        {"key": "format", "value": "Cone", "valueKey": "formatCone"},
-        {"key": "capacity", "value": "1 or 2–4", "unit": "cups"},
-        {"key": "compatibility", "value": "Cone drippers", "valueKey": "coneDrippers"},
-        {"key": "packs", "value": "40 or 100", "unit": "sheets"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"},
-        {"key": "technology", "value": "Abaca fiber; double-sided crepe", "valueKey": "abacaDoubleCrepe"}
+        {
+          "key": "format",
+          "value": "Cone",
+          "valueKey": "formatCone"
+        },
+        {
+          "key": "capacity",
+          "value": "1 or 2–4",
+          "unit": "cups"
+        },
+        {
+          "key": "compatibility",
+          "value": "Cone drippers",
+          "valueKey": "coneDrippers"
+        },
+        {
+          "key": "packs",
+          "value": "40 or 100",
+          "unit": "sheets"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        },
+        {
+          "key": "technology",
+          "value": "Abaca fiber; double-sided crepe",
+          "valueKey": "abacaDoubleCrepe"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "CAFEC", "url": "https://www.cafec-jp.com/products/filterpaper/index.html"}],
+      "sources": [
+        {
+          "label": "CAFEC",
+          "url": "https://www.cafec-jp.com/products/filterpaper/index.html"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -953,15 +2443,38 @@
       "brand": "Fellow",
       "name": "Stagg Paper Filters",
       "status": "current",
-      "aliases": ["Stagg X filter", "Stagg XF filter"],
+      "aliases": [
+        "Stagg X filter",
+        "Stagg XF filter"
+      ],
       "details": [
-        {"key": "format", "value": "Flat-bottom", "valueKey": "formatFlatBottom"},
-        {"key": "compatibility", "value": "Stagg [X] or [XF] dripper", "valueKey": "staggXOrXfDripper"},
-        {"key": "packs", "value": "45", "unit": "sheets"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"}
+        {
+          "key": "format",
+          "value": "Flat-bottom",
+          "valueKey": "formatFlatBottom"
+        },
+        {
+          "key": "compatibility",
+          "value": "Stagg [X] or [XF] dripper",
+          "valueKey": "staggXOrXfDripper"
+        },
+        {
+          "key": "packs",
+          "value": "45",
+          "unit": "sheets"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "Fellow", "url": "https://fellowproducts.com/collections/complete-your-coffee-corner/products/stagg-paper-filters"}],
+      "sources": [
+        {
+          "label": "Fellow",
+          "url": "https://fellowproducts.com/collections/complete-your-coffee-corner/products/stagg-paper-filters"
+        }
+      ],
       "checked": "2026-10-28"
     },
     {
@@ -970,16 +2483,218 @@
       "brand": "OREA",
       "name": "Type C Flat Paper Filters",
       "status": "current",
-      "aliases": ["OREA Type C", "OREA flat filter"],
+      "aliases": [
+        "OREA Type C",
+        "OREA flat filter"
+      ],
       "details": [
-        {"key": "format", "value": "Flat", "valueKey": "formatFlat"},
-        {"key": "compatibility", "value": "OREA V3 / V4 and compatible wave brewers", "valueKey": "oreaV3V4CompatibleWaveBrewers"},
-        {"key": "materials", "value": "natural-or-oxygen-bleached-paper"},
-        {"key": "technology", "value": "Flat-bed paper", "valueKey": "flatBedPaper"}
+        {
+          "key": "format",
+          "value": "Flat",
+          "valueKey": "formatFlat"
+        },
+        {
+          "key": "compatibility",
+          "value": "OREA V3 / V4 and compatible wave brewers",
+          "valueKey": "oreaV3V4CompatibleWaveBrewers"
+        },
+        {
+          "key": "materials",
+          "value": "natural-or-oxygen-bleached-paper"
+        },
+        {
+          "key": "technology",
+          "value": "Flat-bed paper",
+          "valueKey": "flatBedPaper"
+        }
       ],
       "recipeIds": [],
-      "sources": [{"label": "OREA filters", "url": "https://www.orea.uk/filters"}],
+      "sources": [
+        {
+          "label": "OREA filters",
+          "url": "https://www.orea.uk/filters"
+        }
+      ],
       "checked": "2026-10-28"
+    },
+    {
+      "id": "graycano-dripper",
+      "category": "dripper",
+      "brand": "Graycano",
+      "name": "Dripper",
+      "status": "current",
+      "aliases": [
+        "Graycano",
+        "Graycano Dripper"
+      ],
+      "details": [
+        {
+          "key": "materials",
+          "value": "aluminum; silicone"
+        },
+        {
+          "key": "compatibility",
+          "value": "Dripper and Dripper S",
+          "valueKey": "flatDrippers"
+        },
+        {
+          "key": "madeIn",
+          "value": "Germany",
+          "valueKey": "madeInGermany"
+        }
+      ],
+      "recipeIds": [
+        "maisonnette-graycano",
+        "pinnola-graycano",
+        "kaygusuz-graycano"
+      ],
+      "sources": [
+        {
+          "label": "Graycano",
+          "url": "https://graycano.com/"
+        }
+      ],
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "mk-dripper",
+      "category": "dripper",
+      "brand": "MK",
+      "name": "MK Dripper",
+      "status": "unresolved",
+      "aliases": [
+        "MK"
+      ],
+      "details": [
+        {
+          "key": "model",
+          "value": "MK Dripper",
+          "valueKey": "modelUnknownMaker"
+        }
+      ],
+      "recipeIds": [
+        "vuolo-mk"
+      ],
+      "sources": [
+        {
+          "label": "1Zpresso recipe",
+          "url": "https://1zpresso.coffee/recipe/"
+        }
+      ],
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "1zpresso-k-plus",
+      "category": "grinder",
+      "brand": "1Zpresso",
+      "name": "K-Plus",
+      "status": "legacy",
+      "aliases": [
+        "1Zpresso K-Plus"
+      ],
+      "details": [
+        {
+          "key": "model",
+          "value": "K-Plus"
+        }
+      ],
+      "recipeIds": [
+        "vuolo-mk"
+      ],
+      "sources": [
+        {
+          "label": "1Zpresso",
+          "url": "https://1zpresso.coffee/product/kplus/"
+        }
+      ],
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "1zpresso-k-pro",
+      "category": "grinder",
+      "brand": "1Zpresso",
+      "name": "K-Pro",
+      "status": "legacy",
+      "aliases": [
+        "1Zpresso K-Pro"
+      ],
+      "details": [
+        {
+          "key": "model",
+          "value": "K-Pro"
+        }
+      ],
+      "recipeIds": [
+        "damgaci-v60"
+      ],
+      "sources": [
+        {
+          "label": "1Zpresso",
+          "url": "https://1zpresso.coffee/product/kpro/"
+        }
+      ],
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "sibarist-fast",
+      "category": "filter",
+      "brand": "SIBARIST",
+      "name": "FAST",
+      "status": "unresolved",
+      "aliases": [
+        "Sibarist Fast",
+        "Sibarist FAST"
+      ],
+      "details": [
+        {
+          "key": "model",
+          "value": "FAST",
+          "valueKey": "modelFastUnverified"
+        }
+      ],
+      "recipeIds": [
+        "maisonnette-graycano"
+      ],
+      "sources": [
+        {
+          "label": "1Zpresso recipe",
+          "url": "https://1zpresso.coffee/recipe/"
+        }
+      ],
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "sibarist-flat",
+      "category": "filter",
+      "brand": "SIBARIST",
+      "name": "FLAT",
+      "status": "current",
+      "aliases": [
+        "Sibarist Flat",
+        "Sibarist FLAT"
+      ],
+      "details": [
+        {
+          "key": "format",
+          "value": "Flat",
+          "valueKey": "formatFlat"
+        },
+        {
+          "key": "compatibility",
+          "value": "Flat-bed drippers",
+          "valueKey": "flatDrippers"
+        }
+      ],
+      "recipeIds": [
+        "vuolo-mk"
+      ],
+      "sources": [
+        {
+          "label": "SIBARIST",
+          "url": "https://sibarist.coffee/products/flat"
+        }
+      ],
+      "checked": "2026-10-29"
     }
   ]
 }

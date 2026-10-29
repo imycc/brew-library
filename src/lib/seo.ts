@@ -154,6 +154,7 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
     ...(isIsoDate(recipe.source.published)?{datePublished:recipe.source.published}:{}),
     dateModified:recipe.source.checked,
     ...(duration?{totalTime:duration}:{}),
+    ...(recipe.yield?{recipeYield:`${recipe.yield.amount} ${recipe.yield.unit}`}:{}),
     citation:{'@type':'CreativeWork','@id':recipe.source.url,name:recipe.source.label,url:recipe.source.url},
     isBasedOn:{'@id':recipe.source.url},
     ...(recipe.source.video?{sameAs:[recipe.source.video]}:{})

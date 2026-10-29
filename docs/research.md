@@ -228,3 +228,21 @@ Editorial boundaries applied to these additions:
 - Ohno’s bean is left unknown. The report says competitor beans were only revealed on the day, and his own note is that the recipe was built to suit any coffee; the event-wide Kenya lot is not attributed to his card.
 - Kaygusuz’s and Damgacı’s mineral figures are stored as published `ppm` values with their composition or basis gap written into `waterNote`; nothing is converted to hardness or TDS.
 - A competition placement is a title, not a publication date, so all nine keep `published: null` and share the collection snapshot instead.
+
+## Live-site audit and catalogue repairs — checked 2026-10-29
+
+Every rendered page was crawled from the published site rather than the source tree: nine locale homepages, all 28 recipe pages, the seven editorial pages in two locales, plus `sitemap.xml`, `robots.txt` and `llms.txt`. Five defects that only appear once the pages are actually served were found and fixed:
+
+- **The author index rendered one card per recipe.** Twenty-eight cards across twenty-six people produced duplicate `id` attributes for `hoffmann` and `gil` — invalid markup, broken anchors and a duplicate-key render. The page now groups by `authorId`, shows the record count per person and lists each of that person's recipes.
+- **The brewer filter leaked an English string.** Its options were labelled from the raw `brewer` field, so every non-English locale showed “Dripper not stated”. Options now use the same localized brewer name as the cards, and the list is deduplicated by `brewerId` rather than by string prefix.
+- **The equipment catalogue and the recipes were only linked in one direction.** None of the nine new competition records appeared on the equipment pages. Six records were added — Graycano Dripper, MK Dripper (unresolved maker), 1Zpresso K-Plus and K-Pro (both legacy, sourced to their official spare-parts pages), SIBARIST FAST (no stable official product page could be verified, so it is marked unresolved) and SIBARIST FLAT — and eleven recipe links were added to existing records. SIBARIST FAST deliberately keeps the recipe page as its only source rather than inventing a product URL.
+- **The sources index did not expose the archived snapshots**, which lived only in each recipe's sidebar. Each record now links its snapshot, or states that none exists.
+- **Recipe JSON-LD omitted the measured beverage yield.** It now publishes `recipeYield` where a source states one; `totalTime` continues to be emitted only for single-value durations, never for ranges.
+
+The five HARIO USA blog pages had no Wayback capture at all. Archive requests were filed for each and the resulting snapshots were fetched back and checked for the recipe's own numbers before being recorded, so every one of the 28 records now carries a verified snapshot URL. Ten recipe records also gained official imagery taken from their own source page — the named competitor portraits on the 1Zpresso collection for the nine records there (including replacing the generic grinder banner previously used by Selorio, Rincón and Gil 2024), and the existing ORIGAMI CUP report banner for the event winner. Two cards keep the neutral fallback because the collection publishes no image file attributable to them (Torres and Damgacı); an unattributed portrait is worse than none.
+
+### Performance measurement, and what was deliberately not changed
+
+Transfer weight was measured with and without compression: the homepage is 203 KB raw but 37 KB gzipped, a recipe page 99 KB raw and 30 KB gzipped, the equipment page 341 KB raw and 56 KB gzipped. JavaScript is the real weight — 241 KB gzipped per recipe page, dominated by Next.js internals (65 KB + 62 KB) plus a 44 KB chunk containing `next-intl` and `zod`, and 38 KB of legacy polyfills.
+
+Two experiments were run and **reverted because they did not help**: splitting the zod schema out of the module the client imports (zod is also reached through the equipment and editorial data modules, so the chunk did not shrink) and narrowing `browserslist` to current engines (the App Router emits the same polyfill bundle regardless). Neither change was kept, so no unproven complexity was added. The honest next step for weight — splitting translations per route or moving the interactive filter to an island — is a larger refactor and is not attempted here.
