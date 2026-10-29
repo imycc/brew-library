@@ -181,3 +181,50 @@ Editorial boundaries:
 - The Red Clix record applies only to the C40 MK3 configuration used by the recipe; click values are not converted to other grinders.
 - Recipe links are explicit IDs rather than fuzzy brand matching, so a V60 Ceramic product cannot silently inherit a V60 Plastic or Metal recipe.
 - New equipment without a verified recipe link keeps `recipeIds: []`; appearing in the catalogue does not imply that a recipe has been tested on that exact model.
+
+## Technique detail, provenance and derived metrics — checked 2026-10-29
+
+Every one of the nineteen source pages was re-read at its own URL. Publication dates came from each page's own `Article` JSON-LD `datePublished`, cross-checked against the earliest archived capture; eleven sources also received a `source.archive` Wayback snapshot. The five HARIO USA blog pages have no archived capture at all, so those records keep only the live link and are the most rot-exposed in the catalogue. Hoffmann's one-cup record keeps the video date `2022-11-22` and now labels it with `publishedBasis: "video"`, because the HARIO transcription page that hosts it was published `2026-06-16`; `source.updated` records the later page date rather than silently replacing the technique date.
+
+Five shipped values violated the no-invention rule and were corrected against the sources:
+
+- `chronicler-switch` published **320 ml**, not grams. The 160/160 split comes from the page's own 50%-of-total-volume structure, so both additions now carry `unit: "mL"` and `derived: true`, and the finish step no longer claims a 2:45 removal when the page publishes only a 2:45–3:15 range.
+- `hoffmann-ultimate-v60` had an invented 1:45–1:50 swirl window and dropped a published step. The post-1:45 sequence is now stir once clockwise, stir once anticlockwise, allow the V60 to drain a little, then a gentle swirl — untimestamped, as published.
+- `rao-pulsar` recorded a `flat` paper shape the page never states; the shape is removed.
+- `hoffmann-one-cup` recorded size **01**, which neither the HARIO page nor the video states; it now reads "1 Cup" as published.
+- `camber-v60` recorded anaerobic as the coffee used when the source offers it as a pairing suggestion; `coffee.asRecommendation` separates recommendation from observation. The same flag now applies to Hoffmann's lighter-roast caveat.
+
+New optional fields hold facts that were already verified but had nowhere to live: `yield` with an observed/target basis (Kodama's 265 g beverage is a measurement, not a target), `removalAt` where a page says "remove the dripper at" rather than giving a drawdown, `doseGround` versus brewed dose, `bedPrep`, `valve` initial state, per-step `pattern`/`style`/`count`/`direction`/`levelMin`/`levelMax`, published water figures with their own units (Rao's 100 ppm hardness and 40 ppm alkalinity stay ppm; Kobayashi's 70 stays mg/L), `grindMicron` with its stated basis, and `ratioStated` where the source publishes the ratio itself. Validation now refuses a `stir`/`swirl` count on any other action, a stated ratio that disagrees with its own dose and water, a beverage yield above the water poured, a grind-more-than-dosed record that doses more than it ground, a valve state on a recipe with no valve step, and a hardness or alkalinity figure without its published unit.
+
+Detail pages now show values calculated only from figures the source publishes: ratio, bloom share, when pouring finishes, the window left to the stated finish, and each pour's share of the water. Percentages stay hidden whenever the quantified pours do not sum to the published total in that total's own unit — so Pulser's partial pour list, and any overview stated in mL beside steps weighed in g, show `unknown` rather than a misleading share. A completeness score names which of eight facts a source omits, making the gaps a visible feature instead of blanks.
+
+Editorial boundaries kept:
+
+- Water figures are stored with the unit the source used and never normalised between ppm, mg/L and TDS; Hoang's `65 ppm` is not labelled hardness or total dissolved solids because the page does not say which.
+- Rao's `800-micron PSD peak` is a particle-size distribution peak, not a sieve aperture, and is stored with that basis.
+- Click counts, dial numbers and `RED CLICKS` remain literal source notation with no cross-grinder conversion.
+- Competition years are not publication dates; the ORIGAMI report and the 1Zpresso collection keep `published: null`.
+- Agitation that the source describes lexically (slow centre pour, fast turbulent finish, gentle swirl) is stored as an enum plus the step's own sentence, never as a fabricated rate.
+
+## Nine competition recipes added — checked 2026-10-29
+
+The 1Zpresso champion collection and the ORIGAMI CUP 2024 report were read again from the raw page text, and nine further records were added, taking the library to twenty-eight. Attribution on the 1Zpresso page follows its own DOM pairing (parameters, then the competitor’s name and title), which is what separates Milo Gil’s 2024 K-Ultra card from his 2025 ZP6 card and ties each grind setting to the right person.
+
+| Record | Named on the source | Notes on what is and is not published |
+| --- | --- | --- |
+| Carlos Medina — WBrC Champion 2023 | ZP6 Special 5.2; 15.5 g : 250 g at 91 °C; “add 50 g of water every 30 seconds” | No dripper, filter, pour path or total time. The five 50 g additions and their clock times are arithmetic on the published interval and total, so each carries `derived: true`. |
+| Edson Maisonnette — Brazilian 5th place 2023 | K-Ultra, Graycano, Sibarist Fast, Brewista Artisan; 12 g Obatã at 7.5 over 4 g Catucaí 24/137 at 7.0; 240 g at 93 °C; four timed windows | Two grind settings are stored as `setting` plus `secondSetting`, never averaged. Chilling the server base to −10 °C is kept as preparation prose because there is no bed-prep token for it. |
+| Michael Torres — Chilean champion 2024 | K-Ultra 7.5; 17 g “bourbon striped, farm paradise 92”; 240 g at 92 °C; 1:14; three 80 g pours | Dripper and filter are absent from the card. |
+| Manuel Pinnola — Venezuela champion 2025 | K-Ultra 4.5; Graycano with Sibarist; 15 g washed Geisha from Finca Rosario, Mérida; 240 g at 94 °C; 1:16 | Pours two and three are published as cumulative targets, so both 100 g additions are `derived`. |
+| Atahan Kaygusuz — Turkey 5th place 2025 | K-Ultra 2.7; Graycano, Sibarist, Melodrip; 12 g + 5 g blend; 72 ppm Apax (Tonik 1 g, Jamm 1.5 g, Lylac 1.5 g); 17 g : 270 g; 2:40 | The water volume the powders dissolve into is not stated, so the recipe keeps `ppm` only and says so in `waterNote`. |
+| Rubens Vuolo Neto — Brazilian champion 2023 | K-Plus 8; MK dripper, Sibarist Flat; 9 g Pink Bourbon + 6 g Laurina; two 100 g pours at 96 °C then 40 g at 90 °C | No overall temperature and no times at all: the two pour temperatures live on the steps. |
+| Berat Damgacı — Turkey runner-up 2024 | K-Pro 5.4; ceramic V60; three 5 g coffees; 40 ppm RO water at 93 °C; 15 g : 240 g; bloom 30 s; total 2:20 | Only the bloom and the total are timed; the four later additions stay untimed sequence steps. |
+| Tomoki Ohno — ORIGAMI CUP 2024 winner | Air S, Wave paper, C40 MK4 30 clicks; grinds 32 g, sieves with the coarsest mesh L, doses 22.0 g; 83 °C; 45/120/190 g; drawdown finished 1:30–1:35; then 65 °C water, from 50 g to about 60–70 g by taste; beverage TDS 1.07 | `water.amount` is the 190 g of extraction water only. The finishing water is published as a range and is modelled as an unquantified `topup`, never folded into a 250 g total. The brew ratio therefore reads 1:8.6 on purpose. |
+| Milo Gil — Dutch champion 2025 | ZP6 Special 6.7 clicks; 15 g : 250 g at 65 ppm and 94 °C; 1:16.7; 60 g, then 100 g after 50 s, then 90 g after another 50 s | Kept separate from the 2024 card. No dripper or filter is named and no total time is published. |
+
+Editorial boundaries applied to these additions:
+
+- Cards that never name a dripper are stored with `brewerId: "unspecified"` and rendered from a localized “not stated by the source” label rather than given a brand string that no source wrote.
+- Ohno’s bean is left unknown. The report says competitor beans were only revealed on the day, and his own note is that the recipe was built to suit any coffee; the event-wide Kenya lot is not attributed to his card.
+- Kaygusuz’s and Damgacı’s mineral figures are stored as published `ppm` values with their composition or basis gap written into `waterNote`; nothing is converted to hardness or TDS.
+- A competition placement is a title, not a publication date, so all nine keep `published: null` and share the collection snapshot instead.

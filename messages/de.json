@@ -1,4 +1,16 @@
 {
+  "derivedTitle": "Aus veröffentlichten Werten berechnet",
+  "derivedNote": "Diese Werte rechnen mit Zahlen, die die Quelle bereits nennt, und fügen keine eigenen Behauptungen hinzu.",
+  "bloomShare": "Wasseranteil beim Aufblühen",
+  "pourEnds": "Ende des Aufgusses",
+  "lastPourStarts": "Beginn des letzten Aufgusses",
+  "drawdown": "Ablaufzeit nach dem Aufgießen",
+  "afterLastPourStart": "Vom letzten Aufguss bis zum Ende",
+  "sourceFacts": "Von der Quelle genannte Daten",
+  "missingFacts": "In der Quelle nicht angegeben:",
+  "missingNone": "Die Quelle nennt all diese Daten.",
+  "allAdditions": "Zeitpunkt jedes Aufgusses",
+  "totalWaterPublished": "Menge jedes Aufgusses",
   "conditionFilters": "Ausrüstung und Kaffee",
   "conditionHint": "Bedingungen der Originalquelle. Fehlende Angaben gelten nicht als Treffer. Die Filter sagen kein optimales Rezept voraus.",
   "grinder": "Mühle",
@@ -198,7 +210,7 @@
   "boiling": "Frisch aufgekochtes Wasser",
   "light": "Helle Röstung als Bedingung für kochendes Wasser",
   "soft": "Weiches, gefiltertes Wasser",
-  "raoWater": "Etwa 100 ppm Gesamthärte und 40 ppm Alkalinität; die Bezugsbasis ist nicht angegeben.",
+  "raoWater": "Die Quelle nennt ihre eigenen Vorzugswerte ohne angegebene Bezugsbasis.",
   "raoPrep": "Bei offenem Ventil Filter spülen und Wasser ablassen. Zylinder befestigen, Kaffee einfüllen und ebnen.",
   "derived": "Die Gesamtwassermenge ergibt sich aus Dosis und Massenverhältnis der Quelle, nicht aus einer separat veröffentlichten Messung.",
   "sequence": "Danach",
@@ -213,7 +225,9 @@
     "open": "Ventil öffnen",
     "topup": "Wasserstand anheben",
     "pulses": "Kurze Aufgüsse",
-    "level": "Kaffeebett ebnen"
+    "level": "Kaffeebett ebnen",
+    "stir": "Umrühren",
+    "drain": "Etwas ablaufen lassen"
   },
   "instruction": {
     "bloom": "Mit der angegebenen Wassermenge das Kaffeemehl benetzen.",
@@ -224,7 +238,9 @@
     "open": "Nach dem Auffüllen das Ventil öffnen.",
     "topup": "Bis etwa 1 cm über dem Kaffeebett aufgießen.",
     "pulses": "Mit kurzen Aufgüssen 1–2 cm Wasser über dem Kaffee halten, bis die Gesamtmenge erreicht ist.",
-    "level": "Das Kaffeebett vor dem Brühen ebnen."
+    "level": "Das Kaffeebett vor dem Brühen ebnen.",
+    "stir": "Rühre das Kaffeebett mit einem Löffel um.",
+    "drain": "Nicht weiter aufgießen und den Spiegel etwas absenken."
   },
   "recipes": {
     "kodama": {
@@ -253,7 +269,7 @@
       "first": "Sanft über das gesamte Bett gießen.",
       "second": "Langsam mit Verwirbelung gießen.",
       "last": "Auf etwa 75°C senken und dünn und langsam mittig gießen.",
-      "water": "Tajima-Wasser; Härte 70 mg/L, Bezugsbasis unbekannt."
+      "water": "Vor Ort wurde Tajima-Naturwasser gestellt; die Bezugsbasis der Härte fehlt."
     },
     "selorio": {
       "title": "Lui Selorio · ORIGAMI Air",
@@ -263,7 +279,10 @@
       "equipment": "ORIGAMI Air",
       "notes": "Übersicht 240 mL, Schritte g. Drittes Intervall 1:00–1:00; nur Beginn übernommen.",
       "finish": "Bis 2:25 ablaufen lassen.",
-      "third": "Dritten Aufguss bei 1:00 beginnen; Ende unklar."
+      "third": "Dritten Aufguss bei 1:00 beginnen; Ende unklar.",
+      "s00": "50 g Wasser in zehn Sekunden aufgießen und bis 0:30 warten.",
+      "s01": "70 g Wasser in zehn Sekunden aufgießen und bis 1:00 warten.",
+      "s03": "Die letzten 60 g in zehn Sekunden aufgießen und bis 2:25 ablaufen lassen."
     },
     "rincon": {
       "title": "Janer Joseph Perez Rincon · ORIGAMI",
@@ -274,7 +293,9 @@
       "notes": "Zeiten, Anfangstemperatur, Röstung und Gesamtzeit fehlen. Spätere Temperaturen je Schritt.",
       "finish": "Ablaufen lassen; Zeit unbekannt.",
       "spiral": "Spiralförmig aufgießen.",
-      "water": "Quelle: Pure Colombian Water; Mineralien unbekannt."
+      "water": "Quelle: Pure Colombian Water; Mineralien unbekannt.",
+      "s00": "Erster Aufguss: 50 g Wasser. Die Karte nennt dafür weder Temperatur noch Zeitpunkt.",
+      "s01": "Zweiter Aufguss: 70 g Wasser bei 92 °C; ein Zeitpunkt ist nicht genannt."
     },
     "gil": {
       "title": "Milo Gil · ORIGAMI Air",
@@ -283,7 +304,11 @@
       "grind": "7.5 (1Zpresso K-Ultra)",
       "equipment": "ORIGAMI Air",
       "notes": "Niederländischer Meister 2024. Sibarist-Modell, Bohnen und Röstung fehlen. Etwa 7 g/s empfohlen.",
-      "finish": "Ablaufen lassen; ungefähr 3:00 anstreben."
+      "finish": "Ablaufen lassen; ungefähr 3:00 anstreben.",
+      "s00": "Beginne mit einem sanften Aufguss von 40 g.",
+      "s01": "Bei 0:45 folgen 60 g.",
+      "s02": "Bei 1:30 gleichmäßig 75 g nachgießen.",
+      "s03": "Bei 2:15 mit den letzten 75 g abschließen; die Karte empfiehlt etwa 7 g/s und ein Ende des Ablaufens gegen 3:00."
     },
     "kasuya": {
       "title": "Kasuyas 4:6-Methode",
@@ -292,7 +317,12 @@
       "grind": "Grob",
       "equipment": "HARIO V60 · Keramik",
       "notes": "Dies ist die HARIO-Lehrversion, keine Wettbewerbsrekonstruktion. Die letzten Aufgüsse beginnen bei 2:10 und 2:40.",
-      "finish": "Das Brühgerät zum angegebenen Endzeitpunkt entfernen."
+      "finish": "Das Brühgerät zum angegebenen Endzeitpunkt entfernen.",
+      "s00": "Bei 0:00 50 mL aufgießen — die Quelle nennt das 42 % der ersten 120 mL, also 40 % der Gesamtmenge, mit Blick auf die Süße.",
+      "s01": "Bei 0:45 70 mL nachgießen und die erste Stufe auf 120 mL vervollständigen — die anderen 40 %.",
+      "s02": "Bei 1:30 60 mL aufgießen — die Quelle teilt die restlichen 180 mL in drei gleiche Gaben.",
+      "s03": "Bei 2:10 60 mL aufgießen, der zweite der drei gleichen Aufgüsse.",
+      "s04": "Die letzten 60 mL bei 2:40 aufgießen."
     },
     "hoffmann": {
       "title": "V60 für eine Tasse",
@@ -301,7 +331,17 @@
       "grind": "Mittelfein",
       "equipment": "HARIO V60 01",
       "notes": "Frisch aufgekochtes Wasser wird für helle Röstungen empfohlen. Die Endzeit ist ungefähr; der Geschmack hat Vorrang.",
-      "finish": "Abtropfen lassen; die Gesamtzeit darf variieren."
+      "finish": "Abtropfen lassen; die Gesamtzeit darf variieren.",
+      "s00": "50 g Wasser für den Bloom aufgießen.",
+      "s01": "Fünf Sekunden lang sanft schwenken.",
+      "s02": "Zwischen 0:45 und 1:00 auf insgesamt 100 g aufgießen — 40 % des Gesamtgewichts.",
+      "s03": "Bis 1:10 pausieren.",
+      "s04": "Zwischen 1:10 und 1:20 auf insgesamt 150 g aufgießen — 60 % des Gesamtgewichts.",
+      "s05": "Bis 1:30 pausieren.",
+      "s06": "Zwischen 1:30 und 1:40 auf insgesamt 200 g aufgießen — 80 % des Gesamtgewichts.",
+      "s07": "Bis 1:50 pausieren.",
+      "s08": "Zwischen 1:50 und 2:00 auf insgesamt 250 g aufgießen — die volle Menge.",
+      "s09": "Noch einmal fünf Sekunden sanft schwenken."
     },
     "rao": {
       "title": "Pulsar-Grundrezept",
@@ -310,7 +350,13 @@
       "grind": "Gröber als Handfilter, feiner als Batch Brew",
       "equipment": "NextLevel Pulsar",
       "notes": "Die Übersicht nennt 45–60 Sekunden Vorbrühen, die Anleitung setzt bei 45–50 fort. Diese Abweichung bleibt erhalten. Spätere Einzelmengen und Zeiten fehlen.",
-      "finish": "Die Zielzeit ist ein Bereich. Gemäß der Quelle abtropfen lassen."
+      "finish": "Die Zielzeit ist ein Bereich. Gemäß der Quelle abtropfen lassen.",
+      "s00": "Bei geöffnetem Ventil 75 g frisch abgekochtes Wasser aufgießen.",
+      "s01": "Sofort das Ventil schließen, damit das Bett unter Wasser bleibt.",
+      "s02": "Bei 45–50 Sekunden so viel Wasser nachgießen, dass die Brühe etwa 1 cm über dem Bett steht.",
+      "s03": "Das Ventil öffnen.",
+      "s04": "In mehreren kurzen Stößen aufgießen, dabei 1–2 cm über dem Bett halten, bis die 425 g erreicht sind.",
+      "s05": "Den Pulsar direkt nach dem letzten Aufguss sanft schwenken."
     },
     "licata": {
       "title": "V60 mit kontinuierlichem Aufguss",
@@ -324,7 +370,7 @@
       "continuous": "Kräftig und schnell beginnen, dann langsam mittig bis zum Gesamtstand von 250 mL gießen.",
       "finalPour": "Die letzten 50 mL schnell und turbulent aufgießen.",
       "beans": "Hell gerösteter Natural Gesha von Colombia La Palma y El Tucan",
-      "water": "125 TDS; Einheiten und Messbasis fehlen."
+      "water": "Einheit und Bezugsbasis bleiben offen."
     },
     "wong": {
       "title": "Switch: ziehen und ablaufen",
@@ -336,7 +382,10 @@
       "finish": "Bei 4:00 das Ventil schließen und den Filter abnehmen.",
       "start": "Mit offenem Ventil beginnen.",
       "close": "Das Ventil bei 1:15 schließen.",
-      "drain": "Bei 2:30 öffnen und ablaufen lassen."
+      "drain": "Bei 2:30 öffnen und ablaufen lassen.",
+      "s01": "Bei geöffnetem Ventil von 0:00 bis 0:10 mit 30 g aufgießen und blühen lassen.",
+      "s02": "Zwischen 0:40 und 0:55 auf 140 g insgesamt aufgießen; die 110 g ergeben sich aus diesem Ziel minus der 30 g Bloom.",
+      "s04": "Bei 1:15 das Ventil schließen und auf 240 g aufgießen; die 100 g sind das Restwasser."
     },
     "boen": {
       "title": "Switch mit zwei Ziehphasen",
@@ -352,7 +401,8 @@
       "close": "Das Ventil bei 1:30 erneut schließen.",
       "circle": "Die angegebene Menge kreisförmig aufgießen.",
       "drain": "Bei 2:10 öffnen und ablaufen lassen.",
-      "beans": "Natural Geisha von Hacienda La Esmeralda"
+      "beans": "Natural Geisha von Hacienda La Esmeralda",
+      "s01": "Bei geschlossenem Drepper 50 g aufgießen und 40 Sekunden blühen lassen."
     },
     "hoang": {
       "title": "W60 mit Doppelfilter",
@@ -362,9 +412,12 @@
       "equipment": "HARIO W60",
       "notes": "Von HARIO veröffentlichtes Rezept des World Brewers Cup 2021. Gesamtmenge: 200 g; Schritte: mL. Beide Angaben bleiben ohne angenommene Gleichwertigkeit erhalten.",
       "finish": "Den W60 bei 3:15 abnehmen.",
-      "water": "65 ppm; Zusammensetzung und Messbasis fehlen.",
+      "water": "Ob der Wert Härte oder gelöste Feststoffe meint, bleibt offen.",
       "filters": "Flaches W60-Sieb und Papierfilter gemeinsam verwenden.",
-      "prep": "Die Autorin empfiehlt, vor dem Brühen Feinpartikel auszusieben."
+      "prep": "Die Autorin empfiehlt, vor dem Brühen Feinpartikel auszusieben.",
+      "s00": "Mit 50 mL Wasser 30 Sekunden blühen lassen.",
+      "s01": "Weitere 100 mL Wasser über 30 Sekunden aufgießen.",
+      "s02": "Die letzten 50 mL bei 2:00 aufgießen."
     },
     "rojewska": {
       "title": "Schneller V60 in zwei Phasen",
@@ -386,7 +439,12 @@
       "equipment": "HARIO V60 · Kunststoff",
       "notes": "Das veröffentlichte Rezept nutzt 30 g, 500 mL bei 92 °C und Ézio Sartori aus Brasilien. Der Mahlgrad fehlt in der Quelle.",
       "finish": "Die Extraktion bis 3:00 beenden.",
-      "beans": "Ézio Sartori, Espírito Santo, Brasilien; geröstet von Coffee Lab"
+      "beans": "Ézio Sartori, Espírito Santo, Brasilien; geröstet von Coffee Lab",
+      "s00": "60 g aufgießen und 30 Sekunden blühen lassen.",
+      "s01": "Beim zweiten Aufguss auf 250 g gehen; die 190 g sind dieses Ziel minus des Blooms.",
+      "s02": "Dreimal umrühren.",
+      "s03": "Bei 1:30 das restliche Wasser nachgießen, insgesamt 500 g.",
+      "s04": "Noch einmal dreimal umrühren."
     },
     "mallouhi": {
       "title": "Ibrahim Al Mallouhis V60",
@@ -397,7 +455,9 @@
       "notes": "Die Quelle nennt 20 g, 300 mL und 2:10 Zielzeit, aber keine Wassertemperatur.",
       "finish": "Eine Gesamtzeit von 2:10 anstreben.",
       "prep": "Filter anfeuchten, Spülwasser wegschütten und Kaffee einfüllen.",
-      "water": "Die Quelle nennt heißes Wasser, aber keine Temperatur."
+      "water": "Die Quelle nennt heißes Wasser, aber keine Temperatur.",
+      "s00": "Langsam 40 mL heißes Wasser kreisend aufgießen und 35 Sekunden blühen lassen.",
+      "s01": "Das restliche Wasser in kleinen Kreisen langsam aufgießen: 260 g, also die genannten 300 mL abzüglich des Bloom."
     },
     "chronicler": {
       "title": "Coffee-Chronicler-Switch-Rezept",
@@ -421,7 +481,14 @@
       "equipment": "HARIO V60",
       "notes": "Die Quelle empfiehlt möglichst heißes Wasser, besonders bei helleren Röstungen. Die Endzeit ist ein Ziel; der Durchlauf hängt von Papier und Temperatur ab.",
       "finish": "Den Kaffee ablaufen lassen und dabei etwa 3:30 anstreben.",
-      "stir": "Einmal im und einmal gegen den Uhrzeigersinn rühren, kurz abtropfen lassen und dann sanft schwenken."
+      "s00": "Bei t = 0:00 die doppelte Kaffeemenge, also 60 g Bloomwasser, aufgießen.",
+      "s01": "So lange schwenken, bis die Brühe gleichmäßig gemischt ist und alle Partikel benetzt sind — hier sei Schwenken besser als ein Löffel.",
+      "s02": "Bis zu 45 Sekunden blühen lassen, dann in 30 Sekunden 240 g nachgießen, insgesamt 300 g — 60 % des Gesamtgewichts.",
+      "s03": "Die letzten 200 g in 30 Sekunden auf 500 g ergänzen, etwas langsamer als zuvor und nicht zu stürmisch.",
+      "s04": "Bei t = 1:45 mit dem Löffel einmal im Uhrzeigersinn rühren.",
+      "s05": "Anschließend mit dem Löffel einmal gegen den Uhrzeigersinn rühren.",
+      "s06": "Den V60 ein wenig ablaufen lassen.",
+      "s07": "Den V60 sanft schwenken und dann ablaufen lassen — die Quelle zielt auf ein Ende bis 3:30."
     },
     "camber": {
       "title": "Camber Coffee V60",
@@ -431,7 +498,10 @@
       "equipment": "HARIO V60",
       "notes": "Die Quelle empfiehlt dieses Rezept für anaerob verarbeitete Kaffees. Die Wassertemperatur wird nicht genannt.",
       "finish": "Eine Gesamtbrühzeit von 3:00–3:15 anstreben.",
-      "bean": "Die Quelle empfiehlt anaerob verarbeitete Kaffees."
+      "bean": "Die Quelle empfiehlt anaerob verarbeitete Kaffees.",
+      "s00": "Zwischen 0:00 und 0:30 mit 60 g Wasser blühen lassen.",
+      "s01": "Zwischen 0:30 und 0:45 auf 200 g insgesamt aufgießen.",
+      "s02": "Bei 1:00 den letzten Aufguss bis 345 g abschließen."
     },
     "lamill": {
       "title": "LAMILL V60 Mugen",
@@ -441,7 +511,148 @@
       "equipment": "HARIO V60 MUGEN 02",
       "notes": "Die Quelle nennt weder Blooming noch Temperatur; sie verlangt einen durchgehenden kreisförmigen Aufguss, der um 0:40 endet.",
       "finish": "Den Kaffee ablaufen lassen und 3:00–3:30 anstreben.",
-      "prepare": "Filter vorwässern, 16,5 g Kaffee einfüllen und in der Mitte eine kleine Mulde formen."
+      "prepare": "Filter vorwässern, 16,5 g Kaffee einfüllen und in der Mitte eine kleine Mulde formen.",
+      "s00": "Timer starten und alle 225 g in konzentrischen Kreisen langsam von der Mitte nach außen aufgießen, diesen einzigen Aufguss bei 0:40 beenden."
+    },
+    "medina": {
+      "title": "Medinas 30-Sekunden-Stöße",
+      "summary": "15,5 g Kaffee bei 91 °C: alle 30 Sekunden 50 g, fünfmal.",
+      "version": "1Zpresso · WBrC 2023",
+      "grind": "5.2 (1Zpresso ZP6 Special)",
+      "equipment": "Kein Drepper genannt; die Karte steht nur unter „Pour-over“",
+      "notes": "Die Karte nennt nur 15,5 g Kaffee, 250 g Wasser bei 91 °C und 50 g alle 30 Sekunden. Drepper, Filter, Gesamtzeit und Gießverlauf fehlen; die fünf Gaben und ihre Zeitpunkte folgen aus Intervall und Gesamtmenge.",
+      "finish": "Keine Endzeit genannt; das Ablaufen bleibt dem Ermessen.",
+      "overview": "Das Wasser in gleiche Anteile in festem Intervall zu teilen ist eine der einfachsten Strukturen für den Timer. Sind Dosis und Temperatur gesetzt, bleibt nur der eigene Gießrhythmus.",
+      "bestFor": "Für alle, die ein Gießen in festem Intervall zu gleichen Teilen suchen",
+      "s00": "50 g zugeben — der erste von fünf gleichen Gaben im 30-Sekunden-Takt.",
+      "s01": "Die nächsten 50 g bei 0:30 zugeben.",
+      "s02": "Bei 1:00 weitere 50 g zugeben.",
+      "s03": "Bei 1:30 weitere 50 g zugeben.",
+      "s04": "Die letzten 50 g bei 2:00 und damit 250 g gesamt."
+    },
+    "maisonnette": {
+      "title": "Maisonnettes Mahlgut in zwei Schichten",
+      "summary": "Zwei Kaffees getrennt auf 7,5 und 7,0 gemahlen, geschichtet, dann vier zeitgesteuerte Aufgüsse bis 240 g.",
+      "version": "1Zpresso · Brazilian Brewers Cup 2023",
+      "grind": "7.5 und 7.0 (1Zpresso K-Ultra)",
+      "equipment": "Graycano mit Sibarist Fast",
+      "notes": "12 g Obatã auf 7,5 und 4 g Catucaí 24/137 auf 7,0 getrennt gemahlen und Obatã nach unten geschichtet; der Glasboden wird vor der Extraktion auf −10 °C gekühlt. Eine Gesamtzeit nennt die Quelle nicht.",
+      "finish": "Keine Gesamtzeit genannt; der letzte Aufguss endet bei 2:30.",
+      "overview": "Zwei Mahlstufen in einem Brühvorgang tauschen Vorbereitung gegen Geschmacksentrennung; der gekühlte Glasboden senkt die ersten Tropfen sofort ab.",
+      "bestFor": "Für alle, die mehr Vorbereitung für zwei Mahlgrade in Kauf nehmen",
+      "prepare": "Beide Kaffees getrennt mahlen, Obatã nach unten legen und den Glasboden vor dem Brühen auf −10 °C kühlen.",
+      "s00": "Zwischen 0:00 und 0:35 60 g aufgießen und blühen lassen.",
+      "s01": "Zwischen 0:35 und 1:15 70 g nachgießen.",
+      "s02": "Zwischen 1:15 und 1:40 60 g nachgießen.",
+      "s03": "Die letzten 50 g zwischen 1:40 und 2:30."
+    },
+    "torres": {
+      "title": "Torres’ drei gleiche Kreisaufgüsse",
+      "summary": "17 g auf 240 g in drei gleichen 80-g-Aufgüssen, Ziel rund zwei Minuten.",
+      "version": "1Zpresso · Chilenischer Brewing Champion 2024",
+      "grind": "7.5 (1Zpresso K-Ultra)",
+      "equipment": "Kein Drepper und kein Filter genannt",
+      "notes": "Die Karte nennt 17 g „Bourbon Striped, Farm Paradise 92“ und drei 80-g-Gaben bei 0:00, 0:40 und 1:20. Drepper, Filter und Höhe fehlen.",
+      "finish": "Vollständig ablaufen lassen; die Quelle rechnet mit rund 2:00 gesamt.",
+      "overview": "Dieselben 80 g dreimal wiederholt, Kreis und langsamerer Fluss erst ab dem zweiten Guss — das Rezept schrumpft auf den Gießverlauf selbst.",
+      "bestFor": "Für alle, die den Geschmack nur über den Gießverlauf steuern wollen",
+      "s00": "Timer starten und 80 g gleichmäßig über das Bett gießen, dann blühen lassen.",
+      "s01": "Bei 0:40 weitere 80 g langsam kreisend nachgießen.",
+      "s02": "Bei 1:20 die letzten 80 g, wieder kreisend."
+    },
+    "pinnola": {
+      "title": "Pinnolas drei kumulative Aufgüsse",
+      "summary": "15 g gewaschener Geisha von Finca Rosario: 40 g Bloom, dann auf 140 g und 240 g ergänzt.",
+      "version": "1Zpresso · Venezuelanische Meisterschaft 2025",
+      "grind": "4.5 (1Zpresso K-Ultra)",
+      "equipment": "Graycano mit Sibarist-Filter",
+      "notes": "Der zweite und dritte Guss sind als Zielmengen publiziert, die beiden 100 g folgen aus 140 − 40 und 240 − 140. Das Papier heißt nur „Sibarist“ ohne Modell; Etappenzeiten und -temperaturen fehlen.",
+      "finish": "Keine Endzeit; nach 240 g ablaufen lassen.",
+      "overview": "Güsse als kumulative Zielmengen zu schreiben heißt, nur zwei Zahlen auf der Waage zu verfolgen. Mit einer hell gerösteten Geisha eine Wettbewerbsrezeptur, die Rührung gegen Aroma tauscht.",
+      "bestFor": "Für alle, die nur zwei Zielzahlen auf der Waage verfolgen wollen",
+      "s00": "40 g Wasser zugeben und blühen lassen.",
+      "s01": "Kontrolliert kreisend auf 140 g ergänzen.",
+      "s02": "Auf 240 g ergänzen und die Gussphase abschließen."
+    },
+    "kaygusuz": {
+      "title": "Kaygusuz’ vier Aufgüsse und angesetztes Wasser",
+      "summary": "Eine 12-g- plus 5-g-Mischung auf selbst angesetztem 72-ppm-Wasser, vier Aufgüsse bis 270 g, Ende bei 2:40.",
+      "version": "1Zpresso · Turkish Brewers Cup 2025",
+      "grind": "2.7 (1Zpresso K-Ultra)",
+      "equipment": "Graycano mit Sibarist-Papier und Melodrip",
+      "water": "Apax-Wasser auf 72 ppm angesetzt mit Tonik 1 g, Jamm 1,5 g und Lylac 1,5 g; die Wassermenge dazu wird nicht genannt.",
+      "notes": "Die Karte beziffert nur zwei Wartezeiten — 1:20 und 2:00 —; die zweite Gabe bleibt ohne Zeit und ist als Reihenfolgeschritt vermerkt.",
+      "finish": "Die Quelle nennt 2:40 Gesamtbrühzeit.",
+      "overview": "Selbst angesetztes Wasser, eine Zwei-Farm-Mischung und ein Melodrip halten jede Variable in der Hand, während der Gießplan bewusst schlicht bleibt.",
+      "bestFor": "Für alle, die ihr Wasser selbst ansetzen und Variablen trennen wollen",
+      "s00": "60 g zugeben und 40 Sekunden blühen lassen.",
+      "s01": "Weitere 60 g zugeben.",
+      "s02": "Bis 1:20 warten, dann 50 g zugeben.",
+      "s03": "Bis 2:00 warten, dann die letzten 100 g."
+    },
+    "vuolo": {
+      "title": "Vuolos zwei schnelle Kreise und ein Zentrumsschluss",
+      "summary": "Eine 15-g-Mischung erhält zwei kreisende 100-g-Güsse bei 96 °C, danach 40 g bei 90 °C mittig und als durchgehender Strahl.",
+      "version": "1Zpresso · Brasilianischer Meister 2023",
+      "grind": "8 (1Zpresso K-Plus)",
+      "equipment": "MK-Drepper mit Sibarist Flat",
+      "notes": "Die Karte nennt keine Gesamtwassertemperatur — nur 96 °C für die ersten beiden und 90 °C für den letzten Guss — und weder Zeitpunkte noch Brühzeit.",
+      "finish": "Keine Endzeit; nach den drei Güssen ablaufen lassen.",
+      "overview": "Zwei heiße Kreisaufgüsse treiben die Extraktion; der letzte senkt die Temperatur und wird zum mittigen Feinstrahl — Rührung und Hitze als Schalter.",
+      "bestFor": "Für alle, die die Extraktion früh treiben und spät kühlen",
+      "s00": "100 g bei 96 °C schnell kreisend aufgießen.",
+      "s01": "Dasselbe erneut: 100 g bei 96 °C, schnell kreisend.",
+      "s02": "Die letzten 40 g bei 90 °C mittig und als durchgehenden Strahl."
+    },
+    "damgaci": {
+      "title": "Damgacı’s fünf Aufgüsse im Keramik-V60",
+      "summary": "Drei Kaffees zu je 5 g, ein 40-g-Bloom und vier 50-g-Güsse, fertig bei 2:20.",
+      "version": "1Zpresso · Zweiter Platz Türkei 2024",
+      "grind": "5.4 (1Zpresso K-Pro)",
+      "equipment": "HARIO V60 · Keramik",
+      "water": "Umkehrosmosewasser bei 40 ppm; die Mineralzusammensetzung fehlt.",
+      "notes": "Nur der 30-Sekunden-Bloom und die 2:20-Gesamtzeit sind datiert; die vier späteren Gaben bleiben Reihenschritte.",
+      "finish": "Die Quelle nennt 2:20 Gesamtbrühzeit.",
+      "overview": "Drei Herkünfte zu je 5 g werden gemischt, während der Guss schlicht bleibt: drei Kreise, dann ein mittiger Schluss. Komplexität kommt aus den Bohnen, Konstanz aus dem Ablauf.",
+      "bestFor": "Für alle, die mehrere Kaffees in einer Wettbewerbsstruktur mischen",
+      "s00": "40 g zugeben und 30 Sekunden blühen lassen.",
+      "s01": "Zweiter Guss: 50 g kreisend.",
+      "s02": "Dritter Guss: weitere 50 g kreisend.",
+      "s03": "Vierter Guss: dieselben 50 g kreisend.",
+      "s04": "Fünfter Guss: die letzten 50 g mittig."
+    },
+    "ohno": {
+      "title": "Ohnos kühle, grobe Brühe mit Wasserzugabe",
+      "summary": "Das Siegerrezept: 22 g bei 83 °C mit 190 g extrahiert, dann mit 60–70 g Wasser bei 65 °C gestreckt.",
+      "version": "ORIGAMI CUP · Sieger 2024",
+      "grind": "30 Klicks (Comandante C40 MK4)",
+      "equipment": "ORIGAMI Air S mit Wave-Papier",
+      "water": "Tajima-Naturwasser, vom Veranstalter für alle gestellt; ohne Härte- oder TDS-Angabe.",
+      "notes": "Die 190 g decken nur die drei Aufgüsse ab. Das Abschlusswasser beginnt bei 50 g und landet nach Geschmack bei 60–70 g; als Spanne publiziert, bleibt es außerhalb der Gesamtmenge.",
+      "prepare": "32 g bei 30 Klicks mahlen und durch das gröbste Sieb (Mesh L) schüttern; 22,0 g verwenden.",
+      "finish": "Das Ablaufen endet zwischen 1:30 und 1:35, vor dem Abschlusswasser.",
+      "overview": "Temperatur bewusst niedrig, Mahlgrad grob, Bett flach — bewusst unterextrahiert und hell gebraut, die Stärke stellt erst das Abschlusswasser her. Sauberkeit der Tasse als Kriterium verschiebt das Risiko auf die schwächere Seite.",
+      "bestFor": "Wettbewerber, die die Stärke mit einem Abschlusswasser einstellen",
+      "s00": "Erster Guss von 45 g, das Wasser über das ganze Bett verteilen.",
+      "s01": "Bei 0:30 auf 120 g (+75 g) mit langsamem Kreis, etwas Rührung beabsichtigt.",
+      "s02": "Bei 1:00 auf 190 g (+70 g) mittig ohne Rührung, in den letzten ~15 g am Rand entlang, damit das Bett flach endet.",
+      "s03": "Nach dem Ablaufen Wasser bei 65 °C zugeben: erst 50 g, dann nach Geschmack bis etwa 60–70 g.",
+      "beans": "Ohno bemerkt, dass das Bohnenprofil erst am Tag bekannt gegeben wurde; seine Karte ist für jeden Kaffee geschrieben und nennt keinen."
+    },
+    "gil-2025": {
+      "title": "Gils Dreigaufuss-ZP6-Rezept (2025)",
+      "summary": "15 g auf 250 g 65-ppm-Wasser bei 94 °C, in Gaben von 60, 100 und 90 g im 50-Sekunden-Abstand.",
+      "version": "1Zpresso · Niederländischer Meister 2025",
+      "grind": "6,7 Klicks (1Zpresso ZP6 Special)",
+      "equipment": "Die Karte sagt nur „in den Drepper geben“, ohne ihn zu benennen",
+      "water": "Wasser bei 65 ppm; weder Zusammensetzung noch Bezugsbasis genannt.",
+      "notes": "Das ist Gils ZP6-Fassung von 2025, getrennt von seinem K-Ultra-/ORIGAMI-Air-Rezept von 2024; eine Gesamtzeit fehlt.",
+      "finish": "Keine Endzeit; nach den drei Güssen ablaufen lassen.",
+      "overview": "Derselbe Autor, ein Jahr später, mit anderer Mühle und anderem Aufbau: drei größere Gaben im kürzeren Abstand, was die Tasse sauber hält und den Kaffee sprechen lässt.",
+      "bestFor": "Zwei Fassungen desselben Brauers im Jahresabstand vergleichen",
+      "s00": "15 g in den Drepper geben und mit 60 g beginnen.",
+      "s01": "Nach 50 Sekunden 100 g nachgießen.",
+      "s02": "Nach weiteren 50 Sekunden die letzten 90 g."
     }
   },
   "waterQuality": "Wasserprofil",
@@ -556,5 +767,69 @@
     "dim115H70Hole25": "Ø115 × H70; Bodenloch Ø25",
     "dim118H70Hole25": "Ø118 × H70; Bodenloch Ø25",
     "weight1400WithBase": "1400 (mit Basis)"
-  }
+  },
+  "pourPatterns": {
+    "centre": "Mitte",
+    "circular": "Kreisend",
+    "spiral": "Spiralförmig",
+    "vertical": "Senkrechter Strahl",
+    "lateral": "Waagerechter Strahl",
+    "wholeBed": "Ganzes Bett",
+    "any": "Kein Muster"
+  },
+  "pourStyles": {
+    "aggressive": "Aggressiv",
+    "turbulent": "Turbulent",
+    "slow": "Langsam",
+    "gentle": "Sanft",
+    "steady": "Gleichmäßig",
+    "forceful": "Kräftig"
+  },
+  "pourDirections": {
+    "clockwise": "Im Uhrzeigersinn",
+    "counterclockwise": "Gegen den Uhrzeigersinn"
+  },
+  "bedPrepLabels": {
+    "rinseFilter": "Filter spülen",
+    "coldRinse": "Mit kaltem Wasser spülen",
+    "discardRinse": "Spülwasser verwerfen",
+    "prewarmServer": "Kanne vorwärmen",
+    "levelBed": "Bett glätten",
+    "crater": "Mulde in der Mitte",
+    "siftFines": "Feinanteil sieben",
+    "removeChaff": "Chaff entfernen"
+  },
+  "valveStates": {
+    "open": "Offen",
+    "closed": "Geschlossen"
+  },
+  "yieldBases": {
+    "observed": "Gemessen",
+    "target": "Ziel"
+  },
+  "publishedBases": {
+    "page": "Seitenveröffentlichung",
+    "video": "Videoveröffentlichung",
+    "event": "Wettbewerbsbericht"
+  },
+  "yieldLabel": "Tassenmenge",
+  "removalAt": "Filter entfernt um",
+  "ratioStated": "Von der Quelle genanntes Verhältnis",
+  "waterLevelRule": "Wasser {level} über dem Bett halten",
+  "archiveLink": "Archiv-Mitschnitt",
+  "updated": "Seite aktualisiert",
+  "grindHedged": "Die Quelle nennt dies als übliche Einstellung, nicht als Rezeptwert",
+  "valveInitial": "Ventil vor dem ersten Aufguss",
+  "stepDerived": "Die Quelle nennt diese Menge nicht allein; sie ergibt sich aus Gesamtmenge und Vorherige.",
+  "micron": "Mahlgrad",
+  "siftMesh": "Sieb",
+  "hardness": "Härte",
+  "alkalinity": "Alkalinität",
+  "groundMoreThanDosed": "Die Quelle mahlt {ground} g und verwendet {dose} g",
+  "recommendedCoffee": "Von der Quelle empfohlener Kaffee: {value}",
+  "recommendedWater": "Die persönliche Wasserpräferenz der Quelle: {value}",
+  "grindMicronBases": {
+    "psdPeak": "PSD-Spitzenwert"
+  },
+  "brewerUnspecified": "Die Quelle nennt keinen Drepper"
 }

@@ -1,4 +1,16 @@
 {
+  "derivedTitle": "Calculado con las cifras publicadas",
+  "derivedNote": "Estos valores aplican aritmética a números que la fuente ya publica; no añaden afirmaciones nuevas.",
+  "bloomShare": "Parte del agua en la preinfusión",
+  "pourEnds": "Fin del vertido",
+  "lastPourStarts": "Inicio del último vertido",
+  "drawdown": "Drenaje tras el vertido",
+  "afterLastPourStart": "Del último vertido al final",
+  "sourceFacts": "Datos publicados por la fuente",
+  "missingFacts": "No indicado en la fuente:",
+  "missingNone": "La fuente indica todos estos datos.",
+  "allAdditions": "Momento de cada vertido",
+  "totalWaterPublished": "Cantidad de cada vertido",
   "conditionFilters": "Equipo y café",
   "conditionHint": "Condiciones de la fuente original. Los datos ausentes no coinciden. Los filtros no predicen la receta ideal.",
   "grinder": "Molino",
@@ -198,7 +210,7 @@
   "boiling": "Agua recién hervida",
   "light": "Tueste claro, para la recomendación de agua hervida",
   "soft": "Agua blanda y filtrada",
-  "raoWater": "Dureza total de unos 100 ppm y alcalinidad de 40 ppm; la fuente no indica la base de cálculo.",
+  "raoWater": "La fuente da sus propias cifras preferidas, sin base de medida indicada.",
   "raoPrep": "Abre la válvula, enjuaga el filtro y desecha el agua. Fija el cilindro, añade el café y nivela.",
   "derived": "El agua total se calcula a partir de la dosis y proporción en masa publicadas; no es una medición aparte.",
   "sequence": "Después",
@@ -213,7 +225,9 @@
     "open": "Abrir la válvula",
     "topup": "Subir el nivel",
     "pulses": "Vertidos cortos",
-    "level": "Nivelar el café"
+    "level": "Nivelar el café",
+    "stir": "Remover",
+    "drain": "Drenar un poco"
   },
   "instruction": {
     "bloom": "Añade la cantidad indicada para mojar el café.",
@@ -224,7 +238,9 @@
     "open": "Abre la válvula tras añadir el agua.",
     "topup": "Vierte hasta dejar el agua a unos 1 cm sobre el café.",
     "pulses": "Vierte en pulsos, manteniendo 1–2 cm de agua sobre el café, hasta el total.",
-    "level": "Nivela el café antes de preparar."
+    "level": "Nivela el café antes de preparar.",
+    "stir": "Remueve la cama de café con una cuchara.",
+    "drain": "Deja de verter y baja un poco el nivel."
   },
   "recipes": {
     "kodama": {
@@ -253,7 +269,7 @@
       "first": "Vierte suavemente por todo el lecho.",
       "second": "Vierte lento con agitación.",
       "last": "Baja a unos 75°C y vierte un hilo fino y lento al centro.",
-      "water": "Agua Tajima; dureza 70 mg/L sin base de medición."
+      "water": "En la sede se suministró agua natural Tajima; la base de la dureza no se indica."
     },
     "selorio": {
       "title": "Lui Selorio · ORIGAMI Air",
@@ -263,7 +279,10 @@
       "equipment": "ORIGAMI Air",
       "notes": "Resumen 240 mL, pasos g. Tercer intervalo 1:00–1:00; solo se conserva el inicio.",
       "finish": "Deja drenar hasta 2:25.",
-      "third": "Empieza el tercer vertido a 1:00; el final es ambiguo."
+      "third": "Empieza el tercer vertido a 1:00; el final es ambiguo.",
+      "s00": "Vierte 50 g de agua en diez segundos y espera hasta 0:30.",
+      "s01": "Vierte 70 g de agua en diez segundos y espera hasta 1:00.",
+      "s03": "Vierte los últimos 60 g en diez segundos y deja drenar hasta 2:25."
     },
     "rincon": {
       "title": "Janer Joseph Perez Rincon · ORIGAMI",
@@ -274,7 +293,9 @@
       "notes": "No indica horarios, temperatura inicial, tueste ni tiempo total. Temperaturas posteriores por paso.",
       "finish": "Deja drenar; tiempo no indicado.",
       "spiral": "Vierte en espiral.",
-      "water": "Fuente: Pure Colombian Water; minerales no indicados."
+      "water": "Fuente: Pure Colombian Water; minerales no indicados.",
+      "s00": "Primer vertido: 50 g de agua. La ficha no indica temperatura ni tiempo para este vertido.",
+      "s01": "Segundo vertido: 70 g de agua a 92 °C; la fuente no publica el momento."
     },
     "gil": {
       "title": "Milo Gil · ORIGAMI Air",
@@ -283,7 +304,11 @@
       "grind": "7.5 (1Zpresso K-Ultra)",
       "equipment": "ORIGAMI Air",
       "notes": "Campeón neerlandés 2024. Modelo Sibarist, café y tueste no indicados. Sugiere unos 7 g/s.",
-      "finish": "Deja drenar; objetivo aproximado 3:00."
+      "finish": "Deja drenar; objetivo aproximado 3:00.",
+      "s00": "Empieza con un vertido suave de 40 g.",
+      "s01": "A las 0:45 añade un vertido de 60 g.",
+      "s02": "A las 1:30 continúa con un vertido constante de 75 g.",
+      "s03": "A las 2:15 cierra con los 75 g finales; la ficha sugiere unos 7 g/s y un drenaje cerca de 3:00."
     },
     "kasuya": {
       "title": "Método 4:6 de Kasuya",
@@ -292,7 +317,12 @@
       "grind": "Gruesa",
       "equipment": "HARIO V60 · cerámica",
       "notes": "Es la versión didáctica de HARIO, no una reconstrucción de competición. Los últimos vertidos empiezan a 2:10 y 2:40.",
-      "finish": "Retira la cafetera al finalizar el tiempo indicado."
+      "finish": "Retira la cafetera al finalizar el tiempo indicado.",
+      "s00": "Vierte 50 mL a las 0:00: la fuente lo presenta como el 42% de la primera etapa de 120 mL, es decir el 40% del total, a favor de la dulzura.",
+      "s01": "Añade 70 mL a las 0:45 y completa la primera etapa hasta 120 mL: el otro 40% del total.",
+      "s02": "Vierte 60 mL a las 1:30: la fuente divide los 180 mL restantes en tres vertidos iguales.",
+      "s03": "Vierte 60 mL a las 2:10, el segundo de los tres vertidos iguales.",
+      "s04": "Vierte los 60 mL finales a las 2:40."
     },
     "hoffmann": {
       "title": "V60 para una taza",
@@ -301,7 +331,17 @@
       "grind": "Media-fina",
       "equipment": "HARIO V60 01",
       "notes": "El agua recién hervida se recomienda para tuestes claros. El tiempo final es orientativo; la fuente prioriza el sabor.",
-      "finish": "Deja que termine de drenar; el tiempo puede variar."
+      "finish": "Deja que termine de drenar; el tiempo puede variar.",
+      "s00": "Vierte 50 g de agua para la preinfusión.",
+      "s01": "Remueve suavemente en círculos durante cinco segundos.",
+      "s02": "Vierte hasta 100 g acumulados entre 0:45 y 1:00: el 40% del peso total.",
+      "s03": "Pausa hasta 1:10.",
+      "s04": "Vierte hasta 150 g acumulados entre 1:10 y 1:20: el 60% del peso total.",
+      "s05": "Pausa hasta 1:30.",
+      "s06": "Vierte hasta 200 g acumulados entre 1:30 y 1:40: el 80% del peso total.",
+      "s07": "Pausa hasta 1:50.",
+      "s08": "Vierte hasta 250 g acumulados entre 1:50 y 2:00 — el peso completo.",
+      "s09": "Vuelve a remover suavemente durante cinco segundos."
     },
     "rao": {
       "title": "Receta inicial de Pulsar",
@@ -310,7 +350,13 @@
       "grind": "Más gruesa que pour-over y más fina que filtro por lotes",
       "equipment": "NextLevel Pulsar",
       "notes": "El resumen indica 45–60 segundos de preinfusión y el detalle reanuda a 45–50. Se conserva la diferencia. No se indican cantidades ni tiempos posteriores exactos.",
-      "finish": "El tiempo total objetivo es un intervalo; termina el drenaje según la fuente."
+      "finish": "El tiempo total objetivo es un intervalo; termina el drenaje según la fuente.",
+      "s00": "Con la válvula abierta, vierte 75 g de agua recién apartada del hervor.",
+      "s01": "Cierra la válvula de inmediato para que el café quede sumergido.",
+      "s02": "A los 45–50 segundos, añade agua hasta elevar la mezcla unos 1 cm sobre el café.",
+      "s03": "Abre la válvula.",
+      "s04": "Vierte en varios golpes cortos, manteniendo la mezcla 1–2 cm sobre el café, hasta los 425 g.",
+      "s05": "Mueve suavemente el Pulsar justo después del último vertido."
     },
     "licata": {
       "title": "V60 con vertido continuo",
@@ -324,7 +370,7 @@
       "continuous": "Empieza con un vertido rápido y enérgico; luego vierte despacio al centro hasta acumular 250 mL.",
       "finalPour": "Vierte rápidamente los últimos 50 mL para crear turbulencia.",
       "beans": "Gesha natural de tueste claro de Colombia La Palma y El Tucan",
-      "water": "125 TDS; no se indican unidades ni base de medición."
+      "water": "No se indican su unidad ni su base de medida."
     },
     "wong": {
       "title": "Switch: inmersión y drenaje",
@@ -336,7 +382,10 @@
       "finish": "A los 4:00, cierra la válvula y retira el dripper.",
       "start": "Empieza con la válvula abierta.",
       "close": "Cierra la válvula a 1:15.",
-      "drain": "Abre a 2:30 y deja drenar."
+      "drain": "Abre a 2:30 y deja drenar.",
+      "s01": "Con la válvula abierta, preinfusiona con 30 g de agua entre 0:00 y 0:10.",
+      "s02": "Vierte hasta 140 g acumulados entre 0:40 y 0:55; los 110 g salen de restar los 30 g de la preinfusión.",
+      "s04": "A las 1:15 cierra la válvula y vierte hasta 240 g; los 100 g son el agua restante."
     },
     "boen": {
       "title": "Switch con doble inmersión",
@@ -352,7 +401,8 @@
       "close": "Vuelve a cerrar la válvula a 1:30.",
       "circle": "Añade la cantidad indicada en círculos.",
       "drain": "Abre a 2:10 y deja drenar.",
-      "beans": "Geisha natural de Hacienda La Esmeralda"
+      "beans": "Geisha natural de Hacienda La Esmeralda",
+      "s01": "Con el dripper cerrado, vierte 50 g de agua y deja preinfusionar 40 segundos."
     },
     "hoang": {
       "title": "W60 con doble filtro",
@@ -362,9 +412,12 @@
       "equipment": "HARIO W60",
       "notes": "Receta del World Brewers Cup 2021 publicada por HARIO. El total figura como 200 g y los pasos en mL. Se conservan ambos sin asumir equivalencia.",
       "finish": "Retira el W60 a los 3:15.",
-      "water": "65 ppm; composición y base de medición no especificadas.",
+      "water": "No se indica si la cifra es dureza o sólidos disueltos totales.",
       "filters": "Malla plana y filtro de papel W60 juntos.",
-      "prep": "La autora recomienda tamizar los finos antes de preparar."
+      "prep": "La autora recomienda tamizar los finos antes de preparar.",
+      "s00": "Preinfusioná con 50 mL de agua durante 30 segundos.",
+      "s01": "Vierte otros 100 mL de agua durante 30 segundos.",
+      "s02": "Vierte los 50 mL finales a las 2:00."
     },
     "rojewska": {
       "title": "V60 rápido en dos fases",
@@ -386,7 +439,12 @@
       "equipment": "HARIO V60 · plástico",
       "notes": "La receta usa 30 g, 500 mL a 92 °C y café Ézio Sartori de Brasil. La fuente no indica la molienda.",
       "finish": "Termina la extracción antes de 3:00.",
-      "beans": "Ézio Sartori, Espírito Santo, Brasil; tostado por Coffee Lab"
+      "beans": "Ézio Sartori, Espírito Santo, Brasil; tostado por Coffee Lab",
+      "s00": "Vierte 60 g de agua y deja preinfusionar 30 segundos.",
+      "s01": "En el segundo vertido llega a 250 g; los 190 g son esa meta menos la preinfusión.",
+      "s02": "Remueve tres veces.",
+      "s03": "A las 1:30 vierte el resto del agua hasta un total de 500 g.",
+      "s04": "Vuelve a remover tres veces."
     },
     "mallouhi": {
       "title": "V60 de Ibrahim Al Mallouhi",
@@ -397,7 +455,9 @@
       "notes": "La fuente indica 20 g, 300 mL y un objetivo de 2:10, pero no la temperatura.",
       "finish": "Busca un tiempo total de 2:10.",
       "prep": "Humedece el filtro, desecha el agua y añade el café.",
-      "water": "La fuente dice agua caliente, sin indicar temperatura."
+      "water": "La fuente dice agua caliente, sin indicar temperatura.",
+      "s00": "Vierte lentamente 40 mL de agua caliente en círculos y deja preinfusionar 35 segundos.",
+      "s01": "Vierte lentamente el agua restante en círculos pequeños: 260 mL, los 300 mL publicados menos la preinfusión."
     },
     "chronicler": {
       "title": "Receta Switch de Coffee Chronicler",
@@ -421,7 +481,14 @@
       "equipment": "HARIO V60",
       "notes": "La fuente recomienda agua lo más caliente posible, sobre todo con tuestes claros. El tiempo final es un objetivo; el drenaje varía según el papel y la temperatura.",
       "finish": "Deja drenar la preparación buscando terminar alrededor de 3:30.",
-      "stir": "Remueve una vez en sentido horario y otra en sentido antihorario, deja drenar un poco el lecho y luego gira suavemente."
+      "s00": "En t = 0:00 añade el doble del peso del café: 60 g de agua de preinfusión.",
+      "s01": "Mueve el recipiente hasta que la mezcla quede homogénea y todo el café esté mojado; la fuente prefiere esto a una cuchara.",
+      "s02": "Preinfusioná hasta 45 segundos y añade 240 g en los siguientes 30 segundos para llegar a 300 g, el 60% del peso total.",
+      "s03": "Añade los últimos 200 g en 30 segundos hasta 500 g, algo más lento que la fase anterior y sin exceso de fuerza.",
+      "s04": "En t = 1:45 remueve una vez en el sentido de las agujas con una cuchara.",
+      "s05": "Después remueve una vez en sentido contrario con la cuchara.",
+      "s06": "Deja que el V60 drene un poco.",
+      "s07": "Da al V60 un movimiento circular suave y deja drenar; la fuente apunta a terminar antes de 3:30."
     },
     "camber": {
       "title": "Camber Coffee V60",
@@ -431,7 +498,10 @@
       "equipment": "HARIO V60",
       "notes": "La fuente recomienda esta receta para cafés con proceso anaeróbico. No indica la temperatura del agua.",
       "finish": "Busca un tiempo total de preparación de 3:00–3:15.",
-      "bean": "La fuente recomienda cafés con proceso anaeróbico."
+      "bean": "La fuente recomienda cafés con proceso anaeróbico.",
+      "s00": "Preinfusioná con 60 g de agua entre 0:00 y 0:30.",
+      "s01": "Vierte hasta 200 g acumulados entre 0:30 y 0:45.",
+      "s02": "A las 1:00 haz el último vertido hasta 345 g."
     },
     "lamill": {
       "title": "LAMILL V60 Mugen",
@@ -441,7 +511,148 @@
       "equipment": "HARIO V60 MUGEN 02",
       "notes": "La fuente no indica bloom ni temperatura; pide un vertido circular continuo que termine a las 0:40.",
       "finish": "Deja drenar buscando 3:00–3:30.",
-      "prepare": "Moja el filtro, añade 16,5 g de café y haz una pequeña depresión en el centro."
+      "prepare": "Moja el filtro, añade 16,5 g de café y haz una pequeña depresión en el centro.",
+      "s00": "Inicia el cronómetro y vierte los 225 g en círculos concéntricos desde el centro hacia fuera, despacio, terminando este único vertido en 0:40."
+    },
+    "medina": {
+      "title": "Pulsos cada 30 segundos de Medina",
+      "summary": "15,5 g de café a 91 °C: 50 g cada 30 segundos, cinco veces.",
+      "version": "1Zpresso · WBrC 2023",
+      "grind": "5.2 (1Zpresso ZP6 Special)",
+      "equipment": "Sin dripper indicado; la ficha solo está en «Pour-over»",
+      "notes": "La ficha solo publica 15,5 g de café, 250 g de agua a 91 °C y 50 g cada 30 segundos. No indica dripper, filtro, tiempo total ni trayectoria, así que los cinco añadidos y sus horas se calculan a partir de ese intervalo y del total.",
+      "finish": "No se publica hora de fin; el drenaje queda a criterio del barista.",
+      "overview": "Repartir el agua en porciones idénticas a intervalos fijos es una de las estructuras más fáciles de seguir con un temporizador. Con dosis y temperatura fijas, la única variable queda en tu ritmo de vertido.",
+      "bestFor": "Quien busque un vertido por intervalos fijos y partes iguales",
+      "s00": "Añade 50 g: el primero de cinco añadidos iguales cada 30 segundos.",
+      "s01": "Añade los siguientes 50 g a los 0:30.",
+      "s02": "Añade 50 g a las 1:00.",
+      "s03": "Añade 50 g a las 1:30.",
+      "s04": "Vierte los 50 g finales a las 2:00 y llega a los 250 g."
+    },
+    "maisonnette": {
+      "title": "Capas con dos moliendas de Maisonnette",
+      "summary": "Dos cafés molidos aparte en 7.5 y 7.0, en capas, con cuatro vertidos cronometrados hasta 240 g.",
+      "version": "1Zpresso · Brewers Cup Brasil 2023",
+      "grind": "7.5 y 7.0 (1Zpresso K-Ultra)",
+      "equipment": "Graycano con filtro Sibarist Fast",
+      "notes": "12 g de Obatã en 7.5 y 4 g de Catucaí 24/137 en 7.0, molidos por separado y apilados con Obatã abajo; enfría la base de la jarra de vidrio a −10 °C antes de extraer. No publica tiempo total.",
+      "finish": "No hay tiempo total; la última ventana de vertido cierra en 2:30.",
+      "overview": "Moler dos cafés en dos ajustes dentro de una misma taza cambia pasos de preparación por separación de sabores; la base fría de la jarra baja de inmediato la temperatura de las primeras gotas.",
+      "bestFor": "Quien acepte más preparación para comparar dos moliendas",
+      "prepare": "Muele cada café por separado, coloca Obatã abajo y enfría la base de la jarra a −10 °C antes de empezar.",
+      "s00": "Vierte 60 g entre 0:00 y 0:35 y deja preinfusionar.",
+      "s01": "Vierte 70 g entre 0:35 y 1:15.",
+      "s02": "Vierte 60 g entre 1:15 y 1:40.",
+      "s03": "Vierte los 50 g finales entre 1:40 y 2:30."
+    },
+    "torres": {
+      "title": "Tres vertidos circulares iguales de Torres",
+      "summary": "17 g a 240 g en tres vertidos de 80 g, con unos dos minutos en mente.",
+      "version": "1Zpresso · Campeón chileno de preparación 2024",
+      "grind": "7.5 (1Zpresso K-Ultra)",
+      "equipment": "Sin dripper ni filtro indicados",
+      "notes": "La ficha nombra 17 g de «bourbon striped, farm paradise 92» y tres vertidos de 80 g en 0:00, 0:40 y 1:20. No indica dripper, filtro ni altura.",
+      "finish": "Deja drenar por completo; la fuente calcula unos 2:00 en total.",
+      "overview": "Repetir los mismos 80 g tres veces, añadiendo círculo y flujo lento solo desde el segundo vertido, reduce la receta al propio trayecto del agua.",
+      "bestFor": "Quien ajuste el sabor solo con el trayecto del vertido",
+      "s00": "Inicia el cronómetro y vierte 80 g uniformes sobre el café; deja preinfusionar.",
+      "s01": "A las 0:40 añade otros 80 g en círculos lentos.",
+      "s02": "A las 1:20 vierte los 80 g finales, también en círculos."
+    },
+    "pinnola": {
+      "title": "Tres vertidos acumulativos de Pinnola",
+      "summary": "15 g de Geisha lavado de Finca Rosario: preinfusión de 40 g y luego hasta 140 g y 240 g.",
+      "version": "1Zpresso · Brewers Cup Venezuela 2025",
+      "grind": "4.5 (1Zpresso K-Ultra)",
+      "equipment": "Graycano con filtro Sibarist",
+      "notes": "El segundo y tercer vertido se publican como metas acumuladas, así que los dos 100 g salen de 140 − 40 y 240 − 140. El papel es solo «Sibarist», sin modelo, y no hay tiempos ni temperaturas por etapa.",
+      "finish": "Sin hora de fin: al llegar a 240 g, deja drenar.",
+      "overview": "Expresar los vertidos como totales acumulados hace que solo persigas dos cifras en la báscula. Con un Geisha de tueste claro, es una receta de competición que cambia agitación por aroma.",
+      "bestFor": "Quien persigue solo dos cifras en la balanza",
+      "s00": "Añade 40 g de agua y deja preinfusionar.",
+      "s01": "Sube hasta 140 g con un movimiento circular controlado.",
+      "s02": "Sube hasta 240 g para completar el vertido."
+    },
+    "kaygusuz": {
+      "title": "Cuatro vertidos y agua preparada de Kaygusuz",
+      "summary": "Mezcla de 12 g + 5 g con agua preparada a 72 ppm, cuatro vertidos hasta 270 g y 2:40 de total.",
+      "version": "1Zpresso · Brewers Cup Turquía 2025",
+      "grind": "2.7 (1Zpresso K-Ultra)",
+      "equipment": "Graycano con filtro Sibarist y Melodrip",
+      "water": "Agua Apax preparada a 72 ppm con Tonik 1 g, Jamm 1.5 g y Lylac 1.5 g; el volumen de agua no se indica.",
+      "notes": "La ficha solo cronometra dos esperas —1:20 y 2:00—, así que el segundo añadido queda sin hora y se mantiene como paso de secuencia.",
+      "finish": "La fuente indica un tiempo total de 2:40.",
+      "overview": "Agua preparada a mano, mezcla de dos fincas y un Melodrip ponen cada variable bajo control, mientras el calendario de vertidos queda deliberadamente simple.",
+      "bestFor": "Quien prepara su agua y quiere variables aisladas",
+      "s00": "Añade 60 g de agua y deja preinfusionar 40 segundos.",
+      "s01": "Añade otros 60 g.",
+      "s02": "Espera hasta 1:20 y añade 50 g.",
+      "s03": "Espera hasta 2:00 y vierte los 100 g finales."
+    },
+    "vuolo": {
+      "title": "Dos círculos rápidos y cierre central de Vuolo",
+      "summary": "Un blend de 15 g recibe dos vertidos circulares de 100 g a 96 °C y luego 40 g a 90 °C, al centro y en hilo continuo.",
+      "version": "1Zpresso · Campeón de Brasil 2023",
+      "grind": "8 (1Zpresso K-Plus)",
+      "equipment": "Dripper MK con papel Sibarist Flat",
+      "notes": "La ficha no da una temperatura general: solo 96 °C para los dos primeros vertidos y 90 °C para el último, sin horas ni tiempo total.",
+      "finish": "Sin hora de fin: tras los tres vertidos, deja drenar.",
+      "overview": "Dos vertidos calientes y circulares empujan la extracción; el último baja la temperatura y se estrecha en el centro: agitación y calor como interruptores.",
+      "bestFor": "Quien empuja la extracción al inicio y la enfría al final",
+      "s00": "Vierte 100 g a 96 °C con movimientos circulares rápidos.",
+      "s01": "Repite: 100 g a 96 °C en círculos rápidos.",
+      "s02": "Añade los 40 g finales a 90 °C en hilo central y continuo."
+    },
+    "damgaci": {
+      "title": "Cinco vertidos de Damgacı en V60 de cerámica",
+      "summary": "Tres cafés de 5 g cada uno, una preinfusión de 40 g y cuatro vertidos de 50 g, listos en 2:20.",
+      "version": "1Zpresso · Subcampeón de Turquía 2024",
+      "grind": "5.4 (1Zpresso K-Pro)",
+      "equipment": "HARIO V60 · Cerámica",
+      "water": "Agua de ósmosis inversa a 40 ppm; sin composición mineral.",
+      "notes": "Solo la preinfusión de 30 s y el total de 2:20 tienen hora; los cuatro añadidos siguientes van como pasos ordenados.",
+      "finish": "La fuente indica un tiempo total de 2:20.",
+      "overview": "Tres orígenes de 5 g cada uno se mezclan en la tolva, mientras el vertido sigue un patrón simple: tres círculos y un cierre central. La complejidad viene del café; la constancia del calendario.",
+      "bestFor": "Quien mezcla varios cafés dentro de una estructura de competición",
+      "s00": "Añade 40 g de agua y deja preinfusionar 30 segundos.",
+      "s01": "Segundo vertido: 50 g en círculos.",
+      "s02": "Tercer vertido: otros 50 g en círculo.",
+      "s03": "Cuarto vertido: el mismo círculo de 50 g.",
+      "s04": "Quinto vertido: los 50 g finales al centro."
+    },
+    "ohno": {
+      "title": "Brew frío y grueso de Ohno con agua añadida",
+      "summary": "La receta campeona: 22 g a 83 °C extraídos con 190 g y después diluidos con 60–70 g de agua a 65 °C.",
+      "version": "ORIGAMI CUP · ganador 2024",
+      "grind": "30 clics (Comandante C40 MK4)",
+      "equipment": "ORIGAMI Air S con papel Wave",
+      "water": "Agua natural Tajima, suministrada por el evento a todos los participantes; sin base de dureza o TDS.",
+      "notes": "Los 190 g cubren solo los tres vertidos. El agua final empieza en 50 g y queda en 60–70 g según el gusto; se publica como rango y no se suma al total.",
+      "prepare": "Muele 32 g a 30 clics y tamízalo con la malla L más gruesa; usa 22,0 g.",
+      "finish": "El drenaje termina entre 1:30 y 1:35, antes del agua final.",
+      "overview": "Baja la temperatura a propósito, muele grueso y usa cama plana para extraer de menos y servir pálido; el agua final ajusta la fuerza. Con la taza limpia como criterio, el riesgo se carga hacia el lado flojo.",
+      "bestFor": "Competidores que fijan la fuerza con agua final",
+      "s00": "Primer vertido de 45 g, repartiendo el agua por toda la cama.",
+      "s01": "A las 0:30 sube a 120 g (+75 g) con un círculo lento, buscando un poco de agitación.",
+      "s02": "A las 1:00 sube a 190 g (+70 g) al centro sin agitar y en los últimos ~15 g rodea la pared para que la cama quede plana.",
+      "s03": "Tras el drenaje añade agua enfriada a 65 °C: empieza con 50 g y ajusta al gusto hasta unos 60–70 g.",
+      "beans": "Ohno señala que el perfil del café se reveló el mismo día, así que su ficha está escrita para cualquier café y no nombra ninguno."
+    },
+    "gil-2025": {
+      "title": "Receta ZP6 de tres vertidos de Gil (2025)",
+      "summary": "15 g para 250 g de agua a 65 ppm y 94 °C, en vertidos de 60, 100 y 90 g separados 50 segundos.",
+      "version": "1Zpresso · Campeón de los Países Bajos 2025",
+      "grind": "6.7 clics (1Zpresso ZP6 Special)",
+      "equipment": "La ficha solo dice «colocar en el dripper», sin nombrirlo a él ni al filtro",
+      "water": "Agua a 65 ppm; no se indican composición ni base de medida.",
+      "notes": "Es la versión ZP6 2025 de Gil, separada de su receta K-Ultra/ORIGAMI Air de 2024; no publica tiempo total.",
+      "finish": "Sin hora de fin: tras los tres vertidos, deja drenar.",
+      "overview": "El mismo autor cambió de molino y de estructura un año después: tres vertidos mayores en un intervalo más corto, que según la ficha deja la taza limpia y deja brillar el café.",
+      "bestFor": "Comparar dos versiones del mismo autor con un año de diferencia",
+      "s00": "Pon 15 g de café en el dripper y empieza con 60 g.",
+      "s01": "Añade 100 g tras 50 segundos.",
+      "s02": "Tras otros 50 segundos, vierte los 90 g finales."
     }
   },
   "waterQuality": "Perfil del agua",
@@ -556,5 +767,69 @@
     "dim115H70Hole25": "Ø115 × H70; orificio inferior Ø25",
     "dim118H70Hole25": "Ø118 × H70; orificio inferior Ø25",
     "weight1400WithBase": "1400 (con base)"
-  }
+  },
+  "pourPatterns": {
+    "centre": "Centro",
+    "circular": "Circular",
+    "spiral": "Espiral",
+    "vertical": "Corriente vertical",
+    "lateral": "Corriente lateral",
+    "wholeBed": "Toda la cama",
+    "any": "Sin patrón"
+  },
+  "pourStyles": {
+    "aggressive": "Agresivo",
+    "turbulent": "Turbulento",
+    "slow": "Lento",
+    "gentle": "Suave",
+    "steady": "Constante",
+    "forceful": "Enérgico"
+  },
+  "pourDirections": {
+    "clockwise": "Horario",
+    "counterclockwise": "Antihorario"
+  },
+  "bedPrepLabels": {
+    "rinseFilter": "Enjuagar el filtro",
+    "coldRinse": "Enjuagar con agua fría",
+    "discardRinse": "Desechar el agua de enjuague",
+    "prewarmServer": "Precalentar la jarra",
+    "levelBed": "Nivelar la cama",
+    "crater": "Formar un cráter",
+    "siftFines": "Tamizar los finos",
+    "removeChaff": "Retirar la cascarilla"
+  },
+  "valveStates": {
+    "open": "Abierta",
+    "closed": "Cerrada"
+  },
+  "yieldBases": {
+    "observed": "Medido",
+    "target": "Objetivo"
+  },
+  "publishedBases": {
+    "page": "Publicación de la página",
+    "video": "Publicación del vídeo",
+    "event": "Crónica del concurso"
+  },
+  "yieldLabel": "Bebida obtenida",
+  "removalAt": "Dripper retirado a las",
+  "ratioStated": "Proporción indicada por la fuente",
+  "waterLevelRule": "Mantén el agua {level} sobre la cama",
+  "archiveLink": "Copia archivada",
+  "updated": "Página actualizada",
+  "grindHedged": "La fuente lo describe como su ajuste habitual, no un valor de receta",
+  "valveInitial": "Válvula antes del primer vertido",
+  "stepDerived": "La fuente no publica este monto por separado; resulta de su total y los previos",
+  "micron": "Tamaño de molienda",
+  "siftMesh": "Tamiz",
+  "hardness": "Dureza",
+  "alkalinity": "Alcalinidad",
+  "groundMoreThanDosed": "La fuente muele {ground} g y usa {dose} g",
+  "recommendedCoffee": "Café que la fuente recomienda: {value}",
+  "recommendedWater": "La preferencia de agua propia de la fuente: {value}",
+  "grindMicronBases": {
+    "psdPeak": "pico de distribución de tamaño"
+  },
+  "brewerUnspecified": "La fuente no indica el dripper"
 }
