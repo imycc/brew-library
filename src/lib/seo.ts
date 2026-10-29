@@ -231,7 +231,7 @@ function equipmentNode(locale:Locale,item:Equipment,t:Translator):JsonLd{
     additionalProperty:item.details.map(detail=>({
       '@type':'PropertyValue',
       name:t(`equipmentSpecs.${detail.key}`),
-      value:`${detail.value}${detail.unit?` ${t(`equipmentUnits.${detail.unit}`)}`:''}`
+      value:`${detail.valueKey?t(`equipmentValues.${detail.valueKey}`):detail.value}${detail.unit?` ${t(`equipmentUnits.${detail.unit}`)}`:''}`
     })),
     ...(experience?{keywords:experience.tags.map(tag=>t(`equipmentExperienceTags.${tag}`)).join(', ')}:{}),
     sameAs:item.sources.map(source=>source.url),

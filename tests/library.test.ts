@@ -94,6 +94,10 @@ test('equipment catalogue is source-backed, searchable and keeps unresolved mode
  assert.equal(equipment.find(item=>item.id==='hario-v60-mugen-02')?.recipeIds[0],'lamill-mugen');
  assert.equal(equipment.find(item=>item.id==='hario-v60-suiren-02')?.category,'dripper');
  assert.equal(equipment.find(item=>item.id==='fellow-stagg-stovetop-1l')?.category,'kettle');
+ const buono=equipment.find(item=>item.id==='hario-v60-buono-1-2l')!;
+ assert.equal(buono.details.find(detail=>detail.key==='mode')?.valueKey,'stovetopGooseneck12');
+ assert.equal(buono.details.find(detail=>detail.key==='compatibility')?.valueKey,'stovetopUse');
+ assert.equal(buono.details.find(detail=>detail.key==='madeIn')?.valueKey,'madeInJapan');
 });
 test('editorial overlay covers every recipe and equipment record',()=>{
  assert.deepEqual(Object.keys(recipeEditorial).sort(),recipes.map(recipe=>recipe.id).sort());
