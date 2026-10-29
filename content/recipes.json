@@ -12,21 +12,22 @@
       "dose": 20,
       "water": {
         "amount": 300,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": 92,
       "duration": [
         210,
         210
       ],
+      "removalAt": 210,
       "source": {
-        "label": "HARIO Europe",
-        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya",
-        "published": "2023-02-06",
-        "checked": "2026-10-27",
         "archive": "https://web.archive.org/web/20250909080858/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya",
-        "publishedBasis": "page"
+        "checked": "2026-10-27",
+        "label": "HARIO Europe",
+        "published": "2023-02-06",
+        "publishedBasis": "page",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -76,8 +77,7 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily",
-      "removalAt": 210
+      "context": "daily"
     },
     {
       "id": "hoffmann-one-cup",
@@ -90,22 +90,23 @@
       "dose": 15,
       "water": {
         "amount": 250,
-        "unit": "g",
-        "derived": false
+        "derived": false,
+        "unit": "g"
       },
       "temperature": null,
+      "temperatureMode": "boiling",
       "duration": [
         180,
         180
       ],
       "source": {
-        "label": "HARIO USA · James Hoffmann",
-        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-1-cup-v60-technique",
-        "video": "https://www.youtube.com/watch?v=1oB1oDrDkHM&t=43s",
-        "published": "2022-11-22",
         "checked": "2026-10-27",
+        "label": "HARIO USA · James Hoffmann",
+        "published": "2022-11-22",
         "publishedBasis": "video",
-        "updated": "2026-06-16"
+        "updated": "2026-06-16",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-1-cup-v60-technique",
+        "video": "https://www.youtube.com/watch?v=1oB1oDrDkHM&t=43s"
       },
       "image": "brewer-still",
       "steps": [
@@ -199,8 +200,7 @@
       "waterConditions": "soft",
       "beanConditions": "light",
       "filterConditions": "unknown",
-      "context": "daily",
-      "temperatureMode": "boiling"
+      "context": "daily"
     },
     {
       "id": "rao-pulsar",
@@ -212,27 +212,35 @@
       "kind": "hot",
       "dose": 25,
       "water": {
+        "alkalinity": 40,
+        "alkalinityUnit": "ppm",
         "amount": 425,
-        "unit": "g",
         "derived": true,
         "hardness": 100,
-        "alkalinity": 40,
         "hardnessUnit": "ppm",
-        "alkalinityUnit": "ppm"
+        "unit": "g"
       },
       "temperature": null,
+      "temperatureMode": "boiling",
       "duration": [
         210,
         270
       ],
+      "ratioStated": "17:1",
+      "bedPrep": [
+        "rinseFilter",
+        "discardRinse",
+        "levelBed"
+      ],
+      "valve": "open",
       "source": {
-        "label": "Scott Rao",
-        "url": "https://www.scottrao.com/blog/pulsar-recipe",
-        "published": "2023-09-14",
-        "checked": "2026-10-27",
         "archive": "https://web.archive.org/web/20260731161940/https://www.scottrao.com/blog/pulsar-recipe",
+        "checked": "2026-10-27",
+        "label": "Scott Rao",
+        "published": "2023-09-14",
         "publishedBasis": "page",
-        "updated": "2023-09-15"
+        "updated": "2023-09-15",
+        "url": "https://www.scottrao.com/blog/pulsar-recipe"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -297,22 +305,14 @@
       "beanConditions": "unknown",
       "filterConditions": "pulsar",
       "context": "daily",
-      "temperatureMode": "boiling",
+      "grindMicron": {
+        "basis": "psdPeak",
+        "value": 800
+      },
       "paper": {
         "id": "pulsar",
         "name": "NextLevel Pulsar"
-      },
-      "ratioStated": "17:1",
-      "grindMicron": {
-        "value": 800,
-        "basis": "psdPeak"
-      },
-      "valve": "open",
-      "bedPrep": [
-        "rinseFilter",
-        "discardRinse",
-        "levelBed"
-      ]
+      }
     },
     {
       "id": "licata-v60",
@@ -325,9 +325,9 @@
       "dose": 18,
       "water": {
         "amount": 300,
-        "unit": "mL",
         "derived": false,
-        "tds": 125
+        "tds": 125,
+        "unit": "mL"
       },
       "temperature": 94,
       "temperatureMode": "unknown",
@@ -336,12 +336,12 @@
         150
       ],
       "source": {
-        "label": "HARIO Europe",
-        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata",
-        "published": "2022-02-09",
-        "checked": "2026-10-28",
         "archive": "https://web.archive.org/web/20250909062618/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata",
-        "publishedBasis": "page"
+        "checked": "2026-10-28",
+        "label": "HARIO Europe",
+        "published": "2022-02-09",
+        "publishedBasis": "page",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata"
       },
       "image": "brewer-still",
       "steps": [
@@ -391,9 +391,9 @@
       "coffee": {
         "name": "La Palma y El Tucan",
         "origin": "Colombia",
-        "variety": "Gesha",
         "process": "natural",
-        "roast": "light"
+        "roast": "light",
+        "variety": "Gesha"
       }
     },
     {
@@ -407,8 +407,8 @@
       "dose": 15,
       "water": {
         "amount": 240,
-        "unit": "g",
-        "derived": false
+        "derived": false,
+        "unit": "g"
       },
       "temperature": null,
       "temperatureMode": "unknown",
@@ -416,12 +416,13 @@
         240,
         240
       ],
+      "valve": "open",
       "source": {
-        "label": "HARIO USA · Partners Coffee",
-        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-switch-recipe-with-partners-coffee",
-        "published": "2023-08-15",
         "checked": "2026-10-28",
-        "publishedBasis": "page"
+        "label": "HARIO USA · Partners Coffee",
+        "published": "2023-08-15",
+        "publishedBasis": "page",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-switch-recipe-with-partners-coffee"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -482,8 +483,7 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily",
-      "valve": "open"
+      "context": "daily"
     },
     {
       "id": "boen-switch",
@@ -496,8 +496,8 @@
       "dose": 16.5,
       "water": {
         "amount": 240,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": 96,
       "temperatureMode": "unknown",
@@ -505,13 +505,14 @@
         180,
         195
       ],
+      "valve": "closed",
       "source": {
-        "label": "HARIO Europe",
-        "url": "https://www.hario-europe.com/blogs/hario-community/ole-kristian-boens-switch-recipe",
-        "published": "2021-12-15",
-        "checked": "2026-10-28",
         "archive": "https://web.archive.org/web/20250909080136/https://www.hario-europe.com/blogs/hario-community/ole-kristian-boens-switch-recipe",
-        "publishedBasis": "page"
+        "checked": "2026-10-28",
+        "label": "HARIO Europe",
+        "published": "2021-12-15",
+        "publishedBasis": "page",
+        "url": "https://www.hario-europe.com/blogs/hario-community/ole-kristian-boens-switch-recipe"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -584,10 +585,9 @@
       "beanNote": "recipes.boen.beans",
       "coffee": {
         "name": "Hacienda La Esmeralda",
-        "variety": "Geisha",
-        "process": "natural"
-      },
-      "valve": "closed"
+        "process": "natural",
+        "variety": "Geisha"
+      }
     },
     {
       "id": "hoang-w60",
@@ -600,9 +600,9 @@
       "dose": 12,
       "water": {
         "amount": 200,
-        "unit": "g",
         "derived": false,
-        "ppm": 65
+        "ppm": 65,
+        "unit": "g"
       },
       "temperature": 98,
       "temperatureMode": "unknown",
@@ -610,13 +610,16 @@
         195,
         195
       ],
+      "bedPrep": [
+        "siftFines"
+      ],
       "source": {
-        "label": "HARIO Europe",
-        "url": "https://www.hario-europe.com/blogs/hario-community/ngoc-hoangs-w60-dripper-recipe",
-        "published": "2022-02-16",
-        "checked": "2026-10-28",
         "archive": "https://web.archive.org/web/20250619064818/https://www.hario-europe.com/blogs/hario-community/ngoc-hoangs-w60-dripper-recipe",
-        "publishedBasis": "page"
+        "checked": "2026-10-28",
+        "label": "HARIO Europe",
+        "published": "2022-02-16",
+        "publishedBasis": "page",
+        "url": "https://www.hario-europe.com/blogs/hario-community/ngoc-hoangs-w60-dripper-recipe"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -660,10 +663,7 @@
       "filterConditions": "unknown",
       "context": "competition",
       "waterNote": "recipes.hoang.water",
-      "filterNote": "recipes.hoang.filters",
-      "bedPrep": [
-        "siftFines"
-      ]
+      "filterNote": "recipes.hoang.filters"
     },
     {
       "id": "rojewska-v60",
@@ -676,8 +676,8 @@
       "dose": 15,
       "water": {
         "amount": 250,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": null,
       "temperatureMode": "unknown",
@@ -685,13 +685,14 @@
         135,
         135
       ],
+      "grindHedged": true,
       "source": {
-        "label": "HARIO Europe",
-        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-agnieszka-rojewska",
-        "published": "2022-08-16",
-        "checked": "2026-10-28",
         "archive": "https://web.archive.org/web/20250803020318/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-agnieszka-rojewska",
-        "publishedBasis": "page"
+        "checked": "2026-10-28",
+        "label": "HARIO Europe",
+        "published": "2022-08-16",
+        "publishedBasis": "page",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-agnieszka-rojewska"
       },
       "image": "brewer-still",
       "steps": [
@@ -732,8 +733,7 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily",
-      "grindHedged": true
+      "context": "daily"
     },
     {
       "id": "grill-v60",
@@ -746,8 +746,8 @@
       "dose": 30,
       "water": {
         "amount": 500,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": 92,
       "temperatureMode": "unknown",
@@ -756,12 +756,12 @@
         180
       ],
       "source": {
-        "label": "HARIO Europe",
-        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-martha-grill",
-        "published": "2021-10-26",
-        "checked": "2026-10-28",
         "archive": "https://web.archive.org/web/20251014011525/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-martha-grill",
-        "publishedBasis": "page"
+        "checked": "2026-10-28",
+        "label": "HARIO Europe",
+        "published": "2021-10-26",
+        "publishedBasis": "page",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-martha-grill"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -831,8 +831,8 @@
       "dose": 20,
       "water": {
         "amount": 300,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": null,
       "temperatureMode": "unknown",
@@ -840,13 +840,18 @@
         130,
         130
       ],
+      "ratioStated": "1:15",
+      "bedPrep": [
+        "rinseFilter",
+        "discardRinse"
+      ],
       "source": {
-        "label": "HARIO Europe",
-        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-ibrahim-h-al-mallouhi",
-        "published": "2021-12-15",
-        "checked": "2026-10-28",
         "archive": "https://web.archive.org/web/20260823200942/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-ibrahim-h-al-mallouhi",
-        "publishedBasis": "page"
+        "checked": "2026-10-28",
+        "label": "HARIO Europe",
+        "published": "2021-12-15",
+        "publishedBasis": "page",
+        "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-ibrahim-h-al-mallouhi"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -884,12 +889,7 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily",
-      "waterNote": "recipes.mallouhi.water",
-      "ratioStated": "1:15",
-      "bedPrep": [
-        "rinseFilter",
-        "discardRinse"
-      ]
+      "waterNote": "recipes.mallouhi.water"
     },
     {
       "id": "chronicler-switch",
@@ -902,8 +902,8 @@
       "dose": 20,
       "water": {
         "amount": 320,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": null,
       "temperatureMode": "unknown",
@@ -911,14 +911,15 @@
         165,
         195
       ],
+      "valve": "open",
       "source": {
-        "label": "The Coffee Chronicler",
-        "url": "https://coffeechronicler.com/hario-switch/",
-        "published": "2023-02-26",
-        "checked": "2026-10-28",
         "archive": "https://web.archive.org/web/20260902210354/https://coffeechronicler.com/hario-switch/",
+        "checked": "2026-10-28",
+        "label": "The Coffee Chronicler",
+        "published": "2023-02-26",
         "publishedBasis": "page",
-        "updated": "2024-08-12"
+        "updated": "2024-08-12",
+        "url": "https://coffeechronicler.com/hario-switch/"
       },
       "image": "brewer-still",
       "steps": [
@@ -972,58 +973,44 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily",
-      "valve": "open"
+      "context": "daily"
     },
     {
-      "kind": "hot",
-      "temperatureMode": "unknown",
-      "image": "coffee-bloom",
-      "preparation": [
-        "recipes.kodama.prep"
-      ],
-      "waterConditions": "unknown",
-      "beanConditions": "unknown",
-      "filterConditions": "unknown",
-      "context": "competition",
-      "authorId": "kodama",
       "id": "kodama-origami",
       "copy": "kodama",
       "author": "Hiroyuki Kodama",
+      "authorId": "kodama",
       "brewer": "ORIGAMI Dripper Air S",
       "brewerId": "origami",
+      "kind": "hot",
       "dose": 21,
       "water": {
         "amount": 320,
-        "unit": "g",
-        "derived": false
+        "derived": false,
+        "unit": "g"
       },
       "temperature": 94,
+      "temperatureMode": "unknown",
       "duration": null,
+      "yield": {
+        "amount": 265,
+        "basis": "observed",
+        "unit": "g"
+      },
+      "doseGround": 28,
+      "bedPrep": [
+        "coldRinse",
+        "siftFines",
+        "removeChaff"
+      ],
       "source": {
-        "label": "ORIGAMI",
-        "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
-        "published": null,
+        "archive": "https://web.archive.org/web/20250916173939/https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
         "checked": "2026-10-28",
-        "archive": "https://web.archive.org/web/20250916173939/https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
+        "label": "ORIGAMI",
+        "published": null,
+        "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
       },
-      "grinder": {
-        "id": "c40-mk4",
-        "name": "Comandante C40 MK4",
-        "setting": "25 clicks"
-      },
-      "paper": {
-        "id": "origami-wave",
-        "name": "ORIGAMI Paper Filter Wave",
-        "shape": "wave"
-      },
-      "coffee": {
-        "name": "NOG COFFEE ROASTERS",
-        "origin": "Kenya",
-        "process": "washed",
-        "roast": "light"
-      },
-      "waterNote": "recipes.kodama.water",
+      "image": "coffee-bloom",
       "steps": [
         {
           "action": "bloom",
@@ -1064,64 +1051,22 @@
           "cumulative": null
         }
       ],
-      "yield": {
-        "amount": 265,
-        "unit": "g",
-        "basis": "observed"
-      },
-      "doseGround": 28,
-      "bedPrep": [
-        "coldRinse",
-        "siftFines",
-        "removeChaff"
-      ]
-    },
-    {
-      "kind": "hot",
-      "temperatureMode": "unknown",
-      "image": "coffee-bloom",
       "preparation": [
-        "recipes.kobayashi.prep"
+        "recipes.kodama.prep"
       ],
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "competition",
-      "authorId": "kobayashi",
-      "id": "kobayashi-origami",
-      "copy": "kobayashi",
-      "author": "Tsuyoshi Kobayashi",
-      "brewer": "ORIGAMI Dripper S · Porcelain",
-      "brewerId": "origami",
-      "dose": 15,
-      "water": {
-        "amount": 240,
-        "unit": "g",
-        "derived": false,
-        "hardness": 70,
-        "hardnessUnit": "mg/L"
-      },
-      "temperature": 92,
-      "duration": [
-        150,
-        150
-      ],
-      "source": {
-        "label": "ORIGAMI",
-        "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
-        "published": null,
-        "checked": "2026-10-28",
-        "archive": "https://web.archive.org/web/20250916173939/https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
-      },
+      "waterNote": "recipes.kodama.water",
       "grinder": {
-        "id": "c40-mk3-redclix",
-        "name": "Comandante C40 MK3 + RED CLICKS",
-        "setting": "55 clicks",
-        "secondSetting": "56 (first round)"
+        "id": "c40-mk4",
+        "name": "Comandante C40 MK4",
+        "setting": "25 clicks"
       },
       "paper": {
-        "id": "origami-wave-1-2",
-        "name": "ORIGAMI Paper Filter Wave 1–2 cups",
+        "id": "origami-wave",
+        "name": "ORIGAMI Paper Filter Wave",
         "shape": "wave"
       },
       "coffee": {
@@ -1129,8 +1074,44 @@
         "origin": "Kenya",
         "process": "washed",
         "roast": "light"
+      }
+    },
+    {
+      "id": "kobayashi-origami",
+      "copy": "kobayashi",
+      "author": "Tsuyoshi Kobayashi",
+      "authorId": "kobayashi",
+      "brewer": "ORIGAMI Dripper S · Porcelain",
+      "brewerId": "origami",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 240,
+        "derived": false,
+        "hardness": 70,
+        "hardnessUnit": "mg/L",
+        "unit": "g"
       },
-      "waterNote": "recipes.kobayashi.water",
+      "temperature": 92,
+      "temperatureMode": "unknown",
+      "duration": [
+        150,
+        150
+      ],
+      "bedPrep": [
+        "rinseFilter",
+        "siftFines",
+        "levelBed",
+        "prewarmServer"
+      ],
+      "source": {
+        "archive": "https://web.archive.org/web/20250916173939/https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
+        "checked": "2026-10-28",
+        "label": "ORIGAMI",
+        "published": null,
+        "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
+      },
+      "image": "coffee-bloom",
       "steps": [
         {
           "action": "bloom",
@@ -1162,55 +1143,60 @@
           "cumulative": null
         }
       ],
-      "bedPrep": [
-        "rinseFilter",
-        "siftFines",
-        "levelBed",
-        "prewarmServer"
-      ]
-    },
-    {
-      "kind": "hot",
-      "temperatureMode": "unknown",
-      "image": "coffee-bloom",
-      "preparation": [],
+      "preparation": [
+        "recipes.kobayashi.prep"
+      ],
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "competition",
-      "authorId": "selorio",
+      "waterNote": "recipes.kobayashi.water",
+      "grinder": {
+        "id": "c40-mk3-redclix",
+        "name": "Comandante C40 MK3 + RED CLICKS",
+        "secondSetting": "56 (first round)",
+        "setting": "55 clicks"
+      },
+      "paper": {
+        "id": "origami-wave-1-2",
+        "name": "ORIGAMI Paper Filter Wave 1–2 cups",
+        "shape": "wave"
+      },
+      "coffee": {
+        "name": "NOG COFFEE ROASTERS",
+        "origin": "Kenya",
+        "process": "washed",
+        "roast": "light"
+      }
+    },
+    {
       "id": "selorio-origami",
       "copy": "selorio",
       "author": "Lui Selorio",
+      "authorId": "selorio",
       "brewer": "ORIGAMI Air",
       "brewerId": "origami",
+      "kind": "hot",
       "dose": 16,
       "water": {
         "amount": 240,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": 91,
+      "temperatureMode": "unknown",
       "duration": [
         145,
         145
       ],
       "source": {
-        "label": "1Zpresso",
-        "url": "https://1zpresso.coffee/recipe/",
-        "published": null,
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
         "checked": "2026-10-28",
-        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/"
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
       },
-      "grinder": {
-        "id": "zp6-special",
-        "name": "1Zpresso ZP6 Special",
-        "setting": "4.1"
-      },
-      "paper": {
-        "id": "cafec-origami",
-        "name": "CAFEC Origami Filter"
-      },
+      "image": "coffee-bloom",
       "steps": [
         {
           "action": "bloom",
@@ -1253,54 +1239,47 @@
           "amount": null,
           "cumulative": null
         }
-      ]
-    },
-    {
-      "kind": "hot",
-      "temperatureMode": "unknown",
-      "image": "coffee-bloom",
+      ],
       "preparation": [],
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "competition",
-      "authorId": "rincon",
-      "id": "rincon-origami",
-      "copy": "rincon",
-      "author": "Janer Joseph Perez Rincon",
-      "brewer": "ORIGAMI · Acrylic",
-      "brewerId": "origami",
-      "dose": 15,
-      "water": {
-        "amount": 260,
-        "unit": "g",
-        "derived": false
-      },
-      "temperature": null,
-      "duration": null,
-      "source": {
-        "label": "1Zpresso",
-        "url": "https://1zpresso.coffee/recipe/",
-        "published": null,
-        "checked": "2026-10-28",
-        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/"
-      },
       "grinder": {
         "id": "zp6-special",
         "name": "1Zpresso ZP6 Special",
-        "setting": "5.6"
+        "setting": "4.1"
       },
       "paper": {
-        "id": "sibarist-conic",
-        "name": "Sibarist Conic",
-        "shape": "cone"
+        "id": "cafec-origami",
+        "name": "CAFEC Origami Filter"
+      }
+    },
+    {
+      "id": "rincon-origami",
+      "copy": "rincon",
+      "author": "Janer Joseph Perez Rincon",
+      "authorId": "rincon",
+      "brewer": "ORIGAMI · Acrylic",
+      "brewerId": "origami",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 260,
+        "derived": false,
+        "unit": "g"
       },
-      "coffee": {
-        "name": "San Pedro · Milton Monrroy",
-        "variety": "Geisha",
-        "process": "natural"
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-28",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
       },
-      "waterNote": "recipes.rincon.water",
+      "image": "coffee-bloom",
       "steps": [
         {
           "action": "bloom",
@@ -1341,50 +1320,58 @@
           "amount": null,
           "cumulative": null
         }
-      ]
-    },
-    {
-      "kind": "hot",
-      "temperatureMode": "unknown",
-      "image": "coffee-bloom",
+      ],
       "preparation": [],
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "competition",
-      "authorId": "gil",
+      "waterNote": "recipes.rincon.water",
+      "grinder": {
+        "id": "zp6-special",
+        "name": "1Zpresso ZP6 Special",
+        "setting": "5.6"
+      },
+      "paper": {
+        "id": "sibarist-conic",
+        "name": "Sibarist Conic",
+        "shape": "cone"
+      },
+      "coffee": {
+        "name": "San Pedro · Milton Monrroy",
+        "process": "natural",
+        "variety": "Geisha"
+      }
+    },
+    {
       "id": "gil-origami-2024",
       "copy": "gil",
       "author": "Milo Gil",
+      "authorId": "gil",
       "brewer": "ORIGAMI Air",
       "brewerId": "origami",
+      "kind": "hot",
       "dose": 15,
       "water": {
         "amount": 250,
-        "unit": "g",
-        "derived": false
+        "derived": false,
+        "unit": "g"
       },
       "temperature": 92,
+      "temperatureMode": "unknown",
       "duration": [
         180,
         180
       ],
+      "ratioStated": "1:16.6",
       "source": {
-        "label": "1Zpresso",
-        "url": "https://1zpresso.coffee/recipe/",
-        "published": null,
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
         "checked": "2026-10-28",
-        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/"
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
       },
-      "grinder": {
-        "id": "k-ultra",
-        "name": "1Zpresso K-Ultra",
-        "setting": "7.5"
-      },
-      "paper": {
-        "id": "sibarist-unspecified",
-        "name": "Sibarist"
-      },
+      "image": "coffee-bloom",
       "steps": [
         {
           "action": "bloom",
@@ -1421,7 +1408,20 @@
           "cumulative": null
         }
       ],
-      "ratioStated": "1:16.6"
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "grinder": {
+        "id": "k-ultra",
+        "name": "1Zpresso K-Ultra",
+        "setting": "7.5"
+      },
+      "paper": {
+        "id": "sibarist-unspecified",
+        "name": "Sibarist"
+      }
     },
     {
       "id": "hoffmann-ultimate-v60",
@@ -1434,8 +1434,8 @@
       "dose": 30,
       "water": {
         "amount": 500,
-        "unit": "mL",
-        "derived": false
+        "derived": false,
+        "unit": "mL"
       },
       "temperature": null,
       "temperatureMode": "boiling",
@@ -1443,12 +1443,16 @@
         210,
         210
       ],
+      "bedPrep": [
+        "rinseFilter",
+        "crater"
+      ],
       "source": {
-        "label": "HARIO USA · James Hoffmann",
-        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-uitimate-v60-technique",
-        "published": "2026-06-16",
         "checked": "2026-10-28",
-        "publishedBasis": "page"
+        "label": "HARIO USA · James Hoffmann",
+        "published": "2026-06-16",
+        "publishedBasis": "page",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-uitimate-v60-technique"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -1530,11 +1534,7 @@
       "waterConditions": "unknown",
       "beanConditions": "light",
       "filterConditions": "unknown",
-      "context": "daily",
-      "bedPrep": [
-        "rinseFilter",
-        "crater"
-      ]
+      "context": "daily"
     },
     {
       "id": "camber-v60",
@@ -1547,8 +1547,8 @@
       "dose": 20,
       "water": {
         "amount": 345,
-        "unit": "g",
-        "derived": false
+        "derived": false,
+        "unit": "g"
       },
       "temperature": null,
       "temperatureMode": "unknown",
@@ -1557,11 +1557,11 @@
         195
       ],
       "source": {
-        "label": "HARIO USA · Camber Coffee",
-        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-recipe-with-camber-coffee",
-        "published": "2023-08-15",
         "checked": "2026-10-28",
-        "publishedBasis": "page"
+        "label": "HARIO USA · Camber Coffee",
+        "published": "2023-08-15",
+        "publishedBasis": "page",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-recipe-with-camber-coffee"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -1602,8 +1602,8 @@
       "context": "daily",
       "beanNote": "recipes.camber.bean",
       "coffee": {
-        "process": "anaerobic",
-        "asRecommendation": true
+        "asRecommendation": true,
+        "process": "anaerobic"
       }
     },
     {
@@ -1617,8 +1617,8 @@
       "dose": 16.5,
       "water": {
         "amount": 225,
-        "unit": "g",
-        "derived": false
+        "derived": false,
+        "unit": "g"
       },
       "temperature": null,
       "temperatureMode": "unknown",
@@ -1627,11 +1627,11 @@
         195
       ],
       "source": {
-        "label": "HARIO USA · LAMILL Coffee",
-        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-mugen-recipe-with-lamill-coffee",
-        "published": "2023-05-11",
         "checked": "2026-10-28",
-        "publishedBasis": "page"
+        "label": "HARIO USA · LAMILL Coffee",
+        "published": "2023-05-11",
+        "publishedBasis": "page",
+        "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-mugen-recipe-with-lamill-coffee"
       },
       "image": "brewer-still",
       "steps": [
@@ -1659,6 +1659,759 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily"
+    },
+    {
+      "id": "medina-wbrc",
+      "copy": "medina",
+      "author": "Carlos Medina",
+      "authorId": "medina",
+      "brewer": "Dripper not stated",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "dose": 15.5,
+      "water": {
+        "amount": 250,
+        "derived": false,
+        "unit": "g"
+      },
+      "temperature": 91,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "ratioStated": "1:16",
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50,
+          "derived": true,
+          "instruction": "recipes.medina.s00"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 50,
+          "cumulative": 100,
+          "derived": true,
+          "instruction": "recipes.medina.s01"
+        },
+        {
+          "action": "pour",
+          "at": 60,
+          "amount": 50,
+          "cumulative": 150,
+          "derived": true,
+          "instruction": "recipes.medina.s02"
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 50,
+          "cumulative": 200,
+          "derived": true,
+          "instruction": "recipes.medina.s03"
+        },
+        {
+          "action": "pour",
+          "at": 120,
+          "amount": 50,
+          "cumulative": 250,
+          "derived": true,
+          "instruction": "recipes.medina.s04"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "grinder": {
+        "id": "zp6-special",
+        "name": "1Zpresso ZP6 Special",
+        "setting": "5.2"
+      },
+      "coffee": {
+        "name": "Finca Potosí Sidra",
+        "process": "natural",
+        "variety": "Sidra"
+      }
+    },
+    {
+      "id": "maisonnette-graycano",
+      "copy": "maisonnette",
+      "author": "Edson Maisonnette",
+      "authorId": "maisonnette",
+      "brewer": "Graycano",
+      "brewerId": "graycano",
+      "kind": "hot",
+      "dose": 16,
+      "water": {
+        "amount": 240,
+        "derived": false,
+        "unit": "g"
+      },
+      "temperature": 93,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "ratioStated": "1:15",
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "end": 35,
+          "instruction": "recipes.maisonnette.s00"
+        },
+        {
+          "action": "pour",
+          "at": 35,
+          "amount": 70,
+          "cumulative": 130,
+          "end": 75,
+          "instruction": "recipes.maisonnette.s01"
+        },
+        {
+          "action": "pour",
+          "at": 75,
+          "amount": 60,
+          "cumulative": 190,
+          "end": 100,
+          "instruction": "recipes.maisonnette.s02"
+        },
+        {
+          "action": "pour",
+          "at": 100,
+          "amount": 50,
+          "cumulative": 240,
+          "end": 150,
+          "instruction": "recipes.maisonnette.s03"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [
+        "recipes.maisonnette.prepare"
+      ],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "grinder": {
+        "id": "k-ultra",
+        "name": "1Zpresso K-Ultra",
+        "secondSetting": "7.0 (Catucaí layer)",
+        "setting": "7.5 (Obatã layer)"
+      },
+      "paper": {
+        "id": "sibarist-fast",
+        "name": "Sibarist Fast"
+      },
+      "coffee": {
+        "name": "Fazenda Um Obatã + Catucaí 24/137"
+      }
+    },
+    {
+      "id": "torres-wbrc",
+      "copy": "torres",
+      "author": "Michael Torres",
+      "authorId": "torres",
+      "brewer": "Dripper not stated",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "dose": 17,
+      "water": {
+        "amount": 240,
+        "derived": false,
+        "unit": "g"
+      },
+      "temperature": 92,
+      "temperatureMode": "unknown",
+      "duration": [
+        120,
+        120
+      ],
+      "ratioStated": "1:14",
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 80,
+          "cumulative": 80,
+          "instruction": "recipes.torres.s00"
+        },
+        {
+          "action": "pour",
+          "at": 40,
+          "amount": 80,
+          "cumulative": 160,
+          "pattern": "circular",
+          "style": "slow",
+          "instruction": "recipes.torres.s01"
+        },
+        {
+          "action": "pour",
+          "at": 80,
+          "amount": 80,
+          "cumulative": 240,
+          "pattern": "circular",
+          "instruction": "recipes.torres.s02"
+        },
+        {
+          "action": "finish",
+          "at": 120,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "grinder": {
+        "id": "k-ultra",
+        "name": "1Zpresso K-Ultra",
+        "setting": "7.5"
+      },
+      "coffee": {
+        "name": "Farm Paradise 92 Bourbon Striped",
+        "variety": "Bourbon"
+      }
+    },
+    {
+      "id": "pinnola-graycano",
+      "copy": "pinnola",
+      "author": "Manuel Pinnola",
+      "authorId": "pinnola",
+      "brewer": "Graycano",
+      "brewerId": "graycano",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 240,
+        "derived": false,
+        "unit": "g"
+      },
+      "temperature": 94,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "ratioStated": "1:16",
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 40,
+          "cumulative": 40,
+          "instruction": "recipes.pinnola.s00"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 100,
+          "cumulative": 140,
+          "pattern": "circular",
+          "style": "steady",
+          "derived": true,
+          "instruction": "recipes.pinnola.s01"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 100,
+          "cumulative": 240,
+          "derived": true,
+          "instruction": "recipes.pinnola.s02"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "grinder": {
+        "id": "k-ultra",
+        "name": "1Zpresso K-Ultra",
+        "setting": "4.5"
+      },
+      "paper": {
+        "id": "sibarist-unspecified",
+        "name": "Sibarist"
+      },
+      "coffee": {
+        "name": "Finca Rosario",
+        "origin": "Venezuela",
+        "process": "washed",
+        "variety": "Geisha"
+      }
+    },
+    {
+      "id": "kaygusuz-graycano",
+      "copy": "kaygusuz",
+      "author": "Atahan Kaygusuz",
+      "authorId": "kaygusuz",
+      "brewer": "Graycano",
+      "brewerId": "graycano",
+      "kind": "hot",
+      "dose": 17,
+      "water": {
+        "amount": 270,
+        "derived": false,
+        "ppm": 72,
+        "unit": "g"
+      },
+      "temperature": 93,
+      "temperatureMode": "unknown",
+      "duration": [
+        160,
+        160
+      ],
+      "ratioStated": "1:15.88",
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "instruction": "recipes.kaygusuz.s00"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 60,
+          "cumulative": 120,
+          "instruction": "recipes.kaygusuz.s01"
+        },
+        {
+          "action": "pour",
+          "at": 80,
+          "amount": 50,
+          "cumulative": 170,
+          "instruction": "recipes.kaygusuz.s02"
+        },
+        {
+          "action": "pour",
+          "at": 120,
+          "amount": 100,
+          "cumulative": 270,
+          "instruction": "recipes.kaygusuz.s03"
+        },
+        {
+          "action": "finish",
+          "at": 160,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "waterNote": "recipes.kaygusuz.water",
+      "grinder": {
+        "id": "k-ultra",
+        "name": "1Zpresso K-Ultra",
+        "setting": "2.7"
+      },
+      "paper": {
+        "id": "sibarist-unspecified",
+        "name": "Sibarist"
+      },
+      "coffee": {
+        "name": "Finca Roca Chiroso + Finca La Dinastia Gesha"
+      }
+    },
+    {
+      "id": "vuolo-mk",
+      "copy": "vuolo",
+      "author": "Rubens Vuolo Neto",
+      "authorId": "vuolo",
+      "brewer": "MK Dripper",
+      "brewerId": "mk",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 240,
+        "derived": false,
+        "unit": "g"
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 100,
+          "cumulative": 100,
+          "temperature": 96,
+          "pattern": "circular",
+          "style": "aggressive",
+          "instruction": "recipes.vuolo.s00"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 100,
+          "cumulative": 200,
+          "temperature": 96,
+          "pattern": "circular",
+          "style": "aggressive",
+          "instruction": "recipes.vuolo.s01"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 40,
+          "cumulative": 240,
+          "temperature": 90,
+          "pattern": "centre",
+          "style": "steady",
+          "instruction": "recipes.vuolo.s02"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "grinder": {
+        "id": "k-plus",
+        "name": "1Zpresso K-Plus",
+        "setting": "8"
+      },
+      "paper": {
+        "id": "sibarist-flat",
+        "name": "Sibarist Flat",
+        "shape": "flat"
+      },
+      "coffee": {
+        "name": "Fazenda Um Pink Bourbon + Daterra Laurina"
+      }
+    },
+    {
+      "id": "damgaci-v60",
+      "copy": "damgaci",
+      "author": "Berat Damgacı",
+      "authorId": "damgaci",
+      "brewer": "HARIO V60 · Ceramic",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 240,
+        "derived": false,
+        "ppm": 40,
+        "unit": "g"
+      },
+      "temperature": 93,
+      "temperatureMode": "unknown",
+      "duration": [
+        140,
+        140
+      ],
+      "ratioStated": "1:16",
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 40,
+          "cumulative": 40,
+          "instruction": "recipes.damgaci.s00"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 50,
+          "cumulative": 90,
+          "pattern": "circular",
+          "instruction": "recipes.damgaci.s01"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 50,
+          "cumulative": 140,
+          "pattern": "circular",
+          "instruction": "recipes.damgaci.s02"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 50,
+          "cumulative": 190,
+          "pattern": "circular",
+          "instruction": "recipes.damgaci.s03"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 50,
+          "cumulative": 240,
+          "pattern": "centre",
+          "instruction": "recipes.damgaci.s04"
+        },
+        {
+          "action": "finish",
+          "at": 140,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "waterNote": "recipes.damgaci.water",
+      "grinder": {
+        "id": "k-pro",
+        "name": "1Zpresso K-Pro",
+        "setting": "5.4"
+      },
+      "coffee": {
+        "name": "Finca Mikava Gesha + Finca Inmaculada Eugenoides + Finca Santa Maria Caturra"
+      }
+    },
+    {
+      "id": "ohno-origami",
+      "copy": "ohno",
+      "author": "Tomoki Ohno",
+      "authorId": "ohno",
+      "brewer": "ORIGAMI Dripper Air S",
+      "brewerId": "origami",
+      "kind": "hot",
+      "dose": 22,
+      "water": {
+        "amount": 190,
+        "derived": false,
+        "unit": "g"
+      },
+      "temperature": 83,
+      "temperatureMode": "unknown",
+      "duration": [
+        90,
+        95
+      ],
+      "beverageTds": 1.07,
+      "doseGround": 32,
+      "bedPrep": [
+        "siftFines"
+      ],
+      "source": {
+        "archive": "https://web.archive.org/web/20250916173939/https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
+        "checked": "2026-10-29",
+        "label": "ORIGAMI",
+        "published": null,
+        "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 45,
+          "cumulative": 45,
+          "pattern": "wholeBed",
+          "instruction": "recipes.ohno.s00"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 75,
+          "cumulative": 120,
+          "pattern": "circular",
+          "style": "slow",
+          "instruction": "recipes.ohno.s01"
+        },
+        {
+          "action": "pour",
+          "at": 60,
+          "amount": 70,
+          "cumulative": 190,
+          "pattern": "centre",
+          "instruction": "recipes.ohno.s02"
+        },
+        {
+          "action": "topup",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.ohno.s03"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [
+        "recipes.ohno.prepare"
+      ],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "waterNote": "recipes.ohno.water",
+      "grinder": {
+        "id": "c40-mk4",
+        "name": "Comandante C40 MK4",
+        "setting": "30 clicks"
+      },
+      "paper": {
+        "id": "origami-wave",
+        "name": "ORIGAMI Paper Filter Wave",
+        "shape": "wave"
+      },
+      "beanNote": "recipes.ohno.beans"
+    },
+    {
+      "id": "gil-zp6-2025",
+      "copy": "gil-2025",
+      "author": "Milo Gil",
+      "authorId": "gil",
+      "brewer": "Dripper not stated",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "dose": 15,
+      "water": {
+        "amount": 250,
+        "derived": false,
+        "ppm": 65,
+        "unit": "g"
+      },
+      "temperature": 94,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "ratioStated": "1:16.7",
+      "source": {
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/",
+        "checked": "2026-10-29",
+        "label": "1Zpresso",
+        "published": null,
+        "url": "https://1zpresso.coffee/recipe/"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "instruction": "recipes.gil-2025.s00"
+        },
+        {
+          "action": "pour",
+          "at": 50,
+          "amount": 100,
+          "cumulative": 160,
+          "instruction": "recipes.gil-2025.s01"
+        },
+        {
+          "action": "pour",
+          "at": 100,
+          "amount": 90,
+          "cumulative": 250,
+          "instruction": "recipes.gil-2025.s02"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "competition",
+      "waterNote": "recipes.gil-2025.water",
+      "grinder": {
+        "id": "zp6-special",
+        "name": "1Zpresso ZP6 Special",
+        "setting": "6.7"
+      }
     }
   ]
 }

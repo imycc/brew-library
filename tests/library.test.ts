@@ -29,7 +29,7 @@ test('shared selections are validated, deduplicated and bounded',()=>{
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,19);
+ assert.equal(recipes.length,28);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -150,4 +150,29 @@ test('source completeness counts only published facts',()=>{
  assert.equal(provided('chronicler-switch'),3);
  assert.equal(provided('lamill-mugen'),3);
  assert.equal(provided('hoffmann-one-cup'),5);
+});
+
+test('added competition records keep unstated drippers and ranges honest',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const medina=find('medina-wbrc');
+ assert.equal(medina.brewerId,'unspecified');
+ assert.equal(medina.duration,null);
+ assert.equal(medina.steps.filter(step=>step.amount!==null).reduce((sum,step)=>sum+(step.amount||0),0),250);
+ assert(medina.steps.every(step=>step.derived||step.action==='finish'));
+ const ohno=find('ohno-origami');
+ assert.equal(ohno.water.amount,190);
+ assert.equal(ohno.doseGround,32);
+ assert.equal(ohno.yield,undefined);
+ assert.equal(ohno.beverageTds,1.07);
+ assert.deepEqual(ohno.duration,[90,95]);
+ assert(ohno.steps.some(step=>step.action==='topup'&&step.amount===null));
+ const vuolo=find('vuolo-mk');
+ assert.equal(vuolo.temperature,null);
+ assert.equal(vuolo.steps[0].temperature,96);
+ assert.equal(vuolo.paper?.shape,'flat');
+ const gil=find('gil-zp6-2025');
+ assert.equal(gil.grinder?.setting,'6.7');
+ assert.equal(find('gil-origami-2024').grinder?.setting,'7.5');
+ assert.equal(pourPhase(medina)?.drawdown,null);
+ assert.equal(recipes.filter(recipe=>recipe.authorId==='gil').length,2);
 });

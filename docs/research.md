@@ -205,3 +205,26 @@ Editorial boundaries kept:
 - Click counts, dial numbers and `RED CLICKS` remain literal source notation with no cross-grinder conversion.
 - Competition years are not publication dates; the ORIGAMI report and the 1Zpresso collection keep `published: null`.
 - Agitation that the source describes lexically (slow centre pour, fast turbulent finish, gentle swirl) is stored as an enum plus the step's own sentence, never as a fabricated rate.
+
+## Nine competition recipes added — checked 2026-10-29
+
+The 1Zpresso champion collection and the ORIGAMI CUP 2024 report were read again from the raw page text, and nine further records were added, taking the library to twenty-eight. Attribution on the 1Zpresso page follows its own DOM pairing (parameters, then the competitor’s name and title), which is what separates Milo Gil’s 2024 K-Ultra card from his 2025 ZP6 card and ties each grind setting to the right person.
+
+| Record | Named on the source | Notes on what is and is not published |
+| --- | --- | --- |
+| Carlos Medina — WBrC Champion 2023 | ZP6 Special 5.2; 15.5 g : 250 g at 91 °C; “add 50 g of water every 30 seconds” | No dripper, filter, pour path or total time. The five 50 g additions and their clock times are arithmetic on the published interval and total, so each carries `derived: true`. |
+| Edson Maisonnette — Brazilian 5th place 2023 | K-Ultra, Graycano, Sibarist Fast, Brewista Artisan; 12 g Obatã at 7.5 over 4 g Catucaí 24/137 at 7.0; 240 g at 93 °C; four timed windows | Two grind settings are stored as `setting` plus `secondSetting`, never averaged. Chilling the server base to −10 °C is kept as preparation prose because there is no bed-prep token for it. |
+| Michael Torres — Chilean champion 2024 | K-Ultra 7.5; 17 g “bourbon striped, farm paradise 92”; 240 g at 92 °C; 1:14; three 80 g pours | Dripper and filter are absent from the card. |
+| Manuel Pinnola — Venezuela champion 2025 | K-Ultra 4.5; Graycano with Sibarist; 15 g washed Geisha from Finca Rosario, Mérida; 240 g at 94 °C; 1:16 | Pours two and three are published as cumulative targets, so both 100 g additions are `derived`. |
+| Atahan Kaygusuz — Turkey 5th place 2025 | K-Ultra 2.7; Graycano, Sibarist, Melodrip; 12 g + 5 g blend; 72 ppm Apax (Tonik 1 g, Jamm 1.5 g, Lylac 1.5 g); 17 g : 270 g; 2:40 | The water volume the powders dissolve into is not stated, so the recipe keeps `ppm` only and says so in `waterNote`. |
+| Rubens Vuolo Neto — Brazilian champion 2023 | K-Plus 8; MK dripper, Sibarist Flat; 9 g Pink Bourbon + 6 g Laurina; two 100 g pours at 96 °C then 40 g at 90 °C | No overall temperature and no times at all: the two pour temperatures live on the steps. |
+| Berat Damgacı — Turkey runner-up 2024 | K-Pro 5.4; ceramic V60; three 5 g coffees; 40 ppm RO water at 93 °C; 15 g : 240 g; bloom 30 s; total 2:20 | Only the bloom and the total are timed; the four later additions stay untimed sequence steps. |
+| Tomoki Ohno — ORIGAMI CUP 2024 winner | Air S, Wave paper, C40 MK4 30 clicks; grinds 32 g, sieves with the coarsest mesh L, doses 22.0 g; 83 °C; 45/120/190 g; drawdown finished 1:30–1:35; then 65 °C water, from 50 g to about 60–70 g by taste; beverage TDS 1.07 | `water.amount` is the 190 g of extraction water only. The finishing water is published as a range and is modelled as an unquantified `topup`, never folded into a 250 g total. The brew ratio therefore reads 1:8.6 on purpose. |
+| Milo Gil — Dutch champion 2025 | ZP6 Special 6.7 clicks; 15 g : 250 g at 65 ppm and 94 °C; 1:16.7; 60 g, then 100 g after 50 s, then 90 g after another 50 s | Kept separate from the 2024 card. No dripper or filter is named and no total time is published. |
+
+Editorial boundaries applied to these additions:
+
+- Cards that never name a dripper are stored with `brewerId: "unspecified"` and rendered from a localized “not stated by the source” label rather than given a brand string that no source wrote.
+- Ohno’s bean is left unknown. The report says competitor beans were only revealed on the day, and his own note is that the recipe was built to suit any coffee; the event-wide Kenya lot is not attributed to his card.
+- Kaygusuz’s and Damgacı’s mineral figures are stored as published `ppm` values with their composition or basis gap written into `waterNote`; nothing is converted to hardness or TDS.
+- A competition placement is a title, not a publication date, so all nine keep `published: null` and share the collection snapshot instead.

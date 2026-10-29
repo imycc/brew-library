@@ -30,6 +30,7 @@ export const recipeSchema = z.object({
   removalAt:z.number().nonnegative().optional(),
   yield:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), basis:z.enum(['observed','target'])}).optional(),
   ratioStated:z.string().optional(),
+  beverageTds:z.number().positive().optional(),
   doseGround:z.number().positive().optional(),
   bedPrep:z.array(z.enum(['rinseFilter','coldRinse','discardRinse','prewarmServer','levelBed','crater','siftFines','removeChaff'])).optional(),
   valve:z.enum(['open','closed']).optional(),
