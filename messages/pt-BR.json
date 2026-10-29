@@ -766,7 +766,10 @@
     "dimBase123": "Base Ø123",
     "dim115H70Hole25": "Ø115 × H70; furo inferior Ø25",
     "dim118H70Hole25": "Ø118 × H70; furo inferior Ø25",
-    "weight1400WithBase": "1400 (com base)"
+    "weight1400WithBase": "1400 (com base)",
+    "flatDrippers": "Drippers de fundo plano",
+    "modelUnknownMaker": "A fonte diz apenas “MK”; o fabricante não é identificado",
+    "modelFastUnverified": "Classe FAST; não foi possível verificar uma página oficial estável"
   },
   "pourPatterns": {
     "centre": "Centro",
@@ -831,5 +834,7 @@
   "grindMicronBases": {
     "psdPeak": "pico da distribuição de tamanho"
   },
-  "brewerUnspecified": "A fonte não informa o dripper"
+  "brewerUnspecified": "A fonte não informa o dripper",
+  "authorRecordCount": "{count} receitas",
+  "archiveMissing": "Ainda sem cópia arquivada"
 }

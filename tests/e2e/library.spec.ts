@@ -56,7 +56,7 @@ for(const locale of locales)test(`static ${locale} pages render complete locale 
 });
 test('equipment catalogue filters official records and links source-backed recipes',async({page})=>{
  await page.goto(`${base}/zh-Hant/equipment/`);
- await expect(page.locator('[data-equipment]')).toHaveCount(55);
+ await expect(page.locator('[data-equipment]')).toHaveCount(61);
  await expect(page.locator('[data-equipment="origami-air-s"]')).toContainText('64');
  await expect(page.locator('[data-equipment="origami-air-s"] .equipment-experience')).toContainText('杯感與實際使用回饋');
  await expect(page.locator('[data-equipment="origami-air-s"] .experience-tags')).toContainText('酸質與清晰度較突出');
@@ -65,6 +65,9 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="ek-unspecified"] .equipment-card-image')).toHaveCount(0);
  await expect(page.locator('[data-equipment="hario-v60-mugen-02"]')).toContainText('V60 MUGEN');
  await expect(page.locator('[data-equipment="hario-v60-mugen-02"] a[href*="lamill-mugen"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="graycano-dripper"] a[href*="kaygusuz-graycano"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="1zpresso-k-pro"] a[href*="damgaci-v60"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="sibarist-flat"] a[href*="vuolo-mk"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('直火鵝頸');
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('爐具使用');
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('日本');
@@ -74,7 +77,7 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('Herd-Schwanenhals');
  await expect(page.locator('[data-equipment="kalita-wave-155-stainless"]')).toContainText('Kalita Wave 155 Filter');
  await page.goto(`${base}/zh-Hant/equipment/`);
- await expect(page.locator('[data-equipment]')).toHaveCount(55);
+ await expect(page.locator('[data-equipment]')).toHaveCount(61);
  await expect(page.locator('.equipment-grid')).toHaveCSS('column-width','300px');
  await page.getByLabel('搜尋品牌、型號或相容性').fill('ZP6');
  await expect(page.locator('[data-equipment]')).toHaveCount(1);
@@ -87,7 +90,7 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment]')).toHaveCount(11);
  await expect(page.locator('[data-equipment="fellow-stagg-ekg-pro"]')).toContainText('40–100');
  await page.getByRole('button',{name:/磨豆器/}).click();
- await expect(page.locator('[data-equipment]')).toHaveCount(9);
+ await expect(page.locator('[data-equipment]')).toHaveCount(11);
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"] footer a[href="https://1zpresso.coffee/product/zp6-special/"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"] a[href*="rincon-origami"]')).toHaveCount(1);
  await page.setViewportSize({width:390,height:844});

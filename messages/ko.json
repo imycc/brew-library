@@ -766,7 +766,10 @@
     "dimBase123": "베이스 Ø123",
     "dim115H70Hole25": "Ø115 × H70; 하부 구멍 Ø25",
     "dim118H70Hole25": "Ø118 × H70; 하부 구멍 Ø25",
-    "weight1400WithBase": "1400 (베이스 포함)"
+    "weight1400WithBase": "1400 (베이스 포함)",
+    "flatDrippers": "평저 드리퍼",
+    "modelUnknownMaker": "출처에 “MK”만 있고 제조사는 없음",
+    "modelFastUnverified": "FAST 등급. 공식 제품 페이지를 확인하지 못함"
   },
   "pourPatterns": {
     "centre": "중심",
@@ -831,5 +834,7 @@
   "grindMicronBases": {
     "psdPeak": "입도 분포 피크"
   },
-  "brewerUnspecified": "출처에 드리퍼 기재 없음"
+  "brewerUnspecified": "출처에 드리퍼 기재 없음",
+  "authorRecordCount": "레시피 {count}개",
+  "archiveMissing": "공개 보관본 없음"
 }

@@ -84,11 +84,13 @@ test('equipment and coffee filters match recorded source conditions together',()
  assert.equal(recipes.find(r=>r.id==='kobayashi-origami')?.steps[2].temperature,75);
 });
 test('equipment catalogue is source-backed, searchable and keeps unresolved models explicit',()=>{
- assert.equal(equipment.length,55);
+ assert.equal(equipment.length,61);
  assert.deepEqual(filterEquipment(equipment,'ZP6','all').map(item=>item.id),['1zpresso-zp6-special']);
- assert.deepEqual(filterEquipment(equipment,'Sibarist','filter').map(item=>item.id),['sibarist-cone','sibarist-unspecified']);
- assert.equal(filterEquipment(equipment,'','dripper').length,22);
+ assert.deepEqual(filterEquipment(equipment,'Sibarist','filter').map(item=>item.id),['sibarist-cone','sibarist-unspecified','sibarist-fast','sibarist-flat']);
+ assert.equal(filterEquipment(equipment,'','dripper').length,24);
  assert.equal(filterEquipment(equipment,'','kettle').length,11);
+ assert.equal(filterEquipment(equipment,'','filter').length,15);
+ assert.equal(filterEquipment(equipment,'','grinder').length,11);
  assert.deepEqual(filterEquipment(equipment,'Buono','kettle').map(item=>item.id),['hario-v60-buono-1-2l','hario-v60-buono-electric','hario-v60-buono-copper-0-9l']);
  assert.deepEqual(filterEquipment(equipment,'Mugen','dripper').map(item=>item.id),['hario-v60-mugen-02']);
  assert.equal(equipment.find(item=>item.id==='ek-unspecified')?.status,'unresolved');
@@ -175,4 +177,14 @@ test('added competition records keep unstated drippers and ranges honest',()=>{
  assert.equal(find('gil-origami-2024').grinder?.setting,'7.5');
  assert.equal(pourPhase(medina)?.drawdown,null);
  assert.equal(recipes.filter(recipe=>recipe.authorId==='gil').length,2);
+});
+
+test('new gear is linked to the recipes that named it',()=>{
+ const byId=(id:string)=>equipment.find(item=>item.id===id)!;
+ assert.deepEqual(byId('graycano-dripper').recipeIds,['maisonnette-graycano','pinnola-graycano','kaygusuz-graycano']);
+ assert.deepEqual(byId('1zpresso-k-ultra').recipeIds,['gil-origami-2024','maisonnette-graycano','torres-wbrc','pinnola-graycano','kaygusuz-graycano']);
+ assert.deepEqual(byId('1zpresso-zp6-special').recipeIds,['selorio-origami','rincon-origami','medina-wbrc','gil-zp6-2025']);
+ assert.deepEqual(byId('sibarist-flat').recipeIds,['vuolo-mk']);
+ assert.equal(byId('1zpresso-k-pro').status,'legacy');
+ assert.equal(byId('mk-dripper').status,'unresolved');
 });

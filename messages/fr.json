@@ -766,7 +766,10 @@
     "dimBase123": "Base Ø123",
     "dim115H70Hole25": "Ø115 × H70 ; trou inférieur Ø25",
     "dim118H70Hole25": "Ø118 × H70 ; trou inférieur Ø25",
-    "weight1400WithBase": "1400 (avec base)"
+    "weight1400WithBase": "1400 (avec base)",
+    "flatDrippers": "Filtres à fond plat",
+    "modelUnknownMaker": "La source ne dit que « MK » ; le fabricant n’est pas identifié",
+    "modelFastUnverified": "Grade FAST ; aucune page officielle stable n’a pu être vérifiée"
   },
   "pourPatterns": {
     "centre": "Centre",
@@ -831,5 +834,7 @@
   "grindMicronBases": {
     "psdPeak": "pic de distribution granulométrique"
   },
-  "brewerUnspecified": "La source ne nomme pas le filtre"
+  "brewerUnspecified": "La source ne nomme pas le filtre",
+  "authorRecordCount": "{count} recettes",
+  "archiveMissing": "Aucune copie archivée"
 }

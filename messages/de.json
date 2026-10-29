@@ -766,7 +766,10 @@
     "dimBase123": "Basis Ø123",
     "dim115H70Hole25": "Ø115 × H70; Bodenloch Ø25",
     "dim118H70Hole25": "Ø118 × H70; Bodenloch Ø25",
-    "weight1400WithBase": "1400 (mit Basis)"
+    "weight1400WithBase": "1400 (mit Basis)",
+    "flatDrippers": "Drepper mit flachem Boden",
+    "modelUnknownMaker": "Die Quelle nennt nur „MK“; der Hersteller bleibt offen",
+    "modelFastUnverified": "FAST-Güte; eine stabile offizielle Produktseite war nicht belegbar"
   },
   "pourPatterns": {
     "centre": "Mitte",
@@ -831,5 +834,7 @@
   "grindMicronBases": {
     "psdPeak": "PSD-Spitzenwert"
   },
-  "brewerUnspecified": "Die Quelle nennt keinen Drepper"
+  "brewerUnspecified": "Die Quelle nennt keinen Drepper",
+  "authorRecordCount": "{count} Rezepte",
+  "archiveMissing": "Noch kein Archiv-Mitschnitt"
 }

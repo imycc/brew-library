@@ -234,7 +234,7 @@
         "competitionSpecific"
       ],
       "sourceImage": {
-        "url": "https://1zpresso.coffee/wp-content/uploads/2025/01/zp6-special-grinder-3.jpg",
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Lui-Selorio.jpg",
         "sourceLabel": "1Zpresso",
         "sourceUrl": "https://1zpresso.coffee/recipe/"
       }
@@ -251,7 +251,7 @@
         "unknownParameters"
       ],
       "sourceImage": {
-        "url": "https://1zpresso.coffee/wp-content/uploads/2025/01/zp6-special-grinder-3.jpg",
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Janer-Joseph-Perez-Rincon.jpg",
         "sourceLabel": "1Zpresso",
         "sourceUrl": "https://1zpresso.coffee/recipe/"
       }
@@ -268,7 +268,7 @@
         "unknownParameters"
       ],
       "sourceImage": {
-        "url": "https://1zpresso.coffee/wp-content/uploads/2025/01/zp6-special-grinder-3.jpg",
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Milo-Gil.jpg",
         "sourceLabel": "1Zpresso",
         "sourceUrl": "https://1zpresso.coffee/recipe/"
       }
@@ -329,7 +329,12 @@
         "unknownParameters",
         "needsTimer",
         "grindSensitive"
-      ]
+      ],
+      "sourceImage": {
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/05/wbrc-champion-2023-carlos-medina-2.jpg",
+        "sourceLabel": "1Zpresso",
+        "sourceUrl": "https://1zpresso.coffee/recipe/"
+      }
     },
     "maisonnette-graycano": {
       "strengths": [
@@ -341,7 +346,12 @@
         "morePreparation",
         "equipmentSpecific",
         "unknownParameters"
-      ]
+      ],
+      "sourceImage": {
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Brazilian-Brewers-Cup-5th-Place-Winner2.jpg",
+        "sourceLabel": "1Zpresso",
+        "sourceUrl": "https://1zpresso.coffee/recipe/"
+      }
     },
     "torres-wbrc": {
       "strengths": [
@@ -365,7 +375,12 @@
         "unknownParameters",
         "morePreparation",
         "equipmentSpecific"
-      ]
+      ],
+      "sourceImage": {
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Venezuela-Brewers-Cup-2025-Manuel-Pinnola.jpg",
+        "sourceLabel": "1Zpresso",
+        "sourceUrl": "https://1zpresso.coffee/recipe/"
+      }
     },
     "kaygusuz-graycano": {
       "strengths": [
@@ -377,7 +392,12 @@
         "morePreparation",
         "equipmentSpecific",
         "unknownParameters"
-      ]
+      ],
+      "sourceImage": {
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Turkey-Brewers-Cup-2025-Atahan-Kaygusuz.jpg",
+        "sourceLabel": "1Zpresso",
+        "sourceUrl": "https://1zpresso.coffee/recipe/"
+      }
     },
     "vuolo-mk": {
       "strengths": [
@@ -389,7 +409,12 @@
         "unknownParameters",
         "grindSensitive",
         "equipmentSpecific"
-      ]
+      ],
+      "sourceImage": {
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Rubens-Vuolo-Neto.jpg",
+        "sourceLabel": "1Zpresso",
+        "sourceUrl": "https://1zpresso.coffee/recipe/"
+      }
     },
     "damgaci-v60": {
       "strengths": [
@@ -413,7 +438,12 @@
         "morePreparation",
         "unknownParameters",
         "smallCapacity"
-      ]
+      ],
+      "sourceImage": {
+        "url": "https://origami-kai.com/cdn/shop/articles/1734924141_1734923235_1734676872_ORIGAMI-CUP_SNS___PC_3-2_520x500_3908f34d-d82b-4f85-8c88-45174cfd5f8c.jpg?v=1761614777",
+        "sourceLabel": "ORIGAMI",
+        "sourceUrl": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
+      }
     },
     "gil-zp6-2025": {
       "strengths": [
@@ -425,7 +455,12 @@
         "unknownParameters",
         "equipmentSpecific",
         "needsTimer"
-      ]
+      ],
+      "sourceImage": {
+        "url": "https://1zpresso.coffee/wp-content/uploads/2024/06/Dutch-Brewers-Cup-2025-Milo.jpg",
+        "sourceLabel": "1Zpresso",
+        "sourceUrl": "https://1zpresso.coffee/recipe/"
+      }
     }
   },
   "equipment": {
@@ -1336,6 +1371,73 @@
         "sourceLabel": "Fellow",
         "sourceUrl": "https://fellowproducts.com/products/stagg"
       }
+    },
+    "graycano-dripper": {
+      "role": "openFrame",
+      "strengths": [
+        "flowControl",
+        "repeatable"
+      ],
+      "considerations": [
+        "activePouring",
+        "learningCurve"
+      ]
+    },
+    "mk-dripper": {
+      "role": "unresolved",
+      "strengths": [
+        "compact"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "filterMatching"
+      ]
+    },
+    "1zpresso-k-plus": {
+      "role": "handGrinder",
+      "strengths": [
+        "preciseAdjustment",
+        "repeatable",
+        "portable"
+      ],
+      "considerations": [
+        "manualEffort",
+        "smallCapacity"
+      ]
+    },
+    "1zpresso-k-pro": {
+      "role": "handGrinder",
+      "strengths": [
+        "preciseAdjustment",
+        "repeatable",
+        "portable"
+      ],
+      "considerations": [
+        "manualEffort",
+        "smallCapacity"
+      ]
+    },
+    "sibarist-fast": {
+      "role": "paperFilter",
+      "strengths": [
+        "fastFlow",
+        "cleanCup"
+      ],
+      "considerations": [
+        "consumable",
+        "filterMatching"
+      ]
+    },
+    "sibarist-flat": {
+      "role": "paperFilter",
+      "strengths": [
+        "fastFlow",
+        "evenExtraction"
+      ],
+      "considerations": [
+        "consumable",
+        "filterMatching"
+      ]
     }
   }
 }

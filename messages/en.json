@@ -766,7 +766,10 @@
     "dimBase123": "Base Ø123",
     "dim115H70Hole25": "Ø115 × H70; bottom hole Ø25",
     "dim118H70Hole25": "Ø118 × H70; bottom hole Ø25",
-    "weight1400WithBase": "1400 (with base)"
+    "weight1400WithBase": "1400 (with base)",
+    "flatDrippers": "Flat-bed drippers",
+    "modelUnknownMaker": "The source says only \"MK\"; the maker is not identified",
+    "modelFastUnverified": "FAST grade; no stable official product page could be verified"
   },
   "pourPatterns": {
     "centre": "Centre",
@@ -831,5 +834,7 @@
   "grindMicronBases": {
     "psdPeak": "particle size distribution peak"
   },
-  "brewerUnspecified": "Dripper not stated by the source"
+  "brewerUnspecified": "Dripper not stated by the source",
+  "authorRecordCount": "{count} recipes",
+  "archiveMissing": "No public snapshot yet"
 }

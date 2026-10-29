@@ -766,7 +766,10 @@
     "dimBase123": "底部 Ø123",
     "dim115H70Hole25": "Ø115 × H70；底孔 Ø25",
     "dim118H70Hole25": "Ø118 × H70；底孔 Ø25",
-    "weight1400WithBase": "1400（含底座）"
+    "weight1400WithBase": "1400（含底座）",
+    "flatDrippers": "平底濾杯",
+    "modelUnknownMaker": "來源只寫「MK」，未指明製造商",
+    "modelFastUnverified": "FAST 等級；官方產品頁未能核實"
   },
   "pourPatterns": {
     "centre": "中央",
@@ -831,5 +834,7 @@
   "grindMicronBases": {
     "psdPeak": "粒徑分布峰值"
   },
-  "brewerUnspecified": "來源未標注濾杯"
+  "brewerUnspecified": "來源未標注濾杯",
+  "authorRecordCount": "{count} 份配方",
+  "archiveMissing": "尚無公開存檔快照"
 }
