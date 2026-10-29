@@ -653,6 +653,21 @@
       "s00": "Coloque 15 g de café no dripper e comece com 60 g.",
       "s01": "Adicione 100 g após 50 segundos.",
       "s02": "Após mais 50 segundos, despeje os 90 g finais."
+    },
+    "kurasu": {
+      "title": "Filtro gelado flash-brew da Kurasu",
+      "summary": "Quinze gramas com 150 g de água quente despejados sobre 65–70 g de gelo, em três adições, terminando por volta de 1:45.",
+      "version": "Kurasu Journal",
+      "grind": "Mais fino que um despejo quente padrão",
+      "equipment": "Dripper e filtro não nomeados; o papel é enxaguado e o dripper aquecido",
+      "notes": "A página não nomeia o dripper nem a temperatura da água, e não tem data de publicação. O gelo é dado como aproximadamente 65–70 g e descrito como o que define a força final; precisa derreter por completo antes de servir.",
+      "finish": "Termine por volta de 1:40–1:45, retire o dripper e mexa até o gelo restante derreter.",
+      "overview": "O flash brew despeja uma extração quente concentrada direto no gelo, então resfriar e diluir acontecem juntos e o peso do gelo vira o ajuste de força — o ponto que a página mais destaca. A temperatura não é indicada e fica a gosto.",
+      "bestFor": "Café filtrado claro que você quer gelado sem esperar doze horas",
+      "prepare": "Enxágue o papel, aqueça o dripper e coloque aproximadamente 65–70 g de gelo na jarra.",
+      "s00": "Despeje 40 g de água para a pré-infusão.",
+      "s01": "Às 0:40, despeje até 100 g no total.",
+      "s02": "Às 1:10, despeje devagar e com suavidade até 150 g no total, sem agitar em excesso."
     }
   },
   "waterQuality": "Perfil da água",
@@ -836,5 +851,13 @@
   },
   "brewerUnspecified": "A fonte não informa o dripper",
   "authorRecordCount": "{count} receitas",
-  "archiveMissing": "Ainda sem cópia arquivada"
+  "archiveMissing": "Ainda sem cópia arquivada",
+  "ice": "Gelo",
+  "totalLiquid": "Líquido total",
+  "quickAnswerIced": "Resumo: {dose} g de café, {water} {unit} de água quente mais {ice} {unit} de gelo, {temperature}, moagem {grind}, tempo total {time}.",
+  "icePlacements": {
+    "server": "Gelo na jarra",
+    "brewer": "Gelo no dripper",
+    "glass": "Gelo no copo"
+  }
 }

@@ -142,7 +142,8 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
     keywords,
     recipeIngredient:[
       `${recipe.dose} g ${t('schemaCoffee')}`,
-      `${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${recipe.temperature}°C)`:''}`
+      `${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${recipe.temperature}°C)`:''}`,
+      ...recipe.ice?[`${recipe.ice.amount} ${recipe.ice.unit} ${t('ice')}`]:[]
     ],
     recipeInstructions:recipe.steps.map((step,index)=>({
       '@type':'HowToStep',

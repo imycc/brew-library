@@ -461,6 +461,18 @@
         "sourceLabel": "1Zpresso",
         "sourceUrl": "https://1zpresso.coffee/recipe/"
       }
+    },
+    "kurasu-flash-brew": {
+      "strengths": [
+        "clearTimeline",
+        "fastFlow",
+        "cleanCup"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "needsTimer",
+        "equipmentSpecific"
+      ]
     }
   },
   "equipment": {

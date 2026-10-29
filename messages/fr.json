@@ -653,6 +653,21 @@
       "s00": "Placez 15 g de café dans le filtre et ouvrez avec 60 g.",
       "s01": "Ajoutez 100 g après 50 secondes.",
       "s02": "Après 50 secondes de plus, versez les 90 g derniers."
+    },
+    "kurasu": {
+      "title": "Filtre glacé flash-brew de Kurasu",
+      "summary": "Quinze grammes pour 150 g d’eau chaude versés sur 65–70 g de glace, en trois ajouts, fin vers 1:45.",
+      "version": "Kurasu Journal",
+      "grind": "Plus fin qu’un versement chaud classique",
+      "equipment": "Filtre et papier non nommés ; le papier est rincé et le filtre préchauffé",
+      "notes": "La page ne nomme ni le filtre ni la température de l’eau, et ne porte pas de date. La glace est donnée à environ 65–70 g et présentée comme ce qui fixe la force finale ; elle doit fondre entièrement avant de servir.",
+      "finish": "Terminez vers 1:40–1:45, retirez le filtre et remuez jusqu’à ce que la glace restante ait fondu.",
+      "overview": "Le flash brew verse une extraction chaude concentrée directement sur la glace : refroidissement et dilution vont de pair, et le poids de glace devient le réglage de force — ce que la page souligne le plus. La température n’est pas donnée ; ce levier reste au goût.",
+      "bestFor": "Un café filtre clair que vous voulez glacé sans attendre douze heures",
+      "prepare": "Rincez le papier, préchauffez le filtre, puis mettez environ 65–70 g de glace dans le pichet.",
+      "s00": "Versez 40 g d’eau pour la pré-infusion.",
+      "s01": "À 0:40, versez jusqu’à 100 g au total.",
+      "s02": "À 1:10, versez doucement et lentement jusqu’à 150 g au total, sans agiter à l’excès."
     }
   },
   "waterQuality": "Profil de l’eau",
@@ -836,5 +851,13 @@
   },
   "brewerUnspecified": "La source ne nomme pas le filtre",
   "authorRecordCount": "{count} recettes",
-  "archiveMissing": "Aucune copie archivée"
+  "archiveMissing": "Aucune copie archivée",
+  "ice": "Glace",
+  "totalLiquid": "Liquide total",
+  "quickAnswerIced": "En bref : {dose} g de café, {water} {unit} d’eau chaude et {ice} {unit} de glace, {temperature}, mouture {grind}, durée totale {time}.",
+  "icePlacements": {
+    "server": "Glace dans le pichet",
+    "brewer": "Glace dans le filtre",
+    "glass": "Glace dans le verre"
+  }
 }

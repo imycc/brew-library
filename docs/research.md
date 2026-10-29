@@ -246,3 +246,32 @@ The five HARIO USA blog pages had no Wayback capture at all. Archive requests we
 Transfer weight was measured with and without compression: the homepage is 203 KB raw but 37 KB gzipped, a recipe page 99 KB raw and 30 KB gzipped, the equipment page 341 KB raw and 56 KB gzipped. JavaScript is the real weight — 241 KB gzipped per recipe page, dominated by Next.js internals (65 KB + 62 KB) plus a 44 KB chunk containing `next-intl` and `zod`, and 38 KB of legacy polyfills.
 
 Two experiments were run and **reverted because they did not help**: splitting the zod schema out of the module the client imports (zod is also reached through the equipment and editorial data modules, so the chunk did not shrink) and narrowing `browserslist` to current engines (the App Router emits the same polyfill bundle regardless). Neither change was kept, so no unproven complexity was added. The honest next step for weight — splitting translations per route or moving the interactive filter to an island — is a larger refactor and is not attempted here.
+
+## Iced recipes — scope, first record and the near-misses (checked 2026-10-29)
+
+Iced coffee was the largest gap in the catalogue: twenty-eight hot records and no iced one, while the site already offered an iced filter that always came back empty. Two rules were set before searching. **Scope:** only dripper pour-over, so immersion carafes and AeroPress are out even when their numbers are complete. **Verification:** a video counts only when the numbers live in a text layer we can quote — the description, an official transcription, or a caption file — never from on-screen graphics alone. YouTube's caption endpoints returned empty payloads from this environment, and downloading video to read frames was not attempted, so screen-only numbers remain unverifiable here and are treated as unpublished.
+
+One record met the bar. **Kurasu Kyoto — flash brew** ([source](https://kurasu.kyoto/blogs/kurasu-journal/flash-brew-iced-coffee-kenya-kangocho-aa-brazil-joao-hamilton), snapshot `20261029140940`) publishes 15 g coffee, 150 g hot water, "approximately 65–70 g" of ice in the server, a rinse-and-warm preparation, 40 g bloom, 100 g total at 0:40, 150 g at 1:10, a 1:40–1:45 finish and a stir until the ice melts. It does **not** publish a water temperature, a brewer name or a publication date, so those stay unknown and the record is marked `brewerId: "unspecified"`. The page states plainly that the ice weight sets the final strength, which is why the range and the "approximately" qualifier are stored rather than averaged into a single number.
+
+Rejected after reading the raw pages, with the specific gap:
+
+| Candidate | Why it is not published |
+| --- | --- |
+| HARIO USA — Prima Coffee "Fretta" iced | States 31 g, ~250 g ice, 250 ml water and a 2:30–3:00 brew, but no grind, no temperature, no pour sequence and no ice placement — four of the six fields are absent. |
+| ORIGAMI × FUGLEN HANEGI KŌEN (iced variant) | The hot recipe is complete (15 g, 250 g at 90–93 °C, 0:40 and 2:00–2:30), but the iced version only says "Ice" plus a bowl of ice; the amount is never given, so `ice` cannot be populated. |
+| ORIGAMI × Kurasu (iced Q&A) | Describes an ice bath with no dose, water, ice, grind, temperature or timings at all. |
+| HARIO official channel — Matt Winton, filter over ice | Description carries chapters and an equipment list only; zero quantities. |
+| HARIO Europe — V60 Iced Coffee Maker product page | "Brew with your preferred V60 recipe" — a device page, not a recipe. |
+| CAFEC | No iced recipe exists; the official domain has moved to cafec-jp.com and publishes product pages only. |
+| James Hoffmann — Immersion Iced Coffee | Complete and quote-verified (37.5 g, 330 g, 170 g, plus a 1/2/3/4-cup table and his own 1:13 note), but the brewer is an immersion carafe, not a dripper. Kept as a candidate should the scope ever widen. |
+| The Coffee Chronicler — AeroPress iced | Complete and verified (27 g, 240 g hot, 160 g ice, 80 g bloom, 2:30 press), but AeroPress is outside the pour-over scope. |
+| James Hoffmann — "Better than cold brew" iced filter | The on-topic iced pour-over, but its description carries no quantities and the numbers appear on screen only. |
+
+Model changes that iced forced:
+
+- `ice` carries its own `amount`, optional `amountMax`, an `approximate` flag and a `placement` of server, brewer or glass — the placement is source-stated, never assumed.
+- Ice is **never** converted into water and is never counted as a poured addition: the bloom share, pour windows and "total water" checks still measure hot water only, while the coffee:water ratio uses hot water plus ice when, and only when, both share a unit.
+- A iced record without ice, or a hot record carrying ice, now fails validation.
+- Quick answers, parameter tiles, the conditions list, the comparison table and JSON-LD ingredients all gained an ice line, and the comparison row only appears when a selected recipe actually states ice.
+
+One unrelated test-quality fix came out of this pass: the equipment page embeds forty-seven third-party product images, and waiting for the `load` event made the screenshot journeys hostage to those hosts (two of them began returning SSL errors after repeated fetching). The capture helper now falls back to `domcontentloaded` when a foreign image stalls, so a slow CDN can no longer fail a run that only needs the DOM.

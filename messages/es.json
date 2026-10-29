@@ -653,6 +653,21 @@
       "s00": "Pon 15 g de café en el dripper y empieza con 60 g.",
       "s01": "Añade 100 g tras 50 segundos.",
       "s02": "Tras otros 50 segundos, vierte los 90 g finales."
+    },
+    "kurasu": {
+      "title": "Filtro helado flash-brew de Kurasu",
+      "summary": "Quince gramos con 150 g de agua caliente vertidos sobre 65–70 g de hielo, en tres añadidos y terminando hacia 1:45.",
+      "version": "Kurasu Journal",
+      "grind": "Más fino que un vertido caliente estándar",
+      "equipment": "Dripper y filtro sin nombrar; se enjuaga el papel y se calienta el dripper",
+      "notes": "La página no nombra el dripper ni indica temperatura del agua, y no tiene fecha de publicación. El hielo se da como aproximadamente 65–70 g y se describe como lo que fija la fuerza final; debe fundirse del todo antes de servir.",
+      "finish": "Termina hacia 1:40–1:45, retira el dripper y remueve hasta que el hielo restante se haya fundido.",
+      "overview": "El flash brew vierte una extracción caliente concentrada directamente sobre hielo, así que enfriar y diluir ocurren a la vez y el peso del hielo es el mando de fuerza: lo que más subraya la página. La temperatura queda sin indicar, y ese ajuste queda al gusto.",
+      "bestFor": "Café de filtro claro que quieras frío sin esperar doce horas",
+      "prepare": "Enjuaga el papel, calienta el dripper y pon aproximadamente 65–70 g de hielo en la jarra.",
+      "s00": "Vierte 40 g de agua para la preinfusión.",
+      "s01": "A las 0:40, vierte hasta 100 g en total.",
+      "s02": "A las 1:10, vierte despacio y con suavidad hasta 150 g en total, sin agitar en exceso."
     }
   },
   "waterQuality": "Perfil del agua",
@@ -836,5 +851,13 @@
   },
   "brewerUnspecified": "La fuente no indica el dripper",
   "authorRecordCount": "{count} recetas",
-  "archiveMissing": "Aún sin copia archivada"
+  "archiveMissing": "Aún sin copia archivada",
+  "ice": "Hielo",
+  "totalLiquid": "Líquido total",
+  "quickAnswerIced": "Resumen: {dose} g de café, {water} {unit} de agua caliente más {ice} {unit} de hielo, {temperature}, molienda {grind}, tiempo total {time}.",
+  "icePlacements": {
+    "server": "Hielo en la jarra",
+    "brewer": "Hielo en el dripper",
+    "glass": "Hielo en el vaso"
+  }
 }

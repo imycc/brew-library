@@ -653,6 +653,21 @@
       "s00": "15 g in den Drepper geben und mit 60 g beginnen.",
       "s01": "Nach 50 Sekunden 100 g nachgießen.",
       "s02": "Nach weiteren 50 Sekunden die letzten 90 g."
+    },
+    "kurasu": {
+      "title": "Kurasus Flash-Brew als Eis-Kaffee",
+      "summary": "15 g Kaffee mit 150 g heißem Wasser auf 65–70 g Eis, in drei Gaben, fertig gegen 1:45.",
+      "version": "Kurasu Journal",
+      "grind": "Feiner als ein üblicher Heißaufguss",
+      "equipment": "Drepper und Filter nicht genannt; Papier wird gespült, der Drepper vorgewärmt",
+      "notes": "Weder Drepper noch Wassertemperatur werden genannt, ein Veröffentlichungsdatum fehlt. Eis ist mit etwa 65–70 g angegeben und bestimmt laut Seite die endgültige Stärke; es muss vor dem Servieren vollständig schmelzen.",
+      "finish": "Gegen 1:40–1:45 beenden, den Drepper abnehmen und rühren, bis das restliche Eis geschmolzen ist.",
+      "overview": "Beim Flash Brew trifft ein konzentrierter Heißaufguss direkt aufs Eis: Kühlen und Verdünnen passieren zusammen, das Eisgewicht wird zum Stärke-Regler — der Punkt, den die Seite am stärksten betont. Die Temperatur fehlt und bleibt dem Geschmack überlassen.",
+      "bestFor": "Heller Filterkaffee, kalt und ohne zwölf Stunden Warten",
+      "prepare": "Papier spülen, Drepper vorwärmen, dann etwa 65–70 g Eis in die Kanne geben.",
+      "s00": "40 g Wasser für den Bloom aufgießen.",
+      "s01": "Bei 0:40 auf insgesamt 100 g aufgießen.",
+      "s02": "Bei 1:10 langsam und sanft auf insgesamt 150 g aufgießen, ohne zu stark zu rühren."
     }
   },
   "waterQuality": "Wasserprofil",
@@ -836,5 +851,13 @@
   },
   "brewerUnspecified": "Die Quelle nennt keinen Drepper",
   "authorRecordCount": "{count} Rezepte",
-  "archiveMissing": "Noch kein Archiv-Mitschnitt"
+  "archiveMissing": "Noch kein Archiv-Mitschnitt",
+  "ice": "Eis",
+  "totalLiquid": "Gesamtflüssigkeit",
+  "quickAnswerIced": "Kurzfassung: {dose} g Kaffee, {water} {unit} heißes Wasser plus {ice} {unit} Eis, {temperature}, Mahlgrad {grind}, Gesamtzeit {time}.",
+  "icePlacements": {
+    "server": "Eis in der Kanne",
+    "brewer": "Eis im Drepper",
+    "glass": "Eis im Glas"
+  }
 }

@@ -653,6 +653,21 @@
       "s00": "Place 15 g of coffee in the dripper and open with a 60 g pour.",
       "s01": "Add 100 g after 50 seconds.",
       "s02": "After another 50 seconds, pour the final 90 g."
+    },
+    "kurasu": {
+      "title": "Kurasu’s flash-brew iced filter",
+      "summary": "Fifteen grams to 150 g of hot water poured over 65–70 g of ice, in three additions finishing around 1:45.",
+      "version": "Kurasu Journal",
+      "grind": "Finer than a standard hot pour-over",
+      "equipment": "Dripper and filter not named; the paper is rinsed and the dripper warmed",
+      "notes": "The page names neither the dripper nor a water temperature and carries no publication date. Ice is published as approximately 65–70 g and described as what sets the final strength; it must be fully melted before serving.",
+      "finish": "Aim to finish around 1:40–1:45, then remove the dripper and stir until the remaining ice has melted.",
+      "overview": "Flash brewing runs a concentrated hot brew straight onto ice, so cooling and dilution happen together and the ice weight becomes the strength dial — the point the page stresses most. Temperature is left unstated, which leaves that one lever to taste.",
+      "bestFor": "Light-roast filter coffee you want cold without a twelve-hour wait",
+      "prepare": "Rinse the paper filter, warm the dripper, then put approximately 65–70 g of ice in the server.",
+      "s00": "Pour 40 g of water for the bloom.",
+      "s01": "At 0:40, pour to 100 g in total.",
+      "s02": "At 1:10, pour gently and slowly to 150 g in total, avoiding excessive agitation."
     }
   },
   "waterQuality": "Water profile",
@@ -836,5 +851,13 @@
   },
   "brewerUnspecified": "Dripper not stated by the source",
   "authorRecordCount": "{count} recipes",
-  "archiveMissing": "No public snapshot yet"
+  "archiveMissing": "No public snapshot yet",
+  "ice": "Ice",
+  "totalLiquid": "Total liquid",
+  "quickAnswerIced": "Quick answer: {dose} g ground coffee, {water} {unit} hot water plus {ice} {unit} ice, {temperature}, grind {grind}, total time {time}.",
+  "icePlacements": {
+    "server": "Ice in the server",
+    "brewer": "Ice in the brewer",
+    "glass": "Ice in the glass"
+  }
 }
