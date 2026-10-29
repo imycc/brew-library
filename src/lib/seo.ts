@@ -1,4 +1,4 @@
-import {BASE,SITE,time,recipes,type Recipe} from './recipes';
+import {BASE,SITE,time,recipes,type Recipe,iceAmountText} from './recipes';
 import {equipment,type Equipment} from './equipment';
 import {equipmentEditorial,equipmentExperience} from './editorial';
 import {brewTimeText,recipeFaq,temperatureText,type Translator} from './faq';
@@ -143,7 +143,7 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
     recipeIngredient:[
       `${recipe.dose} g ${t('schemaCoffee')}`,
       `${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${recipe.temperature}°C)`:''}`,
-      ...recipe.ice?[`${recipe.ice.amount} ${recipe.ice.unit} ${t('ice')}`]:[]
+      ...recipe.ice?[`${iceAmountText(recipe)} ${t('ice')}`]:[]
     ],
     recipeInstructions:recipe.steps.map((step,index)=>({
       '@type':'HowToStep',
