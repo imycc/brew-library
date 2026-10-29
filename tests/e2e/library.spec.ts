@@ -65,10 +65,23 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="ek-unspecified"] .equipment-card-image')).toHaveCount(0);
  await expect(page.locator('[data-equipment="hario-v60-mugen-02"]')).toContainText('V60 MUGEN');
  await expect(page.locator('[data-equipment="hario-v60-mugen-02"] a[href*="lamill-mugen"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('直火鵝頸');
+ await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('爐具使用');
+ await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('日本');
+ await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).not.toContainText('Stovetop gooseneck');
+ await expect(page.locator('[data-equipment="kalita-wave-155-stainless"]')).toContainText('Kalita Wave 155 濾紙');
+ await page.goto(`${base}/de/equipment/`);
+ await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('Herd-Schwanenhals');
+ await expect(page.locator('[data-equipment="kalita-wave-155-stainless"]')).toContainText('Kalita Wave 155 Filter');
+ await page.goto(`${base}/zh-Hant/equipment/`);
+ await expect(page.locator('[data-equipment]')).toHaveCount(55);
  await expect(page.locator('.equipment-grid')).toHaveCSS('column-width','300px');
  await page.getByLabel('搜尋品牌、型號或相容性').fill('ZP6');
  await expect(page.locator('[data-equipment]')).toHaveCount(1);
- await expect(page.locator('[data-equipment="1zpresso-zp6-special"]')).toContainText('90 clicks per rotation');
+ await expect(page.locator('[data-equipment="1zpresso-zp6-special"]')).toContainText('每圈 90 格');
+ await page.getByLabel('搜尋品牌、型號或相容性').fill('電磁爐');
+ await expect(page.locator('[data-equipment="hario-v60-fit-1-2l"]')).toBeVisible();
+ await expect(page.locator('[data-equipment]')).not.toHaveCount(0);
  await page.getByLabel('搜尋品牌、型號或相容性').fill('');
  await page.getByRole('button',{name:/手沖壺/}).click();
  await expect(page.locator('[data-equipment]')).toHaveCount(11);
@@ -80,6 +93,10 @@ test('equipment catalogue filters official records and links source-backed recip
  await page.setViewportSize({width:390,height:844});
  expect(await page.locator('.equipment-card').evaluateAll(cards=>new Set(cards.map(card=>Math.round(card.getBoundingClientRect().x))).size)).toBe(1);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
+ for(const locale of ['de','ja']){
+  await page.goto(`${base}/${locale}/equipment/`);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
+ }
 });
 test('mobile and long-language layouts keep controls inside viewport',async({page})=>{
  await page.setViewportSize({width:390,height:844});

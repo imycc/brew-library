@@ -18,7 +18,8 @@ export const equipmentSchema=z.object({
   details:z.array(z.object({
     key:detailKeySchema,
     value:z.string().min(1),
-    unit:unitSchema.optional()
+    unit:unitSchema.optional(),
+    valueKey:z.string().regex(/^[a-z][a-zA-Z0-9_]*$/).optional()
   })).min(1),
   recipeIds:z.array(z.string()).default([]),
   sources:z.array(z.object({label:z.string().min(1),url:z.url()})).min(1),
@@ -33,9 +34,9 @@ export const equipment:Equipment[]=z.object({
   equipment:z.array(equipmentSchema)
 }).parse(rawEquipment).equipment;
 
-export function filterEquipment(list:Equipment[],query:string,category:EquipmentCategory|'all'){
+export function filterEquipment(list:Equipment[],query:string,category:EquipmentCategory|'all',detailText:(detail:Equipment['details'][number])=>string=(detail)=>detail.value){
   const needle=query.normalize('NFKC').toLocaleLowerCase().trim();
   return list.filter(item=>(category==='all'||item.category===category) && (!needle||[
-    item.brand,item.name,...item.aliases,...item.details.flatMap(detail=>[detail.key,detail.value,detail.unit||''])
+    item.brand,item.name,...item.aliases,...item.details.flatMap(detail=>[detail.key,detailText(detail),detail.unit||''])
   ].join(' ').normalize('NFKC').toLocaleLowerCase().includes(needle)));
 }

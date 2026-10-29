@@ -167,6 +167,12 @@ Seven records were added: four stovetop kettles and three V60-family drippers. T
 - Mugen is stored as the ceramic 02 model with V60 02 filter compatibility. NEO and Suiren are stored as 02-size PCT/Tritan drippers. No size/material claims are transferred between variants.
 - The Mugen editorial image is omitted because the official product page exposes only the transparent-black variant; using it for the ceramic record would misrepresent the material. NEO and Suiren use their official 02-size product images.
 
+### Localized specification values — checked 2026-10-29
+
+The equipment cards previously exposed English prose for compatibility, mode, country of manufacture, filter format, burr, adjustment, technology and unresolved-model notes. Those values now carry an optional `valueKey`; 86 canonical keys cover the full catalogue and are translated in all nine locales. Raw source strings remain in `content/equipment.json` for auditability, while the UI and JSON-LD read `equipmentValues` from the message catalogue. Brand and model names are retained inside the localized strings rather than translated.
+
+Two official image gaps were closed during this review: KINGrinder K6 now uses its official product image, and the C40 MK3 + Red Clix record uses the official Red Clix drivetrain image. The remaining missing images are deliberate: unresolved ORIGAMI/EK/Sibarist records keep no model-specific image; April’s equipment routes return 404; Timemore publishes no brew-specific Sculptor 064 image; and HARIO’s Mugen page exposes only the transparent-black variant, so the ceramic record stays without an image rather than showing the wrong material.
+
 Editorial boundaries:
 
 - A recipe source that says only `EK` is stored as `EK — model unconfirmed`; it is not relabelled EK43.

@@ -16,12 +16,13 @@ function EquipmentCard({item}:{item:(typeof equipment)[number]}){
   const experience=equipmentExperience[item.id];
   const related=item.recipeIds.flatMap(id=>recipes.find(recipe=>recipe.id===id)||[]);
   const formatDetail=(detail:(typeof item.details)[number])=>{
-    if(detail.key!=='materials') return detail.value;
-    return detail.value.split(';').map(value=>{
+    if(detail.key==='materials') return detail.value.split(';').map(value=>{
       const material=value.trim();
       const key=`equipmentMaterials.${material}`;
       return t.has(key)?t(key):material;
     }).join(' · ');
+    if(detail.valueKey)return t(`equipmentValues.${detail.valueKey}`);
+    return detail.value;
   };
   return <article className="equipment-card" data-equipment={item.id} id={item.id}>
     <OfficialSourceImage image={editorial.sourceImage} name={`${item.brand} ${item.name}`} kind="equipment" className="equipment-card-image" showFallback={false}/>
@@ -46,7 +47,7 @@ export function EquipmentPage(){
   const t=useTranslations();
   const [query,setQuery]=useState('');
   const [category,setCategory]=useState<EquipmentCategory|'all'>('all');
-  const visible=filterEquipment(equipment,query,category);
+  const visible=filterEquipment(equipment,query,category,detail=>detail.valueKey?t(`equipmentValues.${detail.valueKey}`):detail.value);
   return <main id="main" className="page equipment-page">
     <p className="eyebrow">EQUIPMENT INDEX</p>
     <div className="equipment-title"><div><h1>{t('equipmentTitle')}</h1><p className="page-subtitle">{t('equipmentIntro')}</p></div><div className="equipment-total"><strong>{equipment.length}</strong><span>{t('equipmentItems')}</span></div></div>

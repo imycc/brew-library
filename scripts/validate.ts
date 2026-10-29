@@ -68,7 +68,7 @@ export async function validate(){
    for(const item of equipment){
      assert(flat[`equipmentCategories.${item.category}`],`${locale}/equipment category ${item.category}`);
      assert(flat[`equipmentStatus.${item.status}`]||item.status==='current',`${locale}/equipment status ${item.status}`);
-     for(const detail of item.details){assert(flat[`equipmentSpecs.${detail.key}`],`${locale}/equipment spec ${detail.key}`);if(detail.unit)assert(flat[`equipmentUnits.${detail.unit}`],`${locale}/equipment unit ${detail.unit}`);}
+     for(const detail of item.details){assert(flat[`equipmentSpecs.${detail.key}`],`${locale}/equipment spec ${detail.key}`);if(detail.unit)assert(flat[`equipmentUnits.${detail.unit}`],`${locale}/equipment unit ${detail.unit}`);if(detail.valueKey)assert(flat[`equipmentValues.${detail.valueKey}`],`${locale}/equipment value ${detail.valueKey}`);}
      if(detailMaterialKeys(item.details))for(const material of detailMaterialKeys(item.details)!)assert(flat[`equipmentMaterials.${material}`],`${locale}/equipment material ${material}`);
      const editorial=equipmentEditorial[item.id];
      assert(flat[`equipmentRoles.${editorial.role}`],`${locale}/equipment role ${editorial.role}`);
