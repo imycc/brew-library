@@ -23,8 +23,10 @@
       "source": {
         "label": "HARIO Europe",
         "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya",
-        "published": null,
-        "checked": "2026-10-27"
+        "published": "2023-02-06",
+        "checked": "2026-10-27",
+        "archive": "https://web.archive.org/web/20250909080858/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -32,31 +34,36 @@
           "action": "bloom",
           "at": 0,
           "amount": 50,
-          "cumulative": 50
+          "cumulative": 50,
+          "instruction": "recipes.kasuya.s00"
         },
         {
           "action": "pour",
           "at": 45,
           "amount": 70,
-          "cumulative": 120
+          "cumulative": 120,
+          "instruction": "recipes.kasuya.s01"
         },
         {
           "action": "pour",
           "at": 90,
           "amount": 60,
-          "cumulative": 180
+          "cumulative": 180,
+          "instruction": "recipes.kasuya.s02"
         },
         {
           "action": "pour",
           "at": 130,
           "amount": 60,
-          "cumulative": 240
+          "cumulative": 240,
+          "instruction": "recipes.kasuya.s03"
         },
         {
           "action": "pour",
           "at": 160,
           "amount": 60,
-          "cumulative": 300
+          "cumulative": 300,
+          "instruction": "recipes.kasuya.s04"
         },
         {
           "action": "finish",
@@ -69,14 +76,15 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily"
+      "context": "daily",
+      "removalAt": 210
     },
     {
       "id": "hoffmann-one-cup",
       "copy": "hoffmann",
       "author": "James Hoffmann",
       "authorId": "hoffmann",
-      "brewer": "HARIO V60 01",
+      "brewer": "HARIO V60 · 1 Cup",
       "brewerId": "v60",
       "kind": "hot",
       "dose": 15,
@@ -95,7 +103,9 @@
         "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-1-cup-v60-technique",
         "video": "https://www.youtube.com/watch?v=1oB1oDrDkHM&t=43s",
         "published": "2022-11-22",
-        "checked": "2026-10-27"
+        "checked": "2026-10-27",
+        "publishedBasis": "video",
+        "updated": "2026-06-16"
       },
       "image": "brewer-still",
       "steps": [
@@ -103,70 +113,80 @@
           "action": "bloom",
           "at": 0,
           "amount": 50,
-          "cumulative": 50
+          "cumulative": 50,
+          "instruction": "recipes.hoffmann.s00"
         },
         {
           "action": "swirl",
           "at": 10,
           "end": 15,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.hoffmann.s01"
         },
         {
           "action": "pour",
           "at": 45,
           "end": 60,
           "amount": 50,
-          "cumulative": 100
+          "cumulative": 100,
+          "instruction": "recipes.hoffmann.s02"
         },
         {
           "action": "pause",
           "at": 60,
           "end": 70,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.hoffmann.s03"
         },
         {
           "action": "pour",
           "at": 70,
           "end": 80,
           "amount": 50,
-          "cumulative": 150
+          "cumulative": 150,
+          "instruction": "recipes.hoffmann.s04"
         },
         {
           "action": "pause",
           "at": 80,
           "end": 90,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.hoffmann.s05"
         },
         {
           "action": "pour",
           "at": 90,
           "end": 100,
           "amount": 50,
-          "cumulative": 200
+          "cumulative": 200,
+          "instruction": "recipes.hoffmann.s06"
         },
         {
           "action": "pause",
           "at": 100,
           "end": 110,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.hoffmann.s07"
         },
         {
           "action": "pour",
           "at": 110,
           "end": 120,
           "amount": 50,
-          "cumulative": 250
+          "cumulative": 250,
+          "instruction": "recipes.hoffmann.s08"
         },
         {
           "action": "swirl",
           "at": 120,
           "end": 125,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.hoffmann.s09"
         },
         {
           "action": "finish",
@@ -194,7 +214,11 @@
       "water": {
         "amount": 425,
         "unit": "g",
-        "derived": true
+        "derived": true,
+        "hardness": 100,
+        "alkalinity": 40,
+        "hardnessUnit": "ppm",
+        "alkalinityUnit": "ppm"
       },
       "temperature": null,
       "duration": [
@@ -205,7 +229,10 @@
         "label": "Scott Rao",
         "url": "https://www.scottrao.com/blog/pulsar-recipe",
         "published": "2023-09-14",
-        "checked": "2026-10-27"
+        "checked": "2026-10-27",
+        "archive": "https://web.archive.org/web/20260731161940/https://www.scottrao.com/blog/pulsar-recipe",
+        "publishedBasis": "page",
+        "updated": "2023-09-15"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -213,38 +240,48 @@
           "action": "bloom",
           "at": 0,
           "amount": 75,
-          "cumulative": 75
+          "cumulative": 75,
+          "instruction": "recipes.rao.s00"
         },
         {
           "action": "close",
           "at": 0,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.rao.s01"
         },
         {
           "action": "topup",
           "at": 45,
           "end": 50,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "levelMin": 1,
+          "levelMax": 1,
+          "instruction": "recipes.rao.s02"
         },
         {
           "action": "open",
           "at": null,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.rao.s03"
         },
         {
           "action": "pulses",
           "at": null,
           "amount": null,
-          "cumulative": 425
+          "cumulative": 425,
+          "levelMin": 1,
+          "levelMax": 2,
+          "instruction": "recipes.rao.s04"
         },
         {
           "action": "swirl",
           "at": null,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "instruction": "recipes.rao.s05"
         },
         {
           "action": "finish",
@@ -263,9 +300,19 @@
       "temperatureMode": "boiling",
       "paper": {
         "id": "pulsar",
-        "name": "NextLevel Pulsar",
-        "shape": "flat"
-      }
+        "name": "NextLevel Pulsar"
+      },
+      "ratioStated": "17:1",
+      "grindMicron": {
+        "value": 800,
+        "basis": "psdPeak"
+      },
+      "valve": "open",
+      "bedPrep": [
+        "rinseFilter",
+        "discardRinse",
+        "levelBed"
+      ]
     },
     {
       "id": "licata-v60",
@@ -279,7 +326,8 @@
       "water": {
         "amount": 300,
         "unit": "mL",
-        "derived": false
+        "derived": false,
+        "tds": 125
       },
       "temperature": 94,
       "temperatureMode": "unknown",
@@ -290,8 +338,10 @@
       "source": {
         "label": "HARIO Europe",
         "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata",
-        "published": null,
-        "checked": "2026-10-28"
+        "published": "2022-02-09",
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250909062618/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-pete-licata",
+        "publishedBasis": "page"
       },
       "image": "brewer-still",
       "steps": [
@@ -307,14 +357,17 @@
           "at": 30,
           "amount": null,
           "cumulative": 250,
-          "instruction": "recipes.licata.continuous"
+          "instruction": "recipes.licata.continuous",
+          "pattern": "centre",
+          "style": "forceful"
         },
         {
           "action": "pour",
           "at": null,
           "amount": 50,
           "cumulative": 300,
-          "instruction": "recipes.licata.finalPour"
+          "instruction": "recipes.licata.finalPour",
+          "style": "turbulent"
         },
         {
           "action": "finish",
@@ -366,8 +419,9 @@
       "source": {
         "label": "HARIO USA · Partners Coffee",
         "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-switch-recipe-with-partners-coffee",
-        "published": null,
-        "checked": "2026-10-28"
+        "published": "2023-08-15",
+        "checked": "2026-10-28",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -383,14 +437,17 @@
           "at": 0,
           "amount": 30,
           "cumulative": 30,
-          "end": 10
+          "end": 10,
+          "instruction": "recipes.wong.s01"
         },
         {
           "action": "pour",
           "at": 40,
           "amount": 110,
           "cumulative": 140,
-          "end": 55
+          "end": 55,
+          "derived": true,
+          "instruction": "recipes.wong.s02"
         },
         {
           "action": "close",
@@ -403,7 +460,9 @@
           "action": "pour",
           "at": 75,
           "amount": 100,
-          "cumulative": 240
+          "cumulative": 240,
+          "derived": true,
+          "instruction": "recipes.wong.s04"
         },
         {
           "action": "open",
@@ -423,7 +482,8 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily"
+      "context": "daily",
+      "valve": "open"
     },
     {
       "id": "boen-switch",
@@ -448,8 +508,10 @@
       "source": {
         "label": "HARIO Europe",
         "url": "https://www.hario-europe.com/blogs/hario-community/ole-kristian-boens-switch-recipe",
-        "published": null,
-        "checked": "2026-10-28"
+        "published": "2021-12-15",
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250909080136/https://www.hario-europe.com/blogs/hario-community/ole-kristian-boens-switch-recipe",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -465,7 +527,8 @@
           "at": 0,
           "amount": 50,
           "cumulative": 50,
-          "unit": "g"
+          "unit": "g",
+          "instruction": "recipes.boen.s01"
         },
         {
           "action": "open",
@@ -480,7 +543,8 @@
           "amount": 100,
           "cumulative": 150,
           "unit": "g",
-          "instruction": "recipes.boen.centre"
+          "instruction": "recipes.boen.centre",
+          "pattern": "centre"
         },
         {
           "action": "close",
@@ -495,7 +559,8 @@
           "amount": 90,
           "cumulative": 240,
           "unit": "g",
-          "instruction": "recipes.boen.circle"
+          "instruction": "recipes.boen.circle",
+          "pattern": "circular"
         },
         {
           "action": "open",
@@ -521,7 +586,8 @@
         "name": "Hacienda La Esmeralda",
         "variety": "Geisha",
         "process": "natural"
-      }
+      },
+      "valve": "closed"
     },
     {
       "id": "hoang-w60",
@@ -535,7 +601,8 @@
       "water": {
         "amount": 200,
         "unit": "g",
-        "derived": false
+        "derived": false,
+        "ppm": 65
       },
       "temperature": 98,
       "temperatureMode": "unknown",
@@ -546,8 +613,10 @@
       "source": {
         "label": "HARIO Europe",
         "url": "https://www.hario-europe.com/blogs/hario-community/ngoc-hoangs-w60-dripper-recipe",
-        "published": null,
-        "checked": "2026-10-28"
+        "published": "2022-02-16",
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250619064818/https://www.hario-europe.com/blogs/hario-community/ngoc-hoangs-w60-dripper-recipe",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -556,7 +625,8 @@
           "at": 0,
           "amount": 50,
           "cumulative": 50,
-          "unit": "mL"
+          "unit": "mL",
+          "instruction": "recipes.hoang.s00"
         },
         {
           "action": "pour",
@@ -564,14 +634,16 @@
           "amount": 100,
           "cumulative": 150,
           "end": 60,
-          "unit": "mL"
+          "unit": "mL",
+          "instruction": "recipes.hoang.s01"
         },
         {
           "action": "pour",
           "at": 120,
           "amount": 50,
           "cumulative": 200,
-          "unit": "mL"
+          "unit": "mL",
+          "instruction": "recipes.hoang.s02"
         },
         {
           "action": "finish",
@@ -588,7 +660,10 @@
       "filterConditions": "unknown",
       "context": "competition",
       "waterNote": "recipes.hoang.water",
-      "filterNote": "recipes.hoang.filters"
+      "filterNote": "recipes.hoang.filters",
+      "bedPrep": [
+        "siftFines"
+      ]
     },
     {
       "id": "rojewska-v60",
@@ -613,8 +688,10 @@
       "source": {
         "label": "HARIO Europe",
         "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-agnieszka-rojewska",
-        "published": null,
-        "checked": "2026-10-28"
+        "published": "2022-08-16",
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250803020318/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-agnieszka-rojewska",
+        "publishedBasis": "page"
       },
       "image": "brewer-still",
       "steps": [
@@ -631,7 +708,8 @@
           "at": 15,
           "amount": null,
           "cumulative": 150,
-          "instruction": "recipes.rojewska.circle"
+          "instruction": "recipes.rojewska.circle",
+          "pattern": "circular"
         },
         {
           "action": "pour",
@@ -639,7 +717,9 @@
           "amount": 100,
           "cumulative": 250,
           "end": 60,
-          "instruction": "recipes.rojewska.centre"
+          "instruction": "recipes.rojewska.centre",
+          "pattern": "centre",
+          "style": "forceful"
         },
         {
           "action": "finish",
@@ -652,7 +732,8 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily"
+      "context": "daily",
+      "grindHedged": true
     },
     {
       "id": "grill-v60",
@@ -677,8 +758,10 @@
       "source": {
         "label": "HARIO Europe",
         "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-martha-grill",
-        "published": null,
-        "checked": "2026-10-28"
+        "published": "2021-10-26",
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20251014011525/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-martha-grill",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -687,33 +770,41 @@
           "at": 0,
           "amount": 60,
           "cumulative": 60,
-          "unit": "g"
+          "unit": "g",
+          "instruction": "recipes.grill.s00"
         },
         {
           "action": "pour",
           "at": 30,
           "amount": 190,
           "cumulative": 250,
-          "unit": "g"
+          "unit": "g",
+          "derived": true,
+          "instruction": "recipes.grill.s01"
         },
         {
-          "action": "swirl",
+          "action": "stir",
           "at": 30,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "count": 3,
+          "instruction": "recipes.grill.s02"
         },
         {
           "action": "pour",
           "at": 90,
           "amount": 250,
           "cumulative": 500,
-          "unit": "g"
+          "unit": "g",
+          "instruction": "recipes.grill.s03"
         },
         {
-          "action": "swirl",
+          "action": "stir",
           "at": 90,
           "amount": null,
-          "cumulative": null
+          "cumulative": null,
+          "count": 3,
+          "instruction": "recipes.grill.s04"
         },
         {
           "action": "finish",
@@ -752,8 +843,10 @@
       "source": {
         "label": "HARIO Europe",
         "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-ibrahim-h-al-mallouhi",
-        "published": null,
-        "checked": "2026-10-28"
+        "published": "2021-12-15",
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20260823200942/https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-ibrahim-h-al-mallouhi",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
@@ -762,13 +855,20 @@
           "at": 0,
           "amount": 40,
           "cumulative": 40,
-          "unit": "mL"
+          "unit": "mL",
+          "pattern": "circular",
+          "style": "slow",
+          "instruction": "recipes.mallouhi.s00"
         },
         {
           "action": "pour",
           "at": 35,
           "amount": 260,
-          "cumulative": 300
+          "cumulative": 300,
+          "pattern": "circular",
+          "style": "slow",
+          "derived": true,
+          "instruction": "recipes.mallouhi.s01"
         },
         {
           "action": "finish",
@@ -784,7 +884,12 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily",
-      "waterNote": "recipes.mallouhi.water"
+      "waterNote": "recipes.mallouhi.water",
+      "ratioStated": "1:15",
+      "bedPrep": [
+        "rinseFilter",
+        "discardRinse"
+      ]
     },
     {
       "id": "chronicler-switch",
@@ -797,7 +902,7 @@
       "dose": 20,
       "water": {
         "amount": 320,
-        "unit": "g",
+        "unit": "mL",
         "derived": false
       },
       "temperature": null,
@@ -810,7 +915,10 @@
         "label": "The Coffee Chronicler",
         "url": "https://coffeechronicler.com/hario-switch/",
         "published": "2023-02-26",
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20260902210354/https://coffeechronicler.com/hario-switch/",
+        "publishedBasis": "page",
+        "updated": "2024-08-12"
       },
       "image": "brewer-still",
       "steps": [
@@ -826,8 +934,9 @@
           "at": 0,
           "amount": 160,
           "cumulative": 160,
-          "unit": "g",
-          "instruction": "recipes.chronicler.firstPour"
+          "unit": "mL",
+          "instruction": "recipes.chronicler.firstPour",
+          "derived": true
         },
         {
           "action": "close",
@@ -841,8 +950,9 @@
           "at": 45,
           "amount": 160,
           "cumulative": 320,
-          "unit": "g",
-          "instruction": "recipes.chronicler.secondPour"
+          "unit": "mL",
+          "instruction": "recipes.chronicler.secondPour",
+          "derived": true
         },
         {
           "action": "open",
@@ -853,7 +963,7 @@
         },
         {
           "action": "finish",
-          "at": 165,
+          "at": null,
           "amount": null,
           "cumulative": null
         }
@@ -862,7 +972,8 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
-      "context": "daily"
+      "context": "daily",
+      "valve": "open"
     },
     {
       "kind": "hot",
@@ -893,7 +1004,8 @@
         "label": "ORIGAMI",
         "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
         "published": null,
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250916173939/https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
       },
       "grinder": {
         "id": "c40-mk4",
@@ -918,28 +1030,32 @@
           "at": 0,
           "amount": 60,
           "cumulative": 60,
-          "instruction": "recipes.kodama.vertical"
+          "instruction": "recipes.kodama.vertical",
+          "pattern": "vertical"
         },
         {
           "action": "pour",
           "at": 30,
           "amount": 100,
           "cumulative": 160,
-          "instruction": "recipes.kodama.vertical"
+          "instruction": "recipes.kodama.vertical",
+          "pattern": "vertical"
         },
         {
           "action": "pour",
           "at": 60,
           "amount": 100,
           "cumulative": 260,
-          "instruction": "recipes.kodama.lateral"
+          "instruction": "recipes.kodama.lateral",
+          "pattern": "lateral"
         },
         {
           "action": "pour",
           "at": 90,
           "amount": 60,
           "cumulative": 320,
-          "instruction": "recipes.kodama.centre"
+          "instruction": "recipes.kodama.centre",
+          "pattern": "centre"
         },
         {
           "action": "finish",
@@ -947,6 +1063,17 @@
           "amount": null,
           "cumulative": null
         }
+      ],
+      "yield": {
+        "amount": 265,
+        "unit": "g",
+        "basis": "observed"
+      },
+      "doseGround": 28,
+      "bedPrep": [
+        "coldRinse",
+        "siftFines",
+        "removeChaff"
       ]
     },
     {
@@ -970,7 +1097,9 @@
       "water": {
         "amount": 240,
         "unit": "g",
-        "derived": false
+        "derived": false,
+        "hardness": 70,
+        "hardnessUnit": "mg/L"
       },
       "temperature": 92,
       "duration": [
@@ -981,12 +1110,14 @@
         "label": "ORIGAMI",
         "url": "https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report",
         "published": null,
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250916173939/https://origami-kai.com/en/blogs/special-feature/origami-cup-2024-toki-gifu-report"
       },
       "grinder": {
         "id": "c40-mk3-redclix",
         "name": "Comandante C40 MK3 + RED CLICKS",
-        "setting": "55 clicks"
+        "setting": "55 clicks",
+        "secondSetting": "56 (first round)"
       },
       "paper": {
         "id": "origami-wave-1-2",
@@ -1030,6 +1161,12 @@
           "amount": null,
           "cumulative": null
         }
+      ],
+      "bedPrep": [
+        "rinseFilter",
+        "siftFines",
+        "levelBed",
+        "prewarmServer"
       ]
     },
     {
@@ -1062,7 +1199,8 @@
         "label": "1Zpresso",
         "url": "https://1zpresso.coffee/recipe/",
         "published": null,
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/"
       },
       "grinder": {
         "id": "zp6-special",
@@ -1080,7 +1218,8 @@
           "amount": 50,
           "cumulative": 50,
           "end": 10,
-          "unit": "g"
+          "unit": "g",
+          "instruction": "recipes.selorio.s00"
         },
         {
           "action": "pour",
@@ -1088,7 +1227,8 @@
           "amount": 70,
           "cumulative": 120,
           "end": 40,
-          "unit": "g"
+          "unit": "g",
+          "instruction": "recipes.selorio.s01"
         },
         {
           "action": "pour",
@@ -1104,7 +1244,8 @@
           "amount": 60,
           "cumulative": 240,
           "end": 100,
-          "unit": "g"
+          "unit": "g",
+          "instruction": "recipes.selorio.s03"
         },
         {
           "action": "finish",
@@ -1141,7 +1282,8 @@
         "label": "1Zpresso",
         "url": "https://1zpresso.coffee/recipe/",
         "published": null,
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/"
       },
       "grinder": {
         "id": "zp6-special",
@@ -1164,14 +1306,16 @@
           "action": "bloom",
           "at": 0,
           "amount": 50,
-          "cumulative": 50
+          "cumulative": 50,
+          "instruction": "recipes.rincon.s00"
         },
         {
           "action": "pour",
           "at": null,
           "amount": 70,
           "cumulative": 120,
-          "temperature": 92
+          "temperature": 92,
+          "instruction": "recipes.rincon.s01"
         },
         {
           "action": "pour",
@@ -1179,7 +1323,8 @@
           "amount": 70,
           "cumulative": 190,
           "temperature": 86,
-          "instruction": "recipes.rincon.spiral"
+          "instruction": "recipes.rincon.spiral",
+          "pattern": "spiral"
         },
         {
           "action": "pour",
@@ -1187,7 +1332,8 @@
           "amount": 70,
           "cumulative": 260,
           "temperature": 86,
-          "instruction": "recipes.rincon.spiral"
+          "instruction": "recipes.rincon.spiral",
+          "pattern": "spiral"
         },
         {
           "action": "finish",
@@ -1227,7 +1373,8 @@
         "label": "1Zpresso",
         "url": "https://1zpresso.coffee/recipe/",
         "published": null,
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "archive": "https://web.archive.org/web/20250730171954/https://1zpresso.coffee/recipe/"
       },
       "grinder": {
         "id": "k-ultra",
@@ -1243,25 +1390,29 @@
           "action": "bloom",
           "at": 0,
           "amount": 40,
-          "cumulative": 40
+          "cumulative": 40,
+          "instruction": "recipes.gil.s00"
         },
         {
           "action": "pour",
           "at": 45,
           "amount": 60,
-          "cumulative": 100
+          "cumulative": 100,
+          "instruction": "recipes.gil.s01"
         },
         {
           "action": "pour",
           "at": 90,
           "amount": 75,
-          "cumulative": 175
+          "cumulative": 175,
+          "instruction": "recipes.gil.s02"
         },
         {
           "action": "pour",
           "at": 135,
           "amount": 75,
-          "cumulative": 250
+          "cumulative": 250,
+          "instruction": "recipes.gil.s03"
         },
         {
           "action": "finish",
@@ -1269,7 +1420,8 @@
           "amount": null,
           "cumulative": null
         }
-      ]
+      ],
+      "ratioStated": "1:16.6"
     },
     {
       "id": "hoffmann-ultimate-v60",
@@ -1280,30 +1432,109 @@
       "brewerId": "v60",
       "kind": "hot",
       "dose": 30,
-      "water": {"amount": 500, "unit": "mL", "derived": false},
+      "water": {
+        "amount": 500,
+        "unit": "mL",
+        "derived": false
+      },
       "temperature": null,
       "temperatureMode": "boiling",
-      "duration": [210, 210],
+      "duration": [
+        210,
+        210
+      ],
       "source": {
         "label": "HARIO USA · James Hoffmann",
         "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/james-hoffmann-uitimate-v60-technique",
         "published": "2026-06-16",
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
-        {"action": "bloom", "at": 0, "amount": 60, "cumulative": 60, "unit": "g"},
-        {"action": "swirl", "at": 0, "end": 45, "amount": null, "cumulative": null},
-        {"action": "pour", "at": 45, "end": 75, "amount": 240, "cumulative": 300, "unit": "g"},
-        {"action": "pour", "at": 75, "end": 105, "amount": 200, "cumulative": 500, "unit": "g"},
-        {"action": "swirl", "at": 105, "end": 110, "amount": null, "cumulative": null, "instruction": "recipes.hoffmann-ultimate.stir"},
-        {"action": "finish", "at": 210, "amount": null, "cumulative": null}
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "unit": "g",
+          "instruction": "recipes.hoffmann-ultimate.s00"
+        },
+        {
+          "action": "swirl",
+          "at": 0,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.hoffmann-ultimate.s01"
+        },
+        {
+          "action": "pour",
+          "at": 45,
+          "end": 75,
+          "amount": 240,
+          "cumulative": 300,
+          "unit": "g",
+          "instruction": "recipes.hoffmann-ultimate.s02"
+        },
+        {
+          "action": "pour",
+          "at": 75,
+          "end": 105,
+          "amount": 200,
+          "cumulative": 500,
+          "unit": "g",
+          "style": "slow",
+          "instruction": "recipes.hoffmann-ultimate.s03"
+        },
+        {
+          "action": "stir",
+          "at": 105,
+          "amount": null,
+          "cumulative": null,
+          "count": 1,
+          "direction": "clockwise",
+          "instruction": "recipes.hoffmann-ultimate.s04"
+        },
+        {
+          "action": "stir",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "count": 1,
+          "direction": "counterclockwise",
+          "instruction": "recipes.hoffmann-ultimate.s05"
+        },
+        {
+          "action": "drain",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.hoffmann-ultimate.s06"
+        },
+        {
+          "action": "swirl",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "style": "gentle",
+          "instruction": "recipes.hoffmann-ultimate.s07"
+        },
+        {
+          "action": "finish",
+          "at": 210,
+          "amount": null,
+          "cumulative": null
+        }
       ],
       "preparation": [],
       "waterConditions": "unknown",
       "beanConditions": "light",
       "filterConditions": "unknown",
-      "context": "daily"
+      "context": "daily",
+      "bedPrep": [
+        "rinseFilter",
+        "crater"
+      ]
     },
     {
       "id": "camber-v60",
@@ -1314,22 +1545,55 @@
       "brewerId": "v60",
       "kind": "hot",
       "dose": 20,
-      "water": {"amount": 345, "unit": "g", "derived": false},
+      "water": {
+        "amount": 345,
+        "unit": "g",
+        "derived": false
+      },
       "temperature": null,
       "temperatureMode": "unknown",
-      "duration": [180, 195],
+      "duration": [
+        180,
+        195
+      ],
       "source": {
         "label": "HARIO USA · Camber Coffee",
         "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-recipe-with-camber-coffee",
         "published": "2023-08-15",
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "publishedBasis": "page"
       },
       "image": "coffee-bloom",
       "steps": [
-        {"action": "bloom", "at": 0, "end": 30, "amount": 60, "cumulative": 60},
-        {"action": "pour", "at": 30, "end": 45, "amount": 140, "cumulative": 200},
-        {"action": "pour", "at": 60, "amount": 145, "cumulative": 345},
-        {"action": "finish", "at": 180, "amount": null, "cumulative": null}
+        {
+          "action": "bloom",
+          "at": 0,
+          "end": 30,
+          "amount": 60,
+          "cumulative": 60,
+          "instruction": "recipes.camber.s00"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "end": 45,
+          "amount": 140,
+          "cumulative": 200,
+          "instruction": "recipes.camber.s01"
+        },
+        {
+          "action": "pour",
+          "at": 60,
+          "amount": 145,
+          "cumulative": 345,
+          "instruction": "recipes.camber.s02"
+        },
+        {
+          "action": "finish",
+          "at": 180,
+          "amount": null,
+          "cumulative": null
+        }
       ],
       "preparation": [],
       "waterConditions": "unknown",
@@ -1337,7 +1601,10 @@
       "filterConditions": "unknown",
       "context": "daily",
       "beanNote": "recipes.camber.bean",
-      "coffee": {"process": "anaerobic"}
+      "coffee": {
+        "process": "anaerobic",
+        "asRecommendation": true
+      }
     },
     {
       "id": "lamill-mugen",
@@ -1348,22 +1615,46 @@
       "brewerId": "mugen",
       "kind": "hot",
       "dose": 16.5,
-      "water": {"amount": 225, "unit": "g", "derived": false},
+      "water": {
+        "amount": 225,
+        "unit": "g",
+        "derived": false
+      },
       "temperature": null,
       "temperatureMode": "unknown",
-      "duration": [180, 195],
+      "duration": [
+        180,
+        195
+      ],
       "source": {
         "label": "HARIO USA · LAMILL Coffee",
         "url": "https://www.hario-usa.com/blogs/recipes-and-more-from-friends/v60-mugen-recipe-with-lamill-coffee",
         "published": "2023-05-11",
-        "checked": "2026-10-28"
+        "checked": "2026-10-28",
+        "publishedBasis": "page"
       },
       "image": "brewer-still",
       "steps": [
-        {"action": "pour", "at": 0, "end": 40, "amount": 225, "cumulative": 225},
-        {"action": "finish", "at": 180, "amount": null, "cumulative": null}
+        {
+          "action": "pour",
+          "at": 0,
+          "end": 40,
+          "amount": 225,
+          "cumulative": 225,
+          "pattern": "spiral",
+          "style": "slow",
+          "instruction": "recipes.lamill.s00"
+        },
+        {
+          "action": "finish",
+          "at": 180,
+          "amount": null,
+          "cumulative": null
+        }
       ],
-      "preparation": ["recipes.lamill.prepare"],
+      "preparation": [
+        "recipes.lamill.prepare"
+      ],
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "filterConditions": "unknown",

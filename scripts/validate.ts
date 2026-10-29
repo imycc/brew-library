@@ -32,6 +32,23 @@ export async function validate(){
    const editorial=recipeEditorial[r.id];
    assert(editorial,`${r.id} needs editorial copy`);
    if(editorial.sourceImage)assert(editorial.sourceImage.sourceUrl===r.source.url,`${r.id} image source mismatch`);
+   if(r.duration&&r.removalAt!==undefined)assert(r.removalAt<=r.duration[1]+120,`${r.id} removal far past the stated finish`);
+   if(r.doseGround!==undefined)assert(r.doseGround>=r.dose,`${r.id} cannot dose more than it ground`);
+   if(r.valve)assert(r.steps.some(s=>['open','close'].includes(s.action)),`${r.id} states a valve but has no valve step`);
+   if(r.water.hardness!==undefined)assert(r.water.hardnessUnit,`${r.id} hardness needs its published unit`);
+   if(r.water.alkalinity!==undefined)assert(r.water.alkalinityUnit,`${r.id} alkalinity needs its published unit`);
+   if(r.ratioStated){
+     const numbers=(r.ratioStated.match(/[\d.]+/g)||[]).map(Number).sort((a,b)=>a-b);
+     assert(numbers.length===2,`${r.id} ratio must state two numbers`);
+     const[small,large]=numbers as [number,number];
+     assert(Math.abs(large/small-r.water.amount/r.dose)<.5,`${r.id} stated ratio disagrees with its own dose and water`);
+   }
+   if(r.yield)assert(r.yield.amount<r.water.amount,`${r.id} beverage yield cannot exceed the water poured`);
+   for(const s of r.steps){
+     if(s.count!==undefined)assert(['stir','swirl'].includes(s.action),`${r.id} a count needs an agitation step`);
+     if(s.derived)assert(s.amount!==null,`${r.id} only a quantified addition can be marked derived`);
+     if(s.levelMin!==undefined&&s.levelMax!==undefined)assert(s.levelMax>=s.levelMin,`${r.id} water level range`);
+   }
    if(r.duration)assert(r.duration[1]>=r.duration[0],r.id);
    const measured=r.steps.filter(s=>s.amount!==null);
    assert(new Set(measured.map(s=>s.unit||r.water.unit)).size<=1,`${r.id} cannot sum mixed step units`);
@@ -63,6 +80,17 @@ export async function validate(){
      for(const key of ['title','summary','version','grind','equipment','notes','finish','overview','bestFor'])assert(flat[`recipes.${r.copy}.${key}`],`${locale}/${r.id}/${key}`);
      for(const s of r.steps){assert(flat[`step.${s.action}`]);if(s.action!=='finish')assert(flat[`instruction.${s.action}`]);}
      for(const key of [...r.preparation,r.beanNote,r.waterNote,r.filterNote,...r.steps.map(s=>s.instruction)].filter((key):key is string=>!!key))assert(flat[key],`${locale}/${r.id}/${key}`);
+     for(const s of r.steps){
+       if(s.pattern)assert(flat[`pourPatterns.${s.pattern}`],`${locale}/${r.id} pour pattern ${s.pattern}`);
+       if(s.style)assert(flat[`pourStyles.${s.style}`],`${locale}/${r.id} pour style ${s.style}`);
+       if(s.direction)assert(flat[`pourDirections.${s.direction}`],`${locale}/${r.id} direction ${s.direction}`);
+     }
+     for(const key of r.bedPrep||[])assert(flat[`bedPrepLabels.${key}`],`${locale}/${r.id} bed prep ${key}`);
+     if(r.valve)assert(flat[`valveStates.${r.valve}`],`${locale}/${r.id} valve state`);
+     if(r.yield)assert(flat[`yieldBases.${r.yield.basis}`],`${locale}/${r.id} yield basis`);
+     if(r.source.publishedBasis)assert(flat[`publishedBases.${r.source.publishedBasis}`],`${locale}/${r.id} published basis`);
+     if(r.grindHedged)assert(flat['grindHedged'],`${locale}/${r.id} hedged grind label`);
+     if(r.grindMicron)assert(flat[`grindMicronBases.${r.grindMicron.basis}`],`${locale}/${r.id} micron basis`);
    }
    for(const key of ['equipmentNav','equipmentTitle','equipmentIntro','equipmentItems','equipmentSearch','equipmentCategory','equipmentResults','equipmentNote','equipmentRelated','equipmentChecked','equipmentEmpty'])assert(flat[`${key}`],`${locale}/${key}`);
    for(const item of equipment){

@@ -210,7 +210,7 @@
   "boiling": "Freshly boiled water",
   "light": "Lighter roasts (for the boiling-water recommendation)",
   "soft": "Soft, filtered water",
-  "raoWater": "About 100 ppm general hardness and 40 ppm alkalinity; the source does not state a reporting basis.",
+  "raoWater": "The source gives its own preferred figures, without a stated reporting basis.",
   "raoPrep": "With the valve open, rinse the filter and drain the rinse water. Fit the barrel firmly, add the coffee and level the bed.",
   "derived": "Total water is calculated from the source’s dose and stated mass ratio, not a separately published measurement.",
   "sequence": "Then",
@@ -225,7 +225,9 @@
     "open": "Open the valve",
     "topup": "Raise the water level",
     "pulses": "Short pulse pours",
-    "level": "Level the bed"
+    "level": "Level the bed",
+    "stir": "Stir",
+    "drain": "Partial drain"
   },
   "instruction": {
     "bloom": "Add the stated amount to wet the coffee grounds.",
@@ -236,7 +238,9 @@
     "open": "Open the valve after topping up.",
     "topup": "Pour until the water sits about 1 cm above the grounds.",
     "pulses": "Use short pours to keep the water 1–2 cm above the grounds, continuing to the total water target.",
-    "level": "Level the coffee bed before brewing."
+    "level": "Level the coffee bed before brewing.",
+    "stir": "Agitate the bed by stirring.",
+    "drain": "Stop pouring and let the water level drop a little."
   },
   "recipes": {
     "kodama": {
@@ -265,7 +269,7 @@
       "first": "Pour gently and evenly over the bed.",
       "second": "Pour slowly with agitation.",
       "last": "Lower kettle water to approximately 75°C; use a thin, slow centre pour.",
-      "water": "Tajima natural water. Reported hardness: 70 mg/L; reporting basis unspecified."
+      "water": "Tajima natural water was provided at the venue; the reporting basis for the hardness is not given."
     },
     "selorio": {
       "title": "Lui Selorio · ORIGAMI Air",
@@ -275,7 +279,10 @@
       "equipment": "ORIGAMI Air",
       "notes": "Overview: 240 mL; steps: g. Third interval says 1:00–1:00, so only the start time is retained.",
       "finish": "Let drain until 2:25.",
-      "third": "Start at 1:00; the third interval end is unclear in the source."
+      "third": "Start at 1:00; the third interval end is unclear in the source.",
+      "s00": "Pour 50 g of water over ten seconds, then wait until 0:30.",
+      "s01": "Pour 70 g of water over ten seconds, then wait until 1:00.",
+      "s03": "Pour the last 60 g over ten seconds and let the water draw down until 2:25."
     },
     "rincon": {
       "title": "Janer Joseph Perez Rincon · ORIGAMI",
@@ -286,7 +293,9 @@
       "notes": "Exact pour times, first temperature, roast and total time are unspecified. Later temperatures are shown per step.",
       "finish": "Let drain; total time unspecified.",
       "spiral": "Pour in a spiral.",
-      "water": "Source: Pure Colombian Water; mineral composition unspecified."
+      "water": "Source: Pure Colombian Water; mineral composition unspecified.",
+      "s00": "First pour: 50 g of water. The card gives no temperature or time for this pour.",
+      "s01": "Second pour: 70 g of water at 92 °C; no time is published."
     },
     "gil": {
       "title": "Milo Gil · ORIGAMI Air",
@@ -295,7 +304,11 @@
       "grind": "7.5 (1Zpresso K-Ultra)",
       "equipment": "ORIGAMI Air",
       "notes": "2024 Dutch champion version. Sibarist model, beans and roast are unspecified. The source suggests about 7 g/s.",
-      "finish": "Let drain; target approximately 3:00."
+      "finish": "Let drain; target approximately 3:00.",
+      "s00": "Start with a gentle pour of 40 g.",
+      "s01": "At 0:45 follow up with a pour of 60 g.",
+      "s02": "At 1:30 continue with a steady pour of 75 g.",
+      "s03": "At 2:15 conclude with a final pour of 75 g; the card suggests about 7 g/s and drawdown finishing near 3:00."
     },
     "kasuya": {
       "title": "Kasuya’s 4:6 method",
@@ -304,7 +317,12 @@
       "grind": "Coarse",
       "equipment": "HARIO V60 · ceramic",
       "notes": "This is HARIO’s published teaching version, not a reconstruction of the competition brew. Its last two pours begin at 2:10 and 2:40.",
-      "finish": "Remove the dripper at the source’s stated finish time."
+      "finish": "Remove the dripper at the source’s stated finish time.",
+      "s00": "Pour 50 mL at 0:00 — the source calls this 42% of the 120 mL first stage, or 40% of the total, favouring sweetness.",
+      "s01": "Add 70 mL at 0:45, topping the first stage up to 120 mL — the other 40% of the total.",
+      "s02": "Pour 60 mL at 1:30 — the remaining 180 mL is divided by the source into three equal pours.",
+      "s03": "Pour 60 mL at 2:10, the second of the three equal pours.",
+      "s04": "Pour the last 60 mL at 2:40."
     },
     "hoffmann": {
       "title": "A better one-cup V60",
@@ -313,7 +331,17 @@
       "grind": "Medium-fine",
       "equipment": "HARIO V60 01",
       "notes": "Freshly boiled water is the recommendation for lighter roasts. The finish time is approximate; the source prioritizes taste over a fixed drawdown time.",
-      "finish": "Let the water drain through. Some variation in total time is expected."
+      "finish": "Let the water drain through. Some variation in total time is expected.",
+      "s00": "Pour 50 g of water to bloom.",
+      "s01": "Gently swirl for five seconds.",
+      "s02": "Pour up to 100 g total between 0:45 and 1:00 — 40% of the total weight.",
+      "s03": "Pause until 1:10.",
+      "s04": "Pour up to 150 g total between 1:10 and 1:20 — 60% of the total weight.",
+      "s05": "Pause until 1:30.",
+      "s06": "Pour up to 200 g total between 1:30 and 1:40 — 80% of the total weight.",
+      "s07": "Pause until 1:50.",
+      "s08": "Pour up to 250 g total between 1:50 and 2:00 — the full weight.",
+      "s09": "Gently swirl again for five seconds."
     },
     "rao": {
       "title": "Pulsar starting recipe",
@@ -322,7 +350,13 @@
       "grind": "Coarser than hand pour, finer than batch brew",
       "equipment": "NextLevel Pulsar",
       "notes": "The source outline gives a 45–60 second bloom, while its detailed technique resumes at 45–50 seconds. Both are retained here. Pulse amounts and exact later times are not specified.",
-      "finish": "The target total brew time is a range. Finish draining within that range as described by the source."
+      "finish": "The target total brew time is a range. Finish draining within that range as described by the source.",
+      "s00": "With the valve open, pour 75 g of water just off the boil.",
+      "s01": "Close the valve immediately so the grounds stay submerged.",
+      "s02": "At 45–50 seconds, pour enough water to raise the slurry about 1 cm above the grounds.",
+      "s03": "Open the valve.",
+      "s04": "Pour in several short bursts, keeping the slurry 1–2 cm above the grounds, to the 425 g total.",
+      "s05": "Swirl the Pulsar gently immediately after the last pour."
     },
     "licata": {
       "title": "Continuous-pour V60",
@@ -336,7 +370,7 @@
       "continuous": "Start with a fast, forceful pour, then slow to a centre pour until the cumulative target of 250 mL.",
       "finalPour": "Add the final 50 mL quickly to create turbulence.",
       "beans": "Light-roasted Colombia La Palma y El Tucan natural Gesha",
-      "water": "125 TDS; units and reporting basis are unspecified."
+      "water": "Its unit and reporting basis are not stated."
     },
     "wong": {
       "title": "Switch steep and release",
@@ -348,7 +382,10 @@
       "finish": "At 4:00, close the valve and remove the dripper.",
       "start": "Begin with the valve open.",
       "close": "Close the valve at 1:15.",
-      "drain": "Open at 2:30 and let drain."
+      "drain": "Open at 2:30 and let drain.",
+      "s01": "With the valve open, bloom with 30 g of water from 0:00 to 0:10.",
+      "s02": "Pour to 140 g total between 0:40 and 0:55; the 110 g addition is that target minus the 30 g bloom.",
+      "s04": "At 1:15 close the valve and pour to 240 g; the 100 g addition is the remaining water."
     },
     "boen": {
       "title": "Two-stage Switch immersion",
@@ -364,7 +401,8 @@
       "close": "Close the valve again at 1:30.",
       "circle": "Add the stated amount in a circular pattern.",
       "drain": "Open at 2:10 and let drain.",
-      "beans": "Natural Geisha from Hacienda La Esmeralda"
+      "beans": "Natural Geisha from Hacienda La Esmeralda",
+      "s01": "With the dripper closed, pour 50 g of water for the bloom and leave it for 40 seconds."
     },
     "hoang": {
       "title": "Dual-filter W60",
@@ -374,9 +412,12 @@
       "equipment": "HARIO W60",
       "notes": "HARIO’s published 2021 World Brewers Cup recipe. The overview gives 200 g, but the steps use mL. Both are preserved without assuming equivalence.",
       "finish": "Remove the W60 at 3:15.",
-      "water": "65 ppm; composition and reporting basis are unspecified.",
+      "water": "It is not stated whether the figure is hardness or total dissolved solids.",
       "filters": "W60 flat mesh and paper filter used together.",
-      "prep": "The author recommends sifting out fines before brewing."
+      "prep": "The author recommends sifting out fines before brewing.",
+      "s00": "Bloom with 50 mL of water for 30 seconds.",
+      "s01": "Pour another 100 mL of water over 30 seconds.",
+      "s02": "Pour the final 50 mL of water at 2:00."
     },
     "rojewska": {
       "title": "Fast two-stage V60",
@@ -398,7 +439,12 @@
       "equipment": "HARIO V60 · plastic",
       "notes": "The published recipe uses 30 g coffee and 500 mL at 92°C. Its instructions use g for the pour targets, so those units are preserved separately. The article names Ézio Sartori coffee from Brazil but does not name a grind setting.",
       "finish": "Finish the extraction by 3:00.",
-      "beans": "Ézio Sartori, Espírito Santo, Brazil; roasted by Coffee Lab"
+      "beans": "Ézio Sartori, Espírito Santo, Brazil; roasted by Coffee Lab",
+      "s00": "Pour 60 g of water and let it bloom for 30 seconds.",
+      "s01": "On the second pour go to 250 g; the 190 g addition is that target minus the bloom.",
+      "s02": "Stir three times.",
+      "s03": "At 1:30 pour the rest of the water, taking the total to 500 g.",
+      "s04": "Stir three times again."
     },
     "mallouhi": {
       "title": "Ibrahim Al Mallouhi’s V60",
@@ -409,7 +455,9 @@
       "notes": "The source states 20 g coffee, 300 mL water and a 2:10 target, but does not specify water temperature.",
       "finish": "Target a total brew time of 2:10.",
       "prep": "Pre-wet the filter and discard the rinse water before adding coffee.",
-      "water": "The source says hot water but does not provide a temperature."
+      "water": "The source says hot water but does not provide a temperature.",
+      "s00": "Slowly pour 40 mL of hot water in circular motions, then let it bloom for 35 seconds.",
+      "s01": "Slowly pour the remaining water — 260 mL, the published 300 mL less the bloom — in small circular motions."
     },
     "chronicler": {
       "title": "Coffee Chronicler Switch recipe",
@@ -433,7 +481,14 @@
       "equipment": "HARIO V60",
       "notes": "The source recommends water as hot as possible, especially for lighter roasts. The finish time is a target; drawdown varies with paper and temperature.",
       "finish": "Let the brew draw down, aiming to finish around 3:30.",
-      "stir": "Stir once clockwise and once anticlockwise, let the bed drain slightly, then swirl gently."
+      "s00": "At t = 0:00 add twice the coffee weight, 60 g of bloom water.",
+      "s01": "Swirl the slurry until evenly mixed so all grounds are wetted — the source prefers swirling to a spoon here.",
+      "s02": "Bloom for up to 45 seconds, then add 240 g over the next 30 seconds to reach 300 g, 60% of the total brew weight.",
+      "s03": "Add the last 200 g over 30 seconds to reach 500 g, a little slower than the previous phase and not too aggressively.",
+      "s04": "At t = 1:45 stir once clockwise with a spoon.",
+      "s05": "Then stir once anticlockwise with the spoon.",
+      "s06": "Allow the V60 to drain a little.",
+      "s07": "Give the V60 a gentle swirl, then let it draw down — the source aims to finish by 3:30."
     },
     "camber": {
       "title": "Camber Coffee V60",
@@ -443,7 +498,10 @@
       "equipment": "HARIO V60",
       "notes": "The source recommends this recipe for anaerobic processed coffees. Water temperature is not stated.",
       "finish": "Aim for a total brew time of 3:00–3:15.",
-      "bean": "The source recommends anaerobic processed coffees."
+      "bean": "The source recommends anaerobic processed coffees.",
+      "s00": "Bloom with 60 g of water between 0:00 and 0:30.",
+      "s01": "Pour up to 200 g between 0:30 and 0:45.",
+      "s02": "At 1:00 make the final pour up to 345 g."
     },
     "lamill": {
       "title": "LAMILL V60 Mugen",
@@ -453,7 +511,8 @@
       "equipment": "HARIO V60 MUGEN 02",
       "notes": "The source uses no bloom or temperature specification; it asks for one continuous concentric pour finishing at 0:40.",
       "finish": "Allow the bed to draw down, aiming for 3:00–3:30.",
-      "prepare": "Pre-wet the filter, add 16.5 g of coffee and make a small crater in the centre."
+      "prepare": "Pre-wet the filter, add 16.5 g of coffee and make a small crater in the centre.",
+      "s00": "Start the timer and pour all 225 g in concentric circles from the centre slowly outward, finishing this single pour at 0:40."
     }
   },
   "waterQuality": "Water profile",
@@ -568,5 +627,68 @@
     "dim115H70Hole25": "Ø115 × H70; bottom hole Ø25",
     "dim118H70Hole25": "Ø118 × H70; bottom hole Ø25",
     "weight1400WithBase": "1400 (with base)"
+  },
+  "pourPatterns": {
+    "centre": "Centre",
+    "circular": "Circular",
+    "spiral": "Spiral",
+    "vertical": "Vertical stream",
+    "lateral": "Lateral stream",
+    "wholeBed": "Whole bed",
+    "any": "No set pattern"
+  },
+  "pourStyles": {
+    "aggressive": "Aggressive",
+    "turbulent": "Turbulent",
+    "slow": "Slow",
+    "gentle": "Gentle",
+    "steady": "Steady",
+    "forceful": "Forceful"
+  },
+  "pourDirections": {
+    "clockwise": "Clockwise",
+    "counterclockwise": "Counter-clockwise"
+  },
+  "bedPrepLabels": {
+    "rinseFilter": "Rinse the filter",
+    "coldRinse": "Rinse with cold water",
+    "discardRinse": "Discard the rinse water",
+    "prewarmServer": "Pre-warm the server",
+    "levelBed": "Level the bed",
+    "crater": "Form a centre crater",
+    "siftFines": "Sift out fines",
+    "removeChaff": "Remove chaff"
+  },
+  "valveStates": {
+    "open": "Open",
+    "closed": "Closed"
+  },
+  "yieldBases": {
+    "observed": "Measured",
+    "target": "Target"
+  },
+  "publishedBases": {
+    "page": "Page publication",
+    "video": "Video publication",
+    "event": "Competition report"
+  },
+  "yieldLabel": "Beverage yield",
+  "removalAt": "Dripper removed at",
+  "ratioStated": "Ratio stated by the source",
+  "waterLevelRule": "Keep the water {level} above the bed",
+  "archiveLink": "Archived snapshot",
+  "updated": "Page updated",
+  "grindHedged": "The source calls this its usual setting, not a value fixed by the recipe",
+  "valveInitial": "Valve before the first pour",
+  "stepDerived": "Not published for this step on its own — derived from the source’s total and earlier additions",
+  "micron": "Grind size",
+  "siftMesh": "Sift",
+  "hardness": "Hardness",
+  "alkalinity": "Alkalinity",
+  "groundMoreThanDosed": "The source grinds {ground} g and brews {dose} g",
+  "recommendedCoffee": "Coffee the source recommends: {value}",
+  "recommendedWater": "The source’s own water preference: {value}",
+  "grindMicronBases": {
+    "psdPeak": "particle size distribution peak"
   }
 }

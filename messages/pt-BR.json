@@ -210,7 +210,7 @@
   "boiling": "Água recém-fervida",
   "light": "Torra clara, para a recomendação de água fervida",
   "soft": "Água macia e filtrada",
-  "raoWater": "Dureza total de cerca de 100 ppm e alcalinidade de 40 ppm; a base não é indicada.",
+  "raoWater": "A fonte dá seus próprios valores preferidos, sem base de medição indicada.",
   "raoPrep": "Com a válvula aberta, enxágue o filtro e descarte a água. Encaixe o cilindro, adicione o café e nivele.",
   "derived": "A água total é calculada pela dose e proporção em massa da fonte, não por uma medição separada.",
   "sequence": "Em seguida",
@@ -225,7 +225,9 @@
     "open": "Abrir a válvula",
     "topup": "Elevar o nível",
     "pulses": "Despejos curtos",
-    "level": "Nivelar o café"
+    "level": "Nivelar o café",
+    "stir": "Mexer",
+    "drain": "Drenar um pouco"
   },
   "instruction": {
     "bloom": "Adicione a quantidade indicada para molhar o café.",
@@ -236,7 +238,9 @@
     "open": "Abra a válvula após completar a água.",
     "topup": "Despeje até cerca de 1 cm acima do café.",
     "pulses": "Faça despejos curtos, mantendo 1–2 cm acima do café, até a quantidade total.",
-    "level": "Nivele o café antes do preparo."
+    "level": "Nivele o café antes do preparo.",
+    "stir": "Mexa a cama de café com uma colher.",
+    "drain": "Pare de despejar e deixe o nível baixar um pouco."
   },
   "recipes": {
     "kodama": {
@@ -265,7 +269,7 @@
       "first": "Despeje suavemente por todo o leito.",
       "second": "Despeje devagar com agitação.",
       "last": "Reduza para cerca de 75°C e despeje em fio fino e lento no centro.",
-      "water": "Água Tajima; dureza 70 mg/L, base não informada."
+      "water": "No local foi fornecida água natural Tajima; a base da dureza não é indicada."
     },
     "selorio": {
       "title": "Lui Selorio · ORIGAMI Air",
@@ -275,7 +279,10 @@
       "equipment": "ORIGAMI Air",
       "notes": "Resumo 240 mL, etapas g. Terceiro intervalo 1:00–1:00; apenas início mantido.",
       "finish": "Deixe drenar até 2:25.",
-      "third": "Inicie a terceira adição em 1:00; final ambíguo."
+      "third": "Inicie a terceira adição em 1:00; final ambíguo.",
+      "s00": "Despeje 50 g de água em dez segundos e aguarde até 0:30.",
+      "s01": "Despeje 70 g de água em dez segundos e aguarde até 1:00.",
+      "s03": "Despeje os últimos 60 g em dez segundos e deixe drenar até 2:25."
     },
     "rincon": {
       "title": "Janer Joseph Perez Rincon · ORIGAMI",
@@ -286,7 +293,9 @@
       "notes": "Horários, temperatura inicial, torra e tempo total não informados. Temperaturas seguintes por etapa.",
       "finish": "Deixe drenar; tempo não informado.",
       "spiral": "Despeje em espiral.",
-      "water": "Fonte: Pure Colombian Water; minerais não informados."
+      "water": "Fonte: Pure Colombian Water; minerais não informados.",
+      "s00": "Primeiro despejo: 50 g de água. A ficha não indica temperatura nem horário deste despejo.",
+      "s01": "Segundo despejo: 70 g de água a 92 °C; o horário não é publicado."
     },
     "gil": {
       "title": "Milo Gil · ORIGAMI Air",
@@ -295,7 +304,11 @@
       "grind": "7.5 (1Zpresso K-Ultra)",
       "equipment": "ORIGAMI Air",
       "notes": "Campeão holandês 2024. Modelo Sibarist, grãos e torra não informados. Cerca de 7 g/s sugerido.",
-      "finish": "Deixe drenar; meta aproximada 3:00."
+      "finish": "Deixe drenar; meta aproximada 3:00.",
+      "s00": "Comece com um despejo suave de 40 g.",
+      "s01": "Às 0:45, faça um despejo de 60 g.",
+      "s02": "Às 1:30, continue com um despejo constante de 75 g.",
+      "s03": "Às 2:15, conclua com os 75 g finais; a ficha sugere cerca de 7 g/s e drenagem por volta de 3:00."
     },
     "kasuya": {
       "title": "Método 4:6 de Kasuya",
@@ -304,7 +317,12 @@
       "grind": "Grossa",
       "equipment": "HARIO V60 · cerâmica",
       "notes": "Esta é a versão didática da HARIO, não uma reconstrução da competição. Os últimos despejos começam em 2:10 e 2:40.",
-      "finish": "Retire o coador no tempo final indicado."
+      "finish": "Retire o coador no tempo final indicado.",
+      "s00": "Despeje 50 mL às 0:00 — a fonte chama isso de 42% da primeira etapa de 120 mL, ou 40% do total, favorecendo a doçura.",
+      "s01": "Adicione 70 mL às 0:45, completando a primeira etapa até 120 mL — os outros 40% do total.",
+      "s02": "Despeje 60 mL às 1:30 — a fonte divide os 180 mL restantes em três despejos iguais.",
+      "s03": "Despeje 60 mL às 2:10, o segundo dos três despejos iguais.",
+      "s04": "Despeje os 60 mL finais às 2:40."
     },
     "hoffmann": {
       "title": "V60 para uma xícara",
@@ -313,7 +331,17 @@
       "grind": "Média-fina",
       "equipment": "HARIO V60 01",
       "notes": "Água recém-fervida é recomendada para torras claras. O tempo final é aproximado; a fonte prioriza o sabor.",
-      "finish": "Deixe a água escoar; o tempo pode variar."
+      "finish": "Deixe a água escoar; o tempo pode variar.",
+      "s00": "Despeje 50 g de água para a pré-infusão.",
+      "s01": "Gire suavemente por cinco segundos.",
+      "s02": "Despeje até 100 g acumulados entre 0:45 e 1:00 — 40% do peso total.",
+      "s03": "Pausa até 1:10.",
+      "s04": "Despeje até 150 g acumulados entre 1:10 e 1:20 — 60% do peso total.",
+      "s05": "Pausa até 1:30.",
+      "s06": "Despeje até 200 g acumulados entre 1:30 e 1:40 — 80% do peso total.",
+      "s07": "Pausa até 1:50.",
+      "s08": "Despeje até 250 g acumulados entre 1:50 e 2:00 — o peso total.",
+      "s09": "Gire suavemente de novo por cinco segundos."
     },
     "rao": {
       "title": "Receita inicial do Pulsar",
@@ -322,7 +350,13 @@
       "grind": "Mais grossa que coado manual e mais fina que preparo em lote",
       "equipment": "NextLevel Pulsar",
       "notes": "O resumo indica pré-infusão de 45–60 segundos e o detalhe retoma em 45–50. Mantemos a diferença. As doses e tempos seguintes não são especificados.",
-      "finish": "O tempo total é uma faixa; finalize o escoamento conforme a fonte."
+      "finish": "O tempo total é uma faixa; finalize o escoamento conforme a fonte.",
+      "s00": "Com a válvula aberta, despeje 75 g de água logo após a fervura.",
+      "s01": "Feche a válvula imediatamente para manter o café submerso.",
+      "s02": "Aos 45–50 segundos, adicione água até elevar a mistura cerca de 1 cm acima do café.",
+      "s03": "Abra a válvula.",
+      "s04": "Despeje em várias rajadas curtas, mantendo 1–2 cm acima do café, até os 425 g totais.",
+      "s05": "Gire o Pulsar suavemente logo após o último despejo."
     },
     "licata": {
       "title": "V60 com despejo contínuo",
@@ -336,7 +370,7 @@
       "continuous": "Comece com despejo rápido e vigoroso; depois despeje lentamente no centro até acumular 250 mL.",
       "finalPour": "Adicione rapidamente os últimos 50 mL para criar turbulência.",
       "beans": "Gesha natural de torra clara da Colombia La Palma y El Tucan",
-      "water": "125 TDS; unidades e base de medição não informadas."
+      "water": "Sua unidade e base de medição não são indicadas."
     },
     "wong": {
       "title": "Switch: infusão e drenagem",
@@ -348,7 +382,10 @@
       "finish": "Em 4:00, feche a válvula e retire o coador.",
       "start": "Comece com a válvula aberta.",
       "close": "Feche a válvula em 1:15.",
-      "drain": "Abra em 2:30 e deixe drenar."
+      "drain": "Abra em 2:30 e deixe drenar.",
+      "s01": "Com a válvula aberta, faça a pré-infusão com 30 g de água entre 0:00 e 0:10.",
+      "s02": "Despeje até 140 g acumulados entre 0:40 e 0:55; os 110 g vêm dessa meta menos os 30 g da pré-infusão.",
+      "s04": "Às 1:15 feche a válvula e despeje até 240 g; os 100 g são a água restante."
     },
     "boen": {
       "title": "Switch com duas infusões",
@@ -364,7 +401,8 @@
       "close": "Feche a válvula novamente em 1:30.",
       "circle": "Adicione a quantidade indicada em círculos.",
       "drain": "Abra em 2:10 e deixe drenar.",
-      "beans": "Geisha natural da Hacienda La Esmeralda"
+      "beans": "Geisha natural da Hacienda La Esmeralda",
+      "s01": "Com o dripper fechado, despeje 50 g de água e deixe em pré-infusão por 40 segundos."
     },
     "hoang": {
       "title": "W60 com filtro duplo",
@@ -374,9 +412,12 @@
       "equipment": "HARIO W60",
       "notes": "Receita do World Brewers Cup 2021 publicada pela HARIO. O total aparece como 200 g e as etapas em mL. Ambos são preservados sem presumir equivalência.",
       "finish": "Retire o W60 em 3:15.",
-      "water": "65 ppm; composição e base de medição não informadas.",
+      "water": "Não se informa se o valor é dureza ou sólidos totais dissolvidos.",
       "filters": "Malha plana e filtro de papel W60 usados juntos.",
-      "prep": "A autora recomenda peneirar os finos antes do preparo."
+      "prep": "A autora recomenda peneirar os finos antes do preparo.",
+      "s00": "Faça a pré-infusão com 50 mL de água por 30 segundos.",
+      "s01": "Despeje mais 100 mL de água ao longo de 30 segundos.",
+      "s02": "Despeje os 50 mL finais às 2:00."
     },
     "rojewska": {
       "title": "V60 rápido em duas fases",
@@ -398,7 +439,12 @@
       "equipment": "HARIO V60 · plástico",
       "notes": "A receita publicada usa 30 g, 500 mL a 92 °C e café Ézio Sartori do Brasil. A moagem não é informada.",
       "finish": "Finalize a extração até 3:00.",
-      "beans": "Ézio Sartori, Espírito Santo, Brasil; torrado pela Coffee Lab"
+      "beans": "Ézio Sartori, Espírito Santo, Brasil; torrado pela Coffee Lab",
+      "s00": "Despeje 60 g de água e deixe em pré-infusão por 30 segundos.",
+      "s01": "No segundo despejo, vá até 250 g; os 190 g são essa meta menos a pré-infusão.",
+      "s02": "Mexa três vezes.",
+      "s03": "Às 1:30 despeje o restante da água, chegando a 500 g no total.",
+      "s04": "Mexa de novo três vezes."
     },
     "mallouhi": {
       "title": "V60 de Ibrahim Al Mallouhi",
@@ -409,7 +455,9 @@
       "notes": "A fonte informa 20 g, 300 mL e meta de 2:10, mas não informa a temperatura da água.",
       "finish": "Busque um tempo total de 2:10.",
       "prep": "Umedeça o filtro, descarte a água e adicione o café.",
-      "water": "A fonte diz água quente, sem informar a temperatura."
+      "water": "A fonte diz água quente, sem informar a temperatura.",
+      "s00": "Despeje devagar 40 mL de água quente em círculos e deixe em pré-infusão por 35 segundos.",
+      "s01": "Despeje devagar a água restante em pequenos círculos: 260 mL, os 300 mL publicados menos a pré-infusão."
     },
     "chronicler": {
       "title": "Receita Switch do Coffee Chronicler",
@@ -433,7 +481,14 @@
       "equipment": "HARIO V60",
       "notes": "A fonte recomenda água o mais quente possível, especialmente para torras claras. O tempo final é uma meta; a drenagem varia com o papel e a temperatura.",
       "finish": "Deixe drenar buscando terminar por volta de 3:30.",
-      "stir": "Misture uma vez no sentido horário e uma vez no anti-horário, deixe o leito drenar um pouco e então faça um swirl suave."
+      "s00": "Em t = 0:00, adicione o dobro do peso do café: 60 g de água de pré-infusão.",
+      "s01": "Gire até a mistura ficar homogênea e todo o café estar molhado — a fonte prefere girar a usar colher aqui.",
+      "s02": "Pré-infusão por até 45 segundos e adicione 240 g nos 30 segundos seguintes, chegando a 300 g, 60% do peso total.",
+      "s03": "Adicione os últimos 200 g em 30 segundos até 500 g, um pouco mais devagar que a fase anterior e sem força excessiva.",
+      "s04": "Em t = 1:45, mexa uma vez no sentido horário com uma colher.",
+      "s05": "Em seguida, mexa uma vez no sentido anti-horário com a colher.",
+      "s06": "Deixe o V60 drenar um pouco.",
+      "s07": "Dê ao V60 uma girada suave e deixe drenar; a fonte mira terminar até 3:30."
     },
     "camber": {
       "title": "Camber Coffee V60",
@@ -443,7 +498,10 @@
       "equipment": "HARIO V60",
       "notes": "A fonte recomenda esta receita para cafés de processamento anaeróbico. A temperatura da água não é informada.",
       "finish": "Busque um tempo total de preparo de 3:00–3:15.",
-      "bean": "A fonte recomenda cafés de processamento anaeróbico."
+      "bean": "A fonte recomenda cafés de processamento anaeróbico.",
+      "s00": "Faça a pré-infusão com 60 g de água entre 0:00 e 0:30.",
+      "s01": "Despeje até 200 g acumulados entre 0:30 e 0:45.",
+      "s02": "Às 1:00, faça o último despejo até 345 g."
     },
     "lamill": {
       "title": "LAMILL V60 Mugen",
@@ -453,7 +511,8 @@
       "equipment": "HARIO V60 MUGEN 02",
       "notes": "A fonte não indica bloom nem temperatura; pede um despejo circular contínuo que termine em 0:40.",
       "finish": "Deixe drenar buscando 3:00–3:30.",
-      "prepare": "Molhe o filtro, adicione 16,5 g de café e faça uma pequena depressão no centro."
+      "prepare": "Molhe o filtro, adicione 16,5 g de café e faça uma pequena depressão no centro.",
+      "s00": "Inicie o cronômetro e despeje os 225 g em círculos concêntricos do centro para fora, devagar, terminando este único despejo em 0:40."
     }
   },
   "waterQuality": "Perfil da água",
@@ -568,5 +627,68 @@
     "dim115H70Hole25": "Ø115 × H70; furo inferior Ø25",
     "dim118H70Hole25": "Ø118 × H70; furo inferior Ø25",
     "weight1400WithBase": "1400 (com base)"
+  },
+  "pourPatterns": {
+    "centre": "Centro",
+    "circular": "Circular",
+    "spiral": "Em espiral",
+    "vertical": "Jato vertical",
+    "lateral": "Jato lateral",
+    "wholeBed": "Cama inteira",
+    "any": "Sem padrão"
+  },
+  "pourStyles": {
+    "aggressive": "Agressivo",
+    "turbulent": "Turbulento",
+    "slow": "Lento",
+    "gentle": "Suave",
+    "steady": "Constante",
+    "forceful": "Vigoroso"
+  },
+  "pourDirections": {
+    "clockwise": "Horário",
+    "counterclockwise": "Anti-horário"
+  },
+  "bedPrepLabels": {
+    "rinseFilter": "Enxaguar o filtro",
+    "coldRinse": "Enxaguar com água fria",
+    "discardRinse": "Descartar a água do enxágue",
+    "prewarmServer": "Pré-aquecer a jarra",
+    "levelBed": "Nivelar a cama",
+    "crater": "Fazer cratera central",
+    "siftFines": "Peneirar os finos",
+    "removeChaff": "Remover a casca"
+  },
+  "valveStates": {
+    "open": "Aberta",
+    "closed": "Fechada"
+  },
+  "yieldBases": {
+    "observed": "Medido",
+    "target": "Meta"
+  },
+  "publishedBases": {
+    "page": "Publicação da página",
+    "video": "Publicação do vídeo",
+    "event": "Relatório do concurso"
+  },
+  "yieldLabel": "Bebida obtida",
+  "removalAt": "Filtro retirado às",
+  "ratioStated": "Proporção indicada pela fonte",
+  "waterLevelRule": "Mantenha a água {level} acima da cama",
+  "archiveLink": "Cópia arquivada",
+  "updated": "Página atualizada",
+  "grindHedged": "A fonte descreve como seu ajuste habitual, não um valor da receita",
+  "valveInitial": "Válvula antes do primeiro despejo",
+  "stepDerived": "A fonte não publica este valor isolado; decorre do total e dos anteriores",
+  "micron": "Moagem",
+  "siftMesh": "Peneira",
+  "hardness": "Dureza",
+  "alkalinity": "Alcalinidade",
+  "groundMoreThanDosed": "A fonte mói {ground} g e usa {dose} g",
+  "recommendedCoffee": "Café que a fonte recomenda: {value}",
+  "recommendedWater": "A preferência de água da própria fonte: {value}",
+  "grindMicronBases": {
+    "psdPeak": "pico da distribuição de tamanho"
   }
 }

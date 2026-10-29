@@ -1,31 +1,49 @@
 import {z} from 'zod';
 import rawRecipes from '../../content/recipes.json';
 
+const pourPattern=z.enum(['centre','circular','spiral','vertical','lateral','wholeBed','any']);
+const pourStyle=z.enum(['aggressive','turbulent','slow','gentle','steady','forceful']);
 const stepSchema = z.object({
-  action: z.enum(['pour','bloom','swirl','pause','finish','close','open','topup','pulses','level']),
+  action: z.enum(['pour','bloom','swirl','stir','pause','drain','finish','close','open','topup','pulses','level']),
   at: z.number().nonnegative().nullable(),
   end: z.number().nonnegative().optional(),
   amount: z.number().positive().nullable(),
   cumulative: z.number().positive().nullable(),
   unit: z.enum(['g','mL']).optional(),
   temperature: z.number().positive().optional(),
-  instruction: z.string().optional()
+  instruction: z.string().optional(),
+  pattern: pourPattern.optional(),
+  style: pourStyle.optional(),
+  count: z.number().int().positive().optional(),
+  direction: z.enum(['clockwise','counterclockwise']).optional(),
+  levelMin: z.number().nonnegative().optional(),
+  levelMax: z.number().nonnegative().optional(),
+  derived: z.boolean().optional()
 });
 export const recipeSchema = z.object({
   id:z.string().regex(/^[a-z0-9-]+$/), copy:z.string().regex(/^[a-z0-9-]+$/),
   author:z.string(), authorId:z.string(), brewer:z.string(), brewerId:z.string(),
   kind:z.enum(['hot','iced']), dose:z.number().positive(),
-  water:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), derived:z.boolean().default(false)}),
+  water:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), derived:z.boolean().default(false),
+    tds:z.number().positive().optional(), ppm:z.number().positive().optional(), hardness:z.number().positive().optional(), hardnessUnit:z.enum(['ppm','mg/L']).optional(), alkalinity:z.number().positive().optional(), alkalinityUnit:z.enum(['ppm','mg/L']).optional()}),
   temperature:z.number().positive().nullable(), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]).nullable(),
-  source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), published:z.string().nullable(), checked:z.iso.date()}),
+  removalAt:z.number().nonnegative().optional(),
+  yield:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), basis:z.enum(['observed','target'])}).optional(),
+  ratioStated:z.string().optional(),
+  doseGround:z.number().positive().optional(),
+  bedPrep:z.array(z.enum(['rinseFilter','coldRinse','discardRinse','prewarmServer','levelBed','crater','siftFines','removeChaff'])).optional(),
+  valve:z.enum(['open','closed']).optional(),
+  grindHedged:z.boolean().optional(),
+  source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), videoPublished:z.string().nullable().optional(), published:z.string().nullable(), publishedBasis:z.enum(['page','video','event']).optional(), updated:z.string().nullable().optional(), archive:z.url().optional(), videoArchive:z.url().optional(), checked:z.iso.date()}),
   image:z.enum(['coffee-bloom','brewer-still']),
   steps:z.array(stepSchema).min(1), preparation:z.array(z.string()),
   waterConditions:z.enum(['unknown','soft','rao']), beanConditions:z.enum(['unknown','light']),
   filterConditions:z.enum(['unknown','pulsar']), context:z.enum(['daily','competition']),
   beanNote:z.string().optional(), waterNote:z.string().optional(), filterNote:z.string().optional(),
-  grinder:z.object({id:z.string(),name:z.string(),setting:z.string().nullable()}).optional(),
+  grinder:z.object({id:z.string(),name:z.string(),setting:z.string().nullable(),secondSetting:z.string().optional()}).optional(),
+  grindMicron:z.object({value:z.number().positive(), basis:z.enum(['psdPeak'])}).optional(),
   paper:z.object({id:z.string(),name:z.string(),shape:z.enum(['cone','wave','flat']).optional()}).optional(),
-  coffee:z.object({name:z.string().optional(),origin:z.string().optional(),variety:z.string().optional(),process:z.enum(['washed','natural','honey','anaerobic']).optional(),roast:z.enum(['light','medium','dark']).optional()}).optional()
+  coffee:z.object({name:z.string().optional(),origin:z.string().optional(),variety:z.string().optional(),process:z.enum(['washed','natural','honey','anaerobic']).optional(),roast:z.enum(['light','medium','dark']).optional(),asRecommendation:z.boolean().optional()}).optional()
 });
 export type Recipe = z.infer<typeof recipeSchema>;
 export const recipes: Recipe[] = z.object({schemaVersion:z.literal(1),recipes:z.array(recipeSchema)}).parse(rawRecipes).recipes;

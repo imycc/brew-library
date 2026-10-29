@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {filterRecipes,parseSelection,toggleSelection,recipes,time} from '../src/lib/recipes';
+import {filterRecipes,parseSelection,toggleSelection,recipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
@@ -52,7 +52,14 @@ test('added official V60 recipes keep source volumes, units and coffee condition
  assert.equal(ultimate.water.unit,'mL');
  assert.equal(ultimate.temperatureMode,'boiling');
  assert.equal(ultimate.steps.filter(step=>step.amount!==null).reduce((sum,step)=>sum+(step.amount||0),0),500);
- assert.equal(ultimate.steps[4].instruction,'recipes.hoffmann-ultimate.stir');
+ assert.equal(ultimate.steps[4].instruction,'recipes.hoffmann-ultimate.s04');
+ assert.equal(ultimate.steps[4].count,1);
+ assert.equal(ultimate.steps[4].direction,'clockwise');
+ assert.equal(ultimate.steps[5].direction,'counterclockwise');
+ assert.equal(ultimate.steps[6].action,'drain');
+ assert.equal(ultimate.steps[6].at,null);
+ assert.equal(ultimate.steps[1].end,undefined);
+ assert(ultimate.steps.every(step=>step.action==='finish'||step.instruction));
  const camber=find('camber-v60');
  assert.equal(camber.water.amount,345);
  assert.equal(camber.water.unit,'g');
@@ -115,4 +122,32 @@ test('equipment experience stays specific and source-backed',()=>{
  assert(equipmentExperience['1zpresso-zp6-special'].tags.includes('flavorSeparation'));
  assert(equipmentExperience['1zpresso-zp6-special'].sources.every(source=>source.url.startsWith('https://')));
  assert.equal(equipmentExperience['timemore-sculptor-064'],undefined);
+});
+
+test('derived percentages stay hidden until the pours account for the published water',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ assert.deepEqual(accountedAdditions(find('kasuya-46')),{amount:300,unit:'mL'});
+ assert.equal(bloomShare(find('kasuya-46')),1/6);
+ assert.equal(accountedAdditions(find('rao-pulsar')),null);
+ assert.equal(bloomShare(find('rao-pulsar')),null);
+ assert.equal(accountedAdditions(find('boen-switch')),null);
+ assert.equal(bloomShare(find('boen-switch')),null);
+ assert.equal(ratio(find('hoffmann-one-cup'),'en'),'1 : 16.67');
+ assert.equal(ratio(find('kasuya-46'),'en'),'20 g : 300 mL');
+});
+test('pour phase refuses to guess when a later addition is untimed',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const oneCup=pourPhase(find('hoffmann-one-cup'))!;
+ assert.equal(oneCup.kind,'end');assert.equal(oneCup.endsAt,120);assert.equal(oneCup.drawdown,60);
+ const kasuya=pourPhase(find('kasuya-46'))!;
+ assert.equal(kasuya.kind,'start');assert.equal(kasuya.endsAt,160);assert.equal(kasuya.drawdown,50);
+ assert.equal(pourPhase(find('rao-pulsar')),null);
+ assert.equal(pourPhase(find('rojewska-v60')),null);
+});
+test('source completeness counts only published facts',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const provided=(id:string)=>sourceFacts(find(id)).filter(fact=>fact.provided).length;
+ assert.equal(provided('chronicler-switch'),3);
+ assert.equal(provided('lamill-mugen'),3);
+ assert.equal(provided('hoffmann-one-cup'),5);
 });
