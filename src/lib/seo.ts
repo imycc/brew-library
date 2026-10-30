@@ -61,12 +61,12 @@ export function siteGraph(locale:Locale,t:Translator):JsonLdGraph{
       description:t('siteInfo.aboutIntro'),
       knowsAbout:[t('schemaRecipeCategory'),t('equipmentTitle')],
       logo:{'@type':'ImageObject',url:absolute('/icon-512.png'),width:512,height:512},
-      sameAs:['https://github.com/imycc/pour-over-coffee'],
+      sameAs:['https://github.com/imycc/brew-library'],
       publishingPrinciples:pageUrl(locale,'about/'),
       contactPoint:{
         '@type':'ContactPoint',
         contactType:'editorial',
-        url:'https://github.com/imycc/pour-over-coffee/issues'
+        url:'https://github.com/imycc/brew-library/issues'
       }
     },
     {

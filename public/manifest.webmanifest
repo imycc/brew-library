@@ -1,14 +1,14 @@
 {
-  "name": "手沖配方庫 · Pour-over Coffee",
-  "short_name": "手沖配方庫",
+  "name": "沖煮配方庫 · Brew Library",
+  "short_name": "沖煮配方庫",
   "description": "A free, nine-language library of source-backed pour-over recipes and equipment specifications.",
-  "start_url": "/pour-over-coffee/zh-Hant/",
-  "scope": "/pour-over-coffee/",
+  "start_url": "/brew-library/zh-Hant/",
+  "scope": "/brew-library/",
   "display": "standalone",
   "background_color": "#fcfaf7",
   "theme_color": "#fcfaf7",
   "icons": [
-    {"src": "/pour-over-coffee/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "/pour-over-coffee/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+    {"src": "/brew-library/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/brew-library/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
   ]
 }

@@ -26,7 +26,7 @@ const pages:{suffix:string;lastmod?:string}[]=[
 
 await mkdir('out',{recursive:true});
 await writeFile('out/.nojekyll','');
-await writeFile('out/index.html',`<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#fcfaf7"><title>手沖配方庫</title><meta http-equiv="refresh" content="0;url=./zh-Hant/"><link rel="canonical" href="${page('zh-Hant')}"></head><body><a href="./zh-Hant/">進入手沖配方庫</a></body></html>`);
+await writeFile('out/index.html',`<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#fcfaf7"><title>沖煮配方庫</title><meta http-equiv="refresh" content="0;url=./zh-Hant/"><link rel="canonical" href="${page('zh-Hant')}"></head><body><a href="./zh-Hant/">進入沖煮配方庫</a></body></html>`);
 
 const escapeXml=(value:string)=>value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
 const alternates=(suffix:string)=>[
@@ -50,7 +50,7 @@ const enMessages=mergeMessages(enBase,enEditorial);
 const t=createTranslator({locale:'en',messages:enMessages as Record<string,unknown>,onError(error){throw error;}}) as unknown as (key:string,values?:Record<string,unknown>)=>string;
 const line=(value:string)=>value.replace(/\s+/g,' ').trim();
 const llms=[
-  '# 手沖配方庫 · Pour-over Coffee',
+  '# 沖煮配方庫 · Brew Library',
   '',
   '> A free, nine-language library of source-backed pour-over recipes and equipment specifications. Every recipe keeps its original source, version and verification date. Unspecified values are marked as unknown rather than guessed.',
   '',

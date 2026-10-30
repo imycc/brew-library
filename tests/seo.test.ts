@@ -24,7 +24,7 @@ test('site graph exposes a stable organization and localized website',()=>{
  assert(organization&&website);
  assert.equal(organization.name,t('brand'));
  assert.equal(organization.url,`${SITE}${BASE}/zh-Hant/`);
- assert.deepEqual(organization.sameAs,['https://github.com/imycc/pour-over-coffee']);
+ assert.deepEqual(organization.sameAs,['https://github.com/imycc/brew-library']);
  assert.equal(website.url,`${SITE}${BASE}/en/`);
  assert.equal(website.inLanguage,'en');
  assert.deepEqual(website.publisher,{'@id':organization['@id']});

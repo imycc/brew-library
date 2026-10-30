@@ -49,7 +49,7 @@ export const recipeSchema = z.object({
 });
 export type Recipe = z.infer<typeof recipeSchema>;
 export const recipes: Recipe[] = z.object({schemaVersion:z.literal(1),recipes:z.array(recipeSchema)}).parse(rawRecipes).recipes;
-export const BASE = '/pour-over-coffee';
+export const BASE = '/brew-library';
 export const SITE = 'https://imycc.github.io';
 export function time(seconds:number):string {return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;}
 export function duration(recipe:Recipe):string {return !recipe.duration?'—':recipe.duration[0]===recipe.duration[1]? time(recipe.duration[0]) : `${time(recipe.duration[0])}–${time(recipe.duration[1])}`;}

@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {locales} from '../../src/i18n/locales';
 import {readFileSync} from 'node:fs';
 const {recipes}=JSON.parse(readFileSync('content/recipes.json','utf8')) as {recipes:{id:string}[]};
-const base='/pour-over-coffee';
+const base='/brew-library';
 test.beforeEach(async({page})=>{
  await page.route('https://gc.zgo.at/**',route=>route.abort());
  await page.route('https://*.goatcounter.com/**',route=>route.abort());

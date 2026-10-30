@@ -1,4 +1,4 @@
-name: Verify and publish coffee library
+name: Verify and publish brew library
 on:
   pull_request:
   push:
