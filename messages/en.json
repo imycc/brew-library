@@ -468,7 +468,8 @@
       "s01": "On the second pour go to 250 g; the 190 g addition is that target minus the bloom.",
       "s02": "Stir three times.",
       "s03": "At 1:30 pour the rest of the water, taking the total to 500 g.",
-      "s04": "Stir three times again."
+      "s04": "Stir three times again.",
+      "taste1": "About the coffee she brews here: floral aroma, a bright acidity."
     },
     "mallouhi": {
       "title": "Ibrahim Al Mallouhi’s V60",
@@ -661,7 +662,9 @@
       "s01": "At 0:30 go to 120 g (+75 g) with a slow circle, aiming at a little agitation.",
       "s02": "At 1:00 go to 190 g (+70 g) with a centre pour that avoids agitation, then circle the wall for the last ~15 g so the bed finishes flat.",
       "s03": "After the drawdown, add water cooled to 65 °C: start with 50 g and adjust by taste, ending near 60–70 g.",
-      "beans": "Ohno notes that the bean profile was only released on the day, so his card is written to suit any coffee and names no bean."
+      "beans": "Ohno notes that the bean profile was only released on the day, so his card is written to suit any coffee and names no bean.",
+      "taste1": "His stated goal is a clean cup and sweetness, and the low temperature and coarse sieve are chosen for it.",
+      "taste2": "The coffee served measured TDS 1.07 — deliberately dilute, closer to tea in strength."
     },
     "gil-2025": {
       "title": "Gil’s 2025 three-pour ZP6 recipe",
@@ -691,7 +694,9 @@
       "prepare": "Rinse the paper filter, warm the dripper, then put approximately 65–70 g of ice in the server.",
       "s00": "Pour 40 g of water for the bloom.",
       "s01": "At 0:40, pour to 100 g in total.",
-      "s02": "At 1:10, pour gently and slowly to 150 g in total, avoiding excessive agitation."
+      "s02": "At 1:10, pour gently and slowly to 150 g in total, avoiding excessive agitation.",
+      "taste1": "The page states the ice weight directly affects the final strength, which makes it the dial for how strong the cup lands.",
+      "taste2": "With the Kenya Kangocho AA on the page, the method brings forward juicy berry sweetness and a grape-like acidity."
     },
     "ona-iris": {
       "title": "Iris Estate Enigma · Espresso",
@@ -775,7 +780,9 @@
       "s09": "The tenth and final 30 g, reaching 300 g.",
       "teach1": "Extra-coarse grind plus 95–96 °C is the counter-intuitive pair the whole recipe rests on.",
       "teach2": "Ten additions of 30 g every 15 seconds; the point is that the water passes through the bed rather than sitting on it.",
-      "teach3": "Kasuya recommends the NEO because it extracts small additions evenly, but says a V60 is equally acceptable."
+      "teach3": "Kasuya recommends the NEO because it extracts small additions evenly, but says a V60 is equally acceptable.",
+      "taste1": "Kasuya’s own claim: extra-coarse grind with 95–96 °C and ten small pours builds sweetness.",
+      "taste2": "He credits the ten pours, not fines, for the body: a syrupy mouthfeel he calls とろみ."
     },
     "kasuya-iced": {
       "title": "Kasuya’s iced 4:6",
@@ -1076,5 +1083,8 @@
   "videoStep": "Video {time}",
   "teachingTitle": "From the author",
   "teachingStep": "Step {number}",
-  "evidenceLabel": "Source wording"
+  "evidenceLabel": "Source wording",
+  "tastingTitle": "Tasting",
+  "flowRate": "Flow {value} g/s",
+  "flowRateDerived": "≈ {value} g/s (derived from this pour)"
 }

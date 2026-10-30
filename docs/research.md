@@ -365,3 +365,29 @@ ratios over water **plus** ice — otherwise Kasuya's published 1:11.5 looked li
 Second, `D50 = 611 µm` is a median particle size, not the PSD peak the `grindMicron` basis
 enum allows, so it lives in the grind text rather than being forced into a field that would
 misdescribe it.
+
+## Tasting notes, flow rate and pour height (checked 2026-10-31)
+
+Three questions came up while reviewing what else the sources actually publish.
+
+**Flavour and mouthfeel.** They do, but only in a handful of records, and usually as the
+author's stated aim rather than a measured result. Four carry it now, each in the record's own
+`tasting` bullets and each traceable to the source: Kasuya says the extra-coarse grind, high
+temperature and ten pours build sweetness and とろみ (a syrupy mouthfeel); Ohno names a clean cup
+and sweetness as his goal and his served cup measured TDS 1.07; Grill describes the floral aroma
+and bright acidity of the coffee she brews; Kurasu states that the ice weight sets the final
+strength and that the method brings out berry sweetness and grape-like acidity in the Kenya on
+the page. Nothing was generalised from "this recipe tastes good" — a tasting bullet only exists
+where a sentence exists.
+
+**Flow rate.** Two honest forms. Published: Gil's card gives ≈7 g/s, stored as a step
+`flowRate` with an `approximate` flag. Derived: where a step publishes both an amount and a
+pour window, the page computes g/s from those two numbers and marks it `≈ … g/s (derived from
+this pour)`. Eleven existing recipes get a derived rate this way, and none of them is presented
+as a source figure.
+
+**Pour height.** No source in the catalogue publishes a height above the bed or a kettle
+distance. The only height-like parameter is the slurry level, and the single recipe that states
+it — Rao's 1 cm, then 1–2 cm — already stored it in `levelMin`/`levelMax`. A `pourHeight` field
+was considered and not added: inventing low/medium/high labels for 37 recipes would be exactly
+the kind of decoration this project refuses.
