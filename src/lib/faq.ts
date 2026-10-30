@@ -1,9 +1,9 @@
-import {basketText,duration,isEspresso,preInfusionText,pressureText,yieldText,type Recipe} from './recipes';
+import {basketText,duration,isEspresso,preInfusionText,pressureText,temperatureLabel,yieldText,type Recipe} from './recipes';
 
 export type Translator=(key:string,values?:Record<string,string|number>)=>string;
 
 export function temperatureText(recipe:Recipe,t:Translator):string{
-  return recipe.temperature?`${recipe.temperature}°C`:t(recipe.temperatureMode==='boiling'?'boiling':'unknown');
+  return recipe.temperature?temperatureLabel(recipe):t(recipe.temperatureMode==='boiling'?'boiling':'unknown');
 }
 
 export function brewTimeText(recipe:Recipe,t:Translator):string{
@@ -15,8 +15,9 @@ export function brewTimeText(recipe:Recipe,t:Translator):string{
 export function recipeFaq(recipe:Recipe,t:Translator):{question:string;answer:string}[]{
   const title=t(`recipes.${recipe.copy}.title`);
   const espresso=isEspresso(recipe);
+  const details=espresso?[basketText(recipe),pressureText(recipe),preInfusionText(recipe)].filter(Boolean).join(' · '):'';
   const amountAnswer=espresso
-    ? t('faqEspressoAmountAnswer',{dose:recipe.dose,yield:yieldText(recipe)||t('unknown'),basket:basketText(recipe)||t('unknown'),pressure:pressureText(recipe)||t('unknown'),preInfusion:preInfusionText(recipe)||t('unknown')})
+    ? `${t('faqEspressoAmountAnswer',{dose:recipe.dose,yield:yieldText(recipe)||t('unknown')})}${details?` ${t('faqEspressoDetails',{details})}`:''}`
     : t('faqAmountAnswer',{dose:recipe.dose,water:recipe.water.amount,unit:recipe.water.unit});
   return [
     {

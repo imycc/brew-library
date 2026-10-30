@@ -692,6 +692,40 @@
       "s00": "Pour 40 g of water for the bloom.",
       "s01": "At 0:40, pour to 100 g in total.",
       "s02": "At 1:10, pour gently and slowly to 150 g in total, avoiding excessive agitation."
+    },
+    "ona-iris": {
+      "title": "Iris Estate Enigma · Espresso",
+      "summary": "ONA's lot guide for Iris Estate Enigma: 20.3 g in, 44 g out in 24 seconds at 93.5 °C, brewed 10–25 days after roast.",
+      "version": "ONA Coffee · 18 June 2026",
+      "grind": "Not stated by the source",
+      "equipment": "Espresso machine not stated",
+      "notes": "The source presents these numbers as a starting range, not a fixed rule. It also gives a best-freeze window of 10–14 days after roast and describes the cup as blackberry, chocolate and cherry.",
+      "finish": "Stop the shot at 44 g.",
+      "overview": "A single-lot espresso guide from ONA's brew-guide library, written for the Iris Estate Enigma CM Natural.",
+      "bestFor": "Anyone brewing this ONA lot who wants the roaster's own starting recipe.",
+      "beanNote": "CM Natural is the source's own process label; it also asks for 10–25 days of rest after roast."
+    },
+    "camber-espresso": {
+      "title": "Camber Espresso Recipe",
+      "summary": "Camber's café baseline: 19 g in, 38 g out in 25–30 seconds at 202–204 °F, a 1:2 recipe.",
+      "version": "Camber Coffee · updated 2 June 2023",
+      "grind": "Fine enough that the shot runs 25–30 seconds; the source gives no grinder setting",
+      "equipment": "Espresso machine not stated",
+      "notes": "The source presents this as a starting recipe for dialling in, and notes that water flows through the least dense parts of the puck, so a level tamp matters.",
+      "finish": "Stop the shot at 38 g.",
+      "overview": "A roastery's written espresso baseline, kept in Fahrenheit exactly as published.",
+      "bestFor": "Home brewers who want a documented starting point before adjusting to taste."
+    },
+    "counterculture-go-to": {
+      "title": "Counter Culture Go-To Espresso",
+      "summary": "Counter Culture's baseline recipe: 18 g in, 36 g out, 28 seconds.",
+      "version": "Counter Culture Coffee",
+      "grind": "Not stated by the source",
+      "equipment": "Espresso machine not stated",
+      "notes": "The source calls this a baseline for dialling in an unfamiliar coffee, not a claim about every bean.",
+      "finish": "Stop the shot at 36 g.",
+      "overview": "A widely used café baseline from Counter Culture's espresso guide.",
+      "bestFor": "A first reference point when a new coffee has no published recipe."
     }
   },
   "waterQuality": "Water profile",
@@ -907,7 +941,7 @@
   "compareMismatch": "Pour-over and espresso recipes are not compared side by side.",
   "quickAnswerEspresso": "Quick answer: {dose} g coffee in, {yield} out, water {temperature}, grind {grind}, shot {time}, pressure {pressure}.",
   "faqEspressoAmountQuestion": "How much coffee and what yield does {recipe} use?",
-  "faqEspressoAmountAnswer": "{dose} g in, {yield} out ({basket} basket, {pressure}, pre-infusion {preInfusion}).",
+  "faqEspressoAmountAnswer": "{dose} g in, {yield} out.",
   "faqShotTimeQuestion": "How long does the {recipe} shot take?",
   "schemaEspressoCategory": "Espresso",
   "puckPrepLabels": {
@@ -917,5 +951,8 @@
     "wdt": "Distribute with a WDT tool",
     "level": "Level the bed",
     "tamp": "Tamp"
-  }
+  },
+  "noStepsPublished": "The source publishes these parameters but no step-by-step sequence.",
+  "machineUnspecified": "Espresso machine not stated by the source",
+  "faqEspressoDetails": "Published extraction details: {details}."
 }

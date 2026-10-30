@@ -59,6 +59,7 @@ export async function validate(){
      if(s.levelMin!==undefined&&s.levelMax!==undefined)assert(s.levelMax>=s.levelMin,`${r.id} water level range`);
    }
    if(r.duration)assert(r.duration[1]>=r.duration[0],r.id);
+   if(r.temperatureMax!==undefined){assert(r.temperature!==null,`${r.id} temperature range needs a lower bound`);assert(r.temperatureMax>=r.temperature,`${r.id} temperature range must run upward`);}
    if(isPourOver(r)){
      const measured=r.steps.filter(s=>s.amount!==null);
      assert(new Set(measured.map(s=>s.unit||r.water.unit)).size<=1,`${r.id} cannot sum mixed step units`);

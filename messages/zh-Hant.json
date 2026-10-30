@@ -692,6 +692,40 @@
       "s00": "注 40 g 水悶蒸。",
       "s01": "0:40 注到累計 100 g。",
       "s02": "1:10 緩慢輕注到累計 150 g，避免過度擾動。"
+    },
+    "ona-iris": {
+      "title": "Iris Estate Enigma · 濃縮",
+      "summary": "ONA 的單一批次指南：20.3 g 粉、萃取 44 g、24 秒、93.5 °C，建議烘焙後 10–25 天飲用。",
+      "version": "ONA Coffee · 2026 年 6 月 18 日",
+      "grind": "來源未提供研磨度",
+      "equipment": "來源未標示咖啡機",
+      "notes": "來源把這些數值定位為可調整的起點，不是固定規則；另提供烘焙後 10–14 天冷凍的建議，並形容杯中風味為黑莓、朱古力與櫻桃。",
+      "finish": "萃取到 44 g 即停止。",
+      "overview": "ONA 沖煮指南中的單一批次濃縮配方，為 Iris Estate Enigma CM Natural 而寫。",
+      "bestFor": "正在沖這批 ONA 豆、想照烘焙者起點參數練習的人。",
+      "beanNote": "CM Natural 是來源自己的處理法標示；來源另建議烘焙後靜置 10–25 天。"
+    },
+    "camber-espresso": {
+      "title": "Camber 濃縮配方",
+      "summary": "Camber 咖啡館的基準配方：19 g 粉、38 g 萃取液、25–30 秒、202–204 °F，比例 1:2。",
+      "version": "Camber Coffee · 2023 年 6 月 2 日更新",
+      "grind": "研磨度以 25–30 秒完成萃取為準；來源未提供磨豆機刻度",
+      "equipment": "來源未標示咖啡機",
+      "notes": "來源把這組數字定位為調整濃縮的起點，並提醒水會從粉餅最鬆散處流過，所以壓粉要平。",
+      "finish": "萃取到 38 g 即停止。",
+      "overview": "烘焙商公開的濃縮基準，溫度保留來源的華氏寫法。",
+      "bestFor": "想先有一個有出處的起點、再按味道微調的家用玩家。"
+    },
+    "counterculture-go-to": {
+      "title": "Counter Culture 基礎濃縮配方",
+      "summary": "Counter Culture 的基準配方：18 g 粉、36 g 萃取液、28 秒。",
+      "version": "Counter Culture Coffee",
+      "grind": "來源未提供研磨度",
+      "equipment": "來源未標示咖啡機",
+      "notes": "來源稱這是為不熟悉的豆子建立基準用的配方，不是對所有豆子的保證。",
+      "finish": "萃取到 36 g 即停止。",
+      "overview": "Counter Culture 濃縮指南中廣泛被引用的咖啡館基準。",
+      "bestFor": "拿到沒有公開配方的新豆時，先建立第一個參考點。"
     }
   },
   "waterQuality": "水質",
@@ -907,7 +941,7 @@
   "compareMismatch": "手沖與濃縮配方不放在一起比較。",
   "quickAnswerEspresso": "快速答案：{dose} g 咖啡粉、萃取 {yield}、水溫 {temperature}、研磨度 {grind}、萃取時間 {time}、壓力 {pressure}。",
   "faqEspressoAmountQuestion": "{recipe} 用多少咖啡粉、萃取多少？",
-  "faqEspressoAmountAnswer": "{dose} g 粉、萃取 {yield}（{basket} 粉碗、{pressure}、預浸 {preInfusion}）。",
+  "faqEspressoAmountAnswer": "{dose} g 粉、萃取 {yield}。",
   "faqShotTimeQuestion": "{recipe} 的萃取時間是多少？",
   "schemaEspressoCategory": "濃縮咖啡",
   "puckPrepLabels": {
@@ -917,5 +951,8 @@
     "wdt": "以 WDT 針分散咖啡粉",
     "level": "整平粉面",
     "tamp": "壓粉"
-  }
+  },
+  "noStepsPublished": "來源只提供這些參數，沒有逐步驟的流程。",
+  "machineUnspecified": "來源未標示咖啡機",
+  "faqEspressoDetails": "來源另有這些萃取資料：{details}。"
 }

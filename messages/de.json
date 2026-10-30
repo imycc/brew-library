@@ -692,6 +692,40 @@
       "s00": "40 g Wasser für den Bloom aufgießen.",
       "s01": "Bei 0:40 auf insgesamt 100 g aufgießen.",
       "s02": "Bei 1:10 langsam und sanft auf insgesamt 150 g aufgießen, ohne zu stark zu rühren."
+    },
+    "ona-iris": {
+      "title": "Iris Estate Enigma · Espresso",
+      "summary": "ONAs Lot-Guide für Iris Estate Enigma: 20,3 g rein, 44 g in 24 Sekunden bei 93,5 °C, 10–25 Tage nach der Röstung.",
+      "version": "ONA Coffee · 18. Juni 2026",
+      "grind": "Von der Quelle nicht angegeben",
+      "equipment": "Maschine nicht angegeben",
+      "notes": "Die Quelle nennt diese Werte einen Startbereich, keine feste Regel; sie gibt außerdem 10–14 Tage nach der Röstung als bestes Einfrierfenster an und beschreibt die Tasse mit Brombeere, Schokolade und Kirsche.",
+      "finish": "Den Bezug bei 44 g stoppen.",
+      "overview": "Ein Lot-Espresso aus ONAs Brew-Guide, geschrieben für Iris Estate Enigma CM Natural.",
+      "bestFor": "Wer diesen ONA-Lot brüht und das Startrezept des Rösters nutzen will.",
+      "beanNote": "CM Natural ist die Prozessbezeichnung der Quelle; sie empfiehlt außerdem 10–25 Tage Ruhe nach der Röstung."
+    },
+    "camber-espresso": {
+      "title": "Camber Espresso-Rezept",
+      "summary": "Cambers Café-Basis: 19 g rein, 38 g in 25–30 Sekunden bei 202–204 °F, Verhältnis 1:2.",
+      "version": "Camber Coffee · aktualisiert am 2. Juni 2023",
+      "grind": "Fein genug für 25–30 Sekunden; kein Mahlgrad der Mühle angegeben",
+      "equipment": "Maschine nicht angegeben",
+      "notes": "Die Quelle nennt dies ein Startrezept zum Einstellen und weist darauf hin, dass Wasser durch die lockersten Stellen des Pucks fließt, weshalb ein ebener Tamper zählt.",
+      "finish": "Den Bezug bei 38 g stoppen.",
+      "overview": "Eine veröffentlichte Espresso-Basis eines Rösters, in Fahrenheit genau wie erschienen.",
+      "bestFor": "Hobby-Baristas, die einen belegten Startpunkt suchen und dann nach Geschmack justieren."
+    },
+    "counterculture-go-to": {
+      "title": "Counter Culture Basis-Espresso",
+      "summary": "Counter Cultures Basisrezept: 18 g rein, 36 g raus, 28 Sekunden.",
+      "version": "Counter Culture Coffee",
+      "grind": "Von der Quelle nicht angegeben",
+      "equipment": "Maschine nicht angegeben",
+      "notes": "Die Quelle bezeichnet dies als Basis zum Einstellen unbekannter Kaffees, nicht als Aussage über jede Bohne.",
+      "finish": "Den Bezug bei 36 g stoppen.",
+      "overview": "Eine viel genutzte Café-Basis aus Counter Cultures Espresso-Guide.",
+      "bestFor": "Ein erster Bezugspunkt, wenn ein neuer Kaffee kein veröffentlichtes Rezept hat."
     }
   },
   "waterQuality": "Wasserprofil",
@@ -907,7 +941,7 @@
   "compareMismatch": "Handfilter- und Espresso-Rezepte lassen sich nicht gemeinsam vergleichen.",
   "quickAnswerEspresso": "Schnellantwort: {dose} g Kaffee, {yield} in der Tasse, Wasser {temperature}, Mahlgrad {grind}, Zeit {time}, Druck {pressure}.",
   "faqEspressoAmountQuestion": "Wie viel Kaffee und welche Menge nutzt {recipe}?",
-  "faqEspressoAmountAnswer": "{dose} g eingesetzt, {yield} in der Tasse ({basket} Siebeinsatz, {pressure}, Vorbrühen {preInfusion}).",
+  "faqEspressoAmountAnswer": "{dose} g rein, {yield} raus.",
   "faqShotTimeQuestion": "Wie lange dauert die Extraktion von {recipe}?",
   "schemaEspressoCategory": "Espresso",
   "puckPrepLabels": {
@@ -917,5 +951,8 @@
     "wdt": "Mit WDT-Werkzeug verteilen",
     "level": "Bett glätten",
     "tamp": "Tampern"
-  }
+  },
+  "noStepsPublished": "Die Quelle nennt diese Werte, aber keine Schritt-für-Schritt-Anleitung.",
+  "machineUnspecified": "Maschine von der Quelle nicht angegeben",
+  "faqEspressoDetails": "Veröffentlichte Extraktionsangaben: {details}."
 }

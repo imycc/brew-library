@@ -275,3 +275,26 @@ Model changes that iced forced:
 - Quick answers, parameter tiles, the conditions list, the comparison table and JSON-LD ingredients all gained an ice line, and the comparison row only appears when a selected recipe actually states ice.
 
 One unrelated test-quality fix came out of this pass: the equipment page embeds forty-seven third-party product images, and waiting for the `load` event made the screenshot journeys hostage to those hosts (two of them began returning SSL errors after repeated fetching). The capture helper now falls back to `domcontentloaded` when a foreign image stalls, so a slow CDN can no longer fail a run that only needs the DOM.
+
+## Espresso — first records and what the sources actually publish (checked 2026-10-30)
+
+| Source | Published | Values recorded | Absent from the source |
+|---|---|---|---|
+| ONA Coffee — Iris Estate Enigma, Panama, CM Natural | 2026-06-18 | “Dose 20.3g in the portafilter to extract 44g in the cups in 24 seconds at 93.5 degrees C”; 10–25 days after roast; best-freeze 10–14 days | grinder, basket, pressure, pre-infusion, water, step sequence |
+| Camber Coffee — Espresso Tips | updated 2023-06-02 | 19 g → 38 g; 25–30 seconds; “202°-204°F”; “1 part coffee to 2 parts espresso” | grinder setting, pressure, pre-infusion, basket, water, step sequence |
+| Counter Culture Coffee — Guide To Espresso | no date shown | “Dose: 18 grams / Yield: 36 grams of liquid in cup / Time: 28 seconds” | temperature, grinder, pressure, pre-infusion, basket, water, step sequence |
+
+Candidates held back:
+
+- **Intelligentsia — Espresso Brew Guide.** “The finished espresso should weigh 2.5 times as much as your coffee dose”, dose “between 14 and 18 grams”, 25–30 seconds, seven untimed steps. The dose is a range, which the schema cannot yet carry without implying a fixed value.
+- **Decent Espresso — light-roast profiles and the 7 g basket.** Written numbers exist (18 g in an 18 g basket; 1:1.8 and 1:2.3; ~6 bar; 7 g → 18–28 g at 7.5 bar peak, 24 s) but several values are tied to Decent hardware profiles, so they need their own reading before transcription.
+- **WBC 2025 Rules & Regulations.** 90.5–96 °C, 8.5–9.5 bar, a recommended 20–30 s and ~30 ml. This is a competition standard, not an author’s recipe.
+- **Video-only sources.** James Hoffmann and Lance Hedrick publish no numbers in a text layer; Hedrick’s written recipes sit behind Patreon.
+
+What this pass forced in the model:
+
+- `temperatureUnit` and an optional `temperatureMax` keep a source’s Fahrenheit and its range exactly as published; nothing is converted to Celsius.
+- `image` is optional until an espresso Open Graph photograph exists, so no pour-over photo is passed off as an espresso one.
+- `steps` may be empty: these three sources publish parameters, not a sequence. Such pages show a localized “no steps published” note and omit `recipeInstructions` from JSON-LD instead of inventing a procedure.
+
+Archive status: the Camber snapshot (`web.archive.org/web/20261030110250/…/espresso-tips/`) was created and verified. The ONA and Counter Culture `/save/` requests were rate-limited (HTTP 429), so both records currently rely on the live URLs and are marked for archiving on the next pass.

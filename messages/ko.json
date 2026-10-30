@@ -692,6 +692,40 @@
       "s00": "40 g을 부어 뜸들입니다.",
       "s01": "0:40에 누적 100 g까지 붓습니다.",
       "s02": "1:10에 과한 교반을 피하며 천천히 누적 150 g까지 붓습니다."
+    },
+    "ona-iris": {
+      "title": "Iris Estate Enigma · 에스프레소",
+      "summary": "ONA의 로트별 가이드: 20.3 g 투입, 44 g 추출, 24초, 93.5 °C, 로스팅 후 10–25일 사용.",
+      "version": "ONA Coffee · 2026년 6월 18일",
+      "grind": "출처에 분쇄도 없음",
+      "equipment": "출처에 머신 표기 없음",
+      "notes": "출처는 이 수치를 고정 규칙이 아닌 조정 출발점으로 제시하며, 로스팅 후 10–14일 냉동 보관과 블랙베리·초콜릿·체리라는 컵 묘사를 덧붙인다.",
+      "finish": "44 g에서 추출을 멈춘다.",
+      "overview": "ONA 브루 가이드의 단일 로트 에스프레소 레시피. Iris Estate Enigma CM Natural용.",
+      "bestFor": "이 ONA 로트를 내리며 로스터의 출발점으로 연습하려는 사람.",
+      "beanNote": "CM Natural은 출처가 쓴 프로세스 표기이며, 로스팅 후 10–25일의 휴지 기간도 권한다."
+    },
+    "camber-espresso": {
+      "title": "Camber 에스프레소 레시피",
+      "summary": "Camber 카페 기준: 19 g 투입, 38 g 추출, 25–30초, 202–204 °F, 1:2.",
+      "version": "Camber Coffee · 2023년 6월 2일 업데이트",
+      "grind": "25–30초에 추출되는 분쇄도. 그라인더 설정은 없음",
+      "equipment": "출처에 머신 표기 없음",
+      "notes": "출처는 다이얼인 출발점으로 제시하며, 물은 퍽의 성긴 부분으로 흐르므로 탬핑을 평평하게 하라고 주의한다.",
+      "finish": "38 g에서 추출을 멈춘다.",
+      "overview": "로스터리가 공개한 에스프레소 기준. 온도는 출처대로 화씨로 남긴다.",
+      "bestFor": "출처가 있는 출발점에서 맛으로 조정하려는 홈 브루어."
+    },
+    "counterculture-go-to": {
+      "title": "Counter Culture 기본 에스프레소",
+      "summary": "Counter Culture 기준 레시피: 18 g 투입, 36 g 추출, 28초.",
+      "version": "Counter Culture Coffee",
+      "grind": "출처에 분쇄도 없음",
+      "equipment": "출처에 머신 표기 없음",
+      "notes": "출처는 낯선 원두를 다이얼인하기 위한 기준이며 모든 원두에 대한 주장은 아니라고 밝힌다.",
+      "finish": "36 g에서 추출을 멈춘다.",
+      "overview": "Counter Culture 에스프레소 가이드의 널리 쓰이는 카페 기준.",
+      "bestFor": "공개 레시피가 없는 새 원두의 첫 참조점이 필요할 때."
     }
   },
   "waterQuality": "물 특성",
@@ -907,7 +941,7 @@
   "compareMismatch": "핸드드립과 에스프레소 레시피는 나란히 비교하지 않습니다.",
   "quickAnswerEspresso": "빠른 답변: 분쇄량 {dose} g, 추출 {yield}, 물 온도 {temperature}, 분쇄도 {grind}, 추출 시간 {time}, 압력 {pressure}.",
   "faqEspressoAmountQuestion": "{recipe}는 커피 양과 추출량이 얼마인가요?",
-  "faqEspressoAmountAnswer": "분쇄량 {dose} g, 추출 {yield}({basket} 바스켓, {pressure}, 프리인퓨전 {preInfusion}).",
+  "faqEspressoAmountAnswer": "{dose} g 투입, {yield} 추출.",
   "faqShotTimeQuestion": "{recipe} 추출 시간은 얼마나 걸리나요?",
   "schemaEspressoCategory": "에스프레소",
   "puckPrepLabels": {
@@ -917,5 +951,8 @@
     "wdt": "WDT로 분쇄 균일화",
     "level": "분쇄면 고르기",
     "tamp": "탬핑"
-  }
+  },
+  "noStepsPublished": "출처에는 수치만 있고 단계별 과정은 없습니다.",
+  "machineUnspecified": "출처에 머신 표기 없음",
+  "faqEspressoDetails": "출처에 있는 추출 정보: {details}."
 }

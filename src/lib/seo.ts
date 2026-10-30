@@ -1,4 +1,4 @@
-import {BASE,SITE,time,recipes,isEspresso,isPourOver,basketText,type Recipe,iceAmountText} from './recipes';
+import {BASE,SITE,time,recipes,isEspresso,isPourOver,basketText,temperatureLabel,type Recipe,iceAmountText} from './recipes';
 import {equipment,type Equipment} from './equipment';
 import {equipmentEditorial,equipmentExperience} from './editorial';
 import {brewTimeText,recipeFaq,temperatureText,type Translator} from './faq';
@@ -133,7 +133,7 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
     mainEntityOfPage:{'@id':pageId(locale,`recipes/${recipe.id}/`)},
     isPartOf:{'@id':websiteId(locale)},
     inLanguage:locale,
-    image:absolute(`/images/og-${recipe.image}-1200x630.jpg`),
+    image:absolute(`/images/og-${recipe.image||'default'}-1200x630.jpg`),
     author:{
       '@type':'Person',
       name:recipe.author,
@@ -147,15 +147,15 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
       `${recipe.dose} g ${t('schemaCoffee')}`,
       // An espresso source that states its water recipe keeps it; a yield is never
       // rewritten into a water amount.
-      ...recipe.water?[`${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${recipe.temperature}°C)`:''}`]:[],
+      ...recipe.water?[`${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${temperatureLabel(recipe)})`:''}`]:[],
       ...recipe.ice?[`${iceAmountText(recipe)} ${t('ice')}`]:[]
     ],
-    recipeInstructions:recipe.steps.map((step,index)=>({
+    ...recipe.steps.length?{recipeInstructions:recipe.steps.map((step,index)=>({
       '@type':'HowToStep',
       position:index+1,
       name:t(`step.${step.action}`),
       text:recipeStepText(recipe,step,t)
-    })),
+    }))}:{},
     tool:[recipe.brewer,recipe.grinder?.name,recipe.paper?.name,basketText(recipe)].filter((name):name is string=>!!name).map(name=>({'@type':'HowToTool',name})),
     ...(isIsoDate(recipe.source.published)?{datePublished:recipe.source.published}:{}),
     dateModified:recipe.source.checked,

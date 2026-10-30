@@ -30,7 +30,7 @@ const po=(id:string)=>pourOverRecipes.find(recipe=>recipe.id===id)!;
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,29);
+ assert.equal(recipes.length,32);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -66,7 +66,7 @@ test('added official V60 recipes keep source volumes, units and coffee condition
  assert.equal(camber.water.unit,'g');
  assert.equal(camber.coffee?.process,'anaerobic');
  assert.deepEqual(camber.duration,[180,195]);
- assert.deepEqual(filterRecipes(recipes,{q:'Camber'},r=>r.author).map(r=>r.id),['camber-v60']);
+ assert.deepEqual(filterRecipes(recipes,{q:'Camber',method:'pour-over'},r=>r.author).map(r=>r.id),['camber-v60']);
  const lamill=po('lamill-mugen');
  assert.equal(lamill.dose,16.5);
  assert.equal(lamill.water.amount,225);
@@ -217,7 +217,7 @@ test('the iced record keeps ice out of the poured-water maths',()=>{
  assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:30});
  assert.equal(ratio(iced,'en'),'1 : 14.33');
  assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,1);
- assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,28);
+ assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,31);
 });
 
 const shotRecord=espressoSchema.parse({...pourOverRecipes[0],id:'test-shot',copy:'kasuya',method:'espresso',
@@ -248,8 +248,8 @@ test('espresso source facts count extraction values and keep the two methods apa
  assert.equal(facts.get('preInfusion'),true);
  assert.equal(facts.get('basket'),true);
  const mixed:Recipe[]=[...recipes,shotRecord];
- assert.equal(filterRecipes(mixed,{method:'espresso'},r=>r.author).length,1);
- assert.equal(filterRecipes(mixed,{method:'pour-over'},r=>r.author).length,recipes.length);
+ assert.equal(filterRecipes(mixed,{method:'espresso'},r=>r.author).length,recipes.filter(r=>r.method==='espresso').length+1);
+ assert.equal(filterRecipes(mixed,{method:'pour-over'},r=>r.author).length,recipes.filter(r=>r.method==='pour-over').length);
  assert.deepEqual(parseSelection('kasuya-46,test-shot',mixed).ids,['kasuya-46']);
  assert(parseSelection('kasuya-46,test-shot',mixed).mismatch);
  const toggle=toggleSelection(['kasuya-46'],'test-shot',mixed);

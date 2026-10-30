@@ -473,6 +473,35 @@
         "needsTimer",
         "equipmentSpecific"
       ]
+    },
+    "ona-iris-enigma": {
+      "strengths": [
+        "beanSpecific",
+        "repeatable"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "equipmentSpecific"
+      ]
+    },
+    "camber-espresso": {
+      "strengths": [
+        "repeatable",
+        "temperatureControl"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "grindSensitive"
+      ]
+    },
+    "counterculture-go-to": {
+      "strengths": [
+        "repeatable"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "grindSensitive"
+      ]
     }
   },
   "equipment": {

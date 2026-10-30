@@ -28,7 +28,7 @@ const commonRecipeFields={
   author:z.string(), authorId:z.string(), brewer:z.string(), brewerId:z.string(),
   kind:z.enum(['hot','iced']), dose:z.number().positive(),
   ice:z.object({amount:z.number().positive(), amountMax:z.number().positive().optional(), approximate:z.boolean().optional(), unit:z.enum(['g','mL']), placement:z.enum(['server','brewer','glass'])}).optional(),
-  temperature:z.number().positive().nullable(), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]).nullable(),
+  temperature:z.number().positive().nullable(), temperatureMax:z.number().positive().optional(), temperatureUnit:z.enum(['C','F']).default('C'), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]).nullable(),
   removalAt:z.number().nonnegative().optional(),
   yield:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), basis:z.enum(['observed','target'])}).optional(),
   ratioStated:z.string().optional(),
@@ -36,8 +36,8 @@ const commonRecipeFields={
   doseGround:z.number().positive().optional(),
   grindHedged:z.boolean().optional(),
   source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), videoPublished:z.string().nullable().optional(), published:z.string().nullable(), publishedBasis:z.enum(['page','video','event']).optional(), updated:z.string().nullable().optional(), archive:z.url().optional(), videoArchive:z.url().optional(), checked:z.iso.date()}),
-  image:z.enum(['coffee-bloom','brewer-still','espresso-shot']),
-  steps:z.array(stepSchema).min(1), preparation:z.array(z.string()),
+  image:z.enum(['coffee-bloom','brewer-still','espresso-shot']).optional(),
+  steps:z.array(stepSchema), preparation:z.array(z.string()),
   waterConditions:z.enum(['unknown','soft','rao']), beanConditions:z.enum(['unknown','light']),
   filterConditions:z.enum(['unknown','pulsar']).default('unknown'), context:z.enum(['daily','competition']),
   beanNote:z.string().optional(), waterNote:z.string().optional(), filterNote:z.string().optional(),
@@ -87,6 +87,14 @@ export function iceAmountText(recipe:Recipe):string {
 }
 export function yieldText(recipe:Recipe):string {
   return recipe.yield?`${recipe.yield.amount} ${recipe.yield.unit}`:'';
+}
+// Fahrenheit stays Fahrenheit: the source's own unit is part of the record.
+export function temperatureLabel(recipe:Recipe):string {
+  if(recipe.temperature===null)return '';
+  const symbol=recipe.temperatureUnit==='F'?'°F':'°C';
+  return recipe.temperatureMax!==undefined&&recipe.temperatureMax!==recipe.temperature
+    ? `${recipe.temperature}–${recipe.temperatureMax}${symbol}`
+    : `${recipe.temperature}${symbol}`;
 }
 export function pressureText(recipe:Recipe):string {
   const stated=isEspresso(recipe)?recipe.extraction?.pressureBar:undefined;
