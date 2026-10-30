@@ -247,7 +247,7 @@ export function RecipeDetail({id}:{id:string}){
    <section className="derived-panel" data-derived-panel>
      <div className="derived-head"><h2>{t('derivedTitle')}</h2><p>{t('derivedNote')}</p></div>
      <dl className={isEspresso(r)&&postPreInfusion===null?'derived-grid single':'derived-grid'}>
-       <div><dt>{t('ratio')}</dt><dd>{ratio(r,locale)}</dd></div>
+       <div><dt>{t(isEspresso(r)?'ratioEspresso':'ratio')}</dt><dd>{ratio(r,locale)}</dd></div>
        {isEspresso(r)?(postPreInfusion!==null&&postPreInfusion>=0?<div><dt>{t('afterPreInfusion')}</dt><dd>{time(postPreInfusion)}</dd></div>:null):<>
        <div><dt>{t('bloomShare')}</dt><dd>{bloomShare(r)===null?t('unknown'):percent.format(bloomShare(r)!)}</dd></div>
        <div><dt>{t(phase&&phase.kind==='start'?'lastPourStarts':'pourEnds')}</dt><dd>{phase?time(phase.endsAt):t('unknown')}</dd></div>
@@ -283,7 +283,7 @@ export function ComparePage(){
  const selected=ids.map(id=>recipes.find(r=>r.id===id)!);
  const sharedRows:[string,(r:Recipe)=>string][]=[['equipment',r=>t(`recipes.${r.copy}.equipment`)],['dose',r=>`${doseText(r)} g`]];
  const pourOverRows:[string,(r:Recipe)=>string][]=[['water',r=>isPourOver(r)?`${waterText(r)} ${r.water.unit}${r.water.derived?' *':''}`:t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
- const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
+ const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratioEspresso',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
  // Comparison is limited to one method, so the row set follows the first selected recipe.
  const baseRows:[string,(r:Recipe)=>string][]=[...sharedRows,...selected[0]&&isEspresso(selected[0])?espressoRows:pourOverRows];
  const rows:[string,(r:Recipe)=>string][]=selected.some(r=>r.ice)?[...baseRows.slice(0,2),['ice',r=>iceText(r,t)],...baseRows.slice(2)]:baseRows;

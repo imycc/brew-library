@@ -237,6 +237,31 @@ test('pour-over and espresso tabs keep independent search and filter state',asyn
  expect(new URL(page.url()).searchParams.get('po.q')).toBe('Hoffmann');
 });
 
+test('new espresso records expose basket, pressure and coffee conditions',async({page})=>{
+ await page.goto(`${base}/en/?method=espresso`);
+ await page.locator('.condition-filters summary').click();
+ await page.getByLabel('Processing',{exact:true}).selectOption('washed');
+ await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await expect(page.locator('[data-recipe="onyx-monarch-espresso"]')).toBeVisible();
+ await page.getByLabel('Roast',{exact:true}).selectOption('dark');
+ await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await page.getByLabel('Roast',{exact:true}).selectOption('light');
+ await expect(page.locator('[data-recipe]')).toHaveCount(0);
+ await page.getByRole('button',{name:'Reset filters'}).first().click();
+ await expect(page.locator('[data-recipe]')).toHaveCount(espressoCount);
+ await page.goto(`${base}/en/recipes/lamarzocco-brew-ratios/`);
+ await expect(page.locator('.parameters')).toContainText('18 g');
+ await expect(page.locator('.parameters')).toContainText('36 g');
+ await expect(page.locator('.parameters')).toContainText('93°C');
+ await expect(page.locator('.detail-spec-card')).toContainText('17 g');
+ await expect(page.locator('.derived-grid')).toContainText('Coffee : espresso');
+ await page.goto(`${base}/en/recipes/onyx-monarch-espresso/`);
+ await expect(page.locator('.detail-spec-card')).toContainText('Fellow Espresso Series 1');
+ await expect(page.locator('.parameters')).toContainText('Not provided by the source');
+ await expect(page.locator('.derived-grid')).toContainText('After pre-infusion');
+ await expect(page.locator('.derived-grid')).toContainText('0:19.5');
+});
+
 test('method tabs switch with arrow, Home and End keys',async({page})=>{
  await page.goto(`${base}/en/`);
  const pourOverTab=page.getByRole('tab',{name:/Pour-over/});

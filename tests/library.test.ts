@@ -38,7 +38,7 @@ const po=(id:string)=>pourOverRecipes.find(recipe=>recipe.id===id)!;
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,38);
+ assert.equal(recipes.length,42);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -206,6 +206,28 @@ test('new gear is linked to the recipes that named it',()=>{
  assert.equal(byId('mk-dripper').status,'unresolved');
 });
 
+test('new espresso records keep basket, pressure and line-pressure facts distinct',()=>{
+ const find=(id:string)=>espressoRecipes.find(recipe=>recipe.id===id)!;
+ const lm=find('lamarzocco-brew-ratios');
+ assert.equal(lm.extraction?.basket?.grams,17);
+ assert.equal(basketText(lm),'17 g');
+ assert.equal(pressureText(lm),'9 bar');
+ assert.equal(lm.coffee?.roast,'medium');
+ const cc=find('coffeecollective-espresso');
+ assert.equal(cc.extraction?.basket?.name,'VST basket · 18 g or 20 g');
+ assert.equal(pressureText(cc),'7 bar');
+ assert.equal(cc.temperature,93);
+ const monarch=find('onyx-monarch-espresso');
+ assert.equal(monarch.temperature,null);
+ assert.equal(preInfusionText(monarch),'3.5 s');
+ assert.equal(yieldText(monarch),'47 g');
+ assert.equal(monarch.coffee?.roast,'dark');
+ const aponte=find('onyx-aponte-espresso');
+ assert.equal(aponte.coffee?.process,'honey');
+ assert.equal(aponte.coffee?.roast,'light');
+ assert.equal(aponte.temperature,null);
+ assert.deepEqual(espressoRecipes.filter(recipe=>recipe.brewerId!=='unspecified').map(recipe=>recipe.brewerId),['lamarzocco-linea-micra','fellow-espresso-series-1']);
+});
 test('iced recipes count ice in the total liquid but never in the poured water',()=>{
  const hot=po('hoffmann-one-cup');
  const iced={...hot,kind:'iced' as const,ice:{amount:100,unit:'g' as const,placement:'server' as const}};
@@ -229,7 +251,7 @@ test('the iced record keeps ice out of the poured-water maths',()=>{
  assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:30});
  assert.equal(ratio(iced,'en'),'1 : 14.33');
  assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,2);
- assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,36);
+ assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,40);
 });
 
 const shotRecord=espressoSchema.parse({...pourOverRecipes[0],id:'test-shot',copy:'kasuya',method:'espresso',

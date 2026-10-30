@@ -365,3 +365,35 @@ ratios over water **plus** ice — otherwise Kasuya's published 1:11.5 looked li
 Second, `D50 = 611 µm` is a median particle size, not the PSD peak the `grindMicron` basis
 enum allows, so it lives in the grind text rather than being forced into a field that would
 misdescribe it.
+
+## Espresso expansion — four records (checked 2026-10-31)
+
+The second espresso batch adds four page-sourced records. All three source pages were archived
+and the snapshots were checked for the stored recipe text before `source.archive` was recorded.
+
+| Record | Source | Decisions |
+| --- | --- | --- |
+| `lamarzocco-brew-ratios` | [Using Espresso Brew Ratios](https://www.lamarzocco.com/tw/en/using-espresso-brew-ratios/), 2023-11-22, updated 2023-12-15 | 18 g / 36 g / 25–35 s (30 s worked example) / 200 °F–93 °C / 9 bar / 17 g basket / medium roast. The article names the Linea Micra as the machine that holds temperature and pressure, so the record carries that `brewerId` even though the equipment catalogue has no Linea Micra entry. The grind, prep and grinder are not stated. |
+| `coffeecollective-espresso` | [Espresso brew guide](https://coffeecollective.dk/pages/brew-guide/espresso-brew-guide), undated | 19 g / 38 g / 27 s / 93 °C / 7 bar / VST 18 g or 20 g basket. The basket range is stored as one published name rather than collapsed to one capacity. The five process steps supply the step prose; no coffee, grinder or roast is named, so those stay open. |
+| `onyx-monarch-espresso` | [Onyx Brew Guides](https://onyxcoffeelab.com/pages/brew-guides), undated | Monarch: 19 g / 47 g / 23 s, line pressure 0–3.5 s then 9 bar; washed Colombia–Ethiopia blend, Expressive Dark. The card links a Fellow Series 1 profile, so the machine is recorded as `fellow-espresso-series-1`. The card gives no temperature, basket or grinder. |
+| `onyx-aponte-espresso` | [Onyx Brew Guides](https://onyxcoffeelab.com/pages/brew-guides), undated | Aponte Village: 20 g / 48 g / 24 s, line pressure 0–3.5 s then 9 bar; Red Honey Colombia, light roast. No temperature, basket or grinder on the card. |
+
+Ruled out this pass:
+
+- **Onyx's linked Fellow Series 1 profiles** publish a second set of numbers (for Monarch:
+  18 g → 45 g in 30 s at 93 °C, with a 4 s / 3 bar pre-infusion). The profile is a separate
+  machine-specific artefact and the live app is not archived as text, so the records follow the
+  archived brew-guide cards instead of mixing the two.
+- **La Cabra's espresso profiles** state ratios (1:3 and 1:2.5), temperatures, pressure and water
+  but no straight-espresso dose. Deriving a dose from the milk examples would invent the record,
+  so nothing was added.
+- **Tim Wendelboe's espresso page** did not render usable page text in this environment; the
+  numbers could not be verified from a text layer, so it stays in the queue.
+- **Flair 58 and Cafelat Robot recipes** found only in third-party reviews were not treated as
+  brand-published recipes.
+
+The new records deliberately leave `temperature` null where the card does not state it. Onyx's
+"Line Pressure: 0–3.5s" is stored as a 3.5-second pre-infusion without a bar value, because the
+card does not publish the line pressure. These choices let the espresso tab grow its author,
+dose, process, roast and brewer filters from the same data-driven lists as pour-over, without a
+second filter implementation.
