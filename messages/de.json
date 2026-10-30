@@ -726,6 +726,56 @@
       "finish": "Den Bezug bei 36 g stoppen.",
       "overview": "Eine viel genutzte Café-Basis aus Counter Cultures Espresso-Guide.",
       "bestFor": "Ein erster Bezugspunkt, wenn ein neuer Kaffee kein veröffentlichtes Rezept hat."
+    },
+    "rolf-v60": {
+      "title": "Aprils 13-g-V60 in vier Aufgüssen",
+      "summary": "13 g auf 200 g bei 90 °C, vier gleiche 50-g-Gaben im 30-Sekunden-Takt, fertig bei 2:30.",
+      "version": "Coffee with April #113",
+      "grind": "Verhältnismäßig grob (Comandante)",
+      "equipment": "HARIO V60 02; die Papier-Marke wird nicht genannt",
+      "notes": "Die Beschreibung nennt nur 90 °C, 13 g auf 200 g und die vier Zeitpunkte. Papier, Kaffee und Gießtechnik fehlen; Größe 02 ist die Basis und lässt sich laut Video übertragen.",
+      "finish": "Die Quelle nennt 2:30 Gesamtzeit; danach ablaufen lassen.",
+      "overview": "Vier gleiche 50-g-Gaben lassen nur den Mahlgrad als Variable. Bei 13 g ist das Bett flach, deshalb hält der grobe Mahlgrad den Durchfluss gleichmäßig.",
+      "bestFor": "Ein kleiner, wiederholbarer V60 für die Ein-Hand-Zeitnahme",
+      "s00": "Bei 0:00 50 g für den Bloom aufgießen.",
+      "s01": "Bei 0:30 weitere 50 g.",
+      "s02": "Bei 1:00 50 g.",
+      "s03": "Bei 1:30 die letzten 50 g bis 200 g.",
+      "teach1": "Der grobe Mahlgrad ist Absicht: Bei 13 g ist das Bett flach, feiner würde es verstopfen.",
+      "teach2": "Jede Gabe ist dieselben 50 g im selben 30-Sekunden-Takt — kein Anstieg, keine Pulse.",
+      "teach3": "2:30 ist die Gesamtzeit der Quelle, keine Ablauf-Deadline."
+    },
+    "rolf-origami": {
+      "title": "Aprils Origami mit V60-Papier",
+      "summary": "20 g auf 300 g bei 92 °C: 100 g im Kreis, dann 200 g durchgehend von 0:45 bis 1:20.",
+      "version": "Coffee with April #117",
+      "grind": "Mittel/grob (Comandante)",
+      "equipment": "ORIGAMI-Drepper mit konischem V60-02-Papier",
+      "notes": "Das Video kombiniert den Origami bewusst mit konischem V60-02-Papier statt dem Wave-Filter. Rolf merkt an, dass der Röstgrad den Bettwiderstand ändert — dunkler geröstet braucht etwas feiner.",
+      "finish": "Die Quelle nennt 2:30 Gesamtzeit.",
+      "overview": "Nur zwei Gaben: ein schneller 100-g-Kreis öffnet das Bett, dann 35 Sekunden durchgehendes Gießen halten es in Bewegung. Konisches Papier im Flachbett läuft langsamer als ein Wave.",
+      "bestFor": "Wer einen Origami, aber nur V60-Papier hat",
+      "s00": "Bei 0:00 100 g kreisend aufgießen.",
+      "s01": "Von 0:45 bis 1:20 200 g durchgehend kreisend bis 300 g.",
+      "teach1": "Der zweite Guss ist durchgehend, nicht gepulst: 200 g über 35 Sekunden halten das Bett in Bewegung.",
+      "teach2": "Der Röstgrad ändert den Widerstand: bei dunklerem Kaffee etwas feiner mahlen, um 2:30 zu halten."
+    },
+    "kasuya-neo": {
+      "title": "Kasuya NEO: zehn Gaben à 30 g",
+      "summary": "20 g auf 300 g bei 95–96 °C, sehr grob, in zehn 30-g-Gaben im 15-Sekunden-Takt.",
+      "version": "TETSU KASUYA · 2026",
+      "grind": "40–45 Klicks (Comandante C40), sehr grob",
+      "equipment": "HARIO NEO; laut Quelle geht auch ein V60",
+      "notes": "Eine Gesamtzeit fehlt; genannt wird nur der Rhythmus aus zehn Gaben im 15-Sekunden-Takt. Der NEO wird empfohlen, weil er kleine Gaben gleichmäßig extrahiert, ein V60 ist aber ausdrücklich in Ordnung; helle Röstung empfohlen.",
+      "finish": "Keine Endzeit; gefordert wird nur, dass das Wasser nicht im Drepper stehen bleibt.",
+      "overview": "Ein bewusster Gegenentwurf zum Trend kurzer, dünn gegossener Rezepte: sehr grob und heiß, dann bauen zehn kleine Gaben Süße und Textur auf. Überraschend ist der Mahlgrad — 40–45 Klicks, Extraktion aus dem Rhythmus statt aus Feingut.",
+      "bestFor": "Für alle, die den Gießrhythmus statt der Menge üben wollen",
+      "s00": "Bei 0:00 mit 30 g beginnen und durchlaufen lassen statt aufstauen.",
+      "pour": "Weitere 30 g, 15 Sekunden nach der vorigen Gabe.",
+      "s09": "Die zehnte und letzte Gabe von 30 g bis 300 g.",
+      "teach1": "Sehr grober Mahlgrad plus 95–96 °C ist das unerwartete Paar, auf dem das Rezept ruht.",
+      "teach2": "Zehn Gaben à 30 g im 15-Sekunden-Takt; entscheidend ist, dass das Wasser durchläuft statt oben zu stehen.",
+      "teach3": "Kasuya empfiehlt den NEO, weil er kleine Gaben gleichmäßig extrahiert, sagt aber, ein V60 sei ebenso gut."
     }
   },
   "waterQuality": "Wasserprofil",
@@ -971,5 +1021,9 @@
   "showCelsius": "Temperaturen in Celsius anzeigen",
   "showFahrenheit": "Temperaturen in Fahrenheit anzeigen",
   "followSourceUnit": "Es gilt die Einheit der jeweiligen Quelle",
-  "convertedNote": "≈ kennzeichnet eine Anzeigeumrechnung; die Quelle nennt {value}."
+  "convertedNote": "≈ kennzeichnet eine Anzeigeumrechnung; die Quelle nennt {value}.",
+  "videoStep": "Video {time}",
+  "teachingTitle": "Vom Autor",
+  "teachingStep": "Schritt {number}",
+  "evidenceLabel": "Originalwortlaut"
 }

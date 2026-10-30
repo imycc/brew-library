@@ -726,6 +726,56 @@
       "finish": "Arrêter l'extraction à 36 g.",
       "overview": "Une base café largement utilisée, issue du guide espresso de Counter Culture.",
       "bestFor": "Un premier repère quand un nouveau café n'a pas de recette publiée."
+    },
+    "rolf-v60": {
+      "title": "V60 13 g d’April en quatre versements",
+      "summary": "Treize grammes pour 200 g à 90 °C, quatre versements de 50 g toutes les 30 secondes, prêt à 2:30.",
+      "version": "Coffee with April #113",
+      "grind": "Plutôt grossier (Comandante)",
+      "equipment": "HARIO V60 02 ; marque de papier non précisée",
+      "notes": "La description ne donne que 90 °C, 13 g pour 200 g et les quatre horaires. Papier, café et technique de versement absents ; la taille 02 sert de base et la vidéo indique qu’on peut l’adapter.",
+      "finish": "La source donne 2:30 de durée totale ; laissez s’écouler.",
+      "overview": "Quatre versements identiques de 50 g ne laissent que la mouture comme variable. À 13 g le lit est mince, d’où la mouture grossière qui garde le débit régulier.",
+      "bestFor": "Un petit V60 répétable, chronométrable d’une main",
+      "s00": "Versez 50 g pour la pré-infusion à 0:00.",
+      "s01": "À 0:30, versez 50 g de plus.",
+      "s02": "À 1:00, versez 50 g.",
+      "s03": "À 1:30, versez les 50 g derniers pour atteindre 200 g.",
+      "teach1": "La mouture grossière est voulue : à 13 g le lit est mince et une mouture plus fine le bloquerait.",
+      "teach2": "Chaque versement est le même 50 g au même intervalle de 30 secondes — sans montée ni pulsations.",
+      "teach3": "2:30 est la durée totale de la source, pas une échéance d’écoulement."
+    },
+    "rolf-origami": {
+      "title": "Origami d’April avec papier V60",
+      "summary": "Vingt grammes pour 300 g à 92 °C : un cercle de 100 g, puis 200 g en continu de 0:45 à 1:20.",
+      "version": "Coffee with April #117",
+      "grind": "Moyen/grossier (Comandante)",
+      "equipment": "Filtre ORIGAMI avec papier conique V60 02",
+      "notes": "La vidéo associe volontairement un papier conique V60 02 au filtre Origami plutôt que le Wave de la marque. Rolf prévient que le degré de torréfaction change la résistance du lit : plus sombre, mouture un peu plus fine.",
+      "finish": "La source donne 2:30 de durée totale.",
+      "overview": "Deux versements : un cercle rapide de 100 g ouvre le lit, puis 35 secondes de versement continu le gardent en mouvement. Le papier conique ralentit l’écoulement par rapport à un Wave.",
+      "bestFor": "Qui a un Origami mais seulement des papiers V60",
+      "s00": "Versez 100 g en cercles à 0:00.",
+      "s01": "De 0:45 à 1:20, versez 200 g en continu en cercles jusqu’à 300 g.",
+      "teach1": "Le deuxième versement est continu, pas pulsé : 200 g sur 35 secondes maintiennent le lit en mouvement.",
+      "teach2": "La torréfaction change la résistance : avec un café plus sombre, moulez un peu plus fin pour tenir 2:30."
+    },
+    "kasuya-neo": {
+      "title": "NEO de Kasuya : dix versements de 30 g",
+      "summary": "Vingt grammes pour 300 g à 95–96 °C, très grossier, en dix versements de 30 g toutes les 15 secondes.",
+      "version": "TETSU KASUYA · 2026",
+      "grind": "40–45 crans (Comandante C40), très grossier",
+      "equipment": "HARIO NEO ; la source indique qu’un V60 convient aussi",
+      "notes": "La source ne donne pas de durée totale, seulement la cadence de dix versements toutes les 15 secondes. Elle conseille le NEO pour extraire régulièrement de petits ajouts, mais accepte un V60 ; torréfaction claire recommandée.",
+      "finish": "Aucune heure de fin ; seule consigne : que l’eau ne stagne pas dans le filtre.",
+      "overview": "Un contre-pied assumé à la mode des recettes courtes et peu arrosées : très grossier et chaud, puis dix petits ajouts construisent le sucré et la texture. Le plus contre-intuitif est la mouture : 40–45 crans, l’extraction venant du rythme et non des fines.",
+      "bestFor": "Pour travailler le rythme du versement plutôt que le volume",
+      "s00": "Commencez par 30 g à 0:00, en laissant l’eau traverser plutôt que stagner.",
+      "pour": "Encore 30 g, 15 secondes après le versement précédent.",
+      "s09": "Le dixième et dernier versement de 30 g, jusqu’à 300 g.",
+      "teach1": "Mouture très grossière et 95–96 °C : c’est ce couple contre-intuitif qui porte la recette.",
+      "teach2": "Dix ajouts de 30 g toutes les 15 secondes ; l’essentiel est que l’eau traverse le lit au lieu d’y rester.",
+      "teach3": "Kasuya conseille le NEO parce qu’il extrait régulièrement de petits ajouts, mais affirme qu’un V60 convient tout autant."
     }
   },
   "waterQuality": "Profil de l’eau",
@@ -971,5 +1021,9 @@
   "showCelsius": "Afficher les températures en Celsius",
   "showFahrenheit": "Afficher les températures en Fahrenheit",
   "followSourceUnit": "Unités d'origine des sources",
-  "convertedNote": "≈ signale une conversion d'affichage ; la source indique {value}."
+  "convertedNote": "≈ signale une conversion d'affichage ; la source indique {value}.",
+  "videoStep": "Vidéo {time}",
+  "teachingTitle": "Le mot de l’auteur",
+  "teachingStep": "Étape {number}",
+  "evidenceLabel": "Texte d’origine"
 }

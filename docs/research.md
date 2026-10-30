@@ -313,3 +313,41 @@ Five hand grinders were added, taking the equipment catalogue to 69 records. Tim
 - **MAVO Wizard Z Pro** — the domestic 什么值得买 cross-review and the official Tmall store are the sources. The record stores the 43 mm three-stage volcanic burr, three P5 bearings and external 100-click stepless adjustment. It does not copy the 30 g capacity or 60-click scheme from the non-Pro Wizard Z, because the Pro sources do not publish those values. Its image is the 什么值得买 comparison photograph, credited to that article.
 
 None of the three records links to a recipe: the existing recipe sources do not name these grinders. The shared `equipmentValues` layer covers the new burr and adjustment phrases in all nine locales.
+
+## Video-sourced recipes — policy and first batch (checked 2026-10-31)
+
+Page sources for the obvious champions were exhausted, so the library now accepts video as a
+primary source under three conditions: the numbers must sit in the **author's own text layer**
+(description, official transcription, or their own page); the record must carry the verbatim
+sentence in `source.evidence`; and a per-step `videoAt` may only be filled where the creator
+published a matching chapter marker — never guessed from watching. Screen-only numbers remain
+unpublished: YouTube's caption endpoints return empty payloads from this environment and
+downloading video to read frames was ruled out.
+
+The queue lives in `docs/video-backlog.md`, with every checked-and-excluded person recorded
+there so the same ground is not re-covered. Two facts from that pass are worth keeping: most
+non-English champions publish their numbers on screen only (Matteo D'Ottavio's descriptions are
+affiliate boilerplate; Chad Wang, Du Jianing, Bayu Prawiro and Hsu Shih Yuan have no
+self-authored numeric text), and several widely-shared "champion recipes" circulate only as
+third-party restatements — Kyle Rowsell's V60 championship recipe is a re-statement of Chad
+Wang's routine, not a source.
+
+First batch, three records:
+
+| Record | Source | Decisions |
+| --- | --- | --- |
+| `rolf-v60-113` | [Coffee with April #113](https://www.youtube.com/watch?v=otk2jFRCcmE), 2020-04-10 | 13 g / 200 g / 90 °C / four 50 g pours at 0:00·0:30·1:00·1:30 / 2:30. The video description and the creator's chapters agree, so every step carries `videoAt` 0/30/60/90 and the finish 150. Paper brand, coffee and pour path are not stated. |
+| `rolf-origami-117` | [#117](https://www.youtube.com/watch?v=WMPmZ9oXV6E), 2020-05-01 | 20 g / 300 g / 92 °C / 100 g circle then 200 g continuous from 0:45 to 1:20 / 2:30. The video pairs the Origami dripper with a **cone V60 02 paper**, not Origami's wave filter; that is stored as the paper. Chapters give step timestamps 0/45/150. |
+| `kasuya-neo` | [最新式ドリップレシピ](https://www.youtube.com/watch?v=k0nsShguOsU), 2026-05-29 | 20 g / 300 g / 1:15 / 95–96 °C (range) / 40–45 clicks / ten 30 g pours every 15 s / HARIO NEO. **No total time is published** — only the cadence — so `duration` stays null. Chapter markers are section-level, not per-pour, so only the first step carries `videoAt` (the demo start) rather than inventing nine timestamps. |
+
+Model additions this pass:
+
+- `videoAt` on a step, rendered as a `?t=` deep link beside the brew time; validation rejects it
+  without a video source and rejects timestamps that run backwards.
+- `doseMax` and `waterMax` alongside the existing `temperatureMax`, so Kasuya's 95–96 °C and the
+  ranged recipes queued next are stored as published instead of collapsed.
+- `teaching` — three to six bullets per recipe, rewritten in nine locales and optionally linked
+  to the step they govern. The verbatim original stays in `source.evidence`, so the block is our
+  summary while the evidence is the author's own words.
+- Each video page was archived and the snapshot verified to contain the recipe numbers before
+  `source.archive` was recorded.

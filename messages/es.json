@@ -726,6 +726,56 @@
       "finish": "Detener la extracción a 36 g.",
       "overview": "Una base de café muy citada, de la guía de espresso de Counter Culture.",
       "bestFor": "Un primer punto de referencia cuando un café nuevo no tiene receta publicada."
+    },
+    "rolf-v60": {
+      "title": "V60 de 13 g de April en cuatro vertidos",
+      "summary": "Trece gramos con 200 g a 90 °C, cuatro vertidos de 50 g cada 30 segundos, listo en 2:30.",
+      "version": "Coffee with April #113",
+      "grind": "Relativamente grueso (Comandante)",
+      "equipment": "HARIO V60 02; no se indica la marca del filtro",
+      "notes": "La descripción solo da 90 °C, 13 g para 200 g y los cuatro tiempos. No indica papel, café ni técnica de vertido; el tamaño 02 es la base y el vídeo dice que se puede escalar.",
+      "finish": "La fuente da 2:30 como tiempo total; deja drenar.",
+      "overview": "Cuatro vertidos idénticos de 50 g dejan la molienda como única variable. Con 13 g la cama es fina, así que el molido relativamente grueso mantiene el flujo.",
+      "bestFor": "Un V60 pequeño y repetible que puedes cronometrar con una mano",
+      "s00": "Vierte 50 g para la preinfusión a las 0:00.",
+      "s01": "A las 0:30 vierte otros 50 g.",
+      "s02": "A las 1:00 vierte 50 g.",
+      "s03": "A las 1:30 vierte los últimos 50 g hasta 200 g.",
+      "teach1": "El molido grueso es intencional: con 13 g la cama es fina y un molido más fino la frenaría.",
+      "teach2": "Cada vertido es el mismo 50 g con el mismo intervalo de 30 segundos: sin escalada ni pulsos.",
+      "teach3": "2:30 es el tiempo total de la fuente, no una fecha límite de drenaje."
+    },
+    "rolf-origami": {
+      "title": "Origami de April con papel V60",
+      "summary": "Veinte gramos con 300 g a 92 °C: un círculo de 100 g y luego 200 g continuos de 0:45 a 1:20.",
+      "version": "Coffee with April #117",
+      "grind": "Medio/grueso (Comandante)",
+      "equipment": "Dripper ORIGAMI con papel cónico V60 02",
+      "notes": "El vídeo usa a propósito un papel cónico V60 02 en vez del Wave de Origami. Rolf advierte que el tueste cambia la resistencia de la cama: un tueste más oscuro puede pedir molienda algo más fina.",
+      "finish": "La fuente da 2:30 como tiempo total.",
+      "overview": "Solo dos vertidos: un círculo rápido de 100 g abre la cama y 35 segundos de vertido continuo la mantienen en movimiento. El papel cónico en un dripper de fondo plano fluye más lento que un Wave.",
+      "bestFor": "Quien tiene un Origami y solo papeles V60",
+      "s00": "Vierte 100 g en círculos a las 0:00.",
+      "s01": "De 0:45 a 1:20 vierte 200 g continuos en círculos hasta 300 g.",
+      "teach1": "El segundo vertido es continuo, no a pulsos: 200 g en 35 segundos mantienen la cama en movimiento.",
+      "teach2": "El tueste cambia la resistencia: con un café más oscuro que el suyo, muele algo más fino para mantener 2:30."
+    },
+    "kasuya-neo": {
+      "title": "NEO de Kasuya: diez vertidos de 30 g",
+      "summary": "Veinte gramos con 300 g a 95–96 °C, muy grueso, en diez vertidos de 30 g cada 15 segundos.",
+      "version": "TETSU KASUYA · 2026",
+      "grind": "40–45 clics (Comandante C40), muy grueso",
+      "equipment": "HARIO NEO; la fuente dice que un V60 también sirve",
+      "notes": "La fuente no da tiempo total, solo la cadencia de diez vertidos cada 15 segundos. Recomienda el NEO por su extracción uniforme de pequeños añadidos, pero acepta un V60; sugiere tueste claro.",
+      "finish": "No hay hora de fin; solo pide que el agua no se quede en el dripper.",
+      "overview": "Un contrapunto deliberado a la moda de recetas cortas y con poco vertido: muy grueso y caliente, y diez añadidos pequeños construyen dulzor y textura. Lo contraintuitivo es la molienda: 40–45 clics, extrayendo por ritmo y no por finos.",
+      "bestFor": "Quien practica el ritmo del vertido más que el volumen",
+      "s00": "Empieza con 30 g a las 0:00, dejando que pase en vez de acumularse.",
+      "pour": "Otros 30 g, 15 segundos después del vertido anterior.",
+      "s09": "El décimo y último vertido de 30 g, hasta 300 g.",
+      "teach1": "Molienda muy gruesa más 95–96 °C es el par contraintuitivo sobre el que descansa la receta.",
+      "teach2": "Diez añadidos de 30 g cada 15 segundos; lo importante es que el agua atraviese la cama y no se quede encima.",
+      "teach3": "Kasuya recomienda el NEO porque extrae uniformemente pequeños añadidos, pero dice que un V60 es igual de válido."
     }
   },
   "waterQuality": "Perfil del agua",
@@ -971,5 +1021,9 @@
   "showCelsius": "Mostrar temperaturas en Celsius",
   "showFahrenheit": "Mostrar temperaturas en Fahrenheit",
   "followSourceUnit": "Se usa la unidad de cada fuente",
-  "convertedNote": "≈ indica una conversión de visualización; la fuente publica {value}."
+  "convertedNote": "≈ indica una conversión de visualización; la fuente publica {value}.",
+  "videoStep": "Vídeo {time}",
+  "teachingTitle": "Del autor",
+  "teachingStep": "Paso {number}",
+  "evidenceLabel": "Texto original"
 }

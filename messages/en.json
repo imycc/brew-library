@@ -726,6 +726,56 @@
       "finish": "Stop the shot at 36 g.",
       "overview": "A widely used café baseline from Counter Culture's espresso guide.",
       "bestFor": "A first reference point when a new coffee has no published recipe."
+    },
+    "rolf-v60": {
+      "title": "April’s 13 g V60 in four pours",
+      "summary": "Thirteen grams to 200 g at 90 °C, four equal 50 g pours 30 seconds apart, done at 2:30.",
+      "version": "Coffee with April #113",
+      "grind": "Relatively coarse (Comandante)",
+      "equipment": "HARIO V60 02; the paper brand is not named",
+      "notes": "The description gives only 90 °C, 13 g to 200 g and the four times. Paper brand, coffee and pouring technique are not stated; the 02 size is the stated basis and the video says it scales to other sizes.",
+      "finish": "The source gives 2:30 as the total brew time; let it draw down.",
+      "overview": "Four identical 50 g pours leave grind as the only variable. Rolf keeps the dose at 13 g, which makes a shallow bed, so the relatively coarse grind is what keeps the flow even.",
+      "bestFor": "A small, repeatable V60 you can time one-handed",
+      "s00": "Pour 50 g for the bloom at 0:00.",
+      "s01": "At 0:30 pour another 50 g.",
+      "s02": "At 1:00 pour 50 g.",
+      "s03": "At 1:30 pour the last 50 g, reaching 200 g.",
+      "teach1": "The coarse grind is deliberate: a 13 g bed is shallow, and a finer grind would stall it.",
+      "teach2": "Every pour is the same 50 g at the same 30-second spacing — no ramp, no pulses.",
+      "teach3": "2:30 is the source’s total brew time, not a drawdown deadline."
+    },
+    "rolf-origami": {
+      "title": "April’s Origami with a V60 paper",
+      "summary": "Twenty grams to 300 g at 92 °C: a 100 g circle, then 200 g poured continuously from 0:45 to 1:20.",
+      "version": "Coffee with April #117",
+      "grind": "Medium/coarse (Comandante)",
+      "equipment": "ORIGAMI Dripper with a cone-shaped V60 02 paper",
+      "notes": "The video deliberately pairs the Origami dripper with a cone V60 02 paper rather than Origami’s own wave filter. Rolf also warns that roast degree changes bed resistance, so a darker roast than their own style may need a slightly finer grind.",
+      "finish": "The source gives 2:30 as the total brew time.",
+      "overview": "Two pours only: a quick 100 g circle opens the bed, then 35 seconds of continuous pouring keeps it moving. The cone paper in a flat-bed dripper flows slower than a wave filter, which is the interesting part.",
+      "bestFor": "Anyone with an Origami and only V60 papers",
+      "s00": "Pour 100 g in circles at 0:00.",
+      "s01": "From 0:45 to 1:20 pour 200 g continuously in circles, reaching 300 g.",
+      "teach1": "The second pour is continuous, not pulsed: 200 g across 35 seconds keeps the bed moving.",
+      "teach2": "Roast changes bed resistance: with a darker coffee than theirs, grind slightly finer to keep the 2:30."
+    },
+    "kasuya-neo": {
+      "title": "Kasuya’s NEO: ten pours of 30 grams",
+      "summary": "Twenty grams to 300 g at 95–96 °C, extra coarse, in ten 30 g pours 15 seconds apart.",
+      "version": "TETSU KASUYA · 2026",
+      "grind": "40–45 clicks (Comandante C40), extra coarse",
+      "equipment": "HARIO NEO; the source says a V60 also works",
+      "notes": "The source gives no total brew time, only the ten-pour, 15-second cadence. It recommends the NEO because it extracts small additions evenly, but says a V60 is fine; a light roast is recommended.",
+      "finish": "No finish time is published; the only requirement is that the water never sits in the dripper.",
+      "overview": "A deliberate counterpoint to the short, low-pour trend: extra-coarse and hot, then ten small additions build sweetness and texture. The counter-intuitive part is the grind — 40–45 clicks, taking extraction from rhythm rather than fines.",
+      "bestFor": "Brewers practising pour rhythm rather than pour volume",
+      "s00": "Start with 30 g at 0:00, letting it pass through rather than pool on the bed.",
+      "pour": "Another 30 g, 15 seconds after the previous pour.",
+      "s09": "The tenth and final 30 g, reaching 300 g.",
+      "teach1": "Extra-coarse grind plus 95–96 °C is the counter-intuitive pair the whole recipe rests on.",
+      "teach2": "Ten additions of 30 g every 15 seconds; the point is that the water passes through the bed rather than sitting on it.",
+      "teach3": "Kasuya recommends the NEO because it extracts small additions evenly, but says a V60 is equally acceptable."
     }
   },
   "waterQuality": "Water profile",
@@ -971,5 +1021,9 @@
   "showCelsius": "Show temperatures in Celsius",
   "showFahrenheit": "Show temperatures in Fahrenheit",
   "followSourceUnit": "Following each source's own unit",
-  "convertedNote": "≈ marks a display conversion; the source published {value}."
+  "convertedNote": "≈ marks a display conversion; the source published {value}.",
+  "videoStep": "Video {time}",
+  "teachingTitle": "From the author",
+  "teachingStep": "Step {number}",
+  "evidenceLabel": "Source wording"
 }

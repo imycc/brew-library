@@ -1,4 +1,4 @@
-import {BASE,SITE,time,recipes,isEspresso,isPourOver,basketText,temperatureLabel,type Recipe,iceAmountText} from './recipes';
+import {BASE,SITE,time,recipes,isEspresso,isPourOver,basketText,temperatureLabel,type Recipe,iceAmountText,doseText,waterText} from './recipes';
 import {equipment,type Equipment} from './equipment';
 import {equipmentEditorial,equipmentExperience} from './editorial';
 import {brewTimeText,recipeFaq,temperatureText,type Translator} from './faq';
@@ -144,10 +144,10 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
     recipeCuisine:t('schemaRecipeCuisine'),
     keywords,
     recipeIngredient:[
-      `${recipe.dose} g ${t('schemaCoffee')}`,
+      `${doseText(recipe)} g ${t('schemaCoffee')}`,
       // An espresso source that states its water recipe keeps it; a yield is never
       // rewritten into a water amount.
-      ...recipe.water?[`${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${temperatureLabel(recipe)})`:''}`]:[],
+      ...recipe.water?[`${waterText(recipe)} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${temperatureLabel(recipe)})`:''}`]:[],
       ...recipe.ice?[`${iceAmountText(recipe)} ${t('ice')}`]:[]
     ],
     ...recipe.steps.length?{recipeInstructions:recipe.steps.map((step,index)=>({

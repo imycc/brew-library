@@ -726,6 +726,56 @@
       "finish": "Parar a extração em 36 g.",
       "overview": "Uma base de café muito citada, do guia de espresso da Counter Culture.",
       "bestFor": "Um primeiro ponto de referência quando um café novo não tem receita publicada."
+    },
+    "rolf-v60": {
+      "title": "V60 de 13 g da April em quatro despejos",
+      "summary": "Treze gramas para 200 g a 90 °C, quatro despejos de 50 g a cada 30 segundos, pronto em 2:30.",
+      "version": "Coffee with April #113",
+      "grind": "Relativamente grosso (Comandante)",
+      "equipment": "HARIO V60 02; a marca do papel não é informada",
+      "notes": "A descrição dá apenas 90 °C, 13 g para 200 g e os quatro horários. Papel, café e técnica não constam; o tamanho 02 é a base e o vídeo diz que dá para escalar.",
+      "finish": "A fonte dá 2:30 de tempo total; deixe drenar.",
+      "overview": "Quatro despejos iguais de 50 g deixam a moagem como única variável. Com 13 g a cama é rasa, então a moagem grossa mantém o fluxo constante.",
+      "bestFor": "Um V60 pequeno e repetível que dá para cronometrar com uma mão",
+      "s00": "Despeje 50 g para a pré-infusão às 0:00.",
+      "s01": "Às 0:30 despeje mais 50 g.",
+      "s02": "Às 1:00 despeje 50 g.",
+      "s03": "Às 1:30 despeje os 50 g finais, chegando a 200 g.",
+      "teach1": "A moagem grossa é intencional: com 13 g a cama é rasa e uma moagem fina travaria o fluxo.",
+      "teach2": "Cada despejo é o mesmo 50 g no mesmo intervalo de 30 segundos — sem rampa nem pulsos.",
+      "teach3": "2:30 é o tempo total da fonte, não um prazo de drenagem."
+    },
+    "rolf-origami": {
+      "title": "Origami da April com papel V60",
+      "summary": "Vinte gramas para 300 g a 92 °C: um círculo de 100 g e depois 200 g contínuos de 0:45 a 1:20.",
+      "version": "Coffee with April #117",
+      "grind": "Média/grossa (Comandante)",
+      "equipment": "Dripper ORIGAMI com papel cônico V60 02",
+      "notes": "O vídeo usa de propósito papel cônico V60 02 em vez do Wave da Origami. Rolf avisa que o grau de torra muda a resistência da cama: torra mais escura pode pedir moagem um pouco mais fina.",
+      "finish": "A fonte dá 2:30 de tempo total.",
+      "overview": "Só dois despejos: um círculo rápido de 100 g abre a cama e 35 segundos de despejo contínuo a mantêm em movimento. Papel cônico em dripper de fundo plano flui mais devagar que um Wave.",
+      "bestFor": "Quem tem Origami mas só papel V60",
+      "s00": "Despeje 100 g em círculos às 0:00.",
+      "s01": "De 0:45 a 1:20 despeje 200 g contínuos em círculos até 300 g.",
+      "teach1": "O segundo despejo é contínuo, não em pulsos: 200 g em 35 segundos mantêm a cama em movimento.",
+      "teach2": "A torra muda a resistência: com café mais escuro que o deles, moa um pouco mais fino para manter 2:30."
+    },
+    "kasuya-neo": {
+      "title": "NEO do Kasuya: dez despejos de 30 g",
+      "summary": "Vinte gramas para 300 g a 95–96 °C, bem grosso, em dez despejos de 30 g a cada 15 segundos.",
+      "version": "TETSU KASUYA · 2026",
+      "grind": "40–45 cliques (Comandante C40), bem grosso",
+      "equipment": "HARIO NEO; a fonte diz que um V60 também serve",
+      "notes": "A fonte não dá tempo total, só a cadência de dez despejos a cada 15 segundos. Recomenda o NEO por extrair pequenas adições de forma uniforme, mas aceita V60; torra clara é sugerida.",
+      "finish": "Sem horário final; pede apenas que a água não fique parada no dripper.",
+      "overview": "Um contraponto deliberado à moda de receitas curtas e com pouco despejo: bem grosso e quente, e dez adições pequenas constroem doçura e textura. O contraintuitivo é a moagem: 40–45 cliques, extraindo pelo ritmo e não pelos finos.",
+      "bestFor": "Para quem treina o ritmo do despejo, não o volume",
+      "s00": "Comece com 30 g às 0:00, deixando passar em vez de acumular.",
+      "pour": "Mais 30 g, 15 segundos após o despejo anterior.",
+      "s09": "O décimo e último despejo de 30 g, chegando a 300 g.",
+      "teach1": "Moagem bem grossa mais 95–96 °C é o par contraintuitivo em que a receita se apoia.",
+      "teach2": "Dez adições de 30 g a cada 15 segundos; o ponto é a água atravessar a cama em vez de ficar em cima.",
+      "teach3": "Kasuya recomenda o NEO por extrair pequenas adições de forma uniforme, mas diz que um V60 serve igualmente."
     }
   },
   "waterQuality": "Perfil da água",
@@ -971,5 +1021,9 @@
   "showCelsius": "Mostrar temperaturas em Celsius",
   "showFahrenheit": "Mostrar temperaturas em Fahrenheit",
   "followSourceUnit": "Usando a unidade de cada fonte",
-  "convertedNote": "≈ indica conversão de exibição; a fonte publica {value}."
+  "convertedNote": "≈ indica conversão de exibição; a fonte publica {value}.",
+  "videoStep": "Vídeo {time}",
+  "teachingTitle": "Do autor",
+  "teachingStep": "Passo {number}",
+  "evidenceLabel": "Texto original"
 }
