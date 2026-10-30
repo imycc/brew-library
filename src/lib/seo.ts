@@ -56,7 +56,7 @@ export function siteGraph(locale:Locale,t:Translator):JsonLdGraph{
       '@type':'Organization',
       '@id':organizationId(),
       name:t('brand'),
-      url:pageUrl('zh-Hant'),
+      url:pageUrl('en'),
       slogan:t('tagline'),
       description:t('siteInfo.aboutIntro'),
       knowsAbout:[t('schemaRecipeCategory'),t('equipmentTitle')],

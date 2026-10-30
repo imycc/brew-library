@@ -954,5 +954,10 @@
   },
   "noStepsPublished": "출처에는 수치만 있고 단계별 과정은 없습니다.",
   "machineUnspecified": "출처에 머신 표기 없음",
-  "faqEspressoDetails": "출처에 있는 추출 정보: {details}."
+  "faqEspressoDetails": "출처에 있는 추출 정보: {details}.",
+  "temperatureUnitLabel": "온도 단위",
+  "showCelsius": "온도를 섭씨로 표시",
+  "showFahrenheit": "온도를 화씨로 표시",
+  "followSourceUnit": "출처 단위로 표시 중",
+  "convertedNote": "≈ 는 표시용 환산입니다. 출처 표기는 {value}."
 }

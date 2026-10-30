@@ -27,7 +27,7 @@ export async function pageMetadata(locale:Locale,suffix='',recipeId?:string):Pro
  const url=`${SITE}${BASE}/${locale}/${suffix}`;
  const imageName=recipe?.image?`og-${recipe.image}-1200x630.jpg`:'og-default-1200x630.jpg';
  const image={url:`${SITE}${BASE}/images/${imageName}`,width:1200,height:630,alt:`${t('brand')} · ${t('tagline')}`};
- const languages=Object.fromEntries([...locales.map(item=>[item,`${SITE}${BASE}/${item}/${suffix}`]),['x-default',`${SITE}${BASE}/zh-Hant/${suffix}`]]);
+ const languages=Object.fromEntries([...locales.map(item=>[item,`${SITE}${BASE}/${item}/${suffix}`]),['x-default',`${SITE}${BASE}/en/${suffix}`]]);
  const alternateLocale=locales.filter(item=>item!==locale).map(item=>ogLocales[item]);
  const robots:Metadata['robots']={index:true,follow:true,'max-image-preview':'large','max-snippet':-1,'max-video-preview':-1};
  const keywords=recipe?[

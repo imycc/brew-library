@@ -954,5 +954,10 @@
   },
   "noStepsPublished": "出典には数値のみが記載され、手順の記載はありません。",
   "machineUnspecified": "出典にマシンの記載なし",
-  "faqEspressoDetails": "出典にある抽出条件: {details}。"
+  "faqEspressoDetails": "出典にある抽出条件: {details}。",
+  "temperatureUnitLabel": "温度の単位",
+  "showCelsius": "温度を摂氏で表示",
+  "showFahrenheit": "温度を華氏で表示",
+  "followSourceUnit": "出典の単位のまま表示",
+  "convertedNote": "≈ は表示上の換算です。出典の記載は {value}。"
 }

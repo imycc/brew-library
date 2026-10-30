@@ -219,3 +219,30 @@ test('espresso detail keeps the published Fahrenheit range and admits missing st
  await expect(page.locator('.quick-answer')).toContainText('93.5°C');
  await expect(page.locator('[data-recipe-editorial]')).toContainText('Iris Estate Enigma');
 });
+
+test('the bare site URL follows the browser language and falls back to English',async({browser})=>{
+ const origin=process.env.SITE_URL||'http://127.0.0.1:4173';
+ for(const [locale,expected] of [['de-DE','de'],['zh-TW','zh-Hant'],['pt-PT','pt-BR'],['sv-SE','en']] as const){
+  const context=await browser.newContext({locale});
+  const page=await context.newPage();
+  await page.goto(`${origin}${base}/?ids=kasuya-46`);
+  await expect(page).toHaveURL(new RegExp(`${base}/${expected}/\\?ids=kasuya-46$`));
+  await context.close();
+ }
+});
+
+test('one click converts temperatures for display and never rewrites the source value',async({page})=>{
+ await page.goto(`${base}/en/recipes/camber-espresso/`);
+ await expect(page.locator('.quick-answer')).toContainText('202–204°F');
+ await page.getByRole('button',{name:'Show temperatures in Celsius'}).click();
+ await expect(page.locator('.quick-answer')).toContainText('≈ 94.4–95.6°C');
+ await expect(page.locator('.parameters')).toContainText('≈ 94.4–95.6°C');
+ await expect(page.locator('[data-converted-temp]')).toContainText('202–204°F');
+ const jsonLd=(await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ');
+ expect(jsonLd).toContain('202–204°F');
+ expect(jsonLd).not.toContain('94.4');
+ await page.reload();
+ await expect(page.locator('.quick-answer')).toContainText('≈ 94.4–95.6°C');
+ await page.getByRole('button',{name:'Show temperatures in Celsius'}).click();
+ await expect(page.locator('.quick-answer')).toContainText('202–204°F');
+});

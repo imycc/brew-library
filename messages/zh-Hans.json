@@ -954,5 +954,10 @@
   },
   "noStepsPublished": "来源只提供这些参数，没有分步骤的流程。",
   "machineUnspecified": "来源未标明咖啡机",
-  "faqEspressoDetails": "来源另有这些萃取资料：{details}。"
+  "faqEspressoDetails": "来源另有这些萃取资料：{details}。",
+  "temperatureUnitLabel": "温度单位",
+  "showCelsius": "以摄氏显示温度",
+  "showFahrenheit": "以华氏显示温度",
+  "followSourceUnit": "当前按来源单位显示",
+  "convertedNote": "「≈」表示显示换算；来源原文为 {value}。"
 }

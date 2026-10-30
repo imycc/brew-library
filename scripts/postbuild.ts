@@ -26,12 +26,12 @@ const pages:{suffix:string;lastmod?:string}[]=[
 
 await mkdir('out',{recursive:true});
 await writeFile('out/.nojekyll','');
-await writeFile('out/index.html',`<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#fcfaf7"><title>沖煮配方庫</title><meta http-equiv="refresh" content="0;url=./zh-Hant/"><link rel="canonical" href="${page('zh-Hant')}"></head><body><a href="./zh-Hant/">進入沖煮配方庫</a></body></html>`);
+await writeFile('out/index.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#fcfaf7"><title>Brew Library</title><link rel="canonical" href="${page('en')}"><noscript><meta http-equiv="refresh" content="0;url=./en/"></noscript></head><body><script>(function(){var tags=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']);function pick(list){for(var i=0;i<list.length;i++){var tag=String(list[i]||'').toLowerCase();if(!tag)continue;if(tag==='zh-tw'||tag==='zh-hk'||tag==='zh-mo'||tag.indexOf('zh-hant')===0)return 'zh-Hant';if(tag.indexOf('zh')===0)return 'zh-Hans';if(tag.indexOf('pt')===0)return 'pt-BR';var base=tag.split('-')[0];if(base==='en'||base==='ja'||base==='ko'||base==='es'||base==='fr'||base==='de')return base;}return 'en';}location.replace('${BASE}/'+pick(tags)+'/'+location.search+location.hash);})();</script><p><a href="./en/">Continue to Brew Library</a></p></body></html>`);
 
 const escapeXml=(value:string)=>value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
 const alternates=(suffix:string)=>[
   ...locales.map(locale=>`<xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(page(locale,suffix))}"/>`),
-  `<xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(page('zh-Hant',suffix))}"/>`
+  `<xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(page('en',suffix))}"/>`
 ].join('');
 const urls=locales.flatMap(locale=>pages.map(entry=>[
   `<url><loc>${escapeXml(page(locale,entry.suffix))}</loc>`,

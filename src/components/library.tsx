@@ -6,6 +6,7 @@ import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
 import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode} from 'react';
 import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,filterKeys,time,duration,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,iceAmountText,isEspresso,isPourOver,methods,yieldText,pressureText,preInfusionText,basketText,puckPrepKeys,temperatureLabel,type Recipe} from '@/lib/recipes';
+import {formatTemperature,temperatureUnits,type TemperatureUnit} from '@/lib/temperature';
 import {recipeEditorial} from '@/lib/editorial';
 import {recipeFaq} from '@/lib/faq';
 import {OfficialSourceImage} from '@/components/source-image';
@@ -13,11 +14,17 @@ import {locales,localeNames,type Locale} from '@/i18n/locales';
 
 type UrlContextType={params:URLSearchParams;setParams:(changes:Record<string,string|null>)=>void;ids:string[];toggle:(id:string)=>void;notice:string};
 const UrlContext=createContext<UrlContextType|null>(null);
+type TemperatureContextType={unit:TemperatureUnit|null;setUnit:(unit:TemperatureUnit|null)=>void};
+const TemperatureContext=createContext<TemperatureContextType|null>(null);
+function useTemperature(){const value=useContext(TemperatureContext);if(!value)throw new Error('Missing temperature provider');return value;}
 function useLibrary(){const v=useContext(UrlContext);if(!v)throw new Error('Missing library provider');return v;}
 export function LibraryProvider({children}:{children:ReactNode}){
   const t=useTranslations();
   const [params,setState]=useState(()=>new URLSearchParams());
   const [notice,setNotice]=useState('');
+  const [unit,setUnitState]=useState<TemperatureUnit|null>(null);
+  useEffect(()=>{const stored=window.localStorage.getItem('brew-temperature-unit');if(stored==='C'||stored==='F')setUnitState(stored);},[]);
+  const setUnit=useCallback((next:TemperatureUnit|null)=>{setUnitState(next);try{next?window.localStorage.setItem('brew-temperature-unit',next):window.localStorage.removeItem('brew-temperature-unit');}catch{/* storage can be unavailable; the toggle still works for this page */}} ,[]);
   useEffect(()=>{
     const read=()=>setState(new URLSearchParams(window.location.search));
     read();window.addEventListener('popstate',read);
@@ -37,12 +44,19 @@ export function LibraryProvider({children}:{children:ReactNode}){
     if(result.mismatch){setNotice(t('compareMismatch'));return;}
     setNotice('');setParams({ids:result.ids.join(',')});
   };
-  return <UrlContext.Provider value={{params,setParams,ids,toggle,notice}}>{children}<div className="sr-only" role="status" aria-live="polite">{notice}</div></UrlContext.Provider>;
+  return <UrlContext.Provider value={{params,setParams,ids,toggle,notice}}><TemperatureContext.Provider value={{unit,setUnit}}>{children}<div className="sr-only" role="status" aria-live="polite">{notice}</div></TemperatureContext.Provider></UrlContext.Provider>;
 }
 function useHref(){const locale=useLocale();const {params}=useLibrary();return (suffix='',extra?:Record<string,string>)=>{
   const query=new URLSearchParams(params);if(extra)for(const [k,v]of Object.entries(extra))query.set(k,v);
   return `/${locale}/${suffix}${query.size?`?${query}`:''}`;
 };}
+function TemperatureSwitcher(){
+  const t=useTranslations();const {unit,setUnit}=useTemperature();
+  return <div className="temperature-control" role="group" aria-label={t('temperatureUnitLabel')}>
+    {temperatureUnits.map(value=><button key={value} type="button" className={unit===value?'is-active':''} aria-pressed={unit===value} aria-label={t(value==='C'?'showCelsius':'showFahrenheit')} title={t(value==='C'?'showCelsius':'showFahrenheit')} onClick={()=>setUnit(unit===value?null:value)}>°{value}</button>)}
+    <span className="sr-only">{unit?t('showCelsius'):t('followSourceUnit')}</span>
+  </div>;
+}
 function LanguageSwitcher(){
   const t=useTranslations();const locale=useLocale() as Locale;const {params}=useLibrary();
   const [open,setOpen]=useState(false);const root=useRef<HTMLDivElement>(null);const trigger=useRef<HTMLButtonElement>(null);
@@ -65,12 +79,13 @@ export function Header(){
     <nav className={open?'main-nav open':'main-nav'} aria-label={t('menu')}>
       {[['recipesNav',''],['equipmentNav','equipment/'],['authorsNav','authors/'],['compareNav','compare/'],['sourcesNav','sources/']].map(([label,path])=>{const current=path?pathname.includes(`/${path.replace(/\/$/,'')}`):!['/equipment','/authors','/compare','/sources'].some(s=>pathname.includes(s));return <Link key={label} href={href(path)} aria-current={current?'page':undefined} onClick={()=>setOpen(false)}>{t(label)}</Link>;})}
     </nav>
+    <TemperatureSwitcher/>
     <LanguageSwitcher/>
     <button className="icon-button mobile-menu" aria-label={open?t('close'):t('menu')} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X size={22}/>:<MenuIcon size={22}/>}</button>
   </header></>;
 }
 export function Footer(){const t=useTranslations();const href=useHref();return <footer className="site-footer"><div><strong>{t('brand')}</strong></div><div className="footer-links"><nav className="footer-info" aria-label={t('siteInfo.nav')}><Link href={href('about/')}>{t('siteInfo.aboutNav')}</Link><Link href={href('terms/')}>{t('siteInfo.termsNav')}</Link><Link href={href('privacy/')}>{t('siteInfo.privacyNav')}</Link><Link href={href('sources/')}>{t('sourcesNav')}</Link></nav><a href="https://github.com/imycc/brew-library" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14}/></a></div></footer>;}
-function temperature(r:Recipe,t:ReturnType<typeof useTranslations>){return r.temperature?temperatureLabel(r):t(r.temperatureMode==='boiling'?'boiling':'unknown');}
+function temperature(r:Recipe,t:ReturnType<typeof useTranslations>,unit:TemperatureUnit|null=null){return r.temperature?temperatureLabel(r,unit):t(r.temperatureMode==='boiling'?'boiling':'unknown');}
 function coffeeDetails(r:Recipe,t:ReturnType<typeof useTranslations>){
   const parts=[r.coffee?.name,r.coffee?.origin,r.coffee?.variety,r.coffee?.process?t(`processes.${r.coffee.process}`):null,r.coffee?.roast?t(`roasts.${r.coffee.roast}`):null].filter(Boolean).join(' · ');
   if(parts&&r.coffee?.asRecommendation)return t('recommendedCoffee',{value:parts});
@@ -99,10 +114,10 @@ function bedPrepText(r:Recipe,t:ReturnType<typeof useTranslations>){
 function iceAmount(r:Recipe){return iceAmountText(r);}
 function iceText(r:Recipe,t:ReturnType<typeof useTranslations>){return r.ice?`${iceAmount(r)} · ${t(`icePlacements.${r.ice.placement}`)}`:t('unknown');}
 function Parameters({recipe:r,compact=false}:{recipe:Recipe;compact?:boolean}){
-  const t=useTranslations();
+  const t=useTranslations();const {unit}=useTemperature();
   const values=isEspresso(r)
-    ? [{key:'dose',value:`${r.dose} g`,Icon:CoffeeBean},{key:'yield',value:yieldText(r)||t('unknown'),Icon:Drop},{key:'temperature',value:temperature(r,t),Icon:Thermometer},{key:'shotTime',value:r.duration?duration(r):t('unknown'),Icon:Clock}]
-    : [{key:'dose',value:`${r.dose} g`,Icon:CoffeeBean},{key:'water',value:`${r.water.amount} ${r.water.unit}`,Icon:Drop},...r.ice?[{key:'ice',value:iceAmount(r),Icon:Drop}]:[],{key:'temperature',value:temperature(r,t),Icon:Thermometer},{key:'brewTime',value:r.duration?duration(r):t('unknown'),Icon:Clock}];
+    ? [{key:'dose',value:`${r.dose} g`,Icon:CoffeeBean},{key:'yield',value:yieldText(r)||t('unknown'),Icon:Drop},{key:'temperature',value:temperature(r,t,unit),Icon:Thermometer},{key:'shotTime',value:r.duration?duration(r):t('unknown'),Icon:Clock}]
+    : [{key:'dose',value:`${r.dose} g`,Icon:CoffeeBean},{key:'water',value:`${r.water.amount} ${r.water.unit}`,Icon:Drop},...r.ice?[{key:'ice',value:iceAmount(r),Icon:Drop}]:[],{key:'temperature',value:temperature(r,t,unit),Icon:Thermometer},{key:'brewTime',value:r.duration?duration(r):t('unknown'),Icon:Clock}];
   return <dl className={compact?'parameters compact':'parameters'}>{values.map(({key,value,Icon})=><div key={key}><dt>{compact?<><Icon size={16} aria-hidden="true"/><span className="sr-only">{t(key)}</span></>:t(key)}</dt><dd title={value} data-long={value.length>10||undefined}>{value}</dd></div>)}</dl>;
 }
 export function CompareButton({recipe:r,compact=false}:{recipe:Recipe;compact?:boolean}){const {ids,toggle}=useLibrary();const t=useTranslations();const selected=ids.includes(r.id);return <button className={compact?`compare-compact${selected?' is-selected':''}`:`button button-secondary${selected?' is-selected':''}`} onClick={()=>toggle(r.id)} aria-pressed={selected} aria-label={`${selected?t('remove'):t('add')} · ${t(`recipes.${r.copy}.title`)}`}>{compact?<>{selected?<Check size={15}/>:<Plus size={15}/>}<span>{t('compareNav')}</span></>:<>{selected?<Check size={16}/>:null}{selected?t('remove'):t('add')}{selected?null:<Plus size={15}/>}</>}</button>;}
@@ -162,14 +177,14 @@ export function Home(){
 export function ComparisonTray(){const t=useTranslations();const {ids,toggle,notice}=useLibrary();const href=useHref();const pathname=usePathname();if(!ids.length||pathname.includes('/compare')||pathname.includes('/recipes/'))return null;
  return <aside className="compare-tray" aria-label={t('compareNav')}><strong>{t('selected',{count:ids.length})}</strong><div className="tray-items">{ids.map(id=>{const r=recipes.find(r=>r.id===id)!;return <div className="tray-item" key={id}><span className="tray-index">{String(recipes.indexOf(r)+1).padStart(2,'0')}</span><span>{t(`recipes.${r.copy}.title`)}</span><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(id)}><X size={16}/></button></div>;})}</div><Link className="button button-primary" href={href('compare/')}>{t('compareAction')}<ArrowRight size={17}/></Link>{notice?<p role="alert">{notice}</p>:null}</aside>;
 }
-function quickAnswer(r:Recipe,t:ReturnType<typeof useTranslations>){
-  if(isEspresso(r))return t('quickAnswerEspresso',{dose:r.dose,yield:yieldText(r)||t('unknown'),temperature:temperature(r,t),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown'),pressure:pressureText(r)||t('unknown')});
-  return t(r.ice?'quickAnswerIced':'quickAnswer',{dose:r.dose,water:r.water.amount,unit:r.water.unit,ice:r.ice?.amount||0,temperature:temperature(r,t),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown')});
+function quickAnswer(r:Recipe,t:ReturnType<typeof useTranslations>,unit:TemperatureUnit|null=null){
+  if(isEspresso(r))return t('quickAnswerEspresso',{dose:r.dose,yield:yieldText(r)||t('unknown'),temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown'),pressure:pressureText(r)||t('unknown')});
+  return t(r.ice?'quickAnswerIced':'quickAnswer',{dose:r.dose,water:r.water.amount,unit:r.water.unit,ice:r.ice?.amount||0,temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown')});
 }
 export function RecipeDetail({id}:{id:string}){
- const t=useTranslations();const locale=useLocale();const href=useHref();const r=recipes.find(r=>r.id===id)!;
+ const t=useTranslations();const locale=useLocale();const {unit}=useTemperature();const href=useHref();const r=recipes.find(r=>r.id===id)!;
  const editorial=recipeEditorial[r.id];
- const faq=recipeFaq(r,t);
+ const faq=recipeFaq(r,t,(value,source,max)=>formatTemperature(value,source,unit,max).text);
  const related=recipes.filter(item=>item.id!==r.id&&item.method===r.method&&(item.brewerId===r.brewerId||item.authorId===r.authorId)).slice(0,3);
  const pours=r.steps.filter(s=>['pour','bloom','pulses'].includes(s.action));
  const timeline=isEspresso(r)?r.steps.filter(s=>s.at!==null):pours;
@@ -180,7 +195,7 @@ export function RecipeDetail({id}:{id:string}){
  const missing=sourceFacts(r).filter(fact=>!fact.provided);
  const provided=sourceFacts(r).length-missing.length;
  return <main id="main" className="page detail-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link>
-   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)} · {t(isEspresso(r)?'methodEspresso':'methodPourover')}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><p className="quick-answer">{quickAnswer(r,t)}</p><OfficialSourceImage image={editorial.sourceImage} name={t(`recipes.${r.copy}.title`)} kind="recipe" className="recipe-detail-image"/><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong>{r.grindHedged?<em className="grind-hedged">{t('grindHedged')}</em>:null}</div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewerId==='unspecified'?t(isEspresso(r)?'machineUnspecified':'brewerUnspecified'):r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t(isEspresso(r)?'basket':'filterPaper')}</span><strong>{isEspresso(r)?basketText(r)||t('unknown'):paperDetails(r,t)}</strong></div></div></section>
+   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)} · {t(isEspresso(r)?'methodEspresso':'methodPourover')}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><p className="quick-answer">{quickAnswer(r,t,unit)}</p><OfficialSourceImage image={editorial.sourceImage} name={t(`recipes.${r.copy}.title`)} kind="recipe" className="recipe-detail-image"/><Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong>{r.grindHedged?<em className="grind-hedged">{t('grindHedged')}</em>:null}</div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewerId==='unspecified'?t(isEspresso(r)?'machineUnspecified':'brewerUnspecified'):r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t(isEspresso(r)?'basket':'filterPaper')}</span><strong>{isEspresso(r)?basketText(r)||t('unknown'):paperDetails(r,t)}</strong></div></div></section>
    <section className="recipe-editorial" data-recipe-editorial>
      <div className="recipe-editorial-intro"><p className="eyebrow">EDITORIAL NOTES</p><h2>{t('recipeOverview')}</h2><p>{t(`recipes.${r.copy}.overview`)}</p><div className="best-for"><span>{t('bestFor')}</span><strong>{t(`recipes.${r.copy}.bestFor`)}</strong></div></div>
      <div className="editorial-tradeoffs"><div><h3><span aria-hidden="true">＋</span>{t('strengths')}</h3><ul>{editorial.strengths.map(key=><li key={key}>{t(`editorialStrengths.${key}`)}</li>)}</ul></div><div><h3><span aria-hidden="true">−</span>{t('considerations')}</h3><ul>{editorial.considerations.map(key=><li key={key}>{t(`editorialConsiderations.${key}`)}</li>)}</ul></div></div>
@@ -198,12 +213,13 @@ export function RecipeDetail({id}:{id:string}){
      <div className="derived-facts">
        <p className="facts-score"><span>{t('sourceFacts')}</span><strong>{provided} / {sourceFacts(r).length}</strong></p>
        {missing.length?<p className="facts-missing">{t('missingFacts')} {missing.map(fact=>t(fact.label)).join(' · ')}.</p>:<p className="facts-missing">{t('missingNone')}</p>}
+       {unit&&r.temperature!==null&&unit!==r.temperatureUnit?<p className="facts-missing" data-converted-temp>{t('convertedNote',{value:temperatureLabel(r)})}</p>:null}
      </div>
    </section>
    <div className="detail-body"><div>
      {r.preparation.length||bedPrepText(r,t).length||r.doseGround?<section className="preparation"><h2>{t('preparation')}</h2>{r.preparation.map(key=><p key={key}>{t(key)}</p>)}{bedPrepText(r,t).length?<ul className="bed-prep">{bedPrepText(r,t).map(chip=><li key={chip}>{chip}</li>)}</ul>:null}{r.doseGround?<p className="muted">{t('groundMoreThanDosed',{ground:r.doseGround,dose:r.dose})}</p>:null}</section>:null}
      {timeline.length?<section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t(isEspresso(r)?'shotTimeline':'stepAmount')}</p></div><ol className="pour-timeline">{timeline.map((s,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{s.at===null?t('sequence'):time(s.at)}</strong><span>{s.amount===null?'—':`${s.amount} ${stepUnit(r,s)}`}{s.amount!==null&&additionTotal?<em className="timeline-share"> {percent.format(s.amount/additionTotal.amount)}</em>:null}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>:null}
-     <section className="steps-section"><h2>{t('steps')}</h2>{r.steps.length?<ol className="step-list">{r.steps.map((s,i)=><li key={i}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}</span></div><div className="step-meta">{s.temperature?<span>{t('temperature')} {s.temperature}°C</span>:null}{s.pressure!==undefined?<span>{t('pressure')} {s.pressure} bar</span>:null}{s.amount!==null?<span>+{s.amount} {stepUnit(r,s)}{s.derived?'*':null}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {s.cumulative} {stepUnit(r,s)}</span>:null}{stepFacets(s,t).map(facet=><span className="step-facet" key={facet}>{facet}</span>)}</div><p>{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(s.instruction||`instruction.${s.action}`)}</p></div></li>)}</ol>:<p className="muted" data-no-steps>{t('noStepsPublished')}</p>}{r.steps.some(s=>s.derived)?<p className="muted">* {t('stepDerived')}</p>:null}</section>
+     <section className="steps-section"><h2>{t('steps')}</h2>{r.steps.length?<ol className="step-list">{r.steps.map((s,i)=><li key={i}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}</span></div><div className="step-meta">{s.temperature?<span>{t('temperature')} {formatTemperature(s.temperature,r.temperatureUnit,unit).text}</span>:null}{s.pressure!==undefined?<span>{t('pressure')} {s.pressure} bar</span>:null}{s.amount!==null?<span>+{s.amount} {stepUnit(r,s)}{s.derived?'*':null}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {s.cumulative} {stepUnit(r,s)}</span>:null}{stepFacets(s,t).map(facet=><span className="step-facet" key={facet}>{facet}</span>)}</div><p>{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(s.instruction||`instruction.${s.action}`)}</p></div></li>)}</ol>:<p className="muted" data-no-steps>{t('noStepsPublished')}</p>}{r.steps.some(s=>s.derived)?<p className="muted">* {t('stepDerived')}</p>:null}</section>
      <section className="recipe-notes"><h2>{t('notes')}</h2><p>{t(`recipes.${r.copy}.notes`)}</p>{isPourOver(r)&&r.water.derived?<p>{t('derived')} {r.dose} × {new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(r.water.amount/r.dose)} = {r.water.amount} {r.water.unit}.</p>:null}</section>
      <section className="recipe-faq"><h2>{t('faqTitle')}</h2>{faq.map(item=><article key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}</section>
      {related.length?<section className="related-recipes"><h2>{t('relatedRecipes')}</h2><ul>{related.map(item=><li key={item.id}><Link href={href(`recipes/${item.id}/`)}><strong>{t(`recipes.${item.copy}.title`)}</strong><span>{item.author} · {brewerName(item,t)}</span><ArrowRight size={15}/></Link></li>)}</ul></section>:null}
@@ -218,11 +234,11 @@ export function RecipeDetail({id}:{id:string}){
  </main>;
 }
 export function ComparePage(){
- const t=useTranslations();const locale=useLocale();const {params,ids,toggle,setParams}=useLibrary();const href=useHref();const [shared,setShared]=useState(false);const [manual,setManual]=useState('');
+ const t=useTranslations();const locale=useLocale();const {unit}=useTemperature();const {params,ids,toggle,setParams}=useLibrary();const href=useHref();const [shared,setShared]=useState(false);const [manual,setManual]=useState('');
  const selected=ids.map(id=>recipes.find(r=>r.id===id)!);
  const sharedRows:[string,(r:Recipe)=>string][]=[['equipment',r=>t(`recipes.${r.copy}.equipment`)],['dose',r=>`${r.dose} g`]];
- const pourOverRows:[string,(r:Recipe)=>string][]=[['water',r=>isPourOver(r)?`${r.water.amount} ${r.water.unit}${r.water.derived?' *':''}`:t('unknown')],['temperature',r=>temperature(r,t)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
- const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
+ const pourOverRows:[string,(r:Recipe)=>string][]=[['water',r=>isPourOver(r)?`${r.water.amount} ${r.water.unit}${r.water.derived?' *':''}`:t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
+ const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
  // Comparison is limited to one method, so the row set follows the first selected recipe.
  const baseRows:[string,(r:Recipe)=>string][]=[...sharedRows,...selected[0]&&isEspresso(selected[0])?espressoRows:pourOverRows];
  const rows:[string,(r:Recipe)=>string][]=selected.some(r=>r.ice)?[...baseRows.slice(0,2),['ice',r=>iceText(r,t)],...baseRows.slice(2)]:baseRows;
