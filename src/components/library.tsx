@@ -4,8 +4,8 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
-import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode} from 'react';
-import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,filterKeys,time,duration,ratio,doseText,waterText,videoLink,accountedAdditions,bloomShare,pourPhase,sourceFacts,iceAmountText,isEspresso,isPourOver,methods,yieldText,pressureText,preInfusionText,basketText,puckPrepKeys,temperatureLabel,type Recipe} from '@/lib/recipes';
+import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode,type KeyboardEvent} from 'react';
+import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,methodFilterKeys,methodFilterParam,recipeIndex,time,duration,ratio,doseText,waterText,videoLink,accountedAdditions,bloomShare,pourPhase,sourceFacts,iceAmountText,isEspresso,isPourOver,pourOverRecipes,espressoRecipes,yieldText,pressureText,preInfusionText,basketText,puckPrepKeys,temperatureLabel,type Recipe,type FilterKey,type RecipeFilters,type Method} from '@/lib/recipes';
 import {formatTemperature,temperatureUnits,type TemperatureUnit} from '@/lib/temperature';
 import {recipeEditorial} from '@/lib/editorial';
 import {recipeFaq} from '@/lib/faq';
@@ -144,38 +144,82 @@ function RecipeLead({recipe:r,index=0}:{recipe:Recipe;index?:number}){
     </div>
   </article>;
 }
+type FilterOption=readonly [string,string];
+function uniqueOptions(entries:Iterable<readonly [string,string]>):FilterOption[]{return [...new Map(entries).entries()];}
+function methodFilterOptions(list:Recipe[],t:ReturnType<typeof useTranslations>){
+  return {
+    brewer:uniqueOptions(list.map(r=>[r.brewerId,brewerName(r,t)] as const)),
+    author:uniqueOptions(list.map(r=>[r.authorId,r.author] as const)),
+    kind:uniqueOptions(list.map(r=>[r.kind,t(r.kind)] as const)),
+    dose:[...new Set(list.map(r=>r.dose))].sort((a,b)=>a-b).map(n=>[String(n),`${n} g`] as const)
+  };
+}
+function conditionFilterOptions(list:Recipe[],t:ReturnType<typeof useTranslations>){
+  return {
+    grinder:uniqueOptions(list.flatMap(r=>r.grinder?[[r.grinder.id,r.grinder.name] as const]:[])),
+    paper:uniqueOptions(list.flatMap(r=>r.paper?[[r.paper.id,r.paper.name] as const]:[])),
+    process:uniqueOptions(list.flatMap(r=>r.coffee?.process?[[r.coffee.process,t(`processes.${r.coffee.process}`)] as const]:[])),
+    roast:uniqueOptions(list.flatMap(r=>r.coffee?.roast?[[r.coffee.roast,t(`roasts.${r.coffee.roast}`)] as const]:[]))
+  };
+}
+const methodTabs:Method[]=['pour-over','espresso'];
+const methodLabelKeys={ 'pour-over':'methodPourover', espresso:'methodEspresso' } as const;
+// A filter with a single possible value cannot narrow anything; it only appears once
+// the method's own records offer a real choice.
+const hasChoice=(options:FilterOption[])=>options.length>1;
 export function Home(){
   const t=useTranslations();const {params,setParams}=useLibrary();
-  const filters=Object.fromEntries(filterKeys.map(k=>[k,params.get(k)||'']));
-  const reset=()=>setParams(Object.fromEntries(filterKeys.map(k=>[k,null])));
-  const filtered=filterRecipes(recipes,filters,r=>`${t(`recipes.${r.copy}.title`)} ${t(`recipes.${r.copy}.summary`)}`);
-  const active=Object.values(filters).some(Boolean);
+  const method:Method=params.get('method')==='espresso'?'espresso':'pour-over';
+  const list=method==='espresso'?espressoRecipes:pourOverRecipes;
+  const filters=Object.fromEntries(methodFilterKeys[method].map(key=>[key,params.get(methodFilterParam(method,key))||''])) as RecipeFilters;
+  const setFilter=(key:FilterKey,value:string)=>setParams({[methodFilterParam(method,key)]:value||null});
+  const selectMethod=(next:Method)=>{if(next!==method)setParams({method:next==='espresso'?'espresso':null});};
+  const reset=()=>setParams(Object.fromEntries(methodFilterKeys[method].map(key=>[methodFilterParam(method,key),null])));
+  const tabKeyDown=(event:KeyboardEvent<HTMLButtonElement>,index:number)=>{
+    const last=methodTabs.length-1;let next:number|null=null;
+    if(event.key==='ArrowRight'||event.key==='ArrowDown')next=index===last?0:index+1;
+    else if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=index===0?last:index-1;
+    else if(event.key==='Home')next=0;
+    else if(event.key==='End')next=last;
+    if(next===null)return;
+    event.preventDefault();selectMethod(methodTabs[next]);
+    document.getElementById(`method-tab-${methodTabs[next]}`)?.focus();
+  };
+  const options=methodFilterOptions(list,t);
+  const conditionOptions=conditionFilterOptions(list,t);
+  const conditionKeys=(['grinder','paper','process','roast'] as const).filter(key=>methodFilterKeys[method].includes(key));
+  const conditionFilters=conditionKeys.map(key=>({key,label:t(key),options:conditionOptions[key]})).filter(filter=>hasChoice(filter.options));
+  const mainFilters=[
+    {key:'author' as const,label:t('author'),options:options.author},
+    {key:'kind' as const,label:t('kind'),options:options.kind},
+    {key:'dose' as const,label:t('dose'),options:options.dose}
+  ].filter(filter=>hasChoice(filter.options));
+  const filtered=filterRecipes(list,filters,r=>`${t(`recipes.${r.copy}.title`)} ${t(`recipes.${r.copy}.summary`)}`);
+  const active=methodFilterKeys[method].some(key=>!!filters[key]);
   return <main id="main">
-    <section className="hero"><div className="hero-art"/><div className="hero-content"><p className="hero-kicker">COFFEE EDITORIAL <span/></p><h1><span>{t('hero1')}</span><span>{t('hero2')}</span></h1><p className="hero-subtitle">{t('heroSubtitle')}</p>
-      <div className="hero-search"><label className="search-field"><MagnifyingGlass size={24}/><span className="sr-only">{t('search')}</span><input type="search" placeholder={t('search')} value={filters.q} onChange={e=>setParams({q:e.target.value})}/></label>
-        <label className="brewer-select"><Funnel size={20}/><span className="sr-only">{t('chooseBrewer')}</span><select aria-label={t('chooseBrewer')} value={filters.brewer} onChange={e=>setParams({brewer:e.target.value})}><option value="">{t('chooseBrewer')}</option>{[...new Map(recipes.map(r=>[r.brewerId,r])).values()].map(r=><option key={r.brewerId} value={r.brewerId}>{brewerName(r,t)}</option>)}</select></label>
-      </div></div>
+    <section className="hero"><div className="hero-art"/><div className="hero-content"><p className="hero-kicker">COFFEE EDITORIAL <span/></p><h1><span>{t('hero1')}</span><span>{t('hero2')}</span></h1><p className="hero-subtitle">{t('heroSubtitle')}</p></div>
     </section>
     <section className="recipe-section" id="recipes"><div className="section-heading"><h2>{t('sectionTitle')}</h2><span className="heading-rule"/><p>{t('sectionIntro')}</p></div>
-      <div className="filter-row"><span className="result-count" aria-live="polite">{t('results',{count:filtered.length})}</span>
-        <div className="secondary-filters"><label><span>{t('method')}</span><select aria-label={t('method')} value={filters.method} onChange={e=>setParams({method:e.target.value})}><option value="">{t('all')}</option>{methods.map(method=><option key={method} value={method}>{t(method==='espresso'?'methodEspresso':'methodPourover')}</option>)}</select></label>
-          <label><span>{t('author')}</span><select aria-label={t('author')} value={filters.author} onChange={e=>setParams({author:e.target.value})}><option value="">{t('all')}</option>{recipes.map(r=><option key={r.id} value={r.authorId}>{r.author}</option>)}</select></label>
-          <label><span>{t('kind')}</span><select aria-label={t('kind')} value={filters.kind} onChange={e=>setParams({kind:e.target.value})}><option value="">{t('all')}</option><option value="hot">{t('hot')}</option><option value="iced">{t('iced')}</option></select></label>
-          <label><span>{t('dose')}</span><select aria-label={t('dose')} value={filters.dose} onChange={e=>setParams({dose:e.target.value})}><option value="">{t('all')}</option>{[...new Set(recipes.map(r=>r.dose))].map(n=><option key={n} value={String(n)}>{n} g</option>)}</select></label>
-          {active?<button className="text-button" onClick={reset}>{t('reset')}</button>:null}
-        </div></div>
-      <details className="condition-filters" open={!!(filters.grinder||filters.paper||filters.process||filters.roast)}><summary>{t('conditionFilters')}</summary><p>{t('conditionHint')}</p><div className="secondary-filters">
-        {(['grinder','paper','process','roast'] as const).map(key=>{
-          const options=key==='grinder'||key==='paper'?[...new Map(recipes.flatMap(r=>r[key]?[[r[key]!.id,r[key]!.name] as const]:[])).entries()]:[...new Set(recipes.flatMap(r=>r.coffee?.[key]?[r.coffee[key]!]:[]))].map(value=>[value,t(`${key==='process'?'processes':'roasts'}.${value}`)]);
-          return <label key={key}><span>{t(key)}</span><select aria-label={t(key)} value={filters[key]} onChange={e=>setParams({[key]:e.target.value})}><option value="">{t('all')}</option>{options.map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>;
-        })}
-      </div></details>
-      {filtered.length?<div className="recipe-grid">{filtered.map((r,i)=>i===0?<RecipeLead key={r.id} recipe={r} index={recipes.indexOf(r)}/>:<RecipeCard key={r.id} recipe={r} index={recipes.indexOf(r)}/>)}</div>:<div className="empty-state"><CoffeeBean size={34}/><p>{t('noResults')}</p><button className="button button-outline" onClick={reset}>{t('reset')}</button></div>}
+      <div className="method-tabs" role="tablist" aria-label={t('method')}>{methodTabs.map((tab,index)=>{const count=tab==='espresso'?espressoRecipes.length:pourOverRecipes.length;return <button key={tab} id={`method-tab-${tab}`} type="button" role="tab" aria-selected={tab===method} aria-controls="recipe-panel" tabIndex={tab===method?0:-1} onClick={()=>selectMethod(tab)} onKeyDown={event=>tabKeyDown(event,index)}><span>{t(methodLabelKeys[tab])}</span><span className="tab-count" aria-hidden="true">{count}</span><span className="sr-only">{t('results',{count})}</span></button>;})}</div>
+      <div id="recipe-panel" role="tabpanel" aria-labelledby={`method-tab-${method}`} tabIndex={0}>
+        <div className="library-toolbar hero-search"><label className="search-field"><MagnifyingGlass size={24}/><span className="sr-only">{t('search')}</span><input type="search" placeholder={t('search')} value={filters.q||''} onChange={e=>setFilter('q',e.target.value)}/></label>
+          {hasChoice(options.brewer)?<label className="brewer-select"><Funnel size={20}/><span className="sr-only">{t('chooseBrewer')}</span><select aria-label={t('chooseBrewer')} value={filters.brewer||''} onChange={e=>setFilter('brewer',e.target.value)}><option value="">{t('chooseBrewer')}</option>{options.brewer.map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>:null}
+        </div>
+        <div className="filter-row"><span className="result-count" aria-live="polite">{t('results',{count:filtered.length})}</span>
+          <div className="secondary-filters">
+            {mainFilters.map(({key,label,options})=><label key={key}><span>{label}</span><select aria-label={label} value={filters[key]||''} onChange={e=>setFilter(key,e.target.value)}><option value="">{t('all')}</option>{options.map(([value,optionLabel])=><option key={value} value={value}>{optionLabel}</option>)}</select></label>)}
+            {active?<button className="text-button" onClick={reset}>{t('reset')}</button>:null}
+          </div></div>
+        {conditionFilters.length?<details className="condition-filters" open={conditionFilters.some(filter=>!!filters[filter.key])}><summary>{t('conditionFilters')}</summary><p>{t('conditionHint')}</p><div className="secondary-filters">
+          {conditionFilters.map(({key,label,options})=><label key={key}><span>{label}</span><select aria-label={label} value={filters[key]||''} onChange={e=>setFilter(key,e.target.value)}><option value="">{t('all')}</option>{options.map(([value,optionLabel])=><option key={value} value={value}>{optionLabel}</option>)}</select></label>)}
+        </div></details>:null}
+        {filtered.length?<div className="recipe-grid">{filtered.map((r,i)=>i===0?<RecipeLead key={r.id} recipe={r} index={recipeIndex(r)}/>:<RecipeCard key={r.id} recipe={r} index={recipeIndex(r)}/>)}</div>:<div className="empty-state"><CoffeeBean size={34}/><p>{t('noResults')}</p><button className="button button-outline" onClick={reset}>{t('reset')}</button></div>}
+      </div>
     </section>
   </main>;
 }
 export function ComparisonTray(){const t=useTranslations();const {ids,toggle,notice}=useLibrary();const href=useHref();const pathname=usePathname();if(!ids.length||pathname.includes('/compare')||pathname.includes('/recipes/'))return null;
- return <aside className="compare-tray" aria-label={t('compareNav')}><strong>{t('selected',{count:ids.length})}</strong><div className="tray-items">{ids.map(id=>{const r=recipes.find(r=>r.id===id)!;return <div className="tray-item" key={id}><span className="tray-index">{String(recipes.indexOf(r)+1).padStart(2,'0')}</span><span>{t(`recipes.${r.copy}.title`)}</span><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(id)}><X size={16}/></button></div>;})}</div><Link className="button button-primary" href={href('compare/')}>{t('compareAction')}<ArrowRight size={17}/></Link>{notice?<p role="alert">{notice}</p>:null}</aside>;
+ return <aside className="compare-tray" aria-label={t('compareNav')}><strong>{t('selected',{count:ids.length})}</strong><div className="tray-items">{ids.map(id=>{const r=recipes.find(r=>r.id===id)!;return <div className="tray-item" key={id}><span className="tray-index">{String(recipeIndex(r)+1).padStart(2,'0')}</span><span>{t(`recipes.${r.copy}.title`)}</span><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(id)}><X size={16}/></button></div>;})}</div><Link className="button button-primary" href={href('compare/')}>{t('compareAction')}<ArrowRight size={17}/></Link>{notice?<p role="alert">{notice}</p>:null}</aside>;
 }
 function quickAnswer(r:Recipe,t:ReturnType<typeof useTranslations>,unit:TemperatureUnit|null=null){
   if(isEspresso(r))return t('quickAnswerEspresso',{dose:r.dose,yield:yieldText(r)||t('unknown'),temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown'),pressure:pressureText(r)||t('unknown')});
@@ -247,7 +291,7 @@ export function ComparePage(){
  {parseSelection(params.get('ids')).invalid?<p role="status" className="notice">{t('invalidSelection')}</p>:null}
  {parseSelection(params.get('ids')).mismatch?<p role="status" className="notice">{t('compareMismatch')}</p>:null}
  {manual?<label className="copy-fallback">{t('copyError')}<input readOnly value={manual} onFocus={e=>e.target.select()}/></label>:null}
- {!selected.length?<div className="empty-state"><CoffeeBean size={36}/><p>{t('compareEmpty')}</p><Link className="button button-primary" href={href()}>{t('back')}<ArrowRight size={16}/></Link></div>:<><div className="comparison-scroll" tabIndex={0} aria-label={t('compareTitle')}><table className="comparison-table"><thead><tr><td/><>{selected.map(r=><th scope="col" key={r.id}><div className="comparison-identity"><span className="comparison-index">{String(recipes.indexOf(r)+1).padStart(2,'0')}</span><strong>{brewerName(r,t)}</strong><small>{grinderDetails(r,t)}</small></div><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button><h2>{t(`recipes.${r.copy}.title`)}</h2><span>{r.author}</span></th>)}{selected.length<3?<th scope="col" className="empty-comparison"><Link href={href()}><Plus size={30}/>{t('addSlot')}</Link></th>:null}</></tr></thead><tbody>{rows.map(([label,getValue])=><tr key={label}><th scope="row">{t(label)}</th>{selected.map(r=><td key={r.id}>{getValue(r)}</td>)}{selected.length<3?<td>—</td>:null}</tr>)}<tr><th scope="row">{t('source')}</th>{selected.map(r=><td key={r.id}><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a></td>)}{selected.length<3?<td>—</td>:null}</tr><tr><th scope="row">{t('recipesNav')}</th>{selected.map(r=><td key={r.id}><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></td>)}{selected.length<3?<td>—</td>:null}</tr></tbody></table></div><p className="comparison-note">{t('compareNote')}</p>{selected.some(r=>isPourOver(r)&&r.water.derived)?<p className="comparison-note">* {t('derived')}</p>:null}<button className="text-button" onClick={()=>setParams({ids:null})}>{t('clearAll')}</button></>}
+ {!selected.length?<div className="empty-state"><CoffeeBean size={36}/><p>{t('compareEmpty')}</p><Link className="button button-primary" href={href()}>{t('back')}<ArrowRight size={16}/></Link></div>:<><div className="comparison-scroll" tabIndex={0} aria-label={t('compareTitle')}><table className="comparison-table"><thead><tr><td/><>{selected.map(r=><th scope="col" key={r.id}><div className="comparison-identity"><span className="comparison-index">{String(recipeIndex(r)+1).padStart(2,'0')}</span><strong>{brewerName(r,t)}</strong><small>{grinderDetails(r,t)}</small></div><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button><h2>{t(`recipes.${r.copy}.title`)}</h2><span>{r.author}</span></th>)}{selected.length<3?<th scope="col" className="empty-comparison"><Link href={href()}><Plus size={30}/>{t('addSlot')}</Link></th>:null}</></tr></thead><tbody>{rows.map(([label,getValue])=><tr key={label}><th scope="row">{t(label)}</th>{selected.map(r=><td key={r.id}>{getValue(r)}</td>)}{selected.length<3?<td>—</td>:null}</tr>)}<tr><th scope="row">{t('source')}</th>{selected.map(r=><td key={r.id}><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a></td>)}{selected.length<3?<td>—</td>:null}</tr><tr><th scope="row">{t('recipesNav')}</th>{selected.map(r=><td key={r.id}><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></td>)}{selected.length<3?<td>—</td>:null}</tr></tbody></table></div><p className="comparison-note">{t('compareNote')}</p>{selected.some(r=>isPourOver(r)&&r.water.derived)?<p className="comparison-note">* {t('derived')}</p>:null}<button className="text-button" onClick={()=>setParams({ids:null})}>{t('clearAll')}</button></>}
  </main>;
 }
 export function AuthorsPage(){
@@ -258,7 +302,12 @@ export function AuthorsPage(){
    if(!author){author={id:r.authorId,name:r.author,items:[]};authors.push(author);}
    author.items.push(r);
  }
- return <main id="main" className="page"><p className="eyebrow">COFFEE EDITORIAL</p><h1>{t('authorsTitle')}</h1><p className="page-subtitle">{t('authorsIntro')}</p><div className="author-list">{authors.map((author,index)=><article key={author.id} id={author.id}><span className="author-index">{String(index+1).padStart(2,'0')}</span><div><h2>{author.name}</h2><p className="author-count">{t('authorRecordCount',{count:author.items.length})}</p><ul className="author-recipes">{author.items.map(r=><li key={r.id}><Link href={href(`recipes/${r.id}/`)}>{t(`recipes.${r.copy}.title`)}</Link><span>{brewerName(r,t)} · {r.dose} g</span></li>)}</ul></div><Link className="button button-outline" href={href('',{author:author.id})}>{t('recipesNav')}<ArrowRight size={17}/></Link></article>)}</div></main>;
+ return <main id="main" className="page"><p className="eyebrow">COFFEE EDITORIAL</p><h1>{t('authorsTitle')}</h1><p className="page-subtitle">{t('authorsIntro')}</p><div className="author-list">{authors.map((author,index)=>{
+   const method=author.items[0].method;
+   const query:Record<string,string>=method==='espresso'?{method:'espresso'}:{};
+   query[methodFilterParam(method,'author')]=author.id;
+   return <article key={author.id} id={author.id}><span className="author-index">{String(index+1).padStart(2,'0')}</span><div><h2>{author.name}</h2><p className="author-count">{t('authorRecordCount',{count:author.items.length})}</p><ul className="author-recipes">{author.items.map(r=><li key={r.id}><Link href={href(`recipes/${r.id}/`)}>{t(`recipes.${r.copy}.title`)}</Link><span>{brewerName(r,t)} · {r.dose} g</span></li>)}</ul></div><Link className="button button-outline" href={href('',query)}>{t('recipesNav')}<ArrowRight size={17}/></Link></article>;
+ })}</div></main>;
 }
 export function SourcesPage(){const t=useTranslations();return <main id="main" className="page sources-page"><p className="eyebrow">COFFEE EDITORIAL</p><h1>{t('sourceTitle')}</h1><p className="page-subtitle">{t('sourceIntro')}</p><div className="sources-grid"><div>{recipes.map(r=><article className="source-record" key={r.id}><p className="eyebrow">{r.author}</p><h2>{t(`recipes.${r.copy}.title`)}</h2><p>{t(`recipes.${r.copy}.version`)}</p><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={16}/></a>{r.source.archive?<a className="source-link source-archive" href={r.source.archive} target="_blank" rel="noreferrer">{t('archiveLink')}<ArrowUpRight size={14}/></a>:<span className="source-date">{t('archiveMissing')}</span>}<p className="source-date">{t('checked')} · {r.source.checked}</p></article>)}</div><aside><h2>{t('methodTitle')}</h2><p>{t('methodText')}</p><p>{t('translationNote')}</p><p>{t('imageNote')}</p></aside></div></main>;}
 

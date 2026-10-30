@@ -1,8 +1,11 @@
 import {test,expect} from '@playwright/test';
 import {locales} from '../../src/i18n/locales';
 import {readFileSync} from 'node:fs';
-const {recipes}=JSON.parse(readFileSync('content/recipes.json','utf8')) as {recipes:{id:string}[]};
+const {recipes}=JSON.parse(readFileSync('content/recipes.json','utf8')) as {recipes:{id:string;method:string;kind:string}[]};
 const base='/brew-library';
+const pourOverCount=recipes.filter(recipe=>recipe.method==='pour-over').length;
+const espressoCount=recipes.filter(recipe=>recipe.method==='espresso').length;
+const icedCount=recipes.filter(recipe=>recipe.kind==='iced').length;
 test.beforeEach(async({page})=>{
  await page.route('https://gc.zgo.at/**',route=>route.abort());
  await page.route('https://*.goatcounter.com/**',route=>route.abort());
@@ -14,7 +17,7 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await page.goto(`${base}/zh-Hant/`);
  await expect(page.locator('h1')).toContainText('每一杯');
  await expect(page.getByTestId('pour-timeline')).toHaveCount(0);
- await expect(page.locator('[data-recipe]')).toHaveCount(35);
+ await expect(page.locator('[data-recipe]')).toHaveCount(pourOverCount);
  await page.locator('[data-recipe="kasuya-46"] .card-actions a').click();
  await expect(page.getByTestId('pour-timeline')).toBeVisible();
  await expect(page.getByTestId('pour-timeline')).toContainText('2:10');
@@ -31,10 +34,10 @@ test('filters, empty result, reset and shared comparison work',async({page})=>{
  await page.goto(`${base}/en/`);
  await page.getByRole('searchbox').fill('Hoffmann');await expect(page.locator('[data-recipe]')).toHaveCount(2);
  await page.getByLabel('Choose a brewer').selectOption('pulsar');await expect(page.locator('[data-recipe]')).toHaveCount(0);
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(35);
- await page.getByLabel('Style').selectOption('iced');await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(pourOverCount);
+ await page.getByLabel('Style').selectOption('iced');await expect(page.locator('[data-recipe]')).toHaveCount(icedCount);
  await expect(page.locator('[data-recipe="kurasu-flash-brew"]')).toContainText('ice');
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(35);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(pourOverCount);
  for(const id of ['kasuya-46','hoffmann-one-cup','rao-pulsar'])await page.locator(`[data-recipe="${id}"] button`).click();
  await page.locator('[data-recipe="licata-v60"] button').click();
  await expect(page.getByRole('status').filter({hasText:'You can compare up to three recipes.'})).toHaveCount(1);
@@ -179,7 +182,7 @@ test('Origami conditions combine, survive language switching and reset completel
  await page.locator('.language-trigger').click();await page.locator('.language-options a[lang="de"]').click();
  await expect(page).toHaveURL(/grinder=zp6-special/);await expect(page.getByLabel('Filterpapier',{exact:true})).toHaveValue('sibarist-conic');
  await page.getByRole('button',{name:'Filter zurücksetzen',exact:true}).click();
- await expect(page.locator('[data-recipe]')).toHaveCount(35);
+ await expect(page.locator('[data-recipe]')).toHaveCount(pourOverCount);
  expect(new URL(page.url()).search).toBe('');
 });
 
@@ -198,18 +201,55 @@ test('original grinder notation, per-pour temperatures and missing times remain 
  await expect(page.locator('.comparison-table')).toContainText('Sibarist Conic');
 });
 
-test('the method filter keeps pour-over and espresso results apart',async({page})=>{
+test('pour-over and espresso tabs keep independent search and filter state',async({page})=>{
  await page.goto(`${base}/en/`);
- const initial=await page.locator('.result-count').innerText();
- await page.getByLabel('Method',{exact:true}).selectOption('espresso');
- await expect(page.locator('.result-count')).toHaveText('Recipes: 3');
- await expect(page.locator('[data-recipe="camber-espresso"]')).toBeVisible();
- await page.getByLabel('Method',{exact:true}).selectOption('pour-over');
- await expect(page.locator('.result-count')).toHaveText('Recipes: 32');
- expect(page.url()).toContain('method=pour-over');
+ const pourOverTab=page.getByRole('tab',{name:/Pour-over/});
+ const espressoTab=page.getByRole('tab',{name:/Espresso/});
+ await expect(pourOverTab).toHaveAttribute('aria-selected','true');
+ await expect(espressoTab).toHaveAttribute('aria-selected','false');
+ await expect(page.locator('[data-recipe]')).toHaveCount(pourOverCount);
+ await expect(page.getByLabel('Filter paper',{exact:true})).toHaveCount(1);
+ await page.getByRole('searchbox').fill('Hoffmann');
+ await expect(page.locator('[data-recipe]')).toHaveCount(2);
+ await espressoTab.click();
+ await expect(espressoTab).toHaveAttribute('aria-selected','true');
+ await expect(page.locator('[data-recipe]')).toHaveCount(espressoCount);
+ await expect(page.getByRole('searchbox')).toHaveValue('');
+ await expect(page.getByLabel('Filter paper',{exact:true})).toHaveCount(0);
+ await expect(page.getByRole('combobox',{name:'Author',exact:true})).toHaveCount(1);
+ await page.getByRole('searchbox').fill('Camber');
+ await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ expect(page.url()).toContain('method=espresso');
+ expect(new URL(page.url()).searchParams.get('es.q')).toBe('Camber');
+ await pourOverTab.click();
+ await expect(page.getByRole('searchbox')).toHaveValue('Hoffmann');
+ await expect(page.locator('[data-recipe]')).toHaveCount(2);
+ expect(page.url()).not.toContain('method=');
+ expect(new URL(page.url()).searchParams.get('po.q')).toBe('Hoffmann');
+ await page.reload();
+ await expect(page.getByRole('searchbox')).toHaveValue('Hoffmann');
+ await espressoTab.click();
+ await expect(page.getByRole('searchbox')).toHaveValue('Camber');
  await page.getByRole('button',{name:'Reset filters'}).click();
- await expect(page.locator('.result-count')).toHaveText(initial);
- await expect.poll(()=>page.url()).not.toContain('method=');
+ await expect(page.locator('[data-recipe]')).toHaveCount(espressoCount);
+ await expect(page.getByRole('searchbox')).toHaveValue('');
+ await expect(page).toHaveURL(/method=espresso/);
+ expect(new URL(page.url()).searchParams.get('po.q')).toBe('Hoffmann');
+});
+
+test('method tabs switch with arrow, Home and End keys',async({page})=>{
+ await page.goto(`${base}/en/`);
+ const pourOverTab=page.getByRole('tab',{name:/Pour-over/});
+ const espressoTab=page.getByRole('tab',{name:/Espresso/});
+ await pourOverTab.focus();
+ await page.keyboard.press('ArrowRight');
+ await expect(espressoTab).toHaveAttribute('aria-selected','true');
+ await expect(espressoTab).toBeFocused();
+ await page.keyboard.press('Home');
+ await expect(pourOverTab).toHaveAttribute('aria-selected','true');
+ await expect(pourOverTab).toBeFocused();
+ await page.keyboard.press('End');
+ await expect(espressoTab).toHaveAttribute('aria-selected','true');
 });
 
 test('espresso detail keeps the published Fahrenheit range and admits missing steps',async({page})=>{

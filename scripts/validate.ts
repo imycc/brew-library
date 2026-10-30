@@ -62,7 +62,9 @@ export async function validate(){
      const numbers=(r.ratioStated.match(/[\d.]+/g)||[]).map(Number).sort((a,b)=>a-b);
      assert(numbers.length===2,`${r.id} ratio must state two numbers`);
      const[small,large]=numbers as [number,number];
-     const computed=isPourOver(r)?r.water.amount/r.dose:r.yield?r.yield.amount/r.dose:null;
+     // Iced sources state water and ice separately; the ratio they quote is over both.
+     const liquid=isPourOver(r)&&r.ice&&r.ice.unit===r.water.unit?r.water.amount+r.ice.amount:isPourOver(r)?r.water.amount:null;
+     const computed=isPourOver(r)?liquid!/r.dose:r.yield?r.yield.amount/r.dose:null;
      if(computed!==null)assert(Math.abs(large/small-computed)<.5,`${r.id} stated ratio disagrees with its own dose and liquid`);
    }
    if(r.yield&&isPourOver(r))assert(r.yield.amount<r.water.amount,`${r.id} beverage yield cannot exceed the water poured`);

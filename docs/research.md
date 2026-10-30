@@ -351,3 +351,17 @@ Model additions this pass:
   summary while the evidence is the author's own words.
 - Each video page was archived and the snapshot verified to contain the recipe numbers before
   `source.archive` was recorded.
+
+### Batch 2 — iced 4:6, Wölfl, Licata W60 (checked 2026-10-31)
+
+| Record | Source | Decisions |
+| --- | --- | --- |
+| `kasuya-iced-46` | [急冷アイス 4:6 vs ハイブリッド](https://www.youtube.com/watch?v=v0CXzmw1TXg), 2026-08-21 | 20 g / 150 g water / **80 g ice in the server** / 90–93 °C / 28 clicks / five 30 g pours. The film compares two iced versions and publishes shared parameters; only the 4:6 version is recorded, the Switch hybrid stays in the backlog. No grinder, no dripper, no pour times and no total time are published, so all four stay unknown. The stated ratio 1:11.5 is checked against water **plus** ice, which is what the source ratios. |
+| `woelfl-v60` | [Filterkaffee zubereiten](https://www.youtube.com/watch?v=bZ2i4ewFSLk), 2021-01-12 | 20 g / 300 ml / 93 °C / 60 ml bloom for 30–40 s / remaining 240 ml / 2:30–3:00. The second pour has no time, so it is stored untimed and the pour phase reads unknown. Grinder, coffee and paper brand are not named. |
+| `licata-w60` | [Mesh/Paper/Both: Hario W60 #210](https://www.youtube.com/watch?v=M23NG4kNLAU), 2022-03-18 | 12 g / 200 g / 100 g at 0:00, 50 g at 0:35, 50 g at 1:05 / 4:00 / D50 611 µm. Chapter markers give all four timestamps. The description names the W60's mesh and a paper filter **together**, so the filter is stored as that stack; no temperature and no coffee are published. |
+
+Two model consequences surfaced here. First, the ratio guard had to learn that an iced source
+ratios over water **plus** ice — otherwise Kasuya's published 1:11.5 looked like an error.
+Second, `D50 = 611 µm` is a median particle size, not the PSD peak the `grindMicron` basis
+enum allows, so it lives in the grind text rather than being forced into a field that would
+misdescribe it.
