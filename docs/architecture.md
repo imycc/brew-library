@@ -4,7 +4,7 @@
 
 Next.js App Router with React, TypeScript, Tailwind CSS and next-intl. Localized routes are prebuilt with `generateStaticParams`; no runtime middleware or locale negotiation is required. All routes carry a locale prefix. The root HTML is a tiny entry that picks a locale from `navigator.languages` (English when nothing matches) and redirects, so the bare site URL lands on a readable homepage; it falls back to English without JavaScript. English is the x-default hreflang and the Organization homepage URL.
 
-The homepage is an editorial discovery surface. Full brewing instructions and timelines exist only on recipe details. The comparison page compares original facts and source links, without ranking or adapting recipes.
+The homepage is an editorial discovery surface. Full brewing instructions and timelines exist only on recipe details. Pour-over and espresso are separate tabs, each with its own search, filter set and result count. The comparison page compares original facts and source links, without ranking or adapting recipes.
 
 ## Data interfaces
 
@@ -14,7 +14,7 @@ Espresso-specific values live under `extraction`: `pressureBar`, `preInfusion` (
 
 Temperature keeps the source's own unit: `temperatureUnit` is `C` by default, `F` when the source publishes Fahrenheit, and an optional `temperatureMax` carries a stated range such as 202–204 °F without conversion. `steps` may be empty when a source publishes parameters only; the detail page then shows a localized no-steps note and JSON-LD omits `recipeInstructions`. `image` is optional and falls back to the default Open Graph photograph rather than borrowing pour-over artwork. A header control can convert every displayed temperature to °C or °F in one click; a converted reading is prefixed with `≈`, a note names the source value, the preference persists locally, and the stored record and JSON-LD keep the published unit.
 
-Comparison is limited to one method: `parseSelection` keeps the first recipe's method and reports the rest through `mismatch`, and `toggleSelection` refuses a cross-method addition. The homepage filter exposes `method` as a shareable query key. `brewer` holds the brewing device for both methods (a dripper or a machine); only its display label changes per method.
+Comparison is limited to one method: `parseSelection` keeps the first recipe's method and reports the rest through `mismatch`, and `toggleSelection` refuses a cross-method addition. On the homepage, `method` selects the pour-over or espresso tab. Each tab stores its own search and filters under prefixed query keys (`po.q`, `po.brewer`, `po.paper`, ... and `es.q`, `es.brewer`, ...), so switching tabs never mixes the two sets. `brewer` holds the brewing device for both methods (a dripper or a machine); only its display label changes per method. Filter controls are derived from the active method's records, and a filter is hidden when its records offer only one possible value; espresso therefore never shows filter paper and currently omits the single-value machine and style controls.
 
 Optional source conditions are structured as `grinder` (identity and literal setting), `paper` (identity and optional shape), and `coffee` (name, origin, variety, processing, roast). The recipe’s `source` supports these fields. AND filters use the shareable query keys `grinder`, `paper`, `process`, `roast`; missing conditions do not match. Model names and source dial notation remain unchanged across locales; no setting conversion is performed.
 
@@ -34,7 +34,7 @@ Optional source conditions are structured as `grinder` (identity and literal set
 
 ## State and future integrations
 
-Search (`q`), brewer, author, style, dose and selected recipe IDs (`ids`) live in query parameters. Shared links survive refresh and language changes. Invalid recipe IDs are excluded with a visible message. IDs are deduplicated and limited to three. Equipment-page search and category state are local UI state; equipment records link directly to their related recipes.
+Search, filters, the active tab (`method`) and selected recipe IDs (`ids`) live in query parameters. Each method tab keeps its own `po.*` or `es.*` filter values, so returning to a tab restores what that tab was showing. Shared links survive refresh and language changes. Invalid recipe IDs are excluded with a visible message. IDs are deduplicated and limited to three. Equipment-page search and category state are local UI state; equipment records link directly to their related recipes.
 
 Data access, filtering, selection and UI are separate. A future CMS or API can replace the data loader while preserving recipe IDs and component contracts. Server features require a host with server support; GitHub Pages remains a static host.
 
