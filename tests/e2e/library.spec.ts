@@ -301,3 +301,13 @@ test('a video-sourced recipe exposes its evidence, teaching and step deep links'
  await expect(page.locator('.step-video').last()).toContainText('2:30');
  await expect(page.locator('#step-2')).toHaveCount(1);
 });
+
+test('tasting notes and flow rates stay tied to their sources',async({page})=>{
+ await page.goto(`${base}/en/recipes/kasuya-neo/`);
+ await expect(page.locator('[data-tasting] li')).toHaveCount(2);
+ await page.goto(`${base}/en/recipes/hoffmann-one-cup/`);
+ await expect(page.locator('.step-rate').first()).toContainText('g/s');
+ await page.goto(`${base}/en/recipes/gil-origami-2024/`);
+ await expect(page.locator('.step-rate').first()).toContainText('7 g/s');
+ await expect(page.locator('.step-rate').first()).toContainText('≈');
+});

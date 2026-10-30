@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {convertTemperature,formatTemperature} from '../src/lib/temperature';
-import {espressoSchema,pourOverSchema,filterRecipes,methodFilterKeys,methodFilterParam,parseSelection,toggleSelection,recipes,pourOverRecipes,espressoRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe,videoLink} from '../src/lib/recipes';
+import {espressoSchema,pourOverSchema,filterRecipes,methodFilterKeys,methodFilterParam,parseSelection,toggleSelection,recipes,pourOverRecipes,espressoRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe,videoLink,stepFlow} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
@@ -304,4 +304,18 @@ test('video records carry provenance, timestamps and teaching without inventing 
  assert.deepEqual(origami.duration,[150,150]);
  assert.equal(origami.steps[1].end,80);
  assert(origami.source.evidence?.includes('roast degree'));
+});
+
+test('flow rates are either published or derived from the pour itself',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const gil=find('gil-origami-2024');
+ const published=gil.steps.filter(step=>step.action==='pour').map(step=>stepFlow(step)!);
+ assert(published.every(flow=>flow.published&&flow.approximate&&flow.value===7));
+ const oneCup=find('hoffmann-one-cup');
+ const derived=stepFlow(oneCup.steps[2])!;
+ assert.equal(derived.published,false);
+ assert.equal(derived.value,3.3);
+ assert.equal(stepFlow(oneCup.steps[1]),null);
+ assert.equal(stepFlow(oneCup.steps[10]),null);
+ assert.equal(recipes.filter(recipe=>recipe.tasting?.length).length,4);
 });

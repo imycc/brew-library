@@ -468,7 +468,8 @@
       "s01": "Beim zweiten Aufguss auf 250 g gehen; die 190 g sind dieses Ziel minus des Blooms.",
       "s02": "Dreimal umrühren.",
       "s03": "Bei 1:30 das restliche Wasser nachgießen, insgesamt 500 g.",
-      "s04": "Noch einmal dreimal umrühren."
+      "s04": "Noch einmal dreimal umrühren.",
+      "taste1": "Zu ihrem Kaffee: florales Aroma, helle Säure."
     },
     "mallouhi": {
       "title": "Ibrahim Al Mallouhis V60",
@@ -661,7 +662,9 @@
       "s01": "Bei 0:30 auf 120 g (+75 g) mit langsamem Kreis, etwas Rührung beabsichtigt.",
       "s02": "Bei 1:00 auf 190 g (+70 g) mittig ohne Rührung, in den letzten ~15 g am Rand entlang, damit das Bett flach endet.",
       "s03": "Nach dem Ablaufen Wasser bei 65 °C zugeben: erst 50 g, dann nach Geschmack bis etwa 60–70 g.",
-      "beans": "Ohno bemerkt, dass das Bohnenprofil erst am Tag bekannt gegeben wurde; seine Karte ist für jeden Kaffee geschrieben und nennt keinen."
+      "beans": "Ohno bemerkt, dass das Bohnenprofil erst am Tag bekannt gegeben wurde; seine Karte ist für jeden Kaffee geschrieben und nennt keinen.",
+      "taste1": "Sein erklärtes Ziel: saubere Tasse und Süße — dafür stehen niedrige Temperatur und grobes Sieb.",
+      "taste2": "Der servierte Kaffee maß TDS 1,07 — bewusst dünn, näher am Tee."
     },
     "gil-2025": {
       "title": "Gils Dreigaufuss-ZP6-Rezept (2025)",
@@ -691,7 +694,9 @@
       "prepare": "Papier spülen, Drepper vorwärmen, dann etwa 65–70 g Eis in die Kanne geben.",
       "s00": "40 g Wasser für den Bloom aufgießen.",
       "s01": "Bei 0:40 auf insgesamt 100 g aufgießen.",
-      "s02": "Bei 1:10 langsam und sanft auf insgesamt 150 g aufgießen, ohne zu stark zu rühren."
+      "s02": "Bei 1:10 langsam und sanft auf insgesamt 150 g aufgießen, ohne zu stark zu rühren.",
+      "taste1": "Laut Seite bestimmt das Eisgewicht die endgültige Stärke — es ist der Regler dafür.",
+      "taste2": "Mit dem Kenya Kangocho AA der Seite bringt die Methode saftige Beerensüße und eine traubenartige Säure hervor."
     },
     "ona-iris": {
       "title": "Iris Estate Enigma · Espresso",
@@ -775,7 +780,9 @@
       "s09": "Die zehnte und letzte Gabe von 30 g bis 300 g.",
       "teach1": "Sehr grober Mahlgrad plus 95–96 °C ist das unerwartete Paar, auf dem das Rezept ruht.",
       "teach2": "Zehn Gaben à 30 g im 15-Sekunden-Takt; entscheidend ist, dass das Wasser durchläuft statt oben zu stehen.",
-      "teach3": "Kasuya empfiehlt den NEO, weil er kleine Gaben gleichmäßig extrahiert, sagt aber, ein V60 sei ebenso gut."
+      "teach3": "Kasuya empfiehlt den NEO, weil er kleine Gaben gleichmäßig extrahiert, sagt aber, ein V60 sei ebenso gut.",
+      "taste1": "Laut Kasuya bauen sehr grober Mahlgrad, 95–96 °C und zehn kleine Gaben Süße auf.",
+      "taste2": "Die Textur — ein sirupartiges Mundgefühl — schreibt er den zehn Gaben zu, nicht dem Feingut."
     },
     "kasuya-iced": {
       "title": "Kasuya 4:6 auf Eis",
@@ -1076,5 +1083,8 @@
   "videoStep": "Video {time}",
   "teachingTitle": "Vom Autor",
   "teachingStep": "Schritt {number}",
-  "evidenceLabel": "Originalwortlaut"
+  "evidenceLabel": "Originalwortlaut",
+  "tastingTitle": "Geschmack und Textur",
+  "flowRate": "Durchfluss {value} g/s",
+  "flowRateDerived": "≈ {value} g/s (aus dieser Gabe berechnet)"
 }
