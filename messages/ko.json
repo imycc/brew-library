@@ -852,7 +852,19 @@
     "pidOneDegree": "1 °C 단위 PID 제어",
     "dualPid": "듀얼 PID",
     "activePassivePreInfusion": "활성·수동 프리인퓨전",
-    "tunePreInfusion3Bar": "3bar 시간 제어 프리인퓨전"
+    "tunePreInfusion3Bar": "3bar 시간 제어 프리인퓨전",
+    "burr38Stainless": "38 mm 스테인리스",
+    "adjust0to90Clicks": "0–90클릭",
+    "burrS2c890": "S2C890 스틸 버",
+    "adjustS3Precision": "그리드당 0.015 mm; 0.1 그리드 정밀도",
+    "modelMavoWizardZ": "Wizard Z; 공식 영어 사양 페이지 미공개",
+    "burr43Volcanic": "43 mm 3단 볼케이노 버",
+    "adjust60Clicks": "회전당 60클릭; 클릭당 0.0167 mm",
+    "burr48S5TwelveStar": "48 mm 12스타 버, 예비 분쇄 날 포함",
+    "adjust90S5": "외부 90클릭; 클릭당 0.015 mm",
+    "modelMavoWizardZPro": "Wizard Z Pro; 공식 영어 사양 페이지 미공개",
+    "burr43VolcanicP5": "43 mm 3단 볼케이노 버; P5 베어링 3개",
+    "adjust100Stepless": "외부 100클릭 무단"
   },
   "pourPatterns": {
     "centre": "중심",

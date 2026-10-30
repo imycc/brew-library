@@ -323,7 +323,7 @@
       "strengths": [
         "repeatable",
         "clearTimeline",
-        "beanSpecific"
+        "cleanCup"
       ],
       "considerations": [
         "unknownParameters",
@@ -338,9 +338,9 @@
     },
     "maisonnette-graycano": {
       "strengths": [
-        "beanSpecific",
-        "dedicatedFilter",
-        "preciseTiming"
+        "clearTimeline",
+        "repeatable",
+        "flowControl"
       ],
       "considerations": [
         "morePreparation",
@@ -368,8 +368,8 @@
     "pinnola-graycano": {
       "strengths": [
         "clearTimeline",
-        "dedicatedFilter",
-        "preciseTiming"
+        "repeatable",
+        "flowControl"
       ],
       "considerations": [
         "unknownParameters",
@@ -384,9 +384,9 @@
     },
     "kaygusuz-graycano": {
       "strengths": [
-        "beanSpecific",
-        "dedicatedFilter",
-        "preciseTiming"
+        "clearTimeline",
+        "repeatable",
+        "flowControl"
       ],
       "considerations": [
         "morePreparation",
@@ -401,9 +401,9 @@
     },
     "vuolo-mk": {
       "strengths": [
-        "activePouring",
         "evenExtraction",
-        "dedicatedFilter"
+        "flowControl",
+        "repeatable"
       ],
       "considerations": [
         "unknownParameters",
@@ -432,7 +432,7 @@
       "strengths": [
         "temperatureControl",
         "evenExtraction",
-        "dedicatedFilter"
+        "structuredAgitation"
       ],
       "considerations": [
         "morePreparation",
@@ -476,8 +476,8 @@
     },
     "ona-iris-enigma": {
       "strengths": [
-        "beanSpecific",
-        "repeatable"
+        "repeatable",
+        "clearTimeline"
       ],
       "considerations": [
         "unknownParameters",
@@ -1057,6 +1057,89 @@
         "url": "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/795602/89692_453317.jpeg",
         "sourceLabel": "KINGrinder",
         "sourceUrl": "https://www.kingrinder.com/store/products/k6"
+      }
+    },
+    "timemore-chestnut-c3s": {
+      "role": "handGrinder",
+      "strengths": [
+        "portable",
+        "preciseAdjustment",
+        "repeatable"
+      ],
+      "considerations": [
+        "manualEffort",
+        "smallCapacity"
+      ],
+      "sourceImage": {
+        "url": "https://cdn.shopify.com/s/files/1/0642/9153/7138/files/4_388cea4a-39c0-4227-88f9-4c6a5652bb9f.jpg?v=1748573338&width=800",
+        "sourceLabel": "TIMEMORE",
+        "sourceUrl": "https://www.timemore.com/products/timemore-chestnut-c3s-jet-black"
+      }
+    },
+    "timemore-chestnut-s3": {
+      "role": "handGrinder",
+      "strengths": [
+        "portable",
+        "preciseAdjustment",
+        "repeatable"
+      ],
+      "considerations": [
+        "manualEffort",
+        "smallCapacity"
+      ],
+      "sourceImage": {
+        "url": "https://cdn.shopify.com/s/files/1/0642/9153/7138/files/0s3.png?v=1713171924&width=800",
+        "sourceLabel": "TIMEMORE",
+        "sourceUrl": "https://www.timemore.com/products/timemore-manual-coffee-grinder-chestnut-s3"
+      }
+    },
+    "timemore-chestnut-s5-pro": {
+      "role": "handGrinder",
+      "strengths": [
+        "portable",
+        "preciseAdjustment",
+        "repeatable"
+      ],
+      "considerations": [
+        "manualEffort",
+        "smallCapacity",
+        "unknownParameters"
+      ],
+      "sourceImage": {
+        "url": "https://cdn.shopify.com/s/files/1/0642/9153/7138/files/S5_pro.png?v=1789120209&width=800",
+        "sourceLabel": "TIMEMORE",
+        "sourceUrl": "https://www.timemore.com/products/timemore-manual-coffee-grinder-chestnut-s5-pro"
+      }
+    },
+    "mavo-wizard-z": {
+      "role": "handGrinder",
+      "strengths": [
+        "portable",
+        "preciseAdjustment",
+        "repeatable"
+      ],
+      "considerations": [
+        "manualEffort",
+        "smallCapacity",
+        "unknownParameters"
+      ]
+    },
+    "mavo-wizard-z-pro": {
+      "role": "handGrinder",
+      "strengths": [
+        "portable",
+        "preciseAdjustment",
+        "repeatable"
+      ],
+      "considerations": [
+        "manualEffort",
+        "learningCurve",
+        "unknownParameters"
+      ],
+      "sourceImage": {
+        "url": "https://a.zdmimg.com/202608/16/6a80e7d51f5371714.jpg_fo742.jpg",
+        "sourceLabel": "什么值得买",
+        "sourceUrl": "https://post.m.smzdm.com/p/a030p2zw/"
       }
     },
     "kalita-wave-155-filter": {

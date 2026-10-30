@@ -94,6 +94,9 @@ export async function validate(){
      t(key,values);
    }
    for(const r of recipes){
+     const editorial=recipeEditorial[r.id];
+     for(const trait of editorial.strengths)assert(flat[`editorialStrengths.${trait}`],`${locale}/recipe strength ${r.id}/${trait}`);
+     for(const trait of editorial.considerations)assert(flat[`editorialConsiderations.${trait}`],`${locale}/recipe consideration ${r.id}/${trait}`);
      for(const key of ['title','summary','version','grind','equipment','notes','finish','overview','bestFor'])assert(flat[`recipes.${r.copy}.${key}`],`${locale}/${r.id}/${key}`);
      for(const s of r.steps){assert(flat[`step.${s.action}`]);if(s.action!=='finish')assert(flat[`instruction.${s.action}`]);}
      for(const key of [...r.preparation,r.beanNote,r.waterNote,r.filterNote,...r.steps.map(s=>s.instruction)].filter((key):key is string=>!!key))assert(flat[key],`${locale}/${r.id}/${key}`);

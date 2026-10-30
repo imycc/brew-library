@@ -118,7 +118,7 @@ The Camber record uses the article’s official image. The Hoffmann article imag
 
 ## Equipment catalogue — checked 2026-10-28
 
-The expanded equipment catalogue contains 55 records: 22 drippers, 11 kettles, 9 grinders and 13 filters. Product names, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently. Canonical material IDs are translated in all nine locales; brand and model names remain recognizable originals.
+The expanded equipment catalogue contains 69 records: 24 drippers, 11 kettles, 16 grinders, 15 filters and 3 espresso machines. Product names, capacities, materials and compatibility values were checked against manufacturer pages. No price is stored because prices and regional availability change frequently. Canonical material IDs are translated in all nine locales; brand and model names remain recognizable originals.
 
 Primary source groups:
 
@@ -136,6 +136,8 @@ Primary source groups:
 - [OREA V4 guides](https://www.orea.uk/guides-v4) and [filter compatibility](https://www.orea.uk/filters)
 - [Fellow Stagg [X]/[XF]](https://fellowproducts.com/products/staggdripper/?tag=wbifl-20), [Stagg filters](https://fellowproducts.com/collections/complete-your-coffee-corner/products/stagg-paper-filters), and [Ode Gen 2](https://fellowproducts.com/collections/grind-brew/products/ode-brew-grinder-gen-2?variant=40978992529508)
 - [Timemore Sculptor series](https://www.timemore.com/products/timemore-electric-coffee-grinder-sculptor-series) and [series FAQ](https://www.timemore.com/pages/sculptor-related-faq)
+- [TIMEMORE Chestnut C3S](https://www.timemore.com/products/timemore-chestnut-c3s-jet-black), [Chestnut S3](https://www.timemore.com/products/timemore-manual-coffee-grinder-chestnut-s3) and [Chestnut S5 Pro](https://www.timemore.com/products/timemore-manual-coffee-grinder-chestnut-s5-pro)
+- [MAVO official Tmall store](https://mavo.tmall.com/), [Wizard Z hands-on review](https://www.bilibili.com/video/BV1yUE76ME5n) and [Timemore S5 / MAVO Wizard Z Pro domestic comparison](https://post.m.smzdm.com/p/a030p2zw/)
 - [KINGrinder K6](https://www.kingrinder.com/store/products/k6)
 - [HARIO V60 Buono 1.2L](https://www.hario-usa.com/products/v60-buono-drip-kettle), [V60 Buono Electric](https://www.hario-usa.com/products/v60-buono-electric-drip-kettle) and [V60 Drip Kettle Wood 1.2L](https://www.hario-usa.com/products/v60-drip-kettle-wood)
 - [Fellow Stagg EKG Pro](https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle)
@@ -298,3 +300,16 @@ What this pass forced in the model:
 - `steps` may be empty: these three sources publish parameters, not a sequence. Such pages show a localized “no steps published” note and omit `recipeInstructions` from JSON-LD instead of inventing a procedure.
 
 Archive status: the Camber snapshot (`web.archive.org/web/20261030110250/…/espresso-tips/`) was created and verified. The ONA and Counter Culture `/save/` requests were rate-limited (HTTP 429), so both records currently rely on the live URLs and are marked for archiving on the next pass.
+
+
+## Timemore and MAVO hand grinders — checked 2026-10-30
+
+Five hand grinders were added, taking the equipment catalogue to 69 records. Timemore publishes its models on its own store; MAVO does not expose a stable English specification page outside its Tmall store, so those records are deliberately conservative.
+
+- **Timemore Chestnut C3S** — official page: 38 mm stainless-steel burrs, aluminium unibody, 0–90 clicks, up to 30 g. No weight or dimensions are published, so none are stored.
+- **Timemore Chestnut S3** — official page: S2C890 steel burrs, 0.015 mm per grid with 0.1-grid adjustment, full-metal body and folding handle. The page does not publish a grounds capacity, weight or dimensions.
+- **Timemore Chestnut S5 Pro** — official page supplies the 48 mm burr; a domestic cross-review supplies the 12-star pre-breaking geometry, external 90-click adjustment at 0.015 mm per click, and aluminium body. The record links both sources and does not infer capacity or weight.
+- **MAVO Wizard Z** — the official Tmall store is the primary link, supplemented by a hands-on review. The model detail records that no official English spec page is published. The stored 43 mm three-stage burr, 60 clicks per rotation, 0.0167 mm per click and 30 g capacity are the values repeated consistently across the available hands-on material, and the record keeps `unknownParameters` in its editorial trade-offs. It has no image because no stable official product image was available; no generated or unrelated image is used.
+- **MAVO Wizard Z Pro** — the domestic 什么值得买 cross-review and the official Tmall store are the sources. The record stores the 43 mm three-stage volcanic burr, three P5 bearings and external 100-click stepless adjustment. It does not copy the 30 g capacity or 60-click scheme from the non-Pro Wizard Z, because the Pro sources do not publish those values. Its image is the 什么值得买 comparison photograph, credited to that article.
+
+None of the three records links to a recipe: the existing recipe sources do not name these grinders. The shared `equipmentValues` layer covers the new burr and adjustment phrases in all nine locales.

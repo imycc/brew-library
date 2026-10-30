@@ -852,7 +852,19 @@
     "pidOneDegree": "Control PID en pasos de 1 °C",
     "dualPid": "Doble PID",
     "activePassivePreInfusion": "Preinfusión activa y pasiva",
-    "tunePreInfusion3Bar": "Preinfusión cronometrada a 3 bar"
+    "tunePreInfusion3Bar": "Preinfusión cronometrada a 3 bar",
+    "burr38Stainless": "38 mm de acero inoxidable",
+    "adjust0to90Clicks": "0–90 clics",
+    "burrS2c890": "Muelas de acero S2C890",
+    "adjustS3Precision": "0,015 mm por malla; precisión de 0,1 malla",
+    "modelMavoWizardZ": "Wizard Z; página oficial de especificaciones en inglés no publicada",
+    "burr43Volcanic": "Muela volcánica de tres etapas de 43 mm",
+    "adjust60Clicks": "60 clics por vuelta; 0,0167 mm por clic",
+    "burr48S5TwelveStar": "Muela de 12 estrellas de 48 mm con borde de precorte",
+    "adjust90S5": "90 clics externos; 0,015 mm por clic",
+    "modelMavoWizardZPro": "Wizard Z Pro; página oficial de especificaciones en inglés no publicada",
+    "burr43VolcanicP5": "Muela volcánica de tres etapas de 43 mm; tres rodamientos P5",
+    "adjust100Stepless": "100 clics externos, sin escalones"
   },
   "pourPatterns": {
     "centre": "Centro",

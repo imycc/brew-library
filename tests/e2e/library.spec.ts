@@ -59,7 +59,7 @@ for(const locale of locales)test(`static ${locale} pages render complete locale 
 });
 test('equipment catalogue filters official records and links source-backed recipes',async({page})=>{
  await page.goto(`${base}/zh-Hant/equipment/`);
- await expect(page.locator('[data-equipment]')).toHaveCount(64);
+ await expect(page.locator('[data-equipment]')).toHaveCount(69);
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('濃縮咖啡機');
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('迴轉式幫浦');
  await expect(page.locator('[data-equipment="origami-air-s"]')).toContainText('64');
@@ -82,7 +82,7 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('Herd-Schwanenhals');
  await expect(page.locator('[data-equipment="kalita-wave-155-stainless"]')).toContainText('Kalita Wave 155 Filter');
  await page.goto(`${base}/zh-Hant/equipment/`);
- await expect(page.locator('[data-equipment]')).toHaveCount(64);
+ await expect(page.locator('[data-equipment]')).toHaveCount(69);
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('濃縮咖啡機');
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('迴轉式幫浦');
  await expect(page.locator('.equipment-grid')).toHaveCSS('column-width','300px');
@@ -97,7 +97,11 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment]')).toHaveCount(11);
  await expect(page.locator('[data-equipment="fellow-stagg-ekg-pro"]')).toContainText('40–100');
  await page.getByRole('button',{name:/磨豆器/}).click();
- await expect(page.locator('[data-equipment]')).toHaveCount(11);
+ await expect(page.locator('[data-equipment]')).toHaveCount(16);
+ await expect(page.locator('[data-equipment="timemore-chestnut-c3s"]')).toContainText('38 mm 不鏽鋼');
+ await expect(page.locator('[data-equipment="timemore-chestnut-s5-pro"]')).toContainText('48 mm 十二星磨盤');
+ await expect(page.locator('[data-equipment="mavo-wizard-z"]')).toContainText('Wizard Z');
+ await expect(page.locator('[data-equipment="mavo-wizard-z-pro"]')).toContainText('100 格');
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"] footer a[href="https://1zpresso.coffee/product/zp6-special/"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="1zpresso-zp6-special"] a[href*="rincon-origami"]')).toHaveCount(1);
  await page.setViewportSize({width:390,height:844});

@@ -852,7 +852,19 @@
     "pidOneDegree": "PID-Regelung in 1-°C-Schritten",
     "dualPid": "Dual-PID",
     "activePassivePreInfusion": "Aktives und passives Vorbrühen",
-    "tunePreInfusion3Bar": "Zeitgesteuerte Vorbrühung mit 3 bar"
+    "tunePreInfusion3Bar": "Zeitgesteuerte Vorbrühung mit 3 bar",
+    "burr38Stainless": "38 mm Edelstahl",
+    "adjust0to90Clicks": "0–90 Klicks",
+    "burrS2c890": "S2C890-Stahlmahlwerk",
+    "adjustS3Precision": "0,015 mm pro Raster; 0,1-Raster-Genauigkeit",
+    "modelMavoWizardZ": "Wizard Z; offizielle englische Spezifikationsseite nicht veröffentlicht",
+    "burr43Volcanic": "43 mm dreistufiges Vulkanmahlwerk",
+    "adjust60Clicks": "60 Klicks pro Umdrehung; 0,0167 mm pro Klick",
+    "burr48S5TwelveStar": "48 mm 12-Stern-Mahlwerk mit Vorbrechkante",
+    "adjust90S5": "Extern 90 Klicks; 0,015 mm pro Klick",
+    "modelMavoWizardZPro": "Wizard Z Pro; offizielle englische Spezifikationsseite nicht veröffentlicht",
+    "burr43VolcanicP5": "43 mm dreistufiges Vulkanmahlwerk; drei P5-Lager",
+    "adjust100Stepless": "Extern 100 Klicks, stufenlos"
   },
   "pourPatterns": {
     "centre": "Mitte",
