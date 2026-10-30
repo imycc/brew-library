@@ -9,6 +9,7 @@
       "brewer": "HARIO V60 · Ceramic",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 20,
       "water": {
         "amount": 300,
@@ -87,6 +88,7 @@
       "brewer": "HARIO V60 · 1 Cup",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 250,
@@ -211,6 +213,7 @@
       "brewer": "NextLevel Pulsar",
       "brewerId": "pulsar",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 25,
       "water": {
         "alkalinity": 40,
@@ -323,6 +326,7 @@
       "brewer": "HARIO V60 · Ceramic",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 18,
       "water": {
         "amount": 300,
@@ -405,6 +409,7 @@
       "brewer": "HARIO Switch",
       "brewerId": "switch",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 240,
@@ -495,6 +500,7 @@
       "brewer": "HARIO Switch 02",
       "brewerId": "switch",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 16.5,
       "water": {
         "amount": 240,
@@ -599,6 +605,7 @@
       "brewer": "HARIO W60",
       "brewerId": "w60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 12,
       "water": {
         "amount": 200,
@@ -675,6 +682,7 @@
       "brewer": "HARIO V60 · Metal",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 250,
@@ -745,6 +753,7 @@
       "brewer": "HARIO V60 · Plastic",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 30,
       "water": {
         "amount": 500,
@@ -830,6 +839,7 @@
       "brewer": "HARIO V60",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 20,
       "water": {
         "amount": 300,
@@ -901,6 +911,7 @@
       "brewer": "HARIO Switch 02",
       "brewerId": "switch",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 20,
       "water": {
         "amount": 320,
@@ -985,6 +996,7 @@
       "brewer": "ORIGAMI Dripper Air S",
       "brewerId": "origami",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 21,
       "water": {
         "amount": 320,
@@ -1086,6 +1098,7 @@
       "brewer": "ORIGAMI Dripper S · Porcelain",
       "brewerId": "origami",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 240,
@@ -1179,6 +1192,7 @@
       "brewer": "ORIGAMI Air",
       "brewerId": "origami",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 16,
       "water": {
         "amount": 240,
@@ -1265,6 +1279,7 @@
       "brewer": "ORIGAMI · Acrylic",
       "brewerId": "origami",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 260,
@@ -1353,6 +1368,7 @@
       "brewer": "ORIGAMI Air",
       "brewerId": "origami",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 250,
@@ -1433,6 +1449,7 @@
       "brewer": "HARIO V60",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 30,
       "water": {
         "amount": 500,
@@ -1547,6 +1564,7 @@
       "brewer": "HARIO V60",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 20,
       "water": {
         "amount": 345,
@@ -1618,6 +1636,7 @@
       "brewer": "HARIO V60 MUGEN 02",
       "brewerId": "mugen",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 16.5,
       "water": {
         "amount": 225,
@@ -1673,6 +1692,7 @@
       "brewer": "Dripper not stated",
       "brewerId": "unspecified",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15.5,
       "water": {
         "amount": 250,
@@ -1763,6 +1783,7 @@
       "brewer": "Graycano",
       "brewerId": "graycano",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 16,
       "water": {
         "amount": 240,
@@ -1850,6 +1871,7 @@
       "brewer": "Dripper not stated",
       "brewerId": "unspecified",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 17,
       "water": {
         "amount": 240,
@@ -1926,6 +1948,7 @@
       "brewer": "Graycano",
       "brewerId": "graycano",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 240,
@@ -2006,6 +2029,7 @@
       "brewer": "Graycano",
       "brewerId": "graycano",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 17,
       "water": {
         "amount": 270,
@@ -2091,6 +2115,7 @@
       "brewer": "MK Dripper",
       "brewerId": "mk",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 240,
@@ -2173,6 +2198,7 @@
       "brewer": "HARIO V60 · Ceramic",
       "brewerId": "v60",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 240,
@@ -2265,6 +2291,7 @@
       "brewer": "ORIGAMI Dripper Air S",
       "brewerId": "origami",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 22,
       "water": {
         "amount": 190,
@@ -2358,6 +2385,7 @@
       "brewer": "Dripper not stated",
       "brewerId": "unspecified",
       "kind": "hot",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 250,
@@ -2426,6 +2454,7 @@
       "brewer": "Dripper not stated",
       "brewerId": "unspecified",
       "kind": "iced",
+      "method": "pour-over",
       "dose": 15,
       "water": {
         "amount": 150,

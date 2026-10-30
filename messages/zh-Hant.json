@@ -227,7 +227,15 @@
     "pulses": "分次短注水",
     "level": "整平粉層",
     "stir": "攪拌",
-    "drain": "先讓它落下"
+    "drain": "先讓它落下",
+    "grind": "磨粉",
+    "dose": "填粉",
+    "tamp": "壓粉",
+    "lock": "裝上手把",
+    "preinfuse": "預浸",
+    "extract": "萃取",
+    "stop": "停止萃取",
+    "purge": "清洗沖煮頭"
   },
   "instruction": {
     "bloom": "按標示水量注水，潤濕咖啡粉。",
@@ -240,7 +248,15 @@
     "pulses": "分次短注水，維持水位在粉層上方 1–2 cm，直至達到總注水量。",
     "level": "沖煮前整平咖啡粉。",
     "stir": "以攪拌擾動粉床。",
-    "drain": "暫停注水，讓水位先下降一些。"
+    "drain": "暫停注水，讓水位先下降一些。",
+    "grind": "沖煮前才磨粉，直接磨入粉碗。",
+    "dose": "依標示粉量填粉。",
+    "tamp": "水平、穩定地壓粉。",
+    "lock": "將把手確實鎖在沖煮頭上。",
+    "preinfuse": "以低壓預浸至標示時間。",
+    "extract": "升至萃取壓力，萃取到標示液量。",
+    "stop": "到達標示液量或時間即停止萃取。",
+    "purge": "裝手把前先清洗沖煮頭。"
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "冰在分享壺",
     "brewer": "冰在濾杯",
     "glass": "冰在杯中"
+  },
+  "method": "沖煮方式",
+  "methodPourover": "手沖",
+  "methodEspresso": "濃縮",
+  "shotTime": "萃取時間",
+  "yield": "萃取液量",
+  "pressure": "壓力",
+  "preInfusion": "預浸",
+  "afterPreInfusion": "預浸後",
+  "basket": "粉碗",
+  "shotTimeline": "依萃取順序排列",
+  "compareMismatch": "手沖與濃縮配方不放在一起比較。",
+  "quickAnswerEspresso": "快速答案：{dose} g 咖啡粉、萃取 {yield}、水溫 {temperature}、研磨度 {grind}、萃取時間 {time}、壓力 {pressure}。",
+  "faqEspressoAmountQuestion": "{recipe} 用多少咖啡粉、萃取多少？",
+  "faqEspressoAmountAnswer": "{dose} g 粉、萃取 {yield}（{basket} 粉碗、{pressure}、預浸 {preInfusion}）。",
+  "faqShotTimeQuestion": "{recipe} 的萃取時間是多少？",
+  "schemaEspressoCategory": "濃縮咖啡",
+  "puckPrepLabels": {
+    "purge": "先排掉沖煮頭殘水並擦乾粉碗",
+    "preheat": "先熱沖煮頭與把手",
+    "rinse": "潤洗粉碗",
+    "wdt": "以 WDT 針分散咖啡粉",
+    "level": "整平粉面",
+    "tamp": "壓粉"
   }
 }

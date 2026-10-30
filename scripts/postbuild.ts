@@ -2,7 +2,7 @@ import {access,mkdir,readFile,writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {createTranslator} from 'next-intl';
 import {locales,localeNames} from '../src/i18n/locales';
-import {BASE,SITE,recipes} from '../src/lib/recipes';
+import {BASE,SITE,recipes,isEspresso,type Recipe} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
 import {equipmentEditorial} from '../src/lib/editorial';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
@@ -49,6 +49,9 @@ const enEditorial=JSON.parse(await readFile('messages/editorial-en.json','utf8')
 const enMessages=mergeMessages(enBase,enEditorial);
 const t=createTranslator({locale:'en',messages:enMessages as Record<string,unknown>,onError(error){throw error;}}) as unknown as (key:string,values?:Record<string,unknown>)=>string;
 const line=(value:string)=>value.replace(/\s+/g,' ').trim();
+const quantities=(recipe:Recipe)=>isEspresso(recipe)
+  ? `${recipe.dose} g in${recipe.yield?` / ${recipe.yield.amount} ${recipe.yield.unit} out`:''}`
+  : `${recipe.dose} g coffee / ${recipe.water.amount} ${recipe.water.unit} water`;
 const llms=[
   '# 沖煮配方庫 · Brew Library',
   '',
@@ -61,7 +64,7 @@ const llms=[
   ...locales.map(locale=>`- [${localeNames[locale]}](${page(locale)})`),
   '',
   '## Recipes',
-  ...recipes.map(recipe=>`- [${line(t(`recipes.${recipe.copy}.title`))}](${page('en',`recipes/${recipe.id}/`)}) — ${line(recipe.author)}, ${line(recipe.brewer)}, ${recipe.dose} g coffee / ${recipe.water.amount} ${recipe.water.unit} water; source: ${line(recipe.source.label)} (checked ${recipe.source.checked}).`),
+  ...recipes.map(recipe=>`- [${line(t(`recipes.${recipe.copy}.title`))}](${page('en',`recipes/${recipe.id}/`)}) — ${line(t(isEspresso(recipe)?'methodEspresso':'methodPourover'))}, ${line(recipe.author)}, ${line(recipe.brewer)}, ${quantities(recipe)}; source: ${line(recipe.source.label)} (checked ${recipe.source.checked}).`),
   '',
   '## Equipment',
   ...equipment.map(item=>`- [${line(`${item.brand} ${item.name}`)}](${page('en','equipment/')}#${item.id}) — ${line(t(`equipmentCategories.${item.category}`))}; ${line(t(`equipmentRoles.${equipmentEditorial[item.id].role}`))}; ${item.sources.length} official source${item.sources.length===1?'':'s'}.`),

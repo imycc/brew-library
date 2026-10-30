@@ -227,7 +227,15 @@
     "pulses": "Short pulse pours",
     "level": "Level the bed",
     "stir": "Stir",
-    "drain": "Partial drain"
+    "drain": "Partial drain",
+    "grind": "Grind",
+    "dose": "Dose",
+    "tamp": "Tamp",
+    "lock": "Lock in the portafilter",
+    "preinfuse": "Pre-infuse",
+    "extract": "Extract",
+    "stop": "Stop the shot",
+    "purge": "Rinse the group"
   },
   "instruction": {
     "bloom": "Add the stated amount to wet the coffee grounds.",
@@ -240,7 +248,15 @@
     "pulses": "Use short pours to keep the water 1–2 cm above the grounds, continuing to the total water target.",
     "level": "Level the coffee bed before brewing.",
     "stir": "Agitate the bed by stirring.",
-    "drain": "Stop pouring and let the water level drop a little."
+    "drain": "Stop pouring and let the water level drop a little.",
+    "grind": "Grind immediately before brewing, straight into the basket.",
+    "dose": "Dose the stated amount of coffee.",
+    "tamp": "Tamp level and with steady pressure.",
+    "lock": "Lock the portafilter firmly into the group head.",
+    "preinfuse": "Start a low-pressure pre-infusion for the stated time.",
+    "extract": "Raise to brew pressure and extract to the stated yield.",
+    "stop": "Stop the shot at the stated yield or time.",
+    "purge": "Rinse the group before locking in."
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "Ice in the server",
     "brewer": "Ice in the brewer",
     "glass": "Ice in the glass"
+  },
+  "method": "Method",
+  "methodPourover": "Pour-over",
+  "methodEspresso": "Espresso",
+  "shotTime": "Shot time",
+  "yield": "Beverage yield",
+  "pressure": "Pressure",
+  "preInfusion": "Pre-infusion",
+  "afterPreInfusion": "After pre-infusion",
+  "basket": "Basket",
+  "shotTimeline": "Extraction steps in order",
+  "compareMismatch": "Pour-over and espresso recipes are not compared side by side.",
+  "quickAnswerEspresso": "Quick answer: {dose} g coffee in, {yield} out, water {temperature}, grind {grind}, shot {time}, pressure {pressure}.",
+  "faqEspressoAmountQuestion": "How much coffee and what yield does {recipe} use?",
+  "faqEspressoAmountAnswer": "{dose} g in, {yield} out ({basket} basket, {pressure}, pre-infusion {preInfusion}).",
+  "faqShotTimeQuestion": "How long does the {recipe} shot take?",
+  "schemaEspressoCategory": "Espresso",
+  "puckPrepLabels": {
+    "purge": "Purge the group and dry the basket",
+    "preheat": "Preheat the group and handle",
+    "rinse": "Rinse the basket",
+    "wdt": "Distribute with a WDT tool",
+    "level": "Level the bed",
+    "tamp": "Tamp"
   }
 }

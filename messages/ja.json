@@ -227,7 +227,15 @@
     "pulses": "短く分けて注ぐ",
     "level": "粉を平らにする",
     "stir": "かき混ぜる",
-    "drain": "少し落とす"
+    "drain": "少し落とす",
+    "grind": "挽く",
+    "dose": "粉を入れる",
+    "tamp": "タンプ",
+    "lock": "ポルタフィルターを装着",
+    "preinfuse": "プレインフュージョン",
+    "extract": "抽出",
+    "stop": "抽出を止める",
+    "purge": "グループをすすぐ"
   },
   "instruction": {
     "bloom": "表示の湯量で粉を湿らせます。",
@@ -240,7 +248,15 @@
     "pulses": "短く注ぎ足し、粉の上1–2 cmの水位を保ち、総湯量まで続けます。",
     "level": "抽出前に粉を平らにします。",
     "stir": "スプーン等で粉層をかき混ぜる。",
-    "drain": "注湯を一時的に止め、水位を少し下げる。"
+    "drain": "注湯を一時的に止め、水位を少し下げる。",
+    "grind": "淹れる直前に挽いて、そのままバスケットに入れる。",
+    "dose": "表示量の粉を入れる。",
+    "tamp": "水平に、一定の圧でタンプする。",
+    "lock": "ポルタフィルターをグループに確実に装着する。",
+    "preinfuse": "表示時間まで低圧でプレインフュージョンを行う。",
+    "extract": "抽出圧まで上げて、表示量まで抽出する。",
+    "stop": "表示の量または時間で抽出を止める。",
+    "purge": "装着前にグループをすすぐ。"
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "サーバーに氷",
     "brewer": "ドリッパーに氷",
     "glass": "グラスに氷"
+  },
+  "method": "抽出方式",
+  "methodPourover": "ハンドドリップ",
+  "methodEspresso": "エスプレッソ",
+  "shotTime": "抽出時間",
+  "yield": "抽出液量",
+  "pressure": "圧力",
+  "preInfusion": "プレインフュージョン",
+  "afterPreInfusion": "プレインフュージョン後",
+  "basket": "バスケット",
+  "shotTimeline": "抽出の手順順",
+  "compareMismatch": "ハンドドリップとエスプレッソは並べて比較できません。",
+  "quickAnswerEspresso": "クイック回答: 粉 {dose} g、抽出 {yield}、湯温 {temperature}、挽き目 {grind}、抽出時間 {time}、圧力 {pressure}。",
+  "faqEspressoAmountQuestion": "{recipe} の粉量と抽出量は？",
+  "faqEspressoAmountAnswer": "粉 {dose} g、抽出 {yield}（{basket} バスケット、{pressure}、プレインフュージョン {preInfusion}）。",
+  "faqShotTimeQuestion": "{recipe} の抽出時間は？",
+  "schemaEspressoCategory": "エスプレッソ",
+  "puckPrepLabels": {
+    "purge": "グループの水気を飛ばしバスケットを乾かす",
+    "preheat": "グループとハンドルを温める",
+    "rinse": "バスケットをすすぐ",
+    "wdt": "WDT で粉をほぐす",
+    "level": "粉面を平らにする",
+    "tamp": "タンプする"
   }
 }

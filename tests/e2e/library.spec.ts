@@ -189,3 +189,17 @@ test('original grinder notation, per-pour temperatures and missing times remain 
  await expect(page.locator('.comparison-table')).toContainText('1Zpresso K-Ultra');
  await expect(page.locator('.comparison-table')).toContainText('Sibarist Conic');
 });
+
+test('the method filter keeps pour-over and espresso results apart',async({page})=>{
+ await page.goto(`${base}/en/`);
+ const initial=await page.locator('.result-count').innerText();
+ await page.getByLabel('Method',{exact:true}).selectOption('espresso');
+ await expect(page.locator('.result-count')).toHaveText('Recipes: 0');
+ await expect(page.locator('.empty-state')).toBeVisible();
+ await page.getByLabel('Method',{exact:true}).selectOption('pour-over');
+ await expect(page.locator('.result-count')).toHaveText(initial);
+ expect(page.url()).toContain('method=pour-over');
+ await page.getByRole('button',{name:'Reset filters'}).click();
+ await expect(page.locator('.result-count')).toHaveText(initial);
+ await expect.poll(()=>page.url()).not.toContain('method=');
+});

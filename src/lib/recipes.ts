@@ -4,13 +4,14 @@ import rawRecipes from '../../content/recipes.json';
 const pourPattern=z.enum(['centre','circular','spiral','vertical','lateral','wholeBed','any']);
 const pourStyle=z.enum(['aggressive','turbulent','slow','gentle','steady','forceful']);
 const stepSchema = z.object({
-  action: z.enum(['pour','bloom','swirl','stir','pause','drain','finish','close','open','topup','pulses','level']),
+  action: z.enum(['pour','bloom','swirl','stir','pause','drain','finish','close','open','topup','pulses','level','grind','dose','tamp','lock','preinfuse','extract','stop','purge']),
   at: z.number().nonnegative().nullable(),
   end: z.number().nonnegative().optional(),
   amount: z.number().positive().nullable(),
   cumulative: z.number().positive().nullable(),
   unit: z.enum(['g','mL']).optional(),
   temperature: z.number().positive().optional(),
+  pressure: z.number().positive().optional(),
   instruction: z.string().optional(),
   pattern: pourPattern.optional(),
   style: pourStyle.optional(),
@@ -20,12 +21,12 @@ const stepSchema = z.object({
   levelMax: z.number().nonnegative().optional(),
   derived: z.boolean().optional()
 });
-export const recipeSchema = z.object({
+const waterSchema=z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), derived:z.boolean().default(false),
+  tds:z.number().positive().optional(), ppm:z.number().positive().optional(), hardness:z.number().positive().optional(), hardnessUnit:z.enum(['ppm','mg/L']).optional(), alkalinity:z.number().positive().optional(), alkalinityUnit:z.enum(['ppm','mg/L']).optional()});
+const commonRecipeFields={
   id:z.string().regex(/^[a-z0-9-]+$/), copy:z.string().regex(/^[a-z0-9-]+$/),
   author:z.string(), authorId:z.string(), brewer:z.string(), brewerId:z.string(),
   kind:z.enum(['hot','iced']), dose:z.number().positive(),
-  water:z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), derived:z.boolean().default(false),
-    tds:z.number().positive().optional(), ppm:z.number().positive().optional(), hardness:z.number().positive().optional(), hardnessUnit:z.enum(['ppm','mg/L']).optional(), alkalinity:z.number().positive().optional(), alkalinityUnit:z.enum(['ppm','mg/L']).optional()}),
   ice:z.object({amount:z.number().positive(), amountMax:z.number().positive().optional(), approximate:z.boolean().optional(), unit:z.enum(['g','mL']), placement:z.enum(['server','brewer','glass'])}).optional(),
   temperature:z.number().positive().nullable(), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]).nullable(),
   removalAt:z.number().nonnegative().optional(),
@@ -33,22 +34,48 @@ export const recipeSchema = z.object({
   ratioStated:z.string().optional(),
   beverageTds:z.number().positive().optional(),
   doseGround:z.number().positive().optional(),
-  bedPrep:z.array(z.enum(['rinseFilter','coldRinse','discardRinse','prewarmServer','levelBed','crater','siftFines','removeChaff'])).optional(),
-  valve:z.enum(['open','closed']).optional(),
   grindHedged:z.boolean().optional(),
   source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), videoPublished:z.string().nullable().optional(), published:z.string().nullable(), publishedBasis:z.enum(['page','video','event']).optional(), updated:z.string().nullable().optional(), archive:z.url().optional(), videoArchive:z.url().optional(), checked:z.iso.date()}),
-  image:z.enum(['coffee-bloom','brewer-still']),
+  image:z.enum(['coffee-bloom','brewer-still','espresso-shot']),
   steps:z.array(stepSchema).min(1), preparation:z.array(z.string()),
   waterConditions:z.enum(['unknown','soft','rao']), beanConditions:z.enum(['unknown','light']),
-  filterConditions:z.enum(['unknown','pulsar']), context:z.enum(['daily','competition']),
+  filterConditions:z.enum(['unknown','pulsar']).default('unknown'), context:z.enum(['daily','competition']),
   beanNote:z.string().optional(), waterNote:z.string().optional(), filterNote:z.string().optional(),
   grinder:z.object({id:z.string(),name:z.string(),setting:z.string().nullable(),secondSetting:z.string().optional()}).optional(),
   grindMicron:z.object({value:z.number().positive(), basis:z.enum(['psdPeak'])}).optional(),
   paper:z.object({id:z.string(),name:z.string(),shape:z.enum(['cone','wave','flat']).optional()}).optional(),
   coffee:z.object({name:z.string().optional(),origin:z.string().optional(),variety:z.string().optional(),process:z.enum(['washed','natural','honey','anaerobic']).optional(),roast:z.enum(['light','medium','dark']).optional(),asRecommendation:z.boolean().optional()}).optional()
+};
+export const pourOverSchema=z.object({...commonRecipeFields,
+  method:z.literal('pour-over'),
+  water:waterSchema,
+  bedPrep:z.array(z.enum(['rinseFilter','coldRinse','discardRinse','prewarmServer','levelBed','crater','siftFines','removeChaff'])).optional(),
+  valve:z.enum(['open','closed']).optional()
 });
+export const espressoSchema=z.object({...commonRecipeFields,
+  method:z.literal('espresso'),
+  // An espresso source publishes a beverage yield, not a volume of water poured through
+  // a bed; a stated water recipe stays optional and is never derived from the yield.
+  water:waterSchema.optional(),
+  extraction:z.object({
+    pressureBar:z.number().positive().optional(),
+    preInfusion:z.object({seconds:z.number().positive().nullable().optional(), pressureBar:z.number().positive().nullable().optional()}).optional(),
+    basket:z.object({id:z.string().optional(), name:z.string().optional(), grams:z.number().positive().optional(), style:z.enum(['single','double','bottomless','pressurised']).optional()}).optional(),
+    puckPrep:z.array(z.enum(['purge','preheat','rinse','wdt','level','tamp'])).optional(),
+    purgeSeconds:z.number().positive().optional()
+  }).optional()
+});
+export const recipeSchema = z.discriminatedUnion('method',[pourOverSchema,espressoSchema]);
 export type Recipe = z.infer<typeof recipeSchema>;
+export type PourOverRecipe = z.infer<typeof pourOverSchema>;
+export type EspressoRecipe = z.infer<typeof espressoSchema>;
+export const methods=['pour-over','espresso'] as const;
+export type Method=typeof methods[number];
 export const recipes: Recipe[] = z.object({schemaVersion:z.literal(1),recipes:z.array(recipeSchema)}).parse(rawRecipes).recipes;
+export const isPourOver=(recipe:Recipe):recipe is PourOverRecipe=>recipe.method==='pour-over';
+export const isEspresso=(recipe:Recipe):recipe is EspressoRecipe=>recipe.method==='espresso';
+export const pourOverRecipes=recipes.filter(isPourOver);
+export const espressoRecipes=recipes.filter(isEspresso);
 export const BASE = '/brew-library';
 export const SITE = 'https://imycc.github.io';
 export function time(seconds:number):string {return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;}
@@ -58,22 +85,58 @@ export function iceAmountText(recipe:Recipe):string {
   const{amount,amountMax,approximate,unit}=recipe.ice;
   return `${approximate?'~':''}${amount}${amountMax!==undefined?`–${amountMax}`:''} ${unit}`;
 }
-export function totalLiquid(recipe:Recipe):{amount:number;unit:string;derived:boolean}|null {
+export function yieldText(recipe:Recipe):string {
+  return recipe.yield?`${recipe.yield.amount} ${recipe.yield.unit}`:'';
+}
+export function pressureText(recipe:Recipe):string {
+  const stated=isEspresso(recipe)?recipe.extraction?.pressureBar:undefined;
+  const step=recipe.steps.find(s=>s.pressure!==undefined)?.pressure;
+  const bar=stated??step;
+  return bar?`${bar} bar`:'';
+}
+export function preInfusionText(recipe:Recipe):string {
+  if(!isEspresso(recipe))return '';
+  const pre=recipe.extraction?.preInfusion;
+  if(!pre)return '';
+  return [pre.seconds!=null?`${pre.seconds} s`:null,pre.pressureBar!=null?`${pre.pressureBar} bar`:null].filter(Boolean).join(' · ');
+}
+export function basketText(recipe:Recipe):string {
+  if(!isEspresso(recipe))return '';
+  const basket=recipe.extraction?.basket;
+  if(!basket)return '';
+  return [basket.grams?`${basket.grams} g`:null,basket.name].filter(Boolean).join(' · ');
+}
+export function puckPrepKeys(recipe:Recipe):string[] {
+  return isEspresso(recipe)?recipe.extraction?.puckPrep||[]:[];
+}
+export function totalLiquid(recipe:PourOverRecipe):{amount:number;unit:string;derived:boolean}|null {
   if(!recipe.ice)return {amount:recipe.water.amount,unit:recipe.water.unit,derived:recipe.water.derived};
   // Ice is never converted into water: a mismatched pair simply has no total.
   if(recipe.ice.unit!==recipe.water.unit)return null;
   return {amount:recipe.water.amount+recipe.ice.amount,unit:recipe.water.unit,derived:true};
 }
+// What actually lands in the cup: the beverage yield for espresso, the poured
+// liquid (plus ice when the units agree) for pour-over.
+export function beverage(recipe:Recipe):{amount:number;unit:string;derived:boolean}|null {
+  if(isEspresso(recipe))return recipe.yield?{amount:recipe.yield.amount,unit:recipe.yield.unit,derived:recipe.yield.basis==='target'}:null;
+  return totalLiquid(recipe);
+}
 export function ratio(recipe:Recipe, locale:string):string {
+  const format=(value:number)=>new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(value);
+  if(isEspresso(recipe)){
+    if(!recipe.yield)return '—';
+    return recipe.yield.unit==='g'?`1 : ${format(recipe.yield.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.yield.amount} mL`;
+  }
   const total=totalLiquid(recipe);
   // Cannot pair the two units: show the water ratio alone rather than inventing a total.
-  if(!total)return recipe.water.unit==='g'?`1 : ${new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
-  return total.unit==='g'?`1 : ${new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(total.amount/recipe.dose)}`:`${recipe.dose} g : ${total.amount} mL`;
+  if(!total)return recipe.water.unit==='g'?`1 : ${format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
+  return total.unit==='g'?`1 : ${format(total.amount/recipe.dose)}`:`${recipe.dose} g : ${total.amount} mL`;
 }
 
 const ADDITIONS=new Set(['pour','bloom','pulses','topup']);
 function additions(recipe:Recipe) {return recipe.steps.filter(s=>ADDITIONS.has(s.action)&&s.amount!==null);}
 export function additionUnit(recipe:Recipe):string|null {
+  if(!isPourOver(recipe))return null;
   const measured=additions(recipe);
   if(!measured.length)return null;
   const units=new Set(measured.map(s=>s.unit||recipe.water.unit));
@@ -82,6 +145,7 @@ export function additionUnit(recipe:Recipe):string|null {
 // Only when every published addition is quantified in the water's own unit can a
 // percentage be read as a share of the recipe rather than a share of a partial list.
 export function accountedAdditions(recipe:Recipe):{amount:number;unit:string}|null {
+  if(!isPourOver(recipe))return null;
   const unit=additionUnit(recipe);
   if(!unit||unit!==recipe.water.unit)return null;
   const amount=additions(recipe).reduce((sum,s)=>sum+(s.amount as number),0);
@@ -94,6 +158,7 @@ export function bloomShare(recipe:Recipe):number|null {
 }
 export type PourPhase={endsAt:number;kind:'end'|'start';drawdown:number|null};
 export function pourPhase(recipe:Recipe):PourPhase|null {
+  if(!isPourOver(recipe))return null;
   // Every pouring step counts here, quantified or not: an untimed later burst means the
   // source never published when pouring finished.
   const stages=recipe.steps.filter(s=>ADDITIONS.has(s.action));
@@ -110,6 +175,20 @@ export function pourPhase(recipe:Recipe):PourPhase|null {
   return {endsAt,kind:hasEnd?'end':'start',drawdown:finish!==null&&finish>=endsAt?finish-endsAt:null};
 }
 export function sourceFacts(recipe:Recipe):{provided:boolean;key:string;label:string}[] {
+  if(isEspresso(recipe)){
+    const extraction=recipe.extraction;
+    return [
+      {key:'temperature',label:'temperature',provided:recipe.temperature!==null},
+      {key:'brewTime',label:'shotTime',provided:recipe.duration!==null},
+      {key:'yield',label:'yield',provided:!!recipe.yield},
+      {key:'grinder',label:'grinder',provided:!!recipe.grinder?.setting},
+      {key:'basket',label:'basket',provided:!!extraction?.basket?.grams||!!extraction?.basket?.name},
+      {key:'pressure',label:'pressure',provided:extraction?.pressureBar!==undefined||recipe.steps.some(s=>s.pressure!==undefined)},
+      {key:'preInfusion',label:'preInfusion',provided:!!extraction?.preInfusion},
+      {key:'beans',label:'beans',provided:!!recipe.coffee||!!recipe.beanNote},
+      {key:'waterChemistry',label:'waterQuality',provided:recipe.waterConditions!=='unknown'||!!recipe.waterNote}
+    ];
+  }
   const measured=additions(recipe);
   return [
     {key:'temperature',label:'temperature',provided:recipe.temperature!==null||recipe.temperatureMode==='boiling'},
@@ -125,20 +204,30 @@ export function sourceFacts(recipe:Recipe):{provided:boolean;key:string;label:st
 export function parseSelection(raw:string|null, list:Recipe[]=recipes) {
   const requested=(raw||'').split(',').filter(Boolean);
   const valid=new Set(list.map(r=>r.id));
-  const ids=[...new Set(requested.filter(id=>valid.has(id)))].slice(0,3);
-  return {ids,invalid:requested.some(id=>!valid.has(id))||new Set(requested).size>3||new Set(requested).size!==requested.length};
+  const kept=[...new Set(requested.filter(id=>valid.has(id)))].slice(0,3);
+  const byId=new Map(list.map(r=>[r.id,r]));
+  const method=byId.get(kept[0])?.method;
+  // A pour-over and an espresso shot share almost no rows, so a shared comparison keeps
+  // the first recipe's method and reports the rest as dropped rather than mixing them.
+  const ids=method?kept.filter(id=>byId.get(id)?.method===method):[];
+  return {ids,invalid:requested.some(id=>!valid.has(id))||new Set(requested).size>3||new Set(requested).size!==requested.length,mismatch:ids.length!==kept.length};
 }
-export function toggleSelection(ids:string[], id:string, list:Recipe[]=recipes):{ids:string[];limit:boolean} {
-  if(ids.includes(id)) return {ids:ids.filter(x=>x!==id),limit:false};
-  if(!list.some(r=>r.id===id))return {ids,limit:false};
-  if(ids.length>=3)return {ids,limit:true};
-  return {ids:[...ids,id],limit:false};
+export function toggleSelection(ids:string[], id:string, list:Recipe[]=recipes):{ids:string[];limit:boolean;mismatch:boolean} {
+  const byId=new Map(list.map(r=>[r.id,r]));
+  if(ids.includes(id)) return {ids:ids.filter(x=>x!==id),limit:false,mismatch:false};
+  const candidate=byId.get(id);
+  if(!candidate)return {ids,limit:false,mismatch:false};
+  if(ids.length>=3)return {ids,limit:true,mismatch:false};
+  const method=byId.get(ids[0])?.method;
+  if(method&&candidate.method!==method)return {ids,limit:false,mismatch:true};
+  return {ids:[...ids,id],limit:false,mismatch:false};
 }
-export const filterKeys=['q','brewer','author','kind','dose','grinder','paper','process','roast'] as const;
+export const filterKeys=['q','method','brewer','author','kind','dose','grinder','paper','process','roast'] as const;
 export type RecipeFilters=Partial<Record<typeof filterKeys[number],string>>;
 export function filterRecipes(list:Recipe[], filters:RecipeFilters, title:(r:Recipe)=>string) {
   const query=(filters.q||'').normalize('NFKC').toLocaleLowerCase().trim();
   return list.filter(r=>(!query || `${title(r)} ${r.author} ${r.brewer} ${r.id} ${r.grinder?.name||''} ${r.paper?.name||''} ${r.coffee?.name||''} ${r.coffee?.origin||''} ${r.coffee?.variety||''}`.normalize('NFKC').toLocaleLowerCase().includes(query))
+    &&(!filters.method||r.method===filters.method)
     &&(!filters.brewer||r.brewerId===filters.brewer)&&(!filters.author||r.authorId===filters.author)
     &&(!filters.kind||r.kind===filters.kind)&&(!filters.dose||String(r.dose)===filters.dose)
     &&(!filters.grinder||r.grinder?.id===filters.grinder)&&(!filters.paper||r.paper?.id===filters.paper)

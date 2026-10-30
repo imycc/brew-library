@@ -227,7 +227,15 @@
     "pulses": "Kurze Aufgüsse",
     "level": "Kaffeebett ebnen",
     "stir": "Umrühren",
-    "drain": "Etwas ablaufen lassen"
+    "drain": "Etwas ablaufen lassen",
+    "grind": "Mahlen",
+    "dose": "Dosieren",
+    "tamp": "Tampern",
+    "lock": "Siebträger einsetzen",
+    "preinfuse": "Vorbrühen",
+    "extract": "Extrahieren",
+    "stop": "Extraktion stoppen",
+    "purge": "Gruppe spülen"
   },
   "instruction": {
     "bloom": "Mit der angegebenen Wassermenge das Kaffeemehl benetzen.",
@@ -240,7 +248,15 @@
     "pulses": "Mit kurzen Aufgüssen 1–2 cm Wasser über dem Kaffee halten, bis die Gesamtmenge erreicht ist.",
     "level": "Das Kaffeebett vor dem Brühen ebnen.",
     "stir": "Rühre das Kaffeebett mit einem Löffel um.",
-    "drain": "Nicht weiter aufgießen und den Spiegel etwas absenken."
+    "drain": "Nicht weiter aufgießen und den Spiegel etwas absenken.",
+    "grind": "Direkt vor dem Bezug in den Siebeinsatz mahlen.",
+    "dose": "Die angegebene Menge dosieren.",
+    "tamp": "Gerade und mit gleichmäßigem Druck tampern.",
+    "lock": "Den Siebträger fest in die Gruppe einsetzen.",
+    "preinfuse": "Mit niedrigem Druck für die angegebene Zeit vorbrühen.",
+    "extract": "Auf Brühdruck gehen und bis zur angegebenen Menge extrahieren.",
+    "stop": "Bei der angegebenen Menge oder Zeit stoppen.",
+    "purge": "Die Gruppe vor dem Einsetzen spülen."
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "Eis in der Kanne",
     "brewer": "Eis im Drepper",
     "glass": "Eis im Glas"
+  },
+  "method": "Zubereitungsart",
+  "methodPourover": "Handfilter",
+  "methodEspresso": "Espresso",
+  "shotTime": "Extraktionszeit",
+  "yield": "Menge in der Tasse",
+  "pressure": "Druck",
+  "preInfusion": "Vorbrühen",
+  "afterPreInfusion": "Nach dem Vorbrühen",
+  "basket": "Siebeinsatz",
+  "shotTimeline": "Reihenfolge der Extraktion",
+  "compareMismatch": "Handfilter- und Espresso-Rezepte lassen sich nicht gemeinsam vergleichen.",
+  "quickAnswerEspresso": "Schnellantwort: {dose} g Kaffee, {yield} in der Tasse, Wasser {temperature}, Mahlgrad {grind}, Zeit {time}, Druck {pressure}.",
+  "faqEspressoAmountQuestion": "Wie viel Kaffee und welche Menge nutzt {recipe}?",
+  "faqEspressoAmountAnswer": "{dose} g eingesetzt, {yield} in der Tasse ({basket} Siebeinsatz, {pressure}, Vorbrühen {preInfusion}).",
+  "faqShotTimeQuestion": "Wie lange dauert die Extraktion von {recipe}?",
+  "schemaEspressoCategory": "Espresso",
+  "puckPrepLabels": {
+    "purge": "Gruppe leeren und Siebeinsatz trocknen",
+    "preheat": "Gruppe und Siebträger vorheizen",
+    "rinse": "Siebeinsatz spülen",
+    "wdt": "Mit WDT-Werkzeug verteilen",
+    "level": "Bett glätten",
+    "tamp": "Tampern"
   }
 }

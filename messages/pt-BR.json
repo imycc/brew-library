@@ -227,7 +227,15 @@
     "pulses": "Despejos curtos",
     "level": "Nivelar o café",
     "stir": "Mexer",
-    "drain": "Drenar um pouco"
+    "drain": "Drenar um pouco",
+    "grind": "Moer",
+    "dose": "Dosar",
+    "tamp": "Compactar",
+    "lock": "Encaixar o porta-filtro",
+    "preinfuse": "Pré-infundir",
+    "extract": "Extrair",
+    "stop": "Parar a extração",
+    "purge": "Enxaguar o grupo"
   },
   "instruction": {
     "bloom": "Adicione a quantidade indicada para molhar o café.",
@@ -240,7 +248,15 @@
     "pulses": "Faça despejos curtos, mantendo 1–2 cm acima do café, até a quantidade total.",
     "level": "Nivele o café antes do preparo.",
     "stir": "Mexa a cama de café com uma colher.",
-    "drain": "Pare de despejar e deixe o nível baixar um pouco."
+    "drain": "Pare de despejar e deixe o nível baixar um pouco.",
+    "grind": "Moa na hora, direto no cesto.",
+    "dose": "Dose a quantidade indicada.",
+    "tamp": "Compacte nivelado e com pressão constante.",
+    "lock": "Encaixe o porta-filtro no grupo.",
+    "preinfuse": "Faça a pré-infusão em baixa pressão pelo tempo indicado.",
+    "extract": "Suba para a pressão de extração e vá até a quantidade indicada.",
+    "stop": "Pare a extração na quantidade ou no tempo indicados.",
+    "purge": "Enxágue o grupo antes de encaixar."
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "Gelo na jarra",
     "brewer": "Gelo no dripper",
     "glass": "Gelo no copo"
+  },
+  "method": "Método",
+  "methodPourover": "Coado",
+  "methodEspresso": "Espresso",
+  "shotTime": "Tempo de extração",
+  "yield": "Quantidade na xícara",
+  "pressure": "Pressão",
+  "preInfusion": "Pré-infusão",
+  "afterPreInfusion": "Após a pré-infusão",
+  "basket": "Cesto",
+  "shotTimeline": "Ordem da extração",
+  "compareMismatch": "Receitas de coado e de espresso não são comparadas juntas.",
+  "quickAnswerEspresso": "Resposta rápida: {dose} g de café, {yield} na xícara, água a {temperature}, moagem {grind}, tempo {time}, pressão {pressure}.",
+  "faqEspressoAmountQuestion": "Quanto café e qual rendimento a {recipe} usa?",
+  "faqEspressoAmountAnswer": "{dose} g de café, {yield} na xícara (cesto {basket}, {pressure}, pré-infusão {preInfusion}).",
+  "faqShotTimeQuestion": "Quanto tempo dura a extração de {recipe}?",
+  "schemaEspressoCategory": "Espresso",
+  "puckPrepLabels": {
+    "purge": "Esvaziar o grupo e secar o cesto",
+    "preheat": "Aquecer grupo e porta-filtro",
+    "rinse": "Enxaguar o cesto",
+    "wdt": "Distribuir com ferramenta WDT",
+    "level": "Nivelar a cama",
+    "tamp": "Compactar"
   }
 }

@@ -1,7 +1,7 @@
 import {readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {locales} from '../src/i18n/locales';
-import {recipes} from '../src/lib/recipes';
+import {recipes,isEspresso,isPourOver,puckPrepKeys} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentEditorialRoles,editorialTraitKeys,equipmentExperience,equipmentExperienceTags,recipeEditorial} from '../src/lib/editorial';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
@@ -37,36 +37,45 @@ export async function validate(){
    if(r.kind==='iced')assert(r.ice,`${r.id} is iced but states no ice`);
    if(r.kind==='hot')assert(!r.ice,`${r.id} is hot but states ice`);
    if(r.ice){
-     assert(r.ice.unit===r.water.unit,`${r.id} ice and water must share a unit`);
+     const liquidUnit=isPourOver(r)?r.water.unit:r.water?.unit;
+     if(liquidUnit)assert(r.ice.unit===liquidUnit,`${r.id} ice and water must share a unit`);
      assert(r.ice.placement,`${r.id} ice needs a placement`);
      if(r.ice.amountMax!==undefined)assert(r.ice.amountMax>r.ice.amount,`${r.id} ice range must run upward`);
    }
-   if(r.valve)assert(r.steps.some(s=>['open','close'].includes(s.action)),`${r.id} states a valve but has no valve step`);
-   if(r.water.hardness!==undefined)assert(r.water.hardnessUnit,`${r.id} hardness needs its published unit`);
-   if(r.water.alkalinity!==undefined)assert(r.water.alkalinityUnit,`${r.id} alkalinity needs its published unit`);
+   if(isPourOver(r)&&r.valve)assert(r.steps.some(s=>['open','close'].includes(s.action)),`${r.id} states a valve but has no valve step`);
+   if(r.water?.hardness!==undefined)assert(r.water.hardnessUnit,`${r.id} hardness needs its published unit`);
+   if(r.water?.alkalinity!==undefined)assert(r.water.alkalinityUnit,`${r.id} alkalinity needs its published unit`);
    if(r.ratioStated){
      const numbers=(r.ratioStated.match(/[\d.]+/g)||[]).map(Number).sort((a,b)=>a-b);
      assert(numbers.length===2,`${r.id} ratio must state two numbers`);
      const[small,large]=numbers as [number,number];
-     assert(Math.abs(large/small-r.water.amount/r.dose)<.5,`${r.id} stated ratio disagrees with its own dose and water`);
+     const computed=isPourOver(r)?r.water.amount/r.dose:r.yield?r.yield.amount/r.dose:null;
+     if(computed!==null)assert(Math.abs(large/small-computed)<.5,`${r.id} stated ratio disagrees with its own dose and liquid`);
    }
-   if(r.yield)assert(r.yield.amount<r.water.amount,`${r.id} beverage yield cannot exceed the water poured`);
+   if(r.yield&&isPourOver(r))assert(r.yield.amount<r.water.amount,`${r.id} beverage yield cannot exceed the water poured`);
    for(const s of r.steps){
      if(s.count!==undefined)assert(['stir','swirl'].includes(s.action),`${r.id} a count needs an agitation step`);
      if(s.derived)assert(s.amount!==null,`${r.id} only a quantified addition can be marked derived`);
      if(s.levelMin!==undefined&&s.levelMax!==undefined)assert(s.levelMax>=s.levelMin,`${r.id} water level range`);
    }
    if(r.duration)assert(r.duration[1]>=r.duration[0],r.id);
-   const measured=r.steps.filter(s=>s.amount!==null);
-   assert(new Set(measured.map(s=>s.unit||r.water.unit)).size<=1,`${r.id} cannot sum mixed step units`);
-   let cumulative:number|null=0;
-   for(const s of r.steps){
-     if(!['pour','bloom','pulses'].includes(s.action))continue;
-     if(s.amount!==null&&cumulative!==null){cumulative+=s.amount;if(s.cumulative!==null)assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);}
-     else cumulative=s.cumulative;
+   if(isPourOver(r)){
+     const measured=r.steps.filter(s=>s.amount!==null);
+     assert(new Set(measured.map(s=>s.unit||r.water.unit)).size<=1,`${r.id} cannot sum mixed step units`);
+     let cumulative:number|null=0;
+     for(const s of r.steps){
+       if(!['pour','bloom','pulses'].includes(s.action))continue;
+       if(s.amount!==null&&cumulative!==null){cumulative+=s.amount;if(s.cumulative!==null)assert.equal(s.cumulative,cumulative,`${r.id} cumulative`);}
+       else cumulative=s.cumulative;
+     }
+     // Only compare totals when mass/volume units actually match. Never convert g to mL.
+     if(cumulative!==null&&measured.every(s=>(s.unit||r.water.unit)===r.water.unit))assert.equal(cumulative,r.water.amount,`${r.id} water total`);
    }
-   // Only compare totals when mass/volume units actually match. Never convert g to mL.
-   if(cumulative!==null&&measured.every(s=>(s.unit||r.water.unit)===r.water.unit))assert.equal(cumulative,r.water.amount,`${r.id} water total`);
+   if(isEspresso(r)){
+     const pre=r.extraction?.preInfusion;
+     if(pre?.seconds!=null&&r.duration)assert(pre.seconds<=r.duration[1],`${r.id} pre-infusion runs past the stated shot time`);
+     assert(!r.steps.some(s=>['pour','bloom','topup','pulses'].includes(s.action)),`${r.id} espresso records do not carry pour-over additions`);
+   }
    for(const s of r.steps){if(s.end!==undefined&&s.at!==null)assert(s.end>=s.at,`${r.id} time range`);}
  }
  for(const locale of locales){
@@ -92,8 +101,8 @@ export async function validate(){
        if(s.style)assert(flat[`pourStyles.${s.style}`],`${locale}/${r.id} pour style ${s.style}`);
        if(s.direction)assert(flat[`pourDirections.${s.direction}`],`${locale}/${r.id} direction ${s.direction}`);
      }
-     for(const key of r.bedPrep||[])assert(flat[`bedPrepLabels.${key}`],`${locale}/${r.id} bed prep ${key}`);
-     if(r.valve)assert(flat[`valveStates.${r.valve}`],`${locale}/${r.id} valve state`);
+     for(const key of (isPourOver(r)?r.bedPrep||[]:puckPrepKeys(r)))assert(flat[isPourOver(r)?`bedPrepLabels.${key}`:`puckPrepLabels.${key}`],`${locale}/${r.id} prep ${key}`);
+     if(isPourOver(r)&&r.valve)assert(flat[`valveStates.${r.valve}`],`${locale}/${r.id} valve state`);
      if(r.yield)assert(flat[`yieldBases.${r.yield.basis}`],`${locale}/${r.id} yield basis`);
      if(r.source.publishedBasis)assert(flat[`publishedBases.${r.source.publishedBasis}`],`${locale}/${r.id} published basis`);
      if(r.grindHedged)assert(flat['grindHedged'],`${locale}/${r.id} hedged grind label`);

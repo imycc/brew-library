@@ -1,4 +1,4 @@
-import {BASE,SITE,time,recipes,type Recipe,iceAmountText} from './recipes';
+import {BASE,SITE,time,recipes,isEspresso,isPourOver,basketText,type Recipe,iceAmountText} from './recipes';
 import {equipment,type Equipment} from './equipment';
 import {equipmentEditorial,equipmentExperience} from './editorial';
 import {brewTimeText,recipeFaq,temperatureText,type Translator} from './faq';
@@ -91,8 +91,10 @@ export function siteGraph(locale:Locale,t:Translator):JsonLdGraph{
 function recipeStepText(recipe:Recipe,step:Recipe['steps'][number],t:Translator):string{
   const instruction=step.action==='finish'?t(`recipes.${recipe.copy}.finish`):t(step.instruction||`instruction.${step.action}`);
   const timing=step.at===null?'':`${time(step.at)} · `;
-  const amount=step.amount===null?'':`${step.amount} ${step.unit||recipe.water.unit} · `;
-  return `${timing}${amount}${instruction}`;
+  const unit=step.unit||(isPourOver(recipe)?recipe.water.unit:recipe.yield?.unit);
+  const amount=step.amount===null||!unit?'':`${step.amount} ${unit} · `;
+  const pressure=step.pressure===undefined?'':`${step.pressure} bar · `;
+  return `${timing}${amount}${pressure}${instruction}`;
 }
 
 function totalTime(recipe:Recipe):string|undefined{
@@ -111,6 +113,7 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
   const title=t(`recipes.${recipe.copy}.title`);
   const url=pageUrl(locale,`recipes/${recipe.id}/`);
   const keywords=[
+    t(isEspresso(recipe)?'methodEspresso':'methodPourover'),
     recipe.brewer,
     recipe.author,
     recipe.grinder?.name,
@@ -137,12 +140,14 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
       url:`${pageUrl(locale,'authors/')}#${recipe.authorId}`
     },
     publisher:{'@id':organizationId()},
-    recipeCategory:t('schemaRecipeCategory'),
+    recipeCategory:t(isEspresso(recipe)?'schemaEspressoCategory':'schemaRecipeCategory'),
     recipeCuisine:t('schemaRecipeCuisine'),
     keywords,
     recipeIngredient:[
       `${recipe.dose} g ${t('schemaCoffee')}`,
-      `${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${recipe.temperature}°C)`:''}`,
+      // An espresso source that states its water recipe keeps it; a yield is never
+      // rewritten into a water amount.
+      ...recipe.water?[`${recipe.water.amount} ${recipe.water.unit} ${t('schemaWater')}${recipe.temperature?` (${recipe.temperature}°C)`:''}`]:[],
       ...recipe.ice?[`${iceAmountText(recipe)} ${t('ice')}`]:[]
     ],
     recipeInstructions:recipe.steps.map((step,index)=>({
@@ -151,7 +156,7 @@ function recipeNode(locale:Locale,recipe:Recipe,t:Translator):JsonLd{
       name:t(`step.${step.action}`),
       text:recipeStepText(recipe,step,t)
     })),
-    tool:[recipe.brewer,recipe.grinder?.name,recipe.paper?.name].filter((name):name is string=>!!name).map(name=>({'@type':'HowToTool',name})),
+    tool:[recipe.brewer,recipe.grinder?.name,recipe.paper?.name,basketText(recipe)].filter((name):name is string=>!!name).map(name=>({'@type':'HowToTool',name})),
     ...(isIsoDate(recipe.source.published)?{datePublished:recipe.source.published}:{}),
     dateModified:recipe.source.checked,
     ...(duration?{totalTime:duration}:{}),

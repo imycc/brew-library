@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createTranslator} from 'next-intl';
-import {BASE,SITE,recipes} from '../src/lib/recipes';
+import {BASE,SITE,pourOverRecipes,recipes} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
 import {equipmentEditorial} from '../src/lib/editorial';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
@@ -61,7 +61,7 @@ test('recipe graph is complete, localized and source-backed',()=>{
 });
 
 test('recipe FAQ answers contain the recorded quantities',()=>{
- const recipe=recipes[0];
+ const recipe=pourOverRecipes[0];
  const faq=recipeFaq(recipe,t);
  assert.equal(faq.length,3);
  assert(faq.every(item=>item.question.length>0&&item.answer.length>0));
