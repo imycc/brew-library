@@ -886,7 +886,8 @@
       "s01": "Auf 9 bar erhöhen und bis 47 g extrahieren. Die Karte nennt 23 Sekunden.",
       "s02": "Den Bezug bei 47 g stoppen.",
       "teach1": "Die Espresso-Karte verlinkt für diesen Kaffee ein Fellow-Series-1-Profil.",
-      "teach2": "Onyx beschreibt Monarch mit dunkler Schokolade, Melasse, Rotwein und getrockneten Beeren; das verlinkte Profil nennt ihn eine Mischung für Milch."
+      "teach2": "Das verlinkte Series-1-Profil nennt Monarch eine Mischung für Milch.",
+      "tasting": "Dunkle Schokolade, Melasse, Rotwein und getrocknete Beeren; dick und sirupartig."
     },
     "onyx-aponte": {
       "title": "Aponte Village · Espresso",
@@ -901,8 +902,9 @@
       "s00": "Die ersten 3,5 Sekunden mit Leitungsdruck starten; die Quelle nennt keinen Vorbrühdruck.",
       "s01": "Auf 9 bar erhöhen und bis 48 g extrahieren. Die Karte nennt 24 Sekunden.",
       "s02": "Den Bezug bei 48 g stoppen.",
-      "teach1": "Red Honey ist Onyxs eigene Bezeichnung der Aufbereitung; die Karte beschreibt Honigapfel, Kirsche, Vanille und Papaya.",
-      "teach2": "Die Karte nennt weder Brühtemperatur noch Mühle oder Siebeinsatz; diese Werte bleiben offen."
+      "teach1": "Red Honey ist Onyxs eigene Bezeichnung der Aufbereitung für diesen Kaffee.",
+      "teach2": "Die Karte nennt weder Brühtemperatur noch Mühle oder Siebeinsatz; diese Werte bleiben offen.",
+      "tasting": "Honigapfel, Kirsche, Vanille und Papaya."
     }
   },
   "waterQuality": "Wasserprofil",

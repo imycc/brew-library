@@ -339,5 +339,5 @@ test('flow rates are either published or derived from the pour itself',()=>{
  assert.equal(derived.value,3.3);
  assert.equal(stepFlow(oneCup.steps[1]),null);
  assert.equal(stepFlow(oneCup.steps[10]),null);
- assert.equal(recipes.filter(recipe=>recipe.tasting?.length).length,4);
+ assert.equal(recipes.filter(recipe=>recipe.tasting?.length).length,6);
 });

@@ -886,7 +886,8 @@
       "s01": "Raise to 9 bar and extract to 47 g. The card lists 23 seconds.",
       "s02": "Stop the shot at 47 g.",
       "teach1": "The espresso card links a Fellow Series 1 profile for this coffee.",
-      "teach2": "Onyx describes Monarch with dark chocolate, molasses, red wine and dried berries; the linked profile calls it a blend designed to work with milk."
+      "teach2": "The linked Series 1 profile calls Monarch a blend designed to work with milk.",
+      "tasting": "Dark chocolate, molasses, red wine and dried berries; thick and syrupy."
     },
     "onyx-aponte": {
       "title": "Aponte Village · Espresso",
@@ -901,8 +902,9 @@
       "s00": "Start with line pressure for the first 3.5 seconds; the source does not state the pre-infusion pressure.",
       "s01": "Raise to 9 bar and extract to 48 g. The card lists 24 seconds.",
       "s02": "Stop the shot at 48 g.",
-      "teach1": "Red Honey is Onyx's own process label; the card describes honeycrisp apple, cherry, vanilla and papaya.",
-      "teach2": "The card gives no brew temperature, grinder or basket, so those values remain open."
+      "teach1": "Red Honey is Onyx's own process label for this coffee.",
+      "teach2": "The card gives no brew temperature, grinder or basket, so those values remain open.",
+      "tasting": "Honeycrisp apple, cherry, vanilla and papaya."
     }
   },
   "waterQuality": "Water profile",

@@ -3505,7 +3505,10 @@
         "archive": "https://web.archive.org/web/20261030172030/https://onyxcoffeelab.com/pages/brew-guides",
         "checked": "2026-10-31",
         "evidence": "Monarch ... Washed ... Expressive Dark ... Espresso ... Coffee: 19g / Yield: 47g / Line Pressure: 0–3.5s / 9 Bar: 23s / Series 1 Profile"
-      }
+      },
+      "tasting": [
+        "recipes.onyx-monarch.tasting"
+      ]
     },
     {
       "id": "onyx-aponte-espresso",
@@ -3587,7 +3590,10 @@
         "archive": "https://web.archive.org/web/20261030172030/https://onyxcoffeelab.com/pages/brew-guides",
         "checked": "2026-10-31",
         "evidence": "Colombia Aponte Village ... Red Honey ... Light ... Espresso ... Coffee: 20g / Yield: 48g / Line Pressure: 0–3.5s / 9 Bar: 24s"
-      }
+      },
+      "tasting": [
+        "recipes.onyx-aponte.tasting"
+      ]
     }
   ]
 }
