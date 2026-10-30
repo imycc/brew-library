@@ -829,7 +829,10 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily",
-      "beanNote": "recipes.grill.beans"
+      "beanNote": "recipes.grill.beans",
+      "tasting": [
+        "recipes.grill.taste1"
+      ]
     },
     {
       "id": "mallouhi-v60",
@@ -1403,21 +1406,33 @@
           "at": 45,
           "amount": 60,
           "cumulative": 100,
-          "instruction": "recipes.gil.s01"
+          "instruction": "recipes.gil.s01",
+          "flowRate": {
+            "value": 7,
+            "approximate": true
+          }
         },
         {
           "action": "pour",
           "at": 90,
           "amount": 75,
           "cumulative": 175,
-          "instruction": "recipes.gil.s02"
+          "instruction": "recipes.gil.s02",
+          "flowRate": {
+            "value": 7,
+            "approximate": true
+          }
         },
         {
           "action": "pour",
           "at": 135,
           "amount": 75,
           "cumulative": 250,
-          "instruction": "recipes.gil.s03"
+          "instruction": "recipes.gil.s03",
+          "flowRate": {
+            "value": 7,
+            "approximate": true
+          }
         },
         {
           "action": "finish",
@@ -2375,7 +2390,11 @@
         "name": "ORIGAMI Paper Filter Wave",
         "shape": "wave"
       },
-      "beanNote": "recipes.ohno.beans"
+      "beanNote": "recipes.ohno.beans",
+      "tasting": [
+        "recipes.ohno.taste1",
+        "recipes.ohno.taste2"
+      ]
     },
     {
       "id": "gil-zp6-2025",
@@ -2523,7 +2542,11 @@
       "coffee": {
         "name": "Kenya Kangocho AA + Brazil João Hamilton",
         "roast": "light"
-      }
+      },
+      "tasting": [
+        "recipes.kurasu.taste1",
+        "recipes.kurasu.taste2"
+      ]
     },
     {
       "id": "ona-iris-enigma",
@@ -2945,6 +2968,10 @@
           "key": "recipes.kasuya-neo.teach3",
           "step": 9
         }
+      ],
+      "tasting": [
+        "recipes.kasuya-neo.taste1",
+        "recipes.kasuya-neo.taste2"
       ]
     },
     {

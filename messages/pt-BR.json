@@ -469,7 +469,8 @@
       "s01": "No segundo despejo, vá até 250 g; os 190 g são essa meta menos a pré-infusão.",
       "s02": "Mexa três vezes.",
       "s03": "Às 1:30 despeje o restante da água, chegando a 500 g no total.",
-      "s04": "Mexa de novo três vezes."
+      "s04": "Mexa de novo três vezes.",
+      "taste1": "Sobre o café que ela usa: aroma floral e acidez brilhante."
     },
     "mallouhi": {
       "title": "V60 de Ibrahim Al Mallouhi",
@@ -662,7 +663,9 @@
       "s01": "Aos 0:30, suba a 120 g (+75 g) com um círculo lento, buscando um pouco de agitação.",
       "s02": "Às 1:00, suba a 190 g (+70 g) no centro sem agitar e, nos ~15 g finais, contorne a parede para a cama terminar plana.",
       "s03": "Após a drenagem, junte água resfriada a 65 °C: comece com 50 g e ajuste ao gosto até cerca de 60–70 g.",
-      "beans": "Ohno conta que o perfil do grão só foi revelado no dia, então a ficha dele é escrita para qualquer café e não nomeia nenhum."
+      "beans": "Ohno conta que o perfil do grão só foi revelado no dia, então a ficha dele é escrita para qualquer café e não nomeia nenhum.",
+      "taste1": "O objetivo declarado é xícara limpa e dulçor; temperatura baixa e peneira grossa servem a isso.",
+      "taste2": "O café servido mediu TDS 1,07 — deliberadamente diluído, mais próximo do chá."
     },
     "gil-2025": {
       "title": "Receita ZP6 de três despejos do Gil (2025)",
@@ -692,7 +695,9 @@
       "prepare": "Enxágue o papel, aqueça o dripper e coloque aproximadamente 65–70 g de gelo na jarra.",
       "s00": "Despeje 40 g de água para a pré-infusão.",
       "s01": "Às 0:40, despeje até 100 g no total.",
-      "s02": "Às 1:10, despeje devagar e com suavidade até 150 g no total, sem agitar em excesso."
+      "s02": "Às 1:10, despeje devagar e com suavidade até 150 g no total, sem agitar em excesso.",
+      "taste1": "A página diz que o peso do gelo afeta diretamente a força final: é o ajuste da intensidade.",
+      "taste2": "Com o Kenya Kangocho AA da página, o método realça doçura de frutas vermelhas e acidez de uva."
     },
     "ona-iris": {
       "title": "Iris Estate Enigma · Espresso",
@@ -776,7 +781,9 @@
       "s09": "O décimo e último despejo de 30 g, chegando a 300 g.",
       "teach1": "Moagem bem grossa mais 95–96 °C é o par contraintuitivo em que a receita se apoia.",
       "teach2": "Dez adições de 30 g a cada 15 segundos; o ponto é a água atravessar a cama em vez de ficar em cima.",
-      "teach3": "Kasuya recomenda o NEO por extrair pequenas adições de forma uniforme, mas diz que um V60 serve igualmente."
+      "teach3": "Kasuya recomenda o NEO por extrair pequenas adições de forma uniforme, mas diz que um V60 serve igualmente.",
+      "taste1": "Segundo Kasuya, moagem bem grossa com 95–96 °C e dez adições pequenas constroem o dulçor.",
+      "taste2": "Ele atribui o corpo — uma textura xaroposa — aos dez despejos, não aos finos."
     },
     "kasuya-iced": {
       "title": "4:6 gelado do Kasuya",
@@ -1145,5 +1152,8 @@
   "videoStep": "Vídeo {time}",
   "teachingTitle": "Do autor",
   "teachingStep": "Passo {number}",
-  "evidenceLabel": "Texto original"
+  "evidenceLabel": "Texto original",
+  "tastingTitle": "Sabor e textura",
+  "flowRate": "Fluxo {value} g/s",
+  "flowRateDerived": "≈ {value} g/s (calculado deste despejo)"
 }

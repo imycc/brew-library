@@ -469,7 +469,8 @@
       "s01": "En el segundo vertido llega a 250 g; los 190 g son esa meta menos la preinfusión.",
       "s02": "Remueve tres veces.",
       "s03": "A las 1:30 vierte el resto del agua hasta un total de 500 g.",
-      "s04": "Vuelve a remover tres veces."
+      "s04": "Vuelve a remover tres veces.",
+      "taste1": "Sobre el café que usa: aroma floral y una acidez brillante."
     },
     "mallouhi": {
       "title": "V60 de Ibrahim Al Mallouhi",
@@ -662,7 +663,9 @@
       "s01": "A las 0:30 sube a 120 g (+75 g) con un círculo lento, buscando un poco de agitación.",
       "s02": "A las 1:00 sube a 190 g (+70 g) al centro sin agitar y en los últimos ~15 g rodea la pared para que la cama quede plana.",
       "s03": "Tras el drenaje añade agua enfriada a 65 °C: empieza con 50 g y ajusta al gusto hasta unos 60–70 g.",
-      "beans": "Ohno señala que el perfil del café se reveló el mismo día, así que su ficha está escrita para cualquier café y no nombra ninguno."
+      "beans": "Ohno señala que el perfil del café se reveló el mismo día, así que su ficha está escrita para cualquier café y no nombra ninguno.",
+      "taste1": "Su objetivo declarado es una taza limpia y dulzor; la temperatura baja y el tamiz grueso van por eso.",
+      "taste2": "El café servido midió TDS 1.07: deliberadamente diluido, más cerca del té."
     },
     "gil-2025": {
       "title": "Receta ZP6 de tres vertidos de Gil (2025)",
@@ -692,7 +695,9 @@
       "prepare": "Enjuaga el papel, calienta el dripper y pon aproximadamente 65–70 g de hielo en la jarra.",
       "s00": "Vierte 40 g de agua para la preinfusión.",
       "s01": "A las 0:40, vierte hasta 100 g en total.",
-      "s02": "A las 1:10, vierte despacio y con suavidad hasta 150 g en total, sin agitar en exceso."
+      "s02": "A las 1:10, vierte despacio y con suavidad hasta 150 g en total, sin agitar en exceso.",
+      "taste1": "La página dice que el peso del hielo afecta directamente la fuerza final: es el mando de la intensidad.",
+      "taste2": "Con el Kenya Kangocho AA de la página, el método resalta dulzor de frutos rojos y una acidez de uva."
     },
     "ona-iris": {
       "title": "Iris Estate Enigma · Espresso",
@@ -776,7 +781,9 @@
       "s09": "El décimo y último vertido de 30 g, hasta 300 g.",
       "teach1": "Molienda muy gruesa más 95–96 °C es el par contraintuitivo sobre el que descansa la receta.",
       "teach2": "Diez añadidos de 30 g cada 15 segundos; lo importante es que el agua atraviese la cama y no se quede encima.",
-      "teach3": "Kasuya recomienda el NEO porque extrae uniformemente pequeños añadidos, pero dice que un V60 es igual de válido."
+      "teach3": "Kasuya recomienda el NEO porque extrae uniformemente pequeños añadidos, pero dice que un V60 es igual de válido.",
+      "taste1": "Según Kasuya, molienda muy gruesa con 95–96 °C y diez añadidos pequeños construyen el dulzor.",
+      "taste2": "Atribuye el cuerpo —una textura almibarada— a los diez vertidos, no a los finos."
     },
     "kasuya-iced": {
       "title": "4:6 helado de Kasuya",
@@ -1145,5 +1152,8 @@
   "videoStep": "Vídeo {time}",
   "teachingTitle": "Del autor",
   "teachingStep": "Paso {number}",
-  "evidenceLabel": "Texto original"
+  "evidenceLabel": "Texto original",
+  "tastingTitle": "Sabor y textura",
+  "flowRate": "Flujo {value} g/s",
+  "flowRateDerived": "≈ {value} g/s (calculado de este vertido)"
 }

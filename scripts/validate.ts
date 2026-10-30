@@ -126,6 +126,8 @@ export async function validate(){
      if(r.source.publishedBasis)assert(flat[`publishedBases.${r.source.publishedBasis}`],`${locale}/${r.id} published basis`);
      if(r.grindHedged)assert(flat['grindHedged'],`${locale}/${r.id} hedged grind label`);
      for(const item of r.teaching||[])assert(flat[item.key],`${locale}/${r.id} teaching key ${item.key}`);
+     for(const key of r.tasting||[])assert(flat[key],`${locale}/${r.id} tasting key ${key}`);
+     for(const key of r.tasting||[])assert(flat[key],`${locale}/${r.id} tasting key ${key}`);
      if(r.grindMicron)assert(flat[`grindMicronBases.${r.grindMicron.basis}`],`${locale}/${r.id} micron basis`);
    }
    for(const key of ['equipmentNav','equipmentTitle','equipmentIntro','equipmentItems','equipmentSearch','equipmentCategory','equipmentResults','equipmentNote','equipmentRelated','equipmentChecked','equipmentEmpty'])assert(flat[`${key}`],`${locale}/${key}`);

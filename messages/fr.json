@@ -469,7 +469,8 @@
       "s01": "Au deuxième versement, atteignez 250 g ; les 190 g sont cette cible moins la pré-infusion.",
       "s02": "Remuez trois fois.",
       "s03": "À 1:30, versez le reste de l’eau pour atteindre 500 g au total.",
-      "s04": "Remuez de nouveau trois fois."
+      "s04": "Remuez de nouveau trois fois.",
+      "taste1": "Du café qu’elle utilise : arôme floral et acidité éclatante."
     },
     "mallouhi": {
       "title": "V60 d’Ibrahim Al Mallouhi",
@@ -662,7 +663,9 @@
       "s01": "À 0:30, montez à 120 g (+75 g) en cercle lent, en visant un peu d’agitation.",
       "s02": "À 1:00, montez à 190 g (+70 g) au centre sans agiter, puis longez la paroi sur les ~15 g derniers pour finir le lit plat.",
       "s03": "Après l’écoulement, ajoutez de l’eau refroidie à 65 °C : d’abord 50 g, puis ajustez au goût jusqu’à 60–70 g.",
-      "beans": "Ohno précise que le profil du café n’a été révélé que le jour même ; sa fiche est écrite pour n’importe quel café et n’en nomme aucun."
+      "beans": "Ohno précise que le profil du café n’a été révélé que le jour même ; sa fiche est écrite pour n’importe quel café et n’en nomme aucun.",
+      "taste1": "Son objectif annoncé : une tasse nette et du sucré ; la basse température et le tamis grossier y servent.",
+      "taste2": "Le café servi affichait TDS 1,07 : volontairement dilué, proche du thé."
     },
     "gil-2025": {
       "title": "Recette ZP6 en trois versements de Gil (2025)",
@@ -692,7 +695,9 @@
       "prepare": "Rincez le papier, préchauffez le filtre, puis mettez environ 65–70 g de glace dans le pichet.",
       "s00": "Versez 40 g d’eau pour la pré-infusion.",
       "s01": "À 0:40, versez jusqu’à 100 g au total.",
-      "s02": "À 1:10, versez doucement et lentement jusqu’à 150 g au total, sans agiter à l’excès."
+      "s02": "À 1:10, versez doucement et lentement jusqu’à 150 g au total, sans agiter à l’excès.",
+      "taste1": "La page indique que le poids de glace influe directement sur la force finale : c’est le réglage de l’intensité.",
+      "taste2": "Avec le Kenya Kangocho AA de la page, la méthode fait ressortir un sucré de baies juteuses et une acidité de raisin."
     },
     "ona-iris": {
       "title": "Iris Estate Enigma · Espresso",
@@ -776,7 +781,9 @@
       "s09": "Le dixième et dernier versement de 30 g, jusqu’à 300 g.",
       "teach1": "Mouture très grossière et 95–96 °C : c’est ce couple contre-intuitif qui porte la recette.",
       "teach2": "Dix ajouts de 30 g toutes les 15 secondes ; l’essentiel est que l’eau traverse le lit au lieu d’y rester.",
-      "teach3": "Kasuya conseille le NEO parce qu’il extrait régulièrement de petits ajouts, mais affirme qu’un V60 convient tout autant."
+      "teach3": "Kasuya conseille le NEO parce qu’il extrait régulièrement de petits ajouts, mais affirme qu’un V60 convient tout autant.",
+      "taste1": "Selon Kasuya, mouture très grossière, 95–96 °C et dix petits versements construisent le sucré.",
+      "taste2": "Il attribue le corps — une texture sirupeuse — aux dix versements, pas aux fines."
     },
     "kasuya-iced": {
       "title": "4:6 glacé de Kasuya",
@@ -1145,5 +1152,8 @@
   "videoStep": "Vidéo {time}",
   "teachingTitle": "Le mot de l’auteur",
   "teachingStep": "Étape {number}",
-  "evidenceLabel": "Texte d’origine"
+  "evidenceLabel": "Texte d’origine",
+  "tastingTitle": "Goût et texture",
+  "flowRate": "Débit {value} g/s",
+  "flowRateDerived": "≈ {value} g/s (déduit de ce versement)"
 }

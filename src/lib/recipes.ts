@@ -21,7 +21,8 @@ const stepSchema = z.object({
   levelMin: z.number().nonnegative().optional(),
   levelMax: z.number().nonnegative().optional(),
   derived: z.boolean().optional(),
-  videoAt: z.number().nonnegative().optional()
+  videoAt: z.number().nonnegative().optional(),
+  flowRate: z.object({value:z.number().positive(), approximate:z.boolean().optional()}).optional()
 });
 const waterSchema=z.object({amount:z.number().positive(), waterMax:z.number().positive().optional(), unit:z.enum(['g','mL']), derived:z.boolean().default(false),
   tds:z.number().positive().optional(), ppm:z.number().positive().optional(), hardness:z.number().positive().optional(), hardnessUnit:z.enum(['ppm','mg/L']).optional(), alkalinity:z.number().positive().optional(), alkalinityUnit:z.enum(['ppm','mg/L']).optional()});
@@ -40,6 +41,7 @@ const commonRecipeFields={
   source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), videoPublished:z.string().nullable().optional(), published:z.string().nullable(), publishedBasis:z.enum(['page','video','event']).optional(), updated:z.string().nullable().optional(), archive:z.url().optional(), videoArchive:z.url().optional(), evidence:z.string().optional(), checked:z.iso.date()}),
   image:z.enum(['coffee-bloom','brewer-still','espresso-shot']).optional(),
   teaching:z.array(z.object({key:z.string().regex(/^[a-zA-Z0-9.-]+$/), step:z.number().int().nonnegative().optional()})).optional(),
+  tasting:z.array(z.string()).optional(),
   steps:z.array(stepSchema), preparation:z.array(z.string()),
   waterConditions:z.enum(['unknown','soft','rao']), beanConditions:z.enum(['unknown','light']),
   filterConditions:z.enum(['unknown','pulsar']).default('unknown'), context:z.enum(['daily','competition']),
@@ -139,6 +141,11 @@ export function waterText(recipe:Recipe):string {
   if(isEspresso(recipe))return '—';
   const {water}=recipe;
   return water.waterMax?`${water.amount}–${water.waterMax}`:`${water.amount}`;
+}
+export function stepFlow(step:Recipe['steps'][number]):{value:number;published:boolean;approximate:boolean}|null {
+  if(step.flowRate)return {value:step.flowRate.value,published:true,approximate:!!step.flowRate.approximate};
+  if(step.amount===null||step.end===undefined||step.at===null||step.end<=step.at)return null;
+  return {value:Math.round(step.amount/(step.end-step.at)*10)/10,published:false,approximate:true};
 }
 export function videoLink(url:string,seconds:number):string {return `${url}${url.includes('?')?'&':'?'}t=${seconds}`;}
 export function ratio(recipe:Recipe, locale:string):string {
