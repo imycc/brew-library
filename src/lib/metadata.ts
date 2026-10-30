@@ -25,7 +25,7 @@ export async function pageMetadata(locale:Locale,suffix='',recipeId?:string):Pro
  const title=recipe?`${t(`recipes.${recipe.copy}.title`)} · ${t('brand')}`:page?`${t(page.title)} · ${t('brand')}`:`${t('brand')} · ${t('tagline')}`;
  const description=recipe?t(`recipes.${recipe.copy}.summary`):t(page?.description||'homeDescription');
  const url=`${SITE}${BASE}/${locale}/${suffix}`;
- const imageName=recipe?`og-${recipe.image}-1200x630.jpg`:'og-default-1200x630.jpg';
+ const imageName=recipe?.image?`og-${recipe.image}-1200x630.jpg`:'og-default-1200x630.jpg';
  const image={url:`${SITE}${BASE}/images/${imageName}`,width:1200,height:630,alt:`${t('brand')} · ${t('tagline')}`};
  const languages=Object.fromEntries([...locales.map(item=>[item,`${SITE}${BASE}/${item}/${suffix}`]),['x-default',`${SITE}${BASE}/zh-Hant/${suffix}`]]);
  const alternateLocale=locales.filter(item=>item!==locale).map(item=>ogLocales[item]);

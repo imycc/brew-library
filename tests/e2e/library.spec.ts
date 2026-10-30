@@ -14,7 +14,7 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await page.goto(`${base}/zh-Hant/`);
  await expect(page.locator('h1')).toContainText('每一杯');
  await expect(page.getByTestId('pour-timeline')).toHaveCount(0);
- await expect(page.locator('[data-recipe]')).toHaveCount(29);
+ await expect(page.locator('[data-recipe]')).toHaveCount(32);
  await page.locator('[data-recipe="kasuya-46"] .card-actions a').click();
  await expect(page.getByTestId('pour-timeline')).toBeVisible();
  await expect(page.getByTestId('pour-timeline')).toContainText('2:10');
@@ -31,10 +31,10 @@ test('filters, empty result, reset and shared comparison work',async({page})=>{
  await page.goto(`${base}/en/`);
  await page.getByRole('searchbox').fill('Hoffmann');await expect(page.locator('[data-recipe]')).toHaveCount(2);
  await page.getByLabel('Choose a brewer').selectOption('pulsar');await expect(page.locator('[data-recipe]')).toHaveCount(0);
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(29);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(32);
  await page.getByLabel('Style').selectOption('iced');await expect(page.locator('[data-recipe]')).toHaveCount(1);
  await expect(page.locator('[data-recipe="kurasu-flash-brew"]')).toContainText('ice');
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(29);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(32);
  for(const id of ['kasuya-46','hoffmann-one-cup','rao-pulsar'])await page.locator(`[data-recipe="${id}"] button`).click();
  await page.locator('[data-recipe="licata-v60"] button').click();
  await expect(page.getByRole('status').filter({hasText:'You can compare up to three recipes.'})).toHaveCount(1);
@@ -175,7 +175,7 @@ test('Origami conditions combine, survive language switching and reset completel
  await page.locator('.language-trigger').click();await page.locator('.language-options a[lang="de"]').click();
  await expect(page).toHaveURL(/grinder=zp6-special/);await expect(page.getByLabel('Filterpapier',{exact:true})).toHaveValue('sibarist-conic');
  await page.getByRole('button',{name:'Filter zurücksetzen',exact:true}).click();
- await expect(page.locator('[data-recipe]')).toHaveCount(29);
+ await expect(page.locator('[data-recipe]')).toHaveCount(32);
  expect(new URL(page.url()).search).toBe('');
 });
 
@@ -198,12 +198,24 @@ test('the method filter keeps pour-over and espresso results apart',async({page}
  await page.goto(`${base}/en/`);
  const initial=await page.locator('.result-count').innerText();
  await page.getByLabel('Method',{exact:true}).selectOption('espresso');
- await expect(page.locator('.result-count')).toHaveText('Recipes: 0');
- await expect(page.locator('.empty-state')).toBeVisible();
+ await expect(page.locator('.result-count')).toHaveText('Recipes: 3');
+ await expect(page.locator('[data-recipe="camber-espresso"]')).toBeVisible();
  await page.getByLabel('Method',{exact:true}).selectOption('pour-over');
- await expect(page.locator('.result-count')).toHaveText(initial);
+ await expect(page.locator('.result-count')).toHaveText('Recipes: 29');
  expect(page.url()).toContain('method=pour-over');
  await page.getByRole('button',{name:'Reset filters'}).click();
  await expect(page.locator('.result-count')).toHaveText(initial);
  await expect.poll(()=>page.url()).not.toContain('method=');
+});
+
+test('espresso detail keeps the published Fahrenheit range and admits missing steps',async({page})=>{
+ await page.goto(`${base}/en/recipes/camber-espresso/`);
+ await expect(page.locator('.quick-answer')).toContainText('202–204°F');
+ await expect(page.locator('.parameters')).toContainText('38 g');
+ await expect(page.locator('.derived-grid')).toContainText('1 : 2');
+ await expect(page.locator('.steps-section')).toContainText('no step-by-step sequence');
+ await expect(page.locator('[data-testid="pour-timeline"]')).toHaveCount(0);
+ await page.goto(`${base}/en/recipes/ona-iris-enigma/`);
+ await expect(page.locator('.quick-answer')).toContainText('93.5°C');
+ await expect(page.locator('[data-recipe-editorial]')).toContainText('Iris Estate Enigma');
 });

@@ -692,6 +692,40 @@
       "s00": "40 g を注いで蒸らします。",
       "s01": "0:40 に累計 100 g まで注ぎます。",
       "s02": "1:10 に、攪拌しすぎないよう静かにゆっくり累計 150 g まで注ぎます。"
+    },
+    "ona-iris": {
+      "title": "Iris Estate Enigma · エスプレッソ",
+      "summary": "ONA のロット別ガイド: 20.3 g 粉、44 g 抽出、24 秒、93.5 °C。焙煎後 10–25 日での使用を想定。",
+      "version": "ONA Coffee · 2026年6月18日",
+      "grind": "出典に挽き目の記載なし",
+      "equipment": "出典にマシンの記載なし",
+      "notes": "出典はこの数値を固定ルールではなく調整の出発点とし、焙煎後 10–14 日での冷凍保存と、カップの黒すぐり・チョコレート・チェリーの描写も添えている。",
+      "finish": "44 g で抽出を止める。",
+      "overview": "ONA のブリューガイドにある単一ロット向けエスプレッソレシピ。Iris Estate Enigma CM Natural 用。",
+      "bestFor": "この ONA ロットを淹れ、焙煎者自身の出発点で練習したい人。",
+      "beanNote": "CM Natural は出典の表記による精製方法。焙煎後 10–25 日の休ませ期間も指定している。"
+    },
+    "camber-espresso": {
+      "title": "Camber エスプレッソレシピ",
+      "summary": "Camber のカフェ基準: 19 g 粉、38 g 抽出、25–30 秒、202–204 °F、1:2。",
+      "version": "Camber Coffee · 2023年6月2日更新",
+      "grind": "25–30 秒で抽出できる細さ。グラインダー設定の記載なし",
+      "equipment": "出典にマシンの記載なし",
+      "notes": "出典はダイヤルインの出発点と位置づけ、水はパックの疎な部分を流れるためタンプを水平にするよう注意している。",
+      "finish": "38 g で抽出を止める。",
+      "overview": "焙煎所が公開したエスプレッソの基準。温度は出典どおり華氏で残す。",
+      "bestFor": "出典のある出発点から味で調整したい家庭の抽出者。"
+    },
+    "counterculture-go-to": {
+      "title": "Counter Culture 基本のエスプレッソ",
+      "summary": "Counter Culture の基準レシピ: 18 g 粉、36 g 抽出、28 秒。",
+      "version": "Counter Culture Coffee",
+      "grind": "出典に挽き目の記載なし",
+      "equipment": "出典にマシンの記載なし",
+      "notes": "出典は未知の豆をダイヤルインするための基準であり、すべての豆に当てはまる主張ではないとしている。",
+      "finish": "36 g で抽出を止める。",
+      "overview": "Counter Culture のエスプレッソガイドにある、広く使われるカフェ基準。",
+      "bestFor": "公開レシピがない新しい豆で、最初の参照点がほしいとき。"
     }
   },
   "waterQuality": "水質",
@@ -907,7 +941,7 @@
   "compareMismatch": "ハンドドリップとエスプレッソは並べて比較できません。",
   "quickAnswerEspresso": "クイック回答: 粉 {dose} g、抽出 {yield}、湯温 {temperature}、挽き目 {grind}、抽出時間 {time}、圧力 {pressure}。",
   "faqEspressoAmountQuestion": "{recipe} の粉量と抽出量は？",
-  "faqEspressoAmountAnswer": "粉 {dose} g、抽出 {yield}（{basket} バスケット、{pressure}、プレインフュージョン {preInfusion}）。",
+  "faqEspressoAmountAnswer": "{dose} g 粉、{yield} 抽出。",
   "faqShotTimeQuestion": "{recipe} の抽出時間は？",
   "schemaEspressoCategory": "エスプレッソ",
   "puckPrepLabels": {
@@ -917,5 +951,8 @@
     "wdt": "WDT で粉をほぐす",
     "level": "粉面を平らにする",
     "tamp": "タンプする"
-  }
+  },
+  "noStepsPublished": "出典には数値のみが記載され、手順の記載はありません。",
+  "machineUnspecified": "出典にマシンの記載なし",
+  "faqEspressoDetails": "出典にある抽出条件: {details}。"
 }

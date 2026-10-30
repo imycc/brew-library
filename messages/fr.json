@@ -692,6 +692,40 @@
       "s00": "Versez 40 g d’eau pour la pré-infusion.",
       "s01": "À 0:40, versez jusqu’à 100 g au total.",
       "s02": "À 1:10, versez doucement et lentement jusqu’à 150 g au total, sans agiter à l’excès."
+    },
+    "ona-iris": {
+      "title": "Iris Estate Enigma · Espresso",
+      "summary": "Le guide de lot d'ONA pour Iris Estate Enigma : 20,3 g en entrée, 44 g en 24 secondes à 93,5 °C, 10 à 25 jours après torréfaction.",
+      "version": "ONA Coffee · 18 juin 2026",
+      "grind": "Non précisé par la source",
+      "equipment": "Machine non précisée",
+      "notes": "La source présente ces valeurs comme un point de départ, pas une règle fixe ; elle donne aussi une fenêtre de congélation de 10 à 14 jours après torréfaction et décrit la tasse avec mûre, chocolat et cerise.",
+      "finish": "Arrêter l'extraction à 44 g.",
+      "overview": "Un espresso de lot issu des guides d'ONA, écrit pour Iris Estate Enigma CM Natural.",
+      "bestFor": "Quiconque prépare ce lot ONA et veut la recette de départ du torréfacteur.",
+      "beanNote": "CM Natural est le nom de procédé utilisé par la source ; elle demande aussi 10 à 25 jours de repos après torréfaction."
+    },
+    "camber-espresso": {
+      "title": "Recette espresso de Camber",
+      "summary": "La base café de Camber : 19 g en entrée, 38 g en 25 à 30 secondes à 202–204 °F, ratio 1:2.",
+      "version": "Camber Coffee · mis à jour le 2 juin 2023",
+      "grind": "Assez fin pour une extraction de 25 à 30 secondes ; aucun réglage de moulin précisé",
+      "equipment": "Machine non précisée",
+      "notes": "La source la présente comme une recette de départ pour régler la mouture, et rappelle que l'eau passe par les zones les moins denses du puck, d'où l'importance d'un tassage bien plat.",
+      "finish": "Arrêter l'extraction à 38 g.",
+      "overview": "Une base espresso publiée par un torréfacteur, conservée en Fahrenheit comme à l'origine.",
+      "bestFor": "Les amateurs à domicile qui veulent un point de départ documenté avant d'ajuster au goût."
+    },
+    "counterculture-go-to": {
+      "title": "Espresso de référence de Counter Culture",
+      "summary": "La recette de base de Counter Culture : 18 g en entrée, 36 g en sortie, 28 secondes.",
+      "version": "Counter Culture Coffee",
+      "grind": "Non précisé par la source",
+      "equipment": "Machine non précisée",
+      "notes": "La source la décrit comme une base pour régler un café inconnu, pas comme une affirmation valable pour tous les grains.",
+      "finish": "Arrêter l'extraction à 36 g.",
+      "overview": "Une base café largement utilisée, issue du guide espresso de Counter Culture.",
+      "bestFor": "Un premier repère quand un nouveau café n'a pas de recette publiée."
     }
   },
   "waterQuality": "Profil de l’eau",
@@ -907,7 +941,7 @@
   "compareMismatch": "Les recettes pour-over et espresso ne se comparent pas ensemble.",
   "quickAnswerEspresso": "Réponse rapide : {dose} g de café, {yield} en tasse, eau à {temperature}, mouture {grind}, temps {time}, pression {pressure}.",
   "faqEspressoAmountQuestion": "Quelle dose et quel rendement pour {recipe} ?",
-  "faqEspressoAmountAnswer": "{dose} g de café, {yield} en tasse (panier {basket}, {pressure}, pré-infusion {preInfusion}).",
+  "faqEspressoAmountAnswer": "{dose} g en entrée, {yield} en sortie.",
   "faqShotTimeQuestion": "Combien de temps dure l'extraction de {recipe} ?",
   "schemaEspressoCategory": "Espresso",
   "puckPrepLabels": {
@@ -917,5 +951,8 @@
     "wdt": "Répartir au WDT",
     "level": "Niveler le lit",
     "tamp": "Tasser"
-  }
+  },
+  "noStepsPublished": "La source donne ces paramètres, mais pas de déroulé étape par étape.",
+  "machineUnspecified": "Machine non précisée par la source",
+  "faqEspressoDetails": "Détails d'extraction publiés : {details}."
 }

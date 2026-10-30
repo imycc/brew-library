@@ -117,7 +117,10 @@ for(const locale of locales)for(const entry of pages){
     assert(recipe,`Missing Recipe node: ${file}`);
     assert(typeof recipe.name==='string'&&recipe.name.length>0,`Recipe name: ${file}`);
     assert(typeof recipe.author==='object'&&recipe.author!==null&&'name' in recipe.author,`Recipe author: ${file}`);
-    assert(Array.isArray(recipe.recipeInstructions)&&recipe.recipeInstructions.length>0,`Recipe instructions: ${file}`);
+    const record=recipes.find(item=>entry.suffix===`recipes/${item.id}/`);
+    assert(record,`Unknown recipe page: ${file}`);
+    if(record.steps.length)assert(Array.isArray(recipe.recipeInstructions)&&recipe.recipeInstructions.length>0,`Recipe instructions: ${file}`);
+    else assert(html.includes('data-no-steps'),`Missing no-steps note: ${file}`);
     assert(typeof recipe.image==='string'&&recipe.image.startsWith(`${SITE}${BASE}/`),`Recipe image: ${file}`);
     const faq=nodes.find(node=>node['@type']==='FAQPage');
     assert(faq&&Array.isArray(faq.mainEntity)&&faq.mainEntity.length===3,`FAQ items: ${file}`);

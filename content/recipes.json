@@ -2524,6 +2524,114 @@
         "name": "Kenya Kangocho AA + Brazil João Hamilton",
         "roast": "light"
       }
+    },
+    {
+      "id": "ona-iris-enigma",
+      "copy": "ona-iris",
+      "author": "ONA Coffee",
+      "authorId": "ona",
+      "brewer": "Espresso machine",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "method": "espresso",
+      "dose": 20.3,
+      "yield": {
+        "amount": 44,
+        "unit": "g",
+        "basis": "target"
+      },
+      "temperature": 93.5,
+      "duration": [
+        24,
+        24
+      ],
+      "coffee": {
+        "name": "Iris Estate Enigma",
+        "origin": "Panama"
+      },
+      "beanNote": "recipes.ona-iris.beanNote",
+      "source": {
+        "label": "ONA Coffee",
+        "url": "https://onacoffee.com.au/blogs/brewguides/iris-estate-enigma-panama-cm-natural",
+        "published": "2026-06-18",
+        "publishedBasis": "page",
+        "checked": "2026-10-30"
+      },
+      "steps": [],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "context": "daily"
+    },
+    {
+      "id": "camber-espresso",
+      "copy": "camber-espresso",
+      "author": "Camber Coffee",
+      "authorId": "camber",
+      "brewer": "Espresso machine",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "method": "espresso",
+      "dose": 19,
+      "yield": {
+        "amount": 38,
+        "unit": "g",
+        "basis": "target"
+      },
+      "ratioStated": "1:2",
+      "temperature": 202,
+      "temperatureMax": 204,
+      "temperatureUnit": "F",
+      "duration": [
+        25,
+        30
+      ],
+      "source": {
+        "label": "Camber Coffee",
+        "url": "https://cambercoffee.com/espresso-tips/",
+        "published": null,
+        "updated": "2023-06-02",
+        "checked": "2026-10-30",
+        "archive": "https://web.archive.org/web/20261030110250/https://cambercoffee.com/espresso-tips/"
+      },
+      "steps": [],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "context": "daily"
+    },
+    {
+      "id": "counterculture-go-to",
+      "copy": "counterculture-go-to",
+      "author": "Counter Culture Coffee",
+      "authorId": "counterculture",
+      "brewer": "Espresso machine",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "method": "espresso",
+      "dose": 18,
+      "yield": {
+        "amount": 36,
+        "unit": "g",
+        "basis": "target"
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        28,
+        28
+      ],
+      "source": {
+        "label": "Counter Culture Coffee",
+        "url": "https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-espresso",
+        "published": null,
+        "checked": "2026-10-30"
+      },
+      "steps": [],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "context": "daily"
     }
   ]
 }
