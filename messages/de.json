@@ -954,5 +954,10 @@
   },
   "noStepsPublished": "Die Quelle nennt diese Werte, aber keine Schritt-für-Schritt-Anleitung.",
   "machineUnspecified": "Maschine von der Quelle nicht angegeben",
-  "faqEspressoDetails": "Veröffentlichte Extraktionsangaben: {details}."
+  "faqEspressoDetails": "Veröffentlichte Extraktionsangaben: {details}.",
+  "temperatureUnitLabel": "Temperatureinheit",
+  "showCelsius": "Temperaturen in Celsius anzeigen",
+  "showFahrenheit": "Temperaturen in Fahrenheit anzeigen",
+  "followSourceUnit": "Es gilt die Einheit der jeweiligen Quelle",
+  "convertedNote": "≈ kennzeichnet eine Anzeigeumrechnung; die Quelle nennt {value}."
 }

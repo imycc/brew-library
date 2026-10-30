@@ -23,7 +23,7 @@ test('site graph exposes a stable organization and localized website',()=>{
  const website=find(graph,'WebSite');
  assert(organization&&website);
  assert.equal(organization.name,t('brand'));
- assert.equal(organization.url,`${SITE}${BASE}/zh-Hant/`);
+ assert.equal(organization.url,`${SITE}${BASE}/en/`);
  assert.deepEqual(organization.sameAs,['https://github.com/imycc/brew-library']);
  assert.equal(website.url,`${SITE}${BASE}/en/`);
  assert.equal(website.inLanguage,'en');

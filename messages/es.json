@@ -954,5 +954,10 @@
   },
   "noStepsPublished": "La fuente publica estos parámetros, pero no una secuencia paso a paso.",
   "machineUnspecified": "Máquina no indicada por la fuente",
-  "faqEspressoDetails": "Datos de extracción publicados: {details}."
+  "faqEspressoDetails": "Datos de extracción publicados: {details}.",
+  "temperatureUnitLabel": "Unidad de temperatura",
+  "showCelsius": "Mostrar temperaturas en Celsius",
+  "showFahrenheit": "Mostrar temperaturas en Fahrenheit",
+  "followSourceUnit": "Se usa la unidad de cada fuente",
+  "convertedNote": "≈ indica una conversión de visualización; la fuente publica {value}."
 }

@@ -2,7 +2,7 @@
 
 ## Frontend
 
-Next.js App Router with React, TypeScript, Tailwind CSS and next-intl. Localized routes are prebuilt with `generateStaticParams`; no runtime middleware or locale negotiation is required. All routes carry a locale prefix. The root HTML is a static entry to Traditional Chinese.
+Next.js App Router with React, TypeScript, Tailwind CSS and next-intl. Localized routes are prebuilt with `generateStaticParams`; no runtime middleware or locale negotiation is required. All routes carry a locale prefix. The root HTML is a tiny entry that picks a locale from `navigator.languages` (English when nothing matches) and redirects, so the bare site URL lands on a readable homepage; it falls back to English without JavaScript. English is the x-default hreflang and the Organization homepage URL.
 
 The homepage is an editorial discovery surface. Full brewing instructions and timelines exist only on recipe details. The comparison page compares original facts and source links, without ranking or adapting recipes.
 
@@ -12,7 +12,7 @@ Every recipe carries a `method` discriminator, and the schema is a Zod discrimin
 
 Espresso-specific values live under `extraction`: `pressureBar`, `preInfusion` (seconds and/or bar), `basket` (id, name, grams, style), `puckPrep` keys and `purgeSeconds`. Steps gain `pressure` plus the actions `grind`, `dose`, `tamp`, `lock`, `preinfuse`, `extract`, `stop` and `purge`. `duration` on an espresso record is the shot time, including any pre-infusion the source counts inside it.
 
-Temperature keeps the source's own unit: `temperatureUnit` is `C` by default, `F` when the source publishes Fahrenheit, and an optional `temperatureMax` carries a stated range such as 202–204 °F without conversion. `steps` may be empty when a source publishes parameters only; the detail page then shows a localized no-steps note and JSON-LD omits `recipeInstructions`. `image` is optional and falls back to the default Open Graph photograph rather than borrowing pour-over artwork.
+Temperature keeps the source's own unit: `temperatureUnit` is `C` by default, `F` when the source publishes Fahrenheit, and an optional `temperatureMax` carries a stated range such as 202–204 °F without conversion. `steps` may be empty when a source publishes parameters only; the detail page then shows a localized no-steps note and JSON-LD omits `recipeInstructions`. `image` is optional and falls back to the default Open Graph photograph rather than borrowing pour-over artwork. A header control can convert every displayed temperature to °C or °F in one click; a converted reading is prefixed with `≈`, a note names the source value, the preference persists locally, and the stored record and JSON-LD keep the published unit.
 
 Comparison is limited to one method: `parseSelection` keeps the first recipe's method and reports the rest through `mismatch`, and `toggleSelection` refuses a cross-method addition. The homepage filter exposes `method` as a shareable query key. `brewer` holds the brewing device for both methods (a dripper or a machine); only its display label changes per method.
 

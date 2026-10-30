@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {convertTemperature,formatTemperature} from '../src/lib/temperature';
 import {espressoSchema,pourOverSchema,filterRecipes,parseSelection,toggleSelection,recipes,pourOverRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
@@ -256,4 +257,16 @@ test('espresso source facts count extraction values and keep the two methods apa
  assert(toggle.mismatch);
  assert.deepEqual(toggle.ids,['kasuya-46']);
  assert.deepEqual(toggleSelection(['test-shot'],'kasuya-46',mixed).ids,['test-shot','kasuya-46'].filter(id=>id==='test-shot'));
+});
+
+test('temperature conversion is display-only, marked and rounded once',()=>{
+ assert.equal(convertTemperature(93.5,'C','F'),200.3);
+ assert.equal(convertTemperature(202,'F','C'),94.4);
+ assert.equal(convertTemperature(93.5,'C','C'),93.5);
+ const source=formatTemperature(202,'F',null,204);
+ assert.deepEqual(source,{text:'202–204°F',converted:false});
+ const celsius=formatTemperature(202,'F','C',204);
+ assert.deepEqual(celsius,{text:'≈ 94.4–95.6°C',converted:true});
+ assert.equal(formatTemperature(93.5,'C','F').text,'≈ 200.3°F');
+ assert.equal(formatTemperature(24,'C','F',24).text,'≈ 75.2°F');
 });

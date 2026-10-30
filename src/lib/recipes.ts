@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {formatTemperature,type TemperatureUnit} from './temperature';
 import rawRecipes from '../../content/recipes.json';
 
 const pourPattern=z.enum(['centre','circular','spiral','vertical','lateral','wholeBed','any']);
@@ -88,13 +89,11 @@ export function iceAmountText(recipe:Recipe):string {
 export function yieldText(recipe:Recipe):string {
   return recipe.yield?`${recipe.yield.amount} ${recipe.yield.unit}`:'';
 }
-// Fahrenheit stays Fahrenheit: the source's own unit is part of the record.
-export function temperatureLabel(recipe:Recipe):string {
+// Fahrenheit stays Fahrenheit by default: the source's own unit is part of the record.
+// A display unit converts for reading only and is prefixed with ≈.
+export function temperatureLabel(recipe:Recipe, display:TemperatureUnit|null=null):string {
   if(recipe.temperature===null)return '';
-  const symbol=recipe.temperatureUnit==='F'?'°F':'°C';
-  return recipe.temperatureMax!==undefined&&recipe.temperatureMax!==recipe.temperature
-    ? `${recipe.temperature}–${recipe.temperatureMax}${symbol}`
-    : `${recipe.temperature}${symbol}`;
+  return formatTemperature(recipe.temperature,recipe.temperatureUnit,display,recipe.temperatureMax).text;
 }
 export function pressureText(recipe:Recipe):string {
   const stated=isEspresso(recipe)?recipe.extraction?.pressureBar:undefined;
