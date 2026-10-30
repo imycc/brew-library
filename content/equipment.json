@@ -2695,6 +2695,191 @@
         }
       ],
       "checked": "2026-10-29"
+    },
+    {
+      "id": "ecm-synchronika-ii",
+      "category": "machine",
+      "brand": "ECM",
+      "name": "Synchronika II",
+      "status": "current",
+      "aliases": [
+        "ECM Synchronika II"
+      ],
+      "details": [
+        {
+          "key": "boiler",
+          "value": "Dual boiler",
+          "valueKey": "dualBoiler"
+        },
+        {
+          "key": "capacity",
+          "value": "0.75 / 2",
+          "unit": "l",
+          "valueKey": "coffeeAndSteamBoilers"
+        },
+        {
+          "key": "pump",
+          "value": "Rotary pump",
+          "valueKey": "rotaryPump"
+        },
+        {
+          "key": "preInfusion",
+          "value": "Active and passive pre-infusion",
+          "valueKey": "activePassivePreInfusion"
+        },
+        {
+          "key": "technology",
+          "value": "PID temperature control",
+          "valueKey": "pidTemperatureControl"
+        },
+        {
+          "key": "dimensions",
+          "value": "335 × 490 × 410",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "value": "30",
+          "unit": "kg"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "ECM",
+          "url": "https://www.ecm.de/en/products/synchronika-ii/"
+        }
+      ],
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "ecm-classika-iii",
+      "category": "machine",
+      "brand": "ECM",
+      "name": "Classika III",
+      "status": "current",
+      "aliases": [
+        "ECM Classika III"
+      ],
+      "details": [
+        {
+          "key": "boiler",
+          "value": "Single boiler",
+          "valueKey": "singleBoiler"
+        },
+        {
+          "key": "capacity",
+          "value": "0.5",
+          "unit": "l"
+        },
+        {
+          "key": "group",
+          "value": "ECM-61 Core Heat"
+        },
+        {
+          "key": "pump",
+          "value": "Low-noise vibration pump",
+          "valueKey": "lowNoiseVibrationPump"
+        },
+        {
+          "key": "technology",
+          "value": "PID control in 1 °C steps",
+          "valueKey": "pidOneDegree"
+        },
+        {
+          "key": "tank",
+          "value": "≈ 2.8",
+          "unit": "l"
+        },
+        {
+          "key": "dimensions",
+          "value": "250 × 445 × 395",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "value": "18.5",
+          "unit": "kg"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "ECM",
+          "url": "https://www.ecm.de/en/products/classika-iii/"
+        }
+      ],
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "rocket-r58-tune",
+      "category": "machine",
+      "brand": "Rocket Espresso",
+      "name": "R58 TUNE",
+      "status": "current",
+      "aliases": [
+        "Rocket R58 TUNE"
+      ],
+      "details": [
+        {
+          "key": "boiler",
+          "value": "Dual boiler",
+          "valueKey": "dualBoiler"
+        },
+        {
+          "key": "capacity",
+          "value": "0.58 / 1.8",
+          "unit": "l",
+          "valueKey": "coffeeAndSteamBoilers"
+        },
+        {
+          "key": "group",
+          "value": "TCA Coffee Group"
+        },
+        {
+          "key": "preInfusion",
+          "value": "Time-controlled pre-infusion at 3 bar",
+          "valueKey": "tunePreInfusion3Bar"
+        },
+        {
+          "key": "technology",
+          "value": "Dual PID",
+          "valueKey": "dualPid"
+        },
+        {
+          "key": "tank",
+          "value": "1.9",
+          "unit": "l"
+        },
+        {
+          "key": "power",
+          "value": "1600",
+          "unit": "W"
+        },
+        {
+          "key": "voltage",
+          "value": "220-240",
+          "unit": "V"
+        },
+        {
+          "key": "dimensions",
+          "value": "335 (408 with display) × 482 × 427",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "value": "29",
+          "unit": "kg"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "Rocket Espresso",
+          "url": "https://rocket-espresso.com/products/domestic-models/r58tune"
+        }
+      ],
+      "checked": "2026-10-30"
     }
   ]
 }

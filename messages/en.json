@@ -30,7 +30,7 @@
   },
   "equipmentNav": "Equipment",
   "equipmentTitle": "Brewing equipment index",
-  "equipmentIntro": "Source-backed specifications, compatibility notes and related recipes for pour-over drippers, kettles, grinders and filters.",
+  "equipmentIntro": "Source-backed specifications, compatibility notes and related recipes for drippers, kettles, grinders, filter paper and espresso machines.",
   "equipmentItems": "items",
   "equipmentSearch": "Search brand, model or compatibility",
   "equipmentCategory": "Equipment category",
@@ -43,7 +43,8 @@
     "dripper": "Drippers",
     "grinder": "Grinders",
     "filter": "Filters",
-    "kettle": "Kettles"
+    "kettle": "Kettles",
+    "machine": "Espresso machine"
   },
   "equipmentStatus": {
     "legacy": "Legacy / discontinued",
@@ -67,7 +68,12 @@
     "technology": "Technology",
     "power": "Power",
     "voltage": "Voltage",
-    "temperatureRange": "Temperature range"
+    "temperatureRange": "Temperature range",
+    "boiler": "Boiler",
+    "group": "Group",
+    "pump": "Pump",
+    "preInfusion": "Pre-infusion",
+    "tank": "Water tank"
   },
   "equipmentUnits": {
     "cups": "cups",
@@ -81,7 +87,9 @@
     "oz": "oz",
     "W": "W",
     "V": "V",
-    "°C": "°C"
+    "°C": "°C",
+    "kg": "kg",
+    "l": "l"
   },
   "brand": "Brew Library",
   "tagline": "Coffee editorial",
@@ -800,7 +808,17 @@
     "weight1400WithBase": "1400 (with base)",
     "flatDrippers": "Flat-bed drippers",
     "modelUnknownMaker": "The source says only \"MK\"; the maker is not identified",
-    "modelFastUnverified": "FAST grade; no stable official product page could be verified"
+    "modelFastUnverified": "FAST grade; no stable official product page could be verified",
+    "dualBoiler": "Dual boiler",
+    "singleBoiler": "Single boiler",
+    "coffeeAndSteamBoilers": "Coffee / steam boiler",
+    "rotaryPump": "Rotary pump",
+    "lowNoiseVibrationPump": "Low-noise vibration pump",
+    "pidTemperatureControl": "PID temperature control",
+    "pidOneDegree": "PID control in 1 °C steps",
+    "dualPid": "Dual PID",
+    "activePassivePreInfusion": "Active and passive pre-infusion",
+    "tunePreInfusion3Bar": "Time-controlled pre-infusion at 3 bar"
   },
   "pourPatterns": {
     "centre": "Centre",

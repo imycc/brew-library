@@ -11,93 +11,191 @@
   "sourceImageCredit": "Imagen de origen · {source}",
   "sourceImageView": "Ver fuente",
   "recipes": {
-    "kasuya": {"overview":"Esta versión didáctica de HARIO divide la preparación en cinco adiciones cronometradas. Los dos primeros vertidos trabajan el equilibrio y los tres siguientes la intensidad, un punto de partida claro para aprender el vertido por pulsos.","bestFor":"Aprender una rutina de pulsos estructurada y cronometrada"},
-    "hoffmann": {"overview":"Un V60 de dosis baja basado en adiciones medidas, pausas cortas y giros suaves. Busca una extracción uniforme sin depender de un único vertido largo y continuo.","bestFor":"Una rutina V60 repetible para una taza"},
-    "rao": {"overview":"Método Pulsar sin bypass que cierra la válvula durante el bloom y añade pulsos tras abrirla. Muestra cómo separar el tiempo de inmersión del vertido por pulsos.","bestFor":"Explorar inmersión sin bypass y control del flujo"},
-    "licata": {"overview":"Secuencia V60 que pasa de un primer vertido enérgico a un chorro lento por el centro y termina con turbulencia. Es útil para practicar velocidad, punto de vertido y nivel de agua.","bestFor":"Practicar vertido continuo y vertido central"},
-    "wong": {"overview":"Receta híbrida con Switch: primero filtra con la válvula abierta y después la cierra para infusionar. Las etapas separadas facilitan entender cómo se combinan percolación e inmersión.","bestFor":"Comprender las fases de válvula abierta e inmersión"},
-    "boen": {"overview":"Versión de competición con dos infusiones controladas y una apertura final. Es más detallada que un Switch básico y exige precisión con el tiempo, la válvula y la temperatura.","bestFor":"Estudiar un Switch técnico de competición"},
-    "hoang": {"overview":"Receta W60 que combina malla plana y papel con tres adiciones. La preparación en capas y el tamizado añaden trabajo, pero permiten controlar mejor finos y flujo.","bestFor":"Explorar filtración con malla y papel"},
-    "rojewska": {"overview":"Rutina V60 breve con un vertido circular suave seguido de uno central rápido. Es fácil de leer, aunque su ritmo veloz deja poco margen para dudar.","bestFor":"Una rutina V60 corta y rápida"},
-    "grill": {"overview":"Receta V60 de 30 g con bloom, dos vertidos y un objetivo de tres minutos. Sirve para preparar una cantidad mayor y premia un ritmo de vertido constante y sencillo.","bestFor":"Preparar una taza grande o compartir"},
-    "mallouhi": {"overview":"Secuencia V60 centrada en la proporción: bloom circular medido y una adición lenta restante. Menos etapas la hacen accesible; la fuente no especifica la temperatura.","bestFor":"Bloom circular sencillo y final lento"},
-    "chronicler": {"overview":"Switch estándar sencillo: vierte la mitad con la válvula abierta y deja la otra mitad en infusión antes de liberar. Es una introducción accesible al flujo híbrido del Switch.","bestFor":"Una primera receta Switch estructurada"},
-    "kodama": {"overview":"Preparación ORIGAMI de competición con cuatro fases de agitación y una secuencia de preparación concreta. Resulta útil para estudiar dirección del vertido, movimiento del lecho y salida final.","bestFor":"Estudiar gestos y agitación de competición"},
-    "kobayashi": {"overview":"Receta ORIGAMI de competición con tamizado, colocación del filtro y un vertido final más frío. Su fuerza está en la precisión y la temperatura; la preparación extra forma parte del método.","bestFor":"Preparación avanzada de ORIGAMI y control térmico"},
-    "selorio": {"overview":"Receta ORIGAMI de cuatro adiciones cronometradas con molinillo y papel CAFEC especificados. Es útil para acercarse a un montaje de competición documentado porque ritmo y equipo son explícitos.","bestFor":"Recrear una combinación documentada de molinillo y papel"},
-    "rincon": {"overview":"Preparación de competición para un Geisha natural que cambia la temperatura entre vertidos. Es muy específica de la fuente y muestra cómo una receta responde a un café y un agua concretos.","bestFor":"Estudiar cambios térmicos para un café natural concreto"},
-    "gil": {"overview":"Método ORIGAMI de cuatro vertidos vinculado a un ajuste de K-Ultra y papel Sibarist. Ofrece una estructura temporal concisa para comparar, con menos detalle sobre café y equipo.","bestFor":"Comparar una estructura clara de cuatro vertidos"},
-    "hoffmann-ultimate": {"overview":"Una receta V60 completa de 500 ml con 60 g de bloom y dos vertidos por etapas. La agitación final y el giro suave nivelan el lecho antes del drenaje; la fuente usa agua más caliente para tuestes claros.","bestFor":"Una preparación V60 más grande con una estructura temporal clara"},
-    "camber": {"overview":"Una receta V60 de 20 g compartida por Camber Coffee en SCA 2023, con 60 g de bloom y vertidos hasta 200 g y 345 g. La fuente destaca cafés anaeróbicos y un final de 3:00–3:15.","bestFor":"Preparar cafés anaeróbicos con una secuencia V60 sencilla"},
-    "lamill": {"overview":"Una receta Mugen sin bloom, basada en un solo vertido continuo y un drenaje largo. Es un punto de partida sencillo para el dripper de flujo restringido.","bestFor":"Una rutina Mugen sencilla de un solo vertido"}
+    "kasuya": {
+      "overview": "Esta versión didáctica de HARIO divide la preparación en cinco adiciones cronometradas. Los dos primeros vertidos trabajan el equilibrio y los tres siguientes la intensidad, un punto de partida claro para aprender el vertido por pulsos.",
+      "bestFor": "Aprender una rutina de pulsos estructurada y cronometrada"
+    },
+    "hoffmann": {
+      "overview": "Un V60 de dosis baja basado en adiciones medidas, pausas cortas y giros suaves. Busca una extracción uniforme sin depender de un único vertido largo y continuo.",
+      "bestFor": "Una rutina V60 repetible para una taza"
+    },
+    "rao": {
+      "overview": "Método Pulsar sin bypass que cierra la válvula durante el bloom y añade pulsos tras abrirla. Muestra cómo separar el tiempo de inmersión del vertido por pulsos.",
+      "bestFor": "Explorar inmersión sin bypass y control del flujo"
+    },
+    "licata": {
+      "overview": "Secuencia V60 que pasa de un primer vertido enérgico a un chorro lento por el centro y termina con turbulencia. Es útil para practicar velocidad, punto de vertido y nivel de agua.",
+      "bestFor": "Practicar vertido continuo y vertido central"
+    },
+    "wong": {
+      "overview": "Receta híbrida con Switch: primero filtra con la válvula abierta y después la cierra para infusionar. Las etapas separadas facilitan entender cómo se combinan percolación e inmersión.",
+      "bestFor": "Comprender las fases de válvula abierta e inmersión"
+    },
+    "boen": {
+      "overview": "Versión de competición con dos infusiones controladas y una apertura final. Es más detallada que un Switch básico y exige precisión con el tiempo, la válvula y la temperatura.",
+      "bestFor": "Estudiar un Switch técnico de competición"
+    },
+    "hoang": {
+      "overview": "Receta W60 que combina malla plana y papel con tres adiciones. La preparación en capas y el tamizado añaden trabajo, pero permiten controlar mejor finos y flujo.",
+      "bestFor": "Explorar filtración con malla y papel"
+    },
+    "rojewska": {
+      "overview": "Rutina V60 breve con un vertido circular suave seguido de uno central rápido. Es fácil de leer, aunque su ritmo veloz deja poco margen para dudar.",
+      "bestFor": "Una rutina V60 corta y rápida"
+    },
+    "grill": {
+      "overview": "Receta V60 de 30 g con bloom, dos vertidos y un objetivo de tres minutos. Sirve para preparar una cantidad mayor y premia un ritmo de vertido constante y sencillo.",
+      "bestFor": "Preparar una taza grande o compartir"
+    },
+    "mallouhi": {
+      "overview": "Secuencia V60 centrada en la proporción: bloom circular medido y una adición lenta restante. Menos etapas la hacen accesible; la fuente no especifica la temperatura.",
+      "bestFor": "Bloom circular sencillo y final lento"
+    },
+    "chronicler": {
+      "overview": "Switch estándar sencillo: vierte la mitad con la válvula abierta y deja la otra mitad en infusión antes de liberar. Es una introducción accesible al flujo híbrido del Switch.",
+      "bestFor": "Una primera receta Switch estructurada"
+    },
+    "kodama": {
+      "overview": "Preparación ORIGAMI de competición con cuatro fases de agitación y una secuencia de preparación concreta. Resulta útil para estudiar dirección del vertido, movimiento del lecho y salida final.",
+      "bestFor": "Estudiar gestos y agitación de competición"
+    },
+    "kobayashi": {
+      "overview": "Receta ORIGAMI de competición con tamizado, colocación del filtro y un vertido final más frío. Su fuerza está en la precisión y la temperatura; la preparación extra forma parte del método.",
+      "bestFor": "Preparación avanzada de ORIGAMI y control térmico"
+    },
+    "selorio": {
+      "overview": "Receta ORIGAMI de cuatro adiciones cronometradas con molinillo y papel CAFEC especificados. Es útil para acercarse a un montaje de competición documentado porque ritmo y equipo son explícitos.",
+      "bestFor": "Recrear una combinación documentada de molinillo y papel"
+    },
+    "rincon": {
+      "overview": "Preparación de competición para un Geisha natural que cambia la temperatura entre vertidos. Es muy específica de la fuente y muestra cómo una receta responde a un café y un agua concretos.",
+      "bestFor": "Estudiar cambios térmicos para un café natural concreto"
+    },
+    "gil": {
+      "overview": "Método ORIGAMI de cuatro vertidos vinculado a un ajuste de K-Ultra y papel Sibarist. Ofrece una estructura temporal concisa para comparar, con menos detalle sobre café y equipo.",
+      "bestFor": "Comparar una estructura clara de cuatro vertidos"
+    },
+    "hoffmann-ultimate": {
+      "overview": "Una receta V60 completa de 500 ml con 60 g de bloom y dos vertidos por etapas. La agitación final y el giro suave nivelan el lecho antes del drenaje; la fuente usa agua más caliente para tuestes claros.",
+      "bestFor": "Una preparación V60 más grande con una estructura temporal clara"
+    },
+    "camber": {
+      "overview": "Una receta V60 de 20 g compartida por Camber Coffee en SCA 2023, con 60 g de bloom y vertidos hasta 200 g y 345 g. La fuente destaca cafés anaeróbicos y un final de 3:00–3:15.",
+      "bestFor": "Preparar cafés anaeróbicos con una secuencia V60 sencilla"
+    },
+    "lamill": {
+      "overview": "Una receta Mugen sin bloom, basada en un solo vertido continuo y un drenaje largo. Es un punto de partida sencillo para el dripper de flujo restringido.",
+      "bestFor": "Una rutina Mugen sencilla de un solo vertido"
+    }
   },
   "equipmentRoles": {
-    "conicalControl":"Dripper cónico que da al usuario control directo sobre flujo, trazado del vertido y nivel de agua.",
-    "immersionSwitch":"Dripper híbrido con válvula para alternar entre percolación e inmersión.",
-    "dualFilter":"Equipo diseñado para combinar una base plana de malla con filtración de papel.",
-    "noBypass":"Equipo sin bypass que infusiona y libera, pensado para controlar inmersión y pulsos.",
-    "hybridCone":"Dripper de forma específica que admite distintas geometrías de filtro y destaca el control del vertido.",
-    "flatbed":"Dripper de fondo plano orientado a un lecho uniforme y un drenaje directo.",
-    "batchCone":"Dripper alto con papel específico, pensado para lotes mayores y una taza limpia.",
-    "deepCone":"Cono estrecho para una taza que prolonga el contacto y utiliza papel dedicado.",
-    "modular":"Equipo modular cuyo fondo y filtro determinan flujo y comportamiento del lecho.",
-    "insulatedFlatbed":"Dripper de fondo plano con cuerpo metálico aislado para conservar el calor.",
-    "handGrinder":"Molinillo manual compacto con escala de molienda ajustable desde el exterior.",
-    "filterElectric":"Molinillo eléctrico para café filtrado centrado en ajustes repetibles.",
-    "largeFlatElectric":"Molinillo eléctrico de muelas planas grandes y molienda controlada.",
-    "paperFilter":"Filtro de papel específico que condiciona flujo, filtración y limpieza; es consumible.",
-    "unresolved":"La fuente solo ofrece un nombre genérico, por lo que se evitan afirmaciones específicas de modelo.",
-    "electricGooseneck":"Hervidor eléctrico de cuello de cisne con control de temperatura para un agua de preparación repetible.",
-    "stovetopGooseneck":"Hervidor de cuello de cisne para cocina con pico estrecho para controlar el vertido; la temperatura del agua se gestiona por separado.",
-    "openFrame":"Un cono de estructura abierta con costillas en espiral expuestas; el papel y el café definen el flujo."
+    "conicalControl": "Dripper cónico que da al usuario control directo sobre flujo, trazado del vertido y nivel de agua.",
+    "immersionSwitch": "Dripper híbrido con válvula para alternar entre percolación e inmersión.",
+    "dualFilter": "Equipo diseñado para combinar una base plana de malla con filtración de papel.",
+    "noBypass": "Equipo sin bypass que infusiona y libera, pensado para controlar inmersión y pulsos.",
+    "hybridCone": "Dripper de forma específica que admite distintas geometrías de filtro y destaca el control del vertido.",
+    "flatbed": "Dripper de fondo plano orientado a un lecho uniforme y un drenaje directo.",
+    "batchCone": "Dripper alto con papel específico, pensado para lotes mayores y una taza limpia.",
+    "deepCone": "Cono estrecho para una taza que prolonga el contacto y utiliza papel dedicado.",
+    "modular": "Equipo modular cuyo fondo y filtro determinan flujo y comportamiento del lecho.",
+    "insulatedFlatbed": "Dripper de fondo plano con cuerpo metálico aislado para conservar el calor.",
+    "handGrinder": "Molinillo manual compacto con escala de molienda ajustable desde el exterior.",
+    "filterElectric": "Molinillo eléctrico para café filtrado centrado en ajustes repetibles.",
+    "largeFlatElectric": "Molinillo eléctrico de muelas planas grandes y molienda controlada.",
+    "paperFilter": "Filtro de papel específico que condiciona flujo, filtración y limpieza; es consumible.",
+    "unresolved": "La fuente solo ofrece un nombre genérico, por lo que se evitan afirmaciones específicas de modelo.",
+    "electricGooseneck": "Hervidor eléctrico de cuello de cisne con control de temperatura para un agua de preparación repetible.",
+    "stovetopGooseneck": "Hervidor de cuello de cisne para cocina con pico estrecho para controlar el vertido; la temperatura del agua se gestiona por separado.",
+    "openFrame": "Un cono de estructura abierta con costillas en espiral expuestas; el papel y el café definen el flujo.",
+    "dualBoilerProsumer": "Una máquina de doble caldera para extraer y vaporizar a la vez.",
+    "singleBoilerE61": "Una máquina de caldera única construida alrededor de un grupo clásico."
   },
-  "equipmentExperienceTitle":"Perfil en taza y experiencia real",
-  "equipmentExperienceNote":"Estas etiquetas resumen reseñas prácticas y experiencias de la comunidad. No son un ranking de pruebas ciegas y dependen del café, el agua y la técnica.",
-  "equipmentExperienceSources":"Fuentes de experiencia",
-  "equipmentExperienceUnavailable":"Todavía no se ha verificado una fuente pública de experiencia suficientemente específica.",
-  "equipmentExperienceTags":{"brightClarity":"acidez y claridad más marcadas","techniqueSensitive":"la técnica de vertido se nota en la taza","paperCleanCup":"final más limpio con papel","immersionBody":"la inmersión aporta redondez y cuerpo","balancedCup":"equilibrio relativo entre claridad y cuerpo","forgivingTechnique":"tolera mejor las variaciones al verter","valveLearning":"hay que aprender el momento de la válvula","lowBypass":"el bajo bypass cambia la textura","roundSweetness":"dulzor y sensación más redondos","largeDoseFit":"funciona bien con dosis grandes","grindDialIn":"requiere ajustar bien la molienda","lightBody":"cuerpo ligero y tipo té","highAcidity":"la acidez puede destacar","lightRoastFit":"suele favorecer cafés claros y limpios","fastFlow":"el flujo rápido puede acortar el contacto","thermalStability":"el material ayuda a conservar el calor","fullerBody":"textura más llena y sabores integrados","blendedProfile":"sabores más integrados que separados","manualEffort":"la molienda manual forma parte del proceso","flavorSeparation":"alta separación entre notas","electricConsistency":"el flujo eléctrico facilita repetir dosis","seasoningTime":"el resultado puede cambiar al asentar las muelas","filterOnly":"pensado para filtro, no para espresso","chocolateBody":"puede inclinarse al cacao y al dulzor intenso","wideDialRange":"el rango útil es amplio y necesita una referencia","flowVariation":"el flujo puede variar entre lotes de papel","stallRisk":"los finos o la agitación pueden atascarlo","paperTasteVariation":"el sabor a papel y el flujo pueden variar por lote","filterDependent":"el papel cambia mucho el resultado","veryFastFlow":"el flujo muy rápido pide una receta más fina y controlada","fineGrindNeeded":"suele requerir una molienda más fina","lessStalling":"usuarios reportan menos atascos con cafés con muchos finos","brightAcidity":"facilita resaltar una acidez brillante","delicateBody":"cuerpo muy limpio y delicado","slowFlow":"el flujo lento alarga el contacto"},
+  "equipmentExperienceTitle": "Perfil en taza y experiencia real",
+  "equipmentExperienceNote": "Estas etiquetas resumen reseñas prácticas y experiencias de la comunidad. No son un ranking de pruebas ciegas y dependen del café, el agua y la técnica.",
+  "equipmentExperienceSources": "Fuentes de experiencia",
+  "equipmentExperienceUnavailable": "Todavía no se ha verificado una fuente pública de experiencia suficientemente específica.",
+  "equipmentExperienceTags": {
+    "brightClarity": "acidez y claridad más marcadas",
+    "techniqueSensitive": "la técnica de vertido se nota en la taza",
+    "paperCleanCup": "final más limpio con papel",
+    "immersionBody": "la inmersión aporta redondez y cuerpo",
+    "balancedCup": "equilibrio relativo entre claridad y cuerpo",
+    "forgivingTechnique": "tolera mejor las variaciones al verter",
+    "valveLearning": "hay que aprender el momento de la válvula",
+    "lowBypass": "el bajo bypass cambia la textura",
+    "roundSweetness": "dulzor y sensación más redondos",
+    "largeDoseFit": "funciona bien con dosis grandes",
+    "grindDialIn": "requiere ajustar bien la molienda",
+    "lightBody": "cuerpo ligero y tipo té",
+    "highAcidity": "la acidez puede destacar",
+    "lightRoastFit": "suele favorecer cafés claros y limpios",
+    "fastFlow": "el flujo rápido puede acortar el contacto",
+    "thermalStability": "el material ayuda a conservar el calor",
+    "fullerBody": "textura más llena y sabores integrados",
+    "blendedProfile": "sabores más integrados que separados",
+    "manualEffort": "la molienda manual forma parte del proceso",
+    "flavorSeparation": "alta separación entre notas",
+    "electricConsistency": "el flujo eléctrico facilita repetir dosis",
+    "seasoningTime": "el resultado puede cambiar al asentar las muelas",
+    "filterOnly": "pensado para filtro, no para espresso",
+    "chocolateBody": "puede inclinarse al cacao y al dulzor intenso",
+    "wideDialRange": "el rango útil es amplio y necesita una referencia",
+    "flowVariation": "el flujo puede variar entre lotes de papel",
+    "stallRisk": "los finos o la agitación pueden atascarlo",
+    "paperTasteVariation": "el sabor a papel y el flujo pueden variar por lote",
+    "filterDependent": "el papel cambia mucho el resultado",
+    "veryFastFlow": "el flujo muy rápido pide una receta más fina y controlada",
+    "fineGrindNeeded": "suele requerir una molienda más fina",
+    "lessStalling": "usuarios reportan menos atascos con cafés con muchos finos",
+    "brightAcidity": "facilita resaltar una acidez brillante",
+    "delicateBody": "cuerpo muy limpio y delicado",
+    "slowFlow": "el flujo lento alarga el contacto"
+  },
   "editorialStrengths": {
-    "clearTimeline":"Los pasos y tiempos son fáciles de seguir.",
-    "repeatable":"La estructura registrada facilita una práctica repetible.",
-    "flowControl":"Ofrece un control relevante del flujo o del movimiento del agua.",
-    "evenExtraction":"El diseño o la secuencia buscan un lecho y una extracción uniformes.",
-    "immersionControl":"Permite controlar el contacto mediante inmersión o tiempos de válvula.",
-    "temperatureControl":"La temperatura por etapas o la retención de calor forman parte del método.",
-    "cleanCup":"La filtración registrada pretende reducir sólidos y aclarar la taza.",
-    "fastFlow":"El equipo o filtro se asocia con un flujo más rápido.",
-    "compact":"Su tamaño facilita guardarlo, viajar o trabajar en poco espacio.",
-    "largeCapacity":"La capacidad registrada admite dosis mayores o varias tazas.",
-    "structuredAgitation":"La agitación tiene un lugar deliberado en la secuencia.",
-    "portable":"El diseño es apto para viajes o para cambiar de lugar de preparación.",
-    "preciseAdjustment":"El modelo registra un ajuste fino o fácil de repetir.",
-    "dedicatedFit":"Un filtro o recipiente específico reduce dudas de compatibilidad.",
-    "filterFlexibility":"El equipo o filtro admite más de un formato.",
-    "thermalStability":"El material o la construcción ayudan a conservar el calor.",
-    "extendedContact":"La geometría busca prolongar el contacto entre agua y café."
+    "clearTimeline": "Los pasos y tiempos son fáciles de seguir.",
+    "repeatable": "La estructura registrada facilita una práctica repetible.",
+    "flowControl": "Ofrece un control relevante del flujo o del movimiento del agua.",
+    "evenExtraction": "El diseño o la secuencia buscan un lecho y una extracción uniformes.",
+    "immersionControl": "Permite controlar el contacto mediante inmersión o tiempos de válvula.",
+    "temperatureControl": "La temperatura por etapas o la retención de calor forman parte del método.",
+    "cleanCup": "La filtración registrada pretende reducir sólidos y aclarar la taza.",
+    "fastFlow": "El equipo o filtro se asocia con un flujo más rápido.",
+    "compact": "Su tamaño facilita guardarlo, viajar o trabajar en poco espacio.",
+    "largeCapacity": "La capacidad registrada admite dosis mayores o varias tazas.",
+    "structuredAgitation": "La agitación tiene un lugar deliberado en la secuencia.",
+    "portable": "El diseño es apto para viajes o para cambiar de lugar de preparación.",
+    "preciseAdjustment": "El modelo registra un ajuste fino o fácil de repetir.",
+    "dedicatedFit": "Un filtro o recipiente específico reduce dudas de compatibilidad.",
+    "filterFlexibility": "El equipo o filtro admite más de un formato.",
+    "thermalStability": "El material o la construcción ayudan a conservar el calor.",
+    "extendedContact": "La geometría busca prolongar el contacto entre agua y café.",
+    "preInfusionControl": "La preinfusión se puede controlar o ajustar."
   },
   "editorialConsiderations": {
-    "needsTimer":"Requiere temporizador o atención al reloj.",
-    "activePouring":"Exige control activo del vertido en lugar de dejar casi todo en marcha.",
-    "grindSensitive":"Pequeños cambios de molienda pueden alterar de forma importante el flujo.",
-    "smallCapacity":"El tamaño registrado encaja mejor con pocas tazas.",
-    "unknownParameters":"La fuente no precisa todos los parámetros para una reproducción exacta.",
-    "valveProcess":"La posición y el tiempo de la válvula forman parte del proceso.",
-    "dedicatedFilter":"Se necesita o recomienda un papel o formato de filtro específico.",
-    "equipmentSpecific":"El resultado está vinculado al equipo o ajuste de molino registrado.",
-    "competitionSpecific":"La receta se publicó para competición y puede requerir adaptación en casa.",
-    "preciseTiming":"Los vertidos están tan cronometrados que dejan poco margen a desviaciones.",
-    "morePreparation":"Tamizar, precalentar o ajustar el filtro añade preparación.",
-    "fragile":"El material registrado exige un manejo y almacenamiento cuidadosos.",
-    "learningCurve":"La técnica de vertido o válvula puede necesitar práctica.",
-    "manualEffort":"Moler a mano requiere esfuerzo físico.",
-    "electricPower":"El dispositivo necesita corriente o batería.",
-    "notEspresso":"El rango de molienda registrado está pensado para café filtrado y no para espresso.",
-    "singleDose":"El flujo de trabajo favorece dosis medidas frente a un depósito grande.",
-    "footprint":"El dispositivo ocupa más espacio en la encimera.",
-    "beanSpecific":"La fuente se desarrolló para un café concreto y puede necesitar ajustes.",
-    "consumable":"El filtro debe sustituirse periódicamente, lo que exige suministro continuo.",
-    "filterMatching":"El flujo puede cambiar al usar otro papel o formato.",
-    "slowDrawdown":"La combinación registrada puede producir un drenaje o contacto más largo.",
-    "heatSourceDependent":"Requiere una cocina o una fuente de calor aparte antes de preparar el café."
+    "needsTimer": "Requiere temporizador o atención al reloj.",
+    "activePouring": "Exige control activo del vertido en lugar de dejar casi todo en marcha.",
+    "grindSensitive": "Pequeños cambios de molienda pueden alterar de forma importante el flujo.",
+    "smallCapacity": "El tamaño registrado encaja mejor con pocas tazas.",
+    "unknownParameters": "La fuente no precisa todos los parámetros para una reproducción exacta.",
+    "valveProcess": "La posición y el tiempo de la válvula forman parte del proceso.",
+    "dedicatedFilter": "Se necesita o recomienda un papel o formato de filtro específico.",
+    "equipmentSpecific": "El resultado está vinculado al equipo o ajuste de molino registrado.",
+    "competitionSpecific": "La receta se publicó para competición y puede requerir adaptación en casa.",
+    "preciseTiming": "Los vertidos están tan cronometrados que dejan poco margen a desviaciones.",
+    "morePreparation": "Tamizar, precalentar o ajustar el filtro añade preparación.",
+    "fragile": "El material registrado exige un manejo y almacenamiento cuidadosos.",
+    "learningCurve": "La técnica de vertido o válvula puede necesitar práctica.",
+    "manualEffort": "Moler a mano requiere esfuerzo físico.",
+    "electricPower": "El dispositivo necesita corriente o batería.",
+    "notEspresso": "El rango de molienda registrado está pensado para café filtrado y no para espresso.",
+    "singleDose": "El flujo de trabajo favorece dosis medidas frente a un depósito grande.",
+    "footprint": "El dispositivo ocupa más espacio en la encimera.",
+    "beanSpecific": "La fuente se desarrolló para un café concreto y puede necesitar ajustes.",
+    "consumable": "El filtro debe sustituirse periódicamente, lo que exige suministro continuo.",
+    "filterMatching": "El flujo puede cambiar al usar otro papel o formato.",
+    "slowDrawdown": "La combinación registrada puede producir un drenaje o contacto más largo.",
+    "heatSourceDependent": "Requiere una cocina o una fuente de calor aparte antes de preparar el café.",
+    "maintenance": "Limpiar el grupo, descalcificar y cambiar juntas forman parte del mantenimiento.",
+    "counterSpace": "El tamaño y el peso registrados requieren una superficie firme."
   }
 }

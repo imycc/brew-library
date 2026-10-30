@@ -11,93 +11,191 @@
   "sourceImageCredit": "来源图片 · {source}",
   "sourceImageView": "查看来源",
   "recipes": {
-    "kasuya": {"overview":"这个 HARIO 教学版本把冲煮分成五次计时注水。前两段塑造平衡，后三段调整浓度，是练习分段注水节奏的清晰起点。","bestFor":"学习有结构的计时分段注水"},
-    "hoffmann": {"overview":"以定量注水、短暂停顿和轻柔摇晃组成的低粉量 V60。重点是用多次小注水维持均匀萃取，而不是依靠一次长时间连续注水。","bestFor":"建立可重复的单杯 V60 流程"},
-    "rao": {"overview":"Pulsar 的无旁通方法：闷蒸时关闭阀门，开阀后再分段加入余水。它清楚展示如何分别控制浸泡时间和分段注水。","bestFor":"研究无旁通浸泡与流速控制"},
-    "licata": {"overview":"V60 从较强的前段注水转为慢速中心水流，最后以扰流完成。适合练习注水速度、中心落点和水位控制。","bestFor":"练习连续注水与中心注水"},
-    "wong": {"overview":"Switch 混合式配方：第一阶段开阀渗滤，之后关阀浸泡。阶段界线清楚，容易理解渗滤与浸泡如何交替。","bestFor":"理解开阀及浸泡阶段的配合"},
-    "boen": {"overview":"比赛用版本，以两次受控浸泡配合开阀排出。比基本 Switch 配方更讲究时间、阀门操作和水温。","bestFor":"研究较技术型的比赛 Switch 方法"},
-    "hoang": {"overview":"W60 配方结合平底金属网和滤纸，再分三段注水。双层过滤与筛粉建议增加准备工作，但让细粉和流速更受控。","bestFor":"探索金属网加滤纸的组合"},
-    "rojewska": {"overview":"精简 V60 流程：先柔和绕圈，再快速中心注水。步骤容易阅读，但节奏很快，操作期间几乎没有犹豫空间。","bestFor":"需要快速完成的短 V60 流程"},
-    "grill": {"overview":"30 g 粉量较大的 V60，包含闷蒸、两段注水和三分钟目标。适合一次冲较多咖啡，重点是保持简单稳定的注水节奏。","bestFor":"冲较大杯或与人分享"},
-    "mallouhi": {"overview":"按比例展开的简单 V60：定量绕圈闷蒸后，慢慢加入余水。阶段较少、容易跟随；来源没有提供水温。","bestFor":"简单绕圈闷蒸与慢速收尾"},
-    "chronicler": {"overview":"容易入门的 Switch 标准版：开阀注入一半，关阀浸泡另一半，最后放流。适合第一次理解 Switch 的混合流程。","bestFor":"第一份有结构的 Switch 配方"},
-    "kodama": {"overview":"比赛用 ORIGAMI 配方，四次注水配合不同扰流方向及明确准备程序。适合研究注水方向、粉床移动和最终流速控制。","bestFor":"研究比赛注水动作与扰流"},
-    "kobayashi": {"overview":"比赛用 ORIGAMI 配方，包含筛粉、滤纸定位和最后降温注水。优点在精准与温控；额外准备本身就是方法的一部分。","bestFor":"进阶 ORIGAMI 准备与温控"},
-    "selorio": {"overview":"四段计时的 ORIGAMI 配方，明确指定磨豆机和 CAFEC 滤纸。若想贴近重现一套有记录的比赛设定，步骤节奏和器材都十分明确。","bestFor":"重现明确记录的磨豆机与滤纸组合"},
-    "rincon": {"overview":"以日晒 Geisha 为核心的比赛配方，各阶段使用不同水温。它高度针对特定咖啡豆和水源，展示配方如何回应单一咖啡条件。","bestFor":"研究特定日晒豆的分段温控"},
-    "gil": {"overview":"四段注水的 ORIGAMI 方法，配合 K-Ultra 设定和 Sibarist 滤纸。时间结构简明，适合比较；器材与咖啡豆细节相对有限。","bestFor":"比较清楚的四段注水结构"},
-    "hoffmann-ultimate": {"overview":"以 60 g 闷蒸和两段注水完成 500 mL 的 V60 配方。最后搅拌并轻轻旋转，让粉床在排水前更平整；来源对浅烘焙使用更热的水。","bestFor":"时间结构清晰、份量较大的 V60 冲煮"},
-    "camber": {"overview":"Camber Coffee 在 SCA 2023 分享的 20 g V60 配方：60 g 闷蒸后注水至 200 g，最后到 345 g。来源强调适合厌氧处理咖啡，并在 3:00–3:15 完成。","bestFor":"用简单 V60 流程冲煮厌氧处理咖啡"},
-    "lamill": {"overview":"不闷蒸、以一次连续注水和较长滴滤时间构成的 Mugen 配方，适合作为限流滤杯的简单起点。","bestFor":"省事的一次注水 Mugen 流程"}
+    "kasuya": {
+      "overview": "这个 HARIO 教学版本把冲煮分成五次计时注水。前两段塑造平衡，后三段调整浓度，是练习分段注水节奏的清晰起点。",
+      "bestFor": "学习有结构的计时分段注水"
+    },
+    "hoffmann": {
+      "overview": "以定量注水、短暂停顿和轻柔摇晃组成的低粉量 V60。重点是用多次小注水维持均匀萃取，而不是依靠一次长时间连续注水。",
+      "bestFor": "建立可重复的单杯 V60 流程"
+    },
+    "rao": {
+      "overview": "Pulsar 的无旁通方法：闷蒸时关闭阀门，开阀后再分段加入余水。它清楚展示如何分别控制浸泡时间和分段注水。",
+      "bestFor": "研究无旁通浸泡与流速控制"
+    },
+    "licata": {
+      "overview": "V60 从较强的前段注水转为慢速中心水流，最后以扰流完成。适合练习注水速度、中心落点和水位控制。",
+      "bestFor": "练习连续注水与中心注水"
+    },
+    "wong": {
+      "overview": "Switch 混合式配方：第一阶段开阀渗滤，之后关阀浸泡。阶段界线清楚，容易理解渗滤与浸泡如何交替。",
+      "bestFor": "理解开阀及浸泡阶段的配合"
+    },
+    "boen": {
+      "overview": "比赛用版本，以两次受控浸泡配合开阀排出。比基本 Switch 配方更讲究时间、阀门操作和水温。",
+      "bestFor": "研究较技术型的比赛 Switch 方法"
+    },
+    "hoang": {
+      "overview": "W60 配方结合平底金属网和滤纸，再分三段注水。双层过滤与筛粉建议增加准备工作，但让细粉和流速更受控。",
+      "bestFor": "探索金属网加滤纸的组合"
+    },
+    "rojewska": {
+      "overview": "精简 V60 流程：先柔和绕圈，再快速中心注水。步骤容易阅读，但节奏很快，操作期间几乎没有犹豫空间。",
+      "bestFor": "需要快速完成的短 V60 流程"
+    },
+    "grill": {
+      "overview": "30 g 粉量较大的 V60，包含闷蒸、两段注水和三分钟目标。适合一次冲较多咖啡，重点是保持简单稳定的注水节奏。",
+      "bestFor": "冲较大杯或与人分享"
+    },
+    "mallouhi": {
+      "overview": "按比例展开的简单 V60：定量绕圈闷蒸后，慢慢加入余水。阶段较少、容易跟随；来源没有提供水温。",
+      "bestFor": "简单绕圈闷蒸与慢速收尾"
+    },
+    "chronicler": {
+      "overview": "容易入门的 Switch 标准版：开阀注入一半，关阀浸泡另一半，最后放流。适合第一次理解 Switch 的混合流程。",
+      "bestFor": "第一份有结构的 Switch 配方"
+    },
+    "kodama": {
+      "overview": "比赛用 ORIGAMI 配方，四次注水配合不同扰流方向及明确准备程序。适合研究注水方向、粉床移动和最终流速控制。",
+      "bestFor": "研究比赛注水动作与扰流"
+    },
+    "kobayashi": {
+      "overview": "比赛用 ORIGAMI 配方，包含筛粉、滤纸定位和最后降温注水。优点在精准与温控；额外准备本身就是方法的一部分。",
+      "bestFor": "进阶 ORIGAMI 准备与温控"
+    },
+    "selorio": {
+      "overview": "四段计时的 ORIGAMI 配方，明确指定磨豆机和 CAFEC 滤纸。若想贴近重现一套有记录的比赛设定，步骤节奏和器材都十分明确。",
+      "bestFor": "重现明确记录的磨豆机与滤纸组合"
+    },
+    "rincon": {
+      "overview": "以日晒 Geisha 为核心的比赛配方，各阶段使用不同水温。它高度针对特定咖啡豆和水源，展示配方如何回应单一咖啡条件。",
+      "bestFor": "研究特定日晒豆的分段温控"
+    },
+    "gil": {
+      "overview": "四段注水的 ORIGAMI 方法，配合 K-Ultra 设定和 Sibarist 滤纸。时间结构简明，适合比较；器材与咖啡豆细节相对有限。",
+      "bestFor": "比较清楚的四段注水结构"
+    },
+    "hoffmann-ultimate": {
+      "overview": "以 60 g 闷蒸和两段注水完成 500 mL 的 V60 配方。最后搅拌并轻轻旋转，让粉床在排水前更平整；来源对浅烘焙使用更热的水。",
+      "bestFor": "时间结构清晰、份量较大的 V60 冲煮"
+    },
+    "camber": {
+      "overview": "Camber Coffee 在 SCA 2023 分享的 20 g V60 配方：60 g 闷蒸后注水至 200 g，最后到 345 g。来源强调适合厌氧处理咖啡，并在 3:00–3:15 完成。",
+      "bestFor": "用简单 V60 流程冲煮厌氧处理咖啡"
+    },
+    "lamill": {
+      "overview": "不闷蒸、以一次连续注水和较长滴滤时间构成的 Mugen 配方，适合作为限流滤杯的简单起点。",
+      "bestFor": "省事的一次注水 Mugen 流程"
+    }
   },
   "equipmentRoles": {
-    "conicalControl":"圆锥形滤杯让使用者直接控制流速、注水路径和水位。",
-    "immersionSwitch":"设有阀门，可在渗滤和浸泡之间切换的混合式滤杯。",
-    "dualFilter":"可把平底金属网与滤纸结合使用的器材。",
-    "noBypass":"以浸泡后放流为核心，适合控制浸泡时间与分段注水的无旁通器材。",
-    "hybridCone":"可搭配不同滤纸几何、注重注水控制的造型滤杯。",
-    "flatbed":"以均匀粉床和直接排水为重点的平底滤杯。",
-    "batchCone":"使用专用大片滤纸、面向较大批量和干净杯感的高身滤杯。",
-    "deepCone":"角度较陡的单杯滤杯，延长水与咖啡接触，并使用专用滤纸。",
-    "modular":"通过可换底盘和滤纸选择改变流速与粉床表现的模块式器材。",
-    "insulatedFlatbed":"以金属隔热杯身保持水温的平底滤杯。",
-    "handGrinder":"体积紧凑、可外部调节研磨刻度的手摇磨豆机。",
-    "filterElectric":"以手冲和滤泡咖啡为重心、追求重复设定表现的电动磨豆机。",
-    "largeFlatElectric":"采用较大平磨盘和可控研磨设定的电动磨豆机。",
-    "paperFilter":"与指定器材配合、影响流速、过滤和清洁的消耗式滤纸。",
-    "unresolved":"来源只提供泛称，无法确认具体型号，因此不加入型号层面的判断。",
-    "electricGooseneck":"可设定温度、便于重复准备冲煮用水的电热鹅颈手冲壶。",
-    "stovetopGooseneck":"以细壶嘴控制手动注水的直火鹅颈手冲壶；水温需另行管理。",
-    "openFrame":"外露螺旋肋条的车架式锥形滤杯，由滤纸与咖啡粉决定流速。"
+    "conicalControl": "圆锥形滤杯让使用者直接控制流速、注水路径和水位。",
+    "immersionSwitch": "设有阀门，可在渗滤和浸泡之间切换的混合式滤杯。",
+    "dualFilter": "可把平底金属网与滤纸结合使用的器材。",
+    "noBypass": "以浸泡后放流为核心，适合控制浸泡时间与分段注水的无旁通器材。",
+    "hybridCone": "可搭配不同滤纸几何、注重注水控制的造型滤杯。",
+    "flatbed": "以均匀粉床和直接排水为重点的平底滤杯。",
+    "batchCone": "使用专用大片滤纸、面向较大批量和干净杯感的高身滤杯。",
+    "deepCone": "角度较陡的单杯滤杯，延长水与咖啡接触，并使用专用滤纸。",
+    "modular": "通过可换底盘和滤纸选择改变流速与粉床表现的模块式器材。",
+    "insulatedFlatbed": "以金属隔热杯身保持水温的平底滤杯。",
+    "handGrinder": "体积紧凑、可外部调节研磨刻度的手摇磨豆机。",
+    "filterElectric": "以手冲和滤泡咖啡为重心、追求重复设定表现的电动磨豆机。",
+    "largeFlatElectric": "采用较大平磨盘和可控研磨设定的电动磨豆机。",
+    "paperFilter": "与指定器材配合、影响流速、过滤和清洁的消耗式滤纸。",
+    "unresolved": "来源只提供泛称，无法确认具体型号，因此不加入型号层面的判断。",
+    "electricGooseneck": "可设定温度、便于重复准备冲煮用水的电热鹅颈手冲壶。",
+    "stovetopGooseneck": "以细壶嘴控制手动注水的直火鹅颈手冲壶；水温需另行管理。",
+    "openFrame": "外露螺旋肋条的车架式锥形滤杯，由滤纸与咖啡粉决定流速。",
+    "dualBoilerProsumer": "可同时冲煮与打蒸汽的双锅炉进阶机型。",
+    "singleBoilerE61": "以经典冲煮头为核心的单锅炉机型。"
   },
-  "equipmentExperienceTitle":"杯感与实际使用回馈",
-  "equipmentExperienceNote":"标签综合公开实测与社群回馈；不是盲测排名，仍会受咖啡豆、水质和手法影响。",
-  "equipmentExperienceSources":"体验来源",
-  "equipmentExperienceUnavailable":"暂未找到足够具体、可引用的公开体验资料。",
-  "equipmentExperienceTags":{"brightClarity":"酸质与清晰度较突出","techniqueSensitive":"注水手法会明显反映在杯中","paperCleanCup":"纸滤带来较干净的收结","immersionBody":"浸泡令口感更圆润有厚度","balancedCup":"清晰度与口感相对平衡","forgivingTechnique":"注水有偏差时较宽容","valveLearning":"阀门时机需要练习","lowBypass":"低旁路会改变口感质地","roundSweetness":"甜感与口感较圆润","largeDoseFit":"较适合较大粉量","grindDialIn":"需要仔细调整研磨度","lightBody":"口感较轻，偏茶感","highAcidity":"酸质可能变得突出","lightRoastFit":"通常适合清爽浅烘豆","fastFlow":"流速较快，可能缩短接触时间","thermalStability":"材质有助保持冲煮热力","fullerBody":"口感较厚，风味更融合","blendedProfile":"风味较融合而非逐项分离","manualEffort":"手动研磨是流程的一部分","flavorSeparation":"风味之间的分离度较高","electricConsistency":"电动流程较容易重复出粉","seasoningTime":"刀盘养成期间杯感可能改变","filterOnly":"定位是滤泡咖啡而非浓缩","chocolateBody":"可能偏可可与较厚甜感","wideDialRange":"可用刻度范围广，需要建立自己的基准","flowVariation":"不同批次滤纸流速可能有差异","stallRisk":"细粉或扰流可能令滤纸停滞","paperTasteVariation":"纸味与流速可能因批次而变","filterDependent":"换滤纸会明显改变结果","veryFastFlow":"流速很快，需要更细或更受控的配方","fineGrindNeeded":"通常要磨得更细才用尽可用流速","lessStalling":"用于细粉较多的豆时，用户较少遇到停滞","brightAcidity":"较容易带出明亮酸质","delicateBody":"口感很干净而纤细","slowFlow":"较慢流速带来较长接触时间"},
+  "equipmentExperienceTitle": "杯感与实际使用回馈",
+  "equipmentExperienceNote": "标签综合公开实测与社群回馈；不是盲测排名，仍会受咖啡豆、水质和手法影响。",
+  "equipmentExperienceSources": "体验来源",
+  "equipmentExperienceUnavailable": "暂未找到足够具体、可引用的公开体验资料。",
+  "equipmentExperienceTags": {
+    "brightClarity": "酸质与清晰度较突出",
+    "techniqueSensitive": "注水手法会明显反映在杯中",
+    "paperCleanCup": "纸滤带来较干净的收结",
+    "immersionBody": "浸泡令口感更圆润有厚度",
+    "balancedCup": "清晰度与口感相对平衡",
+    "forgivingTechnique": "注水有偏差时较宽容",
+    "valveLearning": "阀门时机需要练习",
+    "lowBypass": "低旁路会改变口感质地",
+    "roundSweetness": "甜感与口感较圆润",
+    "largeDoseFit": "较适合较大粉量",
+    "grindDialIn": "需要仔细调整研磨度",
+    "lightBody": "口感较轻，偏茶感",
+    "highAcidity": "酸质可能变得突出",
+    "lightRoastFit": "通常适合清爽浅烘豆",
+    "fastFlow": "流速较快，可能缩短接触时间",
+    "thermalStability": "材质有助保持冲煮热力",
+    "fullerBody": "口感较厚，风味更融合",
+    "blendedProfile": "风味较融合而非逐项分离",
+    "manualEffort": "手动研磨是流程的一部分",
+    "flavorSeparation": "风味之间的分离度较高",
+    "electricConsistency": "电动流程较容易重复出粉",
+    "seasoningTime": "刀盘养成期间杯感可能改变",
+    "filterOnly": "定位是滤泡咖啡而非浓缩",
+    "chocolateBody": "可能偏可可与较厚甜感",
+    "wideDialRange": "可用刻度范围广，需要建立自己的基准",
+    "flowVariation": "不同批次滤纸流速可能有差异",
+    "stallRisk": "细粉或扰流可能令滤纸停滞",
+    "paperTasteVariation": "纸味与流速可能因批次而变",
+    "filterDependent": "换滤纸会明显改变结果",
+    "veryFastFlow": "流速很快，需要更细或更受控的配方",
+    "fineGrindNeeded": "通常要磨得更细才用尽可用流速",
+    "lessStalling": "用于细粉较多的豆时，用户较少遇到停滞",
+    "brightAcidity": "较容易带出明亮酸质",
+    "delicateBody": "口感很干净而纤细",
+    "slowFlow": "较慢流速带来较长接触时间"
+  },
   "editorialStrengths": {
-    "clearTimeline":"步骤与时间清楚，容易跟随。",
-    "repeatable":"已记录的结构方便重复练习。",
-    "flowControl":"对流速或水流有较明确的控制空间。",
-    "evenExtraction":"设计或流程以均匀粉床和萃取为目标。",
-    "immersionControl":"可通过浸泡或阀门时间控制接触时间。",
-    "temperatureControl":"方法明确运用分段水温或保温。",
-    "cleanCup":"记录中的过滤方式有助于减少细粉、让杯感更清晰。",
-    "fastFlow":"器材或滤纸的设定偏向较快流速。",
-    "compact":"体积小，方便收纳、携带或节省冲煮空间。",
-    "largeCapacity":"已记录容量可支持较大粉量或多杯。",
-    "structuredAgitation":"方法明确安排扰流在流程中的位置。",
-    "portable":"设计适合携带或在不同地点使用。",
-    "preciseAdjustment":"型号记录了精细或容易重复的调节方式。",
-    "dedicatedFit":"专用滤纸或容器减少兼容性猜测。",
-    "filterFlexibility":"器材或滤纸可搭配多于一种滤纸形式。",
-    "thermalStability":"材质或结构有助于保持水温。",
-    "extendedContact":"几何设计用于延长水与咖啡的接触。"
+    "clearTimeline": "步骤与时间清楚，容易跟随。",
+    "repeatable": "已记录的结构方便重复练习。",
+    "flowControl": "对流速或水流有较明确的控制空间。",
+    "evenExtraction": "设计或流程以均匀粉床和萃取为目标。",
+    "immersionControl": "可通过浸泡或阀门时间控制接触时间。",
+    "temperatureControl": "方法明确运用分段水温或保温。",
+    "cleanCup": "记录中的过滤方式有助于减少细粉、让杯感更清晰。",
+    "fastFlow": "器材或滤纸的设定偏向较快流速。",
+    "compact": "体积小，方便收纳、携带或节省冲煮空间。",
+    "largeCapacity": "已记录容量可支持较大粉量或多杯。",
+    "structuredAgitation": "方法明确安排扰流在流程中的位置。",
+    "portable": "设计适合携带或在不同地点使用。",
+    "preciseAdjustment": "型号记录了精细或容易重复的调节方式。",
+    "dedicatedFit": "专用滤纸或容器减少兼容性猜测。",
+    "filterFlexibility": "器材或滤纸可搭配多于一种滤纸形式。",
+    "thermalStability": "材质或结构有助于保持水温。",
+    "extendedContact": "几何设计用于延长水与咖啡的接触。",
+    "preInfusionControl": "可控制或调整预浸。"
   },
   "editorialConsiderations": {
-    "needsTimer":"需要计时器或密切留意时间。",
-    "activePouring":"需要主动控制注水，不能大部分时间放手。",
-    "grindSensitive":"研磨度少许改变也可能明显影响流速或结果。",
-    "smallCapacity":"已记录尺寸较适合少量杯数。",
-    "unknownParameters":"来源未提供所有重现配方所需的参数。",
-    "valveProcess":"需要操作阀门并掌握开关时间。",
-    "dedicatedFilter":"需要或建议使用指定滤纸格式。",
-    "equipmentSpecific":"结果与已记录的特定器材或磨豆刻度相关。",
-    "competitionSpecific":"配方原为比赛用途，在家使用时可能需要调整。",
-    "preciseTiming":"注水时间紧凑，较难承受大幅时间偏差。",
-    "morePreparation":"筛粉、预热或整理滤纸会增加准备时间。",
-    "fragile":"已记录材质需要更小心处理和存放。",
-    "learningCurve":"注水或阀门技巧需要练习才会顺畅。",
-    "manualEffort":"以手动方式研磨，需要体力。",
-    "electricPower":"器材需要插电或电池供电。",
-    "notEspresso":"已记录的研磨范围以滤泡咖啡为目标，并非浓缩咖啡。",
-    "singleDose":"流程较适合按单次粉量研磨，而不是以大型豆仓连续出粉。",
-    "footprint":"器材占用较多台面空间。",
-    "beanSpecific":"配方围绕特定咖啡豆设计，换豆时可能需要调整。",
-    "consumable":"滤纸需定期更换，属于持续供应需求。",
-    "filterMatching":"改用其他滤纸或形状时，流速可能改变。",
-    "slowDrawdown":"已记录的组合可能带来较长流干或接触时间。",
-    "heatSourceDependent":"冲煮前需要另外使用炉具或热源。"
+    "needsTimer": "需要计时器或密切留意时间。",
+    "activePouring": "需要主动控制注水，不能大部分时间放手。",
+    "grindSensitive": "研磨度少许改变也可能明显影响流速或结果。",
+    "smallCapacity": "已记录尺寸较适合少量杯数。",
+    "unknownParameters": "来源未提供所有重现配方所需的参数。",
+    "valveProcess": "需要操作阀门并掌握开关时间。",
+    "dedicatedFilter": "需要或建议使用指定滤纸格式。",
+    "equipmentSpecific": "结果与已记录的特定器材或磨豆刻度相关。",
+    "competitionSpecific": "配方原为比赛用途，在家使用时可能需要调整。",
+    "preciseTiming": "注水时间紧凑，较难承受大幅时间偏差。",
+    "morePreparation": "筛粉、预热或整理滤纸会增加准备时间。",
+    "fragile": "已记录材质需要更小心处理和存放。",
+    "learningCurve": "注水或阀门技巧需要练习才会顺畅。",
+    "manualEffort": "以手动方式研磨，需要体力。",
+    "electricPower": "器材需要插电或电池供电。",
+    "notEspresso": "已记录的研磨范围以滤泡咖啡为目标，并非浓缩咖啡。",
+    "singleDose": "流程较适合按单次粉量研磨，而不是以大型豆仓连续出粉。",
+    "footprint": "器材占用较多台面空间。",
+    "beanSpecific": "配方围绕特定咖啡豆设计，换豆时可能需要调整。",
+    "consumable": "滤纸需定期更换，属于持续供应需求。",
+    "filterMatching": "改用其他滤纸或形状时，流速可能改变。",
+    "slowDrawdown": "已记录的组合可能带来较长流干或接触时间。",
+    "heatSourceDependent": "冲煮前需要另外使用炉具或热源。",
+    "maintenance": "清洗冲煮头、除水垢与更换胶圈都是拥有它的一部分。",
+    "counterSpace": "记录的尺寸与重量需要稳固的台面。"
   }
 }

@@ -30,7 +30,7 @@
   },
   "equipmentNav": "Ausrüstung",
   "equipmentTitle": "Ausrüstungsdatenbank",
-  "equipmentIntro": "Offizielle Angaben, Kompatibilität und passende Rezepte für Filterdripper, Kessel, Mühlen und Filterpapiere.",
+  "equipmentIntro": "Offiziell belegte Spezifikationen, Kompatibilitätshinweise und passende Rezepte für Brühfilter, Wasserkocher, Mühlen, Filterpapier und Espressomaschinen.",
   "equipmentItems": "Einträge",
   "equipmentSearch": "Marke, Modell oder Kompatibilität suchen",
   "equipmentCategory": "Ausrüstungskategorie",
@@ -43,7 +43,8 @@
     "dripper": "Dripper",
     "grinder": "Mühlen",
     "filter": "Filter",
-    "kettle": "Kessel"
+    "kettle": "Kessel",
+    "machine": "Espressomaschine"
   },
   "equipmentStatus": {
     "legacy": "Altmodell / eingestellt",
@@ -67,7 +68,12 @@
     "technology": "Technologie",
     "power": "Leistung",
     "voltage": "Spannung",
-    "temperatureRange": "Temperaturbereich"
+    "temperatureRange": "Temperaturbereich",
+    "boiler": "Kessel",
+    "group": "Brühgruppe",
+    "pump": "Pumpe",
+    "preInfusion": "Vorbrühen",
+    "tank": "Wassertank"
   },
   "equipmentUnits": {
     "cups": "Tassen",
@@ -81,7 +87,9 @@
     "oz": "oz",
     "W": "W",
     "V": "V",
-    "°C": "°C"
+    "°C": "°C",
+    "kg": "kg",
+    "l": "l"
   },
   "brand": "Kaffee-Brühbibliothek",
   "tagline": "Das Kaffeejournal",
@@ -800,7 +808,17 @@
     "weight1400WithBase": "1400 (mit Basis)",
     "flatDrippers": "Drepper mit flachem Boden",
     "modelUnknownMaker": "Die Quelle nennt nur „MK“; der Hersteller bleibt offen",
-    "modelFastUnverified": "FAST-Güte; eine stabile offizielle Produktseite war nicht belegbar"
+    "modelFastUnverified": "FAST-Güte; eine stabile offizielle Produktseite war nicht belegbar",
+    "dualBoiler": "Zwei-Kessel-System",
+    "singleBoiler": "Einkessel-System",
+    "coffeeAndSteamBoilers": "Kaffee- / Dampfkessel",
+    "rotaryPump": "Rotationspumpe",
+    "lowNoiseVibrationPump": "Geräuscharme Vibrationspumpe",
+    "pidTemperatureControl": "PID-Temperaturregelung",
+    "pidOneDegree": "PID-Regelung in 1-°C-Schritten",
+    "dualPid": "Dual-PID",
+    "activePassivePreInfusion": "Aktives und passives Vorbrühen",
+    "tunePreInfusion3Bar": "Zeitgesteuerte Vorbrühung mit 3 bar"
   },
   "pourPatterns": {
     "centre": "Mitte",

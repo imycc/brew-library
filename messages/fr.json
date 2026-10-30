@@ -30,7 +30,7 @@
   },
   "equipmentNav": "Matériel",
   "equipmentTitle": "Base de données du matériel",
-  "equipmentIntro": "Spécifications officielles, compatibilité et recettes associées pour drippers, bouilloires, moulins et filtres à café.",
+  "equipmentIntro": "Fiches officielles des drippers, bouilloires, moulins, filtres et machines à espresso, avec compatibilités et recettes associées.",
   "equipmentItems": "éléments",
   "equipmentSearch": "Rechercher une marque, un modèle ou une compatibilité",
   "equipmentCategory": "Catégorie de matériel",
@@ -43,7 +43,8 @@
     "dripper": "Drippers",
     "grinder": "Moulins",
     "filter": "Filtres",
-    "kettle": "Bouilloires"
+    "kettle": "Bouilloires",
+    "machine": "Machine à espresso"
   },
   "equipmentStatus": {
     "legacy": "Ancien modèle / arrêté",
@@ -67,7 +68,12 @@
     "technology": "Technologie",
     "power": "Puissance",
     "voltage": "Tension",
-    "temperatureRange": "Plage de température"
+    "temperatureRange": "Plage de température",
+    "boiler": "Chaudière",
+    "group": "Groupe",
+    "pump": "Pompe",
+    "preInfusion": "Pré-infusion",
+    "tank": "Réservoir"
   },
   "equipmentUnits": {
     "cups": "tasses",
@@ -81,7 +87,9 @@
     "oz": "oz",
     "W": "W",
     "V": "V",
-    "°C": "°C"
+    "°C": "°C",
+    "kg": "kg",
+    "l": "l"
   },
   "brand": "Bibliothèque du café",
   "tagline": "Le journal du café",
@@ -800,7 +808,17 @@
     "weight1400WithBase": "1400 (avec base)",
     "flatDrippers": "Filtres à fond plat",
     "modelUnknownMaker": "La source ne dit que « MK » ; le fabricant n’est pas identifié",
-    "modelFastUnverified": "Grade FAST ; aucune page officielle stable n’a pu être vérifiée"
+    "modelFastUnverified": "Grade FAST ; aucune page officielle stable n’a pu être vérifiée",
+    "dualBoiler": "Double chaudière",
+    "singleBoiler": "Chaudière unique",
+    "coffeeAndSteamBoilers": "Chaudière café / vapeur",
+    "rotaryPump": "Pompe rotative",
+    "lowNoiseVibrationPump": "Pompe vibratoire silencieuse",
+    "pidTemperatureControl": "Régulation de température PID",
+    "pidOneDegree": "Régulation PID par pas de 1 °C",
+    "dualPid": "Double PID",
+    "activePassivePreInfusion": "Pré-infusion active et passive",
+    "tunePreInfusion3Bar": "Pré-infusion chronométrée à 3 bar"
   },
   "pourPatterns": {
     "centre": "Centre",

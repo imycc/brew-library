@@ -59,7 +59,9 @@ for(const locale of locales)test(`static ${locale} pages render complete locale 
 });
 test('equipment catalogue filters official records and links source-backed recipes',async({page})=>{
  await page.goto(`${base}/zh-Hant/equipment/`);
- await expect(page.locator('[data-equipment]')).toHaveCount(61);
+ await expect(page.locator('[data-equipment]')).toHaveCount(64);
+ await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('濃縮咖啡機');
+ await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('迴轉式幫浦');
  await expect(page.locator('[data-equipment="origami-air-s"]')).toContainText('64');
  await expect(page.locator('[data-equipment="origami-air-s"] .equipment-experience')).toContainText('杯感與實際使用回饋');
  await expect(page.locator('[data-equipment="origami-air-s"] .experience-tags')).toContainText('酸質與清晰度較突出');
@@ -80,7 +82,9 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('Herd-Schwanenhals');
  await expect(page.locator('[data-equipment="kalita-wave-155-stainless"]')).toContainText('Kalita Wave 155 Filter');
  await page.goto(`${base}/zh-Hant/equipment/`);
- await expect(page.locator('[data-equipment]')).toHaveCount(61);
+ await expect(page.locator('[data-equipment]')).toHaveCount(64);
+ await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('濃縮咖啡機');
+ await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('迴轉式幫浦');
  await expect(page.locator('.equipment-grid')).toHaveCSS('column-width','300px');
  await page.getByLabel('搜尋品牌、型號或相容性').fill('ZP6');
  await expect(page.locator('[data-equipment]')).toHaveCount(1);

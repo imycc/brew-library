@@ -85,7 +85,11 @@ test('equipment and coffee filters match recorded source conditions together',()
  assert.equal(recipes.find(r=>r.id==='kobayashi-origami')?.steps[2].temperature,75);
 });
 test('equipment catalogue is source-backed, searchable and keeps unresolved models explicit',()=>{
- assert.equal(equipment.length,61);
+ assert.equal(equipment.length,64);
+ assert.equal(filterEquipment(equipment,'','machine').length,3);
+ assert.deepEqual(filterEquipment(equipment,'Synchronika','all').map(item=>item.id),['ecm-synchronika-ii']);
+ assert.equal(equipment.find(item=>item.id==='rocket-r58-tune')?.details.find(detail=>detail.key==='power')?.value,'1600');
+ assert.equal(equipment.find(item=>item.id==='ecm-classika-iii')?.details.find(detail=>detail.key==='group')?.value,'ECM-61 Core Heat');
  assert.deepEqual(filterEquipment(equipment,'ZP6','all').map(item=>item.id),['1zpresso-zp6-special']);
  assert.deepEqual(filterEquipment(equipment,'Sibarist','filter').map(item=>item.id),['sibarist-cone','sibarist-unspecified','sibarist-fast','sibarist-flat']);
  assert.equal(filterEquipment(equipment,'','dripper').length,24);
