@@ -3,7 +3,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const config: NextConfig = {
   output: 'export',
-  basePath: '/pour-over-coffee',
+  basePath: '/brew-library',
   trailingSlash: true,
   images: {unoptimized: true},
   poweredByHeader: false
