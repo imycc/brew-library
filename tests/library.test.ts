@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {convertTemperature,formatTemperature} from '../src/lib/temperature';
-import {espressoSchema,pourOverSchema,filterRecipes,parseSelection,toggleSelection,recipes,pourOverRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe,videoLink} from '../src/lib/recipes';
+import {espressoSchema,pourOverSchema,filterRecipes,methodFilterKeys,methodFilterParam,parseSelection,toggleSelection,recipes,pourOverRecipes,espressoRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe,videoLink} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
@@ -16,7 +16,14 @@ test('Pulsar amount is transparently derived without invented later pour times',
 test('filters combine and support empty results',()=>{
  assert.equal(filterRecipes(recipes,{q:'JAMES',brewer:'v60',dose:'15'},r=>r.author).length,1);
  assert.equal(filterRecipes(recipes,{author:'hoffmann',brewer:'pulsar'},r=>r.author).length,0);
- assert.equal(filterRecipes(recipes,{kind:'iced'},r=>r.author).length,1);
+ assert.equal(filterRecipes(recipes,{kind:'iced'},r=>r.author).length,2);
+});
+test('each method tab owns its filter keys and query names',()=>{
+ assert.deepEqual(methodFilterKeys['pour-over'],['q','brewer','author','kind','dose','grinder','paper','process','roast']);
+ assert.deepEqual(methodFilterKeys.espresso,['q','brewer','author','kind','dose','grinder','process','roast']);
+ assert.equal(methodFilterParam('pour-over','grinder'),'po.grinder');
+ assert.equal(methodFilterParam('espresso','dose'),'es.dose');
+ assert.deepEqual(filterRecipes(espressoRecipes,{q:'Camber',kind:'hot'},r=>r.author).map(r=>r.id),['camber-espresso']);
 });
 test('shared selections are validated, deduplicated and bounded',()=>{
  const raw='missing,kasuya-46,kasuya-46,hoffmann-one-cup,rao-pulsar';
@@ -31,7 +38,7 @@ const po=(id:string)=>pourOverRecipes.find(recipe=>recipe.id===id)!;
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,35);
+ assert.equal(recipes.length,38);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -221,8 +228,8 @@ test('the iced record keeps ice out of the poured-water maths',()=>{
  assert.equal(iced.brewerId,'unspecified');
  assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:30});
  assert.equal(ratio(iced,'en'),'1 : 14.33');
- assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,1);
- assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,34);
+ assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,2);
+ assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,36);
 });
 
 const shotRecord=espressoSchema.parse({...pourOverRecipes[0],id:'test-shot',copy:'kasuya',method:'espresso',

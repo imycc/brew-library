@@ -538,6 +538,42 @@
         "morePreparation",
         "grindSensitive"
       ]
+    },
+    "kasuya-iced-46": {
+      "strengths": [
+        "clearTimeline",
+        "cleanCup",
+        "repeatable"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "needsTimer",
+        "equipmentSpecific"
+      ]
+    },
+    "woelfl-v60": {
+      "strengths": [
+        "clearTimeline",
+        "repeatable",
+        "cleanCup"
+      ],
+      "considerations": [
+        "needsTimer",
+        "grindSensitive",
+        "unknownParameters"
+      ]
+    },
+    "licata-w60": {
+      "strengths": [
+        "flowControl",
+        "filterFlexibility",
+        "cleanCup"
+      ],
+      "considerations": [
+        "filterMatching",
+        "equipmentSpecific",
+        "grindSensitive"
+      ]
     }
   },
   "equipment": {

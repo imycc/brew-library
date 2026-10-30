@@ -2946,6 +2946,268 @@
           "step": 9
         }
       ]
+    },
+    {
+      "id": "kasuya-iced-46",
+      "method": "pour-over",
+      "copy": "kasuya-iced",
+      "author": "Tetsu Kasuya",
+      "authorId": "kasuya",
+      "brewer": "Dripper not stated",
+      "brewerId": "unspecified",
+      "kind": "iced",
+      "dose": 20,
+      "water": {
+        "amount": 150,
+        "unit": "g",
+        "derived": false
+      },
+      "ice": {
+        "amount": 80,
+        "unit": "g",
+        "placement": "server"
+      },
+      "temperature": 90,
+      "temperatureMax": 93,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "ratioStated": "1:11.5",
+      "source": {
+        "label": "TETSU KASUYA",
+        "url": "https://www.youtube.com/watch?v=v0CXzmw1TXg",
+        "video": "https://www.youtube.com/watch?v=v0CXzmw1TXg",
+        "published": "2026-08-21",
+        "publishedBasis": "video",
+        "checked": "2026-10-31",
+        "evidence": "[ PARAMETERS ]（両レシピ共通）\n・Coffee：20g\n・Water：150g（通常の4:6メソッド300gの半量）\n・Ice：80g（サーバーにあらかじめ用意）\n・Temperature：90〜93℃\n・Grind Size：28クリック\n\n[ THE BREW / TIMELINE ]\n▼A：4:6メソッド応用版（通常のドリッパー）\n30gを5回、合計150gを注ぐ"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 30,
+          "cumulative": 30,
+          "instruction": "recipes.kasuya-iced.s00"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 30,
+          "cumulative": 60,
+          "instruction": "recipes.kasuya-iced.pour"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 30,
+          "cumulative": 90,
+          "instruction": "recipes.kasuya-iced.pour"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 30,
+          "cumulative": 120,
+          "instruction": "recipes.kasuya-iced.pour"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 30,
+          "cumulative": 150,
+          "instruction": "recipes.kasuya-iced.s04"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "coffee": {
+        "asRecommendation": true,
+        "roast": "light"
+      },
+      "teaching": [
+        {
+          "key": "recipes.kasuya-iced.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.kasuya-iced.teach2"
+        },
+        {
+          "key": "recipes.kasuya-iced.teach3"
+        }
+      ]
+    },
+    {
+      "id": "woelfl-v60",
+      "method": "pour-over",
+      "copy": "woelfl",
+      "author": "Martin Wölfl",
+      "authorId": "woelfl",
+      "brewer": "HARIO V60",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 20,
+      "water": {
+        "amount": 300,
+        "unit": "mL",
+        "derived": false
+      },
+      "temperature": 93,
+      "temperatureMode": "unknown",
+      "duration": [
+        150,
+        180
+      ],
+      "source": {
+        "label": "Martin Wölfl",
+        "url": "https://www.youtube.com/watch?v=bZ2i4ewFSLk",
+        "video": "https://www.youtube.com/watch?v=bZ2i4ewFSLk",
+        "published": "2021-01-12",
+        "publishedBasis": "video",
+        "checked": "2026-10-31",
+        "evidence": "* 20g frisch gemahlener Filterkaffee\n* 300ml Wasser\n* 93° Grad\n\n• Filterpapier in die V-60 einsetzen. Filter und Kanne mit heißem Wasser ausspülen. …\n• Ca. 60ml Wasser in Kreisbewegungen eingießen und ca. 30-40 Sekunden ziehen lassen\n• Die restlichen 240ml Wasser in Kreisbewegungen oder durch die Mitte langsam und konstant aufgießen\n• Der gesamte Brühvorgang sollte ca. 2:30 bis 3:00 Minuten lang dauern."
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 60,
+          "cumulative": 60,
+          "instruction": "recipes.woelfl.s00"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": 240,
+          "cumulative": 300,
+          "instruction": "recipes.woelfl.s01"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "teaching": [
+        {
+          "key": "recipes.woelfl.teach1"
+        },
+        {
+          "key": "recipes.woelfl.teach2",
+          "step": 0
+        },
+        {
+          "key": "recipes.woelfl.teach3",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "licata-w60",
+      "method": "pour-over",
+      "copy": "licata-w60",
+      "author": "Pete Licata",
+      "authorId": "licata",
+      "brewer": "HARIO W60",
+      "brewerId": "w60",
+      "kind": "hot",
+      "dose": 12,
+      "water": {
+        "amount": 200,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        240,
+        240
+      ],
+      "source": {
+        "label": "Coffee with April",
+        "url": "https://www.youtube.com/watch?v=M23NG4kNLAU",
+        "video": "https://www.youtube.com/watch?v=M23NG4kNLAU",
+        "published": "2022-03-18",
+        "publishedBasis": "video",
+        "checked": "2026-10-31",
+        "evidence": "Mesh & Paper Filter\n12g - 200g\n0:00 - 100g Circle/Center Pour\n0:35 - 50g Circle Pour\n1:05 - 50g Circle Pour\n4:00 Total Brew Time\nD50=611μm (medium/fine)"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 100,
+          "cumulative": 100,
+          "videoAt": 0,
+          "pattern": "circular",
+          "instruction": "recipes.licata-w60.s00"
+        },
+        {
+          "action": "pour",
+          "at": 35,
+          "amount": 50,
+          "cumulative": 150,
+          "videoAt": 35,
+          "pattern": "circular",
+          "instruction": "recipes.licata-w60.s01"
+        },
+        {
+          "action": "pour",
+          "at": 65,
+          "amount": 50,
+          "cumulative": 200,
+          "videoAt": 65,
+          "pattern": "circular",
+          "instruction": "recipes.licata-w60.s02"
+        },
+        {
+          "action": "finish",
+          "at": 240,
+          "amount": null,
+          "cumulative": null,
+          "videoAt": 240
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "paper": {
+        "id": "w60-mesh-paper",
+        "name": "W60 mesh filter with paper",
+        "shape": "flat"
+      },
+      "teaching": [
+        {
+          "key": "recipes.licata-w60.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.licata-w60.teach2"
+        },
+        {
+          "key": "recipes.licata-w60.teach3"
+        }
+      ]
     }
   ]
 }

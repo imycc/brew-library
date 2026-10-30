@@ -79,6 +79,10 @@ export const isPourOver=(recipe:Recipe):recipe is PourOverRecipe=>recipe.method=
 export const isEspresso=(recipe:Recipe):recipe is EspressoRecipe=>recipe.method==='espresso';
 export const pourOverRecipes=recipes.filter(isPourOver);
 export const espressoRecipes=recipes.filter(isEspresso);
+export function recipeIndex(recipe:Recipe):number {
+  const list:Recipe[]=recipe.method==='espresso'?espressoRecipes:pourOverRecipes;
+  return list.indexOf(recipe);
+}
 export const BASE = '/brew-library';
 export const SITE = 'https://imycc.github.io';
 export function time(seconds:number):string {return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;}
@@ -243,7 +247,16 @@ export function toggleSelection(ids:string[], id:string, list:Recipe[]=recipes):
   return {ids:[...ids,id],limit:false,mismatch:false};
 }
 export const filterKeys=['q','method','brewer','author','kind','dose','grinder','paper','process','roast'] as const;
+export type FilterKey=Exclude<typeof filterKeys[number],'method'>;
 export type RecipeFilters=Partial<Record<typeof filterKeys[number],string>>;
+// Each method tab keeps its own filter state; filter paper has no meaning for espresso,
+// and future method-specific conditions can be added without leaking into the other tab.
+export const methodFilterKeys:Record<Method,readonly FilterKey[]>={
+  'pour-over':['q','brewer','author','kind','dose','grinder','paper','process','roast'],
+  espresso:['q','brewer','author','kind','dose','grinder','process','roast']
+};
+export const methodFilterPrefix:Record<Method,string>={'pour-over':'po',espresso:'es'};
+export function methodFilterParam(method:Method,key:FilterKey):string {return `${methodFilterPrefix[method]}.${key}`;}
 export function filterRecipes(list:Recipe[], filters:RecipeFilters, title:(r:Recipe)=>string) {
   const query=(filters.q||'').normalize('NFKC').toLocaleLowerCase().trim();
   return list.filter(r=>(!query || `${title(r)} ${r.author} ${r.brewer} ${r.id} ${r.grinder?.name||''} ${r.paper?.name||''} ${r.coffee?.name||''} ${r.coffee?.origin||''} ${r.coffee?.variety||''}`.normalize('NFKC').toLocaleLowerCase().includes(query))
