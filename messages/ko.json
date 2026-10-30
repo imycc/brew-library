@@ -30,7 +30,7 @@
   },
   "equipmentNav": "장비",
   "equipmentTitle": "브루잉 장비 데이터베이스",
-  "equipmentIntro": "핸드드립 드리퍼, 케틀, 그라인더, 필터의 공식 사양과 호환성, 관련 레시피를 정리했습니다.",
+  "equipmentIntro": "브랜드 공식 자료로 정리한 드리퍼, 케틀, 그라인더, 필터, 에스프레소 머신 규격·호환·관련 레시피.",
   "equipmentItems": "개 장비",
   "equipmentSearch": "브랜드, 모델 또는 호환성 검색",
   "equipmentCategory": "장비 분류",
@@ -43,7 +43,8 @@
     "dripper": "드리퍼",
     "grinder": "그라인더",
     "filter": "필터",
-    "kettle": "케틀"
+    "kettle": "케틀",
+    "machine": "에스프레소 머신"
   },
   "equipmentStatus": {
     "legacy": "구형 / 단종",
@@ -67,7 +68,12 @@
     "technology": "기술",
     "power": "소비전력",
     "voltage": "전압",
-    "temperatureRange": "온도 범위"
+    "temperatureRange": "온도 범위",
+    "boiler": "보일러",
+    "group": "그룹 헤드",
+    "pump": "펌프",
+    "preInfusion": "프리인퓨전",
+    "tank": "물탱크"
   },
   "equipmentUnits": {
     "cups": "잔",
@@ -81,7 +87,9 @@
     "oz": "oz",
     "W": "W",
     "V": "V",
-    "°C": "°C"
+    "°C": "°C",
+    "kg": "kg",
+    "l": "l"
   },
   "brand": "브루잉 라이브러리",
   "tagline": "커피 에디토리얼",
@@ -800,7 +808,17 @@
     "weight1400WithBase": "1400 (베이스 포함)",
     "flatDrippers": "평저 드리퍼",
     "modelUnknownMaker": "출처에 “MK”만 있고 제조사는 없음",
-    "modelFastUnverified": "FAST 등급. 공식 제품 페이지를 확인하지 못함"
+    "modelFastUnverified": "FAST 등급. 공식 제품 페이지를 확인하지 못함",
+    "dualBoiler": "듀얼 보일러",
+    "singleBoiler": "싱글 보일러",
+    "coffeeAndSteamBoilers": "커피／스팀 보일러",
+    "rotaryPump": "로터리 펌프",
+    "lowNoiseVibrationPump": "저소음 진동 펌프",
+    "pidTemperatureControl": "PID 온도 제어",
+    "pidOneDegree": "1 °C 단위 PID 제어",
+    "dualPid": "듀얼 PID",
+    "activePassivePreInfusion": "활성·수동 프리인퓨전",
+    "tunePreInfusion3Bar": "3bar 시간 제어 프리인퓨전"
   },
   "pourPatterns": {
     "centre": "중심",

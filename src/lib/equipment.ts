@@ -4,13 +4,14 @@ import rawEquipment from '../../content/equipment.json';
 const detailKeySchema=z.enum([
   'capacity','materials','dimensions','weight','compatibility','mode','madeIn','model',
   'burr','adjustment','precision','groundsCapacity','format','packs','technology',
-  'power','voltage','temperatureRange'
+  'power','voltage','temperatureRange',
+  'boiler','group','pump','preInfusion','tank'
 ]);
-const unitSchema=z.enum(['cups','mL','mm','g','in','lb','oz','µm','sheets','W','V','°C']);
+const unitSchema=z.enum(['cups','mL','mm','g','in','lb','oz','µm','sheets','W','V','°C','kg','l']);
 
 export const equipmentSchema=z.object({
   id:z.string().regex(/^[a-z0-9-]+$/),
-  category:z.enum(['dripper','kettle','grinder','filter']),
+  category:z.enum(['dripper','kettle','grinder','filter','machine']),
   brand:z.string().min(1),
   name:z.string().min(1),
   status:z.enum(['current','legacy','unresolved']),
@@ -28,7 +29,7 @@ export const equipmentSchema=z.object({
 
 export type Equipment=z.infer<typeof equipmentSchema>;
 export type EquipmentCategory=Equipment['category'];
-export const equipmentCategories=['dripper','kettle','grinder','filter'] as const;
+export const equipmentCategories=['dripper','kettle','grinder','filter','machine'] as const;
 export const equipment:Equipment[]=z.object({
   schemaVersion:z.literal(1),
   equipment:z.array(equipmentSchema)

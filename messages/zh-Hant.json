@@ -30,7 +30,7 @@
   },
   "equipmentNav": "器材",
   "equipmentTitle": "沖煮器材資料庫",
-  "equipmentIntro": "按品牌官方資料整理手沖濾杯、手沖壺、磨豆器與濾紙的規格、相容性和相關配方。",
+  "equipmentIntro": "按品牌官方資料整理濾杯、手沖壺、磨豆器、濾紙與咖啡機的規格、相容性和相關配方。",
   "equipmentItems": "件器材",
   "equipmentSearch": "搜尋品牌、型號或相容性",
   "equipmentCategory": "器材類別",
@@ -43,7 +43,8 @@
     "dripper": "濾杯",
     "grinder": "磨豆器",
     "filter": "濾紙",
-    "kettle": "手沖壺"
+    "kettle": "手沖壺",
+    "machine": "濃縮咖啡機"
   },
   "equipmentStatus": {
     "legacy": "舊款／停產",
@@ -67,7 +68,12 @@
     "technology": "技術",
     "power": "功率",
     "voltage": "電壓",
-    "temperatureRange": "溫度範圍"
+    "temperatureRange": "溫度範圍",
+    "boiler": "鍋爐",
+    "group": "沖煮頭",
+    "pump": "幫浦",
+    "preInfusion": "預浸",
+    "tank": "水箱"
   },
   "equipmentUnits": {
     "cups": "杯",
@@ -81,7 +87,9 @@
     "oz": "oz",
     "W": "W",
     "V": "V",
-    "°C": "°C"
+    "°C": "°C",
+    "kg": "kg",
+    "l": "l"
   },
   "brand": "沖煮配方庫",
   "tagline": "咖啡編輯誌",
@@ -800,7 +808,17 @@
     "weight1400WithBase": "1400（含底座）",
     "flatDrippers": "平底濾杯",
     "modelUnknownMaker": "來源只寫「MK」，未指明製造商",
-    "modelFastUnverified": "FAST 等級；官方產品頁未能核實"
+    "modelFastUnverified": "FAST 等級；官方產品頁未能核實",
+    "dualBoiler": "雙鍋爐",
+    "singleBoiler": "單鍋爐",
+    "coffeeAndSteamBoilers": "咖啡鍋爐／蒸汽鍋爐",
+    "rotaryPump": "迴轉式幫浦",
+    "lowNoiseVibrationPump": "低噪音震動幫浦",
+    "pidTemperatureControl": "PID 溫度控制",
+    "pidOneDegree": "以 1 °C 為單位的 PID 控制",
+    "dualPid": "雙 PID",
+    "activePassivePreInfusion": "主動與被動預浸",
+    "tunePreInfusion3Bar": "以時間控制的 3 bar 預浸"
   },
   "pourPatterns": {
     "centre": "中央",

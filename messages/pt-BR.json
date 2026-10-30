@@ -30,7 +30,7 @@
   },
   "equipmentNav": "Equipamentos",
   "equipmentTitle": "Banco de dados de equipamentos",
-  "equipmentIntro": "Especificações oficiais, compatibilidade e receitas relacionadas para drippers, chaleiras, moedores e filtros de café.",
+  "equipmentIntro": "Especificações, compatibilidades e receitas relacionadas de drippers, chaleiras, moedores, filtros e máquinas de espresso, com base em dados oficiais.",
   "equipmentItems": "itens",
   "equipmentSearch": "Buscar marca, modelo ou compatibilidade",
   "equipmentCategory": "Categoria de equipamento",
@@ -43,7 +43,8 @@
     "dripper": "Drippers",
     "grinder": "Moedores",
     "filter": "Filtros",
-    "kettle": "Chaleiras"
+    "kettle": "Chaleiras",
+    "machine": "Máquina de espresso"
   },
   "equipmentStatus": {
     "legacy": "Modelo antigo / descontinuado",
@@ -67,7 +68,12 @@
     "technology": "Tecnologia",
     "power": "Potência",
     "voltage": "Tensão",
-    "temperatureRange": "Faixa de temperatura"
+    "temperatureRange": "Faixa de temperatura",
+    "boiler": "Caldeira",
+    "group": "Grupo",
+    "pump": "Bomba",
+    "preInfusion": "Pré-infusão",
+    "tank": "Reservatório"
   },
   "equipmentUnits": {
     "cups": "xícaras",
@@ -81,7 +87,9 @@
     "oz": "oz",
     "W": "W",
     "V": "V",
-    "°C": "°C"
+    "°C": "°C",
+    "kg": "kg",
+    "l": "l"
   },
   "brand": "Biblioteca do café",
   "tagline": "Diário do café",
@@ -800,7 +808,17 @@
     "weight1400WithBase": "1400 (com base)",
     "flatDrippers": "Drippers de fundo plano",
     "modelUnknownMaker": "A fonte diz apenas “MK”; o fabricante não é identificado",
-    "modelFastUnverified": "Classe FAST; não foi possível verificar uma página oficial estável"
+    "modelFastUnverified": "Classe FAST; não foi possível verificar uma página oficial estável",
+    "dualBoiler": "Dupla caldeira",
+    "singleBoiler": "Caldeira única",
+    "coffeeAndSteamBoilers": "Caldeira de café / vapor",
+    "rotaryPump": "Bomba rotativa",
+    "lowNoiseVibrationPump": "Bomba vibratória silenciosa",
+    "pidTemperatureControl": "Controle de temperatura PID",
+    "pidOneDegree": "Controle PID em passos de 1 °C",
+    "dualPid": "PID duplo",
+    "activePassivePreInfusion": "Pré-infusão ativa e passiva",
+    "tunePreInfusion3Bar": "Pré-infusão cronometrada a 3 bar"
   },
   "pourPatterns": {
     "centre": "Centro",

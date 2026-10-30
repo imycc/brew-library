@@ -30,7 +30,7 @@
   },
   "equipmentNav": "器具",
   "equipmentTitle": "抽出器具データベース",
-  "equipmentIntro": "ハンドドリップ用のドリッパー、ケトル、グラインダー、フィルターの公式仕様、互換性、関連レシピを整理しています。",
+  "equipmentIntro": "ブランド公式情報に基づくドリッパー、ケトル、グラインダー、フィルター、エスプレッソマシンの規格・適合・関連レシピ。",
   "equipmentItems": "件",
   "equipmentSearch": "ブランド、型番、互換性を検索",
   "equipmentCategory": "器具カテゴリー",
@@ -43,7 +43,8 @@
     "dripper": "ドリッパー",
     "grinder": "グラインダー",
     "filter": "フィルター",
-    "kettle": "ケトル"
+    "kettle": "ケトル",
+    "machine": "エスプレッソマシン"
   },
   "equipmentStatus": {
     "legacy": "旧モデル／製造終了",
@@ -67,7 +68,12 @@
     "technology": "技術",
     "power": "消費電力",
     "voltage": "電圧",
-    "temperatureRange": "温度範囲"
+    "temperatureRange": "温度範囲",
+    "boiler": "ボイラー",
+    "group": "グループ",
+    "pump": "ポンプ",
+    "preInfusion": "プレインフュージョン",
+    "tank": "給水タンク"
   },
   "equipmentUnits": {
     "cups": "杯",
@@ -81,7 +87,9 @@
     "oz": "オンス",
     "W": "W",
     "V": "V",
-    "°C": "°C"
+    "°C": "°C",
+    "kg": "kg",
+    "l": "l"
   },
   "brand": "抽出レシピ図鑑",
   "tagline": "コーヒーの手帖",
@@ -800,7 +808,17 @@
     "weight1400WithBase": "1400（ベース込み）",
     "flatDrippers": "フラットベッドのドリッパー",
     "modelUnknownMaker": "出典は「MK」のみで製造元の記載なし",
-    "modelFastUnverified": "FAST グレード。公式製品ページは確認できませんでした"
+    "modelFastUnverified": "FAST グレード。公式製品ページは確認できませんでした",
+    "dualBoiler": "デュアルボイラー",
+    "singleBoiler": "シングルボイラー",
+    "coffeeAndSteamBoilers": "コーヒー／スチームボイラー",
+    "rotaryPump": "ロータリーポンプ",
+    "lowNoiseVibrationPump": "低ノイズ振動ポンプ",
+    "pidTemperatureControl": "PID温度制御",
+    "pidOneDegree": "1 °C刻みのPID制御",
+    "dualPid": "デュアルPID",
+    "activePassivePreInfusion": "アクティブ／パッシブ予浸",
+    "tunePreInfusion3Bar": "3 barで時間を制御するプレインフュージョン"
   },
   "pourPatterns": {
     "centre": "中心",

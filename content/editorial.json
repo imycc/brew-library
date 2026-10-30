@@ -1450,6 +1450,39 @@
         "consumable",
         "filterMatching"
       ]
+    },
+    "ecm-synchronika-ii": {
+      "role": "dualBoilerProsumer",
+      "strengths": [
+        "preInfusionControl",
+        "temperatureControl"
+      ],
+      "considerations": [
+        "counterSpace",
+        "maintenance"
+      ]
+    },
+    "ecm-classika-iii": {
+      "role": "singleBoilerE61",
+      "strengths": [
+        "temperatureControl",
+        "compact"
+      ],
+      "considerations": [
+        "learningCurve",
+        "maintenance"
+      ]
+    },
+    "rocket-r58-tune": {
+      "role": "dualBoilerProsumer",
+      "strengths": [
+        "preInfusionControl",
+        "temperatureControl"
+      ],
+      "considerations": [
+        "counterSpace",
+        "learningCurve"
+      ]
     }
   }
 }
