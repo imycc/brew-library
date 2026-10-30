@@ -3118,6 +3118,9 @@
         {
           "key": "recipes.woelfl.teach3",
           "step": 1
+        },
+        {
+          "key": "recipes.woelfl.teach4"
         }
       ]
     },
