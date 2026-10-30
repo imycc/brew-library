@@ -2206,6 +2206,240 @@
       "checked": "2026-10-28"
     },
     {
+      "id": "timemore-chestnut-c3s",
+      "category": "grinder",
+      "brand": "TIMEMORE",
+      "name": "Chestnut C3S",
+      "status": "current",
+      "aliases": [
+        "TIMEMORE C3S",
+        "Chestnut C3s"
+      ],
+      "details": [
+        {
+          "key": "burr",
+          "value": "38 mm stainless steel",
+          "valueKey": "burr38Stainless"
+        },
+        {
+          "key": "adjustment",
+          "value": "0–90 clicks",
+          "valueKey": "adjust0to90Clicks"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "30",
+          "unit": "g"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum;stainless-steel"
+        },
+        {
+          "key": "mode",
+          "value": "Manual; portable",
+          "valueKey": "manualPortable"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "TIMEMORE",
+          "url": "https://www.timemore.com/products/timemore-chestnut-c3s-jet-black"
+        }
+      ],
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "timemore-chestnut-s3",
+      "category": "grinder",
+      "brand": "TIMEMORE",
+      "name": "Chestnut S3",
+      "status": "current",
+      "aliases": [
+        "TIMEMORE S3",
+        "Chestnut S3"
+      ],
+      "details": [
+        {
+          "key": "burr",
+          "value": "S2C890 steel burrs",
+          "valueKey": "burrS2c890"
+        },
+        {
+          "key": "adjustment",
+          "value": "0.015 mm per grid; 0.1 grid precision",
+          "valueKey": "adjustS3Precision"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum;stainless-steel"
+        },
+        {
+          "key": "mode",
+          "value": "Manual; portable",
+          "valueKey": "manualPortable"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "TIMEMORE",
+          "url": "https://www.timemore.com/products/timemore-manual-coffee-grinder-chestnut-s3"
+        }
+      ],
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "timemore-chestnut-s5-pro",
+      "category": "grinder",
+      "brand": "TIMEMORE",
+      "name": "Chestnut S5 Pro",
+      "status": "current",
+      "aliases": [
+        "TIMEMORE S5 Pro",
+        "Chestnut S5"
+      ],
+      "details": [
+        {
+          "key": "burr",
+          "value": "48 mm 12-star burr with pre-breaking edge",
+          "valueKey": "burr48S5TwelveStar"
+        },
+        {
+          "key": "adjustment",
+          "value": "External 90 clicks; 0.015 mm per click",
+          "valueKey": "adjust90S5"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum;stainless-steel"
+        },
+        {
+          "key": "mode",
+          "value": "Manual; portable",
+          "valueKey": "manualPortable"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "TIMEMORE",
+          "url": "https://www.timemore.com/products/timemore-manual-coffee-grinder-chestnut-s5-pro"
+        },
+        {
+          "label": "什么值得买 comparison",
+          "url": "https://post.m.smzdm.com/p/a030p2zw/"
+        }
+      ],
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "mavo-wizard-z",
+      "category": "grinder",
+      "brand": "MAVO",
+      "name": "Wizard Z Hand Grinder",
+      "status": "current",
+      "aliases": [
+        "MAVO 巫师Z",
+        "MAVO Wizard Z",
+        "Wizard Z"
+      ],
+      "details": [
+        {
+          "key": "model",
+          "value": "Wizard Z; official English spec page not published",
+          "valueKey": "modelMavoWizardZ"
+        },
+        {
+          "key": "burr",
+          "value": "43 mm three-stage volcanic burr",
+          "valueKey": "burr43Volcanic"
+        },
+        {
+          "key": "adjustment",
+          "value": "60 clicks per rotation; 0.0167 mm per click",
+          "valueKey": "adjust60Clicks"
+        },
+        {
+          "key": "groundsCapacity",
+          "value": "30",
+          "unit": "g"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum;stainless-steel"
+        },
+        {
+          "key": "mode",
+          "value": "Manual; portable",
+          "valueKey": "manualPortable"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "MAVO official Tmall store",
+          "url": "https://mavo.tmall.com/"
+        },
+        {
+          "label": "Hands-on review",
+          "url": "https://www.bilibili.com/video/BV1yUE76ME5n"
+        }
+      ],
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "mavo-wizard-z-pro",
+      "category": "grinder",
+      "brand": "MAVO",
+      "name": "Wizard Z Pro Hand Grinder",
+      "status": "current",
+      "aliases": [
+        "MAVO 巫师Z PRO",
+        "MAVO Wizard Z Pro",
+        "Wizard Z Pro"
+      ],
+      "details": [
+        {
+          "key": "model",
+          "value": "Wizard Z Pro; official English spec page not published",
+          "valueKey": "modelMavoWizardZPro"
+        },
+        {
+          "key": "burr",
+          "value": "43 mm three-stage volcanic burr; three P5 bearings",
+          "valueKey": "burr43VolcanicP5"
+        },
+        {
+          "key": "adjustment",
+          "value": "External 100-click stepless",
+          "valueKey": "adjust100Stepless"
+        },
+        {
+          "key": "materials",
+          "value": "aluminum;stainless-steel"
+        },
+        {
+          "key": "mode",
+          "value": "Manual; portable",
+          "valueKey": "manualPortable"
+        }
+      ],
+      "recipeIds": [],
+      "sources": [
+        {
+          "label": "MAVO official Tmall store",
+          "url": "https://mavo.tmall.com/"
+        },
+        {
+          "label": "什么值得买 comparison",
+          "url": "https://post.m.smzdm.com/p/a030p2zw/"
+        }
+      ],
+      "checked": "2026-10-30"
+    },
+    {
       "id": "kalita-wave-155-filter",
       "category": "filter",
       "brand": "Kalita",

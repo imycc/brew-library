@@ -86,7 +86,7 @@ test('equipment and coffee filters match recorded source conditions together',()
  assert.equal(recipes.find(r=>r.id==='kobayashi-origami')?.steps[2].temperature,75);
 });
 test('equipment catalogue is source-backed, searchable and keeps unresolved models explicit',()=>{
- assert.equal(equipment.length,64);
+ assert.equal(equipment.length,69);
  assert.equal(filterEquipment(equipment,'','machine').length,3);
  assert.deepEqual(filterEquipment(equipment,'Synchronika','all').map(item=>item.id),['ecm-synchronika-ii']);
  assert.equal(equipment.find(item=>item.id==='rocket-r58-tune')?.details.find(detail=>detail.key==='power')?.value,'1600');
@@ -96,9 +96,13 @@ test('equipment catalogue is source-backed, searchable and keeps unresolved mode
  assert.equal(filterEquipment(equipment,'','dripper').length,24);
  assert.equal(filterEquipment(equipment,'','kettle').length,11);
  assert.equal(filterEquipment(equipment,'','filter').length,15);
- assert.equal(filterEquipment(equipment,'','grinder').length,11);
+ assert.equal(filterEquipment(equipment,'','grinder').length,16);
  assert.deepEqual(filterEquipment(equipment,'Buono','kettle').map(item=>item.id),['hario-v60-buono-1-2l','hario-v60-buono-electric','hario-v60-buono-copper-0-9l']);
  assert.deepEqual(filterEquipment(equipment,'Mugen','dripper').map(item=>item.id),['hario-v60-mugen-02']);
+ assert.deepEqual(filterEquipment(equipment,'Chestnut','all').map(item=>item.id),['timemore-chestnut-c3s','timemore-chestnut-s3','timemore-chestnut-s5-pro']);
+ assert.equal(equipment.find(item=>item.id==='mavo-wizard-z')?.details.find(detail=>detail.key==='burr')?.valueKey,'burr43Volcanic');
+ assert.equal(equipment.find(item=>item.id==='timemore-chestnut-s5-pro')?.details.find(detail=>detail.key==='burr')?.valueKey,'burr48S5TwelveStar');
+ assert.equal(equipment.find(item=>item.id==='mavo-wizard-z-pro')?.details.find(detail=>detail.key==='adjustment')?.valueKey,'adjust100Stepless');
  assert.equal(equipment.find(item=>item.id==='ek-unspecified')?.status,'unresolved');
  assert.equal(equipment.find(item=>item.id==='origami-air-s')?.details.find(detail=>detail.key==='weight')?.value,'64');
  assert.equal(equipment.find(item=>item.id==='kalita-wave-185-stainless')?.category,'dripper');

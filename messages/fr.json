@@ -852,7 +852,19 @@
     "pidOneDegree": "Régulation PID par pas de 1 °C",
     "dualPid": "Double PID",
     "activePassivePreInfusion": "Pré-infusion active et passive",
-    "tunePreInfusion3Bar": "Pré-infusion chronométrée à 3 bar"
+    "tunePreInfusion3Bar": "Pré-infusion chronométrée à 3 bar",
+    "burr38Stainless": "Acier inoxydable 38 mm",
+    "adjust0to90Clicks": "0–90 crans",
+    "burrS2c890": "Meules en acier S2C890",
+    "adjustS3Precision": "0,015 mm par cran ; précision de 0,1 cran",
+    "modelMavoWizardZ": "Wizard Z ; page officielle de spécifications en anglais non publiée",
+    "burr43Volcanic": "Meule volcanique à trois étages de 43 mm",
+    "adjust60Clicks": "60 crans par tour ; 0,0167 mm par cran",
+    "burr48S5TwelveStar": "Meule 12 étoiles de 48 mm avec bord de pré-découpe",
+    "adjust90S5": "90 crans externes ; 0,015 mm par cran",
+    "modelMavoWizardZPro": "Wizard Z Pro ; page officielle de spécifications en anglais non publiée",
+    "burr43VolcanicP5": "Meule volcanique à trois étages de 43 mm ; trois roulements P5",
+    "adjust100Stepless": "100 crans externes, sans paliers"
   },
   "pourPatterns": {
     "centre": "Centre",

@@ -852,7 +852,19 @@
     "pidOneDegree": "PID control in 1 °C steps",
     "dualPid": "Dual PID",
     "activePassivePreInfusion": "Active and passive pre-infusion",
-    "tunePreInfusion3Bar": "Time-controlled pre-infusion at 3 bar"
+    "tunePreInfusion3Bar": "Time-controlled pre-infusion at 3 bar",
+    "burr38Stainless": "38 mm stainless steel",
+    "adjust0to90Clicks": "0–90 clicks",
+    "burrS2c890": "S2C890 steel burrs",
+    "adjustS3Precision": "0.015 mm per grid; 0.1 grid precision",
+    "modelMavoWizardZ": "Wizard Z; official English spec page not published",
+    "burr43Volcanic": "43 mm three-stage volcanic burr",
+    "adjust60Clicks": "60 clicks per rotation; 0.0167 mm per click",
+    "burr48S5TwelveStar": "48 mm 12-star burr with pre-breaking edge",
+    "adjust90S5": "External 90 clicks; 0.015 mm per click",
+    "modelMavoWizardZPro": "Wizard Z Pro; official English spec page not published",
+    "burr43VolcanicP5": "43 mm three-stage volcanic burr; three P5 bearings",
+    "adjust100Stepless": "External 100-click stepless"
   },
   "pourPatterns": {
     "centre": "Centre",

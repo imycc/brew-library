@@ -852,7 +852,19 @@
     "pidOneDegree": "以 1 °C 为单位的 PID 控制",
     "dualPid": "双 PID",
     "activePassivePreInfusion": "主动与被动预浸",
-    "tunePreInfusion3Bar": "以时间控制的 3 bar 预浸"
+    "tunePreInfusion3Bar": "以时间控制的 3 bar 预浸",
+    "burr38Stainless": "38 mm 不锈钢",
+    "adjust0to90Clicks": "0–90 格",
+    "burrS2c890": "S2C890 钢磨盘",
+    "adjustS3Precision": "每格 0.015 mm；0.1 格精度",
+    "modelMavoWizardZ": "Wizard Z；官方英文规格页未发布",
+    "burr43Volcanic": "43 mm 三段式火山磨盘",
+    "adjust60Clicks": "每圈 60 格；每格 0.0167 mm",
+    "burr48S5TwelveStar": "48 mm 十二星磨盘，带预破碎刃口",
+    "adjust90S5": "外部 90 格；每格 0.015 mm",
+    "modelMavoWizardZPro": "Wizard Z Pro；官方英文规格页未发布",
+    "burr43VolcanicP5": "43 mm 三段式火山磨盘；三枚 P5 轴承",
+    "adjust100Stepless": "外部 100 格无级"
   },
   "pourPatterns": {
     "centre": "中央",
