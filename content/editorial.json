@@ -502,6 +502,42 @@
         "unknownParameters",
         "grindSensitive"
       ]
+    },
+    "rolf-v60-113": {
+      "strengths": [
+        "clearTimeline",
+        "repeatable",
+        "cleanCup"
+      ],
+      "considerations": [
+        "grindSensitive",
+        "equipmentSpecific",
+        "unknownParameters"
+      ]
+    },
+    "rolf-origami-117": {
+      "strengths": [
+        "clearTimeline",
+        "evenExtraction",
+        "repeatable"
+      ],
+      "considerations": [
+        "grindSensitive",
+        "unknownParameters",
+        "filterMatching"
+      ]
+    },
+    "kasuya-neo": {
+      "strengths": [
+        "structuredAgitation",
+        "flowControl",
+        "evenExtraction"
+      ],
+      "considerations": [
+        "needsTimer",
+        "morePreparation",
+        "grindSensitive"
+      ]
     }
   },
   "equipment": {

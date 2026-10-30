@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {convertTemperature,formatTemperature} from '../src/lib/temperature';
-import {espressoSchema,pourOverSchema,filterRecipes,parseSelection,toggleSelection,recipes,pourOverRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe} from '../src/lib/recipes';
+import {espressoSchema,pourOverSchema,filterRecipes,parseSelection,toggleSelection,recipes,pourOverRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe,videoLink} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
@@ -31,7 +31,7 @@ const po=(id:string)=>pourOverRecipes.find(recipe=>recipe.id===id)!;
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,32);
+ assert.equal(recipes.length,35);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -222,7 +222,7 @@ test('the iced record keeps ice out of the poured-water maths',()=>{
  assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:30});
  assert.equal(ratio(iced,'en'),'1 : 14.33');
  assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,1);
- assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,31);
+ assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,34);
 });
 
 const shotRecord=espressoSchema.parse({...pourOverRecipes[0],id:'test-shot',copy:'kasuya',method:'espresso',
@@ -273,4 +273,28 @@ test('temperature conversion is display-only, marked and rounded once',()=>{
  assert.deepEqual(celsius,{text:'≈ 94.4–95.6°C',converted:true});
  assert.equal(formatTemperature(93.5,'C','F').text,'≈ 200.3°F');
  assert.equal(formatTemperature(24,'C','F',24).text,'≈ 75.2°F');
+});
+
+test('video records carry provenance, timestamps and teaching without inventing values',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const rolf=find('rolf-v60-113');
+ assert.equal(rolf.source.video,rolf.source.url);
+ assert.equal(rolf.source.publishedBasis,'video');
+ assert.equal(rolf.steps[0].videoAt,0);
+ assert.equal(rolf.steps[4].videoAt,150);
+ assert.equal(videoLink(rolf.source.video!,90),'https://www.youtube.com/watch?v=otk2jFRCcmE&t=90');
+ assert.equal(rolf.teaching?.length,3);
+ assert.equal(rolf.teaching?.[0].step,0);
+ assert(rolf.source.evidence?.includes('13g - 200g'));
+ const kasuya=find('kasuya-neo');
+ assert.equal(kasuya.temperatureMax,96);
+ assert.equal(kasuya.steps.length,10);
+ assert.equal(kasuya.steps[1].instruction,'recipes.kasuya-neo.pour');
+ assert.equal(kasuya.duration,null);
+ assert.equal(kasuya.steps.filter(step=>step.videoAt!==undefined).length,1);
+ assert.equal(kasuya.steps.reduce((sum,step)=>sum+(step.amount||0),0),300);
+ const origami=find('rolf-origami-117');
+ assert.deepEqual(origami.duration,[150,150]);
+ assert.equal(origami.steps[1].end,80);
+ assert(origami.source.evidence?.includes('roast degree'));
 });

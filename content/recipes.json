@@ -2632,6 +2632,320 @@
       "waterConditions": "unknown",
       "beanConditions": "unknown",
       "context": "daily"
+    },
+    {
+      "id": "rolf-v60-113",
+      "method": "pour-over",
+      "copy": "rolf-v60",
+      "author": "Patrik Rolf",
+      "authorId": "rolf",
+      "brewer": "HARIO V60 · 02",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 13,
+      "water": {
+        "amount": 200,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": 90,
+      "temperatureMode": "unknown",
+      "duration": [
+        150,
+        150
+      ],
+      "source": {
+        "label": "Coffee with April",
+        "url": "https://www.youtube.com/watch?v=otk2jFRCcmE",
+        "video": "https://www.youtube.com/watch?v=otk2jFRCcmE",
+        "published": "2020-04-10",
+        "publishedBasis": "video",
+        "archive": "https://web.archive.org/web/20261030162620/https://www.youtube.com/watch?v=otk2jFRCcmE",
+        "checked": "2026-10-31",
+        "evidence": "13g - 200g\n90°C Water\n50g Bloom - 0:00\n50g Pour - 0:30\n50g Pour - 1:00\n50g Pour - 1:30\nTotal Brew Time - 2:30\n\nWe used a Commandante grinder, on a relatively coarse grind setting for this brew."
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 50,
+          "cumulative": 50,
+          "videoAt": 0,
+          "instruction": "recipes.rolf-v60.s00"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 50,
+          "cumulative": 100,
+          "videoAt": 30,
+          "instruction": "recipes.rolf-v60.s01"
+        },
+        {
+          "action": "pour",
+          "at": 60,
+          "amount": 50,
+          "cumulative": 150,
+          "videoAt": 60,
+          "instruction": "recipes.rolf-v60.s02"
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 50,
+          "cumulative": 200,
+          "videoAt": 90,
+          "instruction": "recipes.rolf-v60.s03"
+        },
+        {
+          "action": "finish",
+          "at": 150,
+          "amount": null,
+          "cumulative": null,
+          "videoAt": 150
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "grinder": {
+        "id": "comandante-unspecified",
+        "name": "Comandante",
+        "setting": "relatively coarse"
+      },
+      "teaching": [
+        {
+          "key": "recipes.rolf-v60.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.rolf-v60.teach2",
+          "step": 1
+        },
+        {
+          "key": "recipes.rolf-v60.teach3"
+        }
+      ]
+    },
+    {
+      "id": "rolf-origami-117",
+      "method": "pour-over",
+      "copy": "rolf-origami",
+      "author": "Patrik Rolf",
+      "authorId": "rolf",
+      "brewer": "ORIGAMI Dripper",
+      "brewerId": "origami",
+      "kind": "hot",
+      "dose": 20,
+      "water": {
+        "amount": 300,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": 92,
+      "temperatureMode": "unknown",
+      "duration": [
+        150,
+        150
+      ],
+      "source": {
+        "label": "Coffee with April",
+        "url": "https://www.youtube.com/watch?v=WMPmZ9oXV6E",
+        "video": "https://www.youtube.com/watch?v=WMPmZ9oXV6E",
+        "published": "2020-05-01",
+        "publishedBasis": "video",
+        "archive": "https://web.archive.org/web/20261030162633/https://www.youtube.com/watch?v=WMPmZ9oXV6E",
+        "checked": "2026-10-31",
+        "evidence": "20g - 300g\n92°C Water\n100g Pour - 0:00 (Circle)\n200g Continuous Pour - 0:45 - 1:20 (Circle)\nTotal Brew Time - 2:30\n\nWe used a Commandante grinder, on a medium/coarse grind setting for this brew.\n\nPlease remember that roast degree can greatly influence the resistance of your coffee bed, which is a large variable in the brew times you may experience. If the coffee you are brewing has been roasted darker than our roast style, consider grinding slightly finer to compensate for the lower density."
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 100,
+          "cumulative": 100,
+          "videoAt": 0,
+          "pattern": "circular",
+          "instruction": "recipes.rolf-origami.s00"
+        },
+        {
+          "action": "pour",
+          "at": 45,
+          "amount": 200,
+          "cumulative": 300,
+          "end": 80,
+          "videoAt": 45,
+          "pattern": "circular",
+          "instruction": "recipes.rolf-origami.s01"
+        },
+        {
+          "action": "finish",
+          "at": 150,
+          "amount": null,
+          "cumulative": null,
+          "videoAt": 150
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "grinder": {
+        "id": "comandante-unspecified",
+        "name": "Comandante",
+        "setting": "medium/coarse"
+      },
+      "paper": {
+        "id": "hario-v60-02-filter",
+        "name": "V60 Paper Filter 02",
+        "shape": "cone"
+      },
+      "teaching": [
+        {
+          "key": "recipes.rolf-origami.teach1",
+          "step": 1
+        },
+        {
+          "key": "recipes.rolf-origami.teach2"
+        }
+      ]
+    },
+    {
+      "id": "kasuya-neo",
+      "method": "pour-over",
+      "copy": "kasuya-neo",
+      "author": "Tetsu Kasuya",
+      "authorId": "kasuya",
+      "brewer": "HARIO NEO",
+      "brewerId": "neo",
+      "kind": "hot",
+      "dose": 20,
+      "water": {
+        "amount": 300,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": 95,
+      "temperatureMax": 96,
+      "temperatureMode": "unknown",
+      "duration": null,
+      "ratioStated": "1:15",
+      "source": {
+        "label": "Tetsu Kasuya",
+        "url": "https://www.youtube.com/watch?v=k0nsShguOsU",
+        "video": "https://www.youtube.com/watch?v=k0nsShguOsU",
+        "published": "2026-05-29",
+        "publishedBasis": "video",
+        "archive": "https://web.archive.org/web/20261030162642/https://www.youtube.com/watch?v=k0nsShguOsU",
+        "checked": "2026-10-31",
+        "evidence": "[ PARAMETERS ]\n・Coffee：20g（※浅煎り推奨）\n・Water：300g (Ratio 1;15)\n・Temperature：95〜96℃\n・Grind Size：40〜45 Clicks (Comandante C40) / 極粗挽き\n・Dripper：HARIO NEO（※少量の湯を均一に抽出できるため推奨。V60でも可）\n\n[ THE BREW / TIMELINE ]\nトータル300gのお湯を、15秒間隔で30gずつ、10回に分けて注ぎます。\nお湯をドリッパー内に滞留させず、スッと落とし切るイメージで注湯してください。"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "pour",
+          "at": 0,
+          "amount": 30,
+          "cumulative": 30,
+          "videoAt": 752,
+          "instruction": "recipes.kasuya-neo.s00"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": 30,
+          "cumulative": 60,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 45,
+          "amount": 30,
+          "cumulative": 90,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 60,
+          "amount": 30,
+          "cumulative": 120,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 75,
+          "amount": 30,
+          "cumulative": 150,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 90,
+          "amount": 30,
+          "cumulative": 180,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 105,
+          "amount": 30,
+          "cumulative": 210,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 120,
+          "amount": 30,
+          "cumulative": 240,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 135,
+          "amount": 30,
+          "cumulative": 270,
+          "instruction": "recipes.kasuya-neo.pour"
+        },
+        {
+          "action": "pour",
+          "at": 150,
+          "amount": 30,
+          "cumulative": 300,
+          "instruction": "recipes.kasuya-neo.s09"
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "grinder": {
+        "id": "comandante-c40-unspecified",
+        "name": "Comandante C40",
+        "setting": "40–45 clicks"
+      },
+      "coffee": {
+        "roast": "light",
+        "asRecommendation": true
+      },
+      "teaching": [
+        {
+          "key": "recipes.kasuya-neo.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.kasuya-neo.teach2"
+        },
+        {
+          "key": "recipes.kasuya-neo.teach3",
+          "step": 9
+        }
+      ]
     }
   ]
 }

@@ -20,14 +20,15 @@ const stepSchema = z.object({
   direction: z.enum(['clockwise','counterclockwise']).optional(),
   levelMin: z.number().nonnegative().optional(),
   levelMax: z.number().nonnegative().optional(),
-  derived: z.boolean().optional()
+  derived: z.boolean().optional(),
+  videoAt: z.number().nonnegative().optional()
 });
-const waterSchema=z.object({amount:z.number().positive(), unit:z.enum(['g','mL']), derived:z.boolean().default(false),
+const waterSchema=z.object({amount:z.number().positive(), waterMax:z.number().positive().optional(), unit:z.enum(['g','mL']), derived:z.boolean().default(false),
   tds:z.number().positive().optional(), ppm:z.number().positive().optional(), hardness:z.number().positive().optional(), hardnessUnit:z.enum(['ppm','mg/L']).optional(), alkalinity:z.number().positive().optional(), alkalinityUnit:z.enum(['ppm','mg/L']).optional()});
 const commonRecipeFields={
   id:z.string().regex(/^[a-z0-9-]+$/), copy:z.string().regex(/^[a-z0-9-]+$/),
   author:z.string(), authorId:z.string(), brewer:z.string(), brewerId:z.string(),
-  kind:z.enum(['hot','iced']), dose:z.number().positive(),
+  kind:z.enum(['hot','iced']), dose:z.number().positive(), doseMax:z.number().positive().optional(),
   ice:z.object({amount:z.number().positive(), amountMax:z.number().positive().optional(), approximate:z.boolean().optional(), unit:z.enum(['g','mL']), placement:z.enum(['server','brewer','glass'])}).optional(),
   temperature:z.number().positive().nullable(), temperatureMax:z.number().positive().optional(), temperatureUnit:z.enum(['C','F']).default('C'), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]).nullable(),
   removalAt:z.number().nonnegative().optional(),
@@ -36,8 +37,9 @@ const commonRecipeFields={
   beverageTds:z.number().positive().optional(),
   doseGround:z.number().positive().optional(),
   grindHedged:z.boolean().optional(),
-  source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), videoPublished:z.string().nullable().optional(), published:z.string().nullable(), publishedBasis:z.enum(['page','video','event']).optional(), updated:z.string().nullable().optional(), archive:z.url().optional(), videoArchive:z.url().optional(), checked:z.iso.date()}),
+  source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), videoPublished:z.string().nullable().optional(), published:z.string().nullable(), publishedBasis:z.enum(['page','video','event']).optional(), updated:z.string().nullable().optional(), archive:z.url().optional(), videoArchive:z.url().optional(), evidence:z.string().optional(), checked:z.iso.date()}),
   image:z.enum(['coffee-bloom','brewer-still','espresso-shot']).optional(),
+  teaching:z.array(z.object({key:z.string().regex(/^[a-zA-Z0-9.-]+$/), step:z.number().int().nonnegative().optional()})).optional(),
   steps:z.array(stepSchema), preparation:z.array(z.string()),
   waterConditions:z.enum(['unknown','soft','rao']), beanConditions:z.enum(['unknown','light']),
   filterConditions:z.enum(['unknown','pulsar']).default('unknown'), context:z.enum(['daily','competition']),
@@ -128,6 +130,13 @@ export function beverage(recipe:Recipe):{amount:number;unit:string;derived:boole
   if(isEspresso(recipe))return recipe.yield?{amount:recipe.yield.amount,unit:recipe.yield.unit,derived:recipe.yield.basis==='target'}:null;
   return totalLiquid(recipe);
 }
+export function doseText(recipe:Recipe):string {return recipe.doseMax?`${recipe.dose}–${recipe.doseMax}`:`${recipe.dose}`;}
+export function waterText(recipe:Recipe):string {
+  if(isEspresso(recipe))return '—';
+  const {water}=recipe;
+  return water.waterMax?`${water.amount}–${water.waterMax}`:`${water.amount}`;
+}
+export function videoLink(url:string,seconds:number):string {return `${url}${url.includes('?')?'&':'?'}t=${seconds}`;}
 export function ratio(recipe:Recipe, locale:string):string {
   const format=(value:number)=>new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(value);
   if(isEspresso(recipe)){
@@ -137,7 +146,11 @@ export function ratio(recipe:Recipe, locale:string):string {
   const total=totalLiquid(recipe);
   // Cannot pair the two units: show the water ratio alone rather than inventing a total.
   if(!total)return recipe.water.unit==='g'?`1 : ${format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
-  return total.unit==='g'?`1 : ${format(total.amount/recipe.dose)}`:`${recipe.dose} g : ${total.amount} mL`;
+  if(total.unit==='g'){
+    // A published dose range yields a ratio range, widest first.
+    return recipe.doseMax?`1 : ${format(total.amount/recipe.doseMax)}–${format(total.amount/recipe.dose)}`:`1 : ${format(total.amount/recipe.dose)}`;
+  }
+  return `${doseText(recipe)} g : ${total.amount} mL`;
 }
 
 const ADDITIONS=new Set(['pour','bloom','pulses','topup']);

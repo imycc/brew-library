@@ -34,6 +34,19 @@ export async function validate(){
    if(editorial.sourceImage)assert(editorial.sourceImage.sourceUrl===r.source.url,`${r.id} image source mismatch`);
    if(r.duration&&r.removalAt!==undefined)assert(r.removalAt<=r.duration[1]+120,`${r.id} removal far past the stated finish`);
    if(r.doseGround!==undefined)assert(r.doseGround>=r.dose,`${r.id} cannot dose more than it ground`);
+   if(r.doseMax!==undefined)assert(r.doseMax>r.dose,`${r.id} dose range must run upward`);
+   if(r.method==='pour-over'&&r.water.waterMax!==undefined)assert(r.water.waterMax>r.water.amount,`${r.id} water range must run upward`);
+   let lastVideoAt=-1;
+   for(const s of r.steps){
+     if(s.videoAt===undefined)continue;
+     assert(r.source.video,`${r.id} has a step video time but no video source`);
+     assert(s.videoAt>=lastVideoAt,`${r.id} step video times must not run backwards`);
+     lastVideoAt=s.videoAt;
+   }
+   for(const item of r.teaching||[]){
+     assert(item.step===undefined||item.step<r.steps.length,`${r.id} teaching points past the last step`);
+     assert(r.source.video||item.step!==undefined,`${r.id} teaching step needs a step list`);
+   }
    if(r.kind==='iced')assert(r.ice,`${r.id} is iced but states no ice`);
    if(r.kind==='hot')assert(!r.ice,`${r.id} is hot but states ice`);
    if(r.ice){
@@ -110,6 +123,7 @@ export async function validate(){
      if(r.yield)assert(flat[`yieldBases.${r.yield.basis}`],`${locale}/${r.id} yield basis`);
      if(r.source.publishedBasis)assert(flat[`publishedBases.${r.source.publishedBasis}`],`${locale}/${r.id} published basis`);
      if(r.grindHedged)assert(flat['grindHedged'],`${locale}/${r.id} hedged grind label`);
+     for(const item of r.teaching||[])assert(flat[item.key],`${locale}/${r.id} teaching key ${item.key}`);
      if(r.grindMicron)assert(flat[`grindMicronBases.${r.grindMicron.basis}`],`${locale}/${r.id} micron basis`);
    }
    for(const key of ['equipmentNav','equipmentTitle','equipmentIntro','equipmentItems','equipmentSearch','equipmentCategory','equipmentResults','equipmentNote','equipmentRelated','equipmentChecked','equipmentEmpty'])assert(flat[`${key}`],`${locale}/${key}`);

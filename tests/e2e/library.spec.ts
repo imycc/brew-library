@@ -14,7 +14,7 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await page.goto(`${base}/zh-Hant/`);
  await expect(page.locator('h1')).toContainText('每一杯');
  await expect(page.getByTestId('pour-timeline')).toHaveCount(0);
- await expect(page.locator('[data-recipe]')).toHaveCount(32);
+ await expect(page.locator('[data-recipe]')).toHaveCount(35);
  await page.locator('[data-recipe="kasuya-46"] .card-actions a').click();
  await expect(page.getByTestId('pour-timeline')).toBeVisible();
  await expect(page.getByTestId('pour-timeline')).toContainText('2:10');
@@ -31,10 +31,10 @@ test('filters, empty result, reset and shared comparison work',async({page})=>{
  await page.goto(`${base}/en/`);
  await page.getByRole('searchbox').fill('Hoffmann');await expect(page.locator('[data-recipe]')).toHaveCount(2);
  await page.getByLabel('Choose a brewer').selectOption('pulsar');await expect(page.locator('[data-recipe]')).toHaveCount(0);
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(32);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(35);
  await page.getByLabel('Style').selectOption('iced');await expect(page.locator('[data-recipe]')).toHaveCount(1);
  await expect(page.locator('[data-recipe="kurasu-flash-brew"]')).toContainText('ice');
- await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(32);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).last().click();await expect(page.locator('[data-recipe]')).toHaveCount(35);
  for(const id of ['kasuya-46','hoffmann-one-cup','rao-pulsar'])await page.locator(`[data-recipe="${id}"] button`).click();
  await page.locator('[data-recipe="licata-v60"] button').click();
  await expect(page.getByRole('status').filter({hasText:'You can compare up to three recipes.'})).toHaveCount(1);
@@ -166,7 +166,7 @@ test('Origami conditions combine, survive language switching and reset completel
  await page.goto(`${base}/zh-Hant/`);
  await expect(page.locator('.site-footer')).not.toContainText('imycc');
  await page.getByLabel('選擇濾杯').selectOption('origami');
- await expect(page.locator('[data-recipe]')).toHaveCount(6);
+ await expect(page.locator('[data-recipe]')).toHaveCount(7);
  await page.locator('.condition-filters summary').click();
  await page.getByLabel('磨豆器',{exact:true}).selectOption('zp6-special');
  await page.getByLabel('濾紙',{exact:true}).selectOption('sibarist-conic');
@@ -179,7 +179,7 @@ test('Origami conditions combine, survive language switching and reset completel
  await page.locator('.language-trigger').click();await page.locator('.language-options a[lang="de"]').click();
  await expect(page).toHaveURL(/grinder=zp6-special/);await expect(page.getByLabel('Filterpapier',{exact:true})).toHaveValue('sibarist-conic');
  await page.getByRole('button',{name:'Filter zurücksetzen',exact:true}).click();
- await expect(page.locator('[data-recipe]')).toHaveCount(32);
+ await expect(page.locator('[data-recipe]')).toHaveCount(35);
  expect(new URL(page.url()).search).toBe('');
 });
 
@@ -205,7 +205,7 @@ test('the method filter keeps pour-over and espresso results apart',async({page}
  await expect(page.locator('.result-count')).toHaveText('Recipes: 3');
  await expect(page.locator('[data-recipe="camber-espresso"]')).toBeVisible();
  await page.getByLabel('Method',{exact:true}).selectOption('pour-over');
- await expect(page.locator('.result-count')).toHaveText('Recipes: 29');
+ await expect(page.locator('.result-count')).toHaveText('Recipes: 32');
  expect(page.url()).toContain('method=pour-over');
  await page.getByRole('button',{name:'Reset filters'}).click();
  await expect(page.locator('.result-count')).toHaveText(initial);
@@ -249,4 +249,15 @@ test('one click converts temperatures for display and never rewrites the source 
  await expect(page.locator('.quick-answer')).toContainText('≈ 94.4–95.6°C');
  await page.getByRole('button',{name:'Show temperatures in Celsius'}).click();
  await expect(page.locator('.quick-answer')).toContainText('202–204°F');
+});
+
+test('a video-sourced recipe exposes its evidence, teaching and step deep links',async({page})=>{
+ await page.goto(`${base}/en/recipes/rolf-v60-113/`);
+ await expect(page.locator('.quick-answer')).toContainText('13');
+ await expect(page.locator('[data-teaching] li')).toHaveCount(3);
+ await expect(page.locator('[data-teaching] a.teaching-step')).toHaveCount(2);
+ await expect(page.locator('[data-evidence]')).toContainText('13g - 200g');
+ await expect(page.locator('.step-video').first()).toHaveAttribute('href',/t=0$/);
+ await expect(page.locator('.step-video').last()).toContainText('2:30');
+ await expect(page.locator('#step-2')).toHaveCount(1);
 });
