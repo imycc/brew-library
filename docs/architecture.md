@@ -8,7 +8,14 @@ The homepage is an editorial discovery surface. Full brewing instructions and ti
 
 ## Data interfaces
 
+Every recipe carries a `method` discriminator, and the schema is a Zod discriminated union of `pour-over` and `espresso`. Pour-over records require `water`; espresso records publish `yield` as the beverage in the cup and keep `water` optional for a stated water recipe only. A yield is never rewritten into a poured water amount, and `ratio()` for espresso divides the published yield by the dose. Pour-phase, bloom-share and accounted-addition maths return `null` for espresso, and `sourceFacts()` switches to shot time, yield, basket, pressure and pre-infusion.
+
+Espresso-specific values live under `extraction`: `pressureBar`, `preInfusion` (seconds and/or bar), `basket` (id, name, grams, style), `puckPrep` keys and `purgeSeconds`. Steps gain `pressure` plus the actions `grind`, `dose`, `tamp`, `lock`, `preinfuse`, `extract`, `stop` and `purge`. `duration` on an espresso record is the shot time, including any pre-infusion the source counts inside it.
+
+Comparison is limited to one method: `parseSelection` keeps the first recipe's method and reports the rest through `mismatch`, and `toggleSelection` refuses a cross-method addition. The homepage filter exposes `method` as a shareable query key. `brewer` holds the brewing device for both methods (a dripper or a machine); only its display label changes per method.
+
 Optional source conditions are structured as `grinder` (identity and literal setting), `paper` (identity and optional shape), and `coffee` (name, origin, variety, processing, roast). The recipe’s `source` supports these fields. AND filters use the shareable query keys `grinder`, `paper`, `process`, `roast`; missing conditions do not match. Model names and source dial notation remain unchanged across locales; no setting conversion is performed.
+
 
 `duration: null` means the source does not specify total brew time and displays the localized unknown label. Steps can carry their own `temperature`. See [analytics.md](analytics.md) for the optional GoatCounter integration.
 

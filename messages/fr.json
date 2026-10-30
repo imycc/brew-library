@@ -227,7 +227,15 @@
     "pulses": "Petits versements",
     "level": "Égaliser le lit",
     "stir": "Remuer",
-    "drain": "Laisser baisser"
+    "drain": "Laisser baisser",
+    "grind": "Moudre",
+    "dose": "Doser",
+    "tamp": "Tasser",
+    "lock": "Verrouiller le porte-filtre",
+    "preinfuse": "Pré-infuser",
+    "extract": "Extraire",
+    "stop": "Arrêter l'extraction",
+    "purge": "Rincer le groupe"
   },
   "instruction": {
     "bloom": "Versez la quantité indiquée pour mouiller le café.",
@@ -240,7 +248,15 @@
     "pulses": "Versez par petites fois en gardant 1–2 cm d’eau au-dessus du café, jusqu’au total.",
     "level": "Égalisez le café avant l’extraction.",
     "stir": "Remuez la mouture à la cuillère.",
-    "drain": "Cessez de verser et laissez le niveau baisser un peu."
+    "drain": "Cessez de verser et laissez le niveau baisser un peu.",
+    "grind": "Moulez juste avant l'extraction, directement dans le panier.",
+    "dose": "Dosez la quantité indiquée.",
+    "tamp": "Tassez bien à plat et régulièrement.",
+    "lock": "Verrouillez le porte-filtre sur le groupe.",
+    "preinfuse": "Lancez une pré-infusion à basse pression pendant le temps indiqué.",
+    "extract": "Passez en pression d'extraction et allez jusqu'au rendement indiqué.",
+    "stop": "Arrêtez l'extraction au rendement ou au temps indiqué.",
+    "purge": "Rincez le groupe avant de verrouiller."
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "Glace dans le pichet",
     "brewer": "Glace dans le filtre",
     "glass": "Glace dans le verre"
+  },
+  "method": "Méthode",
+  "methodPourover": "Pour-over",
+  "methodEspresso": "Espresso",
+  "shotTime": "Temps d'extraction",
+  "yield": "Rendement en tasse",
+  "pressure": "Pression",
+  "preInfusion": "Pré-infusion",
+  "afterPreInfusion": "Après la pré-infusion",
+  "basket": "Panier",
+  "shotTimeline": "Ordre d'extraction",
+  "compareMismatch": "Les recettes pour-over et espresso ne se comparent pas ensemble.",
+  "quickAnswerEspresso": "Réponse rapide : {dose} g de café, {yield} en tasse, eau à {temperature}, mouture {grind}, temps {time}, pression {pressure}.",
+  "faqEspressoAmountQuestion": "Quelle dose et quel rendement pour {recipe} ?",
+  "faqEspressoAmountAnswer": "{dose} g de café, {yield} en tasse (panier {basket}, {pressure}, pré-infusion {preInfusion}).",
+  "faqShotTimeQuestion": "Combien de temps dure l'extraction de {recipe} ?",
+  "schemaEspressoCategory": "Espresso",
+  "puckPrepLabels": {
+    "purge": "Purger le groupe et sécher le panier",
+    "preheat": "Préchauffer groupe et porte-filtre",
+    "rinse": "Rincer le panier",
+    "wdt": "Répartir au WDT",
+    "level": "Niveler le lit",
+    "tamp": "Tasser"
   }
 }

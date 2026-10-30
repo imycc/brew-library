@@ -227,7 +227,15 @@
     "pulses": "짧게 나눠 붓기",
     "level": "커피층 정리",
     "stir": "젓기",
-    "drain": "조금 내리기"
+    "drain": "조금 내리기",
+    "grind": "분쇄",
+    "dose": "분쇄량 담기",
+    "tamp": "탬핑",
+    "lock": "포트필터 체결",
+    "preinfuse": "프리인퓨전",
+    "extract": "추출",
+    "stop": "추출 정지",
+    "purge": "그룹 헤드 세척"
   },
   "instruction": {
     "bloom": "표시된 물량으로 원두를 적십니다.",
@@ -240,7 +248,15 @@
     "pulses": "짧게 나눠 부어 커피층 위 1–2 cm 수위를 유지하고 총 물량까지 진행합니다.",
     "level": "추출 전에 커피층을 평평하게 만듭니다.",
     "stir": "스푼 등으로 분쇄면을 젓는다.",
-    "drain": "붓기를 잠시 멈추고 수위를 조금 내린다."
+    "drain": "붓기를 잠시 멈추고 수위를 조금 내린다.",
+    "grind": "추출 직전에 분쇄해 바스켓에 바로 담는다.",
+    "dose": "표시된 분쇄량을 담는다.",
+    "tamp": "수평으로 일정한 압력의 탬핑한다.",
+    "lock": "포트필터를 그룹 헤드에 단단히 체결한다.",
+    "preinfuse": "표시 시간까지 저압으로 프리인퓨전한다.",
+    "extract": "추출 압력으로 올려 표시된 양까지 추출한다.",
+    "stop": "표시된 양 또는 시간에 도달하면 추출을 멈춘다.",
+    "purge": "체결 전에 그룹 헤드를 세척한다."
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "서버에 얼음",
     "brewer": "드리퍼에 얼음",
     "glass": "잔에 얼음"
+  },
+  "method": "추출 방식",
+  "methodPourover": "핸드드립",
+  "methodEspresso": "에스프레소",
+  "shotTime": "추출 시간",
+  "yield": "추출液량",
+  "pressure": "압력",
+  "preInfusion": "프리인퓨전",
+  "afterPreInfusion": "프리인퓨전 이후",
+  "basket": "바스켓",
+  "shotTimeline": "추출 순서별",
+  "compareMismatch": "핸드드립과 에스프레소 레시피는 나란히 비교하지 않습니다.",
+  "quickAnswerEspresso": "빠른 답변: 분쇄량 {dose} g, 추출 {yield}, 물 온도 {temperature}, 분쇄도 {grind}, 추출 시간 {time}, 압력 {pressure}.",
+  "faqEspressoAmountQuestion": "{recipe}는 커피 양과 추출량이 얼마인가요?",
+  "faqEspressoAmountAnswer": "분쇄량 {dose} g, 추출 {yield}({basket} 바스켓, {pressure}, 프리인퓨전 {preInfusion}).",
+  "faqShotTimeQuestion": "{recipe} 추출 시간은 얼마나 걸리나요?",
+  "schemaEspressoCategory": "에스프레소",
+  "puckPrepLabels": {
+    "purge": "그룹 헤드의 물을 빼고 바스켓을 닦기",
+    "preheat": "그룹 헤드와 포트필터 예열",
+    "rinse": "바스켓 헹구기",
+    "wdt": "WDT로 분쇄 균일화",
+    "level": "분쇄면 고르기",
+    "tamp": "탬핑"
   }
 }

@@ -1,16 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {filterRecipes,parseSelection,toggleSelection,recipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid} from '../src/lib/recipes';
+import {espressoSchema,pourOverSchema,filterRecipes,parseSelection,toggleSelection,recipes,pourOverRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
 test('source and translation validation',async()=>{await validate();});
 test('original HARIO times and units remain distinct',()=>{
- const r=recipes[0];assert.equal(r.water.unit,'mL');assert.deepEqual(r.steps.filter(s=>s.amount).map(s=>s.at),[0,45,90,130,160]);
- assert.equal(recipes[1].temperature,null);assert.equal(recipes[1].water.unit,'g');
+ const r=pourOverRecipes[0];assert.equal(r.water.unit,'mL');assert.deepEqual(r.steps.filter(s=>s.amount).map(s=>s.at),[0,45,90,130,160]);
+ assert.equal(pourOverRecipes[1].temperature,null);assert.equal(pourOverRecipes[1].water.unit,'g');
 });
 test('Pulsar amount is transparently derived without invented later pour times',()=>{
- const r=recipes[2];assert(r.water.derived);assert.equal(r.water.amount,r.dose*17);assert(r.steps.some(s=>s.at===null));
+ const r=pourOverRecipes[2];assert(r.water.derived);assert.equal(r.water.amount,r.dose*17);assert(r.steps.some(s=>s.at===null));
 });
 test('filters combine and support empty results',()=>{
  assert.equal(filterRecipes(recipes,{q:'JAMES',brewer:'v60',dose:'15'},r=>r.author).length,1);
@@ -26,6 +26,7 @@ test('shared selections are validated, deduplicated and bounded',()=>{
  assert(toggleSelection(ids,'test-fourth',[...recipes,fourth]).limit);
  assert.deepEqual(toggleSelection(ids,'kasuya-46').ids,['hoffmann-one-cup','rao-pulsar']);
 });
+const po=(id:string)=>pourOverRecipes.find(recipe=>recipe.id===id)!;
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
@@ -34,9 +35,9 @@ test('expanded original recipes preserve unknown temperatures and mixed source u
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
  assert.equal(find('boen-switch').context,'competition');
- assert.equal(find('boen-switch').water.unit,'mL');
+ assert.equal(po('boen-switch').water.unit,'mL');
  assert.equal(find('boen-switch').steps.find(s=>s.amount)?.unit,'g');
- assert.equal(find('hoang-w60').water.unit,'g');
+ assert.equal(po('hoang-w60').water.unit,'g');
  assert.equal(find('hoang-w60').steps[0].unit,'mL');
  assert.equal(find('rojewska-v60').steps[0].amount,null);
  assert.equal(find('rojewska-v60').duration?.[0],135);
@@ -47,7 +48,7 @@ test('expanded original recipes preserve unknown temperatures and mixed source u
 });
 test('added official V60 recipes keep source volumes, units and coffee conditions',()=>{
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
- const ultimate=find('hoffmann-ultimate-v60');
+ const ultimate=po('hoffmann-ultimate-v60');
  assert.equal(ultimate.water.amount,500);
  assert.equal(ultimate.water.unit,'mL');
  assert.equal(ultimate.temperatureMode,'boiling');
@@ -60,13 +61,13 @@ test('added official V60 recipes keep source volumes, units and coffee condition
  assert.equal(ultimate.steps[6].at,null);
  assert.equal(ultimate.steps[1].end,undefined);
  assert(ultimate.steps.every(step=>step.action==='finish'||step.instruction));
- const camber=find('camber-v60');
+ const camber=po('camber-v60');
  assert.equal(camber.water.amount,345);
  assert.equal(camber.water.unit,'g');
  assert.equal(camber.coffee?.process,'anaerobic');
  assert.deepEqual(camber.duration,[180,195]);
  assert.deepEqual(filterRecipes(recipes,{q:'Camber'},r=>r.author).map(r=>r.id),['camber-v60']);
- const lamill=find('lamill-mugen');
+ const lamill=po('lamill-mugen');
  assert.equal(lamill.dose,16.5);
  assert.equal(lamill.water.amount,225);
  assert.equal(lamill.brewerId,'mugen');
@@ -161,7 +162,7 @@ test('added competition records keep unstated drippers and ranges honest',()=>{
  assert.equal(medina.duration,null);
  assert.equal(medina.steps.filter(step=>step.amount!==null).reduce((sum,step)=>sum+(step.amount||0),0),250);
  assert(medina.steps.every(step=>step.derived||step.action==='finish'));
- const ohno=find('ohno-origami');
+ const ohno=po('ohno-origami');
  assert.equal(ohno.water.amount,190);
  assert.equal(ohno.doseGround,32);
  assert.equal(ohno.yield,undefined);
@@ -190,7 +191,7 @@ test('new gear is linked to the recipes that named it',()=>{
 });
 
 test('iced recipes count ice in the total liquid but never in the poured water',()=>{
- const hot=recipes.find(recipe=>recipe.id==='hoffmann-one-cup')!;
+ const hot=po('hoffmann-one-cup');
  const iced={...hot,kind:'iced' as const,ice:{amount:100,unit:'g' as const,placement:'server' as const}};
  assert.deepEqual(totalLiquid(iced),{amount:350,unit:'g',derived:true});
  assert.equal(ratio(iced,'en'),'1 : 23.33');
@@ -202,7 +203,7 @@ test('iced recipes count ice in the total liquid but never in the poured water',
 });
 
 test('the iced record keeps ice out of the poured-water maths',()=>{
- const iced=recipes.find(recipe=>recipe.kind==='iced')!;
+ const iced=pourOverRecipes.find(recipe=>recipe.kind==='iced')!;
  assert.equal(iced.id,'kurasu-flash-brew');
  assert.deepEqual(iced.ice,{amount:65,amountMax:70,approximate:true,unit:'g',placement:'server'});
  assert.deepEqual(totalLiquid(iced),{amount:215,unit:'g',derived:true});
@@ -213,4 +214,42 @@ test('the iced record keeps ice out of the poured-water maths',()=>{
  assert.equal(ratio(iced,'en'),'1 : 14.33');
  assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,1);
  assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,28);
+});
+
+const shotRecord=espressoSchema.parse({...pourOverRecipes[0],id:'test-shot',copy:'kasuya',method:'espresso',
+  water:undefined,duration:[27,27],temperature:93,
+  yield:{amount:36,unit:'g',basis:'observed'},
+  extraction:{pressureBar:9,preInfusion:{seconds:8},basket:{grams:18,style:'double'},puckPrep:['rinse','tamp']},
+  steps:[{action:'grind',at:null,amount:null,cumulative:null},{action:'extract',at:0,end:27,amount:36,unit:'g',cumulative:null}]});
+
+test('espresso ratios and pour maths read the beverage yield, never an invented water amount',()=>{
+ assert.equal(ratio(shotRecord,'en'),'1 : 1.8');
+ assert.equal(yieldText(shotRecord),'36 g');
+ assert.equal(pressureText(shotRecord),'9 bar');
+ assert.equal(preInfusionText(shotRecord),'8 s');
+ assert.equal(basketText(shotRecord),'18 g');
+ assert.equal(accountedAdditions(shotRecord),null);
+ assert.equal(bloomShare(shotRecord),null);
+ assert.equal(pourPhase(shotRecord),null);
+ const withoutYield={...shotRecord,id:'test-shot-open',yield:undefined};
+ assert.equal(ratio(withoutYield,'en'),'—');
+ assert.throws(()=>pourOverSchema.parse({...shotRecord,method:'pour-over',water:undefined}));
+});
+
+test('espresso source facts count extraction values and keep the two methods apart',()=>{
+ const facts=new Map(sourceFacts(shotRecord).map(fact=>[fact.key,fact.provided]));
+ assert.equal(sourceFacts(shotRecord).length,9);
+ assert.equal(facts.get('yield'),true);
+ assert.equal(facts.get('pressure'),true);
+ assert.equal(facts.get('preInfusion'),true);
+ assert.equal(facts.get('basket'),true);
+ const mixed:Recipe[]=[...recipes,shotRecord];
+ assert.equal(filterRecipes(mixed,{method:'espresso'},r=>r.author).length,1);
+ assert.equal(filterRecipes(mixed,{method:'pour-over'},r=>r.author).length,recipes.length);
+ assert.deepEqual(parseSelection('kasuya-46,test-shot',mixed).ids,['kasuya-46']);
+ assert(parseSelection('kasuya-46,test-shot',mixed).mismatch);
+ const toggle=toggleSelection(['kasuya-46'],'test-shot',mixed);
+ assert(toggle.mismatch);
+ assert.deepEqual(toggle.ids,['kasuya-46']);
+ assert.deepEqual(toggleSelection(['test-shot'],'kasuya-46',mixed).ids,['test-shot','kasuya-46'].filter(id=>id==='test-shot'));
 });

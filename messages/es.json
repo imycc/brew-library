@@ -227,7 +227,15 @@
     "pulses": "Vertidos cortos",
     "level": "Nivelar el café",
     "stir": "Remover",
-    "drain": "Drenar un poco"
+    "drain": "Drenar un poco",
+    "grind": "Moler",
+    "dose": "Dosificar",
+    "tamp": "Prensar",
+    "lock": "Encajar el portafiltros",
+    "preinfuse": "Preinfusionar",
+    "extract": "Extraer",
+    "stop": "Detener la extracción",
+    "purge": "Enjuagar el grupo"
   },
   "instruction": {
     "bloom": "Añade la cantidad indicada para mojar el café.",
@@ -240,7 +248,15 @@
     "pulses": "Vierte en pulsos, manteniendo 1–2 cm de agua sobre el café, hasta el total.",
     "level": "Nivela el café antes de preparar.",
     "stir": "Remueve la cama de café con una cuchara.",
-    "drain": "Deja de verter y baja un poco el nivel."
+    "drain": "Deja de verter y baja un poco el nivel.",
+    "grind": "Muele justo antes de preparar, directamente en la cesta.",
+    "dose": "Dosifica la cantidad indicada.",
+    "tamp": "Prensa nivelado y con presión constante.",
+    "lock": "Encaja el portafiltros en el grupo.",
+    "preinfuse": "Aplica una preinfusión a baja presión durante el tiempo indicado.",
+    "extract": "Sube a presión de extracción y extrae hasta la cantidad indicada.",
+    "stop": "Detén la extracción en la cantidad o el tiempo indicados.",
+    "purge": "Enjuaga el grupo antes de encajar."
   },
   "recipes": {
     "kodama": {
@@ -859,5 +875,29 @@
     "server": "Hielo en la jarra",
     "brewer": "Hielo en el dripper",
     "glass": "Hielo en el vaso"
+  },
+  "method": "Método",
+  "methodPourover": "Filtrado",
+  "methodEspresso": "Espresso",
+  "shotTime": "Tiempo de extracción",
+  "yield": "Cantidad en taza",
+  "pressure": "Presión",
+  "preInfusion": "Preinfusión",
+  "afterPreInfusion": "Tras la preinfusión",
+  "basket": "Cesta",
+  "shotTimeline": "Orden de la extracción",
+  "compareMismatch": "Las recetas de filtrado y de espresso no se comparan juntas.",
+  "quickAnswerEspresso": "Respuesta rápida: {dose} g de café, {yield} en taza, agua a {temperature}, molienda {grind}, tiempo {time}, presión {pressure}.",
+  "faqEspressoAmountQuestion": "¿Cuánto café y qué cantidad en taza usa {recipe}?",
+  "faqEspressoAmountAnswer": "{dose} g de café, {yield} en taza (cesta {basket}, {pressure}, preinfusión {preInfusion}).",
+  "faqShotTimeQuestion": "¿Cuánto dura la extracción de {recipe}?",
+  "schemaEspressoCategory": "Espresso",
+  "puckPrepLabels": {
+    "purge": "Drenar el grupo y secar la cesta",
+    "preheat": "Precalentar grupo y maneta",
+    "rinse": "Enjuagar la cesta",
+    "wdt": "Distribuir con herramienta WDT",
+    "level": "Nivelar la cama",
+    "tamp": "Prensar"
   }
 }
