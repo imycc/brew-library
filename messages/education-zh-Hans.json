@@ -6,6 +6,13 @@
   "chooseBrewerPourover": "选择滤杯",
   "chooseBrewerEspresso": "选择咖啡机",
   "compareScrollHint": "可左右滑动或水平滚动，查看其他配方。",
+  "compareSummaryTitle": "快速比较",
+  "compareBaselineNote": "这里只并列来源数值与未知字段，不作排名。",
+  "compareDifferenceCount": "{count} 项参数不同",
+  "compareSharedCount": "相同项目",
+  "compareComparedCount": "比较字段",
+  "compareOnlyDifferences": "只看差异",
+  "compareShowAll": "显示全部",
   "learningLevels": {
     "guided": "有教学指引",
     "practice": "可练习配方",

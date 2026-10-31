@@ -47,12 +47,17 @@ export function EquipmentPage(){
   const t=useTranslations();
   const [query,setQuery]=useState('');
   const [category,setCategory]=useState<EquipmentCategory|'all'>('all');
-  const visible=filterEquipment(equipment,query,category,detail=>detail.valueKey?t(`equipmentValues.${detail.valueKey}`):detail.value);
+  const [evidenceOnly,setEvidenceOnly]=useState(false);
+  const [recipesOnly,setRecipesOnly]=useState(false);
+  const matched=filterEquipment(equipment,query,category,detail=>detail.valueKey?t(`equipmentValues.${detail.valueKey}`):detail.value);
+  const visible=matched.filter(item=>(!evidenceOnly||!!equipmentExperience[item.id])&&(!recipesOnly||item.recipeIds.length>0));
+  const reset=()=>{setQuery('');setCategory('all');setEvidenceOnly(false);setRecipesOnly(false);};
   return <main id="main" className="page equipment-page">
     <p className="eyebrow">EQUIPMENT INDEX</p>
     <div className="equipment-title"><div><h1>{t('equipmentTitle')}</h1><p className="page-subtitle">{t('equipmentIntro')}</p></div><div className="equipment-total"><strong>{equipment.length}</strong><span>{t('equipmentItems')}</span></div></div>
     <div className="equipment-toolbar"><label className="search-field"><MagnifyingGlass size={22}/><span className="sr-only">{t('equipmentSearch')}</span><input type="search" value={query} onChange={event=>setQuery(event.target.value)} placeholder={t('equipmentSearch')}/></label><div className="equipment-category" role="group" aria-label={t('equipmentCategory')}>{(['all',...equipmentCategories] as const).map(value=><button key={value} className={category===value?'active':''} aria-pressed={category===value} onClick={()=>setCategory(value)}>{t(value==='all'?'all':`equipmentCategories.${value}`)}<span>{value==='all'?equipment.length:equipment.filter(item=>item.category===value).length}</span></button>)}</div></div>
+    <div className="equipment-decision" role="group" aria-label={t('equipmentExperienceTitle')} data-equipment-filters><button aria-pressed={evidenceOnly} onClick={()=>setEvidenceOnly(!evidenceOnly)}>{t('equipmentExperienceTitle')}<span>{matched.filter(item=>!!equipmentExperience[item.id]).length}</span></button><button aria-pressed={recipesOnly} onClick={()=>setRecipesOnly(!recipesOnly)}>{t('equipmentRelated')}<span>{matched.filter(item=>item.recipeIds.length>0).length}</span></button></div>
     <div className="equipment-results" aria-live="polite"><span>{t('equipmentResults',{count:visible.length})}</span><div><p>{t('equipmentNote')}</p><p>{t('equipmentEditorialNote')}</p></div></div>
-    {visible.length?<div className="equipment-grid">{visible.map(item=><EquipmentCard key={item.id} item={item}/>)}</div>:<div className="empty-state"><CoffeeBean size={36}/><p>{t('equipmentEmpty')}</p><button className="button button-outline" onClick={()=>{setQuery('');setCategory('all');}}>{t('reset')}</button></div>}
+    {visible.length?<div className="equipment-grid">{visible.map(item=><EquipmentCard key={item.id} item={item}/>)}</div>:<div className="empty-state"><CoffeeBean size={36}/><p>{t('equipmentEmpty')}</p><button className="button button-outline" onClick={reset}>{t('reset')}</button></div>}
   </main>;
 }

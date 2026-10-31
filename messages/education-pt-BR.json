@@ -6,6 +6,13 @@
   "chooseBrewerPourover": "Escolher coador",
   "chooseBrewerEspresso": "Escolher máquina",
   "compareScrollHint": "Deslize ou role horizontalmente para ver as outras receitas.",
+  "compareSummaryTitle": "Visão rápida",
+  "compareBaselineNote": "Os valores da fonte e os dados desconhecidos são exibidos diretamente; nenhum ranking é criado.",
+  "compareDifferenceCount": "{count} parâmetros diferentes",
+  "compareSharedCount": "Valores iguais",
+  "compareComparedCount": "Linhas comparadas",
+  "compareOnlyDifferences": "Somente diferenças",
+  "compareShowAll": "Mostrar tudo",
   "learningLevels": {
     "guided": "Lição guiada",
     "practice": "Receita de prática",

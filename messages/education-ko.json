@@ -6,6 +6,13 @@
   "chooseBrewerPourover": "드리퍼 선택",
   "chooseBrewerEspresso": "머신 선택",
   "compareScrollHint": "좌우로 밀거나 스크롤하여 다른 레시피를 확인하세요.",
+  "compareSummaryTitle": "한눈에 비교",
+  "compareBaselineNote": "출처 값과 미확인 항목을 그대로 나열하며 순위를 매기지 않습니다.",
+  "compareDifferenceCount": "{count}개 항목이 다름",
+  "compareSharedCount": "일치하는 값",
+  "compareComparedCount": "비교 항목",
+  "compareOnlyDifferences": "차이만 보기",
+  "compareShowAll": "전체 보기",
   "learningLevels": {
     "guided": "설명형 레슨",
     "practice": "연습 레시피",

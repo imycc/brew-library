@@ -63,6 +63,11 @@ for(const locale of locales)test(`static ${locale} pages render complete locale 
 test('equipment catalogue filters official records and links source-backed recipes',async({page})=>{
  await page.goto(`${base}/zh-Hant/equipment/`);
  await expect(page.locator('[data-equipment]')).toHaveCount(69);
+ const equipmentDecision=page.locator('[data-equipment-filters] button');
+ await equipmentDecision.nth(0).click();await expect(page.locator('[data-equipment]')).toHaveCount(24);
+ await equipmentDecision.nth(1).click();await expect(page.locator('[data-equipment]')).toHaveCount(16);
+ await equipmentDecision.nth(0).click();await expect(page.locator('[data-equipment]')).toHaveCount(29);
+ await equipmentDecision.nth(1).click();await expect(page.locator('[data-equipment]')).toHaveCount(69);
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('濃縮咖啡機');
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('迴轉式幫浦');
  await expect(page.locator('[data-equipment="origami-air-s"]')).toContainText('64');
@@ -293,8 +298,24 @@ test('mobile comparison explains horizontal scrolling and keeps row labels visib
  await page.setViewportSize({width:390,height:844});
  await page.goto(`${base}/en/compare/?ids=counterculture-go-to,lamarzocco-brew-ratios,onyx-monarch-espresso`);
  await expect(page.locator('.mobile-scroll-hint')).toContainText('Swipe or scroll horizontally');
- await expect(page.locator('.comparison-scroll')).toHaveAttribute('aria-describedby','comparison-scroll-hint');
- await expect(page.locator('.comparison-table tbody tr').first().locator('th')).toBeVisible();
+ await expect(page.locator('.comparison-scroll')).toBeHidden();
+ await expect(page.locator('[data-comparison-mobile]')).toBeVisible();
+ await expect(page.locator('.comparison-mobile-card')).toHaveCount(3);
+ await expect(page.locator('.comparison-mobile-card').first()).toContainText('Counter Culture');
+ await expect(page.locator('[data-comparison-mobile]')).toHaveAttribute('aria-describedby','comparison-scroll-hint');
+});
+
+test('comparison summary counts differences and can isolate them',async({page})=>{
+ await page.goto(`${base}/en/compare/?ids=counterculture-go-to,lamarzocco-brew-ratios,onyx-monarch-espresso`);
+ await expect(page.locator('[data-comparison-summary]')).toBeVisible();
+ const differentRows=page.locator('.comparison-row-different');
+ const differenceCount=await differentRows.count();
+ await expect(page.locator('[data-comparison-summary] h2')).toContainText(`${differenceCount} parameters differ`);
+ await page.getByRole('button',{name:'Differences only'}).click();
+ await expect(page.locator('.comparison-table tbody tr.comparison-row-different')).toHaveCount(differenceCount);
+ await expect(page.locator('.comparison-table tbody tr.comparison-row-shared')).toHaveCount(0);
+ await page.getByRole('button',{name:'Show all rows'}).click();
+ await expect(page.locator('.comparison-table tbody tr.comparison-row-shared')).not.toHaveCount(0);
 });
 
 test('recipe search can find source-stated tasting language',async({page})=>{

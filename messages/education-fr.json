@@ -6,6 +6,13 @@
   "chooseBrewerPourover": "Choisir un filtre",
   "chooseBrewerEspresso": "Choisir une machine",
   "compareScrollHint": "Balayez ou faites défiler horizontalement pour voir les autres recettes.",
+  "compareSummaryTitle": "Vue rapide",
+  "compareBaselineNote": "Les valeurs de la source et les données inconnues sont affichées directement ; aucun classement n'est établi.",
+  "compareDifferenceCount": "{count} paramètres diffèrent",
+  "compareSharedCount": "Valeurs identiques",
+  "compareComparedCount": "Lignes comparées",
+  "compareOnlyDifferences": "Différences seulement",
+  "compareShowAll": "Tout afficher",
   "learningLevels": {
     "guided": "Leçon guidée",
     "practice": "Recette d'entraînement",

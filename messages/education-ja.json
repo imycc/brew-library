@@ -6,6 +6,13 @@
   "chooseBrewerPourover": "ドリッパーを選択",
   "chooseBrewerEspresso": "マシンを選択",
   "compareScrollHint": "左右にスワイプまたはスクロールすると、ほかのレシピを確認できます。",
+  "compareSummaryTitle": "ひと目で比較",
+  "compareBaselineNote": "出典値と未確認項目をそのまま並べるだけで、順位付けは行いません。",
+  "compareDifferenceCount": "{count} 項目が異なります",
+  "compareSharedCount": "一致する値",
+  "compareComparedCount": "比較項目",
+  "compareOnlyDifferences": "違いのみ表示",
+  "compareShowAll": "すべて表示",
   "learningLevels": {
     "guided": "解説付きレッスン",
     "practice": "練習用レシピ",
