@@ -4,7 +4,7 @@
 
 Next.js App Router with React, TypeScript, Tailwind CSS and next-intl. Localized routes are prebuilt with `generateStaticParams`; no runtime middleware or locale negotiation is required. All routes carry a locale prefix. The root HTML is a tiny entry that picks a locale from `navigator.languages` (English when nothing matches) and redirects, so the bare site URL lands on a readable homepage; it falls back to English without JavaScript. English is the x-default hreflang and the Organization homepage URL.
 
-The homepage is an editorial discovery surface. Full brewing instructions and timelines exist only on recipe details. Pour-over and espresso are separate tabs, each with its own search, filter set and result count. The comparison page compares original facts and source links, without ranking or adapting recipes.
+The homepage is an editorial discovery surface. Full brewing instructions and timelines exist only on recipe details. Pour-over and espresso are separate tabs, each with its own search, filter set and method-specific empty prompt. The comparison page compares original facts and source links, without ranking or adapting recipes. The `/learn/` route adds a shared four-step learning loop—hold conditions, brew a source baseline, observe process and cup, change one variable—and links to eight curated recipes across filter, immersion, iced and espresso methods.
 
 ## Data interfaces
 
@@ -26,15 +26,19 @@ Optional source conditions are structured as `grinder` (identity and literal set
 
 - `content/editorial.json`: source-independent editorial overlay for every recipe and equipment record. It stores concise overview metadata (recipe best-for, equipment role), up to three strengths, up to three considerations, and optional official image metadata. Canonical quantities and source links remain in the recipe/equipment files; this overlay must not change them.
 - `content/equipment-experience.json`: optional equipment-specific cup-profile tags and public hands-on/community sources. An item can omit this layer when there is not enough specific evidence; the UI then says so instead of repeating generic pros and cons.
+- `content/learning.json`: typed practice metadata for the eight curated learning recipes. Each entry links one observable checkpoint to an existing source step and adds one editorial, single-variable experiment. Validation rejects unknown recipes and checkpoints beyond the recipe's step list; the nine-language copy lives in the education overlay.
 - `messages/{locale}.json`: full UI and recipe text in nine locales. Message keys, parameters, required recipe content and step instruction coverage are checked before publishing.
 - `messages/editorial-{locale}.json`: nine-language editorial copy and translated equipment-material/trait vocabulary. `src/i18n/request.ts` deep-merges this overlay at build time so the UI can use the same message contract as the core catalogue.
+- `messages/education-{locale}.json`: nine-language brewing field guide, source/derived/editorial labels, learning levels and controlled-brew prompts. It is merged after the core and editorial catalogues and validated for exact key and placeholder parity.
 - Numeric quantities, original units, exact/ranged times, author identity and source provenance live in canonical data; copy is localized separately.
 - Steps may override the recipe’s water unit, and may provide their own translated instruction. Mixed g/mL source statements remain visibly distinct. Temperature distinguishes boiling water from an unspecified temperature; daily teaching and competition recipes have separate context labels.
 - Null means unspecified, not zero. Scott Rao's total water is marked as derived from source ratio. Source dates remain explicit ISO dates rather than approximate relative dates.
 
 ## State and future integrations
 
-Search, filters, the active tab (`method`) and selected recipe IDs (`ids`) live in query parameters. Each method tab keeps its own `po.*` or `es.*` filter values, so returning to a tab restores what that tab was showing. Shared links survive refresh and language changes. Invalid recipe IDs are excluded with a visible message. IDs are deduplicated and limited to three. Equipment-page search and category state are local UI state; equipment records link directly to their related recipes.
+Search, filters, the active tab (`method`) and selected recipe IDs (`ids`) live in query parameters. Searchable recipe text includes title, summary, editorial overview, best-for, preparation, teaching, source-stated tasting language and step instructions, so a taste or learning concept can lead back to a recipe. Each method tab keeps its own `po.*` or `es.*` filter values, so returning to a tab restores what that tab was showing. Shared links survive refresh and language changes. Invalid recipe IDs are excluded with a visible message. IDs are deduplicated and limited to three. Equipment-page search and category state are local UI state; equipment records link directly to their related recipes.
+
+Learning depth is derived rather than manually claimed: a recipe with steps plus author teaching or a specific curated lesson card is `guided`, a recipe with steps alone is `practice`, and a parameters-only record is `reference`. The detail page exposes the learning level, method focus, checkpoints, a single-variable practice prompt and a visible note separating editorial guidance from author instructions. The learning page makes the missing-fact policy explicit instead of filling unknown values.
 
 Data access, filtering, selection and UI are separate. A future CMS or API can replace the data loader while preserving recipe IDs and component contracts. Server features require a host with server support; GitHub Pages remains a static host.
 

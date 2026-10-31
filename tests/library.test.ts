@@ -5,6 +5,7 @@ import {espressoSchema,pourOverSchema,filterRecipes,methodFilterKeys,methodFilte
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {validate} from '../scripts/validate';
+import {brewTimeline,curatedLearningRecipeIds,learningLevel,recipeLearning,searchableRecipeText,secondsLabel} from '../src/lib/learning';
 test('source and translation validation',async()=>{await validate();});
 test('original HARIO times and units remain distinct',()=>{
  const r=pourOverRecipes[0];assert.equal(r.water.unit,'mL');assert.deepEqual(r.steps.filter(s=>s.amount).map(s=>s.at),[0,45,90,130,160]);
@@ -340,4 +341,43 @@ test('flow rates are either published or derived from the pour itself',()=>{
  assert.equal(stepFlow(oneCup.steps[1]),null);
  assert.equal(stepFlow(oneCup.steps[10]),null);
  assert.equal(recipes.filter(recipe=>recipe.tasting?.length).length,6);
+});
+
+test('learning levels and curated route describe the depth honestly',()=>{
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,14);
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='practice').length,25);
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='reference').length,3);
+ assert.equal(curatedLearningRecipeIds.length,8);
+ assert(curatedLearningRecipeIds.every(id=>recipes.some(recipe=>recipe.id===id)));
+ assert.deepEqual(Object.keys(recipeLearning).sort(),[...curatedLearningRecipeIds].sort());
+ assert(Object.values(recipeLearning).every(lesson=>lesson.checkpoints.length>=1&&lesson.practiceKey));
+});
+
+test('search reaches overview, teaching and source-stated tasting notes',()=>{
+ const byId=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const t=(key:string)=>({
+  'recipes.kurasu.taste1':'ice weight changes the final strength',
+  'learningRecipes.kurasu.focus':'strength control',
+  'recipes.kasuya-neo.taste2':'a syrupy mouthfeel',
+  'recipes.kasuya-neo.overview':'ten small additions build sweetness'
+ } as Record<string,string>)[key]||key;
+ assert(filterRecipes([byId('kurasu-flash-brew')],{q:'final strength'},recipe=>searchableRecipeText(recipe,t)).length===1);
+ assert(filterRecipes([byId('kasuya-neo')],{q:'syrupy'},recipe=>searchableRecipeText(recipe,t)).length===1);
+ assert(filterRecipes([byId('kasuya-neo')],{q:'small additions'},recipe=>searchableRecipeText(recipe,t)).length===1);
+ assert(filterRecipes([byId('kurasu-flash-brew')],{q:'strength control'},recipe=>searchableRecipeText(recipe,t)).length===1);
+});
+
+test('espresso timeline keeps phase ranges and final yield semantically correct',()=>{
+ const byId=(id:string)=>espressoRecipes.find(recipe=>recipe.id===id)!;
+ const lm=brewTimeline(byId('lamarzocco-brew-ratios'));
+ assert.deepEqual(lm.map(item=>({start:item.start,end:item.end,amount:item.amount,label:item.labelKey})),[
+  {start:0,end:30,amount:36,label:'step.extract'}
+ ]);
+ const onyx=brewTimeline(byId('onyx-monarch-espresso'));
+ assert.deepEqual(onyx.map(item=>({start:item.start,end:item.end,amount:item.amount,label:item.labelKey})),[
+  {start:0,end:3.5,amount:null,label:'step.preinfuse'},
+  {start:3.5,end:23,amount:47,label:'step.extract'}
+ ]);
+ assert.equal(secondsLabel(3.5),'0:03.5');
+ assert.deepEqual(brewTimeline(byId('ona-iris-enigma')),[]);
 });

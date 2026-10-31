@@ -14,6 +14,7 @@ const latestEquipment=latest(equipment.map(item=>item.checked));
 const latestContent=latest([latestRecipe,latestEquipment]);
 const pages:{suffix:string;lastmod?:string}[]=[
   {suffix:'',lastmod:latestRecipe},
+  {suffix:'learn/'},
   {suffix:'equipment/',lastmod:latestEquipment},
   {suffix:'authors/',lastmod:latestRecipe},
   {suffix:'compare/',lastmod:latestRecipe},
@@ -62,6 +63,7 @@ const llms=[
   '',
   '## Start here',
   ...locales.map(locale=>`- [${localeNames[locale]}](${page(locale)})`),
+  `- [Brewing field guide](${page('en','learn/')})`,
   '',
   '## Recipes',
   ...recipes.map(recipe=>`- [${line(t(`recipes.${recipe.copy}.title`))}](${page('en',`recipes/${recipe.id}/`)}) — ${line(t(isEspresso(recipe)?'methodEspresso':'methodPourover'))}, ${line(recipe.author)}, ${line(recipe.brewer)}, ${quantities(recipe)}; source: ${line(recipe.source.label)} (checked ${recipe.source.checked}).`),
@@ -132,6 +134,9 @@ for(const locale of locales)for(const entry of pages){
     assert(list&&list['numberOfItems']===equipment.length,`Equipment ItemList mismatch: ${file}`);
     const items=list.itemListElement as {item?:Record<string,unknown>}[];
     assert(items.length===equipment.length&&items.every(entry=>entry.item?.['@type']==='Product'),`Equipment Product count: ${file}`);
+  }
+  if(entry.suffix==='learn/'){
+    assert(types.has('LearningResource'),`Missing LearningResource: ${file}`);
   }
   if(entry.suffix==='authors/'){
     const list=nodes.find(node=>node['@type']==='ItemList');

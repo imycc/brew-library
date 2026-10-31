@@ -23,7 +23,7 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await expect(page.getByTestId('pour-timeline')).toContainText('2:10');
  await expect(page.getByTestId('pour-timeline')).toContainText('2:40');
  await expect(page.locator('.detail-sidebar')).toContainText('水質');
- await expect(page.locator('[data-recipe-editorial]')).toContainText('適合');
+ await expect(page.locator('[data-learning-brief]')).toContainText('把這份配方當作練習');
  await expect(page.locator('[data-recipe-editorial]')).toContainText('優點');
  await expect(page.locator('[data-recipe-editorial]')).toContainText('需要留意');
  await expect(page.locator('.recipe-detail-image[data-source-image="official"]')).toHaveCount(1);
@@ -55,7 +55,7 @@ test('invalid comparison links are understandable and recoverable',async({page})
 for(const locale of locales)test(`static ${locale} pages render complete locale content`,async({page})=>{
  test.setTimeout(90_000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- for(const suffix of ['','equipment/','authors/','sources/','about/','terms/','privacy/',...recipes.map(r=>`recipes/${r.id}/`)]){
+ for(const suffix of ['','learn/','equipment/','authors/','sources/','about/','terms/','privacy/',...recipes.map(r=>`recipes/${r.id}/`)]){
    const response=await page.goto(`${base}/${locale}/${suffix}`,{waitUntil:'domcontentloaded'});expect(response?.status()).toBe(200);await expect(page.locator('html')).toHaveAttribute('lang',locale);await expect(page.locator('h1')).not.toBeEmpty();
  }
  expect(errors).toEqual([]);
@@ -217,6 +217,8 @@ test('pour-over and espresso tabs keep independent search and filter state',asyn
  await expect(page.getByRole('searchbox')).toHaveValue('');
  await expect(page.getByLabel('Filter paper',{exact:true})).toHaveCount(0);
  await expect(page.getByRole('combobox',{name:'Author',exact:true})).toHaveCount(1);
+ await expect(page.getByLabel('Choose a machine',{exact:true})).toHaveCount(1);
+ await expect(page.locator('.section-heading')).toContainText('Source-backed espresso starting points');
  await page.getByRole('searchbox').fill('Camber');
  await expect(page.locator('[data-recipe]')).toHaveCount(1);
  expect(page.url()).toContain('method=espresso');
@@ -277,6 +279,43 @@ test('method tabs switch with arrow, Home and End keys',async({page})=>{
  await expect(espressoTab).toHaveAttribute('aria-selected','true');
 });
 
+test('learning guide shows the controlled-brew loop',async({page})=>{
+ await page.goto(`${base}/en/learn/`);
+ await expect(page.locator('[data-learn-page] h1')).toContainText('Learn what the recipe is teaching');
+ await expect(page.locator('.learning-loop li')).toHaveCount(4);
+ await expect(page.locator('.curated-learning-grid article')).toHaveCount(8);
+ await expect(page.locator('#recipe-lab')).toBeVisible();
+ const jsonLd=(await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ');
+ expect(jsonLd).toContain('LearningResource');
+});
+
+test('mobile comparison explains horizontal scrolling and keeps row labels visible',async({page})=>{
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(`${base}/en/compare/?ids=counterculture-go-to,lamarzocco-brew-ratios,onyx-monarch-espresso`);
+ await expect(page.locator('.mobile-scroll-hint')).toContainText('Swipe or scroll horizontally');
+ await expect(page.locator('.comparison-scroll')).toHaveAttribute('aria-describedby','comparison-scroll-hint');
+ await expect(page.locator('.comparison-table tbody tr').first().locator('th')).toBeVisible();
+});
+
+test('recipe search can find source-stated tasting language',async({page})=>{
+ await page.goto(`${base}/en/`);
+ await page.getByRole('searchbox').fill('syrupy');
+ await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await expect(page.locator('[data-recipe="kasuya-neo"]')).toBeVisible();
+});
+
+test('curated recipes expose source-linked checkpoints and one-variable practice',async({page})=>{
+ await page.goto(`${base}/en/recipes/hoffmann-one-cup/`);
+ await expect(page.locator('.learning-checkpoints li')).toHaveCount(2);
+ await expect(page.locator('.learning-checkpoints')).toContainText('five-second swirl');
+ await expect(page.locator('[data-learning-brief]')).toContainText('omit only the final swirl');
+ await expect(page.locator('[data-learning-brief] small')).toContainText('not an additional instruction');
+ await page.goto(`${base}/en/`);
+ await page.getByRole('searchbox').fill('repeatable small-batch rhythm');
+ await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await expect(page.locator('[data-recipe="hoffmann-one-cup"]')).toBeVisible();
+});
+
 test('espresso detail keeps the published Fahrenheit range and admits missing steps',async({page})=>{
  await page.goto(`${base}/en/recipes/camber-espresso/`);
  await expect(page.locator('.quick-answer')).toContainText('202–204°F');
@@ -286,7 +325,7 @@ test('espresso detail keeps the published Fahrenheit range and admits missing st
  await expect(page.locator('[data-testid="pour-timeline"]')).toHaveCount(0);
  await page.goto(`${base}/en/recipes/ona-iris-enigma/`);
  await expect(page.locator('.quick-answer')).toContainText('93.5°C');
- await expect(page.locator('[data-recipe-editorial]')).toContainText('Iris Estate Enigma');
+ await expect(page.locator('[data-learning-brief]')).toContainText('Iris Estate Enigma');
 });
 
 test('the bare site URL follows the browser language and falls back to English',async({browser})=>{

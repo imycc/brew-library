@@ -6,14 +6,16 @@ import {BASE,SITE,pourOverRecipes,recipes} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
 import {equipmentEditorial} from '../src/lib/editorial';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
-import {authorsGraph,equipmentGraph,homeGraph,infoGraph,recipeGraph,sourcesGraph,siteGraph} from '../src/lib/seo';
+import {authorsGraph,equipmentGraph,homeGraph,infoGraph,learnGraph,recipeGraph,sourcesGraph,siteGraph} from '../src/lib/seo';
 import {recipeFaq} from '../src/lib/faq';
 
 const enMessages=mergeMessages(
   JSON.parse(await readFile('messages/en.json','utf8')) as Messages,
   JSON.parse(await readFile('messages/editorial-en.json','utf8')) as Messages
 );
-const t=createTranslator({locale:'en',messages:enMessages as Record<string,unknown>,onError(error){throw error;}}) as unknown as (key:string,values?:Record<string,unknown>)=>string;
+const educationMessages=JSON.parse(await readFile('messages/education-en.json','utf8')) as Messages;
+const completeMessages=mergeMessages(enMessages,educationMessages);
+const t=createTranslator({locale:'en',messages:completeMessages as Record<string,unknown>,onError(error){throw error;}}) as unknown as (key:string,values?:Record<string,unknown>)=>string;
 const nodes=(graph:{'@graph':Record<string,unknown>[]})=>graph['@graph'];
 const find=(graph:{'@graph':Record<string,unknown>[]},type:string)=>nodes(graph).find(node=>node['@type']===type) as Record<string,unknown>|undefined;
 
@@ -96,4 +98,13 @@ test('info pages map to the correct schema type',()=>{
  assert(find(infoGraph('en','about/',t),'AboutPage'));
  assert(find(infoGraph('en','terms/',t),'WebPage'));
  assert(find(infoGraph('en','privacy/',t),'WebPage'));
+});
+
+test('learning guide exposes a typed learning resource',()=>{
+ const graph=learnGraph('en',t);
+ const resource=find(graph,'LearningResource');
+ assert(resource);
+ assert.equal(resource.name,t('learn.title'));
+ assert.deepEqual(resource.teaches,[t('learn.readTitle'),t('learn.brewTitle'),t('learn.observeTitle'),t('learn.adjustTitle')]);
+ assert(find(graph,'BreadcrumbList'));
 });

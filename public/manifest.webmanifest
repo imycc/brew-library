@@ -1,7 +1,7 @@
 {
   "name": "沖煮配方庫 · Brew Library",
   "short_name": "沖煮配方庫",
-  "description": "A free, nine-language library of source-backed pour-over recipes and equipment specifications.",
+  "description": "A free, nine-language library of source-backed filter and espresso recipes, a brewing field guide, and equipment specifications.",
   "start_url": "/brew-library/",
   "scope": "/brew-library/",
   "display": "standalone",

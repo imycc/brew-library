@@ -73,3 +73,11 @@ final result: passed
 - Card titles drop the repeated `Author · ` prefix already shown in the record meta. Spec values are an icon-labelled inline line; long localized values move as whole items to a second line instead of truncating.
 - Grid breakpoints: four columns ≥1400 px, three at 1040–1399, two at 761–1039, one at ≤760. Probe of 320/390/768/900/1150/1487/1920 px in zh-Hant, en, de, fr and ja reported no page or element overflow.
 - Evidence: `outputs/qa/home-recipes-desktop.png`, `outputs/qa/home-recipes-mobile.png`. The static build and 16 data tests passed; the full browser run had 20 passes and 2 environment skips, with one recipe-page external-image load timing out at 30 s and passing immediately on rerun.
+
+## 2026-10-31: educational foundation
+
+- Added a nine-language brewing field guide with a four-step learning loop, source/derived/editorial labels, a controlled-brew lab, taste-investigation prompts and eight curated recipes.
+- Recipe details now expose a derived learning level, a four-part learning brief and a method-aware timeline. The eight curated recipes add source-step checkpoints and one editorial variable-isolation experiment; the UI states that these are practice guidance rather than author claims. Espresso ranges use start/end phases and place the final yield at the stop time instead of at `0:00`.
+- Pour-over and espresso tabs now use method-specific introductory copy and brewer/machine labels. Searchable recipe text includes overview, best-for, preparation, author teaching, source-stated tasting notes and instructions.
+- Mobile comparison now explains horizontal scrolling and keeps row labels sticky. Missing recipe images collapse to a short source note, and equipment imagery is compressed so specifications enter the viewport sooner.
+- Visual evidence: `outputs/qa/learn-desktop.png`, `outputs/qa/learn-mobile.png`, `outputs/qa/home-desktop.png`, `outputs/qa/detail-desktop.png`, `outputs/qa/detail-mobile.png`. The mobile recipe detail was checked for horizontal overflow. The production export generated 459 localized pages; data validation, TypeScript, 35 unit tests and the browser suite passed (33 passed, 2 analytics tests skipped without a tracking code).

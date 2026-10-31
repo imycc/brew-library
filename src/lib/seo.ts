@@ -59,7 +59,7 @@ export function siteGraph(locale:Locale,t:Translator):JsonLdGraph{
       url:pageUrl('en'),
       slogan:t('tagline'),
       description:t('siteInfo.aboutIntro'),
-      knowsAbout:[t('schemaRecipeCategory'),t('equipmentTitle')],
+      knowsAbout:[t('schemaRecipeCategory'),t('equipmentTitle'),t('learn.title')],
       logo:{'@type':'ImageObject',url:absolute('/icon-512.png'),width:512,height:512},
       sameAs:['https://github.com/imycc/brew-library'],
       publishingPrinciples:pageUrl(locale,'about/'),
@@ -347,6 +347,28 @@ export function compareGraph(locale:Locale,t:Translator):JsonLdGraph{
   return graph([
     webPage(locale,suffix,'WebPage',t('compareTitle'),t('compareSubtitle')),
     breadcrumb(locale,suffix,[{name:t('brand'),suffix:''},{name:t('compareNav'),suffix}])
+  ]);
+}
+
+export function learnGraph(locale:Locale,t:Translator):JsonLdGraph{
+  const suffix='learn/';
+  const url=pageUrl(locale,suffix);
+  return graph([
+    webPage(locale,suffix,'WebPage',t('learn.title'),t('learn.intro'),{
+      mainEntity:{'@id':`${url}#learning-resource`}
+    }),
+    breadcrumb(locale,suffix,[{name:t('brand'),suffix:''},{name:t('learn.title'),suffix}]),
+    {
+      '@type':'LearningResource',
+      '@id':`${url}#learning-resource`,
+      name:t('learn.title'),
+      description:t('learn.intro'),
+      inLanguage:locale,
+      educationalLevel:'Beginner to intermediate',
+      learningResourceType:t('learn.loopTitle'),
+      teaches:[t('learn.readTitle'),t('learn.brewTitle'),t('learn.observeTitle'),t('learn.adjustTitle')],
+      isPartOf:{'@id':websiteId(locale)}
+    }
   ]);
 }
 
