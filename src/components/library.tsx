@@ -12,6 +12,7 @@ import {recipeFaq} from '@/lib/faq';
 import {brewTimeline,learningFor,learningLevelKey,searchableRecipeText,secondsLabel} from '@/lib/learning';
 import {OfficialSourceImage} from '@/components/source-image';
 import {locales,localeNames,type Locale} from '@/i18n/locales';
+import {ANALYTICS_EVENTS,trackAnalyticsEvent} from '@/lib/analytics';
 
 type UrlContextType={params:URLSearchParams;setParams:(changes:Record<string,string|null>)=>void;ids:string[];toggle:(id:string)=>void;notice:string};
 const UrlContext=createContext<UrlContextType|null>(null);
@@ -40,9 +41,11 @@ export function LibraryProvider({children}:{children:ReactNode}){
   },[params]);
   const ids=parseSelection(params.get('ids')).ids;
   const toggle=(id:string)=>{
+    const selected=ids.includes(id);
     const result=toggleSelection(ids,id);
     if(result.limit){setNotice(t('limit'));return;}
     if(result.mismatch){setNotice(t('compareMismatch'));return;}
+    trackAnalyticsEvent(ANALYTICS_EVENTS.compareRecipeSelect,selected?'Remove recipe from comparison':'Add recipe to comparison');
     setNotice('');setParams({ids:result.ids.join(',')});
   };
   return <UrlContext.Provider value={{params,setParams,ids,toggle,notice}}><TemperatureContext.Provider value={{unit,setUnit}}>{children}<div className="sr-only" role="status" aria-live="polite">{notice}</div></TemperatureContext.Provider></UrlContext.Provider>;
@@ -293,7 +296,21 @@ export function ComparePage(){
  const [shared,setShared]=useState(false);
  const [manual,setManual]=useState('');
  const [differencesOnly,setDifferencesOnly]=useState(false);
+ const initialCompareStateTracked=useRef(false);
  const selected=ids.map(id=>recipes.find(r=>r.id===id)!);
+ useEffect(()=>{
+   if(initialCompareStateTracked.current)return;
+   initialCompareStateTracked.current=true;
+   const initialIds=parseSelection(new URLSearchParams(window.location.search).get('ids')).ids;
+   trackAnalyticsEvent(initialIds.length?ANALYTICS_EVENTS.comparePageTable:ANALYTICS_EVENTS.comparePageEmpty,initialIds.length?'Comparison page with selection':'Comparison page empty');
+   const page=document.querySelector<HTMLElement>('.compare-page');
+   const onClick=(event:MouseEvent)=>{
+     const link=(event.target as Element | null)?.closest<HTMLAnchorElement>('.comparison-scroll a.button[href*="/recipes/"], [data-comparison-mobile] a.button[href*="/recipes/"]');
+     if(link)trackAnalyticsEvent(ANALYTICS_EVENTS.compareRecipeOpen,'Open recipe from comparison');
+   };
+   page?.addEventListener('click',onClick);
+   return()=>page?.removeEventListener('click',onClick);
+ },[]);
  const sharedRows:[string,(r:Recipe)=>string][]=[['equipment',r=>t(`recipes.${r.copy}.equipment`)],['dose',r=>`${doseText(r)} g`]];
  const pourOverRows:[string,(r:Recipe)=>string][]=[['water',r=>isPourOver(r)?`${waterText(r)} ${r.water.unit}${r.water.derived?' *':''}`:t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
  const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratioEspresso',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
@@ -309,7 +326,7 @@ export function ComparePage(){
  {parseSelection(params.get('ids')).mismatch?<p role="status" className="notice">{t('compareMismatch')}</p>:null}
  {manual?<label className="copy-fallback">{t('copyError')}<input readOnly value={manual} onFocus={e=>e.target.select()}/></label>:null}
  {!selected.length?<div className="empty-state"><CoffeeBean size={36}/><p>{t('compareEmpty')}</p><Link className="button button-primary" href={href()}>{t('back')}<ArrowRight size={16}/></Link></div>:<>
-   {selected.length>1?<section className="comparison-summary" data-comparison-summary><div><p className="eyebrow">{t('compareSummaryTitle')}</p><h2>{t('compareDifferenceCount',{count:varyingLabels.length})}</h2><p>{t('compareBaselineNote')}</p></div><dl><div><dt>{t('compareSharedCount')}</dt><dd>{sharedCount}</dd></div><div><dt>{t('compareComparedCount')}</dt><dd>{evaluatedRows.length}</dd></div></dl><button className="button button-outline" aria-pressed={differencesOnly} onClick={()=>setDifferencesOnly(!differencesOnly)}>{t(differencesOnly?'compareShowAll':'compareOnlyDifferences')}</button></section>:null}
+   {selected.length>1?<section className="comparison-summary" data-comparison-summary><div><p className="eyebrow">{t('compareSummaryTitle')}</p><h2>{t('compareDifferenceCount',{count:varyingLabels.length})}</h2><p>{t('compareBaselineNote')}</p></div><dl><div><dt>{t('compareSharedCount')}</dt><dd>{sharedCount}</dd></div><div><dt>{t('compareComparedCount')}</dt><dd>{evaluatedRows.length}</dd></div></dl><button className="button button-outline" aria-pressed={differencesOnly} onClick={()=>{trackAnalyticsEvent(ANALYTICS_EVENTS.compareDifferencesToggle,differencesOnly?'Show all comparison rows':'Show only different comparison rows');setDifferencesOnly(!differencesOnly);}}>{t(differencesOnly?'compareShowAll':'compareOnlyDifferences')}</button></section>:null}
    <p className="mobile-scroll-hint" id="comparison-scroll-hint">{t('compareScrollHint')}</p>
    <div className="comparison-scroll" tabIndex={0} aria-label={t('compareTitle')} aria-describedby="comparison-scroll-hint"><table className="comparison-table"><thead><tr><td/><>{selected.map(r=><th scope="col" key={r.id}><div className="comparison-identity"><span className="comparison-index">{String(recipeIndex(r)+1).padStart(2,'0')}</span><strong>{brewerName(r,t)}</strong><small>{grinderDetails(r,t)}</small></div><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button><h2>{t(`recipes.${r.copy}.title`)}</h2><span>{r.author}</span></th>)}{selected.length<3?<th scope="col" className="empty-comparison"><Link href={href()}><Plus size={30}/>{t('addSlot')}</Link></th>:null}</></tr></thead><tbody>{visibleRows.map(([label,getValue])=><tr key={label} className={varyingLabels.includes(label)?'comparison-row-different':'comparison-row-shared'}><th scope="row">{t(label)}</th>{selected.map(r=><td key={r.id}>{getValue(r)}</td>)}{selected.length<3?<td>—</td>:null}</tr>)}<tr><th scope="row">{t('source')}</th>{selected.map(r=><td key={r.id}><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a></td>)}{selected.length<3?<td>—</td>:null}</tr><tr><th scope="row">{t('recipesNav')}</th>{selected.map(r=><td key={r.id}><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></td>)}{selected.length<3?<td>—</td>:null}</tr></tbody></table></div>
    <div className="comparison-mobile" tabIndex={0} aria-label={t('compareTitle')} aria-describedby="comparison-scroll-hint" data-comparison-mobile>{selected.map(r=><article className="comparison-mobile-card" key={r.id}><header><div><span>{String(recipeIndex(r)+1).padStart(2,'0')} · {brewerName(r,t)}</span><h2>{t(`recipes.${r.copy}.title`)}</h2><p>{r.author}</p></div><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button></header><dl>{visibleRows.map(([label,getValue])=><div className={varyingLabels.includes(label)?'is-different':''} key={label}><dt>{t(label)}</dt><dd>{getValue(r)}</dd></div>)}</dl><footer><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></footer></article>)}</div>

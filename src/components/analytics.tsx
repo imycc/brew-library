@@ -4,12 +4,7 @@ import Script from 'next/script';
 import {usePathname} from 'next/navigation';
 import {useCallback,useEffect,useRef} from 'react';
 import {BASE} from '@/lib/recipes';
-
-declare global {
-  interface Window {
-    goatcounter?: {count:(event:{path:string;title:string})=>void};
-  }
-}
+import {flushAnalyticsEvents} from '@/lib/analytics';
 
 // Public account identifier, not a credential. An unset value keeps tracking off.
 const code=process.env.NEXT_PUBLIC_GOATCOUNTER_CODE;
@@ -26,7 +21,8 @@ export function Analytics(){
     window.goatcounter.count({path,title:document.title});
     countedPath.current=path;
   },[]);
+  const ready=useCallback(()=>{count();flushAnalyticsEvents();},[count]);
   useEffect(()=>{latestPath.current=pathname;count();},[pathname,count]);
   if(!code)return null;
-  return <Script id="goatcounter" src="https://gc.zgo.at/count.js" data-goatcounter={`https://${code}.goatcounter.com/count`} data-goatcounter-settings='{"no_onload":true}' strategy="afterInteractive" onReady={count}/>;
+  return <Script id="goatcounter" src="https://gc.zgo.at/count.js" data-goatcounter={`https://${code}.goatcounter.com/count`} data-goatcounter-settings='{"no_onload":true}' strategy="afterInteractive" onReady={ready}/>;
 }

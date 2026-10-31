@@ -3,14 +3,17 @@
 import Link from 'next/link';
 import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,BookOpenText,Eye,Flask,SlidersHorizontal} from '@phosphor-icons/react';
+import {useEffect,useRef} from 'react';
 import {curatedLearningRecipes,learningLevel,learningLevelKey} from '@/lib/learning';
 import {isEspresso} from '@/lib/recipes';
+import {ANALYTICS_EVENTS,trackAnalyticsEvent} from '@/lib/analytics';
 
 const loopIcons=[BookOpenText,Flask,Eye,SlidersHorizontal];
 
 export function LearnPage(){
   const t=useTranslations();
   const locale=useLocale();
+  const labTracked=useRef(false);
   const loop=[
     ['readTitle','readText'],
     ['brewTitle','brewText'],
@@ -18,6 +21,19 @@ export function LearnPage(){
     ['adjustTitle','adjustText']
   ] as const;
   const tastes=['tasteSour','tasteBitter','tasteWeak','tasteSlow'] as const;
+  useEffect(()=>{
+    const lab=document.getElementById('recipe-lab');
+    if(!lab)return;
+    const observer=new IntersectionObserver(entries=>{
+      if(!labTracked.current&&entries.some(entry=>entry.isIntersecting)){
+        labTracked.current=true;
+        trackAnalyticsEvent(ANALYTICS_EVENTS.learnLabView,'Controlled brewing lab viewed');
+        observer.disconnect();
+      }
+    },{threshold:0.35});
+    observer.observe(lab);
+    return()=>observer.disconnect();
+  },[]);
   return <main id="main" className="page learn-page" data-learn-page>
     <header className="learn-hero">
       <p className="eyebrow">{t('learn.eyebrow')}</p>
@@ -67,9 +83,9 @@ export function LearnPage(){
       <div className="learn-section-head"><h2 id="curated-title">{t('learn.curatedTitle')}</h2><p>{t('learn.curatedIntro')}</p></div>
       <div className="curated-learning-grid">{curatedLearningRecipes.map((recipe,index)=><article key={recipe.id} data-learning-recipe={recipe.id}>
         <div className="curated-learning-meta"><span>{String(index+1).padStart(2,'0')}</span><span>{t(isEspresso(recipe)?'methodEspresso':'methodPourover')}</span><span>{t(learningLevelKey(recipe))}</span></div>
-        <h3><Link href={`/${locale}/recipes/${recipe.id}/`}>{t(`recipes.${recipe.copy}.title`)}</Link></h3>
+        <h3><Link href={`/${locale}/recipes/${recipe.id}/`} onClick={()=>trackAnalyticsEvent(ANALYTICS_EVENTS.learnRecipeOpen,'Open recipe from learning guide')}>{t(`recipes.${recipe.copy}.title`)}</Link></h3>
         <p>{t(`recipes.${recipe.copy}.summary`)}</p>
-        <div className="curated-learning-footer"><span>{recipe.author}</span><Link href={`/${locale}/recipes/${recipe.id}/`}>{t('view')}<ArrowRight size={15}/></Link></div>
+        <div className="curated-learning-footer"><span>{recipe.author}</span><Link href={`/${locale}/recipes/${recipe.id}/`} onClick={()=>trackAnalyticsEvent(ANALYTICS_EVENTS.learnRecipeOpen,'Open recipe from learning guide')}>{t('view')}<ArrowRight size={15}/></Link></div>
       </article>)}</div>
     </section>
   </main>;
