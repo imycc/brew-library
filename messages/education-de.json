@@ -1,0 +1,122 @@
+{
+  "learnNav": "Lernen",
+  "findRecipe": "Rezept finden",
+  "sectionIntroPourover": "Originale, quellenbelegte Filterrezepte. Suche nach Gerät, Autor, Dosis oder den dokumentierten Kaffeebedingungen.",
+  "sectionIntroEspresso": "Quellenbelegte Espresso-Ausgangspunkte. Vergleiche Dosis, Ausbeute, Sieb, Druck, Preinfusion und die angegebenen Kaffeebedingungen.",
+  "chooseBrewerPourover": "Filter wählen",
+  "chooseBrewerEspresso": "Maschine wählen",
+  "compareScrollHint": "Wische oder scrolle horizontal, um die anderen Rezepte zu sehen.",
+  "compareSummaryTitle": "Auf einen Blick",
+  "compareBaselineNote": "Quellenwerte und fehlende Angaben werden direkt gegenübergestellt; es entsteht keine Rangliste.",
+  "compareDifferenceCount": "{count} Parameter unterscheiden sich",
+  "compareSharedCount": "Übereinstimmende Werte",
+  "compareComparedCount": "Verglichene Zeilen",
+  "compareOnlyDifferences": "Nur Unterschiede",
+  "compareShowAll": "Alle anzeigen",
+  "learningLevels": {
+    "guided": "Angeleitete Lektion",
+    "practice": "Übungsrezept",
+    "reference": "Referenzrezept"
+  },
+  "learningBrief": {
+    "title": "Mit diesem Rezept lernen",
+    "intro": "Lernstufe: {level}. Brühe zuerst die Quellenversion und ändere danach jeweils nur eine Variable.",
+    "goal": "Was diese Methode trainiert",
+    "method": "Warum die Methode so funktioniert",
+    "observation": "Worauf achten",
+    "observationFallback": "Notiere tatsächliche Zeit, Endgewicht und das klarste Prozesssignal.",
+    "checkpointStep": "Schritt {number}",
+    "tradeoffTitle": "Stärken und Grenzen dieser Methode",
+    "tradeoffText": "Diese redaktionellen Notizen fassen praktische Stärken und Einschränkungen zusammen, ohne die veröffentlichten Quellenwerte zu verändern.",
+    "practice": "Dein nächster kontrollierter Brew",
+    "practiceText": "Halte Gerät und veröffentlichte Bedingungen konstant. Notiere tatsächliche Zeit, Endgewicht und das klarste Geschmackssignal, bevor du eine einzige Änderung wählst.",
+    "editorialNote": "Übungshinweis dieser Website, verknüpft mit dem zitierten Schritt; keine zusätzliche Anweisung des Autors.",
+    "guideLink": "Brewing-Leitfaden öffnen"
+  },
+  "learningRecipes": {
+    "hoffmann": {
+      "focus": "Einen wiederholbaren Rhythmus für kleine Mengen mit gleichen Zugaben, kurzen Pausen und sanften Schwüngen aufbauen.",
+      "checkpoint1": "Prüfe nach dem Bloom, ob der fünfsekündige Schwung das Kaffeebett eben und beruhigt hinterlässt.",
+      "checkpoint2": "Prüfe vor dem Entfernen des Drippers, dass die Waage 250 g erreicht; die Endzeit ist ein Hinweis und kein Ersatz für das Gewicht.",
+      "practice": "Wiederhole Dosis, Wasser, Mahlgrad und Gießplan unverändert, lasse aber nur den letzten Schwung weg. Vergleiche Durchlauf und Klarheit, bevor du dem Schwung eine Wirkung zuschreibst."
+    },
+    "kasuya": {
+      "focus": "Die 4:6-Sequenz lernen: zwei ausgleichende Zugaben, danach drei gleiche Zugaben zur Konzentrationssteuerung.",
+      "checkpoint1": "Bei 0:45 müssen die ersten beiden Zugaben zusammen 120 mL ergeben, bevor die nächste Stufe beginnt.",
+      "checkpoint2": "Bei 1:30 beginnen drei gleiche Zugaben von 60 mL; veröffentlichte Startzeiten sind 1:30, 2:10 und 2:40.",
+      "practice": "Halte Dosis, Mahlgrad, Temperatur und alle fünf Zeiten fest. Verschiebe nur den Start der 0:45-Zugabe um zehn Sekunden und vergleiche Durchlauf und Geschmack."
+    },
+    "rao": {
+      "focus": "Mit geschlossenem Ventil eine Immersion erzeugen und das Bett anschließend mit kurzen Impulsen führen.",
+      "checkpoint1": "Bei 0:45–0:50 den Slurry etwa 1 cm über das Kaffeebett heben und das Ventil nach dem Bloom öffnen.",
+      "checkpoint2": "Während der Impulse den Slurry 1–2 cm über dem Bett halten; Mengen und spätere Zeiten veröffentlicht die Quelle nicht.",
+      "practice": "Halte 25 g, 425 g, kochendes Wasser und die Ventilfolge fest. Notiere Impulszahl und Dauer bei gleichbleibendem Füllstand; ändere beim nächsten Versuch nur die Größe eines Impulses."
+    },
+    "woelfl": {
+      "focus": "Eine Methode verfolgen, die Spülen, Bloom und den gleichmäßigen letzten Guss vor der Ausführung erklärt.",
+      "checkpoint1": "Während des Blooms am Bett riechen; die Quelle empfiehlt, in den 30–40 Sekunden der Entgasung nah heranzugehen.",
+      "checkpoint2": "Der zweite Guss enthält alle restlichen 240 ml, langsam und gleichmäßig; die Quelle gibt dafür keinen eigenen Zeitpunkt an.",
+      "practice": "Halte 20 g, 300 ml, 93 °C und 60 ml Bloom fest. Brühe einmal mit 30 und einmal mit 40 Sekunden Bloom, beide innerhalb des veröffentlichten Bereichs."
+    },
+    "kurasu": {
+      "focus": "Das Eisgewicht als Stärkekontrolle nutzen und den letzten Guss sanft halten.",
+      "checkpoint1": "Bei 1:10 langsam und sanft bis insgesamt 150 g gießen, ohne zusätzliche Agitation.",
+      "checkpoint2": "Nach dem Entfernen des Drippers umrühren, bis alles Eis geschmolzen ist, bevor serviert wird.",
+      "practice": "Halte 15 g Kaffee, 150 g heißes Wasser und den Mahlgrad fest. Verwende etwa 65 g Eis in einem und 70 g im anderen Versuch und vergleiche nach dem Schmelzen die Stärke."
+    },
+    "lamarzocco": {
+      "focus": "Ein 1:2-Verhältnis und ein Zeitfenster als wiederholbare Espresso-Basis verwenden.",
+      "checkpoint1": "Bei 93 °C und 9 bar die Waage beobachten: Ziel sind 36 g in 25–35 Sekunden, das Rechenbeispiel der Quelle liegt bei 30.",
+      "checkpoint2": "Nach Gewicht bei 36 g stoppen, nicht allein nach der Uhr.",
+      "practice": "Halte 18 g, 36 g, 93 °C und 9 bar fest. Ändere nur den Mahlgrad, bis die Zeit im veröffentlichten Fenster von 25–35 Sekunden liegt."
+    },
+    "coffeecollective": {
+      "focus": "Verstehen, wie eine ebene Puck-Vorbereitung und Mahlgrad-zu-Zeit zusammenwirken.",
+      "checkpoint1": "Nach dem Verteilen mit 10–15 kg eben tampen; die Quelle betont Ebenheit stärker als Kraft.",
+      "checkpoint2": "Bei 93 °C und 7 bar den Mahlgrad so einstellen, dass die vollen 38 g in etwa 27 Sekunden kommen.",
+      "practice": "Halte 19 g, 38 g, 93 °C und 7 bar fest. Ändere nur den Mahlgrad und notiere, wie sich die Gesamtzeit dem Ziel von 27 Sekunden nähert."
+    },
+    "onyx-monarch": {
+      "focus": "Ein stufenweises Druckprofil verstehen und Preinfusion von der eigentlichen Extraktion trennen.",
+      "checkpoint1": "Die ersten 3,5 Sekunden nutzen Leitungsdruck; die Karte veröffentlicht den tatsächlichen Preinfusionsdruck in bar nicht.",
+      "checkpoint2": "Danach auf 9 bar steigen und bei 47 g nach 23 Sekunden stoppen; Temperatur, Sieb und Mühle fehlen auf der Karte.",
+      "practice": "Halte 19 g, 47 g und das Druckprofil fest. Notiere Zeit bis zum ersten Tropfen und Gesamtzeit; ändere den Mahlgrad erst, wenn das Profil reproduzierbar ist."
+    }
+  },
+  "learn": {
+    "eyebrow": "BREWING-LEITFADEN",
+    "title": "Verstehen, was das Rezept lehrt",
+    "intro": "Ein Rezept ist ein Ausgangspunkt, kein Befehl. Dieser Leitfaden zeigt, wie du die Belege liest, einen kontrollierten Basis-Brew machst, den Verlauf beobachtest und jeweils nur eine Variable änderst.",
+    "loopTitle": "Der Lernzyklus",
+    "loopIntro": "Dieselben vier Fragen gelten für Filterkaffee und Espresso.",
+    "readTitle": "1. Festlegen, was konstant bleibt",
+    "readText": "Halte Dosis, Gerät, Wasser und alle weiteren veröffentlichten Bedingungen fest. Was die Quelle nicht angibt, bleibt unbekannt und wird nicht aus dem Gedächtnis ergänzt.",
+    "brewTitle": "2. Die Quellenversion einmal brühen",
+    "brewText": "Folge zuerst der aufgezeichneten Reihenfolge, ohne sie sofort verbessern zu wollen. Zeit, Gewicht und beobachtbare Signale machen die Basis reproduzierbar.",
+    "observeTitle": "3. Prozess und Tasse beobachten",
+    "observeText": "Notiere Gesamtzeit, Durchlauf oder Shot-Fluss, Bett- oder Puckzustand, Endgewicht und das klarste Geschmackssignal. Ein Brew ist ein Hinweis, keine Schlussfolgerung.",
+    "adjustTitle": "4. Nur eine Variable ändern",
+    "adjustText": "Ändere bei einer Wiederholung nur eine Sache und dokumentiere das Ergebnis. So werden die Wirkungen von Mahlgrad, Temperatur oder Agitation leichter verständlich.",
+    "variablesTitle": "Vier verbundene Stellschrauben",
+    "variablesText": "Dosis und Getränkeziel bestimmen den Maßstab; Mahlgrad und Fluss steuern die Geschwindigkeit; Zeit und Agitation verändern den Kontakt; Temperatur und Wasser prägen, was extrahiert wird. Ein Rezept bewegt mehrere zugleich, deshalb vergleichst du die gesamte Methode statt einer einzelnen Zahl.",
+    "labTitle": "Dein erster kontrollierter Brew",
+    "labIntro": "Wähle ein Rezept mit klarer Quellenbasis und wechsle zwischen den Versuchen nicht den Kaffee.",
+    "labBaseline": "Brühe einmal die Quellenversion. Notiere tatsächliche Zeit, Endgewicht und die drei auffälligsten Geschmackseindrücke.",
+    "labChange": "Ändere nach der Basis eine Variable in eine klar definierte Richtung. Dosis und alle anderen Bedingungen bleiben gleich.",
+    "labRecord": "Halte Änderung und Ergebnis fest. Kehre zur Basis zurück, wenn die Tasse unklarer oder der Ablauf schwerer reproduzierbar wird.",
+    "tasteTitle": "Die Tasse beschreiben",
+    "tasteIntro": "Geschmack ist ein Beleg, kein Urteil. Beginne mit groben Beschreibungen, wiederhole einmal und lege die Ursache nicht zu früh fest.",
+    "tasteSour": "Scharf, sauer oder dünn: Prüfe Extraktion oder Stärke und vergleiche außerdem mit dem in der Quelle genannten Kaffeeprofil.",
+    "tasteBitter": "Bitter oder adstringierend: Prüfe Überextraktion, Wasser, Temperatur und Agitation, bevor du mehrere Einstellungen änderst.",
+    "tasteWeak": "Schwach trotz erwarteter Dosis: Prüfe zuerst Endgewicht und Verdünnung, danach Mahlgrad und Kontaktzeit.",
+    "tasteSlow": "Langsamer Durchlauf oder Shot: Prüfe Mahlgrad, Feinteile, Papier, Sieb und Agitation, bevor du alles gleichzeitig veränderst.",
+    "tasteCaveat": "Das sind Untersuchungshinweise, keine Diagnosetabelle. Kaffee, Wasser, Temperatur, Mahlgrad, Agitation und Technik können denselben Geschmack verursachen.",
+    "evidenceTitle": "Vor dem Handeln die Kennzeichnungen lesen",
+    "evidenceSource": "Quellenwert: direkt vom zitierten Autor oder Herausgeber übernommen. Unbekannt bedeutet, dass die Quelle ihn nicht angibt.",
+    "evidenceDerived": "Abgeleiteter Wert: ausschließlich Arithmetik mit veröffentlichten Zahlen. Daraus entsteht keine neue Aussage über das Brühen.",
+    "evidenceEditorialLabel": "Redaktioneller Hinweis",
+    "evidenceEditorial": "Eine Erklärung dieser Website, sichtbar getrennt von der ursprünglichen Anweisung des Autors. Sie dient dem Üben und belegt nicht, was die Quelle gesagt hat.",
+    "curatedTitle": "Beginne mit diesen acht Methoden",
+    "curatedIntro": "Ein Weg durch Struktur, Immersion, Eiskaffee und Espresso."
+  }
+}

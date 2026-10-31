@@ -4,6 +4,7 @@ import {locales} from '../src/i18n/locales';
 import {recipes,isEspresso,isPourOver,puckPrepKeys} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentEditorialRoles,editorialTraitKeys,equipmentExperience,equipmentExperienceTags,recipeEditorial} from '../src/lib/editorial';
+import {curatedLearningRecipeIds,learningLevel,recipeLearning} from '../src/lib/learning';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
 import {createTranslator} from 'next-intl';
 export function flatten(obj:Record<string,unknown>,prefix=''):Record<string,string>{
@@ -11,12 +12,21 @@ export function flatten(obj:Record<string,unknown>,prefix=''):Record<string,stri
 }
 export async function validate(){
  const english=mergeMessages(JSON.parse(await readFile('messages/en.json','utf8')) as Messages,JSON.parse(await readFile('messages/editorial-en.json','utf8')) as Messages);
- const base=flatten(english);
+ const englishEducation=JSON.parse(await readFile('messages/education-en.json','utf8')) as Messages;
+ const base=flatten(mergeMessages(english,englishEducation));
  const placeholders=(text:string)=>[...text.matchAll(/\{([a-zA-Z][a-zA-Z0-9_]*)\}/g)].map(m=>m[1]).sort();
  assert.equal(new Set(recipes.map(r=>r.id)).size,recipes.length,'Duplicate recipe id');
  assert.equal(new Set(equipment.map(item=>item.id)).size,equipment.length,'Duplicate equipment id');
  const recipeIds=new Set(recipes.map(r=>r.id));
  const equipmentIds=new Set(equipment.map(item=>item.id));
+ assert.equal(new Set(curatedLearningRecipeIds).size,8,'Curated learning route must contain eight unique recipes');
+ for(const id of curatedLearningRecipeIds)assert(recipeIds.has(id),`Curated learning recipe ${id} is missing`);
+ assert.deepEqual(Object.keys(recipeLearning).sort(),[...curatedLearningRecipeIds].sort(),'Every curated recipe needs a specific learning card');
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,14,'Guided learning count changed; review the learning layer');
+ for(const [id,lesson] of Object.entries(recipeLearning)){
+   const recipe=recipes.find(item=>item.id===id)!;
+   for(const checkpoint of lesson.checkpoints)assert(checkpoint.step<recipe.steps.length,`${id} learning checkpoint points past the last step`);
+ }
  for(const [id,experience] of Object.entries(equipmentExperience)){
    assert(equipmentIds.has(id),`${id} experience references unknown equipment`);
    assert(experience.sources.length>0,`${id} experience needs a source`);
@@ -95,7 +105,7 @@ export async function validate(){
    for(const s of r.steps){if(s.end!==undefined&&s.at!==null)assert(s.end>=s.at,`${r.id} time range`);}
  }
  for(const locale of locales){
-   const messages=mergeMessages(JSON.parse(await readFile(`messages/${locale}.json`,'utf8')) as Messages,JSON.parse(await readFile(`messages/editorial-${locale}.json`,'utf8')) as Messages);
+   const messages=mergeMessages(mergeMessages(JSON.parse(await readFile(`messages/${locale}.json`,'utf8')) as Messages,JSON.parse(await readFile(`messages/editorial-${locale}.json`,'utf8')) as Messages),JSON.parse(await readFile(`messages/education-${locale}.json`,'utf8')) as Messages);
    const flat=flatten(messages);
    assert.deepEqual(Object.keys(flat).sort(),Object.keys(base).sort(),`${locale} missing/extra translations`);
    // The message catalogue is intentionally checked by dynamic keys. Cast the
@@ -142,6 +152,13 @@ export async function validate(){
      for(const trait of editorial.considerations)assert(flat[`editorialConsiderations.${trait}`],`${locale}/consideration ${trait}`);
      const experience=equipmentExperience[item.id];
      if(experience)for(const tag of experience.tags)assert(flat[`equipmentExperienceTags.${tag}`],`${locale}/experience tag ${tag}`);
+   }
+   for(const key of ['learnNav','findRecipe','sectionIntroPourover','sectionIntroEspresso','chooseBrewerPourover','chooseBrewerEspresso','compareScrollHint','compareSummaryTitle','compareBaselineNote','compareDifferenceCount','compareSharedCount','compareComparedCount','compareOnlyDifferences','compareShowAll','learningBrief.title','learningBrief.intro','learningBrief.goal','learningBrief.method','learningBrief.observation','learningBrief.checkpointStep','learningBrief.practice','learningBrief.practiceText','learningBrief.editorialNote','learningBrief.guideLink','learn.eyebrow','learn.title','learn.intro','learn.loopTitle','learn.readTitle','learn.brewTitle','learn.observeTitle','learn.adjustTitle','learn.variablesTitle','learn.labTitle','learn.tasteTitle','learn.evidenceTitle','learn.curatedTitle'])assert(flat[key],`${locale}/${key}`);
+   for(const level of ['guided','practice','reference'])assert(flat[`learningLevels.${level}`],`${locale}/learning level ${level}`);
+   for(const lesson of Object.values(recipeLearning)){
+     assert(flat[lesson.focusKey],`${locale}/${lesson.focusKey}`);
+     assert(flat[lesson.practiceKey],`${locale}/${lesson.practiceKey}`);
+     for(const checkpoint of lesson.checkpoints)assert(flat[checkpoint.cueKey],`${locale}/${checkpoint.cueKey}`);
    }
    for(const key of ['recipeOverview','bestFor','strengths','considerations','equipmentEditorialNote','sourceImageUnavailable','sourceImageAlt','sourceImageRecipe','sourceImageEquipment','sourceImageCredit','sourceImageView','equipmentExperienceTitle','equipmentExperienceNote','equipmentExperienceSources','equipmentExperienceUnavailable'])assert(flat[key],`${locale}/${key}`);
    for(const tag of equipmentExperienceTags)assert(flat[`equipmentExperienceTags.${tag}`],`${locale}/experience tag ${tag}`);

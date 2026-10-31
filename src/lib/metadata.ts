@@ -9,6 +9,7 @@ const ogLocales:Record<Locale,string>={
 };
 
 const pageKeys:Record<string,{title:string;description:string}>={
+  'learn/':{title:'learn.title',description:'learn.intro'},
   'equipment/':{title:'equipmentTitle',description:'equipmentIntro'},
   'authors/':{title:'authorsTitle',description:'authorsIntro'},
   'compare/':{title:'compareTitle',description:'compareSubtitle'},

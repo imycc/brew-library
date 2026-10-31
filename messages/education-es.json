@@ -1,0 +1,122 @@
+{
+  "learnNav": "Aprender",
+  "findRecipe": "Buscar una receta",
+  "sectionIntroPourover": "Métodos de filtro originales y respaldados por una fuente. Explora por equipo, autor, dosis o las condiciones del café registradas.",
+  "sectionIntroEspresso": "Puntos de partida de espresso respaldados por una fuente. Compara dosis, rendimiento, cesta, presión, preinfusión y las condiciones del café indicadas.",
+  "chooseBrewerPourover": "Elegir filtro",
+  "chooseBrewerEspresso": "Elegir máquina",
+  "compareScrollHint": "Desliza o desplázate horizontalmente para ver las otras recetas.",
+  "compareSummaryTitle": "Vista rápida",
+  "compareBaselineNote": "Los valores de la fuente y los datos desconocidos se muestran directamente; no se establece una clasificación.",
+  "compareDifferenceCount": "{count} parámetros difieren",
+  "compareSharedCount": "Valores coincidentes",
+  "compareComparedCount": "Filas comparadas",
+  "compareOnlyDifferences": "Solo diferencias",
+  "compareShowAll": "Mostrar todo",
+  "learningLevels": {
+    "guided": "Lección guiada",
+    "practice": "Receta de práctica",
+    "reference": "Receta de referencia"
+  },
+  "learningBrief": {
+    "title": "Usa esta receta para aprender",
+    "intro": "Nivel de aprendizaje: {level}. Prepara primero la versión de la fuente y después cambia una sola variable cada vez.",
+    "goal": "Qué entrena este método",
+    "method": "Por qué funciona así",
+    "observation": "Qué observar",
+    "observationFallback": "Registra el tiempo real, el peso final y la señal del proceso más clara.",
+    "checkpointStep": "Paso {number}",
+    "tradeoffTitle": "Ventajas y límites de este método",
+    "tradeoffText": "Estas notas editoriales resumen ventajas y consideraciones prácticas sin cambiar los valores publicados por la fuente.",
+    "practice": "Tu próxima preparación controlada",
+    "practiceText": "Mantén constantes el equipo y las condiciones publicadas. Registra el tiempo real, el peso final y la señal de sabor más clara antes de decidir un único cambio.",
+    "editorialNote": "Indicación de práctica de este sitio vinculada al paso citado; no es una instrucción adicional del autor.",
+    "guideLink": "Abrir la guía de preparación"
+  },
+  "learningRecipes": {
+    "hoffmann": {
+      "focus": "Construir un ritmo repetible de pequeña dosis con adiciones iguales, pausas breves y giros suaves.",
+      "checkpoint1": "Después del bloom, comprueba que el giro de cinco segundos deja el lecho de café nivelado y asentado.",
+      "checkpoint2": "Confirma que la balanza llega a 250 g antes de retirar el filtro; el tiempo final es una guía, no sustituye el peso.",
+      "practice": "Repite con la misma dosis, agua, molienda y calendario de vertidos, pero omite solo el giro final. Compara drenaje y claridad antes de atribuir un efecto al giro."
+    },
+    "kasuya": {
+      "focus": "Aprender la secuencia 4:6: dos vertidos de equilibrio y tres vertidos iguales para ajustar la concentración.",
+      "checkpoint1": "A las 0:45, las dos primeras adiciones deben sumar 120 mL antes de pasar a la siguiente etapa.",
+      "checkpoint2": "A la 1:30 empiezan tres vertidos iguales de 60 mL; los inicios publicados son 1:30, 2:10 y 2:40.",
+      "practice": "Mantén fijos dosis, molienda, temperatura y los cinco tiempos. Cambia solo el inicio del vertido de 0:45 en diez segundos y compara drenaje y sabor."
+    },
+    "rao": {
+      "focus": "Usar la válvula cerrada para la inmersión y controlar el lecho con pulsos cortos.",
+      "checkpoint1": "A las 0:45–0:50 eleva la mezcla unos 1 cm sobre el café y abre la válvula después del bloom.",
+      "checkpoint2": "Durante los pulsos mantén la mezcla 1–2 cm sobre el lecho; la fuente no publica cantidades ni horas posteriores.",
+      "practice": "Mantén fijos 25 g, 425 g, agua hirviendo y la secuencia de válvula. Registra número de pulsos y tiempo manteniendo el nivel; en el siguiente cambio varía solo el tamaño del pulso."
+    },
+    "woelfl": {
+      "focus": "Seguir un método que explica el enjuague, el bloom y el vertido final constante antes de ejecutarlo.",
+      "checkpoint1": "Durante el bloom, observa el aroma del lecho; la fuente sugiere olerlo mientras el café se desgasifica durante 30–40 segundos.",
+      "checkpoint2": "El segundo vertido es todo el resto de 240 ml, lento y constante; la fuente no da un tiempo separado para él.",
+      "practice": "Mantén 20 g, 300 ml, 93 °C y 60 ml de bloom. Haz un bloom de 30 segundos y otro de 40, ambos dentro del rango publicado."
+    },
+    "kurasu": {
+      "focus": "Usar el peso del hielo como control de fuerza y mantener suave el último vertido.",
+      "checkpoint1": "A la 1:10 vierte despacio y con suavidad hasta 150 g totales, sin añadir agitación extra.",
+      "checkpoint2": "Después de retirar el filtro, remueve hasta que todo el hielo se haya derretido antes de servir.",
+      "practice": "Mantén 15 g de café, 150 g de agua caliente y la molienda. Usa unos 65 g de hielo en una versión y 70 g en otra; compara la fuerza tras derretirse."
+    },
+    "lamarzocco": {
+      "focus": "Usar una proporción 1:2 y una ventana de tiempo como base repetible de espresso.",
+      "checkpoint1": "A 93 °C y 9 bar, mira la balanza: el objetivo es 36 g entre 25 y 35 segundos; el ejemplo de la fuente dura 30.",
+      "checkpoint2": "Detén por peso a 36 g, no solo por el reloj.",
+      "practice": "Mantén fijos 18 g, 36 g, 93 °C y 9 bar. Cambia solo la molienda hasta que el tiempo quede dentro de la ventana de 25–35 segundos."
+    },
+    "coffeecollective": {
+      "focus": "Entender cómo se combinan una preparación nivelada del puck y el ajuste de molienda por tiempo.",
+      "checkpoint1": "Después de distribuir, compacta nivelado con 10–15 kg; la fuente destaca el nivel más que la fuerza.",
+      "checkpoint2": "A 93 °C y 7 bar, ajusta la molienda para que los 38 g completos lleguen en unos 27 segundos.",
+      "practice": "Mantén fijos 19 g, 38 g, 93 °C y 7 bar. Cambia solo la molienda y registra cómo el tiempo total se acerca al objetivo de 27 segundos."
+    },
+    "onyx-monarch": {
+      "focus": "Entender un perfil de presión por etapas y separar la preinfusión de la extracción principal.",
+      "checkpoint1": "Los primeros 3.5 segundos usan presión de línea; la tarjeta no publica el valor real de bar durante la preinfusión.",
+      "checkpoint2": "Después sube a 9 bar y detén en 47 g a los 23 segundos; la tarjeta omite temperatura, cesta y molino.",
+      "practice": "Mantén fijos 19 g, 47 g y el perfil de presión. Registra el tiempo hasta la primera gota y el total; cambia la molienda solo cuando el perfil sea repetible."
+    }
+  },
+  "learn": {
+    "eyebrow": "GUÍA DE PREPARACIÓN",
+    "title": "Entiende qué enseña la receta",
+    "intro": "Una receta es un punto de partida, no una orden. Esta guía muestra cómo leer su evidencia, preparar una base controlada, observar el proceso y cambiar una sola variable cada vez.",
+    "loopTitle": "El ciclo de aprendizaje",
+    "loopIntro": "Las mismas cuatro preguntas sirven para filtro y espresso.",
+    "readTitle": "1. Decide qué mantener fijo",
+    "readText": "Mantén la dosis, el equipo, el agua y las demás condiciones publicadas. Deja como desconocido lo que la fuente no indica en lugar de rellenarlo de memoria.",
+    "brewTitle": "2. Prepara una vez la versión de la fuente",
+    "brewText": "Sigue la secuencia registrada sin intentar mejorarla de inmediato. Usa tiempo, peso y señales observables para crear una base repetible.",
+    "observeTitle": "3. Observa el proceso y la taza",
+    "observeText": "Anota tiempo total, drenaje o flujo del shot, estado del lecho o del puck, peso final y la señal de sabor más clara. Una preparación es una pista, no una conclusión.",
+    "adjustTitle": "4. Cambia una sola variable",
+    "adjustText": "Si repites, cambia solo una cosa y registra el resultado. Así resulta mucho más fácil entender el efecto del molido, la temperatura o la agitación.",
+    "variablesTitle": "Cuatro controles conectados",
+    "variablesText": "La dosis y el objetivo de bebida fijan la escala; el molido y el flujo regulan la velocidad; el tiempo y la agitación cambian el contacto; la temperatura y el agua determinan qué se extrae. Una receta mueve varios a la vez, así que compara el método completo.",
+    "labTitle": "Tu primera preparación controlada",
+    "labIntro": "Elige una receta con una base clara y no cambies el café entre las dos preparaciones.",
+    "labBaseline": "Prepara una vez la versión de la fuente. Registra tiempo real, peso final y las tres sensaciones de sabor más evidentes.",
+    "labChange": "Después de la base, cambia una variable en una dirección definida. Mantén la dosis y todas las demás condiciones iguales.",
+    "labRecord": "Registra el cambio y el resultado. Vuelve a la base si la taza se vuelve menos clara o el proceso resulta más difícil de repetir.",
+    "tasteTitle": "Cómo describir la taza",
+    "tasteIntro": "El sabor es evidencia, no un veredicto. Empieza con descripciones amplias, repite una vez y evita asignar una causa demasiado pronto.",
+    "tasteSour": "Ácido, agudo o débil: úsalo como señal para revisar extracción o concentración; compáralo también con el carácter que la fuente atribuye al café.",
+    "tasteBitter": "Amargo o astringente: revisa sobreextracción, agua, temperatura y agitación antes de cambiar varios ajustes.",
+    "tasteWeak": "Débil pese a la dosis esperada: comprueba primero el peso final y la dilución; después revisa molido y tiempo de contacto.",
+    "tasteSlow": "Drenaje o flujo lento: revisa molido, finos, papel, cesta y agitación antes de cambiarlo todo a la vez.",
+    "tasteCaveat": "Son pistas para investigar, no una tabla diagnóstica. Café, agua, temperatura, molido, agitación y técnica pueden producir el mismo sabor.",
+    "evidenceTitle": "Lee las etiquetas antes de actuar",
+    "evidenceSource": "Valor de la fuente: copiado del autor o editor citado. Desconocido significa que la fuente no lo proporciona.",
+    "evidenceDerived": "Valor derivado: aritmética con números publicados únicamente. No añade una afirmación nueva sobre la preparación.",
+    "evidenceEditorialLabel": "Guía editorial",
+    "evidenceEditorial": "Una explicación del sitio, separada de la instrucción original del autor. Sirve para practicar, no como prueba de lo que dijo la fuente.",
+    "curatedTitle": "Empieza con estos ocho métodos",
+    "curatedIntro": "Una progresión por estructura, inmersión, café helado y espresso."
+  }
+}

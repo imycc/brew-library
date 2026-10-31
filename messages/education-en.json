@@ -1,0 +1,122 @@
+{
+  "learnNav": "Learn",
+  "findRecipe": "Find a recipe",
+  "sectionIntroPourover": "Original, source-backed pour-over methods. Browse by equipment, author, dose, or recorded coffee condition.",
+  "sectionIntroEspresso": "Source-backed espresso starting points. Compare dose, yield, basket, pressure, pre-infusion, and the coffee conditions the source states.",
+  "chooseBrewerPourover": "Choose a brewer",
+  "chooseBrewerEspresso": "Choose a machine",
+  "compareScrollHint": "Swipe or scroll horizontally to view the other recipes.",
+  "compareSummaryTitle": "At a glance",
+  "compareBaselineNote": "Copied source values and missing data are shown directly; no ranking is implied.",
+  "compareDifferenceCount": "{count} parameters differ",
+  "compareSharedCount": "Matching values",
+  "compareComparedCount": "Rows compared",
+  "compareOnlyDifferences": "Differences only",
+  "compareShowAll": "Show all rows",
+  "learningLevels": {
+    "guided": "Guided lesson",
+    "practice": "Practice recipe",
+    "reference": "Reference recipe"
+  },
+  "learningBrief": {
+    "title": "Use this recipe to learn",
+    "intro": "Learning level: {level}. Brew the source version first, then change one variable at a time.",
+    "goal": "What this method trains",
+    "method": "Why the method works",
+    "observation": "What to watch",
+    "observationFallback": "Record actual time, final weight and the clearest process cue.",
+    "checkpointStep": "Step {number}",
+    "tradeoffTitle": "Trade-offs in this method",
+    "tradeoffText": "These editorial notes summarise practical strengths and considerations without changing the source's published values.",
+    "practice": "Your next controlled brew",
+    "practiceText": "Keep the published equipment and conditions constant. Record actual time, final weight, and the clearest taste signal before deciding on one change.",
+    "editorialNote": "Practice direction from this site, linked to the cited step; it is not an additional instruction from the author.",
+    "guideLink": "Open the brewing field guide"
+  },
+  "learningRecipes": {
+    "hoffmann": {
+      "focus": "Build a repeatable small-batch rhythm with equal additions, short pauses and gentle swirls.",
+      "checkpoint1": "After the bloom, check that the five-second swirl leaves the coffee bed level and settled.",
+      "checkpoint2": "Confirm the scale reaches 250 g before removing the dripper; the finish time is guidance, not a substitute for the weight.",
+      "practice": "Repeat with the same dose, water, grind and pour schedule, but omit only the final swirl. Compare drawdown and clarity before deciding what the swirl changed."
+    },
+    "kasuya": {
+      "focus": "Learn the 4:6 sequence: two balance pours, followed by three equal concentration pours.",
+      "checkpoint1": "At 0:45, the first two additions should total 120 mL before you move to the next stage.",
+      "checkpoint2": "At 1:30, begin three equal 60 mL pours; their starts are published as 1:30, 2:10 and 2:40.",
+      "practice": "Keep dose, grind, temperature and the five pour times fixed. Repeat once and change only the start of the 0:45 pour by ten seconds, then compare drawdown and taste."
+    },
+    "rao": {
+      "focus": "Use a closed valve for immersion, then control the bed with short pulses.",
+      "checkpoint1": "At 0:45–0:50, raise the slurry about 1 cm, then open the valve after the bloom.",
+      "checkpoint2": "During the pulse sequence, keep the slurry 1–2 cm above the bed; the source does not publish pulse amounts or later times.",
+      "practice": "Keep 25 g, 425 g, boiling water and the valve sequence fixed. Record pulse count and time while maintaining the same slurry level, then change only pulse size on the next brew."
+    },
+    "woelfl": {
+      "focus": "Follow a method whose rinse, bloom and steady final pour are explained before execution.",
+      "checkpoint1": "During the bloom, notice the bed's aroma; the source suggests smelling it while the coffee degasses for 30–40 seconds.",
+      "checkpoint2": "The second pour is all remaining 240 ml, slow and steady; the source gives no separate time for it.",
+      "practice": "Hold 20 g, 300 ml, 93 °C and the 60 ml bloom fixed. Use a 30-second bloom for one brew and 40 seconds for the other, both inside the source's published range."
+    },
+    "kurasu": {
+      "focus": "Treat ice weight as the strength control and keep the final pour gentle.",
+      "checkpoint1": "At 1:10, pour slowly and gently to 150 g total rather than adding more agitation.",
+      "checkpoint2": "After removing the dripper, stir until every piece of ice has melted before serving.",
+      "practice": "Hold 15 g coffee, 150 g hot water and the grind fixed. Use approximately 65 g ice for one version and 70 g for the other, then compare strength after the ice melts."
+    },
+    "lamarzocco": {
+      "focus": "Use a 1:2 ratio and a time window as a repeatable espresso baseline.",
+      "checkpoint1": "At 93 °C and 9 bar, watch the scale: the target is 36 g within 25–35 seconds, with 30 seconds as the worked example.",
+      "checkpoint2": "Stop by weight at 36 g rather than by the clock alone.",
+      "practice": "Hold 18 g, 36 g, 93 °C and 9 bar fixed. Change only the grind until the shot time sits inside the source's 25–35 second window."
+    },
+    "coffeecollective": {
+      "focus": "Learn how level puck preparation and grind-to-time control work together.",
+      "checkpoint1": "After distributing the grounds, tamp level with 10–15 kg; the source stresses level more than force.",
+      "checkpoint2": "At 93 °C and 7 bar, adjust the grind so the full 38 g arrives in about 27 seconds.",
+      "practice": "Hold 19 g, 38 g, 93 °C and 7 bar fixed. Change only the grind and record how the total time moves toward the source's 27-second target."
+    },
+    "onyx-monarch": {
+      "focus": "Understand a stage-based pressure profile and separate pre-infusion from extraction.",
+      "checkpoint1": "The first 3.5 seconds use line pressure; the card does not publish the actual pre-infusion bar value.",
+      "checkpoint2": "Then raise to 9 bar and stop at 47 g in 23 seconds; the card omits temperature, basket and grinder.",
+      "practice": "Hold 19 g, 47 g and the pressure profile fixed. Record time to first drip and total shot time; change grind only after the profile is repeatable."
+    }
+  },
+  "learn": {
+    "eyebrow": "BREWING FIELD GUIDE",
+    "title": "Learn what the recipe is teaching",
+    "intro": "A recipe is a starting point, not a command. This guide shows how to read its evidence, run one controlled brew, observe the process, and change only one variable at a time.",
+    "loopTitle": "The learning loop",
+    "loopIntro": "The same four questions work for pour-over and espresso.",
+    "readTitle": "1. Decide what to hold",
+    "readText": "Keep dose, equipment, water, and every other published condition fixed. Mark what the source leaves unknown instead of filling the gaps from memory.",
+    "brewTitle": "2. Brew the source version once",
+    "brewText": "Follow the recorded sequence without trying to improve it. Use time, weight, and observable cues to make the baseline repeatable.",
+    "observeTitle": "3. Watch process and cup",
+    "observeText": "Note total time, drawdown or shot flow, bed or puck condition, final weight, and the clearest taste signal. One brew is a clue, not a conclusion.",
+    "adjustTitle": "4. Change one variable",
+    "adjustText": "If you repeat the brew, change only one thing and record the result. This makes the effect of grind, temperature, or agitation much easier to understand.",
+    "variablesTitle": "Four connected controls",
+    "variablesText": "Dose and beverage target set the scale; grind and flow govern extraction speed; time and agitation change contact; temperature and water chemistry shape what is extracted. A recipe changes several together, so compare the whole method rather than one number.",
+    "labTitle": "Your first controlled brew",
+    "labIntro": "Use a recipe with a clear source baseline and avoid changing the coffee between runs.",
+    "labBaseline": "Brew the source version once. Record actual time, final weight, and the three most noticeable taste sensations.",
+    "labChange": "After the baseline, change one variable in a controlled direction. Keep dose and all other conditions the same.",
+    "labRecord": "Record the change and result. Return to the baseline if the cup becomes less clear or the process becomes harder to repeat.",
+    "tasteTitle": "How to describe the cup",
+    "tasteIntro": "Taste is evidence, not a verdict. Start broad, repeat once, and avoid assigning a cause too early.",
+    "tasteSour": "Sharp, sour, or thin: treat this as a prompt to investigate extraction or strength; compare it with the coffee's stated character.",
+    "tasteBitter": "Bitter or drying: check over-extraction, water, temperature, and agitation before changing several settings.",
+    "tasteWeak": "Weak despite the expected dose: verify final weight and dilution first, then review grind and contact time.",
+    "tasteSlow": "Slow drawdown or shot: check grind, fines, paper, basket, and agitation before changing all of them.",
+    "tasteCaveat": "These are investigation prompts, not a diagnostic chart. Beans, water, temperature, grind, agitation, and technique can point to the same taste.",
+    "evidenceTitle": "Read the labels before acting",
+    "evidenceSource": "Source value: copied from the cited author or publisher. Unknown means the source does not provide it.",
+    "evidenceDerived": "Derived value: arithmetic on published numbers only. It does not add a new brewing claim.",
+    "evidenceEditorialLabel": "Editorial guidance",
+    "evidenceEditorial": "A site explanation, visibly separated from the author's original instruction. Use it for practice, not as evidence of what the source said.",
+    "curatedTitle": "Start with these eight methods",
+    "curatedIntro": "A progression through structure, immersion, iced brewing, and espresso."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "recipes": {
+    "hoffmann-one-cup": {
+      "focusKey": "learningRecipes.hoffmann.focus",
+      "checkpoints": [
+        {"step": 1, "cueKey": "learningRecipes.hoffmann.checkpoint1"},
+        {"step": 8, "cueKey": "learningRecipes.hoffmann.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.hoffmann.practice"
+    },
+    "kasuya-46": {
+      "focusKey": "learningRecipes.kasuya.focus",
+      "checkpoints": [
+        {"step": 1, "cueKey": "learningRecipes.kasuya.checkpoint1"},
+        {"step": 2, "cueKey": "learningRecipes.kasuya.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.kasuya.practice"
+    },
+    "rao-pulsar": {
+      "focusKey": "learningRecipes.rao.focus",
+      "checkpoints": [
+        {"step": 2, "cueKey": "learningRecipes.rao.checkpoint1"},
+        {"step": 4, "cueKey": "learningRecipes.rao.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.rao.practice"
+    },
+    "woelfl-v60": {
+      "focusKey": "learningRecipes.woelfl.focus",
+      "checkpoints": [
+        {"step": 0, "cueKey": "learningRecipes.woelfl.checkpoint1"},
+        {"step": 1, "cueKey": "learningRecipes.woelfl.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.woelfl.practice"
+    },
+    "kurasu-flash-brew": {
+      "focusKey": "learningRecipes.kurasu.focus",
+      "checkpoints": [
+        {"step": 2, "cueKey": "learningRecipes.kurasu.checkpoint1"},
+        {"step": 3, "cueKey": "learningRecipes.kurasu.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.kurasu.practice"
+    },
+    "lamarzocco-brew-ratios": {
+      "focusKey": "learningRecipes.lamarzocco.focus",
+      "checkpoints": [
+        {"step": 1, "cueKey": "learningRecipes.lamarzocco.checkpoint1"},
+        {"step": 2, "cueKey": "learningRecipes.lamarzocco.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.lamarzocco.practice"
+    },
+    "coffeecollective-espresso": {
+      "focusKey": "learningRecipes.coffeecollective.focus",
+      "checkpoints": [
+        {"step": 2, "cueKey": "learningRecipes.coffeecollective.checkpoint1"},
+        {"step": 3, "cueKey": "learningRecipes.coffeecollective.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.coffeecollective.practice"
+    },
+    "onyx-monarch-espresso": {
+      "focusKey": "learningRecipes.onyx-monarch.focus",
+      "checkpoints": [
+        {"step": 0, "cueKey": "learningRecipes.onyx-monarch.checkpoint1"},
+        {"step": 1, "cueKey": "learningRecipes.onyx-monarch.checkpoint2"}
+      ],
+      "practiceKey": "learningRecipes.onyx-monarch.practice"
+    }
+  }
+}

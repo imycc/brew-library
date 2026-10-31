@@ -1,0 +1,122 @@
+{
+  "learnNav": "Aprender",
+  "findRecipe": "Encontrar uma receita",
+  "sectionIntroPourover": "Métodos de coado originais e com fonte verificável. Navegue por equipamento, autor, dose ou condições do café registradas.",
+  "sectionIntroEspresso": "Pontos de partida para espresso com fonte verificável. Compare dose, rendimento, cesto, pressão, pré-infusão e as condições do café informadas.",
+  "chooseBrewerPourover": "Escolher coador",
+  "chooseBrewerEspresso": "Escolher máquina",
+  "compareScrollHint": "Deslize ou role horizontalmente para ver as outras receitas.",
+  "compareSummaryTitle": "Visão rápida",
+  "compareBaselineNote": "Os valores da fonte e os dados desconhecidos são exibidos diretamente; nenhum ranking é criado.",
+  "compareDifferenceCount": "{count} parâmetros diferentes",
+  "compareSharedCount": "Valores iguais",
+  "compareComparedCount": "Linhas comparadas",
+  "compareOnlyDifferences": "Somente diferenças",
+  "compareShowAll": "Mostrar tudo",
+  "learningLevels": {
+    "guided": "Lição guiada",
+    "practice": "Receita de prática",
+    "reference": "Receita de referência"
+  },
+  "learningBrief": {
+    "title": "Use esta receita para aprender",
+    "intro": "Nível de aprendizado: {level}. Prepare primeiro a versão da fonte e depois altere apenas uma variável por vez.",
+    "goal": "O que este método treina",
+    "method": "Por que o método funciona",
+    "observation": "O que observar",
+    "observationFallback": "Registre o tempo real, o peso final e o sinal de processo mais claro.",
+    "checkpointStep": "Etapa {number}",
+    "tradeoffTitle": "Vantagens e limites deste método",
+    "tradeoffText": "Estas notas editoriais resumem pontos fortes e cuidados práticos sem alterar os valores publicados pela fonte.",
+    "practice": "Seu próximo preparo controlado",
+    "practiceText": "Mantenha constantes o equipamento e as condições publicadas. Registre o tempo real, o peso final e o sinal de sabor mais claro antes de escolher uma única mudança.",
+    "editorialNote": "Orientação de prática deste site vinculada à etapa citada; não é uma instrução adicional do autor.",
+    "guideLink": "Abrir o guia de preparo"
+  },
+  "learningRecipes": {
+    "hoffmann": {
+      "focus": "Criar um ritmo repetível para pequenas doses com adições iguais, pausas curtas e giros suaves.",
+      "checkpoint1": "Depois do bloom, confira se o giro de cinco segundos deixa o leito de café plano e assentado.",
+      "checkpoint2": "Confirme que a balança chega a 250 g antes de retirar o coador; o tempo final é uma referência e não substitui o peso.",
+      "practice": "Repita com a mesma dose, água, moagem e sequência, mas omita apenas o giro final. Compare a drenagem e a clareza antes de atribuir um efeito ao giro."
+    },
+    "kasuya": {
+      "focus": "Aprender a sequência 4:6: duas adições de equilíbrio e depois três adições iguais para ajustar a concentração.",
+      "checkpoint1": "Aos 0:45, as duas primeiras adições devem somar 120 mL antes de avançar para a próxima etapa.",
+      "checkpoint2": "Aos 1:30 começam três adições iguais de 60 mL; os inícios publicados são 1:30, 2:10 e 2:40.",
+      "practice": "Mantenha fixos dose, moagem, temperatura e os cinco horários. Mude apenas o início da adição de 0:45 em dez segundos e compare drenagem e sabor."
+    },
+    "rao": {
+      "focus": "Usar a válvula fechada para imersão e controlar o leito com pulsos curtos.",
+      "checkpoint1": "Aos 0:45–0:50, eleve a mistura cerca de 1 cm acima do leito e abra a válvula depois do bloom.",
+      "checkpoint2": "Durante os pulsos, mantenha a mistura 1–2 cm acima do leito; a fonte não publica quantidades nem horários posteriores.",
+      "practice": "Mantenha fixos 25 g, 425 g, água fervente e a sequência da válvula. Registre número de pulsos e tempo no mesmo nível; no próximo preparo mude apenas o tamanho de um pulso."
+    },
+    "woelfl": {
+      "focus": "Seguir um método que explica enxágue, bloom e o último despejo constante antes da execução.",
+      "checkpoint1": "Durante o bloom, observe o aroma do leito; a fonte sugere cheirá-lo durante os 30–40 segundos de liberação de gás.",
+      "checkpoint2": "O segundo despejo contém os 240 ml restantes, lento e constante; a fonte não informa um horário separado para ele.",
+      "practice": "Mantenha 20 g, 300 ml, 93 °C e 60 ml de bloom. Faça um bloom de 30 segundos e outro de 40, ambos dentro da faixa publicada."
+    },
+    "kurasu": {
+      "focus": "Usar o peso do gelo como controle de força e manter o último despejo suave.",
+      "checkpoint1": "Aos 1:10, despeje lenta e suavemente até 150 g no total, sem agitação extra.",
+      "checkpoint2": "Depois de retirar o coador, mexa até todo o gelo derreter antes de servir.",
+      "practice": "Mantenha 15 g de café, 150 g de água quente e a moagem. Use cerca de 65 g de gelo em uma versão e 70 g em outra; compare a força depois que derreter."
+    },
+    "lamarzocco": {
+      "focus": "Usar proporção 1:2 e uma janela de tempo como base repetível de espresso.",
+      "checkpoint1": "A 93 °C e 9 bar, observe a balança: a meta é 36 g em 25–35 segundos, com 30 segundos no exemplo da fonte.",
+      "checkpoint2": "Pare pelo peso em 36 g, não apenas pelo relógio.",
+      "practice": "Mantenha fixos 18 g, 36 g, 93 °C e 9 bar. Mude apenas a moagem até o tempo entrar na janela de 25–35 segundos."
+    },
+    "coffeecollective": {
+      "focus": "Entender como preparação nivelada do puck e ajuste de moagem pelo tempo trabalham juntos.",
+      "checkpoint1": "Depois de distribuir, compacte nivelado com 10–15 kg; a fonte destaca o nível mais que a força.",
+      "checkpoint2": "A 93 °C e 7 bar, ajuste a moagem para os 38 g completos chegarem em cerca de 27 segundos.",
+      "practice": "Mantenha fixos 19 g, 38 g, 93 °C e 7 bar. Mude apenas a moagem e registre como o tempo total se aproxima da meta de 27 segundos."
+    },
+    "onyx-monarch": {
+      "focus": "Entender um perfil de pressão por etapas e separar a pré-infusão da extração principal.",
+      "checkpoint1": "Os primeiros 3,5 segundos usam pressão de linha; o cartão não publica o valor real de bar na pré-infusão.",
+      "checkpoint2": "Depois suba para 9 bar e pare em 47 g aos 23 segundos; o cartão omite temperatura, cesto e moedor.",
+      "practice": "Mantenha fixos 19 g, 47 g e o perfil de pressão. Registre o tempo até a primeira gota e o total; mude a moagem apenas quando o perfil for repetível."
+    }
+  },
+  "learn": {
+    "eyebrow": "GUIA DE PREPARO",
+    "title": "Entenda o que a receita ensina",
+    "intro": "Uma receita é um ponto de partida, não uma ordem. Este guia mostra como ler as evidências, fazer um preparo-base controlado, observar o processo e mudar uma variável por vez.",
+    "loopTitle": "O ciclo de aprendizado",
+    "loopIntro": "As mesmas quatro perguntas servem para coado e espresso.",
+    "readTitle": "1. Decida o que manter fixo",
+    "readText": "Mantenha dose, equipamento, água e as demais condições publicadas. Deixe como desconhecido o que a fonte não informa em vez de preencher de memória.",
+    "brewTitle": "2. Prepare uma vez a versão da fonte",
+    "brewText": "Siga a sequência registrada sem tentar melhorá-la de imediato. Use tempo, peso e sinais observáveis para criar uma base repetível.",
+    "observeTitle": "3. Observe o processo e a xícara",
+    "observeText": "Anote tempo total, drenagem ou fluxo do shot, condição do leito ou do puck, peso final e o sinal de sabor mais claro. Um preparo é uma pista, não uma conclusão.",
+    "adjustTitle": "4. Altere uma única variável",
+    "adjustText": "Ao repetir, mude apenas uma coisa e registre o resultado. Assim fica mais fácil entender o efeito da moagem, da temperatura ou da agitação.",
+    "variablesTitle": "Quatro controles conectados",
+    "variablesText": "Dose e meta de bebida definem a escala; moagem e fluxo controlam a velocidade; tempo e agitação alteram o contato; temperatura e água moldam o que é extraído. Uma receita move vários ao mesmo tempo, então compare o método inteiro em vez de um único número.",
+    "labTitle": "Seu primeiro preparo controlado",
+    "labIntro": "Escolha uma receita com base clara e não troque o café entre as tentativas.",
+    "labBaseline": "Prepare uma vez a versão da fonte. Registre tempo real, peso final e as três sensações de sabor mais evidentes.",
+    "labChange": "Depois da base, altere uma variável em uma direção definida. Mantenha dose e todas as outras condições iguais.",
+    "labRecord": "Registre a mudança e o resultado. Volte à base se a xícara ficar menos clara ou o processo mais difícil de repetir.",
+    "tasteTitle": "Como descrever a xícara",
+    "tasteIntro": "Sabor é evidência, não veredito. Comece com descrições amplas, repita uma vez e evite atribuir a causa cedo demais.",
+    "tasteSour": "Ácido, agudo ou fraco: use como pista para investigar extração ou concentração; compare também com o caráter do café indicado pela fonte.",
+    "tasteBitter": "Amargo ou adstringente: verifique sobreextração, água, temperatura e agitação antes de mudar vários ajustes.",
+    "tasteWeak": "Fraco apesar da dose esperada: confirme primeiro o peso final e a diluição; depois revise moagem e tempo de contato.",
+    "tasteSlow": "Drenagem ou fluxo lento: verifique moagem, finos, filtro, cesto e agitação antes de alterar tudo ao mesmo tempo.",
+    "tasteCaveat": "Estas são pistas de investigação, não uma tabela de diagnóstico. Café, água, temperatura, moagem, agitação e técnica podem levar ao mesmo sabor.",
+    "evidenceTitle": "Leia os rótulos antes de agir",
+    "evidenceSource": "Valor da fonte: copiado do autor ou editor citado. Desconhecido significa que a fonte não fornece o dado.",
+    "evidenceDerived": "Valor derivado: cálculo feito apenas com números publicados. Ele não acrescenta uma nova afirmação sobre o preparo.",
+    "evidenceEditorialLabel": "Orientação editorial",
+    "evidenceEditorial": "Uma explicação do site, separada da instrução original do autor. Serve para praticar e não comprova o que a fonte disse.",
+    "curatedTitle": "Comece por estes oito métodos",
+    "curatedIntro": "Uma sequência por estrutura, imersão, café gelado e espresso."
+  }
+}
