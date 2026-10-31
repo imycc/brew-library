@@ -574,6 +574,46 @@
         "equipmentSpecific",
         "grindSensitive"
       ]
+    },
+    "lamarzocco-brew-ratios": {
+      "strengths": [
+        "repeatable",
+        "temperatureControl"
+      ],
+      "considerations": [
+        "equipmentSpecific",
+        "grindSensitive"
+      ]
+    },
+    "coffeecollective-espresso": {
+      "strengths": [
+        "repeatable",
+        "clearTimeline"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "grindSensitive"
+      ]
+    },
+    "onyx-monarch-espresso": {
+      "strengths": [
+        "repeatable",
+        "preInfusionControl"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "equipmentSpecific"
+      ]
+    },
+    "onyx-aponte-espresso": {
+      "strengths": [
+        "repeatable",
+        "preInfusionControl"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "beanSpecific"
+      ]
     }
   },
   "equipment": {

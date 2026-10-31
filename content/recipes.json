@@ -3241,6 +3241,359 @@
           "key": "recipes.licata-w60.teach3"
         }
       ]
+    },
+    {
+      "id": "lamarzocco-brew-ratios",
+      "copy": "lamarzocco",
+      "author": "La Marzocco",
+      "authorId": "lamarzocco",
+      "brewer": "La Marzocco Linea Micra",
+      "brewerId": "lamarzocco-linea-micra",
+      "kind": "hot",
+      "method": "espresso",
+      "dose": 18,
+      "yield": {
+        "amount": 36,
+        "unit": "g",
+        "basis": "target"
+      },
+      "ratioStated": "1:2",
+      "temperature": 93,
+      "duration": [
+        25,
+        35
+      ],
+      "extraction": {
+        "pressureBar": 9,
+        "basket": {
+          "grams": 17
+        }
+      },
+      "steps": [
+        {
+          "action": "dose",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.lamarzocco.s00"
+        },
+        {
+          "action": "extract",
+          "at": 0,
+          "amount": 36,
+          "cumulative": 36,
+          "unit": "g",
+          "pressure": 9,
+          "instruction": "recipes.lamarzocco.s01"
+        },
+        {
+          "action": "stop",
+          "at": 30,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.lamarzocco.s02"
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "context": "daily",
+      "coffee": {
+        "roast": "medium",
+        "asRecommendation": true
+      },
+      "teaching": [
+        {
+          "key": "recipes.lamarzocco.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.lamarzocco.teach2",
+          "step": 1
+        },
+        {
+          "key": "recipes.lamarzocco.teach3",
+          "step": 2
+        }
+      ],
+      "source": {
+        "label": "La Marzocco · Using Espresso Brew Ratios",
+        "url": "https://www.lamarzocco.com/tw/en/using-espresso-brew-ratios/",
+        "published": "2023-11-22",
+        "publishedBasis": "page",
+        "updated": "2023-12-15",
+        "archive": "https://web.archive.org/web/20261030171753/https://www.lamarzocco.com/tw/en/using-espresso-brew-ratios/",
+        "evidence": "We will use the 17g basket and put 18g of ground coffee into it, going for a normale ratio... we will pull 36g of liquid espresso in 25-35 seconds... La Marzocco machines will be set at 200 °F / 93 °C at the factory... brew espresso at 9 bars of pressure at the factory.",
+        "checked": "2026-10-31"
+      }
+    },
+    {
+      "id": "coffeecollective-espresso",
+      "copy": "coffeecollective",
+      "author": "Coffee Collective",
+      "authorId": "coffeecollective",
+      "brewer": "Espresso machine",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "method": "espresso",
+      "dose": 19,
+      "yield": {
+        "amount": 38,
+        "unit": "g",
+        "basis": "target"
+      },
+      "ratioStated": "1:2",
+      "temperature": 93,
+      "duration": [
+        27,
+        27
+      ],
+      "extraction": {
+        "pressureBar": 7,
+        "basket": {
+          "id": "vst",
+          "name": "VST basket · 18 g or 20 g"
+        },
+        "puckPrep": [
+          "level",
+          "tamp"
+        ]
+      },
+      "steps": [
+        {
+          "action": "dose",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.coffeecollective.s00"
+        },
+        {
+          "action": "level",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.coffeecollective.s01"
+        },
+        {
+          "action": "tamp",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.coffeecollective.s02"
+        },
+        {
+          "action": "extract",
+          "at": 0,
+          "amount": 38,
+          "cumulative": 38,
+          "unit": "g",
+          "pressure": 7,
+          "instruction": "recipes.coffeecollective.s03"
+        },
+        {
+          "action": "stop",
+          "at": 27,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.coffeecollective.s04"
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "context": "daily",
+      "teaching": [
+        {
+          "key": "recipes.coffeecollective.teach1",
+          "step": 3
+        },
+        {
+          "key": "recipes.coffeecollective.teach2",
+          "step": 2
+        },
+        {
+          "key": "recipes.coffeecollective.teach3",
+          "step": 4
+        }
+      ],
+      "source": {
+        "label": "Coffee Collective · Espresso brew guide",
+        "url": "https://coffeecollective.dk/pages/brew-guide/espresso-brew-guide",
+        "published": null,
+        "archive": "https://web.archive.org/web/20261030171841/https://coffeecollective.dk/pages/brew-guide/espresso-brew-guide",
+        "evidence": "Dose 19 g for a double espresso / Brew Weight 38 g / Extraction Time 27 seconds / Grind Very fine - adjust to brew time / Filter Basket 18 g or 20g VST Basket / Water Temperature 93°C / Water Pressure 7 bars",
+        "checked": "2026-10-31"
+      }
+    },
+    {
+      "id": "onyx-monarch-espresso",
+      "copy": "onyx-monarch",
+      "author": "Onyx Coffee Lab",
+      "authorId": "onyx",
+      "brewer": "Fellow Espresso Series 1",
+      "brewerId": "fellow-espresso-series-1",
+      "kind": "hot",
+      "method": "espresso",
+      "dose": 19,
+      "yield": {
+        "amount": 47,
+        "unit": "g",
+        "basis": "target"
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        23,
+        23
+      ],
+      "extraction": {
+        "pressureBar": 9,
+        "preInfusion": {
+          "seconds": 3.5
+        }
+      },
+      "steps": [
+        {
+          "action": "preinfuse",
+          "at": 0,
+          "end": 3.5,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.onyx-monarch.s00"
+        },
+        {
+          "action": "extract",
+          "at": 3.5,
+          "amount": 47,
+          "cumulative": 47,
+          "unit": "g",
+          "pressure": 9,
+          "instruction": "recipes.onyx-monarch.s01"
+        },
+        {
+          "action": "stop",
+          "at": 23,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.onyx-monarch.s02"
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "context": "daily",
+      "coffee": {
+        "name": "Monarch",
+        "origin": "Colombia, Ethiopia",
+        "process": "washed",
+        "roast": "dark"
+      },
+      "teaching": [
+        {
+          "key": "recipes.onyx-monarch.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.onyx-monarch.teach2",
+          "step": 1
+        }
+      ],
+      "source": {
+        "label": "Onyx Coffee Lab · Brew Guides",
+        "url": "https://onyxcoffeelab.com/pages/brew-guides",
+        "published": null,
+        "archive": "https://web.archive.org/web/20261030172030/https://onyxcoffeelab.com/pages/brew-guides",
+        "checked": "2026-10-31",
+        "evidence": "Monarch ... Washed ... Expressive Dark ... Espresso ... Coffee: 19g / Yield: 47g / Line Pressure: 0–3.5s / 9 Bar: 23s / Series 1 Profile"
+      },
+      "tasting": [
+        "recipes.onyx-monarch.tasting"
+      ]
+    },
+    {
+      "id": "onyx-aponte-espresso",
+      "copy": "onyx-aponte",
+      "author": "Onyx Coffee Lab",
+      "authorId": "onyx",
+      "brewer": "Espresso machine",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "method": "espresso",
+      "dose": 20,
+      "yield": {
+        "amount": 48,
+        "unit": "g",
+        "basis": "target"
+      },
+      "temperature": null,
+      "temperatureMode": "unknown",
+      "duration": [
+        24,
+        24
+      ],
+      "extraction": {
+        "pressureBar": 9,
+        "preInfusion": {
+          "seconds": 3.5
+        }
+      },
+      "steps": [
+        {
+          "action": "preinfuse",
+          "at": 0,
+          "end": 3.5,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.onyx-aponte.s00"
+        },
+        {
+          "action": "extract",
+          "at": 3.5,
+          "amount": 48,
+          "cumulative": 48,
+          "unit": "g",
+          "pressure": 9,
+          "instruction": "recipes.onyx-aponte.s01"
+        },
+        {
+          "action": "stop",
+          "at": 24,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.onyx-aponte.s02"
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "context": "daily",
+      "coffee": {
+        "name": "Aponte Village",
+        "origin": "Colombia",
+        "process": "honey",
+        "roast": "light"
+      },
+      "teaching": [
+        {
+          "key": "recipes.onyx-aponte.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.onyx-aponte.teach2",
+          "step": 1
+        }
+      ],
+      "source": {
+        "label": "Onyx Coffee Lab · Brew Guides",
+        "url": "https://onyxcoffeelab.com/pages/brew-guides",
+        "published": null,
+        "archive": "https://web.archive.org/web/20261030172030/https://onyxcoffeelab.com/pages/brew-guides",
+        "checked": "2026-10-31",
+        "evidence": "Colombia Aponte Village ... Red Honey ... Light ... Espresso ... Coffee: 20g / Yield: 48g / Line Pressure: 0–3.5s / 9 Bar: 24s"
+      },
+      "tasting": [
+        "recipes.onyx-aponte.tasting"
+      ]
     }
   ]
 }

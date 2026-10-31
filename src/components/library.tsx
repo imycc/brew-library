@@ -202,7 +202,7 @@ export function Home(){
     <section className="recipe-section" id="recipes"><div className="section-heading"><h2>{t('sectionTitle')}</h2><span className="heading-rule"/><p>{t('sectionIntro')}</p></div>
       <div className="method-tabs" role="tablist" aria-label={t('method')}>{methodTabs.map((tab,index)=>{const count=tab==='espresso'?espressoRecipes.length:pourOverRecipes.length;return <button key={tab} id={`method-tab-${tab}`} type="button" role="tab" aria-selected={tab===method} aria-controls="recipe-panel" tabIndex={tab===method?0:-1} onClick={()=>selectMethod(tab)} onKeyDown={event=>tabKeyDown(event,index)}><span>{t(methodLabelKeys[tab])}</span><span className="tab-count" aria-hidden="true">{count}</span><span className="sr-only">{t('results',{count})}</span></button>;})}</div>
       <div id="recipe-panel" role="tabpanel" aria-labelledby={`method-tab-${method}`} tabIndex={0}>
-        <div className="library-toolbar hero-search"><label className="search-field"><MagnifyingGlass size={24}/><span className="sr-only">{t('search')}</span><input type="search" placeholder={t('search')} value={filters.q||''} onChange={e=>setFilter('q',e.target.value)}/></label>
+        <div className="library-toolbar"><label className="search-field"><MagnifyingGlass size={24}/><span className="sr-only">{t('search')}</span><input type="search" placeholder={t('search')} value={filters.q||''} onChange={e=>setFilter('q',e.target.value)}/></label>
           {hasChoice(options.brewer)?<label className="brewer-select"><Funnel size={20}/><span className="sr-only">{t('chooseBrewer')}</span><select aria-label={t('chooseBrewer')} value={filters.brewer||''} onChange={e=>setFilter('brewer',e.target.value)}><option value="">{t('chooseBrewer')}</option>{options.brewer.map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>:null}
         </div>
         <div className="filter-row"><span className="result-count" aria-live="polite">{t('results',{count:filtered.length})}</span>
@@ -247,7 +247,7 @@ export function RecipeDetail({id}:{id:string}){
    <section className="derived-panel" data-derived-panel>
      <div className="derived-head"><h2>{t('derivedTitle')}</h2><p>{t('derivedNote')}</p></div>
      <dl className={isEspresso(r)&&postPreInfusion===null?'derived-grid single':'derived-grid'}>
-       <div><dt>{t('ratio')}</dt><dd>{ratio(r,locale)}</dd></div>
+       <div><dt>{t(isEspresso(r)?'ratioEspresso':'ratio')}</dt><dd>{ratio(r,locale)}</dd></div>
        {isEspresso(r)?(postPreInfusion!==null&&postPreInfusion>=0?<div><dt>{t('afterPreInfusion')}</dt><dd>{time(postPreInfusion)}</dd></div>:null):<>
        <div><dt>{t('bloomShare')}</dt><dd>{bloomShare(r)===null?t('unknown'):percent.format(bloomShare(r)!)}</dd></div>
        <div><dt>{t(phase&&phase.kind==='start'?'lastPourStarts':'pourEnds')}</dt><dd>{phase?time(phase.endsAt):t('unknown')}</dd></div>
@@ -284,7 +284,7 @@ export function ComparePage(){
  const selected=ids.map(id=>recipes.find(r=>r.id===id)!);
  const sharedRows:[string,(r:Recipe)=>string][]=[['equipment',r=>t(`recipes.${r.copy}.equipment`)],['dose',r=>`${doseText(r)} g`]];
  const pourOverRows:[string,(r:Recipe)=>string][]=[['water',r=>isPourOver(r)?`${waterText(r)} ${r.water.unit}${r.water.derived?' *':''}`:t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
- const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
+ const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratioEspresso',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
  // Comparison is limited to one method, so the row set follows the first selected recipe.
  const baseRows:[string,(r:Recipe)=>string][]=[...sharedRows,...selected[0]&&isEspresso(selected[0])?espressoRows:pourOverRows];
  const rows:[string,(r:Recipe)=>string][]=selected.some(r=>r.ice)?[...baseRows.slice(0,2),['ice',r=>iceText(r,t)],...baseRows.slice(2)]:baseRows;
