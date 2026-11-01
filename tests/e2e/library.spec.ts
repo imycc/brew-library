@@ -418,8 +418,15 @@ test('the third video batch keeps upper bounds, ranges and video-derived flows e
  const jsonLd=(await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ');
  await expect(jsonLd).not.toContain('"Recipe"');
  await page.setViewportSize({width:390,height:844});
+ await page.goto(`${base}/en/recipes/wendelboe-tamana/`);
+ await expect(page.locator('.parameters>div').last().locator('dd')).toHaveCSS('font-size','12px');
  await page.goto(`${base}/de/recipes/hedrick-ultimate-pourover/`);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
+ await page.goto(`${base}/en/recipes/licata-w60/`);
+ const retiredActions=await page.locator('.detail-actions .button').evaluateAll(nodes=>nodes.map(node=>{const r=node.getBoundingClientRect();return{width:r.width,top:r.top,bottom:r.bottom}}));
+ expect(retiredActions[0].top).toBeLessThan(retiredActions[1].top);
+ expect(retiredActions[0].width).toBeGreaterThan(300);
+ expect(retiredActions[1].width).toBeGreaterThan(300);
 });
 
 test('tasting notes and flow rates stay tied to their sources',async({page})=>{
