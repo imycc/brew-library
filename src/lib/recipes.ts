@@ -42,6 +42,14 @@ const commonRecipeFields={
   doseGround:z.number().positive().optional(),
   grindHedged:z.boolean().optional(),
   source:z.object({label:z.string(), url:z.url(), video:z.url().optional(), videoPublished:z.string().nullable().optional(), published:z.string().nullable(), publishedBasis:z.enum(['page','video','event']).optional(), updated:z.string().nullable().optional(), archive:z.url().optional(), videoArchive:z.url().optional(), evidence:z.string().optional(), checked:z.iso.date()}),
+  // A source can define the answer through a formula rather than one fixed
+  // tuple. Keep that exception in the recipe record so list cards and detail
+  // pages do not present an editorial example as the author's exact recipe.
+  quickAnswerKey:z.string().regex(/^[a-zA-Z0-9.-]+$/).optional(),
+  // Time ranges can describe a whole brew, only drawdown, or only extraction.
+  // A source-specific label prevents those distinct meanings collapsing into
+  // one generic "total time" field.
+  brewTimeKey:z.string().regex(/^[a-zA-Z0-9.-]+$/).optional(),
   image:z.enum(['coffee-bloom','brewer-still','espresso-shot']).optional(),
   teaching:z.array(z.object({key:z.string().regex(/^[a-zA-Z0-9.-]+$/), step:z.number().int().nonnegative().optional()})).optional(),
   tasting:z.array(z.string()).optional(),
@@ -168,6 +176,11 @@ export function ratio(recipe:Recipe, locale:string):string {
     return recipe.yield.unit==='g'?`1 : ${format(recipe.yield.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.yield.amount} mL`;
   }
   const total=totalLiquid(recipe);
+  if(recipe.ice&&total&&total.unit==='g'){
+    const low=(total.amount)/recipe.dose;
+    const high=(recipe.water.amount+(recipe.ice.amountMax??recipe.ice.amount))/recipe.dose;
+    return low===high?`1 : ${format(low)}`:`1 : ${format(low)}–${format(high)}`;
+  }
   // Cannot pair the two units: show the water ratio alone rather than inventing a total.
   if(!total)return recipe.water.unit==='g'?`1 : ${format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
   if(total.unit==='g'){
@@ -201,7 +214,7 @@ export function bloomShare(recipe:Recipe):number|null {
   const bloom=recipe.steps.find(s=>s.action==='bloom'&&s.amount!==null);
   return bloom&&total?(bloom.amount as number)/total.amount:null;
 }
-export type PourPhase={endsAt:number;kind:'end'|'start';drawdown:number|null};
+export type PourPhase={endsAt:number;kind:'end'|'start';drawdown:[number,number]|null};
 export function pourPhase(recipe:Recipe):PourPhase|null {
   if(!isPourOver(recipe))return null;
   // Every pouring step counts here, quantified or not: an untimed later burst means the
@@ -216,8 +229,8 @@ export function pourPhase(recipe:Recipe):PourPhase|null {
   const lastEnd=Math.max(...ends);
   const hasEnd=ends.length&&lastEnd>=lastStart;
   const endsAt=hasEnd?lastEnd:lastStart;
-  const finish=recipe.duration?recipe.duration[0]:null;
-  return {endsAt,kind:hasEnd?'end':'start',drawdown:finish!==null&&finish>=endsAt?finish-endsAt:null};
+  if(!recipe.duration||recipe.duration[0]<endsAt)return {endsAt,kind:hasEnd?'end':'start',drawdown:null};
+  return {endsAt,kind:hasEnd?'end':'start',drawdown:[recipe.duration[0]-endsAt,recipe.duration[1]-endsAt]};
 }
 export function sourceFacts(recipe:Recipe):{provided:boolean;key:string;label:string}[] {
   if(isEspresso(recipe)){

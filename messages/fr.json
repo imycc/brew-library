@@ -298,13 +298,13 @@
     },
     "selorio": {
       "title": "Lui Selorio · ORIGAMI Air",
-      "summary": "Quatre versements avec ZP6 Special et CAFEC.",
+      "summary": "Quatre versements avec ZP6 Special et papier CAFEC ; seules les fins des trois premiers intervalles sont claires dans la source.",
       "version": "Philippine Brewers Cup · 2023",
       "grind": "4.1 (1Zpresso ZP6 Special)",
       "equipment": "ORIGAMI Air",
       "notes": "Résumé 240 mL, étapes g. Troisième intervalle 1:00–1:00 ; seul le début est retenu.",
       "finish": "Laisser égoutter jusqu’à 2:25.",
-      "third": "Commencer à 1:00 ; la fin du troisième intervalle est ambiguë.",
+      "third": "Commencez le troisième versement de 60 g à 1:00. La source écrit 1:00–1:00 ; la fin reste inconnue et ne doit pas être lue comme dix secondes.",
       "s00": "Versez 50 g d’eau en dix secondes, puis attendez 0:30.",
       "s01": "Versez 70 g d’eau en dix secondes, puis attendez 1:00.",
       "s03": "Versez les 60 g derniers en dix secondes et laissez s’écouler jusqu’à 2:25."
@@ -343,11 +343,11 @@
       "equipment": "HARIO V60 · céramique",
       "notes": "Il s’agit de la version pédagogique HARIO, pas d’une reconstitution de compétition. Les derniers versements débutent à 2:10 et 2:40.",
       "finish": "Retirez le porte-filtre au temps indiqué.",
-      "s00": "Versez 50 mL à 0:00 — la source en fait 42 % des 120 mL de la première étape, soit 40 % du total, au service du sucré.",
-      "s01": "Ajoutez 70 mL à 0:45 pour compléter la première étape à 120 mL — les 40 % restants.",
+      "s00": "Versez 50 mL à 0:00. Les deux premiers versements totalisent 120 mL, soit 40 % de l’eau ; ce premier représente environ 41,7 % de cette étape et sert à construire l’équilibre.",
+      "s01": "À 0:45, ajoutez 70 mL, les 58,3 % restants de la première étape, pour atteindre 120 mL.",
       "s02": "Versez 60 mL à 1:30 — la source divise les 180 mL restants en trois versements égaux.",
       "s03": "Versez 60 mL à 2:10, le deuxième des trois versements égaux.",
-      "s04": "Versez les 60 mL derniers à 2:40."
+      "s04": "À 2:40, commencez le dernier versement de 60 mL jusqu’à 300 mL."
     },
     "hoffmann": {
       "title": "V60 pour une tasse",
@@ -389,7 +389,7 @@
       "version": "HARIOLOGY · HARIO Europe",
       "grind": "Moyenne-fine ; cadran EK standard 7,5",
       "equipment": "HARIO V60 · Céramique",
-      "notes": "Utilise un Gesha nature de torréfaction claire de Colombia La Palma y El Tucan. Le cumul intermédiaire de 250 mL est calculé en retirant les 50 mL finaux du total. Les temps intermédiaires ne sont pas précisés.",
+      "notes": "Utilise un Gesha naturel clair de Colombia La Palma y El Tucan. Le total intermédiaire de 250 mL est calculé en retirant les 50 mL finaux. Les temps intermédiaires et le moment exact du passage du versement fort au versement central lent ne sont pas publiés ; observe le débit visible dans la vidéo source.",
       "finish": "Terminer à 2:30.",
       "bloom": "Mouiller la mouture et préinfuser 30 secondes.",
       "continuous": "Verser rapidement et énergiquement, puis ralentir au centre jusqu’au cumul de 250 mL.",
@@ -435,7 +435,7 @@
       "version": "World Brewers Cup · 2021",
       "grind": "Moyenne-grosse",
       "equipment": "HARIO W60",
-      "notes": "Recette du World Brewers Cup 2021 publiée par HARIO. Le total est donné en 200 g, les étapes en mL. Les deux sont conservés sans supposer leur équivalence.",
+      "notes": "Recette du World Brewers Cup 2021 publiée par HARIO. L’aperçu indique 200 g, les étapes utilisent des mL ; les deux restent séparés sans équivalence supposée. La fiche n’explique pas comment placer le papier sur la grille métallique du W60 ; suivez la notice de montage du fabricant avant de préparer le café.",
       "finish": "Retirer le W60 à 3:15.",
       "water": "La source ne précise pas s’il s’agit de la dureté ou des matières dissoutes totales.",
       "filters": "Maille plate et filtre papier W60 utilisés ensemble.",
@@ -462,14 +462,14 @@
       "version": "HARIOLOGY · HARIO Europe",
       "grind": "Non indiqué par la source",
       "equipment": "HARIO V60 · plastique",
-      "notes": "La recette publiée utilise 30 g, 500 mL à 92 °C et un café Ézio Sartori du Brésil. La mouture n’est pas précisée.",
+      "notes": "La source indique 30 g de café et 500 mL à 92 °C. Les objectifs de versement sont en g ; les unités restent séparées et ne sont pas converties directement. Le café Ézio Sartori du Brésil est nommé, la mouture ne l’est pas.",
       "finish": "Terminer l’extraction avant 3:00.",
       "beans": "Ézio Sartori, Espírito Santo, Brésil ; torréfié par Coffee Lab",
       "s00": "Versez 60 g d’eau et laissez pré-infuser 30 secondes.",
       "s01": "Au deuxième versement, atteignez 250 g ; les 190 g sont cette cible moins la pré-infusion.",
-      "s02": "Remuez trois fois.",
+      "s02": "Une fois le versement à 250 g terminé, remuez trois fois.",
       "s03": "À 1:30, versez le reste de l’eau pour atteindre 500 g au total.",
-      "s04": "Remuez de nouveau trois fois.",
+      "s04": "Une fois le versement de 1:30 terminé, remuez encore trois fois.",
       "taste1": "Du café qu’elle utilise : arôme floral et acidité éclatante."
     },
     "mallouhi": {
@@ -491,7 +491,7 @@
       "version": "The Coffee Chronicler · 2023",
       "grind": "Non indiqué par la source",
       "equipment": "HARIO Switch 02",
-      "notes": "La version standard utilise 20 g et 320 g : verser la moitié ouvert, fermer à 0:45, ajouter le reste puis ouvrir à 2:00. Température et mouture non précisées.",
+      "notes": "La version standard de l’article utilise 20 g de café et 320 mL d’eau : versez la moitié valve ouverte, fermez à 0:45, ajoutez l’autre moitié puis ouvrez à 2:00. Température et mouture ne sont pas indiquées.",
       "finish": "Laisser s’égoutter ; la durée publiée est de 2:45–3:15.",
       "open": "Commencer avec la valve ouverte.",
       "firstPour": "Verser la première moitié valve ouverte.",
@@ -566,7 +566,7 @@
       "finish": "Pas de durée totale publiée ; le dernier versement s’achève à 2:30.",
       "overview": "Moudre deux cafés sur deux réglages dans une même extraction échange du temps de préparation contre de la séparation aromatique ; le fond refroidi abaisse dès les premières gouttes.",
       "bestFor": "Pour qui accepte plus de préparation pour comparer deux moutures",
-      "prepare": "Moulez les deux cafés séparément, placez Obatã en dessous et refroidissez le fond du pichet à −10 °C avant de commencer.",
+      "prepare": "Moulez 12 g d’Obatã à 7.5 pour la couche inférieure et 4 g de Catucaí à 7.0 pour la couche supérieure. Refroidissez le fond du serveur en verre à −10 °C avant l’extraction.",
       "s00": "Versez 60 g entre 0:00 et 0:35 et laissez pré-infuser.",
       "s01": "Versez 70 g entre 0:35 et 1:15.",
       "s02": "Versez 60 g entre 1:15 et 1:40.",
@@ -607,7 +607,7 @@
       "grind": "2.7 (1Zpresso K-Ultra)",
       "equipment": "Graycano avec papier Sibarist et Melodrip",
       "water": "Eau Apax préparée à 72 ppm avec Tonik 1 g, Jamm 1.5 g et Lylac 1.5 g ; le volume d’eau n’est pas précisé.",
-    "notes": "La source indique un bloom de 40 secondes, puis une attente jusqu’à 1:20 avant le troisième versement et 2:00 avant le quatrième. Elle ne donne pas d’heure de départ distincte pour le deuxième versement de 60 g, qui reste donc une étape d’ordre.",
+      "notes": "La source indique un bloom de 40 secondes, puis une attente jusqu’à 1:20 avant le troisième versement et 2:00 avant le quatrième. Elle ne donne pas d’heure de départ distincte pour le deuxième versement de 60 g, qui reste donc une étape d’ordre.",
       "finish": "La source annonce une durée totale de 2:40.",
       "overview": "Eau préparée, assemblage de deux fermes et Melodrip placent chaque variable sous contrôle, pendant que le calendrier de versement reste volontairement simple.",
       "bestFor": "Pour qui prépare son eau et veut isoler les variables",
@@ -649,23 +649,26 @@
     },
     "ohno": {
       "title": "Extraction froide et grossière de Ohno avec ajout d’eau",
-      "summary": "La recette gagnante : 22 g à 83 °C extraits sur 190 g, puis allongés de 60–70 g d’eau à 65 °C.",
+      "summary": "Extrayez 22 g avec 190 g à 83 °C, laissez écouler entre 1:30 et 1:35, puis diluez dans la tasse avec de l’eau à 65 °C : commencez à 50 g et ajustez jusqu’à environ 60–70 g.",
       "version": "ORIGAMI CUP · vainqueur 2024",
       "grind": "30 crans (Comandante C40 MK4)",
       "equipment": "ORIGAMI Air S avec papier Wave",
       "water": "Eau naturelle Tajima fournie par l’événement à tous les concurrents ; aucune base de dureté ou de TDS.",
-      "notes": "Les 190 g ne couvrent que les trois versements. L’eau finale part de 50 g et finit vers 60–70 g au goût ; publiée comme une plage, elle reste hors du total.",
+      "notes": "Les 190 g sont uniquement l’eau d’extraction. La dilution commence à 50 g et peut monter jusqu’à environ 60–70 g au total selon le goût ; elle ne fait pas partie des 190 g.",
       "prepare": "Moulez 32 g en 30 crans et tamisez au tamis L le plus grossier ; utilisez 22,0 g.",
-      "finish": "L’écoulement s’achève entre 1:30 et 1:35, avant l’eau de finition.",
+      "finish": "Mélangez le café dilué puis servez.",
       "overview": "La température est baissée exprès, la mouture grossière et le lit plat pour sous-extraire volontairement ; l’eau finale règle la force. Avec la tasse propre comme critère, le risque est poussé du côté faible.",
       "bestFor": "Concurrents voulant régler la force avec une eau de finition",
       "s00": "Premier versement de 45 g, en répartissant l’eau sur toute la mouture.",
       "s01": "À 0:30, montez à 120 g (+75 g) en cercle lent, en visant un peu d’agitation.",
       "s02": "À 1:00, montez à 190 g (+70 g) au centre sans agiter, puis longez la paroi sur les ~15 g derniers pour finir le lit plat.",
-      "s03": "Après l’écoulement, ajoutez de l’eau refroidie à 65 °C : d’abord 50 g, puis ajustez au goût jusqu’à 60–70 g.",
+      "s03": "Laissez les 190 g s’écouler complètement. La source situe la fin entre 1:30 et 1:35 ; l’extraction se termine avant la dilution.",
       "beans": "Ohno précise que le profil du café n’a été révélé que le jour même ; sa fiche est écrite pour n’importe quel café et n’en nomme aucun.",
       "taste1": "Son objectif annoncé : une tasse nette et du sucré ; la basse température et le tamis grossier y servent.",
-      "taste2": "Le café servi affichait TDS 1,07 : volontairement dilué, proche du thé."
+      "taste2": "Le café servi affichait TDS 1,07 : volontairement dilué, proche du thé.",
+      "quickAnswer": "Réponse rapide : 22 g à {temperature}, 190 g en trois versements, écoulement à 1:30–1:35. Diluez ensuite dans la tasse avec de l’eau à 65 °C : commencez à 50 g et ajustez jusqu’à 60–70 g.",
+      "s04": "Ajoutez de l’eau à 65 °C au café filtré : commencez par 50 g, goûtez, puis portez l’eau de dilution totale vers 60–70 g.",
+      "brewTime": "Écoulement de l’extraction : 1:30–1:35 (avant dilution)"
     },
     "gil-2025": {
       "title": "Recette ZP6 en trois versements de Gil (2025)",
@@ -676,7 +679,7 @@
       "water": "Eau à 65 ppm ; ni composition ni base de mesure indiquées.",
       "notes": "C’est la version ZP6 2025 de Gil, tenue séparée de sa recette K-Ultra/ORIGAMI Air 2024 ; aucune durée totale publiée.",
       "finish": "Pas d’heure de fin ; après les trois versements, laissez s’écouler.",
-      "overview": "Même auteur, un an plus tard, avec un autre moulin et une autre structure : trois versements plus gros à intervalle plus court, qui gardent la tasse nette et laissent le café s’exprimer.",
+      "overview": "Le même auteur change de moulin et de structure un an plus tard : trois versements plus gros. Les intervalles sont de 50 secondes en 2025 contre 45 en 2024 ; la fiche dit que la tasse reste nette et expressive.",
       "bestFor": "Comparer deux versions du même auteur à un an d’écart",
       "s00": "Placez 15 g de café dans le filtre et ouvrez avec 60 g.",
       "s01": "Ajoutez 100 g après 50 secondes.",
@@ -688,7 +691,7 @@
       "version": "Kurasu Journal",
       "grind": "Plus fin qu’un versement chaud classique",
       "equipment": "Filtre et papier non nommés ; le papier est rincé et le filtre préchauffé",
-    "notes": "La page ne nomme ni le dripper ni la température de l’eau ; elle a été publiée le 2026-09-23. La glace est donnée à environ 65–70 g et présentée comme ce qui fixe la force finale ; remuez jusqu’à ce qu’elle soit entièrement fondue avant de servir.",
+      "notes": "La page ne nomme ni le dripper ni la température de l’eau ; elle a été publiée le 2026-09-23. La glace est donnée à environ 65–70 g et présentée comme ce qui fixe la force finale ; remuez jusqu’à ce qu’elle soit entièrement fondue avant de servir.",
       "finish": "Terminez vers 1:40–1:45, retirez le filtre et remuez jusqu’à ce que la glace restante ait fondu.",
       "overview": "Le flash brew verse une extraction chaude concentrée directement sur la glace : refroidissement et dilution vont de pair, et le poids de glace devient le réglage de force — ce que la page souligne le plus. La température n’est pas donnée ; ce levier reste au goût.",
       "bestFor": "Un café filtre clair que vous voulez glacé sans attendre douze heures",
@@ -777,7 +780,7 @@
     },
     "kasuya-neo": {
       "title": "NEO de Kasuya : dix versements de 30 g",
-      "summary": "Vingt grammes pour 300 g à 95–96 °C, très grossier, en dix versements de 30 g toutes les 15 secondes.",
+      "summary": "20 g pour 300 g à 95–96 °C, très grossier : premier versement à 0:00, attente de 30 secondes, puis neuf autres versements de 30 g espacés de 15 secondes.",
       "version": "TETSU KASUYA · 2026",
       "grind": "40–45 crans (Comandante C40), très grossier",
       "equipment": "HARIO NEO ; la source indique qu’un V60 convient aussi",
@@ -785,9 +788,9 @@
       "finish": "Aucune heure de fin ; seule consigne : que l’eau ne stagne pas dans le filtre.",
       "overview": "Un contre-pied assumé à la mode des recettes courtes et peu arrosées : très grossier et chaud, puis dix petits ajouts construisent le sucré et la texture. Le plus contre-intuitif est la mouture : 40–45 crans, l’extraction venant du rythme et non des fines.",
       "bestFor": "Pour travailler le rythme du versement plutôt que le volume",
-      "s00": "Commencez par 30 g à 0:00, en laissant l’eau traverser plutôt que stagner.",
+      "s00": "Versez les 30 premiers grammes à 0:00 et laissez passer. Attendez 30 secondes avant le deuxième versement.",
       "pour": "Encore 30 g, 15 secondes après le versement précédent.",
-      "s09": "Le dixième et dernier versement de 30 g, jusqu’à 300 g.",
+      "s09": "À 2:30, faites le dixième et dernier versement de 30 g jusqu’à 300 g.",
       "teach1": "Mouture très grossière et 95–96 °C : c’est ce couple contre-intuitif qui porte la recette.",
       "teach2": "Dix ajouts de 30 g toutes les 15 secondes ; l’essentiel est que l’eau traverse le lit au lieu d’y rester.",
       "teach3": "Kasuya conseille le NEO parce qu’il extrait régulièrement de petits ajouts, mais affirme qu’un V60 convient tout autant.",
@@ -797,7 +800,7 @@
     },
     "kasuya-iced": {
       "title": "4:6 glacé de Kasuya",
-      "summary": "Vingt grammes, 150 g d’eau sur 80 g de glace dans le pichet, cinq versements de 30 g à 90–93 °C.",
+      "summary": "20 g de café et 150 g d’eau chaude en cinq ajouts de 30 g, filtrés dans un serveur contenant 80 g de glace. Température 90–93 °C.",
       "version": "TETSU KASUYA · 2026",
       "grind": "28 crans (moulin non précisé)",
       "equipment": "Un filtre ordinaire ; la source ne le nomme pas",
@@ -805,7 +808,7 @@
       "finish": "Aucune heure de fin ; laissez s’écouler entièrement sur la glace.",
       "overview": "L’idée 4:6 réduite pour la glace : moitié d’eau, cinq versements égaux, et la glace du pichet qui refroidit et dilue. Sans horaires au-delà du nombre de versements, c’est une forme plus qu’un planning.",
       "bestFor": "L’habitude 4:6 appliquée à la glace, sans Switch",
-      "s00": "Versez 30 g sur la glace.",
+      "s00": "Placez 80 g de glace dans le serveur. Versez les 30 premiers grammes d’eau chaude sur le lit de café ; le café filtré tombe ensuite sur la glace.",
       "pour": "Encore 30 g, pour cinq versements au total.",
       "s04": "Le cinquième et dernier versement de 30 g, jusqu’à 150 g.",
       "teach1": "L’eau tombe à 150 g — la moitié du 4:6 habituel — car 80 g de glace sont déjà dans le pichet.",
@@ -853,8 +856,8 @@
       "version": "Coffee Collective · Guide de préparation",
       "grind": "Très fine ; réglez la mouture pour que les 38 g arrivent en environ 27 secondes",
       "equipment": "Machine non précisée",
-    "notes": "Le guide associe un ratio 1:2 à une pression de 7 bar et à un panier VST. Il demande un tassage bien plat de 10–15 kg et un bref mélange avant de boire ; aucun café, moulin ni torréfaction n’est nommé.",
-    "water": "La source indique une eau inférieure à 50 ppm de CaCO₃, sans en déduire des objectifs généraux de dureté ou d’alcalinité.",
+      "notes": "Le guide associe un ratio 1:2 à une pression de 7 bar et à un panier VST. Il demande un tassage bien plat de 10–15 kg et un bref mélange avant de boire ; aucun café, moulin ni torréfaction n’est nommé.",
+      "water": "La source indique une eau inférieure à 50 ppm de CaCO₃, sans en déduire des objectifs généraux de dureté ou d’alcalinité.",
       "finish": "Arrêter l'extraction à 38 g.",
       "overview": "Un guide espresso concis d'un torréfacteur de Copenhague, construit autour d'un double de 19 g, d'une extraction de 27 secondes et d'un panier VST.",
       "bestFor": "Les amateurs à domicile utilisant un panier VST qui cherchent une recette 1:2 nette de style nordique.",
@@ -869,34 +872,34 @@
     },
     "onyx-monarch": {
       "title": "Monarch · Espresso",
-      "summary": "La fiche espresso d'Onyx pour Monarch : 19 g en entrée, 47 g en sortie, 3,5 secondes de pression de ligne avant 9 bar, en 23 secondes.",
+      "summary": "Fiche espresso Monarch d’Onyx : 19 g dedans, 47 g dehors, 3,5 secondes de pression de ligne avant 9 bar. Elle indique « 9 Bar: 23s » sans dire ce que ces 23 secondes couvrent.",
       "version": "Onyx Coffee Lab · Brew Guides",
       "grind": "Non précisé sur la fiche espresso",
       "equipment": "Fellow Espresso Series 1 (profil Series 1 lié)",
-      "notes": "Monarch est un assemblage lavé Colombie–Éthiopie, torréfié Expressive Dark et pensé pour le lait. La fiche renvoie à un profil Fellow Series 1 et indique une pression de ligne de 0–3,5 s, puis 9 bar jusqu'à 23 s ; elle ne donne ni température, ni panier, ni moulin.",
+      "notes": "Monarch est un mélange lavé Colombie–Éthiopie, torréfié Expressive Dark et destiné au lait. La fiche lie un profil Fellow Series 1 et indique 0–3,5 s de pression de ligne puis « 9 Bar: 23s » ; la base des 23 secondes reste inconnue, sans température, panier ni moulin.",
       "finish": "Arrêter l'extraction à 47 g.",
       "overview": "Le guide espresso d'Onyx associe un assemblage sombre pour le lait à une courte pré-infusion à pression de ligne et une fin à 9 bar.",
       "bestFor": "Quiconque prépare Monarch et veut le point de départ espresso d'Onyx.",
       "s00": "Commencer à pression de ligne pendant les 3,5 premières secondes ; la source ne précise pas la pression de pré-infusion.",
-      "s01": "Monter à 9 bar et extraire jusqu'à 47 g. La fiche indique 23 secondes.",
-      "s02": "Arrêter l'extraction à 47 g.",
+      "s01": "Montez à 9 bar et extrayez 47 g. La source étiquette l’étape à 23 secondes, mais ne précise pas si les 3,5 secondes de pression de ligne sont incluses.",
+      "s02": "Arrêtez à 47 g. Les 23 secondes restent une indication de la source dont la base temporelle est inconnue.",
       "teach1": "La fiche espresso renvoie à un profil Fellow Series 1 pour ce café.",
       "teach2": "Le profil Series 1 lié présente Monarch comme un assemblage pensé pour le lait.",
       "tasting": "Chocolat noir, mélasse, vin rouge et fruits rouges séchés ; épais et sirupeux."
     },
     "onyx-aponte": {
       "title": "Aponte Village · Espresso",
-      "summary": "La fiche espresso d'Onyx pour Aponte Village : 20 g en entrée, 48 g en sortie, 3,5 secondes de pression de ligne avant 9 bar, en 24 secondes.",
+      "summary": "Fiche Aponte Village d’Onyx : 20 g dedans, 48 g dehors, 3,5 secondes de pression de ligne avant 9 bar. Elle indique « 9 Bar: 24s » sans dire ce que ces 24 secondes couvrent.",
       "version": "Onyx Coffee Lab · Brew Guides",
       "grind": "Non précisé sur la fiche espresso",
       "equipment": "Machine non précisée",
-      "notes": "Aponte Village est un café colombien Red Honey torréfié clair. La fiche indique une pression de ligne de 0–3,5 s, puis 9 bar jusqu'à 24 s ; elle ne donne ni température, ni panier, ni moulin.",
+      "notes": "Aponte Village est un café colombien Red Honey de torréfaction claire. La fiche indique 0–3,5 s de pression de ligne puis « 9 Bar: 24s » ; la base des 24 secondes reste inconnue, sans température, panier ni moulin.",
       "finish": "Arrêter l'extraction à 48 g.",
       "overview": "Un espresso colombien clair et honey, construit sur le profil de pression de ligne d'Onyx pour 20 g.",
       "bestFor": "Qui cherche un espresso clair de procédé honey au rendement long de 1:2,4.",
       "s00": "Commencer à pression de ligne pendant les 3,5 premières secondes ; la source ne précise pas la pression de pré-infusion.",
-      "s01": "Monter à 9 bar et extraire jusqu'à 48 g. La fiche indique 24 secondes.",
-      "s02": "Arrêter l'extraction à 48 g.",
+      "s01": "Montez à 9 bar et extrayez 48 g. La source étiquette l’étape à 24 secondes, mais ne précise pas si les 3,5 secondes de pression de ligne sont incluses.",
+      "s02": "Arrêtez à 48 g. Les 24 secondes restent une indication de la source dont la base temporelle est inconnue.",
       "teach1": "Red Honey est le nom de procédé utilisé par Onyx pour ce café.",
       "teach2": "La fiche ne donne ni température, ni moulin, ni panier ; ces valeurs restent ouvertes.",
       "tasting": "Pomme Honeycrisp, cerise, vanille et papaye."
@@ -907,11 +910,11 @@
       "version": "Lance Hedrick · 26 novembre 2022",
       "grind": "Mouture moyenne (moulin non précisé)",
       "equipment": "Tout dripper pour pour-over ; la source n’en précise aucun",
-      "notes": "La source fixe une dose maximale de 30 g, pas une recette figée. Le volume d’eau dérivé de 420–510 g est rattaché à ce maximum : 30 g à 1:14–1:17. La démonstration utilise plutôt 15 g, un bloom de 45 g et 255 g d’eau. Le niveau de torréfaction détermine le ratio et la température ; la dose, l’eau et les temps réels suivent ce choix.",
+      "notes": "30 g est le plafond de la source, pas une dose obligatoire. Choisissez une dose, calculez l’eau avec 1:14–1:17 et utilisez le triple pour le bloom. La vidéo montre 15 g et 255 g comme exemple concret ; 420–510 g ne concerne que le plafond de 30 g.",
       "finish": "La source indique 2–3 minutes après un bloom de 1 minute, ou 3–4 minutes après un bloom de 2 minutes.",
       "overview": "Un cadre volontairement adaptable plutôt qu’une recette unique. La torréfaction fait varier ratio et température, tandis que le débit, le bloom et l’agitation du lit restent assez constants pour être répétés.",
       "bestFor": "Celles et ceux qui veulent une méthode structurée à adapter selon la torréfaction",
-      "s00": "Faire le bloom avec 3 fois la dose. À la limite de 30 g montrée ici, cela représente 90 g.",
+      "s00": "Faites le bloom avec trois fois la dose choisie.",
       "pour": "Verser le reste de l’eau à 6–8 g/s depuis une hauteur qui crée une forte turbulence ; le ratio choisi détermine le volume restant.",
       "teach1": "Utiliser jusqu’à 30 g ; la recette s’adapte autour de ce plafond plutôt que d’imposer 30 g à chaque fois.",
       "teach2": "La torréfaction fait varier le ratio entre 1:14 et 1:17 et la température entre 85 et 100 °C ; la source ne fixe pas une association unique.",
@@ -920,7 +923,10 @@
       "teach5": "Choisir la finition selon l’écoulement : tourbillonner si lent, utiliser Wet WDT si un peu rapide, ou retourner le lit avec une cuillère s’il est très rapide.",
       "taste1": "Hedrick rapporte environ 20–21 % d’extraction lors de son test du cadre.",
       "taste2": "La mouture grossière et l’infusion relativement rapide donnent selon lui peu d’amertume et aucune finale astringente.",
-      "taste3": "Son vocabulaire de dégustation évoque acidité citrique, douceur et corps velouté, presque coussiné."
+      "taste3": "Son vocabulaire de dégustation évoque acidité citrique, douceur et corps velouté, presque coussiné.",
+      "quickAnswer": "Réponse rapide : choisissez une dose jusqu’à 30 g ; calculez l’eau avec 1:14–1:17, faites le bloom avec 3 fois la dose et versez le reste à 6–8 g/s. Utilisez {temperature} selon la torréfaction. Durée de 2–3 minutes avec un bloom de 1 minute, ou 3–4 minutes avec 2 minutes.",
+      "agitate": "Agitez le bloom pour mouiller tout le café ; la source autorise à creuser le lit ou à utiliser le Wet WDT.",
+      "wait": "Attendez 1–2 minutes selon le café et la torréfaction avant le versement principal."
     },
     "chronicler-osmotic": {
       "title": "Le V60 à flux osmotique de Coffee Chronicler",
@@ -1168,7 +1174,7 @@
   "archiveMissing": "Aucune copie archivée",
   "ice": "Glace",
   "totalLiquid": "Liquide total",
-  "quickAnswerIced": "En bref : {dose} g de café, {water} {unit} d’eau chaude et {ice} {unit} de glace, {temperature}, mouture {grind}, durée totale {time}.",
+  "quickAnswerIced": "Réponse rapide : {dose} g de café, {water} {unit} d’eau chaude et {ice} g de glace, {temperature}, mouture {grind}, durée totale {time}.",
   "icePlacements": {
     "server": "Glace dans le pichet",
     "brewer": "Glace dans le filtre",
@@ -1217,19 +1223,52 @@
   "glossaryTitle": "Termes de cette recette",
   "glossaryIntro": "Brèves explications des termes techniques employés ci-dessus.",
   "glossary": {
-    "wdt": {"term": "WDT / Wet WDT", "definition": "Un outil à aiguilles casse les grumeaux de café. Wet WDT consiste à remuer le bloom humide avec cet outil."},
-    "melodrip": {"term": "Melodrip", "definition": "Un limiteur de débit en forme de pommeau, placé au-dessus du filtre pour répartir et adoucir le filet d’eau."},
-    "tds": {"term": "TDS", "definition": "Solides dissous totaux, une mesure de concentration de l’eau ou du café, et non une note de goût."},
-    "ppm": {"term": "ppm / CaCO₃", "definition": "Parties par million, une unité de concentration. Le TDS de l’eau et la dureté exprimée en carbonate de calcium sont deux mesures distinctes."},
-    "redClix": {"term": "Red Clix", "definition": "Réglage plus fin pour les moulins Comandante. Les clics ne sont comparables qu’avec cette même configuration."},
-    "vst": {"term": "Panier VST", "definition": "Panier espresso de précision. Sa capacité et son débit influencent la dose et la mouture adaptées."},
-    "linePressure": {"term": "Pression de ligne", "definition": "Pression d’arrivée avant la pression principale d’extraction ; elle ne correspond pas à l’étape indiquée à 9 bar."},
-    "bypass": {"term": "Bypass", "definition": "Eau qui passe à côté du lit de café. Les filtres sans ou à faible bypass visent à réduire ce trajet."}
+    "wdt": {
+      "term": "WDT / Wet WDT",
+      "definition": "Un outil à aiguilles casse les grumeaux de café. Wet WDT consiste à remuer le bloom humide avec cet outil."
+    },
+    "melodrip": {
+      "term": "Melodrip",
+      "definition": "Un limiteur de débit en forme de pommeau, placé au-dessus du filtre pour répartir et adoucir le filet d’eau."
+    },
+    "tds": {
+      "term": "TDS",
+      "definition": "Solides dissous totaux, une mesure de concentration de l’eau ou du café, et non une note de goût."
+    },
+    "ppm": {
+      "term": "ppm / CaCO₃",
+      "definition": "Parties par million, une unité de concentration. Le TDS de l’eau et la dureté exprimée en carbonate de calcium sont deux mesures distinctes."
+    },
+    "redClix": {
+      "term": "Red Clix",
+      "definition": "Réglage plus fin pour les moulins Comandante. Les clics ne sont comparables qu’avec cette même configuration."
+    },
+    "vst": {
+      "term": "Panier VST",
+      "definition": "Panier espresso de précision. Sa capacité et son débit influencent la dose et la mouture adaptées."
+    },
+    "linePressure": {
+      "term": "Pression de ligne",
+      "definition": "Pression d’arrivée avant la pression principale d’extraction ; elle ne correspond pas à l’étape indiquée à 9 bar."
+    },
+    "bypass": {
+      "term": "Bypass",
+      "definition": "Eau qui passe à côté du lit de café. Les filtres sans ou à faible bypass visent à réduire ce trajet."
+    },
+    "w60": {
+      "term": "W60",
+      "definition": "Un dripper à fond plat ; cette recette utilise une grille métallique et un filtre papier, sans détailler leur montage."
+    }
   },
   "retiredRecipe": {
     "title": "Cette recette a été retirée",
     "body": "La vidéo W60 de Coffee with April était un test exploratoire, pas une recette recommandée. April a trouvé le mesh seul trop sédimentaire et le mesh avec papier plus propre, mais toujours plat et terne. Le résultat reste dans la fiche du W60 ; cette URL est conservée pour ne pas casser les liens existants.",
     "replacementAction": "Utiliser la recette W60 de Ngoc Hoang",
     "equipmentAction": "Lire la fiche du W60"
-  }
+  },
+  "sourceTimeBasisUnknown": "{time} (base temporelle non précisée par la source)",
+  "faqAmountAnswerUpTo": "Utilisez jusqu’à {dose} g de café. Calculez l’eau avec le ratio de la source, {ratio} ; le bloom représente trois fois la dose choisie.",
+  "waterFollowsDose": "Selon dose choisie × ratio",
+  "faqAmountAnswerIced": "{dose} g de café pour {water} {unit} d’eau chaude, versés sur {ice} de glace.",
+  "faqAmountRangeAnswer": "{doseMin}–{doseMax} g de café pour {waterMin}–{waterMax} {unit} d’eau."
 }

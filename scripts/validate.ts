@@ -183,6 +183,8 @@ export async function validate(){
      if(r.grindHedged)assert(flat['grindHedged'],`${locale}/${r.id} hedged grind label`);
      for(const item of r.teaching||[])assert(flat[item.key],`${locale}/${r.id} teaching key ${item.key}`);
      for(const key of r.tasting||[])assert(flat[key],`${locale}/${r.id} tasting key ${key}`);
+     if(r.quickAnswerKey)assert(flat[r.quickAnswerKey],`${locale}/${r.id} quick-answer key ${r.quickAnswerKey}`);
+     if(r.brewTimeKey)assert(flat[r.brewTimeKey],`${locale}/${r.id} brew-time key ${r.brewTimeKey}`);
      for(const key of r.tasting||[])assert(flat[key],`${locale}/${r.id} tasting key ${key}`);
      if(r.grindMicron)assert(flat[`grindMicronBases.${r.grindMicron.basis}`],`${locale}/${r.id} micron basis`);
    }
@@ -199,8 +201,8 @@ export async function validate(){
      const experience=equipmentExperience[item.id];
      if(experience)for(const tag of experience.tags)assert(flat[`equipmentExperienceTags.${tag}`],`${locale}/experience tag ${tag}`);
    }
-   for(const key of ['learnNav','findRecipe','sectionIntroPourover','sectionIntroEspresso','chooseBrewerPourover','chooseBrewerEspresso','compareScrollHint','compareSummaryTitle','compareBaselineNote','compareDifferenceCount','compareSharedCount','compareComparedCount','compareOnlyDifferences','compareShowAll','learningBrief.title','learningBrief.intro','learningBrief.goal','learningBrief.method','learningBrief.observation','learningBrief.checkpointStep','learningBrief.practice','learningBrief.practiceText','learningBrief.editorialNote','learningBrief.guideLink','learn.eyebrow','learn.title','learn.intro','learn.loopTitle','learn.readTitle','learn.brewTitle','learn.observeTitle','learn.adjustTitle','learn.variablesTitle','learn.labTitle','learn.tasteTitle','learn.evidenceTitle','learn.curatedTitle','timeBasisUnknown','glossaryTitle','glossaryIntro'])assert(flat[key],`${locale}/${key}`);
-   for(const term of ['wdt','melodrip','tds','ppm','redClix','vst','linePressure','bypass'])assert(flat[`glossary.${term}.term`]&&flat[`glossary.${term}.definition`],`${locale}/glossary.${term}`);
+   for(const key of ['learnNav','findRecipe','sectionIntroPourover','sectionIntroEspresso','chooseBrewerPourover','chooseBrewerEspresso','compareScrollHint','compareSummaryTitle','compareBaselineNote','compareDifferenceCount','compareSharedCount','compareComparedCount','compareOnlyDifferences','compareShowAll','learningBrief.title','learningBrief.intro','learningBrief.goal','learningBrief.method','learningBrief.observation','learningBrief.checkpointStep','learningBrief.practice','learningBrief.practiceText','learningBrief.editorialNote','learningBrief.guideLink','learn.eyebrow','learn.title','learn.intro','learn.loopTitle','learn.readTitle','learn.brewTitle','learn.observeTitle','learn.adjustTitle','learn.variablesTitle','learn.labTitle','learn.tasteTitle','learn.evidenceTitle','learn.curatedTitle','timeBasisUnknown','sourceTimeBasisUnknown','faqAmountAnswerUpTo','faqAmountAnswerIced','faqAmountRangeAnswer','waterFollowsDose','glossaryTitle','glossaryIntro'])assert(flat[key],`${locale}/${key}`);
+   for(const term of ['wdt','melodrip','tds','ppm','redClix','vst','linePressure','bypass','w60'])assert(flat[`glossary.${term}.term`]&&flat[`glossary.${term}.definition`],`${locale}/glossary.${term}`);
    for(const level of ['guided','practice','reference'])assert(flat[`learningLevels.${level}`],`${locale}/learning level ${level}`);
    for(const lesson of Object.values(recipeLearning)){
      assert(flat[lesson.focusKey],`${locale}/${lesson.focusKey}`);

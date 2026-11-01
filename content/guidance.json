@@ -42,5 +42,22 @@
     {"equipmentId":"fellow-stagg-xf","compatibleEquipmentIds":["fellow-stagg-paper-filter"],"basis":"catalogue"},
     {"equipmentId":"orea-v4","compatibleEquipmentIds":["orea-type-c-filter"],"basis":"catalogue"}
   ],
-  "disabled": []
+  "disabled": [
+    {
+      "recipeId": "hoffmann-one-cup",
+      "field": "grinder"
+    },
+    {
+      "recipeId": "hoffmann-ultimate-v60",
+      "field": "grinder"
+    },
+    {
+      "recipeId": "kasuya-neo",
+      "field": "brewTime"
+    },
+    {
+      "recipeId": "kodama-origami",
+      "field": "brewTime"
+    }
+  ]
 }

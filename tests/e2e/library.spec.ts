@@ -375,10 +375,32 @@ test('espresso detail keeps source timing semantics and admits parameter-only re
  await expect(page.locator('[data-testid="pour-timeline"]')).toContainText('0:00–0:30');
  await page.goto(`${base}/en/recipes/onyx-monarch-espresso/`);
  await expect(page.locator('[data-time-basis-unknown]')).toContainText('left unresolved');
+ await expect(page.locator('.quick-answer')).toContainText('0:23 (timing basis not stated');
+ await expect(page.locator('.steps-section')).toContainText('Stop when the yield reaches 47 g');
+ await expect(page.locator('#step-3 .step-time')).toContainText('Then');
  await page.goto(`${base}/en/recipes/ona-iris-enigma/`);
  await expect(page.locator('.quick-answer')).toContainText('93.5°C');
  await expect(page.locator('.steps-section')).toContainText('no step-by-step sequence');
  await expect(page.locator('[data-learning-brief]')).toContainText('Iris Estate Enigma');
+});
+
+test('reader-clarity corrections keep formulas, ranges and drying steps distinct',async({page})=>{
+ await page.goto(`${base}/en/recipes/kasuya-46/`);
+ await expect(page.locator('#step-1')).toContainText('41.7%');
+ await page.goto(`${base}/en/recipes/camber-v60/`);
+ await expect(page.locator('[data-derived-panel]')).toContainText('2:00–2:15');
+ await page.goto(`${base}/en/recipes/lamill-mugen/`);
+ await expect(page.locator('[data-derived-panel]')).toContainText('2:20–2:50');
+ await page.goto(`${base}/en/recipes/ohno-origami/`);
+ await expect(page.locator('.quick-answer')).toContainText('draining at 1:30–1:35');
+ await expect(page.locator('.quick-answer')).toContainText('start at 50 g');
+ await expect(page.locator('.step-list li')).toHaveCount(6);
+ await expect(page.locator('#step-5')).toContainText('Add 65 °C water');
+ await page.goto(`${base}/en/recipes/kurasu-flash-brew/`);
+ await expect(page.locator('.quick-answer')).toContainText('65–70 g ice');
+ await expect(page.locator('[data-derived-panel]')).toContainText('1 : 14.33–14.67');
+ await page.goto(`${base}/en/recipes/chronicler-switch/`);
+ await expect(page.locator('.recipe-notes')).toContainText('320 mL');
 });
 
 test('the bare site URL follows the browser language and falls back to English',async({browser})=>{
@@ -426,12 +448,15 @@ test('a video-sourced recipe exposes its evidence, teaching and step deep links'
 
 test('the third video batch keeps upper bounds, ranges and video-derived flows explicit',async({page})=>{
  await page.goto(`${base}/en/recipes/hedrick-ultimate-pourover/`);
- await expect(page.locator('.quick-answer')).toContainText('≤30');
- await expect(page.locator('.quick-answer')).toContainText('420–510');
+ await expect(page.locator('.quick-answer')).toContainText('up to 30 g');
+ await expect(page.locator('.quick-answer')).toContainText('1:14–1:17');
+ await expect(page.locator('.quick-answer')).toContainText('3× the dose');
+ await expect(page.locator('.recipe-notes')).toContainText('420–510');
  await expect(page.locator('[data-derived-panel]')).toContainText('1 : 14–1 : 17');
  await expect(page.locator('.detail-sidebar')).toContainText('1:14–1:17');
  await expect(page.locator('[data-evidence]')).toContainText('up to 30g of coffee');
  await expect(page.locator('[data-teaching] li')).toHaveCount(5);
+ await expect(page.locator('.step-list li')).toHaveCount(5);
  await page.goto(`${base}/en/recipes/chronicler-osmotic-v60/`);
  await expect(page.locator('.quick-answer')).toContainText('14–20');
  await expect(page.locator('.quick-answer')).toContainText('210–300');

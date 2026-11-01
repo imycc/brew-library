@@ -7,6 +7,7 @@ import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib
 import {equipmentGuidance,guidanceAvailability,guidanceForRecipe,guidanceSearchText} from '../src/lib/guidance';
 import {videoReviews} from '../src/lib/video-reviews';
 import {glossaryForRecipe} from '../src/lib/glossary';
+import {brewTimeText} from '../src/lib/faq';
 import {validate} from '../scripts/validate';
 import {brewTimeline,curatedLearningRecipeIds,learningLevel,recipeLearning,searchableRecipeText,secondsLabel} from '../src/lib/learning';
 test('source and translation validation',async()=>{await validate();});
@@ -161,9 +162,13 @@ test('derived percentages stay hidden until the pours account for the published 
 test('pour phase refuses to guess when a later addition is untimed',()=>{
  const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
  const oneCup=pourPhase(find('hoffmann-one-cup'))!;
- assert.equal(oneCup.kind,'end');assert.equal(oneCup.endsAt,120);assert.equal(oneCup.drawdown,60);
+ assert.equal(oneCup.kind,'end');assert.equal(oneCup.endsAt,120);assert.deepEqual(oneCup.drawdown,[60,60]);
  const kasuya=pourPhase(find('kasuya-46'))!;
- assert.equal(kasuya.kind,'start');assert.equal(kasuya.endsAt,160);assert.equal(kasuya.drawdown,50);
+ assert.equal(kasuya.kind,'start');assert.equal(kasuya.endsAt,160);assert.deepEqual(kasuya.drawdown,[50,50]);
+ const camber=pourPhase(find('camber-v60'))!;
+ assert.deepEqual(camber.drawdown,[120,135]);
+ const lamill=pourPhase(find('lamill-mugen'))!;
+ assert.deepEqual(lamill.drawdown,[140,170]);
  assert.equal(pourPhase(find('rao-pulsar')),null);
  assert.equal(pourPhase(find('rojewska-v60')),null);
 });
@@ -197,6 +202,18 @@ test('guidance does not infer espresso duration across different time bases',()=
  assert.equal(guidanceAvailability(missing,'brewTime'),'missing');
  assert.equal(guidanceForRecipe(missing).some(item=>item.field==='brewTime'),false);
 });
+test('guidance does not suggest a total time before the recipe finishes pouring',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ assert.equal(guidanceForRecipe(find('kasuya-neo')).some(item=>item.field==='brewTime'),false);
+ assert.equal(guidanceForRecipe(find('rincon-origami')).some(item=>item.field==='brewTime'),false);
+ assert.equal(guidanceForRecipe(find('hoffmann-one-cup')).some(item=>item.field==='grinder'),false);
+ assert.equal(guidanceForRecipe(find('hoffmann-ultimate-v60')).some(item=>item.field==='grinder'),false);
+});
+test('ambiguous espresso seconds keep their unresolved basis in every time label',()=>{
+ const recipe=recipes.find(item=>item.id==='onyx-monarch-espresso')!;
+ const translate=(key:string,values?:Record<string,string|number>)=>key==='sourceTimeBasisUnknown'?`${values?.time} (unknown basis)`:key;
+ assert.equal(brewTimeText(recipe,translate),'0:23 (unknown basis)');
+});
 test('equipment guidance exposes only linked recipe methods',()=>{
  const item=equipment.find(candidate=>candidate.id==='hario-v60-mugen-02')!;
  const guidance=equipmentGuidance(item);
@@ -217,7 +234,7 @@ test('added competition records keep unstated drippers and ranges honest',()=>{
  assert.equal(ohno.yield,undefined);
  assert.equal(ohno.beverageTds,1.07);
  assert.deepEqual(ohno.duration,[90,95]);
- assert(ohno.steps.some(step=>step.action==='topup'&&step.amount===null));
+ assert(ohno.steps.some(step=>step.action==='topup'&&step.amount===50));
  const vuolo=find('vuolo-mk');
  assert.equal(vuolo.temperature,null);
  assert.equal(vuolo.steps[0].temperature,96);
@@ -281,8 +298,8 @@ test('the iced record keeps ice out of the poured-water maths',()=>{
  assert.deepEqual(accountedAdditions(iced),{amount:150,unit:'g'});
  assert.equal(iced.temperature,null);
  assert.equal(iced.brewerId,'unspecified');
- assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:30});
- assert.equal(ratio(iced,'en'),'1 : 14.33');
+ assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:[30,35]});
+ assert.equal(ratio(iced,'en'),'1 : 14.33–14.67');
  assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,2);
  assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,42);
 });
@@ -368,7 +385,7 @@ test('video records carry provenance, timestamps and teaching without inventing 
  assert.equal(hedrick.water.waterMax,510);
  assert.equal(hedrick.temperatureMax,100);
  assert.equal(ratio(hedrick,'en'),'1 : 14–1 : 17');
- assert.equal(hedrick.steps[0].amount,90);
+ assert.equal(hedrick.steps[0].amount,null);
  const osmotic=po('chronicler-osmotic-v60');
  assert.equal(osmotic.dose,14);
  assert.equal(osmotic.doseMax,20);
@@ -444,7 +461,7 @@ test('espresso timeline keeps phase ranges and final yield semantically correct'
  const byId=(id:string)=>espressoRecipes.find(recipe=>recipe.id===id)!;
  const lm=brewTimeline(byId('lamarzocco-brew-ratios'));
  assert.deepEqual(lm.map(item=>({start:item.start,end:item.end,amount:item.amount,label:item.labelKey})),[
-  {start:0,end:30,amount:36,label:'step.extract'}
+  {start:0,end:35,amount:36,label:'step.extract'}
  ]);
  const onyx=brewTimeline(byId('onyx-monarch-espresso'));
  assert.deepEqual(onyx.map(item=>({start:item.start,end:item.end,amount:item.amount,label:item.labelKey})),[
@@ -459,6 +476,7 @@ test('espresso timeline keeps phase ranges and final yield semantically correct'
 test('glossary explanations follow the terms actually present in a recipe',()=>{
  assert.deepEqual(glossaryForRecipe('Use Wet WDT and keep the line pressure short'),['wdt','linePressure']);
  assert.deepEqual(glossaryForRecipe('A VST basket with water below 50 ppm CaCO₃'),['ppm','vst']);
+ assert.deepEqual(glossaryForRecipe('Build the W60 with mesh and paper'),['w60']);
  assert.deepEqual(glossaryForRecipe('A plain V60 recipe'),[]);
 });
 

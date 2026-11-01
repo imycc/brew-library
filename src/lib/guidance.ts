@@ -213,9 +213,16 @@ function temperatureGuidance(recipe:Recipe,availability:'missing'):GuidanceItem|
 function brewTimeGuidance(recipe:Recipe,availability:'missing'):GuidanceItem|undefined{
   // Espresso source durations can use incompatible pre-infusion time bases.
   if(recipe.method==='espresso')return;
+  const additions=recipe.steps.filter(step=>['pour','bloom','pulses','topup'].includes(step.action));
+  // A total-time suggestion must follow the last addition. If even one later
+  // addition has no published anchor, a candidate from another recipe cannot
+  // be shown without pretending to know where that addition belongs.
+  if(!additions.length||additions.some(step=>step.at===null))return;
+  const lastAdditionAt=Math.max(...additions.map(step=>step.at as number));
   const doseClose=(candidate:Recipe)=>Math.abs(candidate.dose-recipe.dose)/recipe.dose<=0.2;
-  const exact=orderedCandidates(recipe,sameEquipmentCandidates(recipe,'brewTime').filter(doseClose),'brewTime');
-  const candidates=exact.length?exact:orderedCandidates(recipe,sameMethodCandidates(recipe,'brewTime').filter(doseClose),'brewTime');
+  const validFinish=(candidate:Recipe)=>!!candidate.duration&&candidate.duration[0]>lastAdditionAt;
+  const exact=orderedCandidates(recipe,sameEquipmentCandidates(recipe,'brewTime').filter(candidate=>doseClose(candidate)&&validFinish(candidate)),'brewTime');
+  const candidates=exact.length?exact:orderedCandidates(recipe,sameMethodCandidates(recipe,'brewTime').filter(candidate=>doseClose(candidate)&&validFinish(candidate)),'brewTime');
   const tier:GuidanceTier=exact.length?'sameEquipment':'sameMethod';
   const minimum=exact.length?2:3;
   if(candidates.length<minimum)return;

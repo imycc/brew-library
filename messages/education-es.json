@@ -37,12 +37,12 @@
     "hoffmann": {
       "focus": "Construir un ritmo repetible de pequeña dosis con adiciones iguales, pausas breves y giros suaves.",
       "checkpoint1": "Después del bloom, comprueba que el giro de cinco segundos deja el lecho de café nivelado y asentado.",
-    "checkpoint2": "A las 2:00 confirma que has vertido 250 g en total; el drenaje debería terminar cerca de 3:00, pero ese tiempo sigue siendo orientativo.",
+      "checkpoint2": "A las 2:00 confirma que has vertido 250 g en total; el drenaje debería terminar cerca de 3:00, pero ese tiempo sigue siendo orientativo.",
       "practice": "Repite con la misma dosis, agua, molienda y calendario de vertidos, pero omite solo el giro final. Compara drenaje y claridad antes de atribuir un efecto al giro."
     },
     "kasuya": {
       "focus": "Aprender la secuencia 4:6: dos vertidos de equilibrio y tres vertidos iguales para ajustar la concentración.",
-    "checkpoint1": "A las 0:45 añade 70 mL hasta llegar a 120 mL en total y después continúa con la siguiente etapa.",
+      "checkpoint1": "A las 0:45 añade 70 mL hasta llegar a 120 mL en total. Los dos primeros vertidos son el 40 % de los 300 mL; los 50 mL iniciales son aproximadamente el 41,7 % de esa primera etapa.",
       "checkpoint2": "A la 1:30 empiezan tres vertidos iguales de 60 mL; los inicios publicados son 1:30, 2:10 y 2:40.",
       "practice": "Mantén fijos dosis, molienda, temperatura y los cinco tiempos. Cambia solo el inicio del vertido de 0:45 en diez segundos y compara drenaje y sabor."
     },
@@ -60,7 +60,7 @@
     },
     "kurasu": {
       "focus": "Usar el peso del hielo como control de fuerza y mantener suave el último vertido.",
-    "checkpoint1": "A la 1:10 empieza el último vertido suave hasta 150 g en total, sin añadir agitación extra.",
+      "checkpoint1": "A la 1:10 empieza el último vertido suave hasta 150 g en total, sin añadir agitación extra.",
       "checkpoint2": "Después de retirar el filtro, remueve hasta que todo el hielo se haya derretido antes de servir.",
       "practice": "Mantén 15 g de café, 150 g de agua caliente y la molienda. Usa unos 65 g de hielo en una versión y 70 g en otra; compara la fuerza tras derretirse."
     },
@@ -79,7 +79,7 @@
     "onyx-monarch": {
       "focus": "Entender un perfil de presión por etapas y separar la preinfusión de la extracción principal.",
       "checkpoint1": "Los primeros 3.5 segundos usan presión de línea; la tarjeta no publica el valor real de bar durante la preinfusión.",
-    "checkpoint2": "La ficha indica por separado «9 Bar: 23s», sin aclarar si 23 segundos es todo el shot o el tiempo posterior a la preinfusión. Tampoco indica temperatura, cesta ni molino.",
+      "checkpoint2": "La ficha indica por separado «9 Bar: 23s», sin aclarar si 23 segundos es todo el shot o el tiempo posterior a la preinfusión. Tampoco indica temperatura, cesta ni molino.",
       "practice": "Mantén fijos 19 g, 47 g y el perfil de presión. Registra el tiempo hasta la primera gota y el total; cambia la molienda solo cuando el perfil sea repetible."
     }
   },
