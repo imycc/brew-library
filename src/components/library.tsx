@@ -10,6 +10,7 @@ import {formatTemperature,temperatureUnits,type TemperatureUnit} from '@/lib/tem
 import {recipeEditorial} from '@/lib/editorial';
 import {recipeFaq} from '@/lib/faq';
 import {brewTimeline,learningFor,learningLevelKey,searchableRecipeText,secondsLabel} from '@/lib/learning';
+import {glossaryForRecipe} from '@/lib/glossary';
 import {OfficialSourceImage} from '@/components/source-image';
 import {locales,localeNames,type Locale} from '@/i18n/locales';
 import {ANALYTICS_EVENTS,trackAnalyticsEvent} from '@/lib/analytics';
@@ -236,7 +237,8 @@ export function RecipeDetail({id}:{id:string}){
  const faq=recipeFaq(r,t,(value,source,max)=>formatTemperature(value,source,unit,max).text);
  const related=recipes.filter(item=>item.id!==r.id&&item.method===r.method&&(item.brewerId===r.brewerId||item.authorId===r.authorId)).slice(0,3);
  const timeline=brewTimeline(r);
- const postPreInfusion=isEspresso(r)&&r.duration&&r.extraction?.preInfusion?.seconds!=null?r.duration[0]-r.extraction.preInfusion.seconds:null;
+ const glossary=glossaryForRecipe(searchableRecipeText(r,t));
+ const postPreInfusion=isEspresso(r)&&r.duration&&r.extraction?.preInfusion?.seconds!=null&&r.extraction.timeBasis==='postPreInfusion'?r.duration[0]-r.extraction.preInfusion.seconds:null;
  const percent=new Intl.NumberFormat(locale,{style:'percent',maximumFractionDigits:1});
  const additionTotal=accountedAdditions(r);
  const phase=pourPhase(r);
@@ -264,6 +266,7 @@ export function RecipeDetail({id}:{id:string}){
        <div><dt>{t(phase&&phase.kind==='start'?'afterLastPourStart':'drawdown')}</dt><dd>{phase&&phase.drawdown!==null?time(phase.drawdown):t('unknown')}</dd></div>
        </>}
      </dl>
+     {isEspresso(r)&&r.extraction?.preInfusion?.seconds!=null&&r.extraction.timeBasis==='unknown'?<p className="facts-missing" data-time-basis-unknown>{t('timeBasisUnknown')}</p>:null}
      <div className="derived-facts">
        <p className="facts-score"><span>{t('sourceFacts')}</span><strong>{provided} / {sourceFacts(r).length}</strong></p>
        {missing.length?<p className="facts-missing">{t('missingFacts')} {missing.map(fact=>t(fact.label)).join(' · ')}.</p>:<p className="facts-missing">{t('missingNone')}</p>}
@@ -275,6 +278,7 @@ export function RecipeDetail({id}:{id:string}){
      {timeline.length?<section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t(isEspresso(r)?'shotTimeline':'stepAmount')}</p></div><ol className="pour-timeline">{timeline.map((item,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{item.start===null?t('sequence'):`${secondsLabel(item.start)}${item.end!==null?`–${secondsLabel(item.end)}`:''}`}</strong><span>{t(item.labelKey)}{item.amount===null?' · —':` · ${item.amount} ${item.unit||''}`}{item.amount!==null&&additionTotal?<em className="timeline-share"> {percent.format(item.amount/additionTotal.amount)}</em>:null}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>:null}
      <section className="steps-section"><h2>{t('steps')}</h2>{r.steps.length?<ol className="step-list">{r.steps.map((s,i)=><li key={i} id={`step-${i+1}`}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}{r.source.video&&s.videoAt!==undefined?<a className="step-video" href={videoLink(r.source.video,s.videoAt)} target="_blank" rel="noreferrer">{t('videoStep',{time:time(s.videoAt)})}</a>:null}</span></div><div className="step-meta">{s.temperature?<span>{t('temperature')} {formatTemperature(s.temperature,r.temperatureUnit,unit).text}</span>:null}{s.pressure!==undefined?<span>{t('pressure')} {s.pressure} bar</span>:null}{s.amount!==null?<span>+{s.amount} {stepUnit(r,s)}{s.derived?'*':null}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {s.cumulative} {stepUnit(r,s)}</span>:null}{stepFacets(s,t).map(facet=><span className="step-facet" key={facet}>{facet}</span>)}{(()=>{const flow=stepFlow(s);return flow?<span className="step-rate">{t(flow.published?'flowRate':'flowRateDerived',{value:`${flow.published&&flow.approximate?'≈':''}${flow.value}`})}</span>:null;})()}</div><p>{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(s.instruction||`instruction.${s.action}`)}</p></div></li>)}</ol>:<p className="muted" data-no-steps>{t('noStepsPublished')}</p>}{r.steps.some(s=>s.derived)?<p className="muted">* {t('stepDerived')}</p>:null}</section>
      <section className="recipe-notes"><h2>{t('notes')}</h2><p>{t(`recipes.${r.copy}.notes`)}</p>{isPourOver(r)&&r.water.derived?<p>{t('derived')} {r.dose} × {new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(r.water.amount/r.dose)} = {r.water.amount} {r.water.unit}.</p>:null}</section>
+     {glossary.length?<section className="recipe-glossary" data-glossary><h2>{t('glossaryTitle')}</h2><p>{t('glossaryIntro')}</p><dl>{glossary.map(key=><div key={key}><dt>{t(`glossary.${key}.term`)}</dt><dd>{t(`glossary.${key}.definition`)}</dd></div>)}</dl></section>:null}
      <section className="recipe-faq"><h2>{t('faqTitle')}</h2>{faq.map(item=><article key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}</section>
      {related.length?<section className="related-recipes"><h2>{t('relatedRecipes')}</h2><ul>{related.map(item=><li key={item.id}><Link href={href(`recipes/${item.id}/`)}><strong>{t(`recipes.${item.copy}.title`)}</strong><span>{item.author} · {brewerName(item,t)}</span><ArrowRight size={15}/></Link></li>)}</ul></section>:null}
    </div><aside className="detail-sidebar"><h2>{t('equipment')}</h2><p>{t(`recipes.${r.copy}.equipment`)}</p><h2>{t('conditions')}</h2><dl className="facts"><div><dt>{t('grinder')}</dt><dd>{grinderDetails(r,t)}</dd></div><div><dt>{t('beans')}</dt><dd>{coffeeDetails(r,t)}</dd></div><div><dt>{t('waterQuality')}</dt><dd>{waterDetails(r,t)}</dd></div><div><dt>{t(isEspresso(r)?'basket':'filterPaper')}</dt><dd>{isEspresso(r)?basketText(r)||t('unknown'):paperDetails(r,t)}</dd></div>

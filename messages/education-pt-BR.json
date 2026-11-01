@@ -37,12 +37,12 @@
     "hoffmann": {
       "focus": "Criar um ritmo repetível para pequenas doses com adições iguais, pausas curtas e giros suaves.",
       "checkpoint1": "Depois do bloom, confira se o giro de cinco segundos deixa o leito de café plano e assentado.",
-      "checkpoint2": "Confirme que a balança chega a 250 g antes de retirar o coador; o tempo final é uma referência e não substitui o peso.",
+    "checkpoint2": "Às 2:00, confirme que já despejou 250 g no total; o escoamento deve terminar por volta de 3:00, mas esse tempo continua sendo uma referência.",
       "practice": "Repita com a mesma dose, água, moagem e sequência, mas omita apenas o giro final. Compare a drenagem e a clareza antes de atribuir um efeito ao giro."
     },
     "kasuya": {
       "focus": "Aprender a sequência 4:6: duas adições de equilíbrio e depois três adições iguais para ajustar a concentração.",
-      "checkpoint1": "Aos 0:45, as duas primeiras adições devem somar 120 mL antes de avançar para a próxima etapa.",
+    "checkpoint1": "Aos 0:45, adicione 70 mL até chegar a 120 mL no total e depois siga para a próxima etapa.",
       "checkpoint2": "Aos 1:30 começam três adições iguais de 60 mL; os inícios publicados são 1:30, 2:10 e 2:40.",
       "practice": "Mantenha fixos dose, moagem, temperatura e os cinco horários. Mude apenas o início da adição de 0:45 em dez segundos e compare drenagem e sabor."
     },
@@ -60,7 +60,7 @@
     },
     "kurasu": {
       "focus": "Usar o peso do gelo como controle de força e manter o último despejo suave.",
-      "checkpoint1": "Aos 1:10, despeje lenta e suavemente até 150 g no total, sem agitação extra.",
+    "checkpoint1": "Aos 1:10, comece o último despejo suave até 150 g no total, sem agitação extra.",
       "checkpoint2": "Depois de retirar o coador, mexa até todo o gelo derreter antes de servir.",
       "practice": "Mantenha 15 g de café, 150 g de água quente e a moagem. Use cerca de 65 g de gelo em uma versão e 70 g em outra; compare a força depois que derreter."
     },
@@ -79,7 +79,7 @@
     "onyx-monarch": {
       "focus": "Entender um perfil de pressão por etapas e separar a pré-infusão da extração principal.",
       "checkpoint1": "Os primeiros 3,5 segundos usam pressão de linha; o cartão não publica o valor real de bar na pré-infusão.",
-      "checkpoint2": "Depois suba para 9 bar e pare em 47 g aos 23 segundos; o cartão omite temperatura, cesto e moedor.",
+    "checkpoint2": "O cartão indica separadamente “9 Bar: 23s”, sem dizer se 23 segundos são o shot inteiro ou o tempo após a pré-infusão. Temperatura, cesto e moedor também não são indicados.",
       "practice": "Mantenha fixos 19 g, 47 g e o perfil de pressão. Registre o tempo até a primeira gota e o total; mude a moagem apenas quando o perfil for repetível."
     }
   },

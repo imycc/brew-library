@@ -23,7 +23,7 @@ export async function validate(){
  assert.equal(new Set(curatedLearningRecipeIds).size,8,'Curated learning route must contain eight unique recipes');
  for(const id of curatedLearningRecipeIds)assert(recipeIds.has(id),`Curated learning recipe ${id} is missing`);
  assert.deepEqual(Object.keys(recipeLearning).sort(),[...curatedLearningRecipeIds].sort(),'Every curated recipe needs a specific learning card');
- assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,16,'Guided learning count changed; review the learning layer');
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,8,'Only recipes with reviewed learning cards may be labelled guided');
  for(const [id,lesson] of Object.entries(recipeLearning)){
    const recipe=recipes.find(item=>item.id===id)!;
    for(const checkpoint of lesson.checkpoints)assert(checkpoint.step<recipe.steps.length,`${id} learning checkpoint points past the last step`);
@@ -106,6 +106,7 @@ export async function validate(){
    if(isEspresso(r)){
      const pre=r.extraction?.preInfusion;
      if(pre?.seconds!=null&&r.duration)assert(pre.seconds<=r.duration[1],`${r.id} pre-infusion runs past the stated shot time`);
+     if(r.extraction?.timeBasis==='postPreInfusion')assert(pre?.seconds!=null&&r.duration,`${r.id} post-pre-infusion timing needs both phases`);
      assert(!r.steps.some(s=>['pour','bloom','topup','pulses'].includes(s.action)),`${r.id} espresso records do not carry pour-over additions`);
    }
    for(const s of r.steps){if(s.end!==undefined&&s.at!==null)assert(s.end>=s.at,`${r.id} time range`);}
@@ -115,6 +116,7 @@ export async function validate(){
  for(const [id,review] of Object.entries(videoReviews)){
    const recipe=recipes.find(item=>item.id===id)!;
    assert(recipe.source.video?.includes(review.videoId),`${id} video review id does not match its source`);
+   assert.equal(recipe.source.checked,review.reviewed,`${id} source check date must match the latest video review`);
    assert.equal(new Set(review.sampledAt).size,review.sampledAt.length,`${id} duplicate sampled video timestamp`);
    assert.deepEqual(review.sampledAt,[...review.sampledAt].sort((a,b)=>a-b),`${id} sampled video timestamps must run forwards`);
    if(recipe.source.publishedBasis==='video')assert(review.observations.length>0,`${id} has no video observations`);
@@ -169,7 +171,8 @@ export async function validate(){
      const experience=equipmentExperience[item.id];
      if(experience)for(const tag of experience.tags)assert(flat[`equipmentExperienceTags.${tag}`],`${locale}/experience tag ${tag}`);
    }
-   for(const key of ['learnNav','findRecipe','sectionIntroPourover','sectionIntroEspresso','chooseBrewerPourover','chooseBrewerEspresso','compareScrollHint','compareSummaryTitle','compareBaselineNote','compareDifferenceCount','compareSharedCount','compareComparedCount','compareOnlyDifferences','compareShowAll','learningBrief.title','learningBrief.intro','learningBrief.goal','learningBrief.method','learningBrief.observation','learningBrief.checkpointStep','learningBrief.practice','learningBrief.practiceText','learningBrief.editorialNote','learningBrief.guideLink','learn.eyebrow','learn.title','learn.intro','learn.loopTitle','learn.readTitle','learn.brewTitle','learn.observeTitle','learn.adjustTitle','learn.variablesTitle','learn.labTitle','learn.tasteTitle','learn.evidenceTitle','learn.curatedTitle'])assert(flat[key],`${locale}/${key}`);
+   for(const key of ['learnNav','findRecipe','sectionIntroPourover','sectionIntroEspresso','chooseBrewerPourover','chooseBrewerEspresso','compareScrollHint','compareSummaryTitle','compareBaselineNote','compareDifferenceCount','compareSharedCount','compareComparedCount','compareOnlyDifferences','compareShowAll','learningBrief.title','learningBrief.intro','learningBrief.goal','learningBrief.method','learningBrief.observation','learningBrief.checkpointStep','learningBrief.practice','learningBrief.practiceText','learningBrief.editorialNote','learningBrief.guideLink','learn.eyebrow','learn.title','learn.intro','learn.loopTitle','learn.readTitle','learn.brewTitle','learn.observeTitle','learn.adjustTitle','learn.variablesTitle','learn.labTitle','learn.tasteTitle','learn.evidenceTitle','learn.curatedTitle','timeBasisUnknown','glossaryTitle','glossaryIntro'])assert(flat[key],`${locale}/${key}`);
+   for(const term of ['wdt','melodrip','tds','ppm','redClix','vst','linePressure','bypass'])assert(flat[`glossary.${term}.term`]&&flat[`glossary.${term}.definition`],`${locale}/glossary.${term}`);
    for(const level of ['guided','practice','reference'])assert(flat[`learningLevels.${level}`],`${locale}/learning level ${level}`);
    for(const lesson of Object.values(recipeLearning)){
      assert(flat[lesson.focusKey],`${locale}/${lesson.focusKey}`);

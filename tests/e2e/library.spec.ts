@@ -269,8 +269,9 @@ test('new espresso records expose basket, pressure and coffee conditions',async(
  await page.goto(`${base}/en/recipes/onyx-monarch-espresso/`);
  await expect(page.locator('.detail-spec-card')).toContainText('Fellow Espresso Series 1');
  await expect(page.locator('.parameters')).toContainText('Not provided by the source');
- await expect(page.locator('.derived-grid')).toContainText('After pre-infusion');
- await expect(page.locator('.derived-grid')).toContainText('0:19.5');
+ await expect(page.locator('[data-time-basis-unknown]')).toContainText('left unresolved');
+ await expect(page.locator('.derived-grid')).not.toContainText('After pre-infusion');
+ await expect(page.locator('[data-testid="pour-timeline"]')).not.toContainText('0:03.5–0:23');
 });
 
 test('method tabs switch with arrow, Home and End keys',async({page})=>{
@@ -341,15 +342,18 @@ test('curated recipes expose source-linked checkpoints and one-variable practice
  await expect(page.locator('[data-recipe="hoffmann-one-cup"]')).toBeVisible();
 });
 
-test('espresso detail keeps the published Fahrenheit range and admits missing steps',async({page})=>{
+test('espresso detail keeps source timing semantics and admits parameter-only records',async({page})=>{
  await page.goto(`${base}/en/recipes/camber-espresso/`);
  await expect(page.locator('.quick-answer')).toContainText('202–204°F');
  await expect(page.locator('.parameters')).toContainText('38 g');
  await expect(page.locator('.derived-grid')).toContainText('1 : 2');
- await expect(page.locator('.steps-section')).toContainText('no step-by-step sequence');
- await expect(page.locator('[data-testid="pour-timeline"]')).toHaveCount(0);
+ await expect(page.locator('.steps-section .step-list li')).toHaveCount(6);
+ await expect(page.locator('[data-testid="pour-timeline"]')).toContainText('0:00–0:30');
+ await page.goto(`${base}/en/recipes/onyx-monarch-espresso/`);
+ await expect(page.locator('[data-time-basis-unknown]')).toContainText('left unresolved');
  await page.goto(`${base}/en/recipes/ona-iris-enigma/`);
  await expect(page.locator('.quick-answer')).toContainText('93.5°C');
+ await expect(page.locator('.steps-section')).toContainText('no step-by-step sequence');
  await expect(page.locator('[data-learning-brief]')).toContainText('Iris Estate Enigma');
 });
 
@@ -386,9 +390,14 @@ test('a video-sourced recipe exposes its evidence, teaching and step deep links'
  await expect(page.locator('[data-teaching] li')).toHaveCount(3);
  await expect(page.locator('[data-teaching] a.teaching-step')).toHaveCount(2);
  await expect(page.locator('[data-evidence]')).toContainText('13g - 200g');
+ await expect(page.locator('.detail-spec-card')).toContainText('30 clicks (video)');
+ await expect(page.locator('.recipe-notes')).toContainText('30-click Comandante');
  await expect(page.locator('.step-video').first()).toHaveAttribute('href',/t=0$/);
  await expect(page.locator('.step-video').last()).toContainText('2:30');
  await expect(page.locator('#step-2')).toHaveCount(1);
+ await page.goto(`${base}/en/recipes/rolf-origami-117/`);
+ await expect(page.locator('.detail-spec-card')).toContainText('29–30 clicks (video)');
+ await expect(page.locator('.step-list')).toContainText('2:30–2:40');
 });
 
 test('the third video batch keeps upper bounds, ranges and video-derived flows explicit',async({page})=>{
@@ -437,4 +446,12 @@ test('tasting notes and flow rates stay tied to their sources',async({page})=>{
  await page.goto(`${base}/en/recipes/gil-origami-2024/`);
  await expect(page.locator('.step-rate').first()).toContainText('7 g/s');
  await expect(page.locator('.step-rate').first()).toContainText('≈');
+});
+
+test('recipe terminology is explained where it appears',async({page})=>{
+ await page.goto(`${base}/en/recipes/kaygusuz-graycano/`);
+ await expect(page.locator('[data-glossary]')).toContainText('Melodrip');
+ await expect(page.locator('[data-glossary]')).toContainText('ppm / CaCO₃');
+ await page.goto(`${base}/en/recipes/coffeecollective-espresso/`);
+ await expect(page.locator('[data-glossary]')).toContainText('VST basket');
 });

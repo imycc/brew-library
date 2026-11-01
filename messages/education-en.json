@@ -37,12 +37,12 @@
     "hoffmann": {
       "focus": "Build a repeatable small-batch rhythm with equal additions, short pauses and gentle swirls.",
       "checkpoint1": "After the bloom, check that the five-second swirl leaves the coffee bed level and settled.",
-      "checkpoint2": "Confirm the scale reaches 250 g before removing the dripper; the finish time is guidance, not a substitute for the weight.",
+    "checkpoint2": "At 2:00, confirm you have poured 250 g in total; drawdown should finish around 3:00, and that finish time remains guidance.",
       "practice": "Repeat with the same dose, water, grind and pour schedule, but omit only the final swirl. Compare drawdown and clarity before deciding what the swirl changed."
     },
     "kasuya": {
       "focus": "Learn the 4:6 sequence: two balance pours, followed by three equal concentration pours.",
-      "checkpoint1": "At 0:45, the first two additions should total 120 mL before you move to the next stage.",
+    "checkpoint1": "At 0:45, add 70 mL to reach 120 mL in total, then continue to the next stage.",
       "checkpoint2": "At 1:30, begin three equal 60 mL pours; their starts are published as 1:30, 2:10 and 2:40.",
       "practice": "Keep dose, grind, temperature and the five pour times fixed. Repeat once and change only the start of the 0:45 pour by ten seconds, then compare drawdown and taste."
     },
@@ -60,7 +60,7 @@
     },
     "kurasu": {
       "focus": "Treat ice weight as the strength control and keep the final pour gentle.",
-      "checkpoint1": "At 1:10, pour slowly and gently to 150 g total rather than adding more agitation.",
+    "checkpoint1": "At 1:10, begin the gentle final pour to 150 g in total without adding extra agitation.",
       "checkpoint2": "After removing the dripper, stir until every piece of ice has melted before serving.",
       "practice": "Hold 15 g coffee, 150 g hot water and the grind fixed. Use approximately 65 g ice for one version and 70 g for the other, then compare strength after the ice melts."
     },
@@ -79,7 +79,7 @@
     "onyx-monarch": {
       "focus": "Understand a stage-based pressure profile and separate pre-infusion from extraction.",
       "checkpoint1": "The first 3.5 seconds use line pressure; the card does not publish the actual pre-infusion bar value.",
-      "checkpoint2": "Then raise to 9 bar and stop at 47 g in 23 seconds; the card omits temperature, basket and grinder.",
+    "checkpoint2": "The card separately lists “9 Bar: 23s” without saying whether 23 seconds is the whole shot or time after pre-infusion. Temperature, basket and grinder are also omitted.",
       "practice": "Hold 19 g, 47 g and the pressure profile fixed. Record time to first drip and total shot time; change grind only after the profile is repeatable."
     }
   },

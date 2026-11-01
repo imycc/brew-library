@@ -37,12 +37,12 @@
     "hoffmann": {
       "focus": "Construire un rythme reproductible en petite dose avec des ajouts égaux, de courtes pauses et des rotations douces.",
       "checkpoint1": "Après le bloom, vérifiez que la rotation de cinq secondes laisse le lit de café bien à plat et tassé.",
-      "checkpoint2": "Vérifiez que la balance atteint 250 g avant de retirer le filtre ; le temps final est indicatif et ne remplace pas le poids.",
+    "checkpoint2": "À 2:00, vérifiez avoir versé 250 g au total ; l’écoulement devrait se terminer vers 3:00, mais cette durée reste indicative.",
       "practice": "Répétez avec la même dose, eau, mouture et séquence, mais omettez uniquement la rotation finale. Comparez l'écoulement et la clarté avant d'attribuer un effet à cette rotation."
     },
     "kasuya": {
       "focus": "Apprendre la séquence 4:6 : deux versements d'équilibre, puis trois versements égaux pour ajuster la concentration.",
-      "checkpoint1": "À 0:45, les deux premiers ajouts doivent totaliser 120 mL avant de passer à l'étape suivante.",
+    "checkpoint1": "À 0:45, ajoutez 70 mL pour atteindre 120 mL au total, puis passez à l’étape suivante.",
       "checkpoint2": "À 1:30 commencent trois versements égaux de 60 mL ; les départs publiés sont 1:30, 2:10 et 2:40.",
       "practice": "Gardez fixes dose, mouture, température et les cinq horaires. Décalez seulement le versement de 0:45 de dix secondes, puis comparez écoulement et goût."
     },
@@ -60,7 +60,7 @@
     },
     "kurasu": {
       "focus": "Utiliser le poids de glace comme réglage de force et garder le dernier versement doux.",
-      "checkpoint1": "À 1:10, versez lentement et doucement jusqu'à 150 g au total, sans agitation supplémentaire.",
+    "checkpoint1": "À 1:10, commencez le dernier versement doucement jusqu’à 150 g au total, sans agitation supplémentaire.",
       "checkpoint2": "Après avoir retiré le filtre, remuez jusqu'à ce que toute la glace ait fondu avant de servir.",
       "practice": "Gardez 15 g de café, 150 g d'eau chaude et la mouture. Utilisez environ 65 g de glace pour une version et 70 g pour l'autre, puis comparez après fonte."
     },
@@ -79,7 +79,7 @@
     "onyx-monarch": {
       "focus": "Comprendre un profil de pression par étapes et séparer la pré-infusion de l'extraction principale.",
       "checkpoint1": "Les 3,5 premières secondes utilisent la pression de ligne ; la fiche ne publie pas la valeur réelle en bar.",
-      "checkpoint2": "Montez ensuite à 9 bar et arrêtez à 47 g en 23 secondes ; la fiche omet température, panier et moulin.",
+    "checkpoint2": "La fiche indique séparément « 9 Bar : 23 s », sans préciser si 23 secondes couvrent tout le shot ou seulement l’après-pré-infusion. La température, le panier et le moulin manquent aussi.",
       "practice": "Gardez fixes 19 g, 47 g et le profil de pression. Notez le temps jusqu'à la première goutte et le total ; ne changez la mouture qu'une fois le profil reproductible."
     }
   },

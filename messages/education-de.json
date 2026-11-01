@@ -37,12 +37,12 @@
     "hoffmann": {
       "focus": "Einen wiederholbaren Rhythmus für kleine Mengen mit gleichen Zugaben, kurzen Pausen und sanften Schwüngen aufbauen.",
       "checkpoint1": "Prüfe nach dem Bloom, ob der fünfsekündige Schwung das Kaffeebett eben und beruhigt hinterlässt.",
-      "checkpoint2": "Prüfe vor dem Entfernen des Drippers, dass die Waage 250 g erreicht; die Endzeit ist ein Hinweis und kein Ersatz für das Gewicht.",
+    "checkpoint2": "Bestätige um 2:00, dass insgesamt 250 g aufgegossen wurden; das Auslaufen sollte ungefähr um 3:00 enden und bleibt ein Richtwert.",
       "practice": "Wiederhole Dosis, Wasser, Mahlgrad und Gießplan unverändert, lasse aber nur den letzten Schwung weg. Vergleiche Durchlauf und Klarheit, bevor du dem Schwung eine Wirkung zuschreibst."
     },
     "kasuya": {
       "focus": "Die 4:6-Sequenz lernen: zwei ausgleichende Zugaben, danach drei gleiche Zugaben zur Konzentrationssteuerung.",
-      "checkpoint1": "Bei 0:45 müssen die ersten beiden Zugaben zusammen 120 mL ergeben, bevor die nächste Stufe beginnt.",
+    "checkpoint1": "Gib bei 0:45 weitere 70 mL hinzu, bis insgesamt 120 mL erreicht sind, und gehe dann zur nächsten Stufe über.",
       "checkpoint2": "Bei 1:30 beginnen drei gleiche Zugaben von 60 mL; veröffentlichte Startzeiten sind 1:30, 2:10 und 2:40.",
       "practice": "Halte Dosis, Mahlgrad, Temperatur und alle fünf Zeiten fest. Verschiebe nur den Start der 0:45-Zugabe um zehn Sekunden und vergleiche Durchlauf und Geschmack."
     },
@@ -60,7 +60,7 @@
     },
     "kurasu": {
       "focus": "Das Eisgewicht als Stärkekontrolle nutzen und den letzten Guss sanft halten.",
-      "checkpoint1": "Bei 1:10 langsam und sanft bis insgesamt 150 g gießen, ohne zusätzliche Agitation.",
+    "checkpoint1": "Beginne bei 1:10 den letzten sanften Aufguss bis insgesamt 150 g, ohne zusätzliche Bewegung einzubringen.",
       "checkpoint2": "Nach dem Entfernen des Drippers umrühren, bis alles Eis geschmolzen ist, bevor serviert wird.",
       "practice": "Halte 15 g Kaffee, 150 g heißes Wasser und den Mahlgrad fest. Verwende etwa 65 g Eis in einem und 70 g im anderen Versuch und vergleiche nach dem Schmelzen die Stärke."
     },
@@ -79,7 +79,7 @@
     "onyx-monarch": {
       "focus": "Ein stufenweises Druckprofil verstehen und Preinfusion von der eigentlichen Extraktion trennen.",
       "checkpoint1": "Die ersten 3,5 Sekunden nutzen Leitungsdruck; die Karte veröffentlicht den tatsächlichen Preinfusionsdruck in bar nicht.",
-      "checkpoint2": "Danach auf 9 bar steigen und bei 47 g nach 23 Sekunden stoppen; Temperatur, Sieb und Mühle fehlen auf der Karte.",
+    "checkpoint2": "Die Karte nennt getrennt „9 Bar: 23s“, sagt aber nicht, ob 23 Sekunden den ganzen Shot oder die Zeit nach dem Vorbrühen meinen. Temperatur, Sieb und Mühle fehlen ebenfalls.",
       "practice": "Halte 19 g, 47 g und das Druckprofil fest. Notiere Zeit bis zum ersten Tropfen und Gesamtzeit; ändere den Mahlgrad erst, wenn das Profil reproduzierbar ist."
     }
   },

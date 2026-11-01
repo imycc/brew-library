@@ -50,7 +50,10 @@ export const curatedLearningRecipes=curatedLearningRecipeIds.map(id=>{
 
 export function learningLevel(recipe:Recipe):LearningLevel{
   if(!recipe.steps.length)return 'reference';
-  if(recipeLearning[recipe.id]||recipe.teaching?.length)return 'guided';
+  // "Guided" means this recipe has a reviewed goal, step-linked checkpoints and
+  // a reflective practice prompt. Author explanations remain visible on their
+  // own and do not by themselves make a recipe a complete guided exercise.
+  if(recipeLearning[recipe.id])return 'guided';
   return 'practice';
 }
 
@@ -105,8 +108,11 @@ export function brewTimeline(recipe:Recipe):TimelineItem[]{
     const phases:TimelineItem[]=recipe.steps.flatMap(step=>{
       if(!['preinfuse','extract'].includes(step.action))return [];
       const start=step.at??0;
-      const stop=recipe.steps.find(candidate=>candidate.action==='stop'&&candidate.at!==null&&candidate.at>=start)?.at;
-      const end=step.end??(step.action==='extract'?stop??recipe.duration?.[1]??null:null);
+      const timeBasis=recipe.extraction?.timeBasis??'unknown';
+      const stop=timeBasis==='total'||timeBasis==='postPreInfusion'
+        ?recipe.steps.find(candidate=>candidate.action==='stop'&&candidate.at!==null&&candidate.at>=start)?.at
+        :null;
+      const end=step.end??(step.action==='extract'&&(timeBasis==='total'||timeBasis==='postPreInfusion')?stop??recipe.duration?.[1]??null:null);
       return [{start,end,amount:step.amount,unit:step.unit||recipe.yield?.unit||null,labelKey:`step.${step.action}`,cumulative:step.cumulative}];
     });
     return phases;
