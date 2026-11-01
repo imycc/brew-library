@@ -1662,7 +1662,7 @@
       "temperatureMode": "unknown",
       "duration": [
         180,
-        195
+        210
       ],
       "source": {
         "checked": "2026-10-28",
@@ -1686,7 +1686,7 @@
         },
         {
           "action": "finish",
-          "at": 180,
+          "at": null,
           "amount": null,
           "cumulative": null
         }
@@ -2496,7 +2496,7 @@
       "source": {
         "label": "Kurasu Kyoto",
         "url": "https://kurasu.kyoto/blogs/kurasu-journal/flash-brew-iced-coffee-kenya-kangocho-aa-brazil-joao-hamilton",
-        "published": null,
+        "published": "2026-09-23",
         "checked": "2026-10-29",
         "archive": "https://web.archive.org/web/20261029140940/https://kurasu.kyoto/blogs/kurasu-journal/flash-brew-iced-coffee-kenya-kangocho-aa-brazil-joao-hamilton"
       },
@@ -2568,6 +2568,9 @@
         24,
         24
       ],
+      "extraction": {
+        "timeBasis": "total"
+      },
       "coffee": {
         "name": "Iris Estate Enigma",
         "origin": "Panama"
@@ -2609,6 +2612,13 @@
         25,
         30
       ],
+      "extraction": {
+        "timeBasis": "total",
+        "puckPrep": [
+          "level",
+          "tamp"
+        ]
+      },
       "source": {
         "label": "Camber Coffee",
         "url": "https://cambercoffee.com/espresso-tips/",
@@ -2617,11 +2627,69 @@
         "checked": "2026-10-30",
         "archive": "https://web.archive.org/web/20261030110250/https://cambercoffee.com/espresso-tips/"
       },
-      "steps": [],
+      "steps": [
+        {
+          "action": "grind",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.camber-espresso.s00"
+        },
+        {
+          "action": "dose",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.camber-espresso.s01"
+        },
+        {
+          "action": "level",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.camber-espresso.s02"
+        },
+        {
+          "action": "tamp",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.camber-espresso.s03"
+        },
+        {
+          "action": "extract",
+          "at": 0,
+          "amount": 38,
+          "cumulative": 38,
+          "unit": "g",
+          "instruction": "recipes.camber-espresso.s04"
+        },
+        {
+          "action": "stop",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.camber-espresso.s05"
+        }
+      ],
       "preparation": [],
       "waterConditions": "unknown",
       "beanConditions": "unknown",
-      "context": "daily"
+      "context": "daily",
+      "teaching": [
+        {
+          "key": "recipes.camber-espresso.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.camber-espresso.teach2",
+          "step": 2
+        },
+        {
+          "key": "recipes.camber-espresso.teach3",
+          "step": 4
+        }
+      ]
     },
     {
       "id": "counterculture-go-to",
@@ -2644,6 +2712,9 @@
         28,
         28
       ],
+      "extraction": {
+        "timeBasis": "total"
+      },
       "source": {
         "label": "Counter Culture Coffee",
         "url": "https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-espresso",
@@ -2684,7 +2755,7 @@
         "published": "2020-04-10",
         "publishedBasis": "video",
         "archive": "https://web.archive.org/web/20261030162620/https://www.youtube.com/watch?v=otk2jFRCcmE",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "13g - 200g\n90°C Water\n50g Bloom - 0:00\n50g Pour - 0:30\n50g Pour - 1:00\n50g Pour - 1:30\nTotal Brew Time - 2:30\n\nWe used a Commandante grinder, on a relatively coarse grind setting for this brew."
       },
       "image": "coffee-bloom",
@@ -2737,7 +2808,8 @@
       "grinder": {
         "id": "comandante-unspecified",
         "name": "Comandante",
-        "setting": "relatively coarse"
+        "setting": "relatively coarse",
+        "secondSetting": "30 clicks (video)"
       },
       "teaching": [
         {
@@ -2781,7 +2853,7 @@
         "published": "2020-05-01",
         "publishedBasis": "video",
         "archive": "https://web.archive.org/web/20261030162633/https://www.youtube.com/watch?v=WMPmZ9oXV6E",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "20g - 300g\n92°C Water\n100g Pour - 0:00 (Circle)\n200g Continuous Pour - 0:45 - 1:20 (Circle)\nTotal Brew Time - 2:30\n\nWe used a Commandante grinder, on a medium/coarse grind setting for this brew.\n\nPlease remember that roast degree can greatly influence the resistance of your coffee bed, which is a large variable in the brew times you may experience. If the coffee you are brewing has been roasted darker than our roast style, consider grinding slightly finer to compensate for the lower density."
       },
       "image": "brewer-still",
@@ -2821,7 +2893,8 @@
       "grinder": {
         "id": "comandante-unspecified",
         "name": "Comandante",
-        "setting": "medium/coarse"
+        "setting": "medium/coarse",
+        "secondSetting": "29–30 clicks (video)"
       },
       "paper": {
         "id": "hario-v60-02-filter",
@@ -2865,7 +2938,7 @@
         "published": "2026-05-29",
         "publishedBasis": "video",
         "archive": "https://web.archive.org/web/20261030162642/https://www.youtube.com/watch?v=k0nsShguOsU",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "[ PARAMETERS ]\n・Coffee：20g（※浅煎り推奨）\n・Water：300g (Ratio 1;15)\n・Temperature：95〜96℃\n・Grind Size：40〜45 Clicks (Comandante C40) / 極粗挽き\n・Dripper：HARIO NEO（※少量の湯を均一に抽出できるため推奨。V60でも可）\n\n[ THE BREW / TIMELINE ]\nトータル300gのお湯を、15秒間隔で30gずつ、10回に分けて注ぎます。\nお湯をドリッパー内に滞留させず、スッと落とし切るイメージで注湯してください。"
       },
       "image": "coffee-bloom",
@@ -3006,7 +3079,7 @@
         "video": "https://www.youtube.com/watch?v=v0CXzmw1TXg",
         "published": "2026-08-21",
         "publishedBasis": "video",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "[ PARAMETERS ]（両レシピ共通）\n・Coffee：20g\n・Water：150g（通常の4:6メソッド300gの半量）\n・Ice：80g（サーバーにあらかじめ用意）\n・Temperature：90〜93℃\n・Grind Size：28クリック\n\n[ THE BREW / TIMELINE ]\n▼A：4:6メソッド応用版（通常のドリッパー）\n30gを5回、合計150gを注ぐ",
         "archive": "https://web.archive.org/web/20261030165616/https://www.youtube.com/watch?v=v0CXzmw1TXg"
       },
@@ -3059,6 +3132,11 @@
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily",
+      "grinder": {
+        "id": "grinder-unspecified",
+        "name": "Grinder not stated",
+        "setting": "28 clicks (video)"
+      },
       "coffee": {
         "asRecommendation": true,
         "roast": "light"
@@ -3106,7 +3184,7 @@
         "video": "https://www.youtube.com/watch?v=bZ2i4ewFSLk",
         "published": "2021-01-12",
         "publishedBasis": "video",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "* 20g frisch gemahlener Filterkaffee\n* 300ml Wasser\n* 93° Grad\n\n• Filterpapier in die V-60 einsetzen. Filter und Kanne mit heißem Wasser ausspülen. …\n• Ca. 60ml Wasser in Kreisbewegungen eingießen und ca. 30-40 Sekunden ziehen lassen\n• Die restlichen 240ml Wasser in Kreisbewegungen oder durch die Mitte langsam und konstant aufgießen\n• Der gesamte Brühvorgang sollte ca. 2:30 bis 3:00 Minuten lang dauern.",
         "archive": "https://web.archive.org/web/20261030165626/https://www.youtube.com/watch?v=bZ2i4ewFSLk"
       },
@@ -3186,7 +3264,7 @@
         "video": "https://www.youtube.com/watch?v=BG5Tc8MR2_4",
         "published": "2022-11-26",
         "publishedBasis": "video",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "Recipe:\nup to 30g of coffee\nMedium grind size\n1:14-1:17 ratio depending on roast level (darker- tighter, lighter- wider)\nWater temp 85-100C depending on roast level\n3x mass of coffee for bloom\nAgitate (can excavate or Wet WDT)\nWait 1-2 minutes\nPour rest of water at 6-8g/s with optimal height for deep turbulence\nJust swirl if draining slowly OR Wet WDT if somewhat quick OR turn bed over with spoon if draining quickly\n\nTotal time:\n2-3 min IF 1min bloom time\n3-4min IF 2 min bloom time",
         "archive": "https://web.archive.org/web/20261031154533/https://www.youtube.com/watch?v=BG5Tc8MR2_4"
       },
@@ -3274,7 +3352,7 @@
         "video": "https://www.youtube.com/watch?v=Az01iNS1xnQ",
         "published": "2021-01-05",
         "publishedBasis": "video",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "▪ Cafec T90 Filters (0.28 mm Thickness)\n▪ 1:15 ratio (use between 14 and 20 g of coffee. Adjust water accordingly)\n▪ Medium-coarse grind size\n▪ 93c water\n▪ total brew time around 3-5 minutes\n\n1: Blooming 40 seconds - use 2.5 x dry dose (if you use 20 g coffee, bloom with 50 ml)\n2: Gently pour in the center to 50% total brew volume\n3: Pour the remaining water in a slowly expanding circle. Avoid pouring on the paper filter.",
         "archive": "https://web.archive.org/web/20250827225934/https://www.youtube.com/watch?v=Az01iNS1xnQ"
       },
@@ -3310,6 +3388,7 @@
       ],
       "preparation": [],
       "waterConditions": "unknown",
+      "waterNote": "recipes.chronicler-osmotic.water",
       "beanConditions": "unknown",
       "filterConditions": "unknown",
       "context": "daily",
@@ -3367,7 +3446,7 @@
         "video": "https://www.youtube.com/watch?v=K54NbGql73g",
         "published": "2025-06-13",
         "publishedBasis": "video",
-        "checked": "2026-10-31",
+        "checked": "2026-11-01",
         "evidence": "As long as you use freshly ground, high-quality beans and good water, it is easy to make a good cup of coffee.\n\nRecipe:\n- 36g good coffee\n- 600g good water at boiling point\n- Cafec Abaca+ filter",
         "archive": "https://web.archive.org/web/20261031154533/https://www.youtube.com/watch?v=K54NbGql73g"
       },
@@ -3449,6 +3528,7 @@
         35
       ],
       "extraction": {
+        "timeBasis": "total",
         "pressureBar": 9,
         "basket": {
           "grams": 17
@@ -3534,6 +3614,7 @@
         27
       ],
       "extraction": {
+        "timeBasis": "total",
         "pressureBar": 7,
         "basket": {
           "id": "vst",
@@ -3585,6 +3666,7 @@
       ],
       "preparation": [],
       "waterConditions": "unknown",
+      "waterNote": "recipes.coffeecollective.water",
       "beanConditions": "unknown",
       "context": "daily",
       "teaching": [
@@ -3606,7 +3688,7 @@
         "url": "https://coffeecollective.dk/pages/brew-guide/espresso-brew-guide",
         "published": null,
         "archive": "https://web.archive.org/web/20261030171841/https://coffeecollective.dk/pages/brew-guide/espresso-brew-guide",
-        "evidence": "Dose 19 g for a double espresso / Brew Weight 38 g / Extraction Time 27 seconds / Grind Very fine - adjust to brew time / Filter Basket 18 g or 20g VST Basket / Water Temperature 93°C / Water Pressure 7 bars",
+        "evidence": "Dose 19 g for a double espresso / Brew Weight 38 g / Extraction Time 27 seconds / Grind Very fine - adjust to brew time / Filter Basket 18 g or 20g VST Basket / Water Temperature 93°C / Water Pressure 7 bars / Water Quality < 50 ppm CaCO3",
         "checked": "2026-10-31"
       }
     },
@@ -3632,6 +3714,7 @@
         23
       ],
       "extraction": {
+        "timeBasis": "unknown",
         "pressureBar": 9,
         "preInfusion": {
           "seconds": 3.5
@@ -3717,6 +3800,7 @@
         24
       ],
       "extraction": {
+        "timeBasis": "unknown",
         "pressureBar": 9,
         "preInfusion": {
           "seconds": 3.5

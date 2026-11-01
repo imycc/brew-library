@@ -14,24 +14,25 @@ Two kinds of evidence are kept separate:
    the reason for a choice, tasting language, approximate observations and conflicts with the
    description.
 
-Automatic captions are used to locate and understand speech, not as a replacement for the
-author-written numbers. Approximate or screen-only values do not move into fixed recipe fields.
-Each review samples at least three video frames. Wölfl has no useful spoken caption track, so its
-review explicitly relies on six frames and does not claim real-time verification.
+The caption service returned HTTP 429 on the 2026-11-01 replay, so the eight active videos were
+downloaded at 360p, their relevant speech was transcribed locally, and timestamped frames were
+checked separately. Captions locate and explain speech; they do not replace the author-written
+numbers. Approximate or screen-only values do not move into fixed recipe fields. Wölfl has no
+useful speech, so its review relies on sampled frames and does not claim real-time verification.
 
 ## Result summary
 
 | Recipe | Video evidence | Key result |
 | --- | --- | --- |
-| `rolf-v60-113` | English auto-caption; frames 0:18, 1:10, 2:10, 2:35 | Four equal pours, final swirl/tap, and a deliberate sub-three-minute target for clarity. One caption mis-hears 50 g as 450 g; the written description wins. |
-| `rolf-origami-117` | English auto-caption; frames 0:30, 1:10, 2:10, 3:40 | 92 °C and a slow continuous second pour are explained; larger Origami brews and rested coffee are preferred. |
-| `kasuya-neo` | Manual English caption; frames 12:50, 13:10, 15:46, 17:10 | Video adds an approximate 3:30 drain, V60 fallback, sweetness/body claims and the warning that 45 clicks can be thin. |
-| `kasuya-iced-46` | Japanese auto-caption; frames 1:38, 3:05, 5:57, 7:01 | 4:6 and Switch hybrid are materially different; the hybrid remains a separate backlog record. |
+| `rolf-v60-113` | Local transcript plus frames 0:18, 1:10, 2:10, 2:35 | Four equal pours, a spoken 30-click Comandante setting, a 2:20–2:30 spoken time and final swirl/tap. The written 2:30 remains fixed. |
+| `rolf-origami-117` | Local transcript plus frames 0:30, 1:10, 2:10, 3:40 | 92 °C and a slow continuous second pour are explained. The video adds 29–30 clicks and an approximate 2:30–2:40 total, while the written description retains 2:30. |
+| `kasuya-neo` | Manual English caption, local Japanese transcript, frames 12:50, 13:10, 15:46, 17:10 | Confirms a 30-second bloom then every-15-second pours, 95–96 °C, approximate 3:30 drain, V60 fallback and the warning that 45 clicks can be thin. |
+| `kasuya-iced-46` | Local Japanese transcript plus frames 1:38, 3:05, 5:57, 7:01 | Confirms 20 g / 150 g / 80 g ice, a spoken 28-click setting, 90–93 °C and no individual pour times. The Switch hybrid remains a separate method. |
 | `woelfl-v60` | No useful speech captions; frames 0:05, 0:15, 0:25, 0:35, 0:45, 0:55 | A 67-second edited visual demonstration; it cannot verify the written 2:30–3:00 duration. |
 | retired W60 test | English auto-caption; frames 0:30, 1:30, 3:35, 6:05 | April tests the W60; mesh alone is silty, mesh plus paper is cleaner but still flat/dull. Authorship was corrected, then the recipe was retired from the catalogue and retained on the W60 equipment record. |
-| `hedrick-ultimate-pourover` | English auto-caption; frames 5:10, 6:36, 7:10, 9:20, 10:00 | Confirms the flexible framework, flow-based finishing actions, 20–21 % extraction and tasting claims. |
-| `chronicler-osmotic-v60` | English auto-caption; frames 3:00, 3:40, 4:10, 4:54 | Confirms low-agitation centre-first pours; exposes a 40-second description versus 45-second narration conflict. |
-| `wendelboe-tamana` | English auto-caption; frames 1:46, 1:52, 2:00, 4:10 | Description omits a loose method that the video demonstrates: ~100 g bloom, swirl, 30-second wait, aggressive remainder. |
+| `hedrick-ultimate-pourover` | Local transcript plus frames 5:10, 6:36, 7:10, 9:20, 10:00 | Confirms the flexible framework, centered 6–8 g/s pour with a 25 mm overlay, drawdown finishing, 20–21 % extraction and a live 15 g / 255 g demonstration. |
+| `chronicler-osmotic-v60` | Local transcript plus frames 3:00, 3:40, 4:10, 4:54 | Confirms low-agitation centre-first pours, TDS 50–110 water and the 40-second written versus 45-second spoken bloom conflict. |
+| `wendelboe-tamana` | Local transcript plus frames 1:46, 1:52, 2:00, 4:10 | Confirms 36 g / 600 g, ~100 g bloom, swirl, 30-second wait, aggressive remainder and one broad grinder setting. |
 
 ## Important findings
 
@@ -79,10 +80,10 @@ minor variant of the already-added 4:6 record and is left as a separate queued r
 
 For each primary video:
 
-1. Fetch the spoken caption track and record its language and whether it is manual or automatic.
+1. Acquire the spoken audio. Use a caption track when available and a local transcript when the caption endpoint is blocked; record the language and evidence kind.
 2. Read the full relevant instruction/demonstration segment with timestamps.
-3. Sample at least three frames around setup, active brewing and result; Wölfl uses six because no
-   useful speech track exists.
+3. Sample at least three frames around setup, active brewing and result. For the 2026-11-01 replay,
+   sequence contact sheets were checked in addition to the timestamped manifest samples.
 4. Compare the video with the author-written description and archive snapshot.
 5. Record observations and conflicts in `content/video-reviews.json`.
 6. Only promote a value into the fixed recipe model when the author-written numeric evidence is

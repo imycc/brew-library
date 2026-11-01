@@ -66,6 +66,10 @@ export const espressoSchema=z.object({...commonRecipeFields,
   // a bed; a stated water recipe stays optional and is never derived from the yield.
   water:waterSchema.optional(),
   extraction:z.object({
+    // Keep the source's own timing semantics. A stated duration can be a whole
+    // shot, only the post-pre-infusion phase, or an unspecific "N seconds"
+    // label on a card. Never subtract pre-infusion merely because both exist.
+    timeBasis:z.enum(['total','postPreInfusion','stage','unknown']).default('unknown'),
     pressureBar:z.number().positive().optional(),
     preInfusion:z.object({seconds:z.number().positive().nullable().optional(), pressureBar:z.number().positive().nullable().optional()}).optional(),
     basket:z.object({id:z.string().optional(), name:z.string().optional(), grams:z.number().positive().optional(), style:z.enum(['single','double','bottomless','pressurised']).optional()}).optional(),

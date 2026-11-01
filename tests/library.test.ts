@@ -5,6 +5,7 @@ import {espressoSchema,pourOverSchema,filterRecipes,methodFilterKeys,methodFilte
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
 import {videoReviews} from '../src/lib/video-reviews';
+import {glossaryForRecipe} from '../src/lib/glossary';
 import {validate} from '../scripts/validate';
 import {brewTimeline,curatedLearningRecipeIds,learningLevel,recipeLearning,searchableRecipeText,secondsLabel} from '../src/lib/learning';
 test('source and translation validation',async()=>{await validate();});
@@ -316,6 +317,7 @@ test('video records carry provenance, timestamps and teaching without inventing 
  assert.equal(videoLink(rolf.source.video!,90),'https://www.youtube.com/watch?v=otk2jFRCcmE&t=90');
  assert.equal(rolf.teaching?.length,3);
  assert.equal(rolf.teaching?.[0].step,0);
+ assert.equal(rolf.grinder?.secondSetting,'30 clicks (video)');
  assert(rolf.source.evidence?.includes('13g - 200g'));
  const kasuya=find('kasuya-neo');
  assert.equal(kasuya.temperatureMax,96);
@@ -327,12 +329,14 @@ test('video records carry provenance, timestamps and teaching without inventing 
  const origami=find('rolf-origami-117');
  assert.deepEqual(origami.duration,[150,150]);
  assert.equal(origami.steps[1].end,80);
+ assert.equal(origami.grinder?.secondSetting,'29–30 clicks (video)');
  assert(origami.source.evidence?.includes('roast degree'));
  const hedrick=po('hedrick-ultimate-pourover');
  assert.equal(hedrick.doseLimit,'upTo');
  assert.equal(hedrick.dose,30);
  assert.equal(hedrick.water.amount,420);
  assert.equal(hedrick.water.waterMax,510);
+ assert.equal(hedrick.temperatureMax,100);
  assert.equal(ratio(hedrick,'en'),'1 : 14–1 : 17');
  assert.equal(hedrick.steps[0].amount,90);
  const osmotic=po('chronicler-osmotic-v60');
@@ -342,6 +346,10 @@ test('video records carry provenance, timestamps and teaching without inventing 
  assert.equal(osmotic.water.waterMax,300);
  assert.equal(ratio(osmotic,'en'),'1 : 15');
  assert.equal(osmotic.steps[0].amount,null);
+ assert.equal(osmotic.waterNote,'recipes.chronicler-osmotic.water');
+ const iced=po('kasuya-iced-46');
+ assert.equal(iced.temperatureMax,93);
+ assert.equal(iced.grinder?.setting,'28 clicks (video)');
  const tamana=po('wendelboe-tamana');
  assert.equal(tamana.temperatureMode,'boiling');
  assert.equal(tamana.duration,null);
@@ -358,6 +366,9 @@ test('every video-primary recipe has watched-caption and frame review evidence',
    assert(review.observations.length>0,`${id} needs reviewed observations`);
  }
  assert.equal(videoReviews['woelfl-v60'].caption,null);
+ assert(videoReviews['rolf-v60-113'].observations.some(value=>value.includes('30 clicks')));
+ assert(videoReviews['rolf-origami-117'].conflicts.some(value=>value.includes('2:30–2:40')));
+ assert(videoReviews['hedrick-ultimate-pourover'].observations.some(value=>value.includes('25 mm')));
  assert(videoReviews['chronicler-osmotic-v60'].conflicts.some(value=>value.includes('40-second')));
 });
 
@@ -376,9 +387,9 @@ test('flow rates are either published or derived from the pour itself',()=>{
 });
 
 test('learning levels and curated route describe the depth honestly',()=>{
- assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,16);
- assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='practice').length,25);
- assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='reference').length,3);
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,8);
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='practice').length,34);
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='reference').length,2);
  assert.equal(curatedLearningRecipeIds.length,8);
  assert(curatedLearningRecipeIds.every(id=>recipes.some(recipe=>recipe.id===id)));
  assert.deepEqual(Object.keys(recipeLearning).sort(),[...curatedLearningRecipeIds].sort());
@@ -408,8 +419,28 @@ test('espresso timeline keeps phase ranges and final yield semantically correct'
  const onyx=brewTimeline(byId('onyx-monarch-espresso'));
  assert.deepEqual(onyx.map(item=>({start:item.start,end:item.end,amount:item.amount,label:item.labelKey})),[
   {start:0,end:3.5,amount:null,label:'step.preinfuse'},
-  {start:3.5,end:23,amount:47,label:'step.extract'}
+  {start:3.5,end:null,amount:47,label:'step.extract'}
  ]);
+ assert.equal(byId('onyx-monarch-espresso').extraction?.timeBasis,'unknown');
  assert.equal(secondsLabel(3.5),'0:03.5');
  assert.deepEqual(brewTimeline(byId('ona-iris-enigma')),[]);
+});
+
+test('glossary explanations follow the terms actually present in a recipe',()=>{
+ assert.deepEqual(glossaryForRecipe('Use Wet WDT and keep the line pressure short'),['wdt','linePressure']);
+ assert.deepEqual(glossaryForRecipe('A VST basket with water below 50 ppm CaCO₃'),['ppm','vst']);
+ assert.deepEqual(glossaryForRecipe('A plain V60 recipe'),[]);
+});
+
+test('source corrections keep drawdown, publication and espresso timing distinct',()=>{
+ const byId=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const lamill=byId('lamill-mugen');
+ assert.deepEqual(lamill.duration,[180,210]);
+ assert.equal(lamill.steps.find(step=>step.action==='finish')?.at,null);
+ assert.equal(byId('kurasu-flash-brew').source.published,'2026-09-23');
+ const camber=espressoRecipes.find(recipe=>recipe.id==='camber-espresso')!;
+ assert.equal(camber.steps.length,6);
+ assert.equal(camber.extraction?.timeBasis,'total');
+ assert.deepEqual(camber.extraction?.puckPrep,['level','tamp']);
+ assert.equal(byId('coffeecollective-espresso').waterNote,'recipes.coffeecollective.water');
 });

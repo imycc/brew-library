@@ -17,11 +17,13 @@
       "observations": [
         "The filter is rinsed before dosing.",
         "Rolf says 90 °C is intended to bring out acidity and vibrancy.",
+        "The spoken grind setting is 30 clicks on a standard Comandante; the written description only calls the grind relatively coarse.",
         "The four 50 g pours are shown sequentially after each addition drains.",
-        "After the final pour Rolf swirls and taps the brewer, then says keeping the brew below three minutes improves clarity and harmony."
+        "After the final pour Rolf swirls and taps the brewer. He lifts the brewer at about 2:30 after the water has already drained, then waits briefly before serving.",
+        "The spoken brew time is about 2:20–2:30 and Rolf says keeping the brew below three minutes improves clarity and harmony."
       ],
       "conflicts": [
-        "The automatic English caption mis-hears the 50 g pours as 450 g once; the author-written description remains the numeric authority."
+        "The automatic English caption mis-hears the 50 g pours as 450 g once; the author-written description remains the numeric authority. The video names a 30-click Comandante setting and a 2:20–2:30 spoken time that are absent from the written recipe."
       ]
     },
     "rolf-origami-117": {
@@ -41,9 +43,13 @@
         "The filter is rinsed with at least 100 g of water.",
         "Rolf uses 92 °C because the acidic washed coffee needs more body and sweetness.",
         "The second 200 g addition is one slow, steady continuous pour to keep the bed controlled.",
+        "The spoken Comandante setting is about 29–30 clicks, a little finer than their usual setting to compensate for the wider Origami brewer's faster flow.",
+        "The spoken total is about 2:30–2:40; the brewer is lifted at about 2:30 after drawdown finishes.",
         "April rests filter coffee for at least two weeks and prefers larger Origami brews for evenness."
       ],
-      "conflicts": []
+      "conflicts": [
+        "The written description gives 2:30 as total brew time; the spoken demonstration describes approximately 2:30–2:40. The fixed duration keeps the written value and this range remains a video observation."
+      ]
     },
     "kasuya-neo": {
       "videoId": "k0nsShguOsU",
@@ -61,6 +67,7 @@
       "observations": [
         "Kasuya demonstrates a 30-second bloom, then 30 g additions every 15 seconds.",
         "The final pour is at 2:30 with 300 g total; he expects draining to finish around 3:30.",
+        "The spoken water temperature is 95–96 °C, and he describes the method as suited to light roasts rather than dark roasts.",
         "He says a regular V60 also works and that 40 clicks is safer than the extreme 45-click demo.",
         "He describes sweetness, reduced acidity and a syrupy texture, with a risk of thinness at 45 clicks."
       ],
@@ -82,6 +89,7 @@
         421
       ],
       "observations": [
+        "The 4:6 version uses a spoken 28-click grind, 20 g coffee, 150 g hot water and 80 g ice; the spoken water temperature is 90–93 °C.",
         "The 4:6 version uses five 30 g additions over 80 g of ice and publishes no individual pour times.",
         "The Switch hybrid uses a 50 g bloom, closes the valve, adds to 150 g by 40 seconds, waits until 1:30, opens, swirls and drains.",
         "Kasuya prefers the hybrid for its smoother, sweeter cup; the 4:6 application keeps more brightness."
@@ -104,8 +112,8 @@
       ],
       "observations": [
         "The video is a 67-second edited demonstration without useful spoken captions.",
-        "Frames show filter rinsing, grinding, dry grounds, a Brewista kettle and pouring.",
-        "The edit cannot verify the description's real-time 2:30–3:00 brew duration."
+        "Frames show filter rinsing, a hand grinder, a Baltasar coffee bag, dry grounds, an electric kettle and the pour; no readable numerical grind, temperature, dose or timing is shown.",
+        "The edit does not show the full real-time drawdown and therefore cannot verify the written 2:30–3:00 duration."
       ],
       "conflicts": []
     },
@@ -125,8 +133,9 @@
       ],
       "observations": [
         "Hedrick frames this as an adaptable recipe, not a championship recipe for every coffee.",
+        "The live demonstration uses 15 g coffee, a 45 g bloom and 255 g total water, within the published dose and ratio ranges rather than the 30 g upper bound.",
         "He makes a coffee-bed divot before the 3× bloom and waits one or two minutes.",
-        "The remainder is one pour at 6–8 g/s from the lowest height that avoids stream splatter.",
+        "The remainder is one centered pour at 6–8 g/s. An on-screen graphic gives a centered 25 mm pour position and the kettle height is lowered before the stream splatters.",
         "He chooses swirl, Wet WDT or spoon turnover according to drawdown speed.",
         "He reports about 20–21% extraction, low bitterness, citric acidity, sweetness and a velvety, pillowy body."
       ],
@@ -150,6 +159,7 @@
       "observations": [
         "The demonstration uses 20 g coffee and 300 g water at 1:15; the description generalises this to 14–20 g.",
         "The spoken instructions call for a 45-second bloom, while the author-written description says 40 seconds.",
+        "The video recommends soft water with TDS 50–110 ppm.",
         "The first full pour stays in the centre with the kettle close to the bed to minimise agitation.",
         "At half the total water he expands into a coin-sized circle, never touching the paper.",
         "He recommends soft water under 110 ppm and describes a successful bed as wet sand without surface silt."
@@ -172,6 +182,7 @@
         250
       ],
       "observations": [
+        "The demonstrated brew uses the description's 36 g coffee and 600 g water.",
         "Wendelboe says the local boiling point at Finca Tamana is about 92–93 °C because of altitude.",
         "He uses the same coarse grinder setting across coffees rather than dialling each one.",
         "The demonstration uses roughly 100 g for the bloom, swirls, waits about 30 seconds, then pours the remainder aggressively without a fixed pattern.",
