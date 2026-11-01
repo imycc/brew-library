@@ -298,13 +298,13 @@
     },
     "selorio": {
       "title": "Lui Selorio · ORIGAMI Air",
-      "summary": "Four timed pours with ZP6 Special and CAFEC paper.",
+      "summary": "ZP6 Special and CAFEC paper with four pours; only the first three interval ends are clear from the source.",
       "version": "Philippine Brewers Cup · 2023",
       "grind": "4.1 (1Zpresso ZP6 Special)",
       "equipment": "ORIGAMI Air",
       "notes": "Overview: 240 mL; steps: g. Third interval says 1:00–1:00, so only the start time is retained.",
       "finish": "Let drain until 2:25.",
-      "third": "Start at 1:00; the third interval end is unclear in the source.",
+      "third": "Begin the third 60 g pour at 1:00. The source labels this interval 1:00–1:00, so its end is unknown rather than a ten-second pour.",
       "s00": "Pour 50 g of water over ten seconds, then wait until 0:30.",
       "s01": "Pour 70 g of water over ten seconds, then wait until 1:00.",
       "s03": "Pour the last 60 g over ten seconds and let the water draw down until 2:25."
@@ -343,11 +343,11 @@
       "equipment": "HARIO V60 · ceramic",
       "notes": "This is HARIO’s published teaching version, not a reconstruction of the competition brew. Its last two pours begin at 2:10 and 2:40.",
       "finish": "Remove the dripper at the source’s stated finish time.",
-      "s00": "Pour 50 mL at 0:00 — the source calls this 42% of the 120 mL first stage, or 40% of the total, favouring sweetness.",
-      "s01": "Add 70 mL at 0:45, topping the first stage up to 120 mL — the other 40% of the total.",
+      "s00": "Pour 50 mL at 0:00. The first two pours total 120 mL, or 40% of the water; this first pour is about 41.7% of that first stage and is used to build balance.",
+      "s01": "At 0:45 add 70 mL, supplying the other 58.3% of the first stage and bringing the total to 120 mL.",
       "s02": "Pour 60 mL at 1:30 — the remaining 180 mL is divided by the source into three equal pours.",
       "s03": "Pour 60 mL at 2:10, the second of the three equal pours.",
-      "s04": "Pour the last 60 mL at 2:40."
+      "s04": "Begin the final 60 mL at 2:40, reaching 300 mL."
     },
     "hoffmann": {
       "title": "A better one-cup V60",
@@ -389,7 +389,7 @@
       "version": "HARIOLOGY · HARIO Europe",
       "grind": "Medium-fine; standard EK dial 7.5",
       "equipment": "HARIO V60 · Ceramic",
-      "notes": "Uses light-roasted Colombia La Palma y El Tucan natural Gesha. The intermediate 250 mL total is calculated by subtracting the final 50 mL from the total. Intermediate phase times are unspecified.",
+      "notes": "Uses light-roasted Colombia La Palma y El Tucan natural Gesha. The intermediate 250 mL total is calculated by subtracting the final 50 mL from the total. Intermediate phase times and the exact point for changing from the forceful pour to the slower centre pour are unspecified; use the source video’s visible flow as the cue.",
       "finish": "Finish the brew at 2:30.",
       "bloom": "Wet the grounds and bloom for 30 seconds.",
       "continuous": "Start with a fast, forceful pour, then slow to a centre pour until the cumulative target of 250 mL.",
@@ -435,7 +435,7 @@
       "version": "World Brewers Cup · 2021",
       "grind": "Medium-coarse",
       "equipment": "HARIO W60",
-      "notes": "HARIO’s published 2021 World Brewers Cup recipe. The overview gives 200 g, but the steps use mL. Both are preserved without assuming equivalence.",
+      "notes": "HARIO’s published 2021 World Brewers Cup recipe. The overview gives 200 g, but the steps use mL. Both are preserved without assuming equivalence. The card does not describe how to seat the paper on the W60 metal mesh; follow the manufacturer’s assembly instructions before brewing.",
       "finish": "Remove the W60 at 3:15.",
       "water": "It is not stated whether the figure is hardness or total dissolved solids.",
       "filters": "W60 flat mesh and paper filter used together.",
@@ -462,14 +462,14 @@
       "version": "HARIOLOGY · HARIO Europe",
       "grind": "Not provided by the source",
       "equipment": "HARIO V60 · plastic",
-      "notes": "The published recipe uses 30 g coffee and 500 mL at 92°C. Its instructions use g for the pour targets, so those units are preserved separately. The article names Ézio Sartori coffee from Brazil but does not name a grind setting.",
+      "notes": "The published recipe uses 30 g coffee and 500 mL at 92 °C. Its pour targets are written in g, so those units remain separate rather than being converted. The article names Ézio Sartori coffee from Brazil but does not name a grind setting.",
       "finish": "Finish the extraction by 3:00.",
       "beans": "Ézio Sartori, Espírito Santo, Brazil; roasted by Coffee Lab",
       "s00": "Pour 60 g of water and let it bloom for 30 seconds.",
       "s01": "On the second pour go to 250 g; the 190 g addition is that target minus the bloom.",
-      "s02": "Stir three times.",
+      "s02": "After the pour reaches 250 g, stir three times.",
       "s03": "At 1:30 pour the rest of the water, taking the total to 500 g.",
-      "s04": "Stir three times again.",
+      "s04": "After the 1:30 pour finishes, stir three times again.",
       "taste1": "About the coffee she brews here: floral aroma, a bright acidity."
     },
     "mallouhi": {
@@ -491,7 +491,7 @@
       "version": "The Coffee Chronicler · 2023",
       "grind": "Not provided by the source",
       "equipment": "HARIO Switch 02",
-      "notes": "The article’s standard version uses 20 g coffee and 320 g water: pour half with the valve open, close at 0:45, add the remaining half, then open at 2:00. Temperature and grind are not specified.",
+      "notes": "The article’s standard version uses 20 g coffee and 320 mL water: pour half with the valve open, close at 0:45, add the remaining half, then open at 2:00. Temperature and grind are not specified.",
       "finish": "Let the brew drain; the article gives a 2:45–3:15 total range.",
       "open": "Start with the Switch valve open.",
       "firstPour": "Pour the first half of the water while the valve is open.",
@@ -566,7 +566,7 @@
       "finish": "No total time is published; the last pour window closes at 2:30.",
       "overview": "Grinding two coffees to two settings within one brew trades prep steps for flavour separation; the chilled server base carries the same idea into the liquid, dropping the first drips in temperature straight away.",
       "bestFor": "Brewers happy to prep harder to compare two grinds",
-      "prepare": "Grind the two coffees separately, layer Obatã on the bottom, and chill the glass server base to −10 °C before brewing.",
+      "prepare": "Grind 12 g of Obatã at 7.5 for the bottom layer and 4 g of Catucaí at 7.0 for the top layer. Chill the glass server base to −10 °C before brewing.",
       "s00": "Pour 60 g between 0:00 and 0:35 and let it bloom.",
       "s01": "Pour 70 g between 0:35 and 1:15.",
       "s02": "Pour 60 g between 1:15 and 1:40.",
@@ -607,7 +607,7 @@
       "grind": "2.7 (1Zpresso K-Ultra)",
       "equipment": "Graycano with Sibarist paper and a Melodrip",
       "water": "Apax water mixed to 72 ppm from Tonik 1 g, Jamm 1.5 g and Lylac 1.5 g; the water volume those powders dissolve into is not stated.",
-    "notes": "The source gives a 40-second bloom, then waits until 1:20 before the third pour and 2:00 before the fourth. It gives no separate start time for the second 60 g pour, so that addition remains a sequence step.",
+      "notes": "The source gives a 40-second bloom, then waits until 1:20 before the third pour and 2:00 before the fourth. It gives no separate start time for the second 60 g pour, so that addition remains a sequence step.",
       "finish": "The source states a total brew time of 2:40.",
       "overview": "Self-mixed water, a two-farm blend and a Melodrip put every variable under the brewer’s control, while the pouring schedule itself stays deliberately plain.",
       "bestFor": "Brewers who mix their own water and want variables isolated",
@@ -649,23 +649,26 @@
     },
     "ohno": {
       "title": "Ohno’s cool, coarse brew with a water top-up",
-      "summary": "The champion brew: 22 g at 83 °C extracted with 190 g, then diluted with 60–70 g of 65 °C water.",
+      "summary": "Extract 22 g with 190 g at 83 °C, let it drain in 1:30–1:35, then dilute in the cup with 65 °C water, starting at 50 g and adjusting toward 60–70 g.",
       "version": "ORIGAMI CUP · 2024 winner",
       "grind": "30 clicks (Comandante C40 MK4)",
       "equipment": "ORIGAMI Dripper Air S with Wave paper",
       "water": "Tajima natural water, supplied by the event to every competitor; no hardness or TDS basis is stated.",
-      "notes": "The 190 g covers only the three pours. The finishing water starts at 50 g and ends around 60–70 g by taste, so it is published as a range and left out of the water total rather than merged into a single figure.",
+      "notes": "The 190 g is extraction water only. The dilution starts at 50 g and can rise to about 60–70 g total by taste; that range is not part of the 190 g brew water.",
       "prepare": "Grind 32 g at 30 clicks and sieve it through the coarsest mesh L stocker, then use 22.0 g.",
-      "finish": "The drawdown finishes between 1:30 and 1:35, before the finishing water.",
+      "finish": "Stir the diluted coffee and serve.",
       "overview": "The temperature is deliberately low, the grind coarse and the bed flat, so the brew comes out under-extracted and pale on purpose; the finishing water then sets the strength. With clean cup as the judging criterion, the risk is pushed onto the weak side.",
       "bestFor": "Competitors who want to set strength with a finishing water",
       "s00": "First pour of 45 g, spreading the water across the whole bed.",
       "s01": "At 0:30 go to 120 g (+75 g) with a slow circle, aiming at a little agitation.",
       "s02": "At 1:00 go to 190 g (+70 g) with a centre pour that avoids agitation, then circle the wall for the last ~15 g so the bed finishes flat.",
-      "s03": "After the drawdown, add water cooled to 65 °C: start with 50 g and adjust by taste, ending near 60–70 g.",
+      "s03": "Let the 190 g brew drain completely. The source puts drop-off at 1:30–1:35; this ends extraction before dilution.",
       "beans": "Ohno notes that the bean profile was only released on the day, so his card is written to suit any coffee and names no bean.",
       "taste1": "His stated goal is a clean cup and sweetness, and the low temperature and coarse sieve are chosen for it.",
-      "taste2": "The coffee served measured TDS 1.07 — deliberately dilute, closer to tea in strength."
+      "taste2": "The coffee served measured TDS 1.07 — deliberately dilute, closer to tea in strength.",
+      "quickAnswer": "Quick answer: 22 g at {temperature}, 190 g across three pours, draining at 1:30–1:35. Then dilute in the cup with 65 °C water: start at 50 g and adjust toward 60–70 g.",
+      "s04": "Add 65 °C water to the brewed coffee. Start with 50 g, taste, and raise the total finishing water toward 60–70 g.",
+      "brewTime": "Extraction drawdown: 1:30–1:35 (before dilution)"
     },
     "gil-2025": {
       "title": "Gil’s 2025 three-pour ZP6 recipe",
@@ -676,7 +679,7 @@
       "water": "65 ppm water; neither its composition nor its reporting basis is stated.",
       "notes": "This is Gil’s 2025 ZP6 version, kept separate from his 2024 K-Ultra and ORIGAMI Air recipe; no total brew time is published.",
       "finish": "No finish time is given; after the three pours, let it drain.",
-      "overview": "The same author changed grinder and structure a year later: three bigger pours on a shorter interval, which the card says keeps the cup clean and lets the coffee show through.",
+      "overview": "The same author changed grinder and structure a year later: three larger pours. The intervals are 50 seconds in this 2025 version versus 45 seconds in 2024, while the card says this cup stays clean and expressive.",
       "bestFor": "Comparing two versions by the same brewer a year apart",
       "s00": "Place 15 g of coffee in the dripper and open with a 60 g pour.",
       "s01": "Add 100 g after 50 seconds.",
@@ -688,7 +691,7 @@
       "version": "Kurasu Journal",
       "grind": "Finer than a standard hot pour-over",
       "equipment": "Dripper and filter not named; the paper is rinsed and the dripper warmed",
-    "notes": "The page names neither the dripper nor a water temperature; it was published on 2026-09-23. Ice is published as approximately 65–70 g and described as what sets the final strength; stir until it has fully melted before serving.",
+      "notes": "The page names neither the dripper nor a water temperature; it was published on 2026-09-23. Ice is published as approximately 65–70 g and described as what sets the final strength; stir until it has fully melted before serving.",
       "finish": "Aim to finish around 1:40–1:45, then remove the dripper and stir until the remaining ice has melted.",
       "overview": "Flash brewing runs a concentrated hot brew straight onto ice, so cooling and dilution happen together and the ice weight becomes the strength dial — the point the page stresses most. Temperature is left unstated, which leaves that one lever to taste.",
       "bestFor": "Light-roast filter coffee you want cold without a twelve-hour wait",
@@ -777,7 +780,7 @@
     },
     "kasuya-neo": {
       "title": "Kasuya’s NEO: ten pours of 30 grams",
-      "summary": "Twenty grams to 300 g at 95–96 °C, extra coarse, in ten 30 g pours 15 seconds apart.",
+      "summary": "Twenty grams to 300 g at 95–96 °C, extra coarse: first pour at 0:00, wait 30 seconds, then nine more 30 g pours 15 seconds apart.",
       "version": "TETSU KASUYA · 2026",
       "grind": "40–45 clicks (Comandante C40), extra coarse",
       "equipment": "HARIO NEO; the source says a V60 also works",
@@ -785,9 +788,9 @@
       "finish": "No finish time is published; the only requirement is that the water never sits in the dripper.",
       "overview": "A deliberate counterpoint to the short, low-pour trend: extra-coarse and hot, then ten small additions build sweetness and texture. The counter-intuitive part is the grind — 40–45 clicks, taking extraction from rhythm rather than fines.",
       "bestFor": "Brewers practising pour rhythm rather than pour volume",
-      "s00": "Start with 30 g at 0:00, letting it pass through rather than pool on the bed.",
-      "pour": "Another 30 g, 15 seconds after the previous pour.",
-      "s09": "The tenth and final 30 g, reaching 300 g.",
+      "s00": "Pour the first 30 g at 0:00, letting it pass through rather than pool. Wait 30 seconds before the second pour.",
+      "pour": "Pour another 30 g, 15 seconds after the previous pour.",
+      "s09": "At 2:30 make the tenth and final 30 g pour, reaching 300 g.",
       "teach1": "Extra-coarse grind plus 95–96 °C is the counter-intuitive pair the whole recipe rests on.",
       "teach2": "Ten additions of 30 g every 15 seconds; the point is that the water passes through the bed rather than sitting on it.",
       "teach3": "Kasuya recommends the NEO because it extracts small additions evenly, but says a V60 is equally acceptable.",
@@ -797,7 +800,7 @@
     },
     "kasuya-iced": {
       "title": "Kasuya’s iced 4:6",
-      "summary": "Twenty grams, 150 g of water poured over 80 g of ice in the server, five 30 g pours at 90–93 °C.",
+      "summary": "Twenty grams with 150 g of hot water in five 30 g additions, brewed through the dripper into a server holding 80 g of ice. Temperature is 90–93 °C.",
       "version": "TETSU KASUYA · 2026",
       "grind": "28 clicks (the grinder is not named)",
       "equipment": "A regular dripper; the source never names it",
@@ -805,7 +808,7 @@
       "finish": "No finish time is published; let it drain fully over the ice.",
       "overview": "The 4:6 idea scaled down for ice: half the water, five equal pours, and the ice in the server doing the chilling and the diluting. With nothing timed beyond the pour count, it is a shape to follow rather than a schedule.",
       "bestFor": "A 4:6 habit applied to ice, without buying a Switch",
-      "s00": "Pour 30 g over the ice.",
+      "s00": "Put 80 g of ice in the server. Pour the first 30 g of hot water over the coffee bed; the brewed liquid then drips onto the ice.",
       "pour": "Another 30 g, keeping to five pours in total.",
       "s04": "The fifth and final 30 g, reaching 150 g.",
       "teach1": "Water drops to 150 g — half the normal 4:6 — because 80 g of ice is already in the server.",
@@ -853,8 +856,8 @@
       "version": "Coffee Collective · Brew guide",
       "grind": "Very fine; adjust the grind so the full 38 g arrives in about 27 seconds",
       "equipment": "Espresso machine not stated",
-    "notes": "The guide pairs a 1:2 ratio with a 7 bar brew pressure and a VST basket. It asks for a level 10–15 kg tamp and a quick stir before drinking; no coffee, grinder or roast is named.",
-    "water": "The source states water quality below 50 ppm CaCO₃; it does not translate this into a general hardness or alkalinity target.",
+      "notes": "The guide pairs a 1:2 ratio with a 7 bar brew pressure and a VST basket. It asks for a level 10–15 kg tamp and a quick stir before drinking; no coffee, grinder or roast is named.",
+      "water": "The source states water quality below 50 ppm CaCO₃; it does not translate this into a general hardness or alkalinity target.",
       "finish": "Stop the shot at 38 g.",
       "overview": "A concise espresso guide from a Copenhagen roastery, built around a 19 g double, a 27-second shot and a VST basket.",
       "bestFor": "Home brewers using a VST basket who want a clean, Nordic-style 1:2 recipe.",
@@ -869,34 +872,34 @@
     },
     "onyx-monarch": {
       "title": "Monarch · Espresso",
-      "summary": "Onyx's espresso card for Monarch: 19 g in, 47 g out, with 3.5 seconds of line pressure before 9 bar, in 23 seconds.",
+      "summary": "Onyx’s Monarch espresso card: 19 g in, 47 g out, 3.5 seconds of line pressure before 9 bar. It labels “9 Bar: 23s”, without saying what that 23 seconds includes.",
       "version": "Onyx Coffee Lab · Brew Guides",
       "grind": "Not stated by the espresso card",
       "equipment": "Fellow Espresso Series 1 (linked Series 1 profile)",
-      "notes": "Monarch is a washed Colombia–Ethiopia blend roasted Expressive Dark and designed for milk. The card links a Fellow Series 1 profile and lists line pressure for 0–3.5 s, then 9 bar to 23 s; it gives no brew temperature, basket or grinder.",
+      "notes": "Monarch is a washed Colombia–Ethiopia blend roasted Expressive Dark and designed for milk. The card links a Fellow Series 1 profile and lists line pressure for 0–3.5 s, then “9 Bar: 23s”; the basis of 23 seconds remains unknown, and no brew temperature, basket or grinder is stated.",
       "finish": "Stop the shot at 47 g.",
       "overview": "Onyx's espresso guide pairs a dark, milk-friendly blend with a short line-pressure pre-infusion and a 9 bar finish.",
       "bestFor": "Anyone brewing Monarch who wants Onyx's own espresso-facing starting point.",
       "s00": "Start with line pressure for the first 3.5 seconds; the source does not state the pre-infusion pressure.",
-      "s01": "Raise to 9 bar and extract to 47 g. The card lists 23 seconds.",
-      "s02": "Stop the shot at 47 g.",
+      "s01": "Raise to 9 bar and extract to 47 g. The source labels the stage 23 seconds, but does not say whether that includes the 3.5-second line-pressure phase.",
+      "s02": "Stop when the yield reaches 47 g. Treat 23 seconds as a source label whose timing basis is unresolved.",
       "teach1": "The espresso card links a Fellow Series 1 profile for this coffee.",
       "teach2": "The linked Series 1 profile calls Monarch a blend designed to work with milk.",
       "tasting": "Dark chocolate, molasses, red wine and dried berries; thick and syrupy."
     },
     "onyx-aponte": {
       "title": "Aponte Village · Espresso",
-      "summary": "Onyx's espresso card for Aponte Village: 20 g in, 48 g out, with 3.5 seconds of line pressure before 9 bar, in 24 seconds.",
+      "summary": "Onyx’s Aponte Village espresso card: 20 g in, 48 g out, 3.5 seconds of line pressure before 9 bar. It labels “9 Bar: 24s”, without saying what that 24 seconds includes.",
       "version": "Onyx Coffee Lab · Brew Guides",
       "grind": "Not stated by the espresso card",
       "equipment": "Espresso machine not stated",
-      "notes": "Aponte Village is a Red Honey Colombia coffee roasted light. The card lists line pressure for 0–3.5 s, then 9 bar to 24 s; it gives no brew temperature, basket or grinder.",
+      "notes": "Aponte Village is a Red Honey Colombia coffee roasted light. The card lists line pressure for 0–3.5 s, then “9 Bar: 24s”; the basis of 24 seconds remains unknown, and no brew temperature, basket or grinder is stated.",
       "finish": "Stop the shot at 48 g.",
       "overview": "A light, honey-processed Colombian espresso built on Onyx's line-pressure profile for a 20 g dose.",
       "bestFor": "Brewers who want a light, honey-processed espresso with a long 1:2.4 yield.",
       "s00": "Start with line pressure for the first 3.5 seconds; the source does not state the pre-infusion pressure.",
-      "s01": "Raise to 9 bar and extract to 48 g. The card lists 24 seconds.",
-      "s02": "Stop the shot at 48 g.",
+      "s01": "Raise to 9 bar and extract to 48 g. The source labels the stage 24 seconds, but does not say whether that includes the 3.5-second line-pressure phase.",
+      "s02": "Stop when the yield reaches 48 g. Treat 24 seconds as a source label whose timing basis is unresolved.",
       "teach1": "Red Honey is Onyx's own process label for this coffee.",
       "teach2": "The card gives no brew temperature, grinder or basket, so those values remain open.",
       "tasting": "Honeycrisp apple, cherry, vanilla and papaya."
@@ -907,11 +910,11 @@
       "version": "Lance Hedrick · 26 November 2022",
       "grind": "Medium (grinder not named)",
       "equipment": "Any pour-over brewer; the source does not name one",
-      "notes": "The source sets a 30 g upper dose, not a fixed recipe. This page anchors the derived 420–510 g water range to that maximum: 30 g at 1:14–1:17. The live demonstration instead uses 15 g, a 45 g bloom and 255 g total water. Roast level sets the ratio and temperature, so the actual dose, water and pour times follow that choice.",
+      "notes": "The 30 g value is the source’s ceiling, not a required dose. Choose a dose, calculate water with 1:14–1:17, and make the bloom three times that dose. The video uses 15 g and 255 g water as a concrete demonstration; the 420–510 g range belongs only to the 30 g maximum.",
       "finish": "The source gives 2–3 minutes after a 1-minute bloom, or 3–4 minutes after a 2-minute bloom.",
       "overview": "A deliberately adjustable framework rather than a single recipe. Roast level moves the ratio and temperature, while the pour rate, bloom and bed agitation stay fixed enough to repeat.",
       "bestFor": "Brewers who want one structured method they can tune across roast levels",
-      "s00": "Bloom with 3× the dose. At the 30 g upper dose shown here, that is 90 g.",
+      "s00": "Bloom with three times the dose you chose.",
       "pour": "Pour the remaining water at 6–8 g/s from a height that creates deep turbulence; the chosen ratio sets how much remains.",
       "teach1": "Use up to 30 g; the recipe scales around that ceiling rather than prescribing 30 g every time.",
       "teach2": "Roast level moves the ratio between 1:14 and 1:17 and the temperature between 85 and 100 °C; the source does not prescribe one fixed pairing.",
@@ -920,7 +923,10 @@
       "teach5": "Choose the finishing action by flow: swirl if slow, use Wet WDT if somewhat quick, or turn the bed over with a spoon if fast.",
       "taste1": "Hedrick reports roughly 20–21% extraction across his test of the framework.",
       "taste2": "He describes low bitterness and no astringent finish from the coarse grind and relatively fast brew.",
-      "taste3": "His tasting language is citric acidity, sweetness, and a velvety, pillowy body."
+      "taste3": "His tasting language is citric acidity, sweetness, and a velvety, pillowy body.",
+      "quickAnswer": "Quick answer: choose any dose up to 30 g; set water to 1:14–1:17, bloom with 3× the dose, then pour the rest at 6–8 g/s. Use {temperature} by roast. Total time is 2–3 minutes with a 1-minute bloom or 3–4 minutes with a 2-minute bloom.",
+      "agitate": "Agitate the bloom so every ground is wet; the source permits excavating the bed or using Wet WDT.",
+      "wait": "Wait 1–2 minutes, depending on the coffee and roast, before the main pour."
     },
     "chronicler-osmotic": {
       "title": "Coffee Chronicler’s osmotic-flow V60",
@@ -1168,7 +1174,7 @@
   "archiveMissing": "No public snapshot yet",
   "ice": "Ice",
   "totalLiquid": "Total liquid",
-  "quickAnswerIced": "Quick answer: {dose} g ground coffee, {water} {unit} hot water plus {ice} {unit} ice, {temperature}, grind {grind}, total time {time}.",
+  "quickAnswerIced": "Quick answer: {dose} g ground coffee, {water} {unit} hot water plus {ice} g ice, {temperature}, grind {grind}, total time {time}.",
   "icePlacements": {
     "server": "Ice in the server",
     "brewer": "Ice in the brewer",
@@ -1217,19 +1223,52 @@
   "glossaryTitle": "Terms in this recipe",
   "glossaryIntro": "Short explanations for specialist terms used above.",
   "glossary": {
-    "wdt": {"term": "WDT / Wet WDT", "definition": "A needle tool breaks up coffee clumps before brewing or tamping. Wet WDT means stirring the wet bloom with that tool."},
-    "melodrip": {"term": "Melodrip", "definition": "A shower-head flow restrictor placed above the brewer to soften and spread the water stream."},
-    "tds": {"term": "TDS", "definition": "Total dissolved solids, a concentration measurement for water or brewed coffee. It is not a taste score."},
-    "ppm": {"term": "ppm / CaCO₃", "definition": "Parts per million, a concentration unit. Water TDS and calcium-carbonate hardness are different measures."},
-    "redClix": {"term": "Red Clix", "definition": "A Comandante grinder adjustment upgrade with finer click resolution. Click numbers apply only to that grinder setup."},
-    "vst": {"term": "VST basket", "definition": "A precision espresso filter basket. Its capacity and flow affect the suitable dose and grind."},
-    "linePressure": {"term": "Line pressure", "definition": "The incoming water pressure before the machine applies its main extraction pressure. It is not the same as the stated 9 bar stage."},
-    "bypass": {"term": "Bypass", "definition": "Water that flows around rather than through the coffee bed. A no- or low-bypass brewer is designed to reduce that route."}
+    "wdt": {
+      "term": "WDT / Wet WDT",
+      "definition": "A needle tool breaks up coffee clumps before brewing or tamping. Wet WDT means stirring the wet bloom with that tool."
+    },
+    "melodrip": {
+      "term": "Melodrip",
+      "definition": "A shower-head flow restrictor placed above the brewer to soften and spread the water stream."
+    },
+    "tds": {
+      "term": "TDS",
+      "definition": "Total dissolved solids, a concentration measurement for water or brewed coffee. It is not a taste score."
+    },
+    "ppm": {
+      "term": "ppm / CaCO₃",
+      "definition": "Parts per million, a concentration unit. Water TDS and calcium-carbonate hardness are different measures."
+    },
+    "redClix": {
+      "term": "Red Clix",
+      "definition": "A Comandante grinder adjustment upgrade with finer click resolution. Click numbers apply only to that grinder setup."
+    },
+    "vst": {
+      "term": "VST basket",
+      "definition": "A precision espresso filter basket. Its capacity and flow affect the suitable dose and grind."
+    },
+    "linePressure": {
+      "term": "Line pressure",
+      "definition": "The incoming water pressure before the machine applies its main extraction pressure. It is not the same as the stated 9 bar stage."
+    },
+    "bypass": {
+      "term": "Bypass",
+      "definition": "Water that flows around rather than through the coffee bed. A no- or low-bypass brewer is designed to reduce that route."
+    },
+    "w60": {
+      "term": "W60",
+      "definition": "A flat-bottom brewer used here with both its metal mesh and a paper filter; the source does not detail their assembly."
+    }
   },
   "retiredRecipe": {
     "title": "This recipe has been retired",
     "body": "The Coffee with April W60 film was an exploratory test, not a recommended recipe. April found mesh alone too silty and mesh plus paper cleaner but still flat and dull. The result is preserved in the W60 equipment record; this URL remains so existing links do not break.",
     "replacementAction": "Use Ngoc Hoang’s W60 recipe",
     "equipmentAction": "Read the W60 equipment record"
-  }
+  },
+  "sourceTimeBasisUnknown": "{time} (timing basis not stated by the source)",
+  "faqAmountAnswerUpTo": "Use a coffee dose up to {dose} g. Set water by the source ratio {ratio}; the bloom is three times the chosen dose.",
+  "waterFollowsDose": "Set by chosen dose × ratio",
+  "faqAmountAnswerIced": "{dose} g ground coffee to {water} {unit} hot water, poured over {ice} ice.",
+  "faqAmountRangeAnswer": "{doseMin}–{doseMax} g ground coffee to {waterMin}–{waterMax} {unit} water."
 }

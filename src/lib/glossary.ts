@@ -6,7 +6,8 @@ export const glossaryTerms=[
   {key:'redClix', pattern:/Red Clix/i},
   {key:'vst', pattern:/\bVST\b/i},
   {key:'linePressure', pattern:/line pressure|管路壓力/i},
-  {key:'bypass', pattern:/低繞流|no bypass|low bypass/i}
+  {key:'bypass', pattern:/低繞流|no bypass|low bypass/i},
+  {key:'w60', pattern:/\bW60\b/i}
 ] as const;
 
 export type GlossaryTermKey=typeof glossaryTerms[number]['key'];

@@ -100,7 +100,7 @@ The ORIGAMI event specifies light-roasted washed Kenyan coffee from NOG COFFEE R
 
 Structured source conditions cover grinder identity/literal dial notation, paper identity/shape and coffee name/origin/variety/process/roast. The recipe source supports these fields; unknown fields do not satisfy a selected condition. A source saying only “Sibarist” is not tagged Conic or FAST. RED CLICKS is a separate grinder configuration. No cross-grinder conversion is implied. Existing Licata, Bøen and Pulsar conditions are backfilled from their verified records.
 
-Duration may now be unknown, displayed with the localized missing-source label. Steps may have separate temperatures. Al Mallouhi now includes the remaining 260 mL after its 35-second bloom (300 minus 40), restoring the full sequence. Validation continues checking known additions; null cumulative values are not a waiver.
+Duration may be unknown, displayed with the localized missing-source label. A recipe-specific `quickAnswerKey` can preserve a formula such as Lance Hedrick's dose-dependent water; `brewTimeKey` distinguishes a drawdown or extraction window from a total brew time, as in Tomoki Ohno's recipe. Espresso durations with an unknown basis are labelled as such wherever shown. Steps may have separate temperatures. Al Mallouhi now includes the remaining 260 mL after its 35-second bloom (300 minus 40), restoring the full sequence. Validation continues checking known additions; null cumulative values are not a waiver.
 
 April’s Origami video could not be fetched during this pass and remains pending.
 

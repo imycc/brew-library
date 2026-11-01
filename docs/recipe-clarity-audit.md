@@ -1,8 +1,23 @@
 # Recipe clarity audit
 
-Last reviewed: 2026-11-01
+Last reviewed: 2026-11-02
 
 This ledger records how the current catalogue was reviewed for source meaning and reader clarity. It is not a ranking. "Verified" means the relevant source text was checked during this pass; it does not claim that a brew was reproduced.
+
+## Reader-clarity corrections applied on 2026-11-02
+
+| Area | Change |
+| --- | --- |
+| Ambiguous espresso seconds | Onyx Monarch and Aponte no longer show a stop at 23 or 24 seconds as if it were a total shot time. All quick answers, cards, timelines and FAQs label the timing basis as unknown, and stopping is tied to the published yield. |
+| Flexible dose and water | Hedrick's recipe now presents a dose up to 30 g and a water formula of 1:14–1:17. The 420–510 g calculation is identified as belonging to the 30 g ceiling, while the video's 15 g / 255 g example remains separate. |
+| Pour-to-finish ranges | Derived drawdown values now preserve the source range. Camber shows 2:00–2:15 after the last pour starts, and LAMILL shows 2:20–2:50 after the 0:40 pour ends. |
+| Kasuya 4:6 percentages | The first 50 mL is about 41.7% of the 120 mL first stage; the first two pours together are 40% of 300 mL. The previous 40% label on 50 mL was removed. |
+| Kasuya NEO cadence | The recipe now says the first interval is 30 seconds and the remaining pours are 15 seconds apart. Cross-recipe total-time guidance is disabled because its last pour starts at 2:30. |
+| Ohno extraction versus dilution | The page now separates extraction, drawdown and in-cup dilution. Its 1:30–1:35 figure is labelled as extraction drawdown, not total brew time; the dilution starts at 50 g and rises toward 60–70 g total by taste. |
+| Mixed units and source wording | Coffee Chronicler is corrected to 320 mL. Martha Grill says to stir after each pour, and its mixed mL/g values remain explicit. Kurasu quick answers keep the full approximately 65–70 g ice range. |
+| Setup and transition cues | Kasuya's iced recipe now places the ice in the server, distinguishes hot water in the brewer from extract dripping onto ice, and marks pour intervals as unpublished. Licata exposes the missing change point, while Hoang adds a W60 glossary entry and says the paper-to-mesh assembly is not described. Maisonnette's preparation now states the 12 g / 4 g layers and separate grind settings. |
+| Cross-recipe starting points | Hoffmann recipes no longer receive a conflicting coarse-grind suggestion. Brew-time suggestions must follow every published addition anchor rather than appearing before the final pour. |
+| Learning observations | The 36 practice recipes now use their own source teaching or notes in the learning panel when no reviewed learning card exists, replacing the same generic observation sentence. |
 
 ## Corrected in this pass
 
@@ -62,6 +77,9 @@ This ledger records how the current catalogue was reviewed for source meaning an
 | `coffeecollective-espresso` | Coffee Collective confirms dose, yield, 27 seconds, 93 °C, 7 bar, VST basket, water temperature and <50 ppm CaCO₃. |
 | `onyx-monarch-espresso` | Onyx confirms 19 g, 47 g and the separate line-pressure and 9 bar labels. Time-basis meaning remains unknown. |
 | `onyx-aponte-espresso` | Onyx confirms 20 g, 48 g and the separate line-pressure and 9 bar labels. Time-basis meaning remains unknown. |
+| `chronicler-switch` | The live article confirms 320 mL; the prior notes incorrectly said 320 g. |
+| `grill-v60` | The live HARIO page confirms stirring three times after the second pour and again after the 1:30 pour. |
+| `ohno-origami` | The live ORIGAMI page confirms extraction to 190 g, drop-off at 1:30–1:35, then 50 g of 65 °C water adjusted toward 60–70 g total. |
 
 ## Video replay completed
 

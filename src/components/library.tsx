@@ -5,10 +5,10 @@ import {usePathname} from 'next/navigation';
 import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
 import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode,type KeyboardEvent} from 'react';
-import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,methodFilterKeys,methodFilterParam,recipeIndex,time,duration,ratio,doseText,waterText,videoLink,stepFlow,accountedAdditions,bloomShare,pourPhase,sourceFacts,iceAmountText,isEspresso,isPourOver,pourOverRecipes,espressoRecipes,yieldText,pressureText,preInfusionText,basketText,puckPrepKeys,temperatureLabel,type Recipe,type FilterKey,type RecipeFilters,type Method} from '@/lib/recipes';
+import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,methodFilterKeys,methodFilterParam,recipeIndex,time,ratio,doseText,waterText,videoLink,stepFlow,accountedAdditions,bloomShare,pourPhase,sourceFacts,iceAmountText,isEspresso,isPourOver,pourOverRecipes,espressoRecipes,yieldText,pressureText,preInfusionText,basketText,puckPrepKeys,temperatureLabel,type Recipe,type FilterKey,type RecipeFilters,type Method} from '@/lib/recipes';
 import {formatTemperature,temperatureUnits,type TemperatureUnit} from '@/lib/temperature';
 import {recipeEditorial} from '@/lib/editorial';
-import {recipeFaq} from '@/lib/faq';
+import {brewTimeText,recipeFaq} from '@/lib/faq';
 import {brewTimeline,learningFor,learningLevelKey,searchableRecipeText,secondsLabel} from '@/lib/learning';
 import {glossaryForRecipe} from '@/lib/glossary';
 import {guidanceConfig,guidanceFieldLabelKeys,guidanceForRecipe,guidancePartialFields,guidanceTierLabelKeys,type GuidanceItem} from '@/lib/guidance';
@@ -124,12 +124,17 @@ function bedPrepText(r:Recipe,t:ReturnType<typeof useTranslations>){
   return isEspresso(r)?puckPrepKeys(r).map(key=>t(`puckPrepLabels.${key}`)):(isPourOver(r)?r.bedPrep||[]:[]).map(key=>t(`bedPrepLabels.${key}`));
 }
 function iceAmount(r:Recipe){return iceAmountText(r);}
+function iceAmountNoUnit(r:Recipe){return r.ice?`${r.ice.approximate?'~':''}${r.ice.amount}${r.ice.amountMax!==undefined?`–${r.ice.amountMax}`:''}`:'';}
 function iceText(r:Recipe,t:ReturnType<typeof useTranslations>){return r.ice?`${iceAmount(r)} · ${t(`icePlacements.${r.ice.placement}`)}`:t('unknown');}
+function waterValue(r:Recipe,t:ReturnType<typeof useTranslations>){
+  if(isPourOver(r)&&r.doseLimit==='upTo'&&r.water.derived)return t('waterFollowsDose');
+  return `${waterText(r)} ${isPourOver(r)?r.water.unit:''}`.trim();
+}
 function Parameters({recipe:r,compact=false}:{recipe:Recipe;compact?:boolean}){
   const t=useTranslations();const {unit}=useTemperature();
   const values=isEspresso(r)
-    ? [{key:'dose',value:`${doseText(r)} g`,Icon:CoffeeBean},{key:'yield',value:yieldText(r)||t('unknown'),Icon:Drop},{key:'temperature',value:temperature(r,t,unit),Icon:Thermometer},{key:'shotTime',value:r.duration?duration(r):t('unknown'),Icon:Clock}]
-    : [{key:'dose',value:`${doseText(r)} g`,Icon:CoffeeBean},{key:'water',value:`${waterText(r)} ${r.water.unit}`,Icon:Drop},...r.ice?[{key:'ice',value:iceAmount(r),Icon:Drop}]:[],{key:'temperature',value:temperature(r,t,unit),Icon:Thermometer},{key:'brewTime',value:r.duration?duration(r):t('unknown'),Icon:Clock}];
+    ? [{key:'dose',value:`${doseText(r)} g`,Icon:CoffeeBean},{key:'yield',value:yieldText(r)||t('unknown'),Icon:Drop},{key:'temperature',value:temperature(r,t,unit),Icon:Thermometer},{key:'shotTime',value:brewTimeText(r,t),Icon:Clock}]
+    : [{key:'dose',value:`${doseText(r)} g`,Icon:CoffeeBean},{key:'water',value:waterValue(r,t),Icon:Drop},...r.ice?[{key:'ice',value:iceAmount(r),Icon:Drop}]:[],{key:'temperature',value:temperature(r,t,unit),Icon:Thermometer},{key:'brewTime',value:brewTimeText(r,t),Icon:Clock}];
   return <dl className={compact?'parameters compact':'parameters'}>{values.map(({key,value,Icon})=><div key={key}><dt>{compact?<><Icon size={16} aria-hidden="true"/><span className="sr-only">{t(key)}</span></>:t(key)}</dt><dd title={value} data-long={value.length>10||undefined}>{value}</dd></div>)}</dl>;
 }
 export function CompareButton({recipe:r,compact=false}:{recipe:Recipe;compact?:boolean}){const {ids,toggle}=useLibrary();const t=useTranslations();const selected=ids.includes(r.id);return <button className={compact?`compare-compact${selected?' is-selected':''}`:`button button-secondary${selected?' is-selected':''}`} onClick={()=>toggle(r.id)} aria-pressed={selected} aria-label={`${selected?t('remove'):t('add')} · ${t(`recipes.${r.copy}.title`)}`}>{compact?<>{selected?<Check size={15}/>:<Plus size={15}/>}<span>{t('compareNav')}</span></>:<>{selected?<Check size={16}/>:null}{selected?t('remove'):t('add')}{selected?null:<Plus size={15}/>}</>}</button>;}
@@ -234,8 +239,9 @@ export function ComparisonTray(){const t=useTranslations();const {ids,toggle,not
  return <aside className="compare-tray" aria-label={t('compareNav')}><strong>{t('selected',{count:ids.length})}</strong><div className="tray-items">{ids.map(id=>{const r=recipes.find(r=>r.id===id)!;return <div className="tray-item" key={id}><span className="tray-index">{String(recipeIndex(r)+1).padStart(2,'0')}</span><span>{t(`recipes.${r.copy}.title`)}</span><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(id)}><X size={16}/></button></div>;})}</div><Link className="button button-primary" href={href('compare/')}>{t('compareAction')}<ArrowRight size={17}/></Link>{notice?<p role="alert">{notice}</p>:null}</aside>;
 }
 function quickAnswer(r:Recipe,t:ReturnType<typeof useTranslations>,unit:TemperatureUnit|null=null){
-  if(isEspresso(r))return t('quickAnswerEspresso',{dose:r.dose,yield:yieldText(r)||t('unknown'),temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown'),pressure:pressureText(r)||t('unknown')});
-  return t(r.ice?'quickAnswerIced':'quickAnswer',{dose:doseText(r),water:waterText(r),unit:r.water.unit,ice:r.ice?.amount||0,temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown')});
+  if(r.quickAnswerKey)return t(r.quickAnswerKey,{temperature:temperature(r,t,unit)});
+  if(isEspresso(r))return t('quickAnswerEspresso',{dose:r.dose,yield:yieldText(r)||t('unknown'),temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:brewTimeText(r,t),pressure:pressureText(r)||t('unknown')});
+  return t(r.ice?'quickAnswerIced':'quickAnswer',{dose:doseText(r),water:waterText(r),unit:r.water.unit,ice:iceAmountNoUnit(r),temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:brewTimeText(r,t)});
 }
 function GuidanceValue({item}:{item:GuidanceItem}){
   const {unit}=useTemperature();
@@ -281,13 +287,14 @@ export function RecipeDetail({id}:{id:string}){
  const phase=pourPhase(r);
  const missing=sourceFacts(r).filter(fact=>!fact.provided);
  const provided=sourceFacts(r).length-missing.length;
+ const sourceObservations=(r.teaching||[]).slice(0,2);
  return <main id="main" className="page detail-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link>
    <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)} · {t(isEspresso(r)?'methodEspresso':'methodPourover')}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><p className="quick-answer">{quickAnswer(r,t,unit)}</p>{editorial.sourceImage?<OfficialSourceImage image={editorial.sourceImage} name={t(`recipes.${r.copy}.title`)} kind="recipe" className="recipe-detail-image"/>:<p className="source-image-note">{t('sourceImageUnavailable')}</p>}<Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong>{r.grindHedged?<em className="grind-hedged">{t('grindHedged')}</em>:null}</div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewerId==='unspecified'?t(isEspresso(r)?'machineUnspecified':'brewerUnspecified'):r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t(isEspresso(r)?'basket':'filterPaper')}</span><strong>{isEspresso(r)?basketText(r)||t('unknown'):paperDetails(r,t)}</strong></div></div></section>
    {r.teaching?.length?<section className="teaching" data-teaching><h2>{t('teachingTitle')}</h2><ul>{r.teaching.map((item,i)=><li key={i}>{item.step!==undefined?<a className="teaching-step" href={`#step-${item.step+1}`}>{t('teachingStep',{number:item.step+1})}</a>:null}<span>{t(item.key)}</span></li>)}</ul></section>:null}
    {r.tasting?.length?<section className="tasting" data-tasting><h2>{t('tastingTitle')}</h2><ul>{r.tasting.map(key=><li key={key}>{t(key)}</li>)}</ul></section>:null}
    <section className="learning-brief" data-learning-brief>
      <header><p className="eyebrow">LEARNING LOOP</p><h2>{t('learningBrief.title')}</h2><p>{t('learningBrief.intro',{level:t(learningLevelKey(r))})}</p><Link className="source-link" href={href('learn/#recipe-lab')}>{t('learningBrief.guideLink')}<ArrowRight size={15}/></Link></header>
-     <div className="learning-brief-grid"><article><span>01</span><h3>{t('learningBrief.goal')}</h3><p>{t(lesson?.focusKey||`recipes.${r.copy}.bestFor`)}</p></article><article><span>02</span><h3>{t('learningBrief.method')}</h3><p>{t(`recipes.${r.copy}.overview`)}</p></article><article><span>03</span><h3>{t('learningBrief.observation')}</h3>{lesson?<ul className="learning-checkpoints">{lesson.checkpoints.map(checkpoint=><li key={checkpoint.step}><a href={`#step-${checkpoint.step+1}`}>{t('learningBrief.checkpointStep',{number:checkpoint.step+1})}</a><span>{t(checkpoint.cueKey)}</span></li>)}</ul>:<p>{t('learningBrief.observationFallback')}</p>}</article><article><span>04</span><h3>{t('learningBrief.practice')}</h3><p>{t(lesson?.practiceKey||'learningBrief.practiceText')}</p>{lesson?<small>{t('learningBrief.editorialNote')}</small>:null}</article></div>
+     <div className="learning-brief-grid"><article><span>01</span><h3>{t('learningBrief.goal')}</h3><p>{t(lesson?.focusKey||`recipes.${r.copy}.bestFor`)}</p></article><article><span>02</span><h3>{t('learningBrief.method')}</h3><p>{t(`recipes.${r.copy}.overview`)}</p></article><article><span>03</span><h3>{t('learningBrief.observation')}</h3>{lesson?<ul className="learning-checkpoints">{lesson.checkpoints.map(checkpoint=><li key={checkpoint.step}><a href={`#step-${checkpoint.step+1}`}>{t('learningBrief.checkpointStep',{number:checkpoint.step+1})}</a><span>{t(checkpoint.cueKey)}</span></li>)}</ul>:sourceObservations.length?<ul className="learning-checkpoints">{sourceObservations.map((item,i)=><li key={item.key}>{item.step!==undefined?<a href={`#step-${item.step+1}`}>{t('learningBrief.checkpointStep',{number:item.step+1})}</a>:null}<span>{t(item.key)}</span></li>)}</ul>:<p>{t(`recipes.${r.copy}.notes`)}</p>}</article><article><span>04</span><h3>{t('learningBrief.practice')}</h3><p>{t(lesson?.practiceKey||'learningBrief.practiceText')}</p>{lesson?<small>{t('learningBrief.editorialNote')}</small>:null}</article></div>
    </section>
    <section className="recipe-editorial" data-recipe-editorial>
      <div className="recipe-editorial-intro"><p className="eyebrow">EDITORIAL NOTES</p><h2>{t('learningBrief.tradeoffTitle')}</h2><p>{t('learningBrief.tradeoffText')}</p></div>
@@ -300,7 +307,7 @@ export function RecipeDetail({id}:{id:string}){
        {isEspresso(r)?(postPreInfusion!==null&&postPreInfusion>=0?<div><dt>{t('afterPreInfusion')}</dt><dd>{time(postPreInfusion)}</dd></div>:null):<>
        <div><dt>{t('bloomShare')}</dt><dd>{bloomShare(r)===null?t('unknown'):percent.format(bloomShare(r)!)}</dd></div>
        <div><dt>{t(phase&&phase.kind==='start'?'lastPourStarts':'pourEnds')}</dt><dd>{phase?time(phase.endsAt):t('unknown')}</dd></div>
-       <div><dt>{t(phase&&phase.kind==='start'?'afterLastPourStart':'drawdown')}</dt><dd>{phase&&phase.drawdown!==null?time(phase.drawdown):t('unknown')}</dd></div>
+       <div><dt>{t(phase&&phase.kind==='start'?'afterLastPourStart':'drawdown')}</dt><dd>{phase&&phase.drawdown!==null?(phase.drawdown[0]===phase.drawdown[1]?time(phase.drawdown[0]):`${time(phase.drawdown[0])}–${time(phase.drawdown[1])}`):t('unknown')}</dd></div>
        </>}
      </dl>
      {isEspresso(r)&&r.extraction?.preInfusion?.seconds!=null&&r.extraction.timeBasis==='unknown'?<p className="facts-missing" data-time-basis-unknown>{t('timeBasisUnknown')}</p>:null}
@@ -355,8 +362,8 @@ export function ComparePage(){
    return()=>page?.removeEventListener('click',onClick);
  },[]);
  const sharedRows:[string,(r:Recipe)=>string][]=[['equipment',r=>t(`recipes.${r.copy}.equipment`)],['dose',r=>`${doseText(r)} g`]];
- const pourOverRows:[string,(r:Recipe)=>string][]=[['water',r=>isPourOver(r)?`${waterText(r)} ${r.water.unit}${r.water.derived?' *':''}`:t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>r.duration?duration(r):t('unknown')],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
- const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>r.duration?duration(r):t('unknown')],['ratioEspresso',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
+ const pourOverRows:[string,(r:Recipe)=>string][]=[['water',r=>isPourOver(r)?`${waterValue(r,t)}${r.water.derived&&r.doseLimit!=='upTo'?' *':''}`:t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['paper',r=>paperDetails(r,t)],['beans',r=>coffeeDetails(r,t)],['brewTime',r=>brewTimeText(r,t)],['ratio',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
+ const espressoRows:[string,(r:Recipe)=>string][]=[['yield',r=>yieldText(r)||t('unknown')],['temperature',r=>temperature(r,t,unit)],['grind',r=>t(`recipes.${r.copy}.grind`)],['grinder',r=>grinderDetails(r,t)],['basket',r=>basketText(r)||t('unknown')],['pressure',r=>pressureText(r)||t('unknown')],['preInfusion',r=>preInfusionText(r)||t('unknown')],['beans',r=>coffeeDetails(r,t)],['shotTime',r=>brewTimeText(r,t)],['ratioEspresso',r=>ratio(r,locale)],['version',r=>t(`recipes.${r.copy}.version`)]];
  // Comparison is limited to one method, so the row set follows the first selected recipe.
  const baseRows:[string,(r:Recipe)=>string][]=[...sharedRows,...selected[0]&&isEspresso(selected[0])?espressoRows:pourOverRows];
  const rows:[string,(r:Recipe)=>string][]=selected.some(r=>r.ice)?[...baseRows.slice(0,2),['ice',r=>iceText(r,t)],...baseRows.slice(2)]:baseRows;
