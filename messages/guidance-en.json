@@ -1,0 +1,34 @@
+{
+  "guidance": {
+    "title": "A starting point",
+    "intro": "A brewing starting point drawn from source records, the same equipment or a similar method.",
+    "editorialNote": "This is an editorial starting point, not an author instruction. Brew the source version first.",
+    "empty": "There are not enough close source records to add a safe starting point.",
+    "missing": "Not provided by the source",
+    "partial": "Only partly provided by the source",
+    "sameModel": "Same-model reference",
+    "sameEquipment": "Same-equipment reference",
+    "sameMethod": "Same-method reference",
+    "derived": "Derived from source figures",
+    "references": "Reference records",
+    "compareToggle": "Show starting points",
+    "compareHide": "Hide starting points",
+    "compareTitle": "Starting points",
+    "compareIntro": "These notes are not counted in the source-parameter comparison.",
+    "searchBadge": "Has a starting point",
+    "equipmentTitle": "Recipes and methods to compare",
+    "equipmentEmpty": "There are not enough linked recipes to offer a reference yet.",
+    "reason": {
+      "sameModel": "Built from records for the same model.",
+      "sameEquipment": "Built from {count} records using the same equipment and hot or iced mode.",
+      "sameMethod": "Built from {count} records using the same method and hot or iced mode."
+    },
+    "limit": {
+      "brewer": "This is an equipment clue from a nearby record, not proof of what the author used.",
+      "grinder": "Model and setting stay in their source notation; settings are not converted between grinders.",
+      "paper": "This is the paper used by a reference record, not an author instruction or an official compatibility claim.",
+      "temperature": "Use this only as a starting point; coffee, water and technique can change the result.",
+      "brewTime": "Time is affected by grind, paper, dose and pouring."
+    }
+  }
+}

@@ -11,6 +11,7 @@ import {recipeEditorial} from '@/lib/editorial';
 import {recipeFaq} from '@/lib/faq';
 import {brewTimeline,learningFor,learningLevelKey,searchableRecipeText,secondsLabel} from '@/lib/learning';
 import {glossaryForRecipe} from '@/lib/glossary';
+import {guidanceConfig,guidanceFieldLabelKeys,guidanceForRecipe,guidancePartialFields,guidanceTierLabelKeys,type GuidanceItem} from '@/lib/guidance';
 import {OfficialSourceImage} from '@/components/source-image';
 import {locales,localeNames,type Locale} from '@/i18n/locales';
 import {ANALYTICS_EVENTS,trackAnalyticsEvent} from '@/lib/analytics';
@@ -90,7 +91,13 @@ export function Header(){
   </header></>;
 }
 export function Footer(){const t=useTranslations();const href=useHref();return <footer className="site-footer"><div><strong>{t('brand')}</strong></div><div className="footer-links"><nav className="footer-info" aria-label={t('siteInfo.nav')}><Link href={href('learn/')}>{t('learnNav')}</Link><Link href={href('about/')}>{t('siteInfo.aboutNav')}</Link><Link href={href('terms/')}>{t('siteInfo.termsNav')}</Link><Link href={href('privacy/')}>{t('siteInfo.privacyNav')}</Link><Link href={href('sources/')}>{t('sourcesNav')}</Link></nav><a href="https://github.com/imycc/brew-library" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14}/></a></div></footer>;}
-function temperature(r:Recipe,t:ReturnType<typeof useTranslations>,unit:TemperatureUnit|null=null){return r.temperature?temperatureLabel(r,unit):t(r.temperatureMode==='boiling'?'boiling':'unknown');}
+function temperature(r:Recipe,t:ReturnType<typeof useTranslations>,unit:TemperatureUnit|null=null){
+  if(r.temperature)return temperatureLabel(r,unit);
+  if(r.temperatureMode==='boiling')return t('boiling');
+  const stepTemperatures=[...new Set(r.steps.flatMap(step=>step.temperature===undefined?[]:[step.temperature]))];
+  if(stepTemperatures.length)return stepTemperatures.map(value=>formatTemperature(value,r.temperatureUnit,unit).text).join(' · ');
+  return t('unknown');
+}
 function coffeeDetails(r:Recipe,t:ReturnType<typeof useTranslations>){
   const parts=[r.coffee?.name,r.coffee?.origin,r.coffee?.variety,r.coffee?.process?t(`processes.${r.coffee.process}`):null,r.coffee?.roast?t(`roasts.${r.coffee.roast}`):null].filter(Boolean).join(' · ');
   if(parts&&r.coffee?.asRecommendation)return t('recommendedCoffee',{value:parts});
@@ -133,7 +140,7 @@ function RecipeCard({recipe:r,index=0}:{recipe:Recipe;index?:number}){
   const t=useTranslations();const href=useHref();
   return <article className="recipe-card" data-recipe={r.id}>
     <RecipeTop r={r} index={index}/>
-    <div className="card-copy"><h3><Link href={href(`recipes/${r.id}/`)}>{recipeTitle(r,t)}</Link></h3><p className="card-summary">{t(`recipes.${r.copy}.summary`)}</p><span className="learning-level-badge">{t(learningLevelKey(r))}</span>
+    <div className="card-copy"><h3><Link href={href(`recipes/${r.id}/`)}>{recipeTitle(r,t)}</Link></h3><p className="card-summary">{t(`recipes.${r.copy}.summary`)}</p><div className="recipe-badges"><span className="learning-level-badge">{t(learningLevelKey(r))}</span>{guidanceForRecipe(r).length?<span className="guidance-search-badge">{t('guidance.searchBadge')}</span>:null}</div>
       <Parameters recipe={r} compact/>
       <div className="card-actions"><Link className="card-link" aria-label={`${t('view')} · ${t(`recipes.${r.copy}.title`)}`} href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link><CompareButton recipe={r} compact/></div>
     </div>
@@ -143,7 +150,7 @@ function RecipeLead({recipe:r,index=0}:{recipe:Recipe;index?:number}){
   const t=useTranslations();const href=useHref();
   return <article className="recipe-card featured" data-recipe={r.id}>
     <RecipeTop r={r} index={index}/>
-    <div className="card-copy"><div className="lead-main"><h3><Link href={href(`recipes/${r.id}/`)}>{recipeTitle(r,t)}</Link></h3><p className="card-summary">{t(`recipes.${r.copy}.summary`)}</p><span className="learning-level-badge">{t(learningLevelKey(r))}</span>
+    <div className="card-copy"><div className="lead-main"><h3><Link href={href(`recipes/${r.id}/`)}>{recipeTitle(r,t)}</Link></h3><p className="card-summary">{t(`recipes.${r.copy}.summary`)}</p><div className="recipe-badges"><span className="learning-level-badge">{t(learningLevelKey(r))}</span>{guidanceForRecipe(r).length?<span className="guidance-search-badge">{t('guidance.searchBadge')}</span>:null}</div>
       <div className="card-actions"><Link className="button button-primary" aria-label={`${t('view')} · ${t(`recipes.${r.copy}.title`)}`} href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={16}/></Link><CompareButton recipe={r} compact/></div></div>
       <div className="lead-record"><Parameters recipe={r}/><a className="small-source" href={r.source.url} target="_blank" rel="noreferrer">{t('source')} · {r.source.label} <ArrowUpRight size={13}/></a></div>
     </div>
@@ -230,6 +237,36 @@ function quickAnswer(r:Recipe,t:ReturnType<typeof useTranslations>,unit:Temperat
   if(isEspresso(r))return t('quickAnswerEspresso',{dose:r.dose,yield:yieldText(r)||t('unknown'),temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown'),pressure:pressureText(r)||t('unknown')});
   return t(r.ice?'quickAnswerIced':'quickAnswer',{dose:doseText(r),water:waterText(r),unit:r.water.unit,ice:r.ice?.amount||0,temperature:temperature(r,t,unit),grind:t(`recipes.${r.copy}.grind`),time:r.duration?duration(r):t('unknown')});
 }
+function GuidanceValue({item}:{item:GuidanceItem}){
+  const {unit}=useTemperature();
+  if(item.value.kind==='text')return <span>{item.value.text}</span>;
+  if(item.value.kind==='list')return <ul className="guidance-value-list">{item.value.items.map(value=><li key={value}>{value}</li>)}</ul>;
+  if(item.value.kind==='temperature')return <span>{formatTemperature(item.value.min,item.value.unit,unit,item.value.max===item.value.min?undefined:item.value.max).text}</span>;
+  return <span>{item.value.min===item.value.max?time(item.value.min):`${time(item.value.min)}–${time(item.value.max)}`}</span>;
+}
+function GuidancePanel({recipe,compact=false}:{recipe:Recipe;compact?:boolean}){
+  const t=useTranslations();
+  const locale=useLocale();
+  const items=guidanceForRecipe(recipe);
+  const partialFields=guidancePartialFields(recipe);
+  return <section className={compact?'guidance-panel compact':'guidance-panel'} data-guidance-panel data-guidance-rule-version={guidanceConfig.ruleVersion} data-nosnippet>
+    <header className="guidance-head"><p className="eyebrow">EDITORIAL STARTING POINTS</p><h2>{t('guidance.title')}</h2><p>{t('guidance.intro')}</p></header>
+    {items.length?<div className="guidance-list">{items.map(item=><article className="guidance-item" data-guidance-field={item.field} key={item.field}>
+      <div className="guidance-item-head"><div><span className="guidance-field">{t(guidanceFieldLabelKeys[item.field])}</span><strong className="guidance-value"><GuidanceValue item={item}/></strong></div><span className="guidance-tier">{t(guidanceTierLabelKeys[item.tier])}</span></div>
+      <p className="guidance-reason">{t(item.rationaleKey,{count:item.references.length})}</p>
+      <p className="guidance-limit">{t(item.limitationKey)}</p>
+      <div className="guidance-references"><span>{t('guidance.references')}</span>{item.references.map(reference=>{const referenced=recipes.find(candidate=>candidate.id===reference.recipeId);return referenced?<Link key={reference.recipeId} href={`/${locale}/recipes/${referenced.id}/`}>{t(`recipes.${referenced.copy}.title`)}<ArrowUpRight size={12}/></Link>:null;})}</div>
+    </article>)}</div>:<p className="guidance-empty">{t('guidance.empty')}</p>}
+    {partialFields.length?<p className="guidance-partial">{t('guidance.partial')} · {partialFields.map(field=>t(guidanceFieldLabelKeys[field])).join(' · ')}</p>:null}
+    <p className="guidance-note">{t('guidance.editorialNote')}</p>
+  </section>;
+}
+function ComparisonGuidance({recipes:recipeList}:{recipes:Recipe[]}){
+  const t=useTranslations();
+  const groups=new Map<string,Recipe[]>();
+  for(const recipe of recipeList){const signature=JSON.stringify(guidanceForRecipe(recipe));const group=groups.get(signature)||[];group.push(recipe);groups.set(signature,group);}
+  return <div className="comparison-guidance-grid">{[...groups.entries()].map(([signature,group])=><article className="comparison-guidance-group" key={signature}><h3>{group.map(recipe=>t(`recipes.${recipe.copy}.title`)).join(' · ')}</h3><GuidancePanel recipe={group[0]} compact/></article>)}</div>;
+}
 export function RecipeDetail({id}:{id:string}){
  const t=useTranslations();const locale=useLocale();const {unit}=useTemperature();const href=useHref();const r=recipes.find(r=>r.id===id)!;
  const editorial=recipeEditorial[r.id];
@@ -273,6 +310,7 @@ export function RecipeDetail({id}:{id:string}){
        {unit&&r.temperature!==null&&unit!==r.temperatureUnit?<p className="facts-missing" data-converted-temp>{t('convertedNote',{value:temperatureLabel(r)})}</p>:null}
      </div>
    </section>
+   <GuidancePanel recipe={r}/>
    <div className="detail-body"><div>
      {r.preparation.length||bedPrepText(r,t).length||r.doseGround?<section className="preparation"><h2>{t('preparation')}</h2>{r.preparation.map(key=><p key={key}>{t(key)}</p>)}{bedPrepText(r,t).length?<ul className="bed-prep">{bedPrepText(r,t).map(chip=><li key={chip}>{chip}</li>)}</ul>:null}{r.doseGround?<p className="muted">{t('groundMoreThanDosed',{ground:r.doseGround,dose:r.dose})}</p>:null}</section>:null}
      {timeline.length?<section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t(isEspresso(r)?'shotTimeline':'stepAmount')}</p></div><ol className="pour-timeline">{timeline.map((item,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{item.start===null?t('sequence'):`${secondsLabel(item.start)}${item.end!==null?`–${secondsLabel(item.end)}`:''}`}</strong><span>{t(item.labelKey)}{item.amount===null?' · —':` · ${item.amount} ${item.unit||''}`}{item.amount!==null&&additionTotal?<em className="timeline-share"> {percent.format(item.amount/additionTotal.amount)}</em>:null}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>:null}
@@ -300,6 +338,7 @@ export function ComparePage(){
  const [shared,setShared]=useState(false);
  const [manual,setManual]=useState('');
  const [differencesOnly,setDifferencesOnly]=useState(false);
+ const showGuidance=params.get('guidance')==='1';
  const initialCompareStateTracked=useRef(false);
  const selected=ids.map(id=>recipes.find(r=>r.id===id)!);
  useEffect(()=>{
@@ -330,10 +369,11 @@ export function ComparePage(){
  {parseSelection(params.get('ids')).mismatch?<p role="status" className="notice">{t('compareMismatch')}</p>:null}
  {manual?<label className="copy-fallback">{t('copyError')}<input readOnly value={manual} onFocus={e=>e.target.select()}/></label>:null}
  {!selected.length?<div className="empty-state"><CoffeeBean size={36}/><p>{t('compareEmpty')}</p><Link className="button button-primary" href={href()}>{t('back')}<ArrowRight size={16}/></Link></div>:<>
-   {selected.length>1?<section className="comparison-summary" data-comparison-summary><div><p className="eyebrow">{t('compareSummaryTitle')}</p><h2>{t('compareDifferenceCount',{count:varyingLabels.length})}</h2><p>{t('compareBaselineNote')}</p></div><dl><div><dt>{t('compareSharedCount')}</dt><dd>{sharedCount}</dd></div><div><dt>{t('compareComparedCount')}</dt><dd>{evaluatedRows.length}</dd></div></dl><button className="button button-outline" aria-pressed={differencesOnly} onClick={()=>{trackAnalyticsEvent(ANALYTICS_EVENTS.compareDifferencesToggle,differencesOnly?'Show all comparison rows':'Show only different comparison rows');setDifferencesOnly(!differencesOnly);}}>{t(differencesOnly?'compareShowAll':'compareOnlyDifferences')}</button></section>:null}
+   {selected.length>1?<section className="comparison-summary" data-comparison-summary><div><p className="eyebrow">{t('compareSummaryTitle')}</p><h2>{t('compareDifferenceCount',{count:varyingLabels.length})}</h2><p>{t('compareBaselineNote')}</p></div><dl><div><dt>{t('compareSharedCount')}</dt><dd>{sharedCount}</dd></div><div><dt>{t('compareComparedCount')}</dt><dd>{evaluatedRows.length}</dd></div></dl><div className="comparison-summary-actions"><button className="button button-outline" aria-pressed={showGuidance} onClick={()=>setParams({guidance:showGuidance?null:'1'})}>{t(showGuidance?'guidance.compareHide':'guidance.compareToggle')}</button><button className="button button-outline" aria-pressed={differencesOnly} onClick={()=>{trackAnalyticsEvent(ANALYTICS_EVENTS.compareDifferencesToggle,differencesOnly?'Show all comparison rows':'Show only different comparison rows');setDifferencesOnly(!differencesOnly);}}>{t(differencesOnly?'compareShowAll':'compareOnlyDifferences')}</button></div></section>:null}
    <p className="mobile-scroll-hint" id="comparison-scroll-hint">{t('compareScrollHint')}</p>
    <div className="comparison-scroll" tabIndex={0} aria-label={t('compareTitle')} aria-describedby="comparison-scroll-hint"><table className="comparison-table"><thead><tr><td/><>{selected.map(r=><th scope="col" key={r.id}><div className="comparison-identity"><span className="comparison-index">{String(recipeIndex(r)+1).padStart(2,'0')}</span><strong>{brewerName(r,t)}</strong><small>{grinderDetails(r,t)}</small></div><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button><h2>{t(`recipes.${r.copy}.title`)}</h2><span>{r.author}</span></th>)}{selected.length<3?<th scope="col" className="empty-comparison"><Link href={href()}><Plus size={30}/>{t('addSlot')}</Link></th>:null}</></tr></thead><tbody>{visibleRows.map(([label,getValue])=><tr key={label} className={varyingLabels.includes(label)?'comparison-row-different':'comparison-row-shared'}><th scope="row">{t(label)}</th>{selected.map(r=><td key={r.id}>{getValue(r)}</td>)}{selected.length<3?<td>—</td>:null}</tr>)}<tr><th scope="row">{t('source')}</th>{selected.map(r=><td key={r.id}><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a></td>)}{selected.length<3?<td>—</td>:null}</tr><tr><th scope="row">{t('recipesNav')}</th>{selected.map(r=><td key={r.id}><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></td>)}{selected.length<3?<td>—</td>:null}</tr></tbody></table></div>
    <div className="comparison-mobile" tabIndex={0} aria-label={t('compareTitle')} aria-describedby="comparison-scroll-hint" data-comparison-mobile>{selected.map(r=><article className="comparison-mobile-card" key={r.id}><header><div><span>{String(recipeIndex(r)+1).padStart(2,'0')} · {brewerName(r,t)}</span><h2>{t(`recipes.${r.copy}.title`)}</h2><p>{r.author}</p></div><button className="icon-button" aria-label={`${t('remove')} · ${t(`recipes.${r.copy}.title`)}`} onClick={()=>toggle(r.id)}><X size={18}/></button></header><dl>{visibleRows.map(([label,getValue])=><div className={varyingLabels.includes(label)?'is-different':''} key={label}><dt>{t(label)}</dt><dd>{getValue(r)}</dd></div>)}</dl><footer><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{r.source.label}<ArrowUpRight size={14}/></a><Link className="button button-outline" href={href(`recipes/${r.id}/`)}>{t('view')}<ArrowRight size={15}/></Link></footer></article>)}</div>
+   {showGuidance?<section className="comparison-guidance" data-comparison-guidance><header><p className="eyebrow">EDITORIAL STARTING POINTS</p><h2>{t('guidance.compareTitle')}</h2><p>{t('guidance.compareIntro')}</p></header><ComparisonGuidance recipes={selected}/></section>:null}
    <p className="comparison-note">{t('compareNote')}</p>{selected.some(r=>isPourOver(r)&&r.water.derived)?<p className="comparison-note">* {t('derived')}</p>:null}<button className="text-button" onClick={()=>setParams({ids:null})}>{t('clearAll')}</button>
  </>}
  </main>;

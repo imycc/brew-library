@@ -1,0 +1,34 @@
+{
+  "guidance": {
+    "title": "Un punto de partida",
+    "intro": "Un punto de partida creado con fuentes, el mismo equipo o un método similar.",
+    "editorialNote": "Es un punto de partida editorial, no una instrucción del autor. Prepara primero la versión de la fuente.",
+    "empty": "No hay suficientes registros cercanos para añadir un punto de partida seguro.",
+    "missing": "No indicado en la fuente",
+    "partial": "Solo indicado parcialmente en la fuente",
+    "sameModel": "Referencia del mismo modelo",
+    "sameEquipment": "Referencia del mismo equipo",
+    "sameMethod": "Referencia del mismo método",
+    "derived": "Calculado con cifras de la fuente",
+    "references": "Registros de referencia",
+    "compareToggle": "Mostrar puntos de partida",
+    "compareHide": "Ocultar puntos de partida",
+    "compareTitle": "Puntos de partida",
+    "compareIntro": "Estas notas no cuentan en la comparación de parámetros de la fuente.",
+    "searchBadge": "Incluye punto de partida",
+    "equipmentTitle": "Recetas y métodos para comparar",
+    "equipmentEmpty": "Todavía no hay suficientes recetas vinculadas para ofrecer una referencia.",
+    "reason": {
+      "sameModel": "Elaborado con registros del mismo modelo.",
+      "sameEquipment": "Elaborado con {count} registros del mismo equipo y modo caliente o con hielo.",
+      "sameMethod": "Elaborado con {count} registros del mismo método y modo caliente o con hielo."
+    },
+    "limit": {
+      "brewer": "Es una pista de equipo de un registro cercano, no prueba de lo que usó el autor.",
+      "grinder": "El modelo y el ajuste conservan la notación de la fuente; no se convierten entre molinillos.",
+      "paper": "Es el filtro usado por un registro de referencia, no una instrucción del autor ni una compatibilidad oficial.",
+      "temperature": "Úsala solo como punto de partida; café, agua y técnica pueden cambiar el resultado.",
+      "brewTime": "El tiempo depende de molienda, filtro, dosis y vertido."
+    }
+  }
+}

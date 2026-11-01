@@ -30,6 +30,17 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await expect(page.locator('.step-list li')).toHaveCount(6);
  expect(errors).toEqual([]);
 });
+test('recipe details expose editorial starting points with source references',async({page})=>{
+ await page.goto(`${base}/en/recipes/kasuya-46/`);
+ await expect(page.locator('[data-guidance-panel]')).toBeVisible();
+ await expect(page.locator('[data-guidance-field="grinder"]')).toContainText('Comandante');
+ await expect(page.locator('[data-guidance-panel]')).toHaveAttribute('data-nosnippet','true');
+ await expect(page.locator('[data-guidance-panel] .guidance-references a')).not.toHaveCount(0);
+ await page.goto(`${base}/en/recipes/rincon-origami/`);
+ await expect(page.locator('[data-guidance-panel]')).toContainText('A starting point');
+ await expect(page.locator('[data-guidance-panel]')).toContainText('Only partly provided by the source');
+ await expect(page.locator('[data-guidance-field="temperature"]')).toHaveCount(0);
+});
 test('filters, empty result, reset and shared comparison work',async({page})=>{
  await page.goto(`${base}/en/`);
  await page.getByRole('searchbox').fill('Hoffmann');await expect(page.locator('[data-recipe]')).toHaveCount(2);
@@ -48,6 +59,16 @@ test('filters, empty result, reset and shared comparison work',async({page})=>{
  expect(page.url()).toBe(url);
  await page.locator('.language-trigger').click();await page.locator('.language-options a[lang="de"]').click();await expect(page).toHaveURL(/\/de\/compare\/\?ids=/);await expect(page.locator('html')).toHaveAttribute('lang','de');
  await expect(page.locator('.comparison-table')).toContainText('300 mL');
+});
+test('comparison starting points are off by default and survive reload',async({page})=>{
+ await page.goto(`${base}/en/compare/?ids=kasuya-46,hoffmann-one-cup`);
+ await expect(page.locator('[data-comparison-guidance]')).toHaveCount(0);
+ await page.getByRole('button',{name:'Show starting points'}).click();
+ await expect(page.locator('[data-comparison-guidance]')).toBeVisible();
+ await expect(page).toHaveURL(/guidance=1/);
+ await page.reload();
+ await expect(page.locator('[data-comparison-guidance]')).toBeVisible();
+ await expect(page.getByRole('button',{name:'Hide starting points'})).toBeVisible();
 });
 test('invalid comparison links are understandable and recoverable',async({page})=>{
  await page.goto(`${base}/en/compare/?ids=missing`);await expect(page.getByRole('status').filter({hasText:'Some recipes'})).toBeVisible();await expect(page.locator('.empty-state')).toContainText('Choose recipes');
@@ -78,6 +99,7 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="ek-unspecified"] .equipment-card-image')).toHaveCount(0);
  await expect(page.locator('[data-equipment="hario-v60-mugen-02"]')).toContainText('V60 MUGEN');
  await expect(page.locator('[data-equipment="hario-v60-mugen-02"] a[href*="lamill-mugen"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="hario-v60-mugen-02"] [data-equipment-guidance]')).toContainText('可參考的配方與手法');
  await expect(page.locator('[data-equipment="graycano-dripper"] a[href*="kaygusuz-graycano"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="1zpresso-k-pro"] a[href*="damgaci-v60"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="sibarist-flat"] a[href*="vuolo-mk"]')).toHaveCount(1);
@@ -328,6 +350,8 @@ test('recipe search can find source-stated tasting language',async({page})=>{
  await page.getByRole('searchbox').fill('syrupy');
  await expect(page.locator('[data-recipe]')).toHaveCount(1);
  await expect(page.locator('[data-recipe="kasuya-neo"]')).toBeVisible();
+ await page.getByRole('searchbox').fill('Comandante');
+ await expect(page.locator('[data-recipe="kasuya-46"]')).toBeVisible();
 });
 
 test('curated recipes expose source-linked checkpoints and one-variable practice',async({page})=>{

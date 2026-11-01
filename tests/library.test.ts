@@ -4,6 +4,7 @@ import {convertTemperature,formatTemperature} from '../src/lib/temperature';
 import {espressoSchema,pourOverSchema,filterRecipes,methodFilterKeys,methodFilterParam,parseSelection,toggleSelection,recipes,pourOverRecipes,espressoRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe,videoLink,stepFlow} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
+import {equipmentGuidance,guidanceAvailability,guidanceForRecipe,guidanceSearchText} from '../src/lib/guidance';
 import {videoReviews} from '../src/lib/video-reviews';
 import {glossaryForRecipe} from '../src/lib/glossary';
 import {validate} from '../scripts/validate';
@@ -172,6 +173,35 @@ test('source completeness counts only published facts',()=>{
  assert.equal(provided('chronicler-switch'),3);
  assert.equal(provided('lamill-mugen'),3);
  assert.equal(provided('hoffmann-one-cup'),5);
+});
+test('guidance distinguishes step temperatures from a missing temperature',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ assert.equal(guidanceAvailability(find('rincon-origami'),'temperature'),'partial');
+ assert.equal(guidanceAvailability(find('vuolo-mk'),'temperature'),'partial');
+ assert.equal(guidanceAvailability(find('kasuya-46'),'temperature'),'provided');
+ assert.equal(guidanceAvailability(find('wong-switch'),'temperature'),'missing');
+ assert.equal(guidanceForRecipe(find('rincon-origami')).some(item=>item.field==='temperature'),false);
+});
+test('automatic guidance uses strict equipment and author matches',()=>{
+ const find=(id:string)=>recipes.find(recipe=>recipe.id===id)!;
+ const kasuya=guidanceForRecipe(find('kasuya-46'));
+ assert(kasuya.some(item=>item.field==='grinder'&&item.references.length>0));
+ assert.equal(kasuya.some(item=>item.field==='paper'),false);
+ assert.equal(guidanceForRecipe(find('medina-wbrc')).some(item=>item.field==='brewer'),false);
+ assert.equal(guidanceForRecipe(find('gil-zp6-2025')).some(item=>item.field==='brewer'),false);
+ assert.match(guidanceSearchText(find('kasuya-46')),/Comandante/);
+});
+test('guidance does not infer espresso duration across different time bases',()=>{
+ const recipe=recipes.find(candidate=>candidate.method==='espresso')!;
+ const missing={...recipe,duration:null,steps:recipe.steps.filter(step=>step.action!=='finish')};
+ assert.equal(guidanceAvailability(missing,'brewTime'),'missing');
+ assert.equal(guidanceForRecipe(missing).some(item=>item.field==='brewTime'),false);
+});
+test('equipment guidance exposes only linked recipe methods',()=>{
+ const item=equipment.find(candidate=>candidate.id==='hario-v60-mugen-02')!;
+ const guidance=equipmentGuidance(item);
+ assert.deepEqual(guidance.recipeIds,['lamill-mugen']);
+ assert.deepEqual(guidance.methods,['pour-over']);
 });
 
 test('added competition records keep unstated drippers and ranges honest',()=>{

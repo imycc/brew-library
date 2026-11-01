@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {isEspresso,isPourOver,recipes,type Recipe} from './recipes';
+import {guidanceSearchText} from './guidance';
 import rawLearning from '../../content/learning.json';
 
 export type LearningLevel='guided'|'practice'|'reference';
@@ -87,7 +88,8 @@ export function searchableRecipeText(recipe:Recipe,t:TranslateLearning):string{
     recipe.paper?.name||'',
     recipe.coffee?.name||'',
     recipe.coffee?.origin||'',
-    recipe.coffee?.variety||''
+    recipe.coffee?.variety||'',
+    guidanceSearchText(recipe)
   ].filter(Boolean).join(' ');
 }
 
