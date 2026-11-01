@@ -149,7 +149,9 @@
     "lessStalling": "moins de blocages rapportés avec les cafés riches en fines",
     "brightAcidity": "fait ressortir une acidité vive",
     "delicateBody": "corps très net et délicat",
-    "slowFlow": "débit lent et contact prolongé"
+    "slowFlow": "débit lent et contact prolongé",
+    "sedimentRisk": "le mesh seul peut laisser des sédiments",
+    "mutedFlavor": "le mesh avec papier peut étouffer les arômes"
   },
   "editorialStrengths": {
     "clearTimeline": "Les étapes et les temps sont faciles à suivre.",

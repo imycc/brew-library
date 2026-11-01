@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "reviews": {
+    "rolf-v60-113": {
+      "videoId": "otk2jFRCcmE",
+      "reviewed": "2026-11-01",
+      "caption": {
+        "language": "en",
+        "kind": "automatic"
+      },
+      "sampledAt": [
+        18,
+        70,
+        130,
+        155
+      ],
+      "observations": [
+        "The filter is rinsed before dosing.",
+        "Rolf says 90 °C is intended to bring out acidity and vibrancy.",
+        "The four 50 g pours are shown sequentially after each addition drains.",
+        "After the final pour Rolf swirls and taps the brewer, then says keeping the brew below three minutes improves clarity and harmony."
+      ],
+      "conflicts": [
+        "The automatic English caption mis-hears the 50 g pours as 450 g once; the author-written description remains the numeric authority."
+      ]
+    },
+    "rolf-origami-117": {
+      "videoId": "WMPmZ9oXV6E",
+      "reviewed": "2026-11-01",
+      "caption": {
+        "language": "en",
+        "kind": "automatic"
+      },
+      "sampledAt": [
+        30,
+        70,
+        130,
+        220
+      ],
+      "observations": [
+        "The filter is rinsed with at least 100 g of water.",
+        "Rolf uses 92 °C because the acidic washed coffee needs more body and sweetness.",
+        "The second 200 g addition is one slow, steady continuous pour to keep the bed controlled.",
+        "April rests filter coffee for at least two weeks and prefers larger Origami brews for evenness."
+      ],
+      "conflicts": []
+    },
+    "kasuya-neo": {
+      "videoId": "k0nsShguOsU",
+      "reviewed": "2026-11-01",
+      "caption": {
+        "language": "en",
+        "kind": "manual"
+      },
+      "sampledAt": [
+        770,
+        790,
+        946,
+        1030
+      ],
+      "observations": [
+        "Kasuya demonstrates a 30-second bloom, then 30 g additions every 15 seconds.",
+        "The final pour is at 2:30 with 300 g total; he expects draining to finish around 3:30.",
+        "He says a regular V60 also works and that 40 clicks is safer than the extreme 45-click demo.",
+        "He describes sweetness, reduced acidity and a syrupy texture, with a risk of thinness at 45 clicks."
+      ],
+      "conflicts": [
+        "The description omits total brew time; the video narration supplies an approximate 3:30 drain, which is recorded as an observation rather than a fixed text-layer value."
+      ]
+    },
+    "kasuya-iced-46": {
+      "videoId": "v0CXzmw1TXg",
+      "reviewed": "2026-11-01",
+      "caption": {
+        "language": "ja",
+        "kind": "automatic"
+      },
+      "sampledAt": [
+        98,
+        185,
+        357,
+        421
+      ],
+      "observations": [
+        "The 4:6 version uses five 30 g additions over 80 g of ice and publishes no individual pour times.",
+        "The Switch hybrid uses a 50 g bloom, closes the valve, adds to 150 g by 40 seconds, waits until 1:30, opens, swirls and drains.",
+        "Kasuya prefers the hybrid for its smoother, sweeter cup; the 4:6 application keeps more brightness."
+      ],
+      "conflicts": [
+        "The single description supplies shared parameters, but the filmed method differs substantially between the 4:6 and hybrid versions; only 4:6 is stored in this record."
+      ]
+    },
+    "woelfl-v60": {
+      "videoId": "bZ2i4ewFSLk",
+      "reviewed": "2026-11-01",
+      "caption": null,
+      "sampledAt": [
+        5,
+        15,
+        25,
+        35,
+        45,
+        55
+      ],
+      "observations": [
+        "The video is a 67-second edited demonstration without useful spoken captions.",
+        "Frames show filter rinsing, grinding, dry grounds, a Brewista kettle and pouring.",
+        "The edit cannot verify the description's real-time 2:30–3:00 brew duration."
+      ],
+      "conflicts": []
+    },
+    "hedrick-ultimate-pourover": {
+      "videoId": "BG5Tc8MR2_4",
+      "reviewed": "2026-11-01",
+      "caption": {
+        "language": "en",
+        "kind": "automatic"
+      },
+      "sampledAt": [
+        310,
+        396,
+        430,
+        560,
+        600
+      ],
+      "observations": [
+        "Hedrick frames this as an adaptable recipe, not a championship recipe for every coffee.",
+        "He makes a coffee-bed divot before the 3× bloom and waits one or two minutes.",
+        "The remainder is one pour at 6–8 g/s from the lowest height that avoids stream splatter.",
+        "He chooses swirl, Wet WDT or spoon turnover according to drawdown speed.",
+        "He reports about 20–21% extraction, low bitterness, citric acidity, sweetness and a velvety, pillowy body."
+      ],
+      "conflicts": [
+        "The description says a 2–4 minute total by bloom choice; the narration gives 2–3 minutes after a one-minute bloom and 3–4 after two minutes, which the recipe preserves."
+      ]
+    },
+    "chronicler-osmotic-v60": {
+      "videoId": "Az01iNS1xnQ",
+      "reviewed": "2026-11-01",
+      "caption": {
+        "language": "en",
+        "kind": "automatic"
+      },
+      "sampledAt": [
+        180,
+        220,
+        250,
+        294
+      ],
+      "observations": [
+        "The demonstration uses 20 g coffee and 300 g water at 1:15; the description generalises this to 14–20 g.",
+        "The spoken instructions call for a 45-second bloom, while the author-written description says 40 seconds.",
+        "The first full pour stays in the centre with the kettle close to the bed to minimise agitation.",
+        "At half the total water he expands into a coin-sized circle, never touching the paper.",
+        "He recommends soft water under 110 ppm and describes a successful bed as wet sand without surface silt."
+      ],
+      "conflicts": [
+        "Description: 40-second bloom. Video narration: 45 seconds. The page keeps 40 seconds because it is the author-written numeric layer and documents the discrepancy."
+      ]
+    },
+    "wendelboe-tamana": {
+      "videoId": "K54NbGql73g",
+      "reviewed": "2026-11-01",
+      "caption": {
+        "language": "en",
+        "kind": "automatic"
+      },
+      "sampledAt": [
+        106,
+        112,
+        120,
+        250
+      ],
+      "observations": [
+        "Wendelboe says the local boiling point at Finca Tamana is about 92–93 °C because of altitude.",
+        "He uses the same coarse grinder setting across coffees rather than dialling each one.",
+        "The demonstration uses roughly 100 g for the bloom, swirls, waits about 30 seconds, then pours the remainder aggressively without a fixed pattern.",
+        "He stirs before serving unless the coffee is poured into another vessel."
+      ],
+      "conflicts": [
+        "The author-written description has no pour sequence, but the video does demonstrate a loose one. The page reports the video method without converting its approximate quantities into fixed structured numbers."
+      ]
+    }
+  }
+}

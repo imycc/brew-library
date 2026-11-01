@@ -276,8 +276,7 @@
         }
       ],
       "recipeIds": [
-        "hoang-w60",
-        "licata-w60"
+        "hoang-w60"
       ],
       "sources": [
         {
@@ -2667,7 +2666,9 @@
           "valueKey": "abacaDoubleCrepe"
         }
       ],
-      "recipeIds": [],
+      "recipeIds": [
+        "wendelboe-tamana"
+      ],
       "sources": [
         {
           "label": "CAFEC",

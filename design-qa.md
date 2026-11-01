@@ -83,3 +83,12 @@ final result: passed
 - Comparison now opens with a plain-language summary of differing, matching and compared parameters, marks changed rows, and can hide matching rows. Mobile switches from a wide table to snap-scrolling recipe cards; no row labels are clipped off-screen.
 - Equipment adds source-backed decision filters for records with hands-on experience and records linked to original recipes. The controls are derived from existing evidence rather than a new popularity or quality score.
 - Visual evidence: `outputs/qa/learn-desktop.png`, `outputs/qa/learn-mobile.png`, `outputs/qa/home-desktop.png`, `outputs/qa/detail-desktop.png`, `outputs/qa/detail-mobile.png`, `outputs/qa/compare-summary-desktop.png`, `outputs/qa/compare-cards-mobile.png`, `outputs/qa/equipment-decision-desktop.png`. The mobile recipe detail was checked for horizontal overflow. The production export generated 459 localized pages; data validation, TypeScript, 35 unit tests and the browser suite passed (34 passed, 2 analytics tests skipped without a tracking code).
+
+## 2026-11-01: video watch and analysis pass
+
+- Reviewed all nine video-primary recipes with timestamped caption tracks and at least three sampled video frames; Wölfl uses six frames because its track contains no useful speech.
+- Added `content/video-reviews.json` as a validated review manifest, `docs/video-analysis.md` for the evidence and conflict analysis, and `docs/video-ingestion-plan.md` as the repository-owned plan synced from Qoder.
+- Retired the Hario W60 experiment from the recipe catalogue after correcting its Licata attribution and establishing that the filmed mesh/paper result was flat and dull. Preserved the finding on the W60 equipment record and kept `/recipes/licata-w60/` as a noindex retirement page with links to the accepted Hoang recipe and W60 equipment details.
+- Restored Tim Wendelboe's video-demonstrated workflow as four explicit steps while keeping its approximate quantities out of fixed fields. Marked Asser Christensen's 40-versus-45-second bloom conflict rather than smoothing it away.
+- Added video-supported teaching and tasting language to Rolf, Kasuya, Hedrick and Christensen records; all nine locales validate.
+- Verification: 44 source-backed recipes, 8 active review manifests and 1 retired source analysis validated, TypeScript passed, 39 unit/data tests passed, the production build generated 486 localized pages, and the full Playwright run completed with 35 passed and 5 analytics tests skipped because no local tracking code is configured.

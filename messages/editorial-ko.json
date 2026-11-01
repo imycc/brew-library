@@ -149,7 +149,9 @@
     "lessStalling": "미분이 많은 원두에서도 덜 막힌다는 경험",
     "brightAcidity": "밝은 산미를 쉽게 끌어냄",
     "delicateBody": "깨끗하고 섬세한 바디",
-    "slowFlow": "느린 흐름으로 접촉 시간이 김"
+    "slowFlow": "느린 흐름으로 접촉 시간이 김",
+    "sedimentRisk": "메시만 쓰면 침전물이 남을 수 있음",
+    "mutedFlavor": "메시와 종이 필터를 함께 쓰면 풍미가 약해질 수 있음"
   },
   "editorialStrengths": {
     "clearTimeline": "단계와 시간이 명확해 따라가기 쉽습니다.",

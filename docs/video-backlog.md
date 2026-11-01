@@ -1,13 +1,16 @@
 # Video recipe backlog
 
 Working queue for video-sourced recipes. One row per candidate; statuses are `queued`,
-`added`, `near-miss` or `rejected`. Batches land three records at a time.
+`added`, `retired`, `near-miss` or `rejected`. Batches land three records at a time.
 
 Rules (see `docs/research.md` for the reasoning):
 
 - pour-over only — hot or iced; espresso, AeroPress and immersion-only are out;
 - the numbers must exist in the **author's own text layer** (video description, official
   transcription, or the creator's own page). Screen-only numbers are not publishable;
+- every video-primary recipe must also be **watched and reviewed** against a timestamped
+  transcript and at least three sampled frames; the review records observations and conflicts
+  in `content/video-reviews.json` without promoting screen-only numbers into fixed fields;
 - worldwide: world champions, world finalists, national champions, globally known educators;
 - unknowns stay `null`; ranges go into `doseMax` / `waterMax` / `temperatureMax`;
 - the verbatim sentence lives in `source.evidence`, in its original language;
@@ -23,10 +26,17 @@ Rules (see `docs/research.md` for the reasoning):
 | 4 | Tetsu Kasuya | as above | [急冷アイス 4:6 vs ハイブリッド](https://www.youtube.com/watch?v=v0CXzmw1TXg) | 2026-08-21 | JA | 20 g / 150 g water + 80 g ice / 90–93 °C / 28 clicks / 30 g ×5 | **added** `kasuya-iced-46` (the 4:6 version; the Switch hybrid in the same film stays queued) |
 | 5 | Martin Wölfl | WBrC champion 2024 | [Filterkaffee zubereiten](https://www.youtube.com/watch?v=bZ2i4ewFSLk) | 2021-01-12 | DE | 20 g / 300 ml / 93 °C / 60 ml bloom 30–40 s / 240 ml rest / 2:30–3:00 | **added** `woelfl-v60` |
 | 6 | Stefanos Domatiotis | WBrC champion 2014 | [Filter Coffee Chemex](https://www.youtube.com/watch?v=Zmg-WVcX84Q) | 2021-01-10 | EL | 24 g / 600 ml / 6 g per 100 ml / Chemex — no temp, grind or timeline | queued (sparse) |
-| 7 | Pete Licata (guest) | WBC champion 2013 | [Mesh/Paper/Both: Hario W60 #210](https://www.youtube.com/watch?v=M23NG4kNLAU) | 2022-03-18 | EN | 12 g / 200 g / 100·50·50 g at 0:00·0:35·1:05 / 4:00 / D50 611 µm | **added** `licata-w60` |
-| 8 | Lance Hedrick | leading educator | [ULTIMATE POUROVER](https://www.youtube.com/watch?v=BG5Tc8MR2_4) | 2022-11-26 | EN | ratio 1:14–1:17 / 85–100 °C / bloom 3× dose / 6–8 g/s | queued (ranges) |
-| 9 | Asser Christensen | Coffee Chronicler | [Osmotic Flow V60](https://www.youtube.com/watch?v=Az01iNS1xnQ) | 2021-01-05 | EN | 1:15 / 14–20 g / 93 °C / bloom mass+time / 3–5 min | queued (ranges) |
-| 10 | Tim Wendelboe | WBC 2004 | [How I Brew at Finca Tamana](https://www.youtube.com/watch?v=K54NbGql73g) | 2025-06-13 | EN | 36 g / 600 g / boiling / Cafec Abaca+ — no grind, pours or time | queued (sparse) |
+| 7 | Patrik Rolf / Coffee with April | 2019 WBrC runner-up | [Testing the Hario W60 #210](https://www.youtube.com/watch?v=M23NG4kNLAU) | 2022-03-18 | EN | 12 g / 200 g / 100·50·50 g at 0:00·0:35·1:05 / 4:00 / D50 611 µm | **retired** from the recipe catalogue after review; negative results retained on the W60 equipment record |
+| 8 | Lance Hedrick | leading educator | [ULTIMATE POUROVER](https://www.youtube.com/watch?v=BG5Tc8MR2_4) | 2022-11-26 | EN | up to 30 g / ratio 1:14–1:17 / 85–100 °C / bloom 3× dose / 6–8 g/s | **added** `hedrick-ultimate-pourover` |
+| 9 | Asser Christensen | Coffee Chronicler | [Osmotic Flow V60](https://www.youtube.com/watch?v=Az01iNS1xnQ) | 2021-01-05 | EN | 1:15 / 14–20 g / 93 °C / bloom mass+time / 3–5 min | **added** `chronicler-osmotic-v60` |
+| 10 | Tim Wendelboe | WBC 2004 | [How I Brew at Finca Tamana](https://www.youtube.com/watch?v=K54NbGql73g) | 2025-06-13 | EN | 36 g / 600 g / boiling / Cafec Abaca+ — no grind, pours or time | **added** `wendelboe-tamana` (sparse; no invented steps) |
+| 11 | Tetsu Kasuya | WBrC champion 2016 | [急冷アイス 4:6 vs ハイブリッド](https://www.youtube.com/watch?v=v0CXzmw1TXg) | 2026-08-21 | JA | Switch hybrid: 20 g / 150 g water + 80 g ice / 50 g bloom / closed to 1:30 / 28 clicks | queued (video-reviewed); separate from the added 4:6 record |
+
+All `added` video-primary records have a row in `content/video-reviews.json` with caption mode,
+review date, sampled timestamps, observations and text/video conflicts. A reviewed experiment that
+the creator does not recommend may be retained as equipment evidence instead; that record is marked
+`retired` and is not kept in the recipe manifest. The detailed analysis is in
+`docs/video-analysis.md`.
 
 ## Checked and excluded
 

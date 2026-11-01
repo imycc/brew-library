@@ -2971,7 +2971,8 @@
       ],
       "tasting": [
         "recipes.kasuya-neo.taste1",
-        "recipes.kasuya-neo.taste2"
+        "recipes.kasuya-neo.taste2",
+        "recipes.kasuya-neo.taste3"
       ]
     },
     {
@@ -3073,6 +3074,9 @@
         {
           "key": "recipes.kasuya-iced.teach3"
         }
+      ],
+      "tasting": [
+        "recipes.kasuya-iced.taste3"
       ]
     },
     {
@@ -3152,71 +3156,156 @@
       ]
     },
     {
-      "id": "licata-w60",
+      "id": "hedrick-ultimate-pourover",
       "method": "pour-over",
-      "copy": "licata-w60",
-      "author": "Pete Licata",
-      "authorId": "licata",
-      "brewer": "HARIO W60",
-      "brewerId": "w60",
+      "copy": "hedrick-ultimate",
+      "author": "Lance Hedrick",
+      "authorId": "hedrick",
+      "brewer": "Pour-over brewer not stated",
+      "brewerId": "unspecified",
       "kind": "hot",
-      "dose": 12,
+      "dose": 30,
+      "doseLimit": "upTo",
       "water": {
-        "amount": 200,
+        "amount": 420,
+        "waterMax": 510,
         "unit": "g",
-        "derived": false
+        "derived": true
       },
-      "temperature": null,
+      "temperature": 85,
+      "temperatureMax": 100,
       "temperatureMode": "unknown",
       "duration": [
-        240,
+        120,
         240
       ],
+      "ratioStated": "1:14–1:17",
       "source": {
-        "label": "Coffee with April",
-        "url": "https://www.youtube.com/watch?v=M23NG4kNLAU",
-        "video": "https://www.youtube.com/watch?v=M23NG4kNLAU",
-        "published": "2022-03-18",
+        "label": "Lance Hedrick",
+        "url": "https://www.youtube.com/watch?v=BG5Tc8MR2_4",
+        "video": "https://www.youtube.com/watch?v=BG5Tc8MR2_4",
+        "published": "2022-11-26",
         "publishedBasis": "video",
         "checked": "2026-10-31",
-        "evidence": "Mesh & Paper Filter\n12g - 200g\n0:00 - 100g Circle/Center Pour\n0:35 - 50g Circle Pour\n1:05 - 50g Circle Pour\n4:00 Total Brew Time\nD50=611μm (medium/fine)",
-        "archive": "https://web.archive.org/web/20261030165707/https://www.youtube.com/watch?v=M23NG4kNLAU"
+        "evidence": "Recipe:\nup to 30g of coffee\nMedium grind size\n1:14-1:17 ratio depending on roast level (darker- tighter, lighter- wider)\nWater temp 85-100C depending on roast level\n3x mass of coffee for bloom\nAgitate (can excavate or Wet WDT)\nWait 1-2 minutes\nPour rest of water at 6-8g/s with optimal height for deep turbulence\nJust swirl if draining slowly OR Wet WDT if somewhat quick OR turn bed over with spoon if draining quickly\n\nTotal time:\n2-3 min IF 1min bloom time\n3-4min IF 2 min bloom time",
+        "archive": "https://web.archive.org/web/20261031154533/https://www.youtube.com/watch?v=BG5Tc8MR2_4"
+      },
+      "image": "coffee-bloom",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": 90,
+          "cumulative": 90,
+          "derived": true,
+          "instruction": "recipes.hedrick-ultimate.s00"
+        },
+        {
+          "action": "pour",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.hedrick-ultimate.pour"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "teaching": [
+        {
+          "key": "recipes.hedrick-ultimate.teach1",
+          "step": 0
+        },
+        {
+          "key": "recipes.hedrick-ultimate.teach2",
+          "step": 1
+        },
+        {
+          "key": "recipes.hedrick-ultimate.teach3"
+        },
+        {
+          "key": "recipes.hedrick-ultimate.teach4"
+        },
+        {
+          "key": "recipes.hedrick-ultimate.teach5"
+        }
+      ],
+      "tasting": [
+        "recipes.hedrick-ultimate.taste1",
+        "recipes.hedrick-ultimate.taste2",
+        "recipes.hedrick-ultimate.taste3"
+      ]
+    },
+    {
+      "id": "chronicler-osmotic-v60",
+      "method": "pour-over",
+      "copy": "chronicler-osmotic",
+      "author": "Asser Christensen",
+      "authorId": "chronicler",
+      "brewer": "HARIO V60",
+      "brewerId": "v60",
+      "kind": "hot",
+      "dose": 14,
+      "doseMax": 20,
+      "water": {
+        "amount": 210,
+        "waterMax": 300,
+        "unit": "mL",
+        "derived": true
+      },
+      "temperature": 93,
+      "temperatureMode": "unknown",
+      "duration": [
+        180,
+        300
+      ],
+      "ratioStated": "1:15",
+      "source": {
+        "label": "The Coffee Chronicler",
+        "url": "https://www.youtube.com/watch?v=Az01iNS1xnQ",
+        "video": "https://www.youtube.com/watch?v=Az01iNS1xnQ",
+        "published": "2021-01-05",
+        "publishedBasis": "video",
+        "checked": "2026-10-31",
+        "evidence": "▪ Cafec T90 Filters (0.28 mm Thickness)\n▪ 1:15 ratio (use between 14 and 20 g of coffee. Adjust water accordingly)\n▪ Medium-coarse grind size\n▪ 93c water\n▪ total brew time around 3-5 minutes\n\n1: Blooming 40 seconds - use 2.5 x dry dose (if you use 20 g coffee, bloom with 50 ml)\n2: Gently pour in the center to 50% total brew volume\n3: Pour the remaining water in a slowly expanding circle. Avoid pouring on the paper filter.",
+        "archive": "https://web.archive.org/web/20250827225934/https://www.youtube.com/watch?v=Az01iNS1xnQ"
       },
       "image": "brewer-still",
       "steps": [
         {
-          "action": "pour",
+          "action": "bloom",
           "at": 0,
-          "amount": 100,
-          "cumulative": 100,
-          "videoAt": 0,
-          "pattern": "circular",
-          "instruction": "recipes.licata-w60.s00"
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.chronicler-osmotic.s00"
         },
         {
           "action": "pour",
-          "at": 35,
-          "amount": 50,
-          "cumulative": 150,
-          "videoAt": 35,
-          "pattern": "circular",
-          "instruction": "recipes.licata-w60.s01"
+          "at": 40,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.chronicler-osmotic.s01"
         },
         {
           "action": "pour",
-          "at": 65,
-          "amount": 50,
-          "cumulative": 200,
-          "videoAt": 65,
-          "pattern": "circular",
-          "instruction": "recipes.licata-w60.s02"
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.chronicler-osmotic.s02"
         },
         {
           "action": "finish",
-          "at": 240,
+          "at": null,
           "amount": null,
-          "cumulative": null,
-          "videoAt": 240
+          "cumulative": null
         }
       ],
       "preparation": [],
@@ -3225,20 +3314,116 @@
       "filterConditions": "unknown",
       "context": "daily",
       "paper": {
-        "id": "w60-mesh-paper",
-        "name": "W60 mesh filter with paper",
-        "shape": "flat"
+        "id": "cafec-t90-filter",
+        "name": "Cafec T90 paper filter",
+        "shape": "cone"
       },
       "teaching": [
         {
-          "key": "recipes.licata-w60.teach1",
+          "key": "recipes.chronicler-osmotic.teach1",
           "step": 0
         },
         {
-          "key": "recipes.licata-w60.teach2"
+          "key": "recipes.chronicler-osmotic.teach2",
+          "step": 1
         },
         {
-          "key": "recipes.licata-w60.teach3"
+          "key": "recipes.chronicler-osmotic.teach3",
+          "step": 2
+        },
+        {
+          "key": "recipes.chronicler-osmotic.teach4"
+        },
+        {
+          "key": "recipes.chronicler-osmotic.teach5",
+          "step": 2
+        }
+      ],
+      "tasting": [
+        "recipes.chronicler-osmotic.taste1"
+      ]
+    },
+    {
+      "id": "wendelboe-tamana",
+      "method": "pour-over",
+      "copy": "wendelboe",
+      "author": "Tim Wendelboe",
+      "authorId": "wendelboe",
+      "brewer": "Dripper not stated",
+      "brewerId": "unspecified",
+      "kind": "hot",
+      "dose": 36,
+      "water": {
+        "amount": 600,
+        "unit": "g",
+        "derived": false
+      },
+      "temperature": null,
+      "temperatureMode": "boiling",
+      "duration": null,
+      "source": {
+        "label": "Tim Wendelboe",
+        "url": "https://www.youtube.com/watch?v=K54NbGql73g",
+        "video": "https://www.youtube.com/watch?v=K54NbGql73g",
+        "published": "2025-06-13",
+        "publishedBasis": "video",
+        "checked": "2026-10-31",
+        "evidence": "As long as you use freshly ground, high-quality beans and good water, it is easy to make a good cup of coffee.\n\nRecipe:\n- 36g good coffee\n- 600g good water at boiling point\n- Cafec Abaca+ filter",
+        "archive": "https://web.archive.org/web/20261031154533/https://www.youtube.com/watch?v=K54NbGql73g"
+      },
+      "image": "brewer-still",
+      "steps": [
+        {
+          "action": "bloom",
+          "at": 0,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.wendelboe.s00"
+        },
+        {
+          "action": "swirl",
+          "at": null,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.wendelboe.s01"
+        },
+        {
+          "action": "pour",
+          "at": 30,
+          "amount": null,
+          "cumulative": null,
+          "instruction": "recipes.wendelboe.s02"
+        },
+        {
+          "action": "finish",
+          "at": null,
+          "amount": null,
+          "cumulative": null
+        }
+      ],
+      "preparation": [],
+      "waterConditions": "unknown",
+      "beanConditions": "unknown",
+      "filterConditions": "unknown",
+      "context": "daily",
+      "paper": {
+        "id": "cafec-abaca-cone-filter",
+        "name": "Cafec Abaca+ paper filter",
+        "shape": "cone"
+      },
+      "teaching": [
+        {
+          "key": "recipes.wendelboe.teach1"
+        },
+        {
+          "key": "recipes.wendelboe.teach2"
+        },
+        {
+          "key": "recipes.wendelboe.teach3"
+        },
+        {
+          "key": "recipes.wendelboe.teach4",
+          "step": 3
         }
       ]
     },

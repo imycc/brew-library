@@ -149,7 +149,9 @@
     "lessStalling": "用於微粉較多的豆時，使用者較少遇到停滯",
     "brightAcidity": "較容易帶出明亮酸質",
     "delicateBody": "口感很乾淨而纖細",
-    "slowFlow": "較慢流速帶來較長接觸時間"
+    "slowFlow": "較慢流速帶來較長接觸時間",
+    "sedimentRisk": "單用網濾可能留下沉澱",
+    "mutedFlavor": "網濾加濾紙可能壓低風味"
   },
   "editorialStrengths": {
     "clearTimeline": "步驟與時間清楚，容易跟隨。",

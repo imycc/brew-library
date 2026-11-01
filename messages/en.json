@@ -739,7 +739,7 @@
       "version": "Coffee with April #113",
       "grind": "Relatively coarse (Comandante)",
       "equipment": "HARIO V60 02; the paper brand is not named",
-      "notes": "The description gives only 90 °C, 13 g to 200 g and the four times. Paper brand, coffee and pouring technique are not stated; the 02 size is the stated basis and the video says it scales to other sizes.",
+      "notes": "The description fixes the dose, water, temperature, four pour times and finish. The video additionally shows a rinsed paper, a swirl and tap after the last pour, and Rolf explaining that 90 °C is chosen for acidity and vibrancy. The grinder setting name, coffee and paper brand remain unstated.",
       "finish": "The source gives 2:30 as the total brew time; let it draw down.",
       "overview": "Four identical 50 g pours leave grind as the only variable. Rolf keeps the dose at 13 g, which makes a shallow bed, so the relatively coarse grind is what keeps the flow even.",
       "bestFor": "A small, repeatable V60 you can time one-handed",
@@ -772,7 +772,7 @@
       "version": "TETSU KASUYA · 2026",
       "grind": "40–45 clicks (Comandante C40), extra coarse",
       "equipment": "HARIO NEO; the source says a V60 also works",
-      "notes": "The source gives no total brew time, only the ten-pour, 15-second cadence. It recommends the NEO because it extracts small additions evenly, but says a V60 is fine; a light roast is recommended.",
+      "notes": "The description gives no total brew time. In the video the final pour starts at 2:30 and Kasuya expects draining around 3:30, but the editable duration stays unset because that timing is video narration rather than a fixed text-layer value. A V60 is also acceptable.",
       "finish": "No finish time is published; the only requirement is that the water never sits in the dripper.",
       "overview": "A deliberate counterpoint to the short, low-pour trend: extra-coarse and hot, then ten small additions build sweetness and texture. The counter-intuitive part is the grind — 40–45 clicks, taking extraction from rhythm rather than fines.",
       "bestFor": "Brewers practising pour rhythm rather than pour volume",
@@ -783,7 +783,8 @@
       "teach2": "Ten additions of 30 g every 15 seconds; the point is that the water passes through the bed rather than sitting on it.",
       "teach3": "Kasuya recommends the NEO because it extracts small additions evenly, but says a V60 is equally acceptable.",
       "taste1": "Kasuya’s own claim: extra-coarse grind with 95–96 °C and ten small pours builds sweetness.",
-      "taste2": "He credits the ten pours, not fines, for the body: a syrupy mouthfeel he calls とろみ."
+      "taste2": "He credits the ten pours, not fines, for the body: a syrupy mouthfeel he calls とろみ.",
+      "taste3": "Kasuya says the sweetness dominates and acidity is softened; 45 clicks can be thin, while 40 clicks is much easier to repeat."
     },
     "kasuya-iced": {
       "title": "Kasuya’s iced 4:6",
@@ -800,7 +801,8 @@
       "s04": "The fifth and final 30 g, reaching 150 g.",
       "teach1": "Water drops to 150 g — half the normal 4:6 — because 80 g of ice is already in the server.",
       "teach2": "Five pours of 30 g in total; the video gives no times, so the count is the instruction.",
-      "teach3": "90–93 °C is the temperature range shared by both iced versions in the video."
+      "teach3": "90–93 °C is the temperature range shared by both iced versions in the video.",
+      "taste3": "In the comparison Kasuya prefers the Switch hybrid for its smoother, sweeter cup; the 4:6 application keeps more brightness."
     },
     "woelfl": {
       "title": "Wölfl’s V60 with a 60 g bloom",
@@ -818,23 +820,6 @@
       "teach2": "Bloom for 30–40 seconds; the source suggests smelling the bed up close to follow the degassing.",
       "teach3": "The second pour is the remaining 240 ml, slow and steady rather than in pulses.",
       "teach4": "Swirl the carafe well or stir with a spoon before drinking so the layers mix."
-    },
-    "licata-w60": {
-      "title": "Licata’s W60 with mesh and paper",
-      "summary": "Twelve grams to 200 g in three pours across four minutes, with the W60’s mesh filter and a paper filter together.",
-      "version": "Coffee with April #210",
-      "grind": "Medium/fine; D50 = 611 µm",
-      "equipment": "HARIO W60 with both the mesh and a paper filter",
-      "notes": "The W60’s mesh can run alone, with paper, or the paper alone; this recipe stacks both. No water temperature and no coffee are published.",
-      "finish": "The source gives 4:00 as the total brew time.",
-      "overview": "A deliberately slow brew: 12 g through 200 g over four minutes, far slower than the V60 recipes beside it. The mesh-plus-paper stack is what lets it run that long without stalling.",
-      "bestFor": "Anyone curious what the W60’s mesh changes about flow",
-      "s00": "Pour 100 g in circles, or into the centre, at 0:00.",
-      "s01": "At 0:35 pour 50 g in circles.",
-      "s02": "At 1:05 pour the last 50 g in circles, reaching 200 g.",
-      "teach1": "The first 100 g may be poured in circles or straight into the centre — the video allows either.",
-      "teach2": "Mesh and paper together: the W60 can run either alone, but this recipe stacks both.",
-      "teach3": "Twelve grams over four minutes is deliberately slow — expect a gentle drain, not a rush."
     },
     "lamarzocco": {
       "title": "La Marzocco's basic espresso recipe",
@@ -905,6 +890,65 @@
       "teach1": "Red Honey is Onyx's own process label for this coffee.",
       "teach2": "The card gives no brew temperature, grinder or basket, so those values remain open.",
       "tasting": "Honeycrisp apple, cherry, vanilla and papaya."
+    },
+    "hedrick-ultimate": {
+      "title": "Lance Hedrick’s flexible pour-over framework",
+      "summary": "Up to 30 g at a 1:14–1:17 ratio and 85–100 °C, with a 3× bloom and a roast-dependent finish in roughly 2–4 minutes.",
+      "version": "Lance Hedrick · 26 November 2022",
+      "grind": "Medium (grinder not named)",
+      "equipment": "Any pour-over brewer; the source does not name one",
+      "notes": "The source sets a 30 g upper dose, not a fixed recipe. This page anchors the derived 420–510 g water range to that maximum: 30 g at 1:14–1:17. Roast level sets the ratio and temperature, so the actual dose, water and pour times follow that choice.",
+      "finish": "The source gives 2–3 minutes after a 1-minute bloom, or 3–4 minutes after a 2-minute bloom.",
+      "overview": "A deliberately adjustable framework rather than a single recipe. Roast level moves the ratio and temperature, while the pour rate, bloom and bed agitation stay fixed enough to repeat.",
+      "bestFor": "Brewers who want one structured method they can tune across roast levels",
+      "s00": "Bloom with 3× the dose. At the 30 g upper dose shown here, that is 90 g.",
+      "pour": "Pour the remaining water at 6–8 g/s from a height that creates deep turbulence; the chosen ratio sets how much remains.",
+      "teach1": "Use up to 30 g; the recipe scales around that ceiling rather than prescribing 30 g every time.",
+      "teach2": "Roast level moves the ratio between 1:14 and 1:17 and the temperature between 85 and 100 °C; the source does not prescribe one fixed pairing.",
+      "teach3": "Agitate the bloom, then wait 1–2 minutes before the main pour.",
+      "teach4": "The remaining water goes in at 6–8 g/s with enough height for deep turbulence.",
+      "teach5": "Choose the finishing action by flow: swirl if slow, use Wet WDT if somewhat quick, or turn the bed over with a spoon if fast.",
+      "taste1": "Hedrick reports roughly 20–21% extraction across his test of the framework.",
+      "taste2": "He describes low bitterness and no astringent finish from the coarse grind and relatively fast brew.",
+      "taste3": "His tasting language is citric acidity, sweetness, and a velvety, pillowy body."
+    },
+    "chronicler-osmotic": {
+      "title": "Coffee Chronicler’s osmotic-flow V60",
+      "summary": "14–20 g at 1:15 and 93 °C, medium-coarse, with a 40-second 2.5× bloom and a 3–5 minute brew.",
+      "version": "The Coffee Chronicler · 5 January 2021",
+      "grind": "Medium-coarse (grinder not named)",
+      "equipment": "HARIO V60 with a Cafec T90 paper filter",
+      "notes": "The description says a 40-second bloom; the video narration says 45 seconds. This page keeps 40 seconds because it is the author-written numeric layer and records the discrepancy separately. The 210–300 ml water range is derived from the stated 1:15 ratio; later pours have no exact times.",
+      "finish": "The source gives about 3–5 minutes total.",
+      "overview": "A centre-first V60 routine built around osmotic flow: a measured bloom, a gentle centre pour to half the brew volume, then a slowly expanding circle for the rest.",
+      "bestFor": "A low-effort V60 method with a clear centre-first pour",
+      "s00": "Bloom for 40 seconds with 2.5× the dry dose: 35–50 ml across the 14–20 g range.",
+      "s01": "After the bloom, gently pour in the centre until the brew reaches 50% of its total volume.",
+      "s02": "Pour the rest in a slowly expanding circle, keeping the water off the paper filter.",
+      "teach1": "Choose any dose from 14–20 g and keep the water at 1:15; the 210–300 ml totals in the recipe-card header are that range.",
+      "teach2": "The first full pour goes down the centre, not around the wall of the dripper.",
+      "teach3": "Only the final pour expands in circles; the source explicitly says to avoid pouring on the paper.",
+      "teach4": "Use soft water, preferably below 110 ppm, a bleached Cafec cone filter, and keep the kettle low to minimise agitation.",
+      "teach5": "Never pour on the paper and do not pour faster than the bed drains; a wet-sand bed without surface silt is the visual cue.",
+      "taste1": "The author describes the result as the long, clear aftertaste found in a good pour-over."
+    },
+    "wendelboe": {
+      "title": "Tim Wendelboe’s Finca Tamana brew",
+      "summary": "36 g to 600 g of boiling water through a Cafec Abaca+ filter; the video demonstrates a rough bloom, swirl and aggressive remaining pour, with no total time.",
+      "version": "Tim Wendelboe · 13 June 2025",
+      "grind": "Not stated by the source",
+      "equipment": "Dripper not stated; Cafec Abaca+ paper filter",
+      "notes": "The description gives only coffee, water and filter. In the video Wendelboe says the local boiling point at Finca Tamana is about 92–93 °C, uses the same grind setting for every coffee, blooms with roughly 100 g, swirls, waits about 30 seconds and pours the rest aggressively. These are video observations; approximate quantities stay out of the fixed fields.",
+      "finish": "No total time is published. Stir before serving unless the coffee is poured into another vessel.",
+      "overview": "A loose field method from Finca Tamana rather than a tightly specified recipe. The video adds the workflow the description omitted, while leaving grind, dripper model, exact pour pattern and total time open.",
+      "bestFor": "A large cup using the exact text-layer constants and Wendelboe’s permissive field workflow",
+      "teach1": "Start with freshly ground, high-quality coffee; Wendelboe treats that as part of the recipe, not an optional upgrade.",
+      "teach2": "Use water he considers good enough to drink on its own.",
+      "teach3": "The video shows roughly 100 g for the bloom, a swirl, about 30 seconds of waiting, then one aggressive pour for the remainder.",
+      "s00": "Bloom with roughly 100 g, using enough water to wet all the grounds; the quantity is approximate in the video.",
+      "s01": "Swirl gently to saturate the bed and level it.",
+      "s02": "After about 30 seconds, pour the remaining water quite aggressively; no fixed spiral or pour pattern is prescribed.",
+      "teach4": "Stir the coffee before serving unless you pour it into another container."
     }
   },
   "waterQuality": "Water profile",
@@ -1097,7 +1141,7 @@
   "updated": "Page updated",
   "grindHedged": "The source calls this its usual setting, not a value fixed by the recipe",
   "valveInitial": "Valve before the first pour",
-  "stepDerived": "Not published for this step on its own — derived from the source’s total and earlier additions",
+  "stepDerived": "Not published for this step on its own — derived from the source’s stated formula or totals",
   "micron": "Grind size",
   "siftMesh": "Sift",
   "hardness": "Hardness",
@@ -1157,5 +1201,11 @@
   "evidenceLabel": "Source wording",
   "tastingTitle": "Tasting",
   "flowRate": "Flow {value} g/s",
-  "flowRateDerived": "≈ {value} g/s (derived from this pour)"
+  "flowRateDerived": "≈ {value} g/s (derived from this pour)",
+  "retiredRecipe": {
+    "title": "This recipe has been retired",
+    "body": "The Coffee with April W60 film was an exploratory test, not a recommended recipe. April found mesh alone too silty and mesh plus paper cleaner but still flat and dull. The result is preserved in the W60 equipment record; this URL remains so existing links do not break.",
+    "replacementAction": "Use Ngoc Hoang’s W60 recipe",
+    "equipmentAction": "Read the W60 equipment record"
+  }
 }

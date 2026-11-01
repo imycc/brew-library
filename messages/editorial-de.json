@@ -149,7 +149,9 @@
     "lessStalling": "weniger Staus bei feineanteilreichen Kaffees berichtet",
     "brightAcidity": "bringt lebendige Säure leichter hervor",
     "delicateBody": "sehr klarer, zarter Körper",
-    "slowFlow": "langsamer Durchfluss verlängert den Kontakt"
+    "slowFlow": "langsamer Durchfluss verlängert den Kontakt",
+    "sedimentRisk": "Mesh allein kann Sediment hinterlassen",
+    "mutedFlavor": "Mesh plus Papier kann das Aroma dämpfen"
   },
   "editorialStrengths": {
     "clearTimeline": "Schritte und Zeiten sind leicht nachzuvollziehen.",
