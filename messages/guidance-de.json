@@ -1,0 +1,34 @@
+{
+  "guidance": {
+    "title": "Ein Ausgangspunkt",
+    "intro": "Ein Ausgangspunkt aus Quellen, derselben Ausrüstung oder einer ähnlichen Methode.",
+    "editorialNote": "Dies ist ein redaktioneller Ausgangspunkt, keine Anweisung des Autors. Brühe zuerst die Quellenversion.",
+    "empty": "Es gibt nicht genug nahe Quellen für einen sicheren Ausgangspunkt.",
+    "missing": "In der Quelle nicht angegeben",
+    "partial": "In der Quelle nur teilweise angegeben",
+    "sameModel": "Referenz desselben Modells",
+    "sameEquipment": "Referenz derselben Ausrüstung",
+    "sameMethod": "Referenz derselben Methode",
+    "derived": "Aus Quellwerten berechnet",
+    "references": "Referenzdatensätze",
+    "compareToggle": "Ausgangspunkte anzeigen",
+    "compareHide": "Ausgangspunkte ausblenden",
+    "compareTitle": "Ausgangspunkte",
+    "compareIntro": "Diese Hinweise zählen nicht im Vergleich der Quellenparameter.",
+    "searchBadge": "Enthält Ausgangspunkt",
+    "equipmentTitle": "Rezepte und Methoden zum Vergleichen",
+    "equipmentEmpty": "Noch nicht genug verknüpfte Rezepte für eine Referenz.",
+    "reason": {
+      "sameModel": "Aus Datensätzen desselben Modells erstellt.",
+      "sameEquipment": "Aus {count} Datensätzen mit derselben Ausrüstung und heißer oder kalter Zubereitung erstellt.",
+      "sameMethod": "Aus {count} Datensätzen mit derselben Methode und heißer oder kalter Zubereitung erstellt."
+    },
+    "limit": {
+      "brewer": "Dies ist ein Ausrüstungshinweis aus einem nahen Datensatz, kein Beweis für die tatsächliche Nutzung durch den Autor.",
+      "grinder": "Modell und Einstellung bleiben in der Quellennotation; Einstellungen werden nicht zwischen Mühlen umgerechnet.",
+      "paper": "Dies ist das Filterpapier eines Referenzdatensatzes, keine Autorenanweisung und keine offizielle Kompatibilität.",
+      "temperature": "Nur als Ausgangspunkt nutzen; Kaffee, Wasser und Technik können das Ergebnis verändern.",
+      "brewTime": "Die Zeit hängt von Mahlgrad, Filter, Dosis und Aufguss ab."
+    }
+  }
+}

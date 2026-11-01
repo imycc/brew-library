@@ -1,0 +1,34 @@
+{
+  "guidance": {
+    "title": "Un point de départ",
+    "intro": "Un point de départ construit à partir de sources, du même équipement ou d’une méthode proche.",
+    "editorialNote": "Il s’agit d’un point de départ éditorial, pas d’une consigne de l’auteur. Préparez d’abord la version source.",
+    "empty": "Les sources proches ne sont pas assez nombreuses pour ajouter un point de départ sûr.",
+    "missing": "Non indiqué dans la source",
+    "partial": "Seulement partiellement indiqué dans la source",
+    "sameModel": "Référence du même modèle",
+    "sameEquipment": "Référence du même équipement",
+    "sameMethod": "Référence de la même méthode",
+    "derived": "Calculé à partir des chiffres source",
+    "references": "Fiches de référence",
+    "compareToggle": "Afficher les points de départ",
+    "compareHide": "Masquer les points de départ",
+    "compareTitle": "Points de départ",
+    "compareIntro": "Ces notes ne comptent pas dans la comparaison des paramètres source.",
+    "searchBadge": "Contient un point de départ",
+    "equipmentTitle": "Recettes et méthodes à comparer",
+    "equipmentEmpty": "Pas encore assez de recettes liées pour proposer une référence.",
+    "reason": {
+      "sameModel": "Élaboré à partir de fiches du même modèle.",
+      "sameEquipment": "Élaboré à partir de {count} fiches du même équipement et du même mode chaud ou glacé.",
+      "sameMethod": "Élaboré à partir de {count} fiches de la même méthode et du même mode chaud ou glacé."
+    },
+    "limit": {
+      "brewer": "C’est un indice d’équipement issu d’une fiche proche, pas une preuve de ce que l’auteur a utilisé.",
+      "grinder": "Le modèle et le réglage restent dans la notation source ; aucun réglage n’est converti entre moulins.",
+      "paper": "C’est le filtre d’une fiche de référence, pas une consigne de l’auteur ni une compatibilité officielle.",
+      "temperature": "À utiliser comme point de départ ; le café, l’eau et la technique peuvent changer le résultat.",
+      "brewTime": "Le temps dépend de la mouture, du filtre, de la dose et du versement."
+    }
+  }
+}

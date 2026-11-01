@@ -4,6 +4,7 @@ import {locales} from '../src/i18n/locales';
 import {recipes,isEspresso,isPourOver,puckPrepKeys} from '../src/lib/recipes';
 import {equipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentEditorialRoles,editorialTraitKeys,equipmentExperience,equipmentExperienceTags,recipeEditorial} from '../src/lib/editorial';
+import {guidanceAvailability,guidanceConfig,guidanceForRecipe,methodFamily} from '../src/lib/guidance';
 import {curatedLearningRecipeIds,learningLevel,recipeLearning} from '../src/lib/learning';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
 import {videoReviews} from '../src/lib/video-reviews';
@@ -14,12 +15,39 @@ export function flatten(obj:Record<string,unknown>,prefix=''):Record<string,stri
 export async function validate(){
  const english=mergeMessages(JSON.parse(await readFile('messages/en.json','utf8')) as Messages,JSON.parse(await readFile('messages/editorial-en.json','utf8')) as Messages);
  const englishEducation=JSON.parse(await readFile('messages/education-en.json','utf8')) as Messages;
- const base=flatten(mergeMessages(english,englishEducation));
+ const englishGuidance=JSON.parse(await readFile('messages/guidance-en.json','utf8')) as Messages;
+ const base=flatten(mergeMessages(mergeMessages(english,englishEducation),englishGuidance));
  const placeholders=(text:string)=>[...text.matchAll(/\{([a-zA-Z][a-zA-Z0-9_]*)\}/g)].map(m=>m[1]).sort();
  assert.equal(new Set(recipes.map(r=>r.id)).size,recipes.length,'Duplicate recipe id');
  assert.equal(new Set(equipment.map(item=>item.id)).size,equipment.length,'Duplicate equipment id');
  const recipeIds=new Set(recipes.map(r=>r.id));
  const equipmentIds=new Set(equipment.map(item=>item.id));
+ for(const [alias,id] of Object.entries(guidanceConfig.equipmentAliases))assert(equipmentIds.has(id),`${alias} aliases unknown equipment ${id}`);
+ for(const brewerId of Object.keys(guidanceConfig.brewerMethods))assert(recipes.some(recipe=>recipe.brewerId===brewerId),`Guidance method family references unknown brewer ${brewerId}`);
+ for(const relation of guidanceConfig.compatibleEquipment){
+   assert(equipmentIds.has(relation.equipmentId),`${relation.equipmentId} compatibility source is unknown`);
+   for(const id of relation.compatibleEquipmentIds)assert(equipmentIds.has(id),`${relation.equipmentId} references unknown compatible equipment ${id}`);
+ }
+ for(const disabled of guidanceConfig.disabled){
+   assert(recipeIds.has(disabled.recipeId),`${disabled.recipeId} disabled guidance references unknown recipe`);
+ }
+ for(const recipe of recipes){
+   for(const item of guidanceForRecipe(recipe)){
+     assert(item.references.length>0,`${recipe.id} guidance has no references`);
+     assert(item.references.length<=3,`${recipe.id} guidance has too many references`);
+     for(const reference of item.references){
+       assert(reference.recipeId!==recipe.id,`${recipe.id} guidance references itself`);
+       const candidate=recipes.find(recipeItem=>recipeItem.id===reference.recipeId);
+       assert(candidate,`${recipe.id} guidance references unknown recipe ${reference.recipeId}`);
+       assert(candidate.method===recipe.method,`${recipe.id} guidance crosses methods`);
+       assert(methodFamily(candidate)!== 'unknown',`${recipe.id} guidance references an unknown method family`);
+     }
+   }
+   for(const field of ['brewer','grinder','paper','temperature','brewTime'] as const){
+     const availability=guidanceAvailability(recipe,field);
+     if(availability==='provided'||availability==='notApplicable')assert(!guidanceForRecipe(recipe).some(item=>item.field===field),`${recipe.id} guidance should not replace ${field}`);
+   }
+ }
  assert.equal(new Set(curatedLearningRecipeIds).size,8,'Curated learning route must contain eight unique recipes');
  for(const id of curatedLearningRecipeIds)assert(recipeIds.has(id),`Curated learning recipe ${id} is missing`);
  assert.deepEqual(Object.keys(recipeLearning).sort(),[...curatedLearningRecipeIds].sort(),'Every curated recipe needs a specific learning card');
@@ -123,7 +151,7 @@ export async function validate(){
  }
  assert.equal(videoRecipeIds.length,8,'Video-primary recipe count changed; review the video analysis manifest');
  for(const locale of locales){
-   const messages=mergeMessages(mergeMessages(JSON.parse(await readFile(`messages/${locale}.json`,'utf8')) as Messages,JSON.parse(await readFile(`messages/editorial-${locale}.json`,'utf8')) as Messages),JSON.parse(await readFile(`messages/education-${locale}.json`,'utf8')) as Messages);
+   const messages=mergeMessages(mergeMessages(mergeMessages(JSON.parse(await readFile(`messages/${locale}.json`,'utf8')) as Messages,JSON.parse(await readFile(`messages/editorial-${locale}.json`,'utf8')) as Messages),JSON.parse(await readFile(`messages/education-${locale}.json`,'utf8')) as Messages),JSON.parse(await readFile(`messages/guidance-${locale}.json`,'utf8')) as Messages);
    const flat=flatten(messages);
    assert.deepEqual(Object.keys(flat).sort(),Object.keys(base).sort(),`${locale} missing/extra translations`);
    // The message catalogue is intentionally checked by dynamic keys. Cast the
@@ -181,6 +209,9 @@ export async function validate(){
    }
    for(const key of ['recipeOverview','bestFor','strengths','considerations','equipmentEditorialNote','sourceImageUnavailable','sourceImageAlt','sourceImageRecipe','sourceImageEquipment','sourceImageCredit','sourceImageView','equipmentExperienceTitle','equipmentExperienceNote','equipmentExperienceSources','equipmentExperienceUnavailable'])assert(flat[key],`${locale}/${key}`);
    for(const tag of equipmentExperienceTags)assert(flat[`equipmentExperienceTags.${tag}`],`${locale}/experience tag ${tag}`);
+   for(const key of ['guidance.title','guidance.intro','guidance.editorialNote','guidance.empty','guidance.missing','guidance.partial','guidance.sameModel','guidance.sameEquipment','guidance.sameMethod','guidance.derived','guidance.references','guidance.compareToggle','guidance.compareHide','guidance.compareTitle','guidance.compareIntro','guidance.searchBadge','guidance.equipmentTitle','guidance.equipmentEmpty'])assert(flat[key],`${locale}/${key}`);
+   for(const tier of ['sameModel','sameEquipment','sameMethod'])assert(flat[`guidance.reason.${tier}`],`${locale}/guidance reason ${tier}`);
+   for(const field of ['brewer','grinder','paper','temperature','brewTime'])assert(flat[`guidance.limit.${field}`],`${locale}/guidance limit ${field}`);
  }
  assert(equipmentEditorialRoles.length>0&&editorialTraitKeys.strengths.length>0&&editorialTraitKeys.considerations.length>0&&equipmentExperienceTags.length>0,'Editorial vocabulary must not be empty');
  console.log(`Validated ${recipes.length} source-backed recipes, ${equipment.length} equipment records and ${Object.keys(base).length} messages × ${locales.length} locales.`);

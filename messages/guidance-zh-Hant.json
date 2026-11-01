@@ -1,0 +1,34 @@
+{
+  "guidance": {
+    "title": "可從這裡開始",
+    "intro": "依來源、同器材或同手法整理的沖煮起點。",
+    "editorialNote": "這些是本站補充的起點，不是作者原始指示；請先按來源做基準。",
+    "empty": "目前沒有足夠相近的來源可安全補充。",
+    "missing": "來源未提供",
+    "partial": "來源只提供部分資料",
+    "sameModel": "同型號參考",
+    "sameEquipment": "同器材參考",
+    "sameMethod": "同手法參考",
+    "derived": "依來源數值推導",
+    "references": "參考紀錄",
+    "compareToggle": "顯示補充起點",
+    "compareHide": "隱藏補充起點",
+    "compareTitle": "補充起點",
+    "compareIntro": "這些內容不計入來源參數比較。",
+    "searchBadge": "含補充起點",
+    "equipmentTitle": "可參考的配方與手法",
+    "equipmentEmpty": "尚無足夠關聯配方可提供參考。",
+    "reason": {
+      "sameModel": "依同一型號的來源紀錄整理。",
+      "sameEquipment": "依 {count} 份同器材、同冷熱類型的來源紀錄整理。",
+      "sameMethod": "依 {count} 份同手法、同冷熱類型的來源紀錄整理。"
+    },
+    "limit": {
+      "brewer": "這是相近紀錄的器材線索，未表示作者實際使用。",
+      "grinder": "保留來源型號與刻度，不把刻度換算成另一台磨豆器。",
+      "paper": "這是參考紀錄使用的濾紙，未表示作者指定或官方相容。",
+      "temperature": "只用於建立起點；豆子、水質與手法仍會改變結果。",
+      "brewTime": "時間會受研磨、濾紙、粉量與注水方式影響。"
+    }
+  }
+}

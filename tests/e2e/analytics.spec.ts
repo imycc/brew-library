@@ -38,7 +38,8 @@ test('production analytics counts navigation once and ignores filter changes',as
  await page.goto('https://imycc.github.io/brew-library/en/');
  await expect.poll(()=>events).toEqual(['/brew-library/en/']);
  await page.getByRole('searchbox').fill('Kobayashi');
- await expect(page.locator('[data-recipe]')).toHaveCount(1);
+ await expect(page.locator('[data-recipe="kobayashi-origami"]')).toBeVisible();
+ expect(events).toEqual(['/brew-library/en/']);
  await page.locator('[data-recipe="kobayashi-origami"] .card-actions a').click();
  await expect(page.getByTestId('pour-timeline')).toBeVisible();
  await expect.poll(()=>events).toEqual(['/brew-library/en/','/brew-library/en/recipes/kobayashi-origami/']);

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "ruleVersion": "2026-11-01.1",
+  "equipmentAliases": {
+    "c40-mk4": "comandante-c40-mk4",
+    "c40-mk3-redclix": "comandante-c40-mk3-redclix",
+    "zp6-special": "1zpresso-zp6-special",
+    "k-ultra": "1zpresso-k-ultra",
+    "k-plus": "1zpresso-k-plus",
+    "k-pro": "1zpresso-k-pro",
+    "ek-unspecified": "ek-unspecified",
+    "cafec-origami": "cafec-origami-filter",
+    "cafec-t90-filter": "cafec-abaca-cone-filter",
+    "origami-wave": "origami-wave-filter",
+    "origami-wave-1-2": "origami-wave-filter",
+    "pulsar": "pulsar-paper-filter",
+    "sibarist-conic": "sibarist-cone"
+  },
+  "brewerMethods": {
+    "v60": "percolation",
+    "origami": "percolation",
+    "graycano": "percolation",
+    "mk": "percolation",
+    "mugen": "percolation",
+    "neo": "percolation",
+    "w60": "percolation",
+    "switch": "hybrid",
+    "pulsar": "immersion",
+    "unspecified": "unknown",
+    "fellow-espresso-series-1": "espresso",
+    "lamarzocco-linea-micra": "espresso"
+  },
+  "compatibleEquipment": [
+    {"equipmentId":"nextlevel-pulsar","compatibleEquipmentIds":["pulsar-paper-filter"],"basis":"catalogue"},
+    {"equipmentId":"origami-air-s","compatibleEquipmentIds":["origami-wave-filter"],"basis":"catalogue"},
+    {"equipmentId":"origami-s","compatibleEquipmentIds":["origami-wave-filter"],"basis":"catalogue"},
+    {"equipmentId":"kalita-wave-155-stainless","compatibleEquipmentIds":["kalita-wave-155-filter"],"basis":"catalogue"},
+    {"equipmentId":"kalita-wave-185-stainless","compatibleEquipmentIds":["kalita-wave-185-filter"],"basis":"catalogue"},
+    {"equipmentId":"chemex-classic-6-cup","compatibleEquipmentIds":["chemex-bonded-6-cup-filter"],"basis":"catalogue"},
+    {"equipmentId":"cafec-flower-deep27","compatibleEquipmentIds":["cafec-deep27-filter"],"basis":"catalogue"},
+    {"equipmentId":"fellow-stagg-x","compatibleEquipmentIds":["fellow-stagg-paper-filter"],"basis":"catalogue"},
+    {"equipmentId":"fellow-stagg-xf","compatibleEquipmentIds":["fellow-stagg-paper-filter"],"basis":"catalogue"},
+    {"equipmentId":"orea-v4","compatibleEquipmentIds":["orea-type-c-filter"],"basis":"catalogue"}
+  ],
+  "disabled": []
+}

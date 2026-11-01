@@ -223,7 +223,7 @@ export function sourceFacts(recipe:Recipe):{provided:boolean;key:string;label:st
   if(isEspresso(recipe)){
     const extraction=recipe.extraction;
     return [
-      {key:'temperature',label:'temperature',provided:recipe.temperature!==null},
+      {key:'temperature',label:'temperature',provided:recipe.temperature!==null||recipe.temperatureMode==='boiling'||recipe.steps.some(step=>step.temperature!==undefined)},
       {key:'brewTime',label:'shotTime',provided:recipe.duration!==null},
       {key:'yield',label:'yield',provided:!!recipe.yield},
       {key:'grinder',label:'grinder',provided:!!recipe.grinder?.setting},
@@ -236,7 +236,7 @@ export function sourceFacts(recipe:Recipe):{provided:boolean;key:string;label:st
   }
   const measured=additions(recipe);
   return [
-    {key:'temperature',label:'temperature',provided:recipe.temperature!==null||recipe.temperatureMode==='boiling'},
+    {key:'temperature',label:'temperature',provided:recipe.temperature!==null||recipe.temperatureMode==='boiling'||recipe.steps.some(step=>step.temperature!==undefined)},
     {key:'brewTime',label:'brewTime',provided:recipe.duration!==null},
     {key:'grinder',label:'grinder',provided:!!recipe.grinder?.setting},
     {key:'paper',label:'filterPaper',provided:!!recipe.paper||recipe.filterConditions!=='unknown'},

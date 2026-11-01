@@ -6,6 +6,7 @@ import {ArrowRight,ArrowUpRight,CoffeeBean,MagnifyingGlass} from '@phosphor-icon
 import {useState} from 'react';
 import {equipment,equipmentCategories,filterEquipment,type EquipmentCategory} from '@/lib/equipment';
 import {equipmentEditorial,equipmentExperience} from '@/lib/editorial';
+import {compatibleEquipment,equipmentGuidance} from '@/lib/guidance';
 import {recipes} from '@/lib/recipes';
 import {OfficialSourceImage} from '@/components/source-image';
 import {ANALYTICS_EVENTS,trackAnalyticsEvent} from '@/lib/analytics';
@@ -16,6 +17,8 @@ function EquipmentCard({item}:{item:(typeof equipment)[number]}){
   const editorial=equipmentEditorial[item.id];
   const experience=equipmentExperience[item.id];
   const related=item.recipeIds.flatMap(id=>recipes.find(recipe=>recipe.id===id)||[]);
+  const guidance=equipmentGuidance(item);
+  const compatible=compatibleEquipment(item).flatMap(id=>equipment.find(candidate=>candidate.id===id)||[]);
   const formatDetail=(detail:(typeof item.details)[number])=>{
     if(detail.key==='materials') return detail.value.split(';').map(value=>{
       const material=value.trim();
@@ -39,6 +42,7 @@ function EquipmentCard({item}:{item:(typeof equipment)[number]}){
       </section>:<p className="experience-unavailable">{t('equipmentExperienceUnavailable')}</p>}
     </div>
     <dl className="equipment-details">{item.details.map(detail=><div key={`${detail.key}-${detail.value}`}><dt>{t(`equipmentSpecs.${detail.key}`)}</dt><dd>{formatDetail(detail)}{detail.unit?<span>{t(`equipmentUnits.${detail.unit}`)}</span>:null}</dd></div>)}</dl>
+    {guidance.methods.length||compatible.length?<div className="equipment-guidance" data-equipment-guidance data-nosnippet><h3>{t('guidance.equipmentTitle')}</h3>{guidance.methods.length?<p>{guidance.methods.map(method=>t(method==='espresso'?'methodEspresso':'methodPourover')).join(' · ')}</p>:null}{compatible.length?<div>{compatible.map(candidate=><a key={candidate.id} href={`#${candidate.id}`}>{candidate.brand} {candidate.name}</a>)}</div>:null}</div>:null}
     {related.length?<div className="equipment-recipes"><h3>{t('equipmentRelated')}</h3>{related.map(recipe=><Link key={recipe.id} href={`/${locale}/recipes/${recipe.id}/`} onClick={()=>trackAnalyticsEvent(ANALYTICS_EVENTS.equipmentRecipeOpen,'Open recipe from equipment')}>{t(`recipes.${recipe.copy}.title`)}<ArrowRight size={14}/></Link>)}</div>:null}
     <footer><span>{t('equipmentChecked')} · {item.checked}</span><div>{item.sources.map(source=><a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label}<ArrowUpRight size={14}/></a>)}</div></footer>
   </article>;
