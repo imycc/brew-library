@@ -739,7 +739,7 @@
       "version": "Coffee with April #113",
       "grind": "Verhältnismäßig grob (Comandante)",
       "equipment": "HARIO V60 02; die Papier-Marke wird nicht genannt",
-      "notes": "Die Beschreibung nennt nur 90 °C, 13 g auf 200 g und die vier Zeitpunkte. Papier, Kaffee und Gießtechnik fehlen; Größe 02 ist die Basis und lässt sich laut Video übertragen.",
+      "notes": "Die Beschreibung legt Dosis, Wasser, Temperatur, vier Gusszeiten und Ende fest. Das Video zeigt zusätzlich ausgespültes Papier, einen Swirl mit leichtem Klopfen nach dem letzten Guss und Rolf erklärt, dass 90 °C Säure und Lebendigkeit betonen sollen. Mühlen-Einstellungsname, Kaffee und Papiermarke bleiben ungenannt.",
       "finish": "Die Quelle nennt 2:30 Gesamtzeit; danach ablaufen lassen.",
       "overview": "Vier gleiche 50-g-Gaben lassen nur den Mahlgrad als Variable. Bei 13 g ist das Bett flach, deshalb hält der grobe Mahlgrad den Durchfluss gleichmäßig.",
       "bestFor": "Ein kleiner, wiederholbarer V60 für die Ein-Hand-Zeitnahme",
@@ -772,7 +772,7 @@
       "version": "TETSU KASUYA · 2026",
       "grind": "40–45 Klicks (Comandante C40), sehr grob",
       "equipment": "HARIO NEO; laut Quelle geht auch ein V60",
-      "notes": "Eine Gesamtzeit fehlt; genannt wird nur der Rhythmus aus zehn Gaben im 15-Sekunden-Takt. Der NEO wird empfohlen, weil er kleine Gaben gleichmäßig extrahiert, ein V60 ist aber ausdrücklich in Ordnung; helle Röstung empfohlen.",
+      "notes": "Die Beschreibung nennt keine Gesamtzeit. Im Video beginnt der letzte Guss bei 2:30 und Kasuya erwartet das Ende etwa bei 3:30; die bearbeitbare Dauer bleibt jedoch leer, weil diese Zeit aus dem Videokommentar und nicht aus einer festen Textangabe stammt. Ein V60 funktioniert ebenfalls.",
       "finish": "Keine Endzeit; gefordert wird nur, dass das Wasser nicht im Drepper stehen bleibt.",
       "overview": "Ein bewusster Gegenentwurf zum Trend kurzer, dünn gegossener Rezepte: sehr grob und heiß, dann bauen zehn kleine Gaben Süße und Textur auf. Überraschend ist der Mahlgrad — 40–45 Klicks, Extraktion aus dem Rhythmus statt aus Feingut.",
       "bestFor": "Für alle, die den Gießrhythmus statt der Menge üben wollen",
@@ -783,7 +783,8 @@
       "teach2": "Zehn Gaben à 30 g im 15-Sekunden-Takt; entscheidend ist, dass das Wasser durchläuft statt oben zu stehen.",
       "teach3": "Kasuya empfiehlt den NEO, weil er kleine Gaben gleichmäßig extrahiert, sagt aber, ein V60 sei ebenso gut.",
       "taste1": "Laut Kasuya bauen sehr grober Mahlgrad, 95–96 °C und zehn kleine Gaben Süße auf.",
-      "taste2": "Die Textur — ein sirupartiges Mundgefühl — schreibt er den zehn Gaben zu, nicht dem Feingut."
+      "taste2": "Die Textur — ein sirupartiges Mundgefühl — schreibt er den zehn Gaben zu, nicht dem Feingut.",
+      "taste3": "Kasuya sagt, Süße dominiere und die Säure werde abgeschwächt; 45 Klicks können dünn werden, 40 Klicks sind deutlich reproduzierbarer."
     },
     "kasuya-iced": {
       "title": "Kasuya 4:6 auf Eis",
@@ -800,7 +801,8 @@
       "s04": "Die fünfte und letzte Gabe von 30 g bis 150 g.",
       "teach1": "Das Wasser sinkt auf 150 g — halb so viel wie beim normalen 4:6 —, weil 80 g Eis schon in der Kanne liegen.",
       "teach2": "Fünf Gaben à 30 g; das Video nennt keine Zeiten, also ist die Anzahl die Anweisung.",
-      "teach3": "90–93 °C ist der gemeinsame Bereich beider Eis-Versionen im Video."
+      "teach3": "90–93 °C ist der gemeinsame Bereich beider Eis-Versionen im Video.",
+      "taste3": "Im Vergleich bevorzugt Kasuya die Switch-Hybridversion für ihre glattere, süßere Tasse; die 4:6-Anwendung behält mehr Helligkeit."
     },
     "woelfl": {
       "title": "Wölfls V60 mit 60 g Bloom",
@@ -818,23 +820,6 @@
       "teach2": "30–40 Sekunden blühen lassen; laut Quelle soll man nah am Bett riechen, um die Entgasung zu verfolgen.",
       "teach3": "Der zweite Guss sind die restlichen 240 ml — langsam und gleichmäßig, nicht gepulst.",
       "teach4": "Vor dem Trinken die Kanne gut schwenken oder mit dem Löffel rühren, damit sich die Schichten mischen."
-    },
-    "licata-w60": {
-      "title": "Licatas W60 mit Mesh und Papier",
-      "summary": "12 g auf 200 g in drei Gaben über vier Minuten, Mesh und Papier des W60 zusammen.",
-      "version": "Coffee with April #210",
-      "grind": "Mittel/fein; D50 = 611 µm",
-      "equipment": "HARIO W60 mit Mesh und Papier",
-      "notes": "Das Mesh des W60 läuft allein, mit Papier oder nur Papier; hier beides. Wassertemperatur und Kaffee fehlen.",
-      "finish": "Die Quelle nennt 4:00 Gesamtzeit.",
-      "overview": "Ein bewusst langsames Rezept: 12 g durch 200 g über vier Minuten, viel langsamer als die V60 daneben. Mesh plus Papier machen das ohne Verstopfen möglich.",
-      "bestFor": "Wer wissen will, was das Mesh des W60 am Durchfluss ändert",
-      "s00": "Bei 0:00 100 g kreisend oder mittig aufgießen.",
-      "s01": "Bei 0:35 50 g kreisend aufgießen.",
-      "s02": "Bei 1:05 die letzten 50 g kreisend bis 200 g.",
-      "teach1": "Die ersten 100 g dürfen kreisend oder direkt mittig gegossen werden — beides ist erlaubt.",
-      "teach2": "Mesh und Papier zusammen: Der W60 kann beides allein, hier liegen beide übereinander.",
-      "teach3": "12 g über vier Minuten ist absichtlich langsam — sanft ablaufen lassen, nicht drängen."
     },
     "lamarzocco": {
       "title": "La Marzoccos Basis-Espressorezept",
@@ -905,6 +890,65 @@
       "teach1": "Red Honey ist Onyxs eigene Bezeichnung der Aufbereitung für diesen Kaffee.",
       "teach2": "Die Karte nennt weder Brühtemperatur noch Mühle oder Siebeinsatz; diese Werte bleiben offen.",
       "tasting": "Honigapfel, Kirsche, Vanille und Papaya."
+    },
+    "hedrick-ultimate": {
+      "title": "Lance Hedricks flexibles Pour-over-Gerüst",
+      "summary": "Bis zu 30 g bei einem Verhältnis von 1:14–1:17 und 85–100 °C, mit dreifachem Bloom und einem röstungsabhängigen Abschluss in etwa 2–4 Minuten.",
+      "version": "Lance Hedrick · 26. November 2022",
+      "grind": "Mittel (Mühle nicht genannt)",
+      "equipment": "Jeder Pour-over-Dripper; die Quelle nennt kein Modell",
+      "notes": "Die Quelle setzt 30 g als Obergrenze, nicht als feste Dosis. Die abgeleitete Wassermenge von 420–510 g bezieht sich auf dieses Maximum: 30 g bei 1:14–1:17. Der Röstgrad bestimmt Verhältnis und Temperatur; tatsächliche Dosis, Wasser und Zeiten folgen dieser Wahl.",
+      "finish": "Die Quelle nennt 2–3 Minuten nach einem 1-minütigen Bloom oder 3–4 Minuten nach einem 2-minütigen Bloom.",
+      "overview": "Bewusst ein anpassbares Gerüst statt eines festen Rezepts. Der Röstgrad verschiebt Verhältnis und Temperatur, während Gießgeschwindigkeit, Bloom und Bettbewegung reproduzierbar bleiben.",
+      "bestFor": "Für alle, die eine strukturierte Methode über verschiedene Röstgrade hinweg abstimmen möchten",
+      "s00": "Den Bloom mit der dreifachen Kaffeemenge angießen. Bei der hier gezeigten Obergrenze von 30 g sind das 90 g.",
+      "pour": "Das restliche Wasser mit 6–8 g/s aus einer Höhe eingießen, die eine tiefe Turbulenz erzeugt; das gewählte Verhältnis bestimmt die Restmenge.",
+      "teach1": "Bis zu 30 g verwenden; das Rezept skaliert um diese Obergrenze und schreibt nicht jedes Mal 30 g vor.",
+      "teach2": "Der Röstgrad bewegt das Verhältnis zwischen 1:14 und 1:17 sowie die Temperatur zwischen 85 und 100 °C; eine feste Paarung nennt die Quelle nicht.",
+      "teach3": "Den Bloom aufbrechen und 1–2 Minuten warten, bevor der Hauptguss beginnt.",
+      "teach4": "Das restliche Wasser mit 6–8 g/s und genug Höhe für eine tiefe Turbulenz eingießen.",
+      "teach5": "Den Abschluss nach dem Abfluss wählen: langsam schwirlen, bei etwas schnellem Abfluss Wet WDT nutzen oder bei sehr schnellem Abfluss das Bett mit einem Löffel wenden.",
+      "taste1": "Hedrick berichtet in seinem Test etwa 20–21 % Extraktionsausbeute.",
+      "taste2": "Durch grobe Mahlung und relativ schnellen Aufguss beschreibt er wenig Bitterkeit und keinen adstringierenden Abgang.",
+      "taste3": "Seine Verkostungssprache ist Zitrusensäure, Süße sowie ein samtiger, kissenartiger Körper."
+    },
+    "chronicler-osmotic": {
+      "title": "Coffee Chroniclers osmotischer V60",
+      "summary": "14–20 g bei 1:15 und 93 °C, mittelgrob, mit einem 40-sekündigen Bloom aus dem 2,5-Fachen der Dosis und 3–5 Minuten Brühzeit.",
+      "version": "The Coffee Chronicler · 5. Januar 2021",
+      "grind": "Mittelgrob (Mühle nicht genannt)",
+      "equipment": "HARIO V60 mit Cafec-T90-Papierfilter",
+      "notes": "Die Beschreibung nennt 40 Sekunden Bloom, der Videokommentar 45 Sekunden. Diese Seite behält 40 Sekunden aus der vom Autor geschriebenen Zahlenebene und dokumentiert die Abweichung separat. Die 210–300 ml sind aus 1:15 abgeleitet; spätere Güsse haben keine exakten Zeiten.",
+      "finish": "Die Quelle nennt insgesamt etwa 3–5 Minuten.",
+      "overview": "Eine V60-Methode mit dem Zentrum zuerst: ein abgemessener Bloom, ein sanfter Mittelguss bis zur Hälfte des Gesamtvolumens und anschließend ein langsam größer werdender Kreis.",
+      "bestFor": "Eine unkomplizierte V60-Methode mit klarem Guss zuerst in die Mitte",
+      "s00": "40 Sekunden mit dem 2,5-Fachen der trockenen Dosis blühen lassen: 35–50 ml im Bereich von 14–20 g.",
+      "s01": "Nach dem Bloom sanft in die Mitte gießen, bis die Hälfte des gesamten Brühvolumens erreicht ist.",
+      "s02": "Den Rest in einem langsam größer werdenden Kreis eingießen und dabei den Papierfilter aussparen.",
+      "teach1": "Eine Dosis zwischen 14 und 20 g wählen und das Wasser bei 1:15 halten; die 210–300 ml im Rezeptkopf bilden diesen Bereich ab.",
+      "teach2": "Der erste vollständige Guss geht in die Mitte, nicht an die Dripperwand.",
+      "teach3": "Nur der letzte Guss wird kreisförmig erweitert; die Quelle sagt ausdrücklich, nicht auf das Papier zu gießen.",
+      "teach4": "Weiches Wasser, möglichst unter 110 ppm TDS, einen gebleichten Cafec-Kegelfilter und einen niedrig gehaltenen Kessel verwenden.",
+      "teach5": "Nie auf das Papier gießen und nicht schneller als der Abfluss gießen; ein nasses Sandbett ohne Schlamm ist das visuelle Erfolgszeichen.",
+      "taste1": "Der Autor beschreibt einen langen, klaren Abgang, wie er für guten Pour-over typisch ist."
+    },
+    "wendelboe": {
+      "title": "Tim Wendelboes Finca-Tamana-Aufguss",
+      "summary": "36 g auf 600 g kochendes Wasser durch einen Cafec-Abaca+-Filter; das Video zeigt einen groben Bloom, Swirl und einen aggressiven Restguss, aber keine Gesamtzeit.",
+      "version": "Tim Wendelboe · 13. Juni 2025",
+      "grind": "Von der Quelle nicht angegeben",
+      "equipment": "Dripper nicht angegeben; Cafec-Abaca+-Papierfilter",
+      "notes": "Die Beschreibung nennt nur Kaffee, Wasser und Filter. Im Video sagt Wendelboe, der örtliche Siedepunkt auf Finca Tamana liege bei etwa 92–93 °C; er nutzt für jeden Kaffee dieselbe Mahlung, blüht mit ungefähr 100 g, swirlt, wartet rund 30 Sekunden und gießt den Rest aggressiv. Das sind Video-Beobachtungen; ungefähre Mengen bleiben aus den festen Feldern.",
+      "finish": "Es gibt keine Gesamtzeit. Vor dem Servieren umrühren, außer der Kaffee wird umgefüllt.",
+      "overview": "Eine lockere Feldmethode von Finca Tamana statt eines eng spezifizierten Rezepts. Das Video ergänzt den fehlenden Ablauf, lässt Mahlung, Drippermodell, exaktes Gussmuster und Gesamtzeit aber offen.",
+      "bestFor": "Eine große Tasse mit den exakten Textkonstanten und Wendelboes tolerantem Feldablauf",
+      "teach1": "Mit frisch gemahlenem Kaffee hoher Qualität beginnen; Wendelboe versteht das als Teil des Rezepts, nicht als optionales Extra.",
+      "teach2": "Wasser verwenden, das auch für sich genommen gut zu trinken ist.",
+      "teach3": "Das Video zeigt etwa 100 g Bloom, einen Swirl, rund 30 Sekunden Warten und dann einen aggressiven Guss für den Rest.",
+      "s00": "Mit ungefähr 100 g Wasser blühen und alle gemahlenen Bohnen benetzen; die Menge im Video ist ungefähr.",
+      "s01": "Sanft swirlen, damit das Bett gesättigt und eben wird.",
+      "s02": "Nach etwa 30 Sekunden das restliche Wasser ziemlich aggressiv eingießen; ein festes Spiral- oder Gussmuster gibt es nicht.",
+      "teach4": "Vor dem Servieren umrühren, außer der Kaffee wird in einen anderen Behälter gegossen."
     }
   },
   "waterQuality": "Wasserprofil",
@@ -1097,7 +1141,7 @@
   "updated": "Seite aktualisiert",
   "grindHedged": "Die Quelle nennt dies als übliche Einstellung, nicht als Rezeptwert",
   "valveInitial": "Ventil vor dem ersten Aufguss",
-  "stepDerived": "Die Quelle nennt diese Menge nicht allein; sie ergibt sich aus Gesamtmenge und Vorherige.",
+  "stepDerived": "Für diesen Schritt nicht einzeln veröffentlicht – aus der genannten Formel oder Gesamtsumme der Quelle abgeleitet",
   "micron": "Mahlgrad",
   "siftMesh": "Sieb",
   "hardness": "Härte",
@@ -1157,5 +1201,11 @@
   "evidenceLabel": "Originalwortlaut",
   "tastingTitle": "Geschmack und Textur",
   "flowRate": "Durchfluss {value} g/s",
-  "flowRateDerived": "≈ {value} g/s (aus dieser Gabe berechnet)"
+  "flowRateDerived": "≈ {value} g/s (aus dieser Gabe berechnet)",
+  "retiredRecipe": {
+    "title": "Dieses Rezept wurde zurückgezogen",
+    "body": "Das W60-Video von Coffee with April war ein explorativer Test, kein empfohlenes Rezept. April fand Mesh allein zu sedimentreich und Mesh plus Papier zwar sauberer, aber weiterhin flach und stumpf. Das Ergebnis bleibt im W60-Geräteeintrag erhalten; diese URL wird beibehalten, damit bestehende Links nicht brechen.",
+    "replacementAction": "Ngoc Hoangs W60-Rezept verwenden",
+    "equipmentAction": "W60-Geräteeintrag lesen"
+  }
 }

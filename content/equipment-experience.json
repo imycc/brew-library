@@ -24,6 +24,7 @@
     "chemex-classic-6-cup": {"tags":["paperCleanCup","delicateBody","largeDoseFit","slowFlow"],"sources":[{"label":"Tom's Guide hands-on test","url":"https://www.tomsguide.com/home/coffee-makers/ive-tested-43-coffeemakers-in-two-years-but-id-only-spend-my-own-money-on-these-nine"}]},
     "kalita-wave-155-filter": {"tags":["roundSweetness","fullerBody","forgivingTechnique","stallRisk"],"sources":[{"label":"r/pourover Wave filter discussion","url":"https://www.reddit.com/r/pourover/comments/1rmes7p/draw_down_time_800_with_kalita_wave_185_filters/"}]},
     "kalita-wave-185-filter": {"tags":["roundSweetness","fullerBody","forgivingTechnique","stallRisk"],"sources":[{"label":"r/pourover Wave filter discussion","url":"https://www.reddit.com/r/pourover/comments/1rmes7p/draw_down_time_800_with_kalita_wave_185_filters/"}]},
-    "cafec-abaca-cone-filter": {"tags":["fastFlow","lessStalling","lightBody","brightAcidity"],"sources":[{"label":"r/pourover preferred filters","url":"https://www.reddit.com/r/pourover/comments/1q8cfho/my_preferred_filters/"},{"label":"r/pourover Abaca switch","url":"https://www.reddit.com/r/pourover/comments/1szdajz/switched_to_abaca_filters_from_hario/"}]}
+    "cafec-abaca-cone-filter": {"tags":["fastFlow","lessStalling","lightBody","brightAcidity"],"sources":[{"label":"r/pourover preferred filters","url":"https://www.reddit.com/r/pourover/comments/1q8cfho/my_preferred_filters/"},{"label":"r/pourover Abaca switch","url":"https://www.reddit.com/r/pourover/comments/1szdajz/switched_to_abaca_filters_from_hario/"}]},
+    "hario-w60": {"tags":["filterDependent","sedimentRisk","mutedFlavor","slowFlow"],"sources":[{"label":"Coffee with April · W60 test","url":"https://www.youtube.com/watch?v=M23NG4kNLAU"}]}
   }
 }

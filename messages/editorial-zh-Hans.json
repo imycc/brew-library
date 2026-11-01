@@ -149,7 +149,9 @@
     "lessStalling": "用于细粉较多的豆时，用户较少遇到停滞",
     "brightAcidity": "较容易带出明亮酸质",
     "delicateBody": "口感很干净而纤细",
-    "slowFlow": "较慢流速带来较长接触时间"
+    "slowFlow": "较慢流速带来较长接触时间",
+    "sedimentRisk": "单用网滤可能留下沉淀",
+    "mutedFlavor": "网滤加滤纸可能压低风味"
   },
   "editorialStrengths": {
     "clearTimeline": "步骤与时间清楚，容易跟随。",

@@ -149,7 +149,9 @@
     "lessStalling": "usuários relatam menos entupimento com cafés ricos em finos",
     "brightAcidity": "facilita destacar uma acidez viva",
     "delicateBody": "corpo muito limpo e delicado",
-    "slowFlow": "fluxo lento prolonga o contato"
+    "slowFlow": "fluxo lento prolonga o contato",
+    "sedimentRisk": "a malha sozinha pode deixar sedimento",
+    "mutedFlavor": "malha com papel pode abafar o sabor"
   },
   "editorialStrengths": {
     "clearTimeline": "As etapas e os tempos são fáceis de acompanhar.",

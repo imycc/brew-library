@@ -352,19 +352,59 @@ Model additions this pass:
 - Each video page was archived and the snapshot verified to contain the recipe numbers before
   `source.archive` was recorded.
 
-### Batch 2 — iced 4:6, Wölfl, Licata W60 (checked 2026-10-31)
+### Batch 2 — iced 4:6, Wölfl, Coffee with April W60 (checked 2026-10-31)
 
 | Record | Source | Decisions |
 | --- | --- | --- |
 | `kasuya-iced-46` | [急冷アイス 4:6 vs ハイブリッド](https://www.youtube.com/watch?v=v0CXzmw1TXg), 2026-08-21 | 20 g / 150 g water / **80 g ice in the server** / 90–93 °C / 28 clicks / five 30 g pours. The film compares two iced versions and publishes shared parameters; only the 4:6 version is recorded, the Switch hybrid stays in the backlog. No grinder, no dripper, no pour times and no total time are published, so all four stay unknown. The stated ratio 1:11.5 is checked against water **plus** ice, which is what the source ratios. |
 | `woelfl-v60` | [Filterkaffee zubereiten](https://www.youtube.com/watch?v=bZ2i4ewFSLk), 2021-01-12 | 20 g / 300 ml / 93 °C / 60 ml bloom for 30–40 s / remaining 240 ml / 2:30–3:00. The second pour has no time, so it is stored untimed and the pour phase reads unknown. Grinder, coffee and paper brand are not named. |
-| `licata-w60` | [Mesh/Paper/Both: Hario W60 #210](https://www.youtube.com/watch?v=M23NG4kNLAU), 2022-03-18 | 12 g / 200 g / 100 g at 0:00, 50 g at 0:35, 50 g at 1:05 / 4:00 / D50 611 µm. Chapter markers give all four timestamps. The description names the W60's mesh and a paper filter **together**, so the filter is stored as that stack; no temperature and no coffee are published. |
+| Coffee with April W60 test (retired) | [Testing the Hario W60 #210](https://www.youtube.com/watch?v=M23NG4kNLAU), 2022-03-18 | 12 g / 200 g / 100 g at 0:00, 50 g at 0:35, 50 g at 1:05 / 4:00 / D50 611 µm. Chapter markers give all four timestamps. This is Coffee with April's test of the Hario W60 developed with Pete Licata; Patrik Rolf is the visible host and brewer. Video review shows that April judged mesh-plus-paper cleaner than mesh alone but still flat and dull. The failed experiment was removed from the recipe catalogue and retained on the W60 equipment record. |
 
 Two model consequences surfaced here. First, the ratio guard had to learn that an iced source
 ratios over water **plus** ice — otherwise Kasuya's published 1:11.5 looked like an error.
 Second, `D50 = 611 µm` is a median particle size, not the PSD peak the `grindMicron` basis
 enum allows, so it lives in the grind text rather than being forced into a field that would
 misdescribe it.
+
+### Batch 3 — flexible framework, osmotic flow, sparse field recipe (checked 2026-10-31)
+
+| Record | Source | Decisions |
+| --- | --- | --- |
+| `hedrick-ultimate-pourover` | [ULTIMATE POUROVER RECIPE](https://www.youtube.com/watch?v=BG5Tc8MR2_4), 2022-11-26 | **Up to 30 g**, 1:14–1:17 depending on roast, 85–100 °C, a bloom at 3× the dose, a 1–2 minute wait, the rest at 6–8 g/s and 2–4 minutes overall. The source never requires a fixed 30 g dose, so `doseLimit: "upTo"` preserves the ceiling. The 420–510 g total is derived from 30 g at the two published ratio endpoints and is explicitly marked derived; the main pour remains unquantified because it varies with that choice. No creator chapters exist, so no `videoAt` is assigned. |
+| `chronicler-osmotic-v60` | [Hario V60 Technique: Osmotic Flow](https://www.youtube.com/watch?v=Az01iNS1xnQ), 2021-01-05 | 14–20 g at 1:15 and 93 °C, medium-coarse, Cafec T90 paper, a 40-second bloom at 2.5× the dry dose, then a centre pour to half the brew volume and a slowly expanding circle for the rest; 3–5 minutes total. The 210–300 ml water range is derived from the stated ratio. The source gives no exact pour volumes or timestamps after the bloom, so those steps remain unquantified and untimed. |
+| `wendelboe-tamana` | [How I Brew Coffee at Finca Tamana](https://www.youtube.com/watch?v=K54NbGql73g), 2025-06-13 | 36 g coffee, 600 g water at boiling point and a Cafec Abaca+ paper filter. The description gives no grinder, grind setting, dripper model, pour sequence or total time. The record therefore has empty `steps` and uses the existing “no steps published” presentation; the three teaching bullets only restate the source’s coffee, water and filter requirements. |
+
+This batch also adds `doseLimit` (`exact` or `upTo`) because “up to 30 g” cannot be represented
+faithfully by the existing range fields, which need both endpoints. Ratio validation now accepts
+one pair or two endpoint pairs, allowing Lance’s 1:14–1:17 to be checked against the derived water
+range. The video snapshots for all three records were verified to contain the stored numeric text.
+
+### Full video watch and analysis pass (checked 2026-10-31)
+
+The earlier batch reviews established publication text, chapters and archive snapshots, but that
+was not enough to explain what the brewer actually did. A second pass watched the nine
+video-primary recipes through timestamped captions and sampled at least three frames per video.
+Wölfl has no useful speech transcript, so that source was reviewed from six frames and the
+limitation is explicit. The machine-readable review record is `content/video-reviews.json`; the
+detailed analysis, timestamps and disagreements are in `docs/video-analysis.md`.
+
+That pass found two material corrections and several additions:
+
+- Coffee with April's W60 film is hosted and brewed by Patrik Rolf and tests a device developed
+  with Pete Licata; it is not a Licata-authored recipe. The result was also negative, so the
+  experiment was removed from the recipe catalogue and retained as W60 equipment evidence.
+- Tim Wendelboe's description omits the pour, while the video demonstrates an approximate 100 g
+  bloom, swirl, 30-second wait and aggressive remainder. Those observations are now visible as
+  steps, but approximate quantities remain out of the fixed numeric fields.
+- Asser Christensen's description says a 40-second bloom while the video narration says 45. The
+  published value remains 40 seconds and the conflict is recorded instead of smoothed away.
+- Kasuya's NEO video supplies an approximate 3:30 drain, V60 fallback and tasting trade-offs;
+  Hedrick's video supplies the expected 20–21 % extraction and tasting language; the Kasuya iced
+  film makes clear that the Switch hybrid is a materially different method and remains backlog.
+
+Numbers still follow the author's written text layer. Watching the video is required for method,
+rationale, tasting language and contradiction checking, but does not silently promote approximate
+spoken or screen-only values into the fixed recipe fields.
 
 ## Espresso expansion — four records (checked 2026-10-31)
 

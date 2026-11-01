@@ -6,6 +6,7 @@ import {equipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentEditorialRoles,editorialTraitKeys,equipmentExperience,equipmentExperienceTags,recipeEditorial} from '../src/lib/editorial';
 import {curatedLearningRecipeIds,learningLevel,recipeLearning} from '../src/lib/learning';
 import {mergeMessages,type Messages} from '../src/i18n/merge-messages';
+import {videoReviews} from '../src/lib/video-reviews';
 import {createTranslator} from 'next-intl';
 export function flatten(obj:Record<string,unknown>,prefix=''):Record<string,string>{
  return Object.fromEntries(Object.entries(obj).flatMap(([key,value])=>typeof value==='string'?[[`${prefix}${key}`,value]]:Object.entries(flatten(value as Record<string,unknown>,`${prefix}${key}.`))));
@@ -22,7 +23,7 @@ export async function validate(){
  assert.equal(new Set(curatedLearningRecipeIds).size,8,'Curated learning route must contain eight unique recipes');
  for(const id of curatedLearningRecipeIds)assert(recipeIds.has(id),`Curated learning recipe ${id} is missing`);
  assert.deepEqual(Object.keys(recipeLearning).sort(),[...curatedLearningRecipeIds].sort(),'Every curated recipe needs a specific learning card');
- assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,14,'Guided learning count changed; review the learning layer');
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,16,'Guided learning count changed; review the learning layer');
  for(const [id,lesson] of Object.entries(recipeLearning)){
    const recipe=recipes.find(item=>item.id===id)!;
    for(const checkpoint of lesson.checkpoints)assert(checkpoint.step<recipe.steps.length,`${id} learning checkpoint points past the last step`);
@@ -69,13 +70,18 @@ export async function validate(){
    if(r.water?.hardness!==undefined)assert(r.water.hardnessUnit,`${r.id} hardness needs its published unit`);
    if(r.water?.alkalinity!==undefined)assert(r.water.alkalinityUnit,`${r.id} alkalinity needs its published unit`);
    if(r.ratioStated){
-     const numbers=(r.ratioStated.match(/[\d.]+/g)||[]).map(Number).sort((a,b)=>a-b);
-     assert(numbers.length===2,`${r.id} ratio must state two numbers`);
-     const[small,large]=numbers as [number,number];
+     const rawNumbers=(r.ratioStated.match(/[\d.]+/g)||[]).map(Number);
+     assert(rawNumbers.length===2||rawNumbers.length===4,`${r.id} ratio must state one pair or two endpoint pairs`);
+     const pairs=rawNumbers.length===2?[rawNumbers]:[rawNumbers.slice(0,2),rawNumbers.slice(2)];
      // Iced sources state water and ice separately; the ratio they quote is over both.
-     const liquid=isPourOver(r)&&r.ice&&r.ice.unit===r.water.unit?r.water.amount+r.ice.amount:isPourOver(r)?r.water.amount:null;
-     const computed=isPourOver(r)?liquid!/r.dose:r.yield?r.yield.amount/r.dose:null;
-     if(computed!==null)assert(Math.abs(large/small-computed)<.5,`${r.id} stated ratio disagrees with its own dose and liquid`);
+     const baseLiquid=isPourOver(r)&&r.ice&&r.ice.unit===r.water.unit?r.water.amount+r.ice.amount:isPourOver(r)?r.water.amount:null;
+     const maxLiquid=isPourOver(r)&&r.water.waterMax
+       ?r.water.waterMax+(r.ice?.unit===r.water.unit?r.ice.amountMax??r.ice.amount:0)
+       :baseLiquid;
+     const computed=[isPourOver(r)?baseLiquid!/r.dose:r.yield?r.yield.amount/r.dose:null,
+       isPourOver(r)&&maxLiquid?maxLiquid/r.dose:null].filter((value):value is number=>value!==null);
+     const stated=pairs.map(([left,right])=>{const[small,large]=[left,right].sort((a,b)=>a-b);return large/small;});
+     if(computed.length)for(const [i,value] of stated.entries())assert(Math.abs(value-computed[Math.min(i,computed.length-1)])<.5,`${r.id} stated ratio disagrees with its own dose and liquid`);
    }
    if(r.yield&&isPourOver(r))assert(r.yield.amount<r.water.amount,`${r.id} beverage yield cannot exceed the water poured`);
    for(const s of r.steps){
@@ -95,7 +101,7 @@ export async function validate(){
        else cumulative=s.cumulative;
      }
      // Only compare totals when mass/volume units actually match. Never convert g to mL.
-     if(cumulative!==null&&measured.every(s=>(s.unit||r.water.unit)===r.water.unit))assert.equal(cumulative,r.water.amount,`${r.id} water total`);
+     if(measured.length&&cumulative!==null&&measured.every(s=>(s.unit||r.water.unit)===r.water.unit))assert.equal(cumulative,r.water.amount,`${r.id} water total`);
    }
    if(isEspresso(r)){
      const pre=r.extraction?.preInfusion;
@@ -104,6 +110,16 @@ export async function validate(){
    }
    for(const s of r.steps){if(s.end!==undefined&&s.at!==null)assert(s.end>=s.at,`${r.id} time range`);}
  }
+ const videoRecipeIds=recipes.filter(recipe=>recipe.source.video&&recipe.source.url===recipe.source.video).map(recipe=>recipe.id).sort();
+ assert.deepEqual(Object.keys(videoReviews).sort(),videoRecipeIds,'Every video-primary recipe needs a reviewed transcript/frame manifest');
+ for(const [id,review] of Object.entries(videoReviews)){
+   const recipe=recipes.find(item=>item.id===id)!;
+   assert(recipe.source.video?.includes(review.videoId),`${id} video review id does not match its source`);
+   assert.equal(new Set(review.sampledAt).size,review.sampledAt.length,`${id} duplicate sampled video timestamp`);
+   assert.deepEqual(review.sampledAt,[...review.sampledAt].sort((a,b)=>a-b),`${id} sampled video timestamps must run forwards`);
+   if(recipe.source.publishedBasis==='video')assert(review.observations.length>0,`${id} has no video observations`);
+ }
+ assert.equal(videoRecipeIds.length,8,'Video-primary recipe count changed; review the video analysis manifest');
  for(const locale of locales){
    const messages=mergeMessages(mergeMessages(JSON.parse(await readFile(`messages/${locale}.json`,'utf8')) as Messages,JSON.parse(await readFile(`messages/editorial-${locale}.json`,'utf8')) as Messages),JSON.parse(await readFile(`messages/education-${locale}.json`,'utf8')) as Messages);
    const flat=flatten(messages);

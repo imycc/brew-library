@@ -149,7 +149,9 @@
     "lessStalling": "usuarios reportan menos atascos con cafés con muchos finos",
     "brightAcidity": "facilita resaltar una acidez brillante",
     "delicateBody": "cuerpo muy limpio y delicado",
-    "slowFlow": "el flujo lento alarga el contacto"
+    "slowFlow": "el flujo lento alarga el contacto",
+    "sedimentRisk": "la malla sola puede dejar sedimento",
+    "mutedFlavor": "la malla con papel puede apagar el sabor"
   },
   "editorialStrengths": {
     "clearTimeline": "Los pasos y tiempos son fáciles de seguir.",

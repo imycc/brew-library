@@ -149,7 +149,9 @@
     "lessStalling": "users report fewer stalls with fines-heavy coffees",
     "brightAcidity": "brighter acidity is easier to bring forward",
     "delicateBody": "very clean, delicate body",
-    "slowFlow": "slower flow supports longer contact"
+    "slowFlow": "slower flow supports longer contact",
+    "sedimentRisk": "the mesh alone can leave sediment",
+    "mutedFlavor": "paper plus mesh may mute flavour"
   },
   "editorialStrengths": {
     "clearTimeline": "The steps and timing are easy to follow.",

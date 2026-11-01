@@ -55,7 +55,7 @@ test('invalid comparison links are understandable and recoverable',async({page})
 for(const locale of locales)test(`static ${locale} pages render complete locale content`,async({page})=>{
  test.setTimeout(90_000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- for(const suffix of ['','learn/','equipment/','authors/','sources/','about/','terms/','privacy/',...recipes.map(r=>`recipes/${r.id}/`)]){
+ for(const suffix of ['','learn/','equipment/','authors/','sources/','about/','terms/','privacy/','recipes/licata-w60/',...recipes.map(r=>`recipes/${r.id}/`)]){
    const response=await page.goto(`${base}/${locale}/${suffix}`,{waitUntil:'domcontentloaded'});expect(response?.status()).toBe(200);await expect(page.locator('html')).toHaveAttribute('lang',locale);await expect(page.locator('h1')).not.toBeEmpty();
  }
  expect(errors).toEqual([]);
@@ -64,9 +64,9 @@ test('equipment catalogue filters official records and links source-backed recip
  await page.goto(`${base}/zh-Hant/equipment/`);
  await expect(page.locator('[data-equipment]')).toHaveCount(69);
  const equipmentDecision=page.locator('[data-equipment-filters] button');
- await equipmentDecision.nth(0).click();await expect(page.locator('[data-equipment]')).toHaveCount(24);
- await equipmentDecision.nth(1).click();await expect(page.locator('[data-equipment]')).toHaveCount(16);
- await equipmentDecision.nth(0).click();await expect(page.locator('[data-equipment]')).toHaveCount(29);
+ await equipmentDecision.nth(0).click();await expect(page.locator('[data-equipment]')).toHaveCount(25);
+ await equipmentDecision.nth(1).click();await expect(page.locator('[data-equipment]')).toHaveCount(18);
+ await equipmentDecision.nth(0).click();await expect(page.locator('[data-equipment]')).toHaveCount(30);
  await equipmentDecision.nth(1).click();await expect(page.locator('[data-equipment]')).toHaveCount(69);
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('濃縮咖啡機');
  await expect(page.locator('[data-equipment="ecm-synchronika-ii"]')).toContainText('迴轉式幫浦');
@@ -81,6 +81,10 @@ test('equipment catalogue filters official records and links source-backed recip
  await expect(page.locator('[data-equipment="graycano-dripper"] a[href*="kaygusuz-graycano"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="1zpresso-k-pro"] a[href*="damgaci-v60"]')).toHaveCount(1);
  await expect(page.locator('[data-equipment="sibarist-flat"] a[href*="vuolo-mk"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="cafec-abaca-cone-filter"] a[href*="wendelboe-tamana"]')).toHaveCount(1);
+ await expect(page.locator('[data-equipment="hario-w60"] .experience-tags')).toContainText('沉澱');
+ await expect(page.locator('[data-equipment="hario-w60"] .experience-tags')).toContainText('風味');
+ await expect(page.locator('[data-equipment="hario-w60"] a[href*="rolf-w60-210"]')).toHaveCount(0);
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('直火鵝頸');
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('爐具使用');
  await expect(page.locator('[data-equipment="hario-v60-buono-1-2l"]')).toContainText('日本');
@@ -387,9 +391,40 @@ test('a video-sourced recipe exposes its evidence, teaching and step deep links'
  await expect(page.locator('#step-2')).toHaveCount(1);
 });
 
+test('the third video batch keeps upper bounds, ranges and video-derived flows explicit',async({page})=>{
+ await page.goto(`${base}/en/recipes/hedrick-ultimate-pourover/`);
+ await expect(page.locator('.quick-answer')).toContainText('≤30');
+ await expect(page.locator('.quick-answer')).toContainText('420–510');
+ await expect(page.locator('[data-derived-panel]')).toContainText('1 : 14–1 : 17');
+ await expect(page.locator('.detail-sidebar')).toContainText('1:14–1:17');
+ await expect(page.locator('[data-evidence]')).toContainText('up to 30g of coffee');
+ await expect(page.locator('[data-teaching] li')).toHaveCount(5);
+ await page.goto(`${base}/en/recipes/chronicler-osmotic-v60/`);
+ await expect(page.locator('.quick-answer')).toContainText('14–20');
+ await expect(page.locator('.quick-answer')).toContainText('210–300');
+ await expect(page.locator('.step-list li')).toHaveCount(4);
+ await expect(page.locator('[data-evidence]')).toContainText('2.5 x dry dose');
+ await page.goto(`${base}/en/recipes/wendelboe-tamana/`);
+ await expect(page.locator('.quick-answer')).toContainText('36');
+ await expect(page.locator('.quick-answer')).toContainText('600');
+ await expect(page.locator('.step-list li')).toHaveCount(4);
+ await expect(page.locator('[data-teaching] li')).toHaveCount(4);
+ await expect(page.locator('[data-evidence]')).toContainText('36g good coffee');
+ await page.goto(`${base}/en/recipes/licata-w60/`);
+ await expect(page.locator('h1')).toContainText('retired');
+ await expect(page.locator('.page-subtitle')).toContainText('exploratory test');
+ await expect(page.locator('a[href*="hoang-w60"]')).toHaveCount(1);
+ await expect(page.locator('a[href*="equipment/#hario-w60"]')).toHaveCount(1);
+ const jsonLd=(await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ');
+ await expect(jsonLd).not.toContain('"Recipe"');
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(`${base}/de/recipes/hedrick-ultimate-pourover/`);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
+});
+
 test('tasting notes and flow rates stay tied to their sources',async({page})=>{
  await page.goto(`${base}/en/recipes/kasuya-neo/`);
- await expect(page.locator('[data-tasting] li')).toHaveCount(2);
+ await expect(page.locator('[data-tasting] li')).toHaveCount(3);
  await page.goto(`${base}/en/recipes/hoffmann-one-cup/`);
  await expect(page.locator('.step-rate').first()).toContainText('g/s');
  await page.goto(`${base}/en/recipes/gil-origami-2024/`);

@@ -4,6 +4,7 @@ import {convertTemperature,formatTemperature} from '../src/lib/temperature';
 import {espressoSchema,pourOverSchema,filterRecipes,methodFilterKeys,methodFilterParam,parseSelection,toggleSelection,recipes,pourOverRecipes,espressoRecipes,time,ratio,accountedAdditions,bloomShare,pourPhase,sourceFacts,totalLiquid,yieldText,pressureText,preInfusionText,basketText,type Recipe,videoLink,stepFlow} from '../src/lib/recipes';
 import {equipment,filterEquipment} from '../src/lib/equipment';
 import {equipmentEditorial,equipmentExperience,recipeEditorial} from '../src/lib/editorial';
+import {videoReviews} from '../src/lib/video-reviews';
 import {validate} from '../scripts/validate';
 import {brewTimeline,curatedLearningRecipeIds,learningLevel,recipeLearning,searchableRecipeText,secondsLabel} from '../src/lib/learning';
 test('source and translation validation',async()=>{await validate();});
@@ -39,7 +40,7 @@ const po=(id:string)=>pourOverRecipes.find(recipe=>recipe.id===id)!;
 test('times retain seconds and ranges are not decimal minutes',()=>{assert.equal(time(130),'2:10');assert.equal(time(210),'3:30');});
 
 test('expanded original recipes preserve unknown temperatures and mixed source units',()=>{
- assert.equal(recipes.length,42);
+ assert.equal(recipes.length,44);
  const find=(id:string)=>recipes.find(r=>r.id===id)!;
  assert.equal(find('wong-switch').temperatureMode,'unknown');
  assert.equal(find('wong-switch').temperature,null);
@@ -252,7 +253,7 @@ test('the iced record keeps ice out of the poured-water maths',()=>{
  assert.deepEqual(pourPhase(iced),{endsAt:70,kind:'start',drawdown:30});
  assert.equal(ratio(iced,'en'),'1 : 14.33');
  assert.equal(recipes.filter(recipe=>recipe.kind==='iced').length,2);
- assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,40);
+ assert.equal(recipes.filter(recipe=>recipe.kind==='hot').length,42);
 });
 
 const shotRecord=espressoSchema.parse({...pourOverRecipes[0],id:'test-shot',copy:'kasuya',method:'espresso',
@@ -327,6 +328,37 @@ test('video records carry provenance, timestamps and teaching without inventing 
  assert.deepEqual(origami.duration,[150,150]);
  assert.equal(origami.steps[1].end,80);
  assert(origami.source.evidence?.includes('roast degree'));
+ const hedrick=po('hedrick-ultimate-pourover');
+ assert.equal(hedrick.doseLimit,'upTo');
+ assert.equal(hedrick.dose,30);
+ assert.equal(hedrick.water.amount,420);
+ assert.equal(hedrick.water.waterMax,510);
+ assert.equal(ratio(hedrick,'en'),'1 : 14–1 : 17');
+ assert.equal(hedrick.steps[0].amount,90);
+ const osmotic=po('chronicler-osmotic-v60');
+ assert.equal(osmotic.dose,14);
+ assert.equal(osmotic.doseMax,20);
+ assert.equal(osmotic.water.amount,210);
+ assert.equal(osmotic.water.waterMax,300);
+ assert.equal(ratio(osmotic,'en'),'1 : 15');
+ assert.equal(osmotic.steps[0].amount,null);
+ const tamana=po('wendelboe-tamana');
+ assert.equal(tamana.temperatureMode,'boiling');
+ assert.equal(tamana.duration,null);
+ assert.equal(tamana.steps.length,4);
+ assert.equal(tamana.teaching?.length,4);
+});
+
+test('every video-primary recipe has watched-caption and frame review evidence',()=>{
+ const ids=recipes.filter(recipe=>recipe.source.video&&recipe.source.url===recipe.source.video).map(recipe=>recipe.id).sort();
+ assert.deepEqual(Object.keys(videoReviews).sort(),ids);
+ assert.equal(ids.length,8);
+ for(const [id,review] of Object.entries(videoReviews)){
+   assert(review.sampledAt.length>=3,`${id} needs at least three frame samples`);
+   assert(review.observations.length>0,`${id} needs reviewed observations`);
+ }
+ assert.equal(videoReviews['woelfl-v60'].caption,null);
+ assert(videoReviews['chronicler-osmotic-v60'].conflicts.some(value=>value.includes('40-second')));
 });
 
 test('flow rates are either published or derived from the pour itself',()=>{
@@ -340,11 +372,11 @@ test('flow rates are either published or derived from the pour itself',()=>{
  assert.equal(derived.value,3.3);
  assert.equal(stepFlow(oneCup.steps[1]),null);
  assert.equal(stepFlow(oneCup.steps[10]),null);
- assert.equal(recipes.filter(recipe=>recipe.tasting?.length).length,6);
+ assert.equal(recipes.filter(recipe=>recipe.tasting?.length).length,9);
 });
 
 test('learning levels and curated route describe the depth honestly',()=>{
- assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,14);
+ assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='guided').length,16);
  assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='practice').length,25);
  assert.equal(recipes.filter(recipe=>learningLevel(recipe)==='reference').length,3);
  assert.equal(curatedLearningRecipeIds.length,8);

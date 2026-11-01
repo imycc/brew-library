@@ -549,13 +549,38 @@
         "unknownParameters"
       ]
     },
-    "licata-w60": {
+    "hedrick-ultimate-pourover": {
       "strengths": [
+        "filterFlexibility",
+        "structuredAgitation",
+        "temperatureControl"
+      ],
+      "considerations": [
+        "grindSensitive",
+        "unknownParameters",
+        "activePouring"
+      ]
+    },
+    "chronicler-osmotic-v60": {
+      "strengths": [
+        "repeatable",
+        "evenExtraction",
         "filterFlexibility"
       ],
       "considerations": [
-        "filterMatching",
-        "equipmentSpecific"
+        "grindSensitive",
+        "activePouring",
+        "unknownParameters"
+      ]
+    },
+    "wendelboe-tamana": {
+      "strengths": [
+        "cleanCup",
+        "largeCapacity"
+      ],
+      "considerations": [
+        "unknownParameters",
+        "grindSensitive"
       ]
     },
     "lamarzocco-brew-ratios": {

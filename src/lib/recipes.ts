@@ -30,6 +30,9 @@ const commonRecipeFields={
   id:z.string().regex(/^[a-z0-9-]+$/), copy:z.string().regex(/^[a-z0-9-]+$/),
   author:z.string(), authorId:z.string(), brewer:z.string(), brewerId:z.string(),
   kind:z.enum(['hot','iced']), dose:z.number().positive(), doseMax:z.number().positive().optional(),
+  // Some creators publish only an upper limit ("up to 30 g"). Keep that
+  // qualifier explicit instead of turning the bound into an exact dose.
+  doseLimit:z.enum(['exact','upTo']).default('exact'),
   ice:z.object({amount:z.number().positive(), amountMax:z.number().positive().optional(), approximate:z.boolean().optional(), unit:z.enum(['g','mL']), placement:z.enum(['server','brewer','glass'])}).optional(),
   temperature:z.number().positive().nullable(), temperatureMax:z.number().positive().optional(), temperatureUnit:z.enum(['C','F']).default('C'), temperatureMode:z.enum(['boiling','unknown']).default('unknown'), duration:z.tuple([z.number().positive(),z.number().positive()]).nullable(),
   removalAt:z.number().nonnegative().optional(),
@@ -136,7 +139,10 @@ export function beverage(recipe:Recipe):{amount:number;unit:string;derived:boole
   if(isEspresso(recipe))return recipe.yield?{amount:recipe.yield.amount,unit:recipe.yield.unit,derived:recipe.yield.basis==='target'}:null;
   return totalLiquid(recipe);
 }
-export function doseText(recipe:Recipe):string {return recipe.doseMax?`${recipe.dose}–${recipe.doseMax}`:`${recipe.dose}`;}
+export function doseText(recipe:Recipe):string {
+  if(recipe.doseLimit==='upTo')return `≤${recipe.dose}`;
+  return recipe.doseMax?`${recipe.dose}–${recipe.doseMax}`:`${recipe.dose}`;
+}
 export function waterText(recipe:Recipe):string {
   if(isEspresso(recipe))return '—';
   const {water}=recipe;
@@ -150,6 +156,9 @@ export function stepFlow(step:Recipe['steps'][number]):{value:number;published:b
 export function videoLink(url:string,seconds:number):string {return `${url}${url.includes('?')?'&':'?'}t=${seconds}`;}
 export function ratio(recipe:Recipe, locale:string):string {
   const format=(value:number)=>new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(value);
+  // A ratio printed by the creator is authoritative even when dose and water
+  // move as a pair, or when the source gives a range rather than one endpoint.
+  if(recipe.ratioStated)return recipe.ratioStated.replaceAll(':', ' : ');
   if(isEspresso(recipe)){
     if(!recipe.yield)return '—';
     return recipe.yield.unit==='g'?`1 : ${format(recipe.yield.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.yield.amount} mL`;
@@ -158,6 +167,7 @@ export function ratio(recipe:Recipe, locale:string):string {
   // Cannot pair the two units: show the water ratio alone rather than inventing a total.
   if(!total)return recipe.water.unit==='g'?`1 : ${format(recipe.water.amount/recipe.dose)}`:`${recipe.dose} g : ${recipe.water.amount} mL`;
   if(total.unit==='g'){
+    if(recipe.doseLimit==='upTo')return `1 : ≤${format(total.amount/recipe.dose)}`;
     // A published dose range yields a ratio range, widest first.
     return recipe.doseMax?`1 : ${format(total.amount/recipe.doseMax)}–${format(total.amount/recipe.dose)}`:`1 : ${format(total.amount/recipe.dose)}`;
   }

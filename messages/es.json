@@ -739,7 +739,7 @@
       "version": "Coffee with April #113",
       "grind": "Relativamente grueso (Comandante)",
       "equipment": "HARIO V60 02; no se indica la marca del filtro",
-      "notes": "La descripción solo da 90 °C, 13 g para 200 g y los cuatro tiempos. No indica papel, café ni técnica de vertido; el tamaño 02 es la base y el vídeo dice que se puede escalar.",
+      "notes": "La descripción fija la dosis, el agua, la temperatura, los cuatro vertidos y el final. El vídeo además muestra el filtro enjuagado, un giro y golpe suave tras el último vertido, y Rolf explica que 90 °C busca resaltar acidez y viveza. El nombre del ajuste del molino, el café y la marca del papel siguen sin indicarse.",
       "finish": "La fuente da 2:30 como tiempo total; deja drenar.",
       "overview": "Cuatro vertidos idénticos de 50 g dejan la molienda como única variable. Con 13 g la cama es fina, así que el molido relativamente grueso mantiene el flujo.",
       "bestFor": "Un V60 pequeño y repetible que puedes cronometrar con una mano",
@@ -772,7 +772,7 @@
       "version": "TETSU KASUYA · 2026",
       "grind": "40–45 clics (Comandante C40), muy grueso",
       "equipment": "HARIO NEO; la fuente dice que un V60 también sirve",
-      "notes": "La fuente no da tiempo total, solo la cadencia de diez vertidos cada 15 segundos. Recomienda el NEO por su extracción uniforme de pequeños añadidos, pero acepta un V60; sugiere tueste claro.",
+      "notes": "La descripción no da tiempo total. En el vídeo el último vertido empieza a 2:30 y Kasuya espera que termine de drenar hacia 3:30, pero la duración editable queda vacía porque ese tiempo procede de la narración, no de un valor fijo del texto. Un V60 también sirve.",
       "finish": "No hay hora de fin; solo pide que el agua no se quede en el dripper.",
       "overview": "Un contrapunto deliberado a la moda de recetas cortas y con poco vertido: muy grueso y caliente, y diez añadidos pequeños construyen dulzor y textura. Lo contraintuitivo es la molienda: 40–45 clics, extrayendo por ritmo y no por finos.",
       "bestFor": "Quien practica el ritmo del vertido más que el volumen",
@@ -783,7 +783,8 @@
       "teach2": "Diez añadidos de 30 g cada 15 segundos; lo importante es que el agua atraviese la cama y no se quede encima.",
       "teach3": "Kasuya recomienda el NEO porque extrae uniformemente pequeños añadidos, pero dice que un V60 es igual de válido.",
       "taste1": "Según Kasuya, molienda muy gruesa con 95–96 °C y diez añadidos pequeños construyen el dulzor.",
-      "taste2": "Atribuye el cuerpo —una textura almibarada— a los diez vertidos, no a los finos."
+      "taste2": "Atribuye el cuerpo —una textura almibarada— a los diez vertidos, no a los finos.",
+      "taste3": "Kasuya dice que domina el dulzor y la acidez se suaviza; 45 clics pueden quedar finos, mientras que 40 son mucho más fáciles de repetir."
     },
     "kasuya-iced": {
       "title": "4:6 helado de Kasuya",
@@ -800,7 +801,8 @@
       "s04": "El quinto y último vertido de 30 g, hasta 150 g.",
       "teach1": "El agua baja a 150 g, la mitad del 4:6 normal, porque ya hay 80 g de hielo en la jarra.",
       "teach2": "Cinco vertidos de 30 g; el vídeo no da tiempos, así que la cuenta es la instrucción.",
-      "teach3": "90–93 °C es el rango común a las dos versiones heladas del vídeo."
+      "teach3": "90–93 °C es el rango común a las dos versiones heladas del vídeo.",
+      "taste3": "En la comparación Kasuya prefiere el Switch híbrido por una taza más suave y dulce; la versión 4:6 conserva más viveza."
     },
     "woelfl": {
       "title": "V60 de Wölfl con 60 g de preinfusión",
@@ -818,23 +820,6 @@
       "teach2": "Preinfusiona 30–40 s; la fuente sugiere acercar la nariz a la cama para seguir el desgasificado.",
       "teach3": "El segundo vertido son los 240 ml restantes, lento y constante, no a pulsos.",
       "teach4": "Antes de beber, mueve bien la jarra o remueve con cuchara para mezclar las capas."
-    },
-    "licata-w60": {
-      "title": "W60 de Licata con malla y papel",
-      "summary": "Doce gramos con 200 g en tres vertidos a lo largo de cuatro minutos, con la malla y el papel del W60 juntos.",
-      "version": "Coffee with April #210",
-      "grind": "Medio/fino; D50 = 611 µm",
-      "equipment": "HARIO W60 con malla y papel a la vez",
-      "notes": "La malla del W60 puede usarse sola, con papel o solo papel; esta receta usa ambas. No se publican temperatura ni café.",
-      "finish": "La fuente da 4:00 como tiempo total.",
-      "overview": "Una receta deliberadamente lenta: 12 g a través de 200 g en cuatro minutos, mucho más lenta que las V60 vecinas. La pila de malla y papel es lo que permite durar sin atascarse.",
-      "bestFor": "Quien quiera saber qué cambia la malla del W60 en el flujo",
-      "s00": "Vierte 100 g en círculos o al centro a las 0:00.",
-      "s01": "A las 0:35 vierte 50 g en círculos.",
-      "s02": "A las 1:05 vierte los últimos 50 g en círculos hasta 200 g.",
-      "teach1": "Los primeros 100 g pueden ir en círculos o directos al centro; el vídeo acepta ambos.",
-      "teach2": "Malla y papel juntos: el W60 puede con uno solo, pero aquí se apilan.",
-      "teach3": "Doce gramos en cuatro minutos es lentitud deliberada: deja que drene suave, sin prisa."
     },
     "lamarzocco": {
       "title": "La receta básica de espresso de La Marzocco",
@@ -905,6 +890,65 @@
       "teach1": "Red Honey es la etiqueta de proceso de Onyx para este café.",
       "teach2": "La ficha no indica temperatura, molinillo ni cesta; esos valores quedan abiertos.",
       "tasting": "Manzana Honeycrisp, cereza, vainilla y papaya."
+    },
+    "hedrick-ultimate": {
+      "title": "La base flexible de pour-over de Lance Hedrick",
+      "summary": "Hasta 30 g con una proporción de 1:14–1:17 y 85–100 °C, con bloom de 3 veces la dosis y un final según el tueste en unos 2–4 minutos.",
+      "version": "Lance Hedrick · 26 de noviembre de 2022",
+      "grind": "Media (molino no indicado)",
+      "equipment": "Cualquier dripper de pour-over; la fuente no indica uno",
+      "notes": "La fuente fija 30 g como límite superior, no como receta exacta. El intervalo de agua de 420–510 g se calcula a partir de ese máximo: 30 g a 1:14–1:17. El nivel de tueste determina la proporción y la temperatura; la dosis, el agua y los tiempos reales siguen esa elección.",
+      "finish": "La fuente indica 2–3 minutos tras un bloom de 1 minuto, o 3–4 minutos tras un bloom de 2 minutos.",
+      "overview": "Una base deliberadamente ajustable, no una receta única. El tueste desplaza la proporción y la temperatura, mientras que el caudal, el bloom y la agitación del lecho se mantienen lo bastante fijos para repetirlos.",
+      "bestFor": "Quien quiera un método estructurado que pueda ajustar entre distintos tuestes",
+      "s00": "Haz el bloom con 3 veces la dosis. Con el límite de 30 g mostrado aquí, son 90 g.",
+      "pour": "Vierte el agua restante a 6–8 g/s desde una altura que genere turbulencia profunda; la proporción elegida determina cuánto queda.",
+      "teach1": "Usa hasta 30 g; la receta se adapta alrededor de ese límite en lugar de exigir 30 g siempre.",
+      "teach2": "El tueste mueve la proporción entre 1:14 y 1:17 y la temperatura entre 85 y 100 °C; la fuente no fija una pareja concreta.",
+      "teach3": "Agita el bloom y espera 1–2 minutos antes del vertido principal.",
+      "teach4": "El agua restante se vierte a 6–8 g/s con altura suficiente para crear turbulencia profunda.",
+      "teach5": "Elige el remate según el drenaje: remueve en círculo si va lento, usa Wet WDT si va algo rápido o gira el lecho con una cuchara si va muy rápido.",
+      "taste1": "Hedrick informa una extracción de aproximadamente 20–21 % en su prueba del método.",
+      "taste2": "La molienda gruesa y la extracción relativamente rápida le dan, según dice, poca amargura y un final sin astringencia.",
+      "taste3": "Sus notas son acidez cítrica, dulzor y un cuerpo aterciopelado, casi almohadillado."
+    },
+    "chronicler-osmotic": {
+      "title": "El V60 de flujo osmótico de Coffee Chronicler",
+      "summary": "14–20 g a 1:15 y 93 °C, molienda media-gruesa, bloom de 40 segundos con 2,5 veces la dosis y una extracción de 3–5 minutos.",
+      "version": "The Coffee Chronicler · 5 de enero de 2021",
+      "grind": "Media-gruesa (molino no indicado)",
+      "equipment": "HARIO V60 con filtro de papel Cafec T90",
+      "notes": "La descripción indica bloom de 40 segundos; la narración del vídeo dice 45. Esta página conserva 40 segundos porque pertenecen a la capa numérica escrita por el autor y registra la discrepancia aparte. Los 210–300 ml se derivan del 1:15; los vertidos posteriores no tienen tiempos exactos.",
+      "finish": "La fuente indica unos 3–5 minutos en total.",
+      "overview": "Una rutina V60 que empieza por el centro: bloom medido, vertido suave al centro hasta la mitad del volumen y después un círculo que se amplía lentamente para el resto.",
+      "bestFor": "Un método V60 sencillo con un vertido central muy claro",
+      "s00": "Haz bloom durante 40 segundos con 2,5 veces la dosis seca: 35–50 ml para el intervalo de 14–20 g.",
+      "s01": "Después del bloom, vierte suavemente al centro hasta alcanzar la mitad del volumen total.",
+      "s02": "Vierte el resto en un círculo que se amplía lentamente, sin tocar el filtro de papel.",
+      "teach1": "Elige una dosis entre 14 y 20 g y mantén el agua a 1:15; los 210–300 ml de la cabecera corresponden a ese intervalo.",
+      "teach2": "El primer vertido completo va al centro, no contra la pared del dripper.",
+      "teach3": "Solo el último vertido se abre en círculo; la fuente pide expresamente no verter sobre el papel.",
+      "teach4": "Usa agua blanda, preferiblemente por debajo de 110 ppm de TDS, filtro cónico Cafec blanqueado y mantén la tetera baja para reducir la agitación.",
+      "teach5": "Nunca viertas sobre el papel ni más rápido de lo que drena el lecho; un lecho como arena húmeda sin lodo en la superficie es la señal visual.",
+      "taste1": "El autor describe un final largo y limpio, propio de un buen pour-over."
+    },
+    "wendelboe": {
+      "title": "La preparación Finca Tamana de Tim Wendelboe",
+      "summary": "36 g para 600 g de agua hirviendo con filtro Cafec Abaca+; el vídeo muestra un bloom aproximado, giro y un vertido final enérgico, sin tiempo total.",
+      "version": "Tim Wendelboe · 13 de junio de 2025",
+      "grind": "La fuente no lo indica",
+      "equipment": "Dripper no indicado; filtro de papel Cafec Abaca+",
+      "notes": "La descripción solo da café, agua y filtro. En el vídeo Wendelboe dice que el punto de ebullición local en Finca Tamana es de unos 92–93 °C, usa el mismo ajuste de molino para cada café, hace bloom con unos 100 g, gira, espera unos 30 segundos y vierte el resto con energía. Son observaciones de vídeo; las cantidades aproximadas no pasan a campos fijos.",
+      "finish": "No se publica tiempo total. Remueve antes de servir salvo que pases el café a otro recipiente.",
+      "overview": "Un método de campo flexible en Finca Tamana, no una receta muy especificada. El vídeo añade el flujo que falta en la descripción, pero deja abiertos molienda, modelo de dripper, patrón exacto de vertido y tiempo total.",
+      "bestFor": "Una taza grande con las constantes exactas del texto y el flujo tolerante de Wendelboe",
+      "teach1": "Empieza con café recién molido de alta calidad; Wendelboe lo considera parte de la receta, no una mejora opcional.",
+      "teach2": "Usa agua que considere suficientemente buena para beber sola.",
+      "teach3": "El vídeo muestra unos 100 g de bloom, un giro, unos 30 segundos de espera y un vertido enérgico para el resto.",
+      "s00": "Haz bloom con unos 100 g, suficiente para mojar todo el café molido; la cantidad del vídeo es aproximada.",
+      "s01": "Gira suavemente para saturar y nivelar el lecho.",
+      "s02": "Tras unos 30 segundos, vierte el resto con bastante energía; no prescribe una espiral ni un patrón fijo.",
+      "teach4": "Remueve el café antes de servir salvo que lo pases a otro recipiente."
     }
   },
   "waterQuality": "Perfil del agua",
@@ -1097,7 +1141,7 @@
   "updated": "Página actualizada",
   "grindHedged": "La fuente lo describe como su ajuste habitual, no un valor de receta",
   "valveInitial": "Válvula antes del primer vertido",
-  "stepDerived": "La fuente no publica este monto por separado; resulta de su total y los previos",
+  "stepDerived": "No publicado de forma independiente para este paso: se deriva de la fórmula o los totales indicados por la fuente",
   "micron": "Tamaño de molienda",
   "siftMesh": "Tamiz",
   "hardness": "Dureza",
@@ -1157,5 +1201,11 @@
   "evidenceLabel": "Texto original",
   "tastingTitle": "Sabor y textura",
   "flowRate": "Flujo {value} g/s",
-  "flowRateDerived": "≈ {value} g/s (calculado de este vertido)"
+  "flowRateDerived": "≈ {value} g/s (calculado de este vertido)",
+  "retiredRecipe": {
+    "title": "Esta receta se ha retirado",
+    "body": "El vídeo del W60 de Coffee with April era una prueba exploratoria, no una receta recomendada. April encontró la malla sola demasiado sedimentaria y la malla con papel más limpia, pero todavía plana y apagada. El resultado se conserva en la ficha del W60; esta URL sigue disponible para no romper enlaces existentes.",
+    "replacementAction": "Usar la receta W60 de Ngoc Hoang",
+    "equipmentAction": "Leer la ficha del W60"
+  }
 }

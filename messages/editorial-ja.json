@@ -149,7 +149,9 @@
     "lessStalling": "微粉の多い豆でも詰まりが少ないという声",
     "brightAcidity": "明るい酸味を引き出しやすい",
     "delicateBody": "とてもきれいで繊細なボディ",
-    "slowFlow": "遅い流れで接触時間が長い"
+    "slowFlow": "遅い流れで接触時間が長い",
+    "sedimentRisk": "メッシュ単独では沈殿が残りやすい",
+    "mutedFlavor": "メッシュ＋ペーパーで風味が弱くなることがある"
   },
   "editorialStrengths": {
     "clearTimeline": "工程と時間が明確で追いやすい。",
