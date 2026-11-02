@@ -297,3 +297,71 @@
 .guidance-value-list{margin:5px 0 0;padding:0;list-style:none;font-family:var(--sans);font-size:12px;line-height:1.65;color:#4b423a}.guidance-value-list li{padding:2px 0 2px 10px;position:relative}.guidance-value-list li:before{content:'';position:absolute;left:0;top:.72em;width:4px;height:4px;border-radius:50%;background:var(--accent)}
 .comparison-guidance-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.comparison-guidance-group{padding:14px;border:1px solid var(--line);background:#fcfaf7}.comparison-guidance-group>h3{font-family:var(--sans);font-size:11px;line-height:1.6;font-weight:600;color:#4f463e;margin-bottom:11px;padding-bottom:9px;border-bottom:1px solid var(--line)}
 @media(max-width:760px){.guidance-partial{grid-column:1}.comparison-guidance-grid{grid-template-columns:1fr}}
+
+/* Keep navigation readable wherever a hero photograph falls beneath it. */
+.site-header{background:var(--paper)}
+
+/* Recipe overview: one title, then aligned image and brewing information. */
+.detail-intro{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:start;gap:28px 36px;border-bottom:0}
+.detail-heading{grid-column:1/-1;max-width:960px;min-width:0}
+.detail-heading .detail-summary,.detail-heading .quick-answer{max-width:none}
+.detail-visual,.detail-overview{min-width:0}
+.detail-visual .recipe-detail-image{margin:0}
+.detail-visual .source-image-note{margin:0}
+.detail-overview{padding:24px;background:var(--soft)}
+.detail-overview .parameters{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px;margin:0 0 24px}
+.detail-overview .parameters>div{padding:0;border:0}
+.detail-overview .parameters dt{font-size:11px}
+.detail-overview .parameters dd{font-size:clamp(20px,2vw,28px);line-height:1.4;overflow-wrap:break-word}
+.detail-overview .parameters dd[data-long]{font:16px/1.6 var(--sans)}
+.detail-overview .detail-grind{margin:0 0 24px}
+.detail-overview .detail-spec-card{gap:20px 24px;border:0;background:transparent}
+.detail-overview .detail-spec-card>div{padding:0;border:0}
+.detail-overview .detail-actions{margin-top:24px;gap:16px;flex-wrap:wrap}
+
+/* Use space and quiet surfaces instead of nested table borders. */
+.detail-page>.teaching,.detail-page>.tasting,.detail-page>.learning-brief,.detail-page>.recipe-editorial,.detail-page>.derived-panel,.detail-page>.guidance-panel{border:0;margin:28px 0;padding:20px 0}
+.detail-page .learning-brief-grid{gap:20px;background:var(--soft);border:0;padding:24px}
+.detail-page .learning-brief-grid article{padding:0;background:transparent}
+.detail-page .learning-brief-grid small{border:0;padding-top:0}
+.detail-page .editorial-tradeoffs{gap:20px}
+.detail-page .editorial-tradeoffs>div{border:0;background:var(--soft)}
+.derived-panel{align-items:start;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.derived-facts{border:0;padding:0;margin-top:20px;background:transparent;max-width:560px}
+.derived-facts .facts-score{justify-content:flex-start;gap:20px}
+.derived-facts .facts-missing{border:0;padding-top:0}
+.derived-grid{gap:20px 24px;padding:24px;background:var(--soft)}
+.derived-grid>div{padding:0;background:transparent}
+.detail-page .guidance-item{border:0}
+.detail-page .guidance-references{border:0;padding-top:0}
+.detail-page .section-heading.small{display:block}
+.detail-page .section-heading.small .heading-rule{display:none}
+.detail-page .section-heading.small>p{width:auto;max-width:650px;margin-top:8px}
+
+/* Section introductions read together, above the learning content. */
+.learn-section-head{display:block;max-width:780px}
+.learn-section-head p{margin-top:10px}
+.learn-section{border-bottom:0}
+
+@media(max-width:1150px){
+ .derived-panel{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+ .detail-intro{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+ .detail-heading{grid-column:auto}
+ .detail-overview{padding:20px}
+ .detail-overview .parameters{gap:20px}
+ .detail-overview .parameters dd{font-size:24px}
+ .detail-overview .parameters dd[data-long],.detail-overview .parameters>div:nth-child(3) dd{font:15px/1.6 var(--sans)}
+ .detail-overview .parameters dt{font-size:11px}
+ .detail-page .learning-brief-grid{padding:20px}
+ .derived-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:20px;gap:20px}
+ .detail-page>.teaching,.detail-page>.tasting,.detail-page>.learning-brief,.detail-page>.recipe-editorial,.detail-page>.derived-panel,.detail-page>.guidance-panel{margin:24px 0;padding:12px 0}
+}
+.detail-body>div,.detail-sidebar,.step-list li>div{min-width:0}
+@media(max-width:760px){
+ .step-title{flex-wrap:wrap;gap:4px 12px}
+ .step-time{white-space:normal}
+ .step-video{white-space:normal}
+ .site-header .wordmark{min-width:0;overflow-wrap:anywhere}
+}

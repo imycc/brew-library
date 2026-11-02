@@ -289,7 +289,14 @@ export function RecipeDetail({id}:{id:string}){
  const provided=sourceFacts(r).length-missing.length;
  const sourceObservations=(r.teaching||[]).slice(0,2);
  return <main id="main" className="page detail-page"><Link className="back-link" href={href()}><ArrowLeft size={16}/>{t('back')}</Link>
-   <section className="detail-intro"><div><p className="eyebrow">{r.author} · {t(r.context)} · {t(isEspresso(r)?'methodEspresso':'methodPourover')}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><p className="quick-answer">{quickAnswer(r,t,unit)}</p>{editorial.sourceImage?<OfficialSourceImage image={editorial.sourceImage} name={t(`recipes.${r.copy}.title`)} kind="recipe" className="recipe-detail-image"/>:<p className="source-image-note">{t('sourceImageUnavailable')}</p>}<Parameters recipe={r}/><div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong>{r.grindHedged?<em className="grind-hedged">{t('grindHedged')}</em>:null}</div><div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div><div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewerId==='unspecified'?t(isEspresso(r)?'machineUnspecified':'brewerUnspecified'):r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t(isEspresso(r)?'basket':'filterPaper')}</span><strong>{isEspresso(r)?basketText(r)||t('unknown'):paperDetails(r,t)}</strong></div></div></section>
+   <section className="detail-intro">
+     <div className="detail-heading"><p className="eyebrow">{r.author} · {t(r.context)} · {t(isEspresso(r)?'methodEspresso':'methodPourover')}</p><h1>{t(`recipes.${r.copy}.title`)}</h1><p className="detail-version">{t(`recipes.${r.copy}.version`)}</p><p className="detail-summary">{t(`recipes.${r.copy}.summary`)}</p><p className="quick-answer">{quickAnswer(r,t,unit)}</p></div>
+     <div className="detail-visual">{editorial.sourceImage?<OfficialSourceImage image={editorial.sourceImage} name={t(`recipes.${r.copy}.title`)} kind="recipe" className="recipe-detail-image"/>:<p className="source-image-note">{t('sourceImageUnavailable')}</p>}</div>
+     <div className="detail-overview"><Parameters recipe={r}/>
+     <div className="detail-grind"><span>{t('grind')}</span><strong>{t(`recipes.${r.copy}.grind`)}</strong>{r.grindHedged?<em className="grind-hedged">{t('grindHedged')}</em>:null}</div>
+     <div className="detail-spec-card"><div><span>{t('equipment')}</span><strong>{r.brewerId==='unspecified'?t(isEspresso(r)?'machineUnspecified':'brewerUnspecified'):r.brewer}</strong></div><div><span>{t('grinder')}</span><strong>{grinderDetails(r,t)}</strong></div><div><span>{t('beans')}</span><strong>{coffeeDetails(r,t)}</strong></div><div><span>{t(isEspresso(r)?'basket':'filterPaper')}</span><strong>{isEspresso(r)?basketText(r)||t('unknown'):paperDetails(r,t)}</strong></div></div>
+     <div className="detail-actions"><CompareButton recipe={r}/><a className="source-link" href={r.source.url} target="_blank" rel="noreferrer">{t('source')}<ArrowUpRight size={17}/></a></div></div>
+   </section>
    {r.teaching?.length?<section className="teaching" data-teaching><h2>{t('teachingTitle')}</h2><ul>{r.teaching.map((item,i)=><li key={i}>{item.step!==undefined?<a className="teaching-step" href={`#step-${item.step+1}`}>{t('teachingStep',{number:item.step+1})}</a>:null}<span>{t(item.key)}</span></li>)}</ul></section>:null}
    {r.tasting?.length?<section className="tasting" data-tasting><h2>{t('tastingTitle')}</h2><ul>{r.tasting.map(key=><li key={key}>{t(key)}</li>)}</ul></section>:null}
    <section className="learning-brief" data-learning-brief>
@@ -301,7 +308,14 @@ export function RecipeDetail({id}:{id:string}){
      <div className="editorial-tradeoffs"><div><h3><span aria-hidden="true">＋</span>{t('strengths')}</h3><ul>{editorial.strengths.map(key=><li key={key}>{t(`editorialStrengths.${key}`)}</li>)}</ul></div><div><h3><span aria-hidden="true">−</span>{t('considerations')}</h3><ul>{editorial.considerations.map(key=><li key={key}>{t(`editorialConsiderations.${key}`)}</li>)}</ul></div></div>
    </section>
    <section className="derived-panel" data-derived-panel>
-     <div className="derived-head"><h2>{t('derivedTitle')}</h2><p>{t('derivedNote')}</p></div>
+     <div className="derived-head"><h2>{t('derivedTitle')}</h2><p>{t('derivedNote')}</p>
+     {isEspresso(r)&&r.extraction?.preInfusion?.seconds!=null&&r.extraction.timeBasis==='unknown'?<p className="facts-missing" data-time-basis-unknown>{t('timeBasisUnknown')}</p>:null}
+     <div className="derived-facts">
+       <p className="facts-score"><span>{t('sourceFacts')}</span><strong>{provided} / {sourceFacts(r).length}</strong></p>
+       {missing.length?<p className="facts-missing">{t('missingFacts')} {missing.map(fact=>t(fact.label)).join(' · ')}.</p>:<p className="facts-missing">{t('missingNone')}</p>}
+       {unit&&r.temperature!==null&&unit!==r.temperatureUnit?<p className="facts-missing" data-converted-temp>{t('convertedNote',{value:temperatureLabel(r)})}</p>:null}
+     </div>
+     </div>
      <dl className={isEspresso(r)&&postPreInfusion===null?'derived-grid single':'derived-grid'}>
        <div><dt>{t(isEspresso(r)?'ratioEspresso':'ratio')}</dt><dd>{ratio(r,locale)}</dd></div>
        {isEspresso(r)?(postPreInfusion!==null&&postPreInfusion>=0?<div><dt>{t('afterPreInfusion')}</dt><dd>{time(postPreInfusion)}</dd></div>:null):<>
@@ -310,12 +324,6 @@ export function RecipeDetail({id}:{id:string}){
        <div><dt>{t(phase&&phase.kind==='start'?'afterLastPourStart':'drawdown')}</dt><dd>{phase&&phase.drawdown!==null?(phase.drawdown[0]===phase.drawdown[1]?time(phase.drawdown[0]):`${time(phase.drawdown[0])}–${time(phase.drawdown[1])}`):t('unknown')}</dd></div>
        </>}
      </dl>
-     {isEspresso(r)&&r.extraction?.preInfusion?.seconds!=null&&r.extraction.timeBasis==='unknown'?<p className="facts-missing" data-time-basis-unknown>{t('timeBasisUnknown')}</p>:null}
-     <div className="derived-facts">
-       <p className="facts-score"><span>{t('sourceFacts')}</span><strong>{provided} / {sourceFacts(r).length}</strong></p>
-       {missing.length?<p className="facts-missing">{t('missingFacts')} {missing.map(fact=>t(fact.label)).join(' · ')}.</p>:<p className="facts-missing">{t('missingNone')}</p>}
-       {unit&&r.temperature!==null&&unit!==r.temperatureUnit?<p className="facts-missing" data-converted-temp>{t('convertedNote',{value:temperatureLabel(r)})}</p>:null}
-     </div>
    </section>
    <GuidancePanel recipe={r}/>
    <div className="detail-body"><div>
