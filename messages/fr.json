@@ -153,6 +153,16 @@
   "water": "Eau",
   "brewTime": "Durée",
   "ratio": "Café : eau",
+  "ratioConverter": {
+    "title": "Adapter la recette",
+    "intro": "Conservez le ratio de la source. Modifiez le café ou l’eau : l’autre quantité sera mise à jour.",
+    "reset": "Revenir aux quantités source",
+    "status": "Adapté à {dose} g de café et {water} {unit} d’eau.",
+    "sourceStatus": "Les quantités de la source sont affichées.",
+    "sourceText": "Les consignes de l’auteur ci-dessous conservent leurs chiffres d’origine ; la chronologie et les quantités des étapes affichent votre adaptation.",
+    "caveat": "Le temps, la mouture et le rythme de versement restent inchangés. Une forte adaptation peut modifier le débit et l’extraction.",
+    "unavailable": "Cette recette comporte une plage, une limite haute, de la glace ou une formule de la source. L’adaptation automatique est donc désactivée pour ne pas présenter plusieurs préparations possibles comme un seul ratio fixe."
+  },
   "ratioEspresso": "Café : espresso",
   "timeline": "Chronologie des versements",
   "stepAmount": "Eau ajoutée par versement",

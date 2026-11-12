@@ -153,6 +153,16 @@
   "water": "Brew water",
   "brewTime": "Brew time",
   "ratio": "Coffee : water",
+  "ratioConverter": {
+    "title": "Scale this recipe",
+    "intro": "Keep the source ratio. Change coffee or water, and the other amount updates.",
+    "reset": "Reset to source",
+    "status": "Scaled to {dose} g coffee and {water} {unit} water.",
+    "sourceStatus": "Showing the source amounts.",
+    "sourceText": "The author's steps below keep their original numbers; the timeline and step amounts show your scale.",
+    "caveat": "Timing, grind and pouring rhythm stay unchanged. Large changes can alter flow and extraction.",
+    "unavailable": "This recipe includes a range, upper limit, ice or source formula, so automatic scaling is withheld to avoid treating several possible brews as one fixed ratio."
+  },
   "ratioEspresso": "Coffee : espresso",
   "timeline": "Pour timeline",
   "stepAmount": "Water added per pour",

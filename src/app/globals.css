@@ -365,3 +365,35 @@
  .step-video{white-space:normal}
  .site-header .wordmark{min-width:0;overflow-wrap:anywhere}
 }
+
+/* Interactive recipe scaling stays editorial: the source remains visible while
+   the timeline and step amounts respond to the brewer's chosen dose or water. */
+.ratio-converter{margin:24px 0 28px;padding:22px;border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--soft)}
+.ratio-converter header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start}
+.ratio-converter h2{font-size:23px;margin:4px 0 7px}
+.ratio-converter header p:not(.eyebrow){font-size:13px;line-height:1.8;color:var(--muted);max-width:620px}
+.ratio-converter-ratio{min-width:128px;text-align:right}
+.ratio-converter-ratio dt{font-size:11px;color:var(--muted)}
+.ratio-converter-ratio dd{font-family:var(--serif);font-size:19px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;margin-top:4px}
+.ratio-converter-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;margin-top:18px}
+.ratio-converter-field{display:grid;gap:7px;font-size:11px;color:var(--muted)}
+.ratio-converter-field>span{display:flex;align-items:center;gap:7px;font-weight:500;letter-spacing:.02em}
+.ratio-converter-field small{font-size:10px;font-weight:400;color:var(--muted)}
+.ratio-converter-field input{width:100%;height:54px;padding:7px 12px;border:1px solid #bcb1a5;border-radius:3px;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:25px;font-variant-numeric:tabular-nums}
+.ratio-converter-field input[aria-invalid='true']{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.ratio-converter-reset{min-height:54px;padding-inline:16px;white-space:normal}
+.ratio-converter-reset:disabled{opacity:.42;background:transparent}
+.ratio-converter-status{margin-top:13px;font-size:12px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.ratio-converter[data-scaled] .ratio-converter-status{color:var(--accent-dark);font-weight:600}
+.ratio-converter-note{margin-top:7px;font-size:11px;line-height:1.8;color:var(--muted)}
+.ratio-converter-unavailable{border-left-color:#a18c72}
+.ratio-converter-unavailable h2{margin:0 0 7px}
+.ratio-converter-unavailable p{font-size:12px;line-height:1.85;color:var(--muted)}
+.step-source-label{display:inline-block;margin-right:4px;padding:1px 5px;border:1px solid #c7bbad;border-radius:2px;color:#7d6b58;font:10px/1.6 var(--sans);letter-spacing:.02em;vertical-align:1px}
+@media(max-width:760px){
+ .ratio-converter{padding:18px}
+ .ratio-converter header{grid-template-columns:1fr;gap:12px}
+ .ratio-converter-ratio{text-align:left;min-width:0}
+ .ratio-converter-controls{grid-template-columns:1fr}
+ .ratio-converter-reset{width:100%}
+}

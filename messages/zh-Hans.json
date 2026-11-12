@@ -153,6 +153,16 @@
   "water": "注水",
   "brewTime": "冲煮时间",
   "ratio": "粉水比",
+  "ratioConverter": {
+    "title": "按比例换算",
+    "intro": "保留来源粉水比。修改咖啡粉或总水量，另一项会同步更新。",
+    "reset": "重置为来源用量",
+    "status": "已按原比例换算为 {dose} g 咖啡粉、{water} {unit} 水。",
+    "sourceStatus": "当前显示来源用量。",
+    "sourceText": "下方作者说明保留来源原文数字；时间轴与步骤用量会显示你设置的换算结果。",
+    "caveat": "时间、研磨与注水节奏保持不变。大幅改量时，流速与萃取结果可能不同。",
+    "unavailable": "此配方含数值范围、上限、冰量或来源公式，暂不自动换算，以免把多个可能条件误当单一比例。"
+  },
   "ratioEspresso": "粉液比",
   "timeline": "注水时间轴",
   "stepAmount": "每段新增水量",

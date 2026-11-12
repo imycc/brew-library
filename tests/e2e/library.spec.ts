@@ -30,6 +30,33 @@ test('homepage is editorial; complete instructions are on the detail page',async
  await expect(page.locator('.step-list li')).toHaveCount(6);
  expect(errors).toEqual([]);
 });
+test('recipe ratio converter updates coffee, water and every pour amount',async({page})=>{
+ await page.goto(`${base}/zh-Hant/recipes/kasuya-46/`);
+ const converter=page.locator('[data-ratio-converter]');
+ const dose=page.locator('[data-dose-input]');
+ const water=page.locator('[data-water-input]');
+ const timeline=page.getByTestId('pour-timeline');
+ await expect(converter).toBeVisible();
+ await expect(dose).toHaveValue('20');
+ await expect(water).toHaveValue('300');
+ await dose.fill('18');
+ await expect(water).toHaveValue('270');
+ await expect(converter).toHaveAttribute('data-scaled','true');
+ await expect(timeline).toContainText('45 mL');
+ await expect(timeline).not.toContainText('50 mL');
+ await expect(page.locator('.step-list li').first()).toContainText('+45 mL');
+ await expect(page.locator('.step-list li').last()).toContainText('來源原文');
+ await water.fill('240');
+ await expect(dose).toHaveValue('16');
+ await expect(timeline).toContainText('40 mL');
+ await page.locator('[data-ratio-reset]').click();
+ await expect(dose).toHaveValue('20');
+ await expect(water).toHaveValue('300');
+ await expect(timeline).toContainText('50 mL');
+ await expect(converter).not.toHaveAttribute('data-scaled','true');
+ await page.goto(`${base}/zh-Hant/recipes/kurasu-flash-brew/`);
+ await expect(page.locator('[data-ratio-converter-unavailable]')).toContainText('冰量');
+});
 test('recipe details expose editorial starting points with source references',async({page})=>{
  await page.goto(`${base}/en/recipes/kasuya-46/`);
  await expect(page.locator('[data-guidance-panel]')).toBeVisible();
