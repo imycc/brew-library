@@ -153,6 +153,16 @@
   "water": "Brühwasser",
   "brewTime": "Brühzeit",
   "ratio": "Kaffee : Wasser",
+  "ratioConverter": {
+    "title": "Rezept skalieren",
+    "intro": "Das Verhältnis der Quelle bleibt erhalten. Ändere Kaffee oder Wasser; die andere Menge wird aktualisiert.",
+    "reset": "Mengen der Quelle wiederherstellen",
+    "status": "Auf {dose} g Kaffee und {water} {unit} Wasser skaliert.",
+    "sourceStatus": "Die Mengen der Quelle werden angezeigt.",
+    "sourceText": "Die Schritte des Autors behalten ihre ursprünglichen Zahlen; Zeitleiste und Mengen je Schritt zeigen deine Skalierung.",
+    "caveat": "Zeit, Mahlgrad und Aufgussrhythmus bleiben unverändert. Große Änderungen können Durchfluss und Extraktion verändern.",
+    "unavailable": "Dieses Rezept enthält einen Bereich, eine Obergrenze, Eis oder eine Formel aus der Quelle. Deshalb wird nicht automatisch skaliert, damit mehrere mögliche Zubereitungen nicht als ein festes Verhältnis erscheinen."
+  },
   "ratioEspresso": "Kaffee : Espresso",
   "timeline": "Aufguss-Zeitachse",
   "stepAmount": "Wassermenge je Aufguss",

@@ -92,3 +92,11 @@ final result: passed
 - Restored Tim Wendelboe's video-demonstrated workflow as four explicit steps while keeping its approximate quantities out of fixed fields. Marked Asser Christensen's 40-versus-45-second bloom conflict rather than smoothing it away.
 - Added video-supported teaching and tasting language to Rolf, Kasuya, Hedrick and Christensen records; all nine locales validate.
 - Verification: 44 source-backed recipes, 8 active review manifests and 1 retired source analysis validated, TypeScript passed, 39 unit/data tests passed, the production build generated 486 localized pages, and the full Playwright run completed with 35 passed and 5 analytics tests skipped because no local tracking code is configured.
+
+## 2026-11-12: interactive recipe ratio converter
+
+- Added a source-ratio-preserving calculator to fixed-dose, fixed-water pour-over recipes. Editing coffee updates water, editing water updates coffee, and the full pour schedule scales while timing and grind guidance stay unchanged.
+- The timeline and step metadata show the selected scale. Author instructions remain visibly labelled as source text so their original numbers are not mistaken for the scaled schedule.
+- Range, upper-limit, iced and source-formula recipes withhold automatic scaling instead of turning multiple valid brewing conditions into a false single ratio.
+- Desktop and 390 px Chromium captures had no horizontal overflow. The conversion from 20 g / 300 mL to 18 g / 270 mL produced pours of 45, 63, 54, 54 and 54 mL with cumulative totals through 270 mL.
+- Verification: TypeScript passed, all 48 unit/data tests passed, all 1,401 messages validated across nine locales, the production build verified 477 localized static pages, and the full Chromium library suite passed 38/38 tests.

@@ -10,6 +10,7 @@ import {glossaryForRecipe} from '../src/lib/glossary';
 import {brewTimeText} from '../src/lib/faq';
 import {validate} from '../scripts/validate';
 import {brewTimeline,curatedLearningRecipeIds,learningLevel,recipeLearning,searchableRecipeText,secondsLabel} from '../src/lib/learning';
+import {canScalePourOver,doseForWater,scalePourSchedule,waterForDose} from '../src/lib/recipe-scaling';
 test('source and translation validation',async()=>{await validate();});
 test('original HARIO times and units remain distinct',()=>{
  const r=pourOverRecipes[0];assert.equal(r.water.unit,'mL');assert.deepEqual(r.steps.filter(s=>s.amount).map(s=>s.at),[0,45,90,130,160]);
@@ -17,6 +18,23 @@ test('original HARIO times and units remain distinct',()=>{
 });
 test('Pulsar amount is transparently derived without invented later pour times',()=>{
  const r=pourOverRecipes[2];assert(r.water.derived);assert.equal(r.water.amount,r.dose*17);assert(r.steps.some(s=>s.at===null));
+});
+test('recipe ratio converter scales both directions and keeps the source ratio',()=>{
+ const kasuya=po('kasuya-46');
+ assert(canScalePourOver(kasuya));
+ assert.equal(waterForDose(kasuya,18),270);
+ assert.equal(doseForWater(kasuya,240),16);
+ const scaled=scalePourSchedule(kasuya,270);
+ assert.equal(scaled.dose,18);
+ assert.equal(scaled.water,270);
+ assert.deepEqual(scaled.steps.map(step=>step.amount),[45,63,54,54,54,null]);
+ assert.deepEqual(scaled.steps.map(step=>step.cumulative),[45,108,162,216,270,null]);
+ assert.equal(scalePourSchedule(kasuya,275).steps[4].cumulative,275);
+ const oneCup=po('hoffmann-one-cup');
+ assert.equal(scalePourSchedule(oneCup,333).steps.filter(step=>step.cumulative!==null).at(-1)?.cumulative,333);
+ assert.equal(canScalePourOver(po('hedrick-ultimate-pourover')),false);
+ assert.equal(canScalePourOver(po('kurasu-flash-brew')),false);
+ assert.equal(canScalePourOver(recipes.find(recipe=>recipe.method==='espresso')!),false);
 });
 test('filters combine and support empty results',()=>{
  assert.equal(filterRecipes(recipes,{q:'JAMES',brewer:'v60',dose:'15'},r=>r.author).length,1);

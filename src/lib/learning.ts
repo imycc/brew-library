@@ -105,14 +105,14 @@ export function secondsLabel(value:number):string{
 // Pour-over steps are discrete additions. Espresso needs ranges: the end of a
 // pre-infusion is the start of extraction, and a target yield belongs to the end
 // of the shot rather than to 0:00. This keeps the timeline aligned with the data.
-export function brewTimeline(recipe:Recipe):TimelineItem[]{
+export function brewTimeline(recipe:Recipe,steps:Recipe['steps']=recipe.steps):TimelineItem[]{
   if(isEspresso(recipe)){
-    const phases:TimelineItem[]=recipe.steps.flatMap(step=>{
+    const phases:TimelineItem[]=steps.flatMap(step=>{
       if(!['preinfuse','extract'].includes(step.action))return [];
       const start=step.at??0;
       const timeBasis=recipe.extraction?.timeBasis??'unknown';
       const stop=timeBasis==='total'||timeBasis==='postPreInfusion'
-        ?recipe.steps.find(candidate=>candidate.action==='stop'&&candidate.at!==null&&candidate.at>=start)?.at
+        ?steps.find(candidate=>candidate.action==='stop'&&candidate.at!==null&&candidate.at>=start)?.at
         :null;
       const end=step.end??(step.action==='extract'&&(timeBasis==='total'||timeBasis==='postPreInfusion')?stop??recipe.duration?.[1]??null:null);
       return [{start,end,amount:step.amount,unit:step.unit||recipe.yield?.unit||null,labelKey:`step.${step.action}`,cumulative:step.cumulative}];
@@ -120,7 +120,7 @@ export function brewTimeline(recipe:Recipe):TimelineItem[]{
     return phases;
   }
   if(!isPourOver(recipe))return [];
-  return recipe.steps
+  return steps
     .filter(step=>['pour','bloom','pulses','topup'].includes(step.action))
     .map(step=>({start:step.at,end:step.end??null,amount:step.amount,unit:step.unit||recipe.water.unit,labelKey:`step.${step.action}`,cumulative:step.cumulative}));
 }

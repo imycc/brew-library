@@ -153,6 +153,16 @@
   "water": "Agua",
   "brewTime": "Tiempo",
   "ratio": "Café : agua",
+  "ratioConverter": {
+    "title": "Escalar la receta",
+    "intro": "Mantén la proporción de la fuente. Cambia el café o el agua y la otra cantidad se actualizará.",
+    "reset": "Volver a la fuente",
+    "status": "Escalado a {dose} g de café y {water} {unit} de agua.",
+    "sourceStatus": "Mostrando las cantidades de la fuente.",
+    "sourceText": "Los pasos del autor conservan sus cifras originales; la línea de tiempo y las cantidades de cada paso muestran tu escala.",
+    "caveat": "El tiempo, la molienda y el ritmo de vertido no cambian. Una variación grande puede alterar el flujo y la extracción.",
+    "unavailable": "Esta receta incluye un intervalo, un límite máximo, hielo o una fórmula de la fuente; por eso no se escala automáticamente y se evita tratar varias preparaciones posibles como una sola proporción fija."
+  },
   "ratioEspresso": "Café : espresso",
   "timeline": "Secuencia de vertidos",
   "stepAmount": "Agua añadida por vertido",

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {useLocale,useTranslations} from 'next-intl';
 import {ArrowRight,ArrowUpRight,ArrowLeft,MagnifyingGlass,Plus,X,Globe,CaretDown,Check,CoffeeBean,Drop,Thermometer,Clock,ShareNetwork,List as MenuIcon,Funnel} from '@phosphor-icons/react';
-import {createContext,useContext,useEffect,useState,useCallback,useRef,type ReactNode,type KeyboardEvent} from 'react';
+import {createContext,useContext,useEffect,useState,useCallback,useId,useRef,type ReactNode,type KeyboardEvent} from 'react';
 import {BASE,recipes,parseSelection,toggleSelection,filterRecipes,methodFilterKeys,methodFilterParam,recipeIndex,time,ratio,doseText,waterText,videoLink,stepFlow,accountedAdditions,bloomShare,pourPhase,sourceFacts,iceAmountText,isEspresso,isPourOver,pourOverRecipes,espressoRecipes,yieldText,pressureText,preInfusionText,basketText,puckPrepKeys,temperatureLabel,type Recipe,type FilterKey,type RecipeFilters,type Method} from '@/lib/recipes';
 import {formatTemperature,temperatureUnits,type TemperatureUnit} from '@/lib/temperature';
 import {recipeEditorial} from '@/lib/editorial';
@@ -15,11 +15,13 @@ import {guidanceConfig,guidanceFieldLabelKeys,guidanceForRecipe,guidancePartialF
 import {OfficialSourceImage} from '@/components/source-image';
 import {locales,localeNames,type Locale} from '@/i18n/locales';
 import {ANALYTICS_EVENTS,trackAnalyticsEvent} from '@/lib/analytics';
+import {canScalePourOver,doseForWater,roundRecipeAmount,scalePourSchedule,waterForDose} from '@/lib/recipe-scaling';
 
 type UrlContextType={params:URLSearchParams;setParams:(changes:Record<string,string|null>)=>void;ids:string[];toggle:(id:string)=>void;notice:string};
 const UrlContext=createContext<UrlContextType|null>(null);
 type TemperatureContextType={unit:TemperatureUnit|null;setUnit:(unit:TemperatureUnit|null)=>void};
 const TemperatureContext=createContext<TemperatureContextType|null>(null);
+function inputAmount(value:number){return String(roundRecipeAmount(value));}
 function useTemperature(){const value=useContext(TemperatureContext);if(!value)throw new Error('Missing temperature provider');return value;}
 function useLibrary(){const v=useContext(UrlContext);if(!v)throw new Error('Missing library provider');return v;}
 export function LibraryProvider({children}:{children:ReactNode}){
@@ -275,15 +277,44 @@ function ComparisonGuidance({recipes:recipeList}:{recipes:Recipe[]}){
 }
 export function RecipeDetail({id}:{id:string}){
  const t=useTranslations();const locale=useLocale();const {unit}=useTemperature();const href=useHref();const r=recipes.find(r=>r.id===id)!;
+ const converterId=useId();
+ const scalableRecipe=canScalePourOver(r)?r:null;
+ const sourceWater=scalableRecipe?.water.amount??0;
+ const [conversion,setConversion]=useState(()=>({doseInput:String(r.dose),waterInput:String(sourceWater),dose:r.dose,water:sourceWater}));
+ useEffect(()=>{setConversion({doseInput:String(r.dose),waterInput:String(sourceWater),dose:r.dose,water:sourceWater});},[r.id,r.dose,sourceWater]);
+ const doseInvalid=conversion.doseInput.trim()===''||!Number.isFinite(Number(conversion.doseInput))||Number(conversion.doseInput)<=0;
+ const waterInvalid=conversion.waterInput.trim()===''||!Number.isFinite(Number(conversion.waterInput))||Number(conversion.waterInput)<=0;
+ const conversionApplied=!!scalableRecipe&&(Math.abs(conversion.dose-r.dose)>.05||Math.abs(conversion.water-scalableRecipe.water.amount)>.05);
+ const scaledSchedule=scalableRecipe?scalePourSchedule(scalableRecipe,conversion.water):null;
+ const displayedSteps=scaledSchedule?r.steps.map((step,index)=>({...step,amount:scaledSchedule.steps[index].amount,cumulative:scaledSchedule.steps[index].cumulative})):r.steps;
+ const updateDose=(next:string)=>{
+   if(!scalableRecipe){return;}
+   const parsed=Number(next);
+   if(next.trim()===''||!Number.isFinite(parsed)||parsed<=0){setConversion(current=>({...current,doseInput:next}));return;}
+   const dose=roundRecipeAmount(parsed);
+   const water=waterForDose(scalableRecipe,dose);
+   setConversion({doseInput:next,waterInput:inputAmount(water),dose,water});
+ };
+ const updateWater=(next:string)=>{
+   if(!scalableRecipe){return;}
+   const parsed=Number(next);
+   if(next.trim()===''||!Number.isFinite(parsed)||parsed<=0){setConversion(current=>({...current,waterInput:next}));return;}
+   const water=roundRecipeAmount(parsed);
+   const dose=doseForWater(scalableRecipe,water);
+   setConversion({doseInput:inputAmount(dose),waterInput:next,dose,water});
+ };
+ const resetConversion=()=>setConversion({doseInput:String(r.dose),waterInput:String(sourceWater),dose:r.dose,water:sourceWater});
  const editorial=recipeEditorial[r.id];
  const lesson=learningFor(r);
  const faq=recipeFaq(r,t,(value,source,max)=>formatTemperature(value,source,unit,max).text);
  const related=recipes.filter(item=>item.id!==r.id&&item.method===r.method&&(item.brewerId===r.brewerId||item.authorId===r.authorId)).slice(0,3);
- const timeline=brewTimeline(r);
+ const timeline=brewTimeline(r,displayedSteps);
  const glossary=glossaryForRecipe(searchableRecipeText(r,t));
  const postPreInfusion=isEspresso(r)&&r.duration&&r.extraction?.preInfusion?.seconds!=null&&r.extraction.timeBasis==='postPreInfusion'?r.duration[0]-r.extraction.preInfusion.seconds:null;
  const percent=new Intl.NumberFormat(locale,{style:'percent',maximumFractionDigits:1});
  const additionTotal=accountedAdditions(r);
+ const displayedAdditionTotal=conversionApplied&&additionTotal?{amount:conversion.water,unit:additionTotal.unit}:additionTotal;
+ const amountFormat=new Intl.NumberFormat(locale,{maximumFractionDigits:1});
  const phase=pourPhase(r);
  const missing=sourceFacts(r).filter(fact=>!fact.provided);
  const provided=sourceFacts(r).length-missing.length;
@@ -328,8 +359,18 @@ export function RecipeDetail({id}:{id:string}){
    <GuidancePanel recipe={r}/>
    <div className="detail-body"><div>
      {r.preparation.length||bedPrepText(r,t).length||r.doseGround?<section className="preparation"><h2>{t('preparation')}</h2>{r.preparation.map(key=><p key={key}>{t(key)}</p>)}{bedPrepText(r,t).length?<ul className="bed-prep">{bedPrepText(r,t).map(chip=><li key={chip}>{chip}</li>)}</ul>:null}{r.doseGround?<p className="muted">{t('groundMoreThanDosed',{ground:r.doseGround,dose:r.dose})}</p>:null}</section>:null}
-     {timeline.length?<section className="timeline-section" data-testid="pour-timeline"><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t(isEspresso(r)?'shotTimeline':'stepAmount')}</p></div><ol className="pour-timeline">{timeline.map((item,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{item.start===null?t('sequence'):`${secondsLabel(item.start)}${item.end!==null?`–${secondsLabel(item.end)}`:''}`}</strong><span>{t(item.labelKey)}{item.amount===null?' · —':` · ${item.amount} ${item.unit||''}`}{item.amount!==null&&additionTotal?<em className="timeline-share"> {percent.format(item.amount/additionTotal.amount)}</em>:null}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>:null}
-     <section className="steps-section"><h2>{t('steps')}</h2>{r.steps.length?<ol className="step-list">{r.steps.map((s,i)=><li key={i} id={`step-${i+1}`}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}{r.source.video&&s.videoAt!==undefined?<a className="step-video" href={videoLink(r.source.video,s.videoAt)} target="_blank" rel="noreferrer">{t('videoStep',{time:time(s.videoAt)})}</a>:null}</span></div><div className="step-meta">{s.temperature?<span>{t('temperature')} {formatTemperature(s.temperature,r.temperatureUnit,unit).text}</span>:null}{s.pressure!==undefined?<span>{t('pressure')} {s.pressure} bar</span>:null}{s.amount!==null?<span>+{s.amount} {stepUnit(r,s)}{s.derived?'*':null}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {s.cumulative} {stepUnit(r,s)}</span>:null}{stepFacets(s,t).map(facet=><span className="step-facet" key={facet}>{facet}</span>)}{(()=>{const flow=stepFlow(s);return flow?<span className="step-rate">{t(flow.published?'flowRate':'flowRateDerived',{value:`${flow.published&&flow.approximate?'≈':''}${flow.value}`})}</span>:null;})()}</div><p>{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(s.instruction||`instruction.${s.action}`)}</p></div></li>)}</ol>:<p className="muted" data-no-steps>{t('noStepsPublished')}</p>}{r.steps.some(s=>s.derived)?<p className="muted">* {t('stepDerived')}</p>:null}</section>
+     {scalableRecipe?<section className="ratio-converter" data-ratio-converter data-scaled={conversionApplied||undefined} aria-labelledby={`${converterId}-title`}>
+       <header><div><p className="eyebrow">RECIPE SCALE</p><h2 id={`${converterId}-title`}>{t('ratioConverter.title')}</h2><p>{t('ratioConverter.intro')}</p></div><dl className="ratio-converter-ratio"><dt>{t('ratio')}</dt><dd>{ratio(r,locale)}</dd></dl></header>
+       <div className="ratio-converter-controls">
+         <label className="ratio-converter-field"><span><CoffeeBean size={18} weight="light"/>{t('dose')} <small>g</small></span><input data-dose-input type="number" inputMode="decimal" min="0.1" max="9999" step="0.1" value={conversion.doseInput} aria-invalid={doseInvalid} aria-describedby={`${converterId}-note`} onChange={event=>updateDose(event.target.value)} onBlur={()=>setConversion(current=>({...current,doseInput:inputAmount(current.dose)}))}/></label>
+         <label className="ratio-converter-field"><span><Drop size={18} weight="light"/>{t('water')} <small>{scalableRecipe.water.unit}</small></span><input data-water-input type="number" inputMode="decimal" min="0.1" max="9999" step="0.1" value={conversion.waterInput} aria-invalid={waterInvalid} aria-describedby={`${converterId}-note`} onChange={event=>updateWater(event.target.value)} onBlur={()=>setConversion(current=>({...current,waterInput:inputAmount(current.water)}))}/></label>
+         <button className="button button-secondary ratio-converter-reset" data-ratio-reset type="button" disabled={!conversionApplied} onClick={resetConversion}>{t('ratioConverter.reset')}</button>
+       </div>
+       <p className="ratio-converter-status" role="status" aria-live="polite" data-conversion-status>{conversionApplied?t('ratioConverter.status',{dose:amountFormat.format(conversion.dose),water:amountFormat.format(conversion.water),unit:scalableRecipe.water.unit}):t('ratioConverter.sourceStatus')}</p>
+       <p className="ratio-converter-note" id={`${converterId}-note`}>{t('ratioConverter.sourceText')} {t('ratioConverter.caveat')}</p>
+     </section>:isPourOver(r)?<section className="ratio-converter ratio-converter-unavailable" data-ratio-converter-unavailable><h2>{t('ratioConverter.title')}</h2><p>{t('ratioConverter.unavailable')}</p></section>:null}
+     {timeline.length?<section className="timeline-section" data-testid="pour-timeline" data-scaled={conversionApplied||undefined}><div className="section-heading small"><h2>{t('timeline')}</h2><span className="heading-rule"/><p>{t(isEspresso(r)?'shotTimeline':'stepAmount')}</p></div><ol className="pour-timeline">{timeline.map((item,i)=><li key={i}><span className="timeline-dot">{i+1}</span><strong>{item.start===null?t('sequence'):`${secondsLabel(item.start)}${item.end!==null?`–${secondsLabel(item.end)}`:''}`}</strong><span>{t(item.labelKey)}{item.amount===null?' · —':` · ${amountFormat.format(item.amount)} ${item.unit||''}`}{item.amount!==null&&displayedAdditionTotal?<em className="timeline-share"> {percent.format(item.amount/displayedAdditionTotal.amount)}</em>:null}</span></li>)}</ol>{r.copy==='rao'?<p className="muted">{t(`recipes.${r.copy}.notes`)}</p>:null}</section>:null}
+     <section className="steps-section"><h2>{t('steps')}</h2>{displayedSteps.length?<ol className="step-list">{displayedSteps.map((s,i)=><li key={i} id={`step-${i+1}`} data-scaled={conversionApplied||undefined}><span className="step-number">{String(i+1).padStart(2,'0')}</span><div><div className="step-title"><h3>{t(`step.${s.action}`)}</h3><span className="step-time">{s.at===null?t('sequence'):time(s.at)}{s.end?`–${time(s.end)}`:''}{r.source.video&&s.videoAt!==undefined?<a className="step-video" href={videoLink(r.source.video,s.videoAt)} target="_blank" rel="noreferrer">{t('videoStep',{time:time(s.videoAt)})}</a>:null}</span></div><div className="step-meta">{s.temperature?<span>{t('temperature')} {formatTemperature(s.temperature,r.temperatureUnit,unit).text}</span>:null}{s.pressure!==undefined?<span>{t('pressure')} {s.pressure} bar</span>:null}{s.amount!==null?<span>+{amountFormat.format(s.amount)} {stepUnit(r,s)}{s.derived?'*':null}</span>:null}{s.cumulative!==null?<span>{t('cumulative')} {amountFormat.format(s.cumulative)} {stepUnit(r,s)}</span>:null}{stepFacets(s,t).map(facet=><span className="step-facet" key={facet}>{facet}</span>)}{(()=>{const flow=stepFlow(s);return flow?<span className="step-rate">{t(flow.published?'flowRate':'flowRateDerived',{value:`${flow.published&&flow.approximate?'≈':''}${flow.value}`})}</span>:null;})()}</div><p>{conversionApplied?<span className="step-source-label">{t('evidenceLabel')}</span>:null}{conversionApplied?' ':''}{s.action==='finish'?t(`recipes.${r.copy}.finish`):t(s.instruction||`instruction.${s.action}`)}</p></div></li>)}</ol>:<p className="muted" data-no-steps>{t('noStepsPublished')}</p>}{r.steps.some(s=>s.derived)?<p className="muted">* {t('stepDerived')}</p>:null}</section>
      <section className="recipe-notes"><h2>{t('notes')}</h2><p>{t(`recipes.${r.copy}.notes`)}</p>{isPourOver(r)&&r.water.derived?<p>{t('derived')} {r.dose} × {new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(r.water.amount/r.dose)} = {r.water.amount} {r.water.unit}.</p>:null}</section>
      {glossary.length?<section className="recipe-glossary" data-glossary><h2>{t('glossaryTitle')}</h2><p>{t('glossaryIntro')}</p><dl>{glossary.map(key=><div key={key}><dt>{t(`glossary.${key}.term`)}</dt><dd>{t(`glossary.${key}.definition`)}</dd></div>)}</dl></section>:null}
      <section className="recipe-faq"><h2>{t('faqTitle')}</h2>{faq.map(item=><article key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}</section>

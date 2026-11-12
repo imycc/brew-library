@@ -153,6 +153,16 @@
   "water": "Água",
   "brewTime": "Tempo",
   "ratio": "Café : água",
+  "ratioConverter": {
+    "title": "Ajustar a receita",
+    "intro": "Mantenha a proporção da fonte. Altere o café ou a água e a outra quantidade será atualizada.",
+    "reset": "Voltar às quantidades da fonte",
+    "status": "Ajustado para {dose} g de café e {water} {unit} de água.",
+    "sourceStatus": "Exibindo as quantidades da fonte.",
+    "sourceText": "As instruções do autor abaixo mantêm os números originais; a linha do tempo e as quantidades de cada etapa mostram o seu ajuste.",
+    "caveat": "Tempo, moagem e ritmo de despejo não mudam. Alterações grandes podem modificar o fluxo e a extração.",
+    "unavailable": "Esta receita inclui um intervalo, limite superior, gelo ou uma fórmula da fonte, então o ajuste automático fica indisponível para não tratar várias preparações possíveis como uma única proporção fixa."
+  },
   "ratioEspresso": "Café : espresso",
   "timeline": "Linha do tempo dos despejos",
   "stepAmount": "Água adicionada por despejo",
